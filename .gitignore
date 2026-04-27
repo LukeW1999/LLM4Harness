@@ -3,6 +3,9 @@
 .env.*
 *.key
 
+# Paper draft PDF (keep .tex, regenerate locally)
+paper/main.pdf
+
 # Python
 __pycache__/
 *.py[cod]
