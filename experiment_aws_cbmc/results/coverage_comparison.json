@@ -1,0 +1,257 @@
+{
+  "feedback_loop_B_claude_iter2": [
+    {
+      "func_name": "aws_ring_buffer_acquire",
+      "gt_covered": 0,
+      "gt_total": 0,
+      "llm_covered": 58,
+      "llm_total": 1205,
+      "intersection": 0,
+      "coverage_ratio": null,
+      "over_constrained": false,
+      "missed_count": 0
+    },
+    {
+      "func_name": "aws_byte_buf_init",
+      "gt_covered": 17,
+      "gt_total": 977,
+      "llm_covered": 19,
+      "llm_total": 981,
+      "intersection": 14,
+      "coverage_ratio": 0.8235,
+      "over_constrained": false,
+      "missed_count": 3
+    },
+    {
+      "func_name": "aws_array_list_clean_up",
+      "gt_covered": 17,
+      "gt_total": 626,
+      "llm_covered": 18,
+      "llm_total": 628,
+      "intersection": 16,
+      "coverage_ratio": 0.9412,
+      "over_constrained": false,
+      "missed_count": 1
+    },
+    {
+      "func_name": "aws_array_list_init_dynamic",
+      "gt_covered": 23,
+      "gt_total": 632,
+      "llm_covered": 25,
+      "llm_total": 634,
+      "intersection": 20,
+      "coverage_ratio": 0.8696,
+      "over_constrained": false,
+      "missed_count": 3
+    },
+    {
+      "func_name": "aws_array_list_init_static",
+      "gt_covered": 15,
+      "gt_total": 697,
+      "llm_covered": 9,
+      "llm_total": 697,
+      "intersection": 7,
+      "coverage_ratio": 0.4667,
+      "over_constrained": true,
+      "missed_count": 8
+    },
+    {
+      "func_name": "aws_array_list_pop_front",
+      "gt_covered": 35,
+      "gt_total": 701,
+      "llm_covered": 28,
+      "llm_total": 701,
+      "intersection": 24,
+      "coverage_ratio": 0.6857,
+      "over_constrained": true,
+      "missed_count": 11
+    },
+    {
+      "func_name": "aws_array_list_push_front",
+      "gt_covered": 0,
+      "gt_total": 0,
+      "llm_covered": 57,
+      "llm_total": 714,
+      "intersection": 0,
+      "coverage_ratio": null,
+      "over_constrained": false,
+      "missed_count": 0
+    },
+    {
+      "func_name": "aws_array_list_set_at",
+      "gt_covered": 0,
+      "gt_total": 0,
+      "llm_covered": 58,
+      "llm_total": 713,
+      "intersection": 0,
+      "coverage_ratio": null,
+      "over_constrained": false,
+      "missed_count": 0
+    },
+    {
+      "func_name": "aws_array_list_swap",
+      "gt_covered": 30,
+      "gt_total": 699,
+      "llm_covered": 8,
+      "llm_total": 701,
+      "intersection": 7,
+      "coverage_ratio": 0.2333,
+      "over_constrained": true,
+      "missed_count": 23
+    },
+    {
+      "func_name": "aws_array_list_swap_contents",
+      "gt_covered": 17,
+      "gt_total": 697,
+      "llm_covered": 10,
+      "llm_total": 697,
+      "intersection": 7,
+      "coverage_ratio": 0.4118,
+      "over_constrained": true,
+      "missed_count": 10
+    },
+    {
+      "func_name": "aws_byte_buf_advance",
+      "gt_covered": 23,
+      "gt_total": 1063,
+      "llm_covered": 14,
+      "llm_total": 1063,
+      "intersection": 10,
+      "coverage_ratio": 0.4348,
+      "over_constrained": true,
+      "missed_count": 13
+    },
+    {
+      "func_name": "aws_byte_buf_clean_up_secure",
+      "gt_covered": 22,
+      "gt_total": 980,
+      "llm_covered": 23,
+      "llm_total": 982,
+      "intersection": 21,
+      "coverage_ratio": 0.9545,
+      "over_constrained": false,
+      "missed_count": 1
+    },
+    {
+      "func_name": "aws_byte_buf_init_copy",
+      "gt_covered": 37,
+      "gt_total": 1063,
+      "llm_covered": 35,
+      "llm_total": 1063,
+      "intersection": 25,
+      "coverage_ratio": 0.6757,
+      "over_constrained": true,
+      "missed_count": 12
+    },
+    {
+      "func_name": "aws_byte_buf_init_copy_from_cursor",
+      "gt_covered": 32,
+      "gt_total": 1059,
+      "llm_covered": 39,
+      "llm_total": 1061,
+      "intersection": 26,
+      "coverage_ratio": 0.8125,
+      "over_constrained": false,
+      "missed_count": 6
+    },
+    {
+      "func_name": "aws_linked_list_next",
+      "gt_covered": 6,
+      "gt_total": 337,
+      "llm_covered": 5,
+      "llm_total": 335,
+      "intersection": 3,
+      "coverage_ratio": 0.5,
+      "over_constrained": true,
+      "missed_count": 3
+    },
+    {
+      "func_name": "aws_linked_list_remove",
+      "gt_covered": 8,
+      "gt_total": 340,
+      "llm_covered": 11,
+      "llm_total": 343,
+      "intersection": 5,
+      "coverage_ratio": 0.625,
+      "over_constrained": false,
+      "missed_count": 3
+    },
+    {
+      "func_name": "aws_ptr_eq",
+      "gt_covered": 2,
+      "gt_total": 1168,
+      "llm_covered": 4,
+      "llm_total": 1139,
+      "intersection": 1,
+      "coverage_ratio": 0.5,
+      "over_constrained": false,
+      "missed_count": 1
+    },
+    {
+      "func_name": "aws_ring_buffer_clean_up",
+      "gt_covered": 43,
+      "gt_total": 1206,
+      "llm_covered": 10,
+      "llm_total": 1203,
+      "intersection": 1,
+      "coverage_ratio": 0.0233,
+      "over_constrained": true,
+      "missed_count": 42
+    },
+    {
+      "func_name": "aws_string_destroy",
+      "gt_covered": 14,
+      "gt_total": 1153,
+      "llm_covered": 25,
+      "llm_total": 1154,
+      "intersection": 11,
+      "coverage_ratio": 0.7857,
+      "over_constrained": false,
+      "missed_count": 3
+    },
+    {
+      "func_name": "aws_string_destroy_secure",
+      "gt_covered": 21,
+      "gt_total": 1232,
+      "llm_covered": 32,
+      "llm_total": 1236,
+      "intersection": 17,
+      "coverage_ratio": 0.8095,
+      "over_constrained": false,
+      "missed_count": 4
+    },
+    {
+      "func_name": "aws_string_eq",
+      "gt_covered": 28,
+      "gt_total": 1239,
+      "llm_covered": 44,
+      "llm_total": 1252,
+      "intersection": 13,
+      "coverage_ratio": 0.4643,
+      "over_constrained": false,
+      "missed_count": 15
+    },
+    {
+      "func_name": "aws_string_eq_byte_buf",
+      "gt_covered": 26,
+      "gt_total": 1234,
+      "llm_covered": 37,
+      "llm_total": 1243,
+      "intersection": 15,
+      "coverage_ratio": 0.5769,
+      "over_constrained": false,
+      "missed_count": 11
+    },
+    {
+      "func_name": "aws_string_new_from_c_str",
+      "gt_covered": 24,
+      "gt_total": 1230,
+      "llm_covered": 22,
+      "llm_total": 1227,
+      "intersection": 19,
+      "coverage_ratio": 0.7917,
+      "over_constrained": true,
+      "missed_count": 5
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "func": "aws_add_size_checked",
+    "iteration": 1,
+    "gt_verify": "SUCCESS",
+    "llm_verify": "SUCCESS",
+    "gt_harness_count": 4,
+    "llm_harness_count": 6,
+    "harness_matched": 4,
+    "harness_recall": 1.0,
+    "harness_precision": 0.667,
+    "compilation_ok": true
+  },
+  {
+    "func": "aws_byte_buf_init",
+    "iteration": 1,
+    "gt_verify": "SUCCESS",
+    "llm_verify": "FAIL",
+    "gt_harness_count": 6,
+    "llm_harness_count": 12,
+    "harness_matched": 5,
+    "harness_recall": 0.833,
+    "harness_precision": 0.417,
+    "compilation_ok": true
+  },
+  {
+    "func": "aws_array_list_back",
+    "iteration": 1,
+    "gt_verify": "SUCCESS",
+    "llm_verify": "COMPILE_ERROR",
+    "gt_harness_count": 3,
+    "llm_harness_count": 0,
+    "harness_matched": 0,
+    "harness_recall": 0.0,
+    "harness_precision": 0.0,
+    "compilation_ok": false
+  },
+  {
+    "func": "aws_byte_buf_append",
+    "iteration": 1,
+    "gt_verify": "SUCCESS",
+    "llm_verify": "COMPILE_ERROR",
+    "gt_harness_count": 7,
+    "llm_harness_count": 0,
+    "harness_matched": 0,
+    "harness_recall": 0.0,
+    "harness_precision": 0.0,
+    "compilation_ok": false
+  },
+  {
+    "func": "aws_linked_list_push_back",
+    "iteration": 1,
+    "gt_verify": "SUCCESS",
+    "llm_verify": "COMPILE_ERROR",
+    "gt_harness_count": 5,
+    "llm_harness_count": 0,
+    "harness_matched": 0,
+    "harness_recall": 0.0,
+    "harness_precision": 0.0,
+    "compilation_ok": false
+  }
+]

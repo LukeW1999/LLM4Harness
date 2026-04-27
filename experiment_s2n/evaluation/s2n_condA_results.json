@@ -1,0 +1,734 @@
+[
+  {
+    "func": "s2n_stuffer_init",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 13
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_alloc",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": true,
+    "num_iterations": 3,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 9,
+        "num_checks": 40
+      },
+      {
+        "iter": 2,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 8,
+        "num_checks": 40
+      },
+      {
+        "iter": 3,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 40
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_growable_alloc",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "num_iterations": 4,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 5,
+        "num_checks": 28
+      },
+      {
+        "iter": 2,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 5,
+        "num_checks": 28
+      },
+      {
+        "iter": 3,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 5,
+        "num_checks": 28
+      },
+      {
+        "iter": 4,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 5,
+        "num_checks": 31
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_free",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 31
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_resize",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "num_iterations": 4,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 41
+      },
+      {
+        "iter": 2,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 41
+      },
+      {
+        "iter": 3,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 41
+      },
+      {
+        "iter": 4,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 41
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_resize_if_empty",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 39
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_rewrite",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 8
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_rewind_read",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 16
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_wipe",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 12
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_wipe_n",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": true,
+    "num_iterations": 3,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 9
+      },
+      {
+        "iter": 2,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 9
+      },
+      {
+        "iter": 3,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 9
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 16
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_skip_write",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 30
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_read",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "num_iterations": 4,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 9
+      },
+      {
+        "iter": 2,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 9
+      },
+      {
+        "iter": 3,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 9
+      },
+      {
+        "iter": 4,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 9
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_write",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": true,
+    "num_iterations": 3,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 30
+      },
+      {
+        "iter": 2,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 30
+      },
+      {
+        "iter": 3,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 30
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_read_bytes",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "num_iterations": 4,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 18
+      },
+      {
+        "iter": 2,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 18
+      },
+      {
+        "iter": 3,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 18
+      },
+      {
+        "iter": 4,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 18
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_write_bytes",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": true,
+    "num_iterations": 2,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 30
+      },
+      {
+        "iter": 2,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 30
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_erase_and_read",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "num_iterations": 4,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 2,
+        "num_checks": 19
+      },
+      {
+        "iter": 2,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 2,
+        "num_checks": 19
+      },
+      {
+        "iter": 3,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 2,
+        "num_checks": 19
+      },
+      {
+        "iter": 4,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 2,
+        "num_checks": 19
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_read_uint8",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 16
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_write_uint8",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": true,
+    "num_iterations": 2,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 30
+      },
+      {
+        "iter": 2,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 31
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 18
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_write_uint32",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 30
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_copy",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "num_iterations": 4,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 30
+      },
+      {
+        "iter": 2,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "TIMEOUT",
+        "num_failed": 0,
+        "num_checks": 0
+      },
+      {
+        "iter": 3,
+        "action": "fix_unknown",
+        "compile_ok": true,
+        "verify": "TIMEOUT",
+        "num_failed": 0,
+        "num_checks": 0
+      },
+      {
+        "iter": 4,
+        "action": "fix_unknown",
+        "compile_ok": true,
+        "verify": "TIMEOUT",
+        "num_failed": 0,
+        "num_checks": 0
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_extract_blob",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "num_iterations": 4,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "TIMEOUT",
+        "num_failed": 0,
+        "num_checks": 0
+      },
+      {
+        "iter": 2,
+        "action": "fix_unknown",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 30
+      },
+      {
+        "iter": 3,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 30
+      },
+      {
+        "iter": 4,
+        "action": "fix_verify",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1,
+        "num_checks": 30
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_reserve_space",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 41
+      }
+    ]
+  },
+  {
+    "func": "s2n_stuffer_is_consumed",
+    "condition": "A",
+    "model": "qwen",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0,
+        "num_checks": 9
+      }
+    ]
+  }
+]

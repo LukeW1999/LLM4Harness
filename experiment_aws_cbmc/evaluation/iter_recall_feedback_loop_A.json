@@ -1,0 +1,1759 @@
+{
+  "variant": "feedback_loop_A",
+  "rows": [
+    {
+      "func": "aws_add_size_checked",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_add_size_checked",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_add_size_checked",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_add_size_checked",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "iter": 2,
+      "recall_fuzzy": 1.0,
+      "gt_count": 6,
+      "matched": 6
+    },
+    {
+      "func": "aws_array_list_back",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_back",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_back",
+      "iter": 3,
+      "recall_fuzzy": 0.333,
+      "gt_count": 3,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_list_back",
+      "iter": 4,
+      "recall_fuzzy": 0.333,
+      "gt_count": 3,
+      "matched": 1
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 7,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "iter": 2,
+      "recall_fuzzy": 0.429,
+      "gt_count": 7,
+      "matched": 3
+    },
+    {
+      "func": "aws_linked_list_push_back",
+      "iter": 1,
+      "recall_fuzzy": 0.6,
+      "gt_count": 5,
+      "matched": 3
+    },
+    {
+      "func": "aws_linked_list_push_back",
+      "iter": 2,
+      "recall_fuzzy": 0.8,
+      "gt_count": 5,
+      "matched": 4
+    },
+    {
+      "func": "aws_add_size_saturating",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_add_size_saturating",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_add_size_saturating",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_add_size_saturating",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_mul_size_checked",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_mul_size_checked",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_mul_size_checked",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_mul_size_checked",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_mul_size_saturating",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_mul_size_saturating",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_mul_size_saturating",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_mul_size_saturating",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_is_power_of_two",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 1,
+      "matched": 0
+    },
+    {
+      "func": "aws_is_power_of_two",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 1,
+      "matched": 0
+    },
+    {
+      "func": "aws_round_up_to_power_of_two",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_round_up_to_power_of_two",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_round_up_to_power_of_two",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_round_up_to_power_of_two",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "iter": 2,
+      "recall_fuzzy": 0.75,
+      "gt_count": 4,
+      "matched": 3
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "iter": 3,
+      "recall_fuzzy": 0.75,
+      "gt_count": 4,
+      "matched": 3
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "iter": 4,
+      "recall_fuzzy": 0.75,
+      "gt_count": 4,
+      "matched": 3
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 2,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "iter": 2,
+      "recall_fuzzy": 0.5,
+      "gt_count": 2,
+      "matched": 1
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "iter": 3,
+      "recall_fuzzy": 0.5,
+      "gt_count": 2,
+      "matched": 1
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "iter": 4,
+      "recall_fuzzy": 1.0,
+      "gt_count": 2,
+      "matched": 2
+    },
+    {
+      "func": "aws_byte_buf_reset",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_reset",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_reset",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_reset",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_from_empty_array",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_from_empty_array",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_from_empty_array",
+      "iter": 3,
+      "recall_fuzzy": 0.6,
+      "gt_count": 5,
+      "matched": 3
+    },
+    {
+      "func": "aws_byte_buf_from_empty_array",
+      "iter": 4,
+      "recall_fuzzy": 0.6,
+      "gt_count": 5,
+      "matched": 3
+    },
+    {
+      "func": "aws_byte_buf_eq",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_eq",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_cursor_advance",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 8,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_cursor_advance",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 8,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_cursor_advance",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 8,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_cursor_advance",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 8,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_length",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 2,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_length",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 2,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_length",
+      "iter": 3,
+      "recall_fuzzy": 0.5,
+      "gt_count": 2,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_list_length",
+      "iter": 4,
+      "recall_fuzzy": 0.5,
+      "gt_count": 2,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_list_capacity",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_capacity",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_capacity",
+      "iter": 3,
+      "recall_fuzzy": 0.667,
+      "gt_count": 3,
+      "matched": 2
+    },
+    {
+      "func": "aws_array_list_capacity",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_front",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_front",
+      "iter": 2,
+      "recall_fuzzy": 0.25,
+      "gt_count": 4,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_list_front",
+      "iter": 3,
+      "recall_fuzzy": 0.25,
+      "gt_count": 4,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_list_front",
+      "iter": 4,
+      "recall_fuzzy": 0.25,
+      "gt_count": 4,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_list_clear",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_clear",
+      "iter": 2,
+      "recall_fuzzy": 1.0,
+      "gt_count": 6,
+      "matched": 6
+    },
+    {
+      "func": "aws_array_list_pop_back",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_pop_back",
+      "iter": 2,
+      "recall_fuzzy": 0.833,
+      "gt_count": 6,
+      "matched": 5
+    },
+    {
+      "func": "aws_array_list_push_back",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 2,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_push_back",
+      "iter": 2,
+      "recall_fuzzy": 1.0,
+      "gt_count": 2,
+      "matched": 2
+    },
+    {
+      "func": "aws_array_list_get_at",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_get_at",
+      "iter": 2,
+      "recall_fuzzy": 0.333,
+      "gt_count": 3,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_list_get_at",
+      "iter": 3,
+      "recall_fuzzy": 0.333,
+      "gt_count": 3,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_list_get_at",
+      "iter": 4,
+      "recall_fuzzy": 0.333,
+      "gt_count": 3,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_push_front",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_push_front",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_push_front",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_push_front",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_pop_back",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_pop_back",
+      "iter": 2,
+      "recall_fuzzy": 0.25,
+      "gt_count": 4,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_pop_back",
+      "iter": 3,
+      "recall_fuzzy": 0.25,
+      "gt_count": 4,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_pop_back",
+      "iter": 4,
+      "recall_fuzzy": 0.25,
+      "gt_count": 4,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_pop_front",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_pop_front",
+      "iter": 2,
+      "recall_fuzzy": 0.25,
+      "gt_count": 4,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_pop_front",
+      "iter": 3,
+      "recall_fuzzy": 0.25,
+      "gt_count": 4,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_pop_front",
+      "iter": 4,
+      "recall_fuzzy": 0.25,
+      "gt_count": 4,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_init",
+      "iter": 1,
+      "recall_fuzzy": 1.0,
+      "gt_count": 2,
+      "matched": 2
+    },
+    {
+      "func": "aws_linked_list_node_reset",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 2,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_node_reset",
+      "iter": 2,
+      "recall_fuzzy": 0.5,
+      "gt_count": 2,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_eq",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_eq",
+      "iter": 2,
+      "recall_fuzzy": 0.667,
+      "gt_count": 3,
+      "matched": 2
+    },
+    {
+      "func": "aws_array_eq_c_str",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_eq_c_str",
+      "iter": 2,
+      "recall_fuzzy": 0.667,
+      "gt_count": 3,
+      "matched": 2
+    },
+    {
+      "func": "aws_array_eq_c_str",
+      "iter": 3,
+      "recall_fuzzy": 0.667,
+      "gt_count": 3,
+      "matched": 2
+    },
+    {
+      "func": "aws_array_list_clean_up",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 1,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_clean_up",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 1,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_erase",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_erase",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_erase",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_erase",
+      "iter": 4,
+      "recall_fuzzy": 0.833,
+      "gt_count": 6,
+      "matched": 5
+    },
+    {
+      "func": "aws_array_list_get_at_ptr",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_get_at_ptr",
+      "iter": 2,
+      "recall_fuzzy": 0.333,
+      "gt_count": 3,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_list_get_at_ptr",
+      "iter": 3,
+      "recall_fuzzy": 0.333,
+      "gt_count": 3,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_list_init_dynamic",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 9,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_init_dynamic",
+      "iter": 2,
+      "recall_fuzzy": 0.667,
+      "gt_count": 9,
+      "matched": 6
+    },
+    {
+      "func": "aws_array_list_init_static",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 9,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_init_static",
+      "iter": 2,
+      "recall_fuzzy": 0.889,
+      "gt_count": 9,
+      "matched": 8
+    },
+    {
+      "func": "aws_array_list_pop_front",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_pop_front",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_pop_front",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_pop_front",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_pop_front_n",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_pop_front_n",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_pop_front_n",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_pop_front_n",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_push_front",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 2,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_push_front",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 2,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_push_front",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 2,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_push_front",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 2,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_set_at",
+      "iter": 1,
+      "recall_fuzzy": 0.5,
+      "gt_count": 2,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_list_set_at",
+      "iter": 2,
+      "recall_fuzzy": 0.5,
+      "gt_count": 2,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_list_set_at",
+      "iter": 3,
+      "recall_fuzzy": 0.5,
+      "gt_count": 2,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_list_set_at",
+      "iter": 4,
+      "recall_fuzzy": 0.5,
+      "gt_count": 2,
+      "matched": 1
+    },
+    {
+      "func": "aws_array_list_swap",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 9,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_swap",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 9,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_swap",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 9,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_swap",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 9,
+      "matched": 0
+    },
+    {
+      "func": "aws_array_list_swap_contents",
+      "iter": 1,
+      "recall_fuzzy": 1.0,
+      "gt_count": 6,
+      "matched": 6
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 12,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 12,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 12,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 12,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "iter": 1,
+      "recall_fuzzy": 0.667,
+      "gt_count": 6,
+      "matched": 4
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "iter": 2,
+      "recall_fuzzy": 0.667,
+      "gt_count": 6,
+      "matched": 4
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "iter": 3,
+      "recall_fuzzy": 0.667,
+      "gt_count": 6,
+      "matched": 4
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "iter": 4,
+      "recall_fuzzy": 0.667,
+      "gt_count": 6,
+      "matched": 4
+    },
+    {
+      "func": "aws_byte_buf_clean_up_secure",
+      "iter": 1,
+      "recall_fuzzy": 0.75,
+      "gt_count": 4,
+      "matched": 3
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "iter": 1,
+      "recall_fuzzy": 0.5,
+      "gt_count": 2,
+      "matched": 1
+    },
+    {
+      "func": "aws_byte_buf_from_c_str",
+      "iter": 1,
+      "recall_fuzzy": 0.286,
+      "gt_count": 7,
+      "matched": 2
+    },
+    {
+      "func": "aws_byte_buf_from_c_str",
+      "iter": 2,
+      "recall_fuzzy": 0.286,
+      "gt_count": 7,
+      "matched": 2
+    },
+    {
+      "func": "aws_byte_buf_from_c_str",
+      "iter": 3,
+      "recall_fuzzy": 0.286,
+      "gt_count": 7,
+      "matched": 2
+    },
+    {
+      "func": "aws_byte_buf_init_copy",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 7,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_init_copy",
+      "iter": 2,
+      "recall_fuzzy": 0.714,
+      "gt_count": 7,
+      "matched": 5
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 7,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "iter": 2,
+      "recall_fuzzy": 1.0,
+      "gt_count": 7,
+      "matched": 7
+    },
+    {
+      "func": "aws_byte_cursor_eq",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_cursor_eq",
+      "iter": 2,
+      "recall_fuzzy": 1.0,
+      "gt_count": 3,
+      "matched": 3
+    },
+    {
+      "func": "aws_byte_cursor_eq_byte_buf",
+      "iter": 1,
+      "recall_fuzzy": 0.667,
+      "gt_count": 3,
+      "matched": 2
+    },
+    {
+      "func": "aws_byte_cursor_eq_c_str",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 2,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_cursor_eq_c_str",
+      "iter": 2,
+      "recall_fuzzy": 0.5,
+      "gt_count": 2,
+      "matched": 1
+    },
+    {
+      "func": "aws_byte_cursor_from_array",
+      "iter": 1,
+      "recall_fuzzy": 0.667,
+      "gt_count": 3,
+      "matched": 2
+    },
+    {
+      "func": "aws_byte_cursor_from_buf",
+      "iter": 1,
+      "recall_fuzzy": 1.0,
+      "gt_count": 3,
+      "matched": 3
+    },
+    {
+      "func": "aws_byte_cursor_from_c_str",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_cursor_from_c_str",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_cursor_from_c_str",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_cursor_from_c_str",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_cursor_from_string",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_cursor_from_string",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_cursor_from_string",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_byte_cursor_from_string",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 4,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_back",
+      "iter": 1,
+      "recall_fuzzy": 0.2,
+      "gt_count": 5,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_begin",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 2,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_begin",
+      "iter": 2,
+      "recall_fuzzy": 0.5,
+      "gt_count": 2,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_end",
+      "iter": 1,
+      "recall_fuzzy": 0.5,
+      "gt_count": 2,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_front",
+      "iter": 1,
+      "recall_fuzzy": 0.4,
+      "gt_count": 5,
+      "matched": 2
+    },
+    {
+      "func": "aws_linked_list_insert_after",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_insert_after",
+      "iter": 2,
+      "recall_fuzzy": 0.833,
+      "gt_count": 6,
+      "matched": 5
+    },
+    {
+      "func": "aws_linked_list_insert_after",
+      "iter": 3,
+      "recall_fuzzy": 0.833,
+      "gt_count": 6,
+      "matched": 5
+    },
+    {
+      "func": "aws_linked_list_insert_after",
+      "iter": 4,
+      "recall_fuzzy": 0.833,
+      "gt_count": 6,
+      "matched": 5
+    },
+    {
+      "func": "aws_linked_list_insert_before",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_insert_before",
+      "iter": 2,
+      "recall_fuzzy": 0.167,
+      "gt_count": 6,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_insert_before",
+      "iter": 3,
+      "recall_fuzzy": 0.167,
+      "gt_count": 6,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_insert_before",
+      "iter": 4,
+      "recall_fuzzy": 0.167,
+      "gt_count": 6,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_next",
+      "iter": 1,
+      "recall_fuzzy": 0.333,
+      "gt_count": 3,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_next",
+      "iter": 2,
+      "recall_fuzzy": 0.333,
+      "gt_count": 3,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_next",
+      "iter": 3,
+      "recall_fuzzy": 0.333,
+      "gt_count": 3,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_next",
+      "iter": 4,
+      "recall_fuzzy": 0.333,
+      "gt_count": 3,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_prev",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_prev",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_prev",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_prev",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_rbegin",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 2,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_rbegin",
+      "iter": 2,
+      "recall_fuzzy": 0.5,
+      "gt_count": 2,
+      "matched": 1
+    },
+    {
+      "func": "aws_linked_list_rend",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 2,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_rend",
+      "iter": 2,
+      "recall_fuzzy": 1.0,
+      "gt_count": 2,
+      "matched": 2
+    },
+    {
+      "func": "aws_linked_list_remove",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_linked_list_remove",
+      "iter": 2,
+      "recall_fuzzy": 0.4,
+      "gt_count": 5,
+      "matched": 2
+    },
+    {
+      "func": "aws_linked_list_remove",
+      "iter": 3,
+      "recall_fuzzy": 0.4,
+      "gt_count": 5,
+      "matched": 2
+    },
+    {
+      "func": "aws_linked_list_remove",
+      "iter": 4,
+      "recall_fuzzy": 0.4,
+      "gt_count": 5,
+      "matched": 2
+    },
+    {
+      "func": "aws_linked_list_swap_contents",
+      "iter": 1,
+      "recall_fuzzy": 0.6,
+      "gt_count": 10,
+      "matched": 6
+    },
+    {
+      "func": "aws_nospec_mask",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_nospec_mask",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_ptr_eq",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 1,
+      "matched": 0
+    },
+    {
+      "func": "aws_ptr_eq",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 1,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_buf_belongs_to_pool",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_buf_belongs_to_pool",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_buf_belongs_to_pool",
+      "iter": 3,
+      "recall_fuzzy": 0.4,
+      "gt_count": 5,
+      "matched": 2
+    },
+    {
+      "func": "aws_ring_buffer_buf_belongs_to_pool",
+      "iter": 4,
+      "recall_fuzzy": 0.4,
+      "gt_count": 5,
+      "matched": 2
+    },
+    {
+      "func": "aws_ring_buffer_clean_up",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_clean_up",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_clean_up",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_clean_up",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 5,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 6,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_release",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 13,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_release",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 13,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_release",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 13,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_release",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 13,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_bytes",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 2,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_destroy",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 0,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_destroy",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 0,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_destroy",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 0,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_destroy",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 0,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_destroy_secure",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 1,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_destroy_secure",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 1,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_destroy_secure",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 1,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_destroy_secure",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 1,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_eq",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_eq",
+      "iter": 2,
+      "recall_fuzzy": 0.333,
+      "gt_count": 3,
+      "matched": 1
+    },
+    {
+      "func": "aws_string_eq",
+      "iter": 3,
+      "recall_fuzzy": 0.333,
+      "gt_count": 3,
+      "matched": 1
+    },
+    {
+      "func": "aws_string_eq",
+      "iter": 4,
+      "recall_fuzzy": 0.333,
+      "gt_count": 3,
+      "matched": 1
+    },
+    {
+      "func": "aws_string_eq_byte_buf",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_eq_byte_buf",
+      "iter": 2,
+      "recall_fuzzy": 0.667,
+      "gt_count": 3,
+      "matched": 2
+    },
+    {
+      "func": "aws_string_eq_byte_buf",
+      "iter": 3,
+      "recall_fuzzy": 0.667,
+      "gt_count": 3,
+      "matched": 2
+    },
+    {
+      "func": "aws_string_eq_byte_buf",
+      "iter": 4,
+      "recall_fuzzy": 0.667,
+      "gt_count": 3,
+      "matched": 2
+    },
+    {
+      "func": "aws_string_eq_byte_cursor",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_eq_byte_cursor",
+      "iter": 2,
+      "recall_fuzzy": 0.667,
+      "gt_count": 3,
+      "matched": 2
+    },
+    {
+      "func": "aws_string_eq_byte_cursor",
+      "iter": 3,
+      "recall_fuzzy": 0.667,
+      "gt_count": 3,
+      "matched": 2
+    },
+    {
+      "func": "aws_string_eq_byte_cursor",
+      "iter": 4,
+      "recall_fuzzy": 0.667,
+      "gt_count": 3,
+      "matched": 2
+    },
+    {
+      "func": "aws_string_eq_c_str",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_eq_c_str",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_eq_c_str",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 3,
+      "matched": 0
+    },
+    {
+      "func": "aws_string_new_from_c_str",
+      "iter": 1,
+      "recall_fuzzy": 0.2,
+      "gt_count": 5,
+      "matched": 1
+    },
+    {
+      "func": "aws_string_new_from_c_str",
+      "iter": 2,
+      "recall_fuzzy": 0.2,
+      "gt_count": 5,
+      "matched": 1
+    },
+    {
+      "func": "aws_string_new_from_c_str",
+      "iter": 3,
+      "recall_fuzzy": 0.2,
+      "gt_count": 5,
+      "matched": 1
+    },
+    {
+      "func": "aws_string_new_from_c_str",
+      "iter": 4,
+      "recall_fuzzy": 0.2,
+      "gt_count": 5,
+      "matched": 1
+    },
+    {
+      "func": "aws_ring_buffer_acquire",
+      "iter": 1,
+      "recall_fuzzy": 0.0,
+      "gt_count": 19,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_acquire",
+      "iter": 2,
+      "recall_fuzzy": 0.0,
+      "gt_count": 19,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_acquire",
+      "iter": 3,
+      "recall_fuzzy": 0.0,
+      "gt_count": 19,
+      "matched": 0
+    },
+    {
+      "func": "aws_ring_buffer_acquire",
+      "iter": 4,
+      "recall_fuzzy": 0.0,
+      "gt_count": 19,
+      "matched": 0
+    }
+  ],
+  "aggregate": {
+    "1": {
+      "n": 83,
+      "mean_recall": 0.11890418818129661
+    },
+    "2": {
+      "n": 71,
+      "mean_recall": 0.30118488710038005
+    },
+    "3": {
+      "n": 49,
+      "mean_recall": 0.22215743440233238
+    },
+    "4": {
+      "n": 45,
+      "mean_recall": 0.22814814814814813
+    }
+  }
+}

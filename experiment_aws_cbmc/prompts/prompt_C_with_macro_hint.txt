@@ -1,0 +1,53 @@
+You are an expert in C formal verification using CBMC (C Bounded Model Checker).
+
+Your task is to write a CBMC proof harness for the following C function.
+
+## Function Specification (from header)
+
+{HEADER_CONTENT}
+
+## Function Implementation
+
+{IMPLEMENTATION_CONTENT}
+
+## CBMC Macro Semantics
+
+In the aws-c-common codebase, when compiled with CBMC (`-DCBMC`), the following macros expand as follows:
+
+```c
+// AWS_PRECONDITION(cond) expands to:
+__CPROVER_precondition((cond), "Precondition: " #cond)
+
+// AWS_POSTCONDITION(cond) expands to:
+__CPROVER_assert((cond), "Postcondition: " #cond)
+
+// AWS_MEM_IS_READABLE(ptr, size) — memory is readable
+// AWS_MEM_IS_WRITABLE(ptr, size) — memory is writable
+// AWS_OP_SUCCESS == 0, AWS_OP_ERR == -1
+```
+
+In a CBMC harness, the standard pattern is:
+- `__CPROVER_assume(precondition)` to establish preconditions on inputs
+- `assert(postcondition)` to verify postconditions on outputs
+- `ensure_XXX_has_allocated_data_member(&s)` to allocate pointer members inside structs
+- `save_byte_from_array(buf, size, &store)` + `assert_bytes_match(...)` to check memory invariants
+
+## Your Task
+
+Write a complete CBMC harness function named `{FUNCTION_NAME}_harness()` following the pattern:
+
+```c
+void {FUNCTION_NAME}_harness() {
+    /* 1. Declare data structures */
+    /* 2. Bound and allocate structures */
+    /* 3. Assume preconditions */
+    /* 4. Save old state if needed */
+    /* 5. Call function under verification */
+    /* 6. Assert postconditions (both success and failure branches) */
+    /* 7. Assert invariants (validity predicates) */
+}
+```
+
+## Output Format
+
+Output ONLY the harness .c file, no explanations. Start with the necessary #include directives.

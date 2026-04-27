@@ -1,0 +1,7 @@
+{
+  "func": "aws_byte_buf_advance",
+  "total_mutants": 1,
+  "gt_score": 1.0,
+  "llm_score": 1.0,
+  "missed_by_llm": []
+}

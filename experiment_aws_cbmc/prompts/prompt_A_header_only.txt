@@ -1,0 +1,30 @@
+You are an expert in C formal verification using CBMC (C Bounded Model Checker).
+
+Your task is to write a CBMC proof harness for the following C function.
+
+## Function Specification (from header)
+
+{HEADER_CONTENT}
+
+## Your Task
+
+Write a complete CBMC harness function named `{FUNCTION_NAME}_harness()` that:
+
+1. Declares and initializes all input variables non-deterministically (use `nondet_<type>()` for scalar types, or `malloc` with `__CPROVER_assume` for pointers/structs)
+2. Establishes all preconditions using `__CPROVER_assume(...)`
+3. Calls the function under verification
+4. Asserts all postconditions using `assert(...)`
+5. Checks that the function does not violate any invariants
+
+## CBMC Harness Conventions
+
+- Use `nondet_bool()`, `nondet_uint32_t()`, `nondet_uint64_t()`, `nondet_size_t()` for non-deterministic scalars
+- Use `__CPROVER_assume(condition)` to constrain inputs (preconditions)
+- Use `assert(condition)` to check postconditions
+- For structs with validity predicates (e.g., `aws_byte_buf_is_valid`), use `__CPROVER_assume(aws_XXX_is_valid(&s))`
+- Save old state before the call if you need to check that something is unchanged
+- Handle both success (AWS_OP_SUCCESS == 0) and failure (AWS_OP_ERR == -1) branches
+
+## Output Format
+
+Output ONLY the harness .c file, no explanations. Start with the necessary #include directives.

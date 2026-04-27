@@ -1,0 +1,52 @@
+#include <assert.h>
+#include <cbmc_proof/make_common_datastructures.h>
+#include <cbmc_proof/cbmc_utils.h>
+
+#include "api/s2n.h"
+#include "stuffer/s2n_stuffer.h"
+
+void s2n_stuffer_alloc_harness()
+{
+    struct s2n_stuffer *stuffer = cbmc_allocate_s2n_stuffer();
+    uint32_t size = nondet_uint32_t();
+
+    // Add assumptions to constrain the input
+    __CPROVER_assume(size > 0 && size <= UINT32_MAX);
+
+    // Save old values for immutability checks
+    struct s2n_stuffer old_stuffer;
+    if (stuffer) {
+        old_stuffer = *stuffer;
+    }
+
+    int result = s2n_stuffer_alloc(stuffer, size);
+
+    if (result == S2N_SUCCESS) {
+        // Assert that the stuffer is valid after allocation
+        assert(s2n_result_is_ok(s2n_stuffer_validate(stuffer)));
+
+        // Assert changed fields
+        assert(stuffer->alloced == 1);
+        assert(stuffer->read_cursor == 0);
+        assert(stuffer->write_cursor == 0);
+        assert(stuffer->high_water_mark == 0);
+        assert(stuffer->growable == 0);
+        assert(stuffer->tainted == 0);
+
+        // Assert unchanged fields
+        assert(stuffer->blob.size == size);
+        assert(stuffer->blob.data != NULL);
+    } else {
+        // On failure, stuffer should remain unchanged
+        if (stuffer) {
+            assert(stuffer->alloced == old_stuffer.alloced);
+            assert(stuffer->read_cursor == old_stuffer.read_cursor);
+            assert(stuffer->write_cursor == old_stuffer.write_cursor);
+            assert(stuffer->high_water_mark == old_stuffer.high_water_mark);
+            assert(stuffer->growable == old_stuffer.growable);
+            assert(stuffer->tainted == old_stuffer.tainted);
+            assert(stuffer->blob.size == old_stuffer.blob.size);
+            assert(stuffer->blob.data == old_stuffer.blob.data);
+        }
+    }
+}

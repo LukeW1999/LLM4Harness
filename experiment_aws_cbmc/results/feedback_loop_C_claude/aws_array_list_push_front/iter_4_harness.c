@@ -1,0 +1,90 @@
+#include <aws/common/array_list.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <string.h>
+#include <assert.h>
+#include <stdlib.h>
+
+#ifndef MAX_ITEM_SIZE
+#define MAX_ITEM_SIZE 2
+#endif
+
+#ifndef MAX_INITIAL_ITEM_ALLOCATION
+#define MAX_INITIAL_ITEM_ALLOCATION 2
+#endif
+
+void aws_array_list_push_front_harness() {
+    struct aws_array_list list;
+
+    /* Non-deterministically choose item_size and current_size */
+    size_t item_size;
+    __CPROVER_assume(item_size > 0 && item_size <= MAX_ITEM_SIZE);
+
+    size_t initial_item_allocation;
+    __CPROVER_assume(initial_item_allocation <= MAX_INITIAL_ITEM_ALLOCATION);
+
+    /* Initialize the list manually */
+    list.item_size = item_size;
+    list.current_size = initial_item_allocation * item_size;
+    list.length = 0;
+
+    /* Non-deterministically set length within bounds */
+    size_t length;
+    if (list.current_size > 0) {
+        __CPROVER_assume(length <= list.current_size / item_size);
+    } else {
+        length = 0;
+    }
+    list.length = length;
+
+    /* Allocate data if current_size > 0 */
+    if (list.current_size > 0) {
+        list.data = malloc(list.current_size);
+        __CPROVER_assume(list.data != NULL);
+    } else {
+        list.data = NULL;
+    }
+
+    /* Set up allocator */
+    list.alloc = aws_default_allocator();
+    __CPROVER_assume(list.alloc != NULL);
+
+    /* Ensure the list is valid before calling */
+    __CPROVER_assume(aws_array_list_is_valid(&list));
+
+    /* Allocate val with item_size bytes */
+    void *val = malloc(item_size);
+    __CPROVER_assume(val != NULL);
+
+    /* Save old state */
+    size_t old_length = list.length;
+    size_t old_current_size = list.current_size;
+    struct aws_allocator *old_alloc = list.alloc;
+    size_t old_item_size = list.item_size;
+
+    /* Call the function under test */
+    int result = aws_array_list_push_front(&list, val);
+
+    /* alloc and item_size never change */
+    assert(list.alloc == old_alloc);
+    assert(list.item_size == old_item_size);
+
+    if (result == AWS_OP_SUCCESS) {
+        /* Length must have increased by 1 */
+        assert(list.length == old_length + 1);
+
+        /* The list must still be valid */
+        assert(aws_array_list_is_valid(&list));
+
+        /* data must be non-NULL */
+        assert(list.data != NULL);
+
+        /* current_size must be at least enough to hold the new length */
+        assert(list.current_size >= list.length * list.item_size);
+    } else {
+        /* On failure, length must be unchanged */
+        assert(list.length == old_length);
+
+        /* current_size must be unchanged */
+        assert(list.current_size == old_current_size);
+    }
+}

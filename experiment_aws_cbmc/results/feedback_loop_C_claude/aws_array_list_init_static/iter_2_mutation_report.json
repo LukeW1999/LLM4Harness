@@ -1,0 +1,7 @@
+{
+  "func": "aws_array_list_init_static",
+  "total_mutants": 8,
+  "gt_score": 0.5,
+  "llm_score": 0.5,
+  "missed_by_llm": []
+}

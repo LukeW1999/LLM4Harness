@@ -1,0 +1,1093 @@
+[
+  {
+    "func": "aws_add_size_checked",
+    "prompt": "A",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.333,
+    "assume_recall": 1.0,
+    "gt_asserts": [
+      "(b > 0) && (a > (UINT32_MAX - b))",
+      "(b > 0) && (a > (UINT64_MAX - b))",
+      "r == a + b"
+    ],
+    "llm_asserts": [
+      "a + b < a || a + b < b",
+      "a + b >= a",
+      "a + b >= b",
+      "false",
+      "r == a + b"
+    ],
+    "assert_overlap": [
+      "r == a + b"
+    ],
+    "assert_missing": [
+      "(b > 0) && (a > (UINT32_MAX - b))",
+      "(b > 0) && (a > (UINT64_MAX - b))"
+    ],
+    "assert_extra": [
+      "a + b < a || a + b < b",
+      "a + b >= a",
+      "a + b >= b",
+      "false"
+    ],
+    "gt_assumes": [],
+    "llm_assumes": [
+      "r_ptr != NULL"
+    ],
+    "assume_overlap": [],
+    "assume_missing": [],
+    "assume_extra": [
+      "r_ptr != NULL"
+    ]
+  },
+  {
+    "func": "aws_add_size_checked",
+    "prompt": "B",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.0,
+    "assume_recall": 1.0,
+    "gt_asserts": [
+      "(b > 0) && (a > (UINT32_MAX - b))",
+      "(b > 0) && (a > (UINT64_MAX - b))",
+      "r == a + b"
+    ],
+    "llm_asserts": [
+      "*r == a + b",
+      "*r == r_old",
+      "0"
+    ],
+    "assert_overlap": [],
+    "assert_missing": [
+      "(b > 0) && (a > (UINT32_MAX - b))",
+      "(b > 0) && (a > (UINT64_MAX - b))",
+      "r == a + b"
+    ],
+    "assert_extra": [
+      "*r == a + b",
+      "*r == r_old",
+      "0"
+    ],
+    "gt_assumes": [],
+    "llm_assumes": [
+      "AWS_MEM_IS_WRITABLE(r, sizeof(*r))",
+      "r != NULL"
+    ],
+    "assume_overlap": [],
+    "assume_missing": [],
+    "assume_extra": [
+      "AWS_MEM_IS_WRITABLE(r, sizeof(*r))",
+      "r != NULL"
+    ]
+  },
+  {
+    "func": "aws_add_size_checked",
+    "prompt": "C",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.0,
+    "assume_recall": 1.0,
+    "gt_asserts": [
+      "(b > 0) && (a > (UINT32_MAX - b))",
+      "(b > 0) && (a > (UINT64_MAX - b))",
+      "r == a + b"
+    ],
+    "llm_asserts": [],
+    "assert_overlap": [],
+    "assert_missing": [
+      "(b > 0) && (a > (UINT32_MAX - b))",
+      "(b > 0) && (a > (UINT64_MAX - b))",
+      "r == a + b"
+    ],
+    "assert_extra": [],
+    "gt_assumes": [],
+    "llm_assumes": [
+      "r_ptr != NULL"
+    ],
+    "assume_overlap": [],
+    "assume_missing": [],
+    "assume_extra": [
+      "r_ptr != NULL"
+    ]
+  },
+  {
+    "func": "aws_add_size_checked",
+    "prompt": "D",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.333,
+    "assume_recall": 1.0,
+    "gt_asserts": [
+      "(b > 0) && (a > (UINT32_MAX - b))",
+      "(b > 0) && (a > (UINT64_MAX - b))",
+      "r == a + b"
+    ],
+    "llm_asserts": [
+      "a > UINT32_MAX - b",
+      "a > UINT64_MAX - b",
+      "r == a + b"
+    ],
+    "assert_overlap": [
+      "r == a + b"
+    ],
+    "assert_missing": [
+      "(b > 0) && (a > (UINT32_MAX - b))",
+      "(b > 0) && (a > (UINT64_MAX - b))"
+    ],
+    "assert_extra": [
+      "a > UINT32_MAX - b",
+      "a > UINT64_MAX - b"
+    ],
+    "gt_assumes": [],
+    "llm_assumes": [],
+    "assume_overlap": [],
+    "assume_missing": [],
+    "assume_extra": []
+  },
+  {
+    "func": "aws_byte_buf_init",
+    "prompt": "A",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.75,
+    "assume_recall": 1.0,
+    "gt_asserts": [
+      "aws_byte_buf_is_valid(&buf)",
+      "buf.allocator == allocator",
+      "buf.capacity == capacity",
+      "buf.len == 0"
+    ],
+    "llm_asserts": [
+      "aws_byte_buf_is_valid(&buf)",
+      "buf.allocator == &allocator",
+      "buf.buffer == NULL || capacity == 0",
+      "buf.capacity == 0 || buf.capacity == capacity",
+      "buf.capacity == capacity",
+      "buf.len == 0"
+    ],
+    "assert_overlap": [
+      "aws_byte_buf_is_valid(&buf)",
+      "buf.capacity == capacity",
+      "buf.len == 0"
+    ],
+    "assert_missing": [
+      "buf.allocator == allocator"
+    ],
+    "assert_extra": [
+      "buf.allocator == &allocator",
+      "buf.buffer == NULL || capacity == 0",
+      "buf.capacity == 0 || buf.capacity == capacity"
+    ],
+    "gt_assumes": [],
+    "llm_assumes": [
+      "&allocator != NULL",
+      "&buf != NULL",
+      "allocator.opaque != NULL",
+      "capacity <= SIZE_MAX"
+    ],
+    "assume_overlap": [],
+    "assume_missing": [],
+    "assume_extra": [
+      "&allocator != NULL",
+      "&buf != NULL",
+      "allocator.opaque != NULL",
+      "capacity <= SIZE_MAX"
+    ]
+  },
+  {
+    "func": "aws_byte_buf_init",
+    "prompt": "B",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 1.0,
+    "assume_recall": 1.0,
+    "gt_asserts": [
+      "aws_byte_buf_is_valid(&buf)",
+      "buf.allocator == allocator",
+      "buf.capacity == capacity",
+      "buf.len == 0"
+    ],
+    "llm_asserts": [
+      "!aws_byte_buf_is_valid(&buf)",
+      "0",
+      "AWS_MEM_IS_WRITABLE(buf.buffer, capacity)",
+      "allocator == old_buf.allocator",
+      "aws_byte_buf_is_valid(&buf)",
+      "buf.allocator == allocator",
+      "buf.buffer == NULL",
+      "buf.capacity == 0",
+      "buf.capacity == capacity",
+      "buf.len == 0"
+    ],
+    "assert_overlap": [
+      "aws_byte_buf_is_valid(&buf)",
+      "buf.allocator == allocator",
+      "buf.capacity == capacity",
+      "buf.len == 0"
+    ],
+    "assert_missing": [],
+    "assert_extra": [
+      "!aws_byte_buf_is_valid(&buf)",
+      "0",
+      "AWS_MEM_IS_WRITABLE(buf.buffer, capacity)",
+      "allocator == old_buf.allocator",
+      "buf.buffer == NULL",
+      "buf.capacity == 0"
+    ],
+    "gt_assumes": [],
+    "llm_assumes": [
+      "allocator != NULL",
+      "capacity <= MAX_BUFFER_SIZE"
+    ],
+    "assume_overlap": [],
+    "assume_missing": [],
+    "assume_extra": [
+      "allocator != NULL",
+      "capacity <= MAX_BUFFER_SIZE"
+    ]
+  },
+  {
+    "func": "aws_byte_buf_init",
+    "prompt": "C",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.75,
+    "assume_recall": 1.0,
+    "gt_asserts": [
+      "aws_byte_buf_is_valid(&buf)",
+      "buf.allocator == allocator",
+      "buf.capacity == capacity",
+      "buf.len == 0"
+    ],
+    "llm_asserts": [
+      "0",
+      "aws_byte_buf_is_valid(&buf)",
+      "buf.allocator == &allocator",
+      "buf.allocator == NULL",
+      "buf.buffer != NULL",
+      "buf.buffer == NULL",
+      "buf.capacity == 0",
+      "buf.capacity == capacity",
+      "buf.len == 0"
+    ],
+    "assert_overlap": [
+      "aws_byte_buf_is_valid(&buf)",
+      "buf.capacity == capacity",
+      "buf.len == 0"
+    ],
+    "assert_missing": [
+      "buf.allocator == allocator"
+    ],
+    "assert_extra": [
+      "0",
+      "buf.allocator == &allocator",
+      "buf.allocator == NULL",
+      "buf.buffer != NULL",
+      "buf.buffer == NULL",
+      "buf.capacity == 0"
+    ],
+    "gt_assumes": [],
+    "llm_assumes": [
+      "&allocator != NULL",
+      "&buf != NULL",
+      "buf->buffer != NULL",
+      "capacity <= 1024"
+    ],
+    "assume_overlap": [],
+    "assume_missing": [],
+    "assume_extra": [
+      "&allocator != NULL",
+      "&buf != NULL",
+      "buf->buffer != NULL",
+      "capacity <= 1024"
+    ]
+  },
+  {
+    "func": "aws_byte_buf_init",
+    "prompt": "D",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.75,
+    "assume_recall": 1.0,
+    "gt_asserts": [
+      "aws_byte_buf_is_valid(&buf)",
+      "buf.allocator == allocator",
+      "buf.capacity == capacity",
+      "buf.len == 0"
+    ],
+    "llm_asserts": [
+      "AWS_MEM_IS_WRITABLE(buf.buffer, buf.capacity)",
+      "aws_byte_buf_is_valid(&buf)",
+      "buf.allocator == &allocator",
+      "buf.buffer == NULL",
+      "buf.capacity == 0",
+      "buf.capacity == capacity",
+      "buf.len == 0"
+    ],
+    "assert_overlap": [
+      "aws_byte_buf_is_valid(&buf)",
+      "buf.capacity == capacity",
+      "buf.len == 0"
+    ],
+    "assert_missing": [
+      "buf.allocator == allocator"
+    ],
+    "assert_extra": [
+      "AWS_MEM_IS_WRITABLE(buf.buffer, buf.capacity)",
+      "buf.allocator == &allocator",
+      "buf.buffer == NULL",
+      "buf.capacity == 0"
+    ],
+    "gt_assumes": [],
+    "llm_assumes": [
+      "&allocator != NULL",
+      "&buf != NULL",
+      "aws_byte_buf_is_valid(&buf)",
+      "capacity <= MAX_BUFFER_SIZE"
+    ],
+    "assume_overlap": [],
+    "assume_missing": [],
+    "assume_extra": [
+      "&allocator != NULL",
+      "&buf != NULL",
+      "aws_byte_buf_is_valid(&buf)",
+      "capacity <= MAX_BUFFER_SIZE"
+    ]
+  },
+  {
+    "func": "aws_array_list_back",
+    "prompt": "A",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.333,
+    "assume_recall": 0.333,
+    "gt_asserts": [
+      "aws_array_list_is_valid(&list)",
+      "list.data != NULL",
+      "list.length != 0"
+    ],
+    "llm_asserts": [
+      "__CPROVER_w_ok(val, list.item_size)",
+      "aws_array_list_is_valid(&list)",
+      "list.alloc == old_list.alloc",
+      "list.current_size == old_list.current_size",
+      "list.data == old_list.data",
+      "list.item_size == old_list.item_size",
+      "list.length == old_list.length",
+      "list.length > 0",
+      "result == AWS_OP_ERR"
+    ],
+    "assert_overlap": [
+      "aws_array_list_is_valid(&list)"
+    ],
+    "assert_missing": [
+      "list.data != NULL",
+      "list.length != 0"
+    ],
+    "assert_extra": [
+      "__CPROVER_w_ok(val, list.item_size)",
+      "list.alloc == old_list.alloc",
+      "list.current_size == old_list.current_size",
+      "list.data == old_list.data",
+      "list.item_size == old_list.item_size",
+      "list.length == old_list.length",
+      "list.length > 0",
+      "result == AWS_OP_ERR"
+    ],
+    "gt_assumes": [
+      "aws_array_list_is_bounded(&list, MAX_INITIAL_ITEM_ALLOCATION, MAX_ITEM_SIZE)",
+      "aws_array_list_is_valid(&list)",
+      "val && AWS_MEM_IS_WRITABLE(val, list.item_size)"
+    ],
+    "llm_assumes": [
+      "aws_array_list_is_valid(&list)",
+      "val != NULL"
+    ],
+    "assume_overlap": [
+      "aws_array_list_is_valid(&list)"
+    ],
+    "assume_missing": [
+      "aws_array_list_is_bounded(&list, MAX_INITIAL_ITEM_ALLOCATION, MAX_ITEM_SIZE)",
+      "val && AWS_MEM_IS_WRITABLE(val, list.item_size)"
+    ],
+    "assume_extra": [
+      "val != NULL"
+    ]
+  },
+  {
+    "func": "aws_array_list_back",
+    "prompt": "B",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.333,
+    "assume_recall": 0.0,
+    "gt_asserts": [
+      "aws_array_list_is_valid(&list)",
+      "list.data != NULL",
+      "list.length != 0"
+    ],
+    "llm_asserts": [
+      "aws_array_list_is_valid(&list)",
+      "list.length == 0",
+      "list.length > 0",
+      "memcmp(&list, &old_list, sizeof(struct aws_array_list)) == 0",
+      "memcmp(val, (void *)((uint8_t *)list.data + last_item_offset), list.item_size) == 0",
+      "result == AWS_OP_ERR"
+    ],
+    "assert_overlap": [
+      "aws_array_list_is_valid(&list)"
+    ],
+    "assert_missing": [
+      "list.data != NULL",
+      "list.length != 0"
+    ],
+    "assert_extra": [
+      "list.length == 0",
+      "list.length > 0",
+      "memcmp(&list, &old_list, sizeof(struct aws_array_list)) == 0",
+      "memcmp(val, (void *)((uint8_t *)list.data + last_item_offset), list.item_size) == 0",
+      "result == AWS_OP_ERR"
+    ],
+    "gt_assumes": [
+      "aws_array_list_is_bounded(&list, MAX_INITIAL_ITEM_ALLOCATION, MAX_ITEM_SIZE)",
+      "aws_array_list_is_valid(&list)",
+      "val && AWS_MEM_IS_WRITABLE(val, list.item_size)"
+    ],
+    "llm_assumes": [
+      "AWS_MEM_IS_WRITABLE(val, initial_item_size)",
+      "aws_array_list_is_bounded(&list, max_initial_item_allocation, initial_item_size)",
+      "list.length <= max_initial_item_allocation"
+    ],
+    "assume_overlap": [],
+    "assume_missing": [
+      "aws_array_list_is_bounded(&list, MAX_INITIAL_ITEM_ALLOCATION, MAX_ITEM_SIZE)",
+      "aws_array_list_is_valid(&list)",
+      "val && AWS_MEM_IS_WRITABLE(val, list.item_size)"
+    ],
+    "assume_extra": [
+      "AWS_MEM_IS_WRITABLE(val, initial_item_size)",
+      "aws_array_list_is_bounded(&list, max_initial_item_allocation, initial_item_size)",
+      "list.length <= max_initial_item_allocation"
+    ]
+  },
+  {
+    "func": "aws_array_list_back",
+    "prompt": "C",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.0,
+    "assume_recall": 0.0,
+    "gt_asserts": [
+      "aws_array_list_is_valid(&list)",
+      "list.data != NULL",
+      "list.length != 0"
+    ],
+    "llm_asserts": [
+      "((unsigned char *)array)[0] == *expected",
+      "(list.current_size == 0) || (list.data != NULL)",
+      "list != NULL",
+      "list.current_size == list.item_size * list.length",
+      "list.item_size > 0",
+      "list.length * list.item_size <= list.current_size",
+      "result == AWS_OP_ERR",
+      "result == AWS_OP_SUCCESS"
+    ],
+    "assert_overlap": [],
+    "assert_missing": [
+      "aws_array_list_is_valid(&list)",
+      "list.data != NULL",
+      "list.length != 0"
+    ],
+    "assert_extra": [
+      "((unsigned char *)array)[0] == *expected",
+      "(list.current_size == 0) || (list.data != NULL)",
+      "list != NULL",
+      "list.current_size == list.item_size * list.length",
+      "list.item_size > 0",
+      "list.length * list.item_size <= list.current_size",
+      "result == AWS_OP_ERR",
+      "result == AWS_OP_SUCCESS"
+    ],
+    "gt_assumes": [
+      "aws_array_list_is_bounded(&list, MAX_INITIAL_ITEM_ALLOCATION, MAX_ITEM_SIZE)",
+      "aws_array_list_is_valid(&list)",
+      "val && AWS_MEM_IS_WRITABLE(val, list.item_size)"
+    ],
+    "llm_assumes": [
+      "list->data != NULL",
+      "list.alloc != NULL",
+      "list.item_size > 0",
+      "list.length <= SIZE_MAX / list.item_size",
+      "val != NULL"
+    ],
+    "assume_overlap": [],
+    "assume_missing": [
+      "aws_array_list_is_bounded(&list, MAX_INITIAL_ITEM_ALLOCATION, MAX_ITEM_SIZE)",
+      "aws_array_list_is_valid(&list)",
+      "val && AWS_MEM_IS_WRITABLE(val, list.item_size)"
+    ],
+    "assume_extra": [
+      "list->data != NULL",
+      "list.alloc != NULL",
+      "list.item_size > 0",
+      "list.length <= SIZE_MAX / list.item_size",
+      "val != NULL"
+    ]
+  },
+  {
+    "func": "aws_array_list_back",
+    "prompt": "D",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.333,
+    "assume_recall": 0.667,
+    "gt_asserts": [
+      "aws_array_list_is_valid(&list)",
+      "list.data != NULL",
+      "list.length != 0"
+    ],
+    "llm_asserts": [
+      "aws_array_list_is_valid(&list)",
+      "list.length == 0",
+      "list.length > 0",
+      "result == AWS_OP_ERR"
+    ],
+    "assert_overlap": [
+      "aws_array_list_is_valid(&list)"
+    ],
+    "assert_missing": [
+      "list.data != NULL",
+      "list.length != 0"
+    ],
+    "assert_extra": [
+      "list.length == 0",
+      "list.length > 0",
+      "result == AWS_OP_ERR"
+    ],
+    "gt_assumes": [
+      "aws_array_list_is_bounded(&list, MAX_INITIAL_ITEM_ALLOCATION, MAX_ITEM_SIZE)",
+      "aws_array_list_is_valid(&list)",
+      "val && AWS_MEM_IS_WRITABLE(val, list.item_size)"
+    ],
+    "llm_assumes": [
+      "AWS_MEM_IS_WRITABLE(val, list.item_size)",
+      "aws_array_list_is_bounded(&list, MAX_INITIAL_ITEM_ALLOCATION, MAX_ITEM_SIZE)",
+      "aws_array_list_is_valid(&list)"
+    ],
+    "assume_overlap": [
+      "aws_array_list_is_bounded(&list, MAX_INITIAL_ITEM_ALLOCATION, MAX_ITEM_SIZE)",
+      "aws_array_list_is_valid(&list)"
+    ],
+    "assume_missing": [
+      "val && AWS_MEM_IS_WRITABLE(val, list.item_size)"
+    ],
+    "assume_extra": [
+      "AWS_MEM_IS_WRITABLE(val, list.item_size)"
+    ]
+  },
+  {
+    "func": "aws_byte_buf_append",
+    "prompt": "A",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.0,
+    "assume_recall": 0.0,
+    "gt_asserts": [
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)",
+      "from_old.len == from.len",
+      "to.len == to_old.len + from.len",
+      "to_old.allocator == to.allocator",
+      "to_old.capacity == to.capacity",
+      "to_old.len == to.len"
+    ],
+    "llm_asserts": [
+      "from.len == old_from_len",
+      "from.ptr == old_from_ptr",
+      "to.allocator == old_to_allocator",
+      "to.buffer[i] == old_to_buffer[i]",
+      "to.buffer[old_to_len + i] == from.ptr[i]",
+      "to.capacity == old_to_capacity",
+      "to.len == old_to_len",
+      "to.len == old_to_len + from.len"
+    ],
+    "assert_overlap": [],
+    "assert_missing": [
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)",
+      "from_old.len == from.len",
+      "to.len == to_old.len + from.len",
+      "to_old.allocator == to.allocator",
+      "to_old.capacity == to.capacity",
+      "to_old.len == to.len"
+    ],
+    "assert_extra": [
+      "from.len == old_from_len",
+      "from.ptr == old_from_ptr",
+      "to.allocator == old_to_allocator",
+      "to.buffer[i] == old_to_buffer[i]",
+      "to.buffer[old_to_len + i] == from.ptr[i]",
+      "to.capacity == old_to_capacity",
+      "to.len == old_to_len",
+      "to.len == old_to_len + from.len"
+    ],
+    "gt_assumes": [
+      "aws_byte_buf_is_bounded(&to, MAX_BUFFER_SIZE)",
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_bounded(&from, MAX_BUFFER_SIZE)",
+      "aws_byte_cursor_is_valid(&from)"
+    ],
+    "llm_assumes": [
+      "from.len == 0 || from.ptr != NULL",
+      "to.capacity == 0 || to.buffer != NULL",
+      "to.len <= to.capacity"
+    ],
+    "assume_overlap": [],
+    "assume_missing": [
+      "aws_byte_buf_is_bounded(&to, MAX_BUFFER_SIZE)",
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_bounded(&from, MAX_BUFFER_SIZE)",
+      "aws_byte_cursor_is_valid(&from)"
+    ],
+    "assume_extra": [
+      "from.len == 0 || from.ptr != NULL",
+      "to.capacity == 0 || to.buffer != NULL",
+      "to.len <= to.capacity"
+    ]
+  },
+  {
+    "func": "aws_byte_buf_append",
+    "prompt": "B",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.286,
+    "assume_recall": 0.5,
+    "gt_asserts": [
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)",
+      "from_old.len == from.len",
+      "to.len == to_old.len + from.len",
+      "to_old.allocator == to.allocator",
+      "to_old.capacity == to.capacity",
+      "to_old.len == to.len"
+    ],
+    "llm_asserts": [
+      "AWS_MEM_IS_SAME(old_from.ptr, from.ptr, from.len)",
+      "AWS_MEM_IS_SAME(old_to.buffer, to.buffer, old_to.len)",
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)",
+      "from.len == old_from.len",
+      "from.ptr == old_from.ptr",
+      "to.allocator == old_to.allocator",
+      "to.capacity == old_to.capacity",
+      "to.len == old_to.len",
+      "to.len == old_to.len + from.len"
+    ],
+    "assert_overlap": [
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)"
+    ],
+    "assert_missing": [
+      "from_old.len == from.len",
+      "to.len == to_old.len + from.len",
+      "to_old.allocator == to.allocator",
+      "to_old.capacity == to.capacity",
+      "to_old.len == to.len"
+    ],
+    "assert_extra": [
+      "AWS_MEM_IS_SAME(old_from.ptr, from.ptr, from.len)",
+      "AWS_MEM_IS_SAME(old_to.buffer, to.buffer, old_to.len)",
+      "from.len == old_from.len",
+      "from.ptr == old_from.ptr",
+      "to.allocator == old_to.allocator",
+      "to.capacity == old_to.capacity",
+      "to.len == old_to.len",
+      "to.len == old_to.len + from.len"
+    ],
+    "gt_assumes": [
+      "aws_byte_buf_is_bounded(&to, MAX_BUFFER_SIZE)",
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_bounded(&from, MAX_BUFFER_SIZE)",
+      "aws_byte_cursor_is_valid(&from)"
+    ],
+    "llm_assumes": [
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)",
+      "from.len <= from.capacity",
+      "max_capacity <= MAX_BUFFER_SIZE",
+      "max_len <= max_capacity",
+      "to.len <= to.capacity"
+    ],
+    "assume_overlap": [
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)"
+    ],
+    "assume_missing": [
+      "aws_byte_buf_is_bounded(&to, MAX_BUFFER_SIZE)",
+      "aws_byte_cursor_is_bounded(&from, MAX_BUFFER_SIZE)"
+    ],
+    "assume_extra": [
+      "from.len <= from.capacity",
+      "max_capacity <= MAX_BUFFER_SIZE",
+      "max_len <= max_capacity",
+      "to.len <= to.capacity"
+    ]
+  },
+  {
+    "func": "aws_byte_buf_append",
+    "prompt": "C",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.286,
+    "assume_recall": 0.5,
+    "gt_asserts": [
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)",
+      "from_old.len == from.len",
+      "to.len == to_old.len + from.len",
+      "to_old.allocator == to.allocator",
+      "to_old.capacity == to.capacity",
+      "to_old.len == to.len"
+    ],
+    "llm_asserts": [
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)",
+      "from.len == old_from_len",
+      "from.ptr == from_buffer",
+      "memcmp(to.buffer + old_to_len, from_buffer, old_from_len) == 0",
+      "memcmp(to.buffer, old_to_buffer, old_to_len) == 0",
+      "memcmp(to.buffer, old_to_buffer, to.capacity) == 0",
+      "to.allocator == to.allocator",
+      "to.capacity == to.capacity",
+      "to.len == old_to_len",
+      "to.len == old_to_len + old_from_len"
+    ],
+    "assert_overlap": [
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)"
+    ],
+    "assert_missing": [
+      "from_old.len == from.len",
+      "to.len == to_old.len + from.len",
+      "to_old.allocator == to.allocator",
+      "to_old.capacity == to.capacity",
+      "to_old.len == to.len"
+    ],
+    "assert_extra": [
+      "from.len == old_from_len",
+      "from.ptr == from_buffer",
+      "memcmp(to.buffer + old_to_len, from_buffer, old_from_len) == 0",
+      "memcmp(to.buffer, old_to_buffer, old_to_len) == 0",
+      "memcmp(to.buffer, old_to_buffer, to.capacity) == 0",
+      "to.allocator == to.allocator",
+      "to.capacity == to.capacity",
+      "to.len == old_to_len",
+      "to.len == old_to_len + old_from_len"
+    ],
+    "gt_assumes": [
+      "aws_byte_buf_is_bounded(&to, MAX_BUFFER_SIZE)",
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_bounded(&from, MAX_BUFFER_SIZE)",
+      "aws_byte_cursor_is_valid(&from)"
+    ],
+    "llm_assumes": [
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)",
+      "from.len <= sizeof(from_buffer)",
+      "to.capacity <= sizeof(to_buffer)"
+    ],
+    "assume_overlap": [
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)"
+    ],
+    "assume_missing": [
+      "aws_byte_buf_is_bounded(&to, MAX_BUFFER_SIZE)",
+      "aws_byte_cursor_is_bounded(&from, MAX_BUFFER_SIZE)"
+    ],
+    "assume_extra": [
+      "from.len <= sizeof(from_buffer)",
+      "to.capacity <= sizeof(to_buffer)"
+    ]
+  },
+  {
+    "func": "aws_byte_buf_append",
+    "prompt": "D",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.286,
+    "assume_recall": 1.0,
+    "gt_asserts": [
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)",
+      "from_old.len == from.len",
+      "to.len == to_old.len + from.len",
+      "to_old.allocator == to.allocator",
+      "to_old.capacity == to.capacity",
+      "to_old.len == to.len"
+    ],
+    "llm_asserts": [
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)",
+      "result == AWS_OP_ERR",
+      "to.allocator == old_to.allocator",
+      "to.capacity == old_to.capacity",
+      "to.len == old_to.len",
+      "to.len == old_to.len + from.len"
+    ],
+    "assert_overlap": [
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_valid(&from)"
+    ],
+    "assert_missing": [
+      "from_old.len == from.len",
+      "to.len == to_old.len + from.len",
+      "to_old.allocator == to.allocator",
+      "to_old.capacity == to.capacity",
+      "to_old.len == to.len"
+    ],
+    "assert_extra": [
+      "result == AWS_OP_ERR",
+      "to.allocator == old_to.allocator",
+      "to.capacity == old_to.capacity",
+      "to.len == old_to.len",
+      "to.len == old_to.len + from.len"
+    ],
+    "gt_assumes": [
+      "aws_byte_buf_is_bounded(&to, MAX_BUFFER_SIZE)",
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_bounded(&from, MAX_BUFFER_SIZE)",
+      "aws_byte_cursor_is_valid(&from)"
+    ],
+    "llm_assumes": [
+      "aws_byte_buf_is_bounded(&to, MAX_BUFFER_SIZE)",
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_bounded(&from, MAX_BUFFER_SIZE)",
+      "aws_byte_cursor_is_valid(&from)"
+    ],
+    "assume_overlap": [
+      "aws_byte_buf_is_bounded(&to, MAX_BUFFER_SIZE)",
+      "aws_byte_buf_is_valid(&to)",
+      "aws_byte_cursor_is_bounded(&from, MAX_BUFFER_SIZE)",
+      "aws_byte_cursor_is_valid(&from)"
+    ],
+    "assume_missing": [],
+    "assume_extra": []
+  },
+  {
+    "func": "aws_linked_list_push_back",
+    "prompt": "A",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.0,
+    "assume_recall": 1.0,
+    "gt_asserts": [
+      "aws_linked_list_is_valid(&list)",
+      "aws_linked_list_node_next_is_valid(&to_add)",
+      "aws_linked_list_node_prev_is_valid(&to_add)",
+      "list.tail.prev == &to_add",
+      "to_add.prev == old_last"
+    ],
+    "llm_asserts": [
+      "aws_linked_list_is_valid(list)",
+      "aws_linked_list_node_next_is_valid(node)",
+      "aws_linked_list_node_prev_is_valid(node)",
+      "list->tail.prev == node",
+      "node->prev == old_tail_prev"
+    ],
+    "assert_overlap": [],
+    "assert_missing": [
+      "aws_linked_list_is_valid(&list)",
+      "aws_linked_list_node_next_is_valid(&to_add)",
+      "aws_linked_list_node_prev_is_valid(&to_add)",
+      "list.tail.prev == &to_add",
+      "to_add.prev == old_last"
+    ],
+    "assert_extra": [
+      "aws_linked_list_is_valid(list)",
+      "aws_linked_list_node_next_is_valid(node)",
+      "aws_linked_list_node_prev_is_valid(node)",
+      "list->tail.prev == node",
+      "node->prev == old_tail_prev"
+    ],
+    "gt_assumes": [],
+    "llm_assumes": [
+      "list != NULL",
+      "node != NULL"
+    ],
+    "assume_overlap": [],
+    "assume_missing": [],
+    "assume_extra": [
+      "list != NULL",
+      "node != NULL"
+    ]
+  },
+  {
+    "func": "aws_linked_list_push_back",
+    "prompt": "B",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.0,
+    "assume_recall": 1.0,
+    "gt_asserts": [
+      "aws_linked_list_is_valid(&list)",
+      "aws_linked_list_node_next_is_valid(&to_add)",
+      "aws_linked_list_node_prev_is_valid(&to_add)",
+      "list.tail.prev == &to_add",
+      "to_add.prev == old_last"
+    ],
+    "llm_asserts": [
+      "list->head.next == &list->tail",
+      "list->head.prev == NULL",
+      "list->tail.next == NULL",
+      "list->tail.prev == node",
+      "node->next == &list->tail",
+      "node->prev == old_tail_prev",
+      "old_tail_prev->next == node"
+    ],
+    "assert_overlap": [],
+    "assert_missing": [
+      "aws_linked_list_is_valid(&list)",
+      "aws_linked_list_node_next_is_valid(&to_add)",
+      "aws_linked_list_node_prev_is_valid(&to_add)",
+      "list.tail.prev == &to_add",
+      "to_add.prev == old_last"
+    ],
+    "assert_extra": [
+      "list->head.next == &list->tail",
+      "list->head.prev == NULL",
+      "list->tail.next == NULL",
+      "list->tail.prev == node",
+      "node->next == &list->tail",
+      "node->prev == old_tail_prev",
+      "old_tail_prev->next == node"
+    ],
+    "gt_assumes": [],
+    "llm_assumes": [
+      "list != NULL",
+      "list->head.next == &list->tail",
+      "list->head.prev == NULL",
+      "list->tail.next == NULL",
+      "list->tail.prev == &list->head",
+      "node != NULL"
+    ],
+    "assume_overlap": [],
+    "assume_missing": [],
+    "assume_extra": [
+      "list != NULL",
+      "list->head.next == &list->tail",
+      "list->head.prev == NULL",
+      "list->tail.next == NULL",
+      "list->tail.prev == &list->head",
+      "node != NULL"
+    ]
+  },
+  {
+    "func": "aws_linked_list_push_back",
+    "prompt": "C",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.2,
+    "assume_recall": 1.0,
+    "gt_asserts": [
+      "aws_linked_list_is_valid(&list)",
+      "aws_linked_list_node_next_is_valid(&to_add)",
+      "aws_linked_list_node_prev_is_valid(&to_add)",
+      "list.tail.prev == &to_add",
+      "to_add.prev == old_last"
+    ],
+    "llm_asserts": [
+      "aws_linked_list_is_valid(&list)",
+      "aws_linked_list_node_next_is_valid(&list.head)",
+      "aws_linked_list_node_next_is_valid(&node)",
+      "aws_linked_list_node_prev_is_valid(&list.tail)",
+      "aws_linked_list_node_prev_is_valid(&node)",
+      "list.tail.prev == &node",
+      "node.next == &list.tail",
+      "node.prev == old_last",
+      "old_last->next == &node"
+    ],
+    "assert_overlap": [
+      "aws_linked_list_is_valid(&list)"
+    ],
+    "assert_missing": [
+      "aws_linked_list_node_next_is_valid(&to_add)",
+      "aws_linked_list_node_prev_is_valid(&to_add)",
+      "list.tail.prev == &to_add",
+      "to_add.prev == old_last"
+    ],
+    "assert_extra": [
+      "aws_linked_list_node_next_is_valid(&list.head)",
+      "aws_linked_list_node_next_is_valid(&node)",
+      "aws_linked_list_node_prev_is_valid(&list.tail)",
+      "aws_linked_list_node_prev_is_valid(&node)",
+      "list.tail.prev == &node",
+      "node.next == &list.tail",
+      "node.prev == old_last",
+      "old_last->next == &node"
+    ],
+    "gt_assumes": [],
+    "llm_assumes": [
+      "&list != NULL",
+      "&node != NULL",
+      "aws_linked_list_is_valid(&list)"
+    ],
+    "assume_overlap": [],
+    "assume_missing": [],
+    "assume_extra": [
+      "&list != NULL",
+      "&node != NULL",
+      "aws_linked_list_is_valid(&list)"
+    ]
+  },
+  {
+    "func": "aws_linked_list_push_back",
+    "prompt": "D",
+    "syntax_ok": true,
+    "syntax_issues": [],
+    "assert_recall": 0.2,
+    "assume_recall": 1.0,
+    "gt_asserts": [
+      "aws_linked_list_is_valid(&list)",
+      "aws_linked_list_node_next_is_valid(&to_add)",
+      "aws_linked_list_node_prev_is_valid(&to_add)",
+      "list.tail.prev == &to_add",
+      "to_add.prev == old_last"
+    ],
+    "llm_asserts": [
+      "aws_linked_list_is_valid(&list)",
+      "aws_linked_list_node_next_is_valid(&node)",
+      "aws_linked_list_node_prev_is_valid(&node)",
+      "list.tail.prev == &node",
+      "node.prev == old_list.tail.prev"
+    ],
+    "assert_overlap": [
+      "aws_linked_list_is_valid(&list)"
+    ],
+    "assert_missing": [
+      "aws_linked_list_node_next_is_valid(&to_add)",
+      "aws_linked_list_node_prev_is_valid(&to_add)",
+      "list.tail.prev == &to_add",
+      "to_add.prev == old_last"
+    ],
+    "assert_extra": [
+      "aws_linked_list_node_next_is_valid(&node)",
+      "aws_linked_list_node_prev_is_valid(&node)",
+      "list.tail.prev == &node",
+      "node.prev == old_list.tail.prev"
+    ],
+    "gt_assumes": [],
+    "llm_assumes": [
+      "&node != NULL",
+      "aws_linked_list_is_valid(&list)",
+      "max_length > 0 && max_length < MAX_LINKED_LIST_ITEM_ALLOCATION"
+    ],
+    "assume_overlap": [],
+    "assume_missing": [],
+    "assume_extra": [
+      "&node != NULL",
+      "aws_linked_list_is_valid(&list)",
+      "max_length > 0 && max_length < MAX_LINKED_LIST_ITEM_ALLOCATION"
+    ]
+  }
+]

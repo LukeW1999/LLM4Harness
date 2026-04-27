@@ -1,0 +1,17 @@
+{
+  "a_iter1_mean": 0.09571052631578947,
+  "e_iter1_mean": 0.477486842105263,
+  "a_best_mean": 0.4631447368421052,
+  "e_best_mean": 0.555328947368421,
+  "excluded_e": [
+    "aws_byte_buf_init",
+    "aws_string_new_from_c_str",
+    "aws_linked_list_push_back",
+    "aws_ring_buffer_init",
+    "aws_array_list_init_static",
+    "aws_add_size_checked",
+    "aws_byte_cursor_from_array"
+  ],
+  "n_a": 76,
+  "n_e": 76
+}

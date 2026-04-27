@@ -1,0 +1,758 @@
+{
+  "aws_add_size_checked": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 6,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_add_size_saturating": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 9,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_array_list_capacity": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 11,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_array_eq_c_str": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 5,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_array_eq": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 7,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_array_list_back": {
+    "esbmc_verdict": "FAIL",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 15,
+    "error": "VERIFICATION FAILED",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_array_list_clear": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 9,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_array_list_front": {
+    "esbmc_verdict": "FAIL",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 12,
+    "error": "VERIFICATION FAILED",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_array_list_get_at_ptr": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 13,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_array_list_get_at": {
+    "esbmc_verdict": "FAIL",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 13,
+    "error": "VERIFICATION FAILED",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_array_list_erase": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "FAIL",
+    "compilation_ok": true,
+    "num_checks": 12,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_array_list_length": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 10,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_array_list_init_static": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 9,
+    "error": "",
+    "harness_iter": "iter_2_harness"
+  },
+  "aws_array_list_pop_back": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 14,
+    "error": "",
+    "harness_iter": "iter_2_harness"
+  },
+  "aws_array_list_pop_front": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "FAIL",
+    "compilation_ok": true,
+    "num_checks": 12,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_array_list_push_front": {
+    "esbmc_verdict": "COMPILE_ERROR",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "FAIL",
+    "compilation_ok": false,
+    "num_checks": 0,
+    "error": "Parsing /home/weiqi/aws-c-common/verification/cbmc/stubs/error.c\n/home/weiqi/SpecVerify/experiment_aws_cbmc/results/feedback_loop_D_claude/aws_array_list_push_front/iter_4_harness.c:1:1: error: unknow",
+    "harness_iter": "iter_4_harness"
+  },
+  "aws_array_list_swap": {
+    "esbmc_verdict": "COMPILE_ERROR",
+    "cbmc_verdict": "UNKNOWN",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": false,
+    "num_checks": 0,
+    "error": "Parsing /home/weiqi/aws-c-common/verification/cbmc/stubs/error.c\n/home/weiqi/SpecVerify/experiment_aws_cbmc/results/feedback_loop_D_claude/aws_array_list_swap/iter_4_harness.c:1:1: error: unknown type",
+    "harness_iter": "iter_4_harness"
+  },
+  "aws_array_list_pop_front_n": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 10,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_array_list_swap_contents": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 16,
+    "error": "",
+    "harness_iter": "iter_4_harness"
+  },
+  "aws_array_list_push_back": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "FAIL",
+    "compilation_ok": true,
+    "num_checks": 12,
+    "error": "",
+    "harness_iter": "iter_3_harness"
+  },
+  "aws_byte_buf_advance": {
+    "esbmc_verdict": "FAIL",
+    "cbmc_verdict": "FAIL",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 17,
+    "error": "VERIFICATION FAILED",
+    "harness_iter": "iter_4_harness"
+  },
+  "aws_array_list_set_at": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "FAIL",
+    "compilation_ok": true,
+    "num_checks": 16,
+    "error": "",
+    "harness_iter": "iter_4_harness"
+  },
+  "aws_byte_buf_append": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 13,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_buf_clean_up": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 5,
+    "error": "",
+    "harness_iter": "iter_2_harness"
+  },
+  "aws_byte_buf_cat": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 17,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_buf_clean_up_secure": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 5,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_buf_eq": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 13,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_buf_eq_c_str": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 6,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_buf_from_array": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 6,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_buf_from_c_str": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 13,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_buf_from_empty_array": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 6,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_buf_init": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 13,
+    "error": "",
+    "harness_iter": "iter_2_harness"
+  },
+  "aws_byte_buf_init_copy_from_cursor": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 16,
+    "error": "",
+    "harness_iter": "iter_2_harness"
+  },
+  "aws_byte_buf_reset": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 5,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_buf_secure_zero": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 5,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_buf_write_u8": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 8,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_cursor_advance": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 11,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_cursor_eq": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 8,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_cursor_eq_byte_buf": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 8,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_cursor_eq_c_str": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 4,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_cursor_from_array": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 3,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_cursor_from_buf": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 8,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_byte_cursor_from_c_str": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 5,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_is_power_of_two": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 8,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_linked_list_back": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 8,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_linked_list_begin": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 7,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_linked_list_end": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 6,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_linked_list_front": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 8,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_linked_list_init": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 6,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_linked_list_insert_after": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 10,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_linked_list_insert_before": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 10,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_linked_list_next": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 4,
+    "error": "",
+    "harness_iter": "iter_2_harness"
+  },
+  "aws_array_list_clean_up": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 6,
+    "error": "",
+    "harness_iter": "iter_3_harness"
+  },
+  "aws_array_list_init_dynamic": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 18,
+    "error": "",
+    "harness_iter": "iter_2_harness"
+  },
+  "aws_linked_list_prev": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 3,
+    "error": "",
+    "harness_iter": "iter_2_harness"
+  },
+  "aws_linked_list_push_back": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 9,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_linked_list_push_front": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 10,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_linked_list_rbegin": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 6,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_linked_list_remove": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "TIMEOUT",
+    "compilation_ok": true,
+    "num_checks": 5,
+    "error": "",
+    "harness_iter": "iter_3_harness"
+  },
+  "aws_linked_list_rend": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 6,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_linked_list_swap_contents": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 18,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_mul_size_checked": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "TIMEOUT",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 3,
+    "error": "",
+    "harness_iter": "iter_4_harness"
+  },
+  "aws_mul_size_saturating": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "TIMEOUT",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 3,
+    "error": "",
+    "harness_iter": "iter_4_harness"
+  },
+  "aws_byte_cursor_from_string": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 7,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_nospec_mask": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 5,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_ptr_eq": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 3,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_ring_buffer_acquire": {
+    "esbmc_verdict": "FAIL",
+    "cbmc_verdict": "FAIL",
+    "esbmc_gt_verdict": "COMPILE_ERROR",
+    "compilation_ok": true,
+    "num_checks": 12,
+    "error": "VERIFICATION FAILED",
+    "harness_iter": "iter_4_harness"
+  },
+  "aws_ring_buffer_buf_belongs_to_pool": {
+    "esbmc_verdict": "FAIL",
+    "cbmc_verdict": "FAIL",
+    "esbmc_gt_verdict": "COMPILE_ERROR",
+    "compilation_ok": true,
+    "num_checks": 11,
+    "error": "VERIFICATION FAILED",
+    "harness_iter": "iter_4_harness"
+  },
+  "aws_ring_buffer_init": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 9,
+    "error": "",
+    "harness_iter": "iter_4_harness"
+  },
+  "aws_ring_buffer_release": {
+    "esbmc_verdict": "COMPILE_ERROR",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "TIMEOUT",
+    "compilation_ok": false,
+    "num_checks": 0,
+    "error": "Parsing /home/weiqi/aws-c-common/verification/cbmc/stubs/error.c\n/home/weiqi/SpecVerify/experiment_aws_cbmc/results/feedback_loop_D_claude/aws_ring_buffer_release/iter_4_harness.c:1:1: error: unknown ",
+    "harness_iter": "iter_4_harness"
+  },
+  "aws_round_up_to_power_of_two": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 9,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_string_bytes": {
+    "esbmc_verdict": "COMPILE_ERROR",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": false,
+    "num_checks": 0,
+    "error": "Parsing /home/weiqi/aws-c-common/verification/cbmc/stubs/error.c\n/home/weiqi/SpecVerify/experiment_aws_cbmc/results/feedback_loop_D_claude/aws_string_bytes/iter_1_harness.c:30:29: error: use of undecl",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_string_destroy": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 0,
+    "error": "",
+    "harness_iter": "iter_3_harness"
+  },
+  "aws_string_destroy_secure": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "COMPILE_ERROR",
+    "compilation_ok": true,
+    "num_checks": 8,
+    "error": "",
+    "harness_iter": "iter_2_harness"
+  },
+  "aws_string_eq": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 11,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_string_eq_byte_buf": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 5,
+    "error": "",
+    "harness_iter": "iter_2_harness"
+  },
+  "aws_string_eq_byte_cursor": {
+    "esbmc_verdict": "COMPILE_ERROR",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": false,
+    "num_checks": 0,
+    "error": "/home/weiqi/SpecVerify/experiment_aws_cbmc/results/feedback_loop_D_claude/aws_string_eq_byte_cursor/iter_1_harness.c:80:21: error: cannot assign to variable 'old_str_val' with const-qualified data mem",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_string_eq_c_str": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 6,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_string_new_from_c_str": {
+    "esbmc_verdict": "COMPILE_ERROR",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": false,
+    "num_checks": 0,
+    "error": "Parsing /home/weiqi/aws-c-common/verification/cbmc/stubs/error.c\n/home/weiqi/SpecVerify/experiment_aws_cbmc/results/feedback_loop_D_claude/aws_string_new_from_c_str/iter_2_harness.c:14:29: error: use ",
+    "harness_iter": "iter_2_harness"
+  },
+  "aws_byte_buf_init_copy": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "TIMEOUT",
+    "compilation_ok": true,
+    "num_checks": 20,
+    "error": "",
+    "harness_iter": "iter_2_harness"
+  },
+  "aws_linked_list_node_reset": {
+    "esbmc_verdict": "SUCCESS",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "SUCCESS",
+    "compilation_ok": true,
+    "num_checks": 3,
+    "error": "",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_linked_list_pop_back": {
+    "esbmc_verdict": "TIMEOUT",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "TIMEOUT",
+    "compilation_ok": false,
+    "num_checks": 0,
+    "error": "ESBMC timed out after 300s",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_linked_list_pop_front": {
+    "esbmc_verdict": "TIMEOUT",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "TIMEOUT",
+    "compilation_ok": false,
+    "num_checks": 0,
+    "error": "ESBMC timed out after 300s",
+    "harness_iter": "iter_1_harness"
+  },
+  "aws_ring_buffer_clean_up": {
+    "esbmc_verdict": "TIMEOUT",
+    "cbmc_verdict": "SUCCESS",
+    "esbmc_gt_verdict": "TIMEOUT",
+    "compilation_ok": false,
+    "num_checks": 0,
+    "error": "ESBMC timed out after 300s",
+    "harness_iter": "iter_2_harness"
+  }
+}

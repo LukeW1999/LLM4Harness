@@ -1,0 +1,11 @@
+{
+  "func": "aws_byte_buf_from_c_str",
+  "total_mutants": 7,
+  "gt_score": 1.0,
+  "llm_score": 0.571,
+  "missed_by_llm": [
+    "ASSIGN_ZERO(buf.len)",
+    "ASSIGN_ZERO(buf.capacity)",
+    "ASSIGN_ZERO(buf.buffer)"
+  ]
+}

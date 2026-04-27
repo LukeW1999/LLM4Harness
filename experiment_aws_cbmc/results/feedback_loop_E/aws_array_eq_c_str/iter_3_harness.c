@@ -1,0 +1,45 @@
+#include <aws/common/common.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <aws/common/byte_buf.h>
+
+void aws_array_eq_c_str_harness() {
+    /* 1. Declare and bound data structures */
+    const void *array = (const void *)nondet_uint8_t_ptr();
+    size_t array_len = nondet_size_t();
+    const char *c_str = (const char *)nondet_uint8_t_ptr();
+
+    /* Bounding assumptions */
+    __CPROVER_assume(array_len <= MAX_BUFFER_SIZE);
+    __CPROVER_assume(AWS_MEM_IS_READABLE(array, array_len));
+    __CPROVER_assume(AWS_MEM_IS_READABLE(c_str, array_len + 1)); /* +1 for null terminator */
+
+    /* Additional assumption to ensure c_str is null-terminated */
+    __CPROVER_assume(((const uint8_t *)c_str)[array_len] == '\0');
+
+    /* Assume array and c_str are either equal or differ at some point */
+    bool arrays_equal = true;
+    for (size_t i = 0; i < array_len; ++i) {
+        if (((const uint8_t *)array)[i] != ((const uint8_t *)c_str)[i]) {
+            arrays_equal = false;
+            break;
+        }
+    }
+
+    /* 3. Call function under test */
+    bool result = aws_array_eq_c_str(array, array_len, c_str);
+
+    /* 4. Assert postconditions for BOTH success and failure paths */
+    if (result) {
+        /* On success, array and c_str must be equivalent up to array_len */
+        assert(arrays_equal);
+    } else {
+        /* On failure, array and c_str differ at some point */
+        assert(!arrays_equal);
+    }
+
+    /* 5. Assert fields that must NOT change regardless of result */
+    /* No fields to assert as this is a pure function */
+
+    /* 6. Assert validity invariant always holds */
+    /* No validity invariants to assert as this is a pure function */
+}

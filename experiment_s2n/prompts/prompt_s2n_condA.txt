@@ -1,0 +1,164 @@
+You are an expert in CBMC formal verification of C programs.
+
+Your task is to write a CBMC proof harness for the following C function from the s2n-tls library (Amazon's TLS implementation).
+
+## Natural Language Specification (from header)
+
+The header below contains:
+- Data structure definitions for s2n_stuffer (a buffer with read/write cursors)
+- Validity predicate documentation
+- The function declaration, optionally with a NL comment
+
+Use the comments and function name to infer `__CPROVER_assume` preconditions and `assert` postconditions.
+
+```c
+{HEADER_CONTENT}
+```
+
+## Function Implementation
+
+```c
+{IMPLEMENTATION_CONTENT}
+```
+
+## Available CBMC Proof Helper API
+
+```c
+#include <cbmc_proof/make_common_datastructures.h>
+#include <cbmc_proof/cbmc_utils.h>
+
+/* Allocate a nondeterministic stuffer (all fields unconstrained) */
+struct s2n_stuffer *cbmc_allocate_s2n_stuffer();
+
+/* Allocate a nondeterministic blob (all fields unconstrained) */
+struct s2n_blob *cbmc_allocate_s2n_blob();
+
+/* Validity predicates — use with __CPROVER_assume to constrain inputs */
+S2N_RESULT s2n_stuffer_validate(const struct s2n_stuffer *stuffer);
+S2N_RESULT s2n_blob_validate(const struct s2n_blob *blob);
+bool s2n_result_is_ok(S2N_RESULT result);
+
+/* Save a nondeterministic byte from a buffer for later immutability check */
+void save_byte_from_blob(const struct s2n_blob *blob, struct store_byte_from_buffer *storage);
+void save_byte_from_array(const uint8_t *array, size_t size, struct store_byte_from_buffer *storage);
+
+/* Assert that a saved byte still matches (checks buffer immutability) */
+void assert_byte_from_blob_matches(const struct s2n_blob *blob, const struct store_byte_from_buffer *b);
+void assert_byte_from_buffer_matches(const uint8_t *buffer, const struct store_byte_from_buffer *b);
+
+/* Nondeterministic scalars */
+bool nondet_bool();
+uint8_t nondet_uint8_t();
+uint16_t nondet_uint16_t();
+uint32_t nondet_uint32_t();
+size_t nondet_size_t();
+```
+
+## Key Data Structure
+
+```c
+struct s2n_stuffer {
+    struct s2n_blob blob;         /* underlying buffer */
+    uint32_t read_cursor;
+    uint32_t write_cursor;
+    uint32_t high_water_mark;
+    unsigned int alloced  : 1;    /* stuffer owns the blob memory */
+    unsigned int growable : 1;    /* can the stuffer grow? */
+    unsigned int tainted  : 1;    /* raw access occurred — prevents resize */
+};
+/* s2n_stuffer_data_available(s) == s->write_cursor - s->read_cursor */
+/* s2n_stuffer_space_remaining(s) == s->blob.size - s->write_cursor */
+
+struct s2n_blob {
+    uint8_t *data;
+    uint32_t size;
+    uint32_t allocated;
+    unsigned int growable : 1;
+};
+```
+
+## Return Value Semantics
+
+```c
+S2N_SUCCESS = 0    (int return: 0 on success)
+S2N_FAILURE = -1   (int return: -1 on error)
+/* Check: if (result == S2N_SUCCESS) { ... } */
+```
+
+## Standard s2n-tls Harness Pattern
+
+```c
+void s2n_XXX_harness() {
+    /* 1. Allocate and validate inputs non-deterministically */
+    struct s2n_stuffer *stuffer = cbmc_allocate_s2n_stuffer();
+    __CPROVER_assume(s2n_result_is_ok(s2n_stuffer_validate(stuffer)));
+
+    /* 2. Save old state BEFORE calling */
+    struct s2n_stuffer old_stuffer = *stuffer;
+    struct store_byte_from_buffer old_byte;
+    save_byte_from_blob(&stuffer->blob, &old_byte);
+
+    /* 3. Call function under test */
+    int result = s2n_XXX(stuffer, ...);
+
+    /* 4. Assert postconditions for success path */
+    if (result == S2N_SUCCESS) {
+        assert(/* what changed, e.g. stuffer->write_cursor == old_stuffer.write_cursor + n */);
+    } else {
+        assert(stuffer->read_cursor == old_stuffer.read_cursor);
+        assert(stuffer->write_cursor == old_stuffer.write_cursor);
+    }
+
+    /* 5. Assert the stuffer data (blob) is unmodified (if applicable) */
+    assert_byte_from_blob_matches(&stuffer->blob, &old_byte);
+
+    /* 6. Assert validity invariant is preserved */
+    assert(s2n_result_is_ok(s2n_stuffer_validate(stuffer)));
+}
+```
+
+## CRITICAL — Four categories of postconditions you MUST cover
+
+### 1. Changed fields (from implementation)
+Assert what the function changes on success:
+```c
+assert(stuffer->write_cursor == old_stuffer.write_cursor + n);
+assert(stuffer->read_cursor == old_stuffer.read_cursor + n);
+```
+
+### 2. Unchanged fields (implicit invariant)
+For fields NOT changed by the function, assert immutability:
+```c
+assert(stuffer->blob.data == old_stuffer.blob.data);   /* pointer unchanged */
+assert(stuffer->blob.size == old_stuffer.blob.size);   /* size unchanged */
+assert(stuffer->write_cursor == old_stuffer.write_cursor);  /* cursor unchanged */
+```
+
+### 3. Both return paths
+Cover both S2N_SUCCESS and S2N_FAILURE:
+```c
+if (result == S2N_SUCCESS) { assert(/* success postcondition */); }
+else                       { assert(/* struct fields unchanged */); }
+```
+
+### 4. Validity invariant
+After the call:
+```c
+assert(s2n_result_is_ok(s2n_stuffer_validate(stuffer)));
+```
+
+## CRITICAL: assert() calls are mandatory
+
+A harness with no `assert()` calls is **invalid**.
+
+## Your Task
+
+Write the harness for `{FUNCTION_NAME}`. Before writing, determine:
+1. What stuffer/blob fields change on **success**?
+2. What fields are **unchanged** (read-only on failure, immutable)?
+3. What validity invariants must hold after the call?
+4. Does the function read from or write to an additional blob parameter?
+
+## Output Format
+
+Output ONLY the harness .c file. Start with `#include` directives. Use `void {FUNCTION_NAME}_harness()` as the entry point.

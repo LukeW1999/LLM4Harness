@@ -1,0 +1,7 @@
+{
+  "func": "aws_byte_buf_init",
+  "total_mutants": 9,
+  "gt_score": 0.667,
+  "llm_score": 0.778,
+  "missed_by_llm": []
+}

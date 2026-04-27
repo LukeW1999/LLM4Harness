@@ -1,0 +1,252 @@
+[
+  {
+    "func": "s2n_stuffer_init",
+    "condition": "A",
+    "gt_count": 4,
+    "llm_count": 13,
+    "matched": 2,
+    "recall_fuzzy": 0.5,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_alloc",
+    "condition": "A",
+    "gt_count": 16,
+    "llm_count": 25,
+    "matched": 6,
+    "recall_fuzzy": 0.375,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_growable_alloc",
+    "condition": "A",
+    "gt_count": 17,
+    "llm_count": 16,
+    "matched": 5,
+    "recall_fuzzy": 0.29411764705882354,
+    "converged": false,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_free",
+    "condition": "A",
+    "gt_count": 17,
+    "llm_count": 17,
+    "matched": 3,
+    "recall_fuzzy": 0.17647058823529413,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_resize",
+    "condition": "A",
+    "gt_count": 35,
+    "llm_count": 22,
+    "matched": 7,
+    "recall_fuzzy": 0.2,
+    "converged": false,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_resize_if_empty",
+    "condition": "A",
+    "gt_count": 15,
+    "llm_count": 24,
+    "matched": 12,
+    "recall_fuzzy": 0.8,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_rewrite",
+    "condition": "A",
+    "gt_count": 14,
+    "llm_count": 8,
+    "matched": 3,
+    "recall_fuzzy": 0.21428571428571427,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_rewind_read",
+    "condition": "A",
+    "gt_count": 18,
+    "llm_count": 16,
+    "matched": 5,
+    "recall_fuzzy": 0.2777777777777778,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_wipe",
+    "condition": "A",
+    "gt_count": 7,
+    "llm_count": 11,
+    "matched": 2,
+    "recall_fuzzy": 0.2857142857142857,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_wipe_n",
+    "condition": "A",
+    "gt_count": 14,
+    "llm_count": 8,
+    "matched": 3,
+    "recall_fuzzy": 0.21428571428571427,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "condition": "A",
+    "gt_count": 13,
+    "llm_count": 16,
+    "matched": 10,
+    "recall_fuzzy": 0.7692307692307693,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_skip_write",
+    "condition": "A",
+    "gt_count": 11,
+    "llm_count": 12,
+    "matched": 8,
+    "recall_fuzzy": 0.7272727272727273,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_read",
+    "condition": "A",
+    "gt_count": 17,
+    "llm_count": 7,
+    "matched": 5,
+    "recall_fuzzy": 0.29411764705882354,
+    "converged": false,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_write",
+    "condition": "A",
+    "gt_count": 17,
+    "llm_count": 12,
+    "matched": 10,
+    "recall_fuzzy": 0.5882352941176471,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_read_bytes",
+    "condition": "A",
+    "gt_count": 6,
+    "llm_count": 16,
+    "matched": 4,
+    "recall_fuzzy": 0.6666666666666666,
+    "converged": false,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_write_bytes",
+    "condition": "A",
+    "gt_count": 12,
+    "llm_count": 12,
+    "matched": 8,
+    "recall_fuzzy": 0.6666666666666666,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_erase_and_read",
+    "condition": "A",
+    "gt_count": 18,
+    "llm_count": 16,
+    "matched": 9,
+    "recall_fuzzy": 0.5,
+    "converged": false,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_read_uint8",
+    "condition": "A",
+    "gt_count": 17,
+    "llm_count": 14,
+    "matched": 4,
+    "recall_fuzzy": 0.23529411764705882,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_write_uint8",
+    "condition": "A",
+    "gt_count": 15,
+    "llm_count": 13,
+    "matched": 8,
+    "recall_fuzzy": 0.5333333333333333,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "condition": "A",
+    "gt_count": 17,
+    "llm_count": 16,
+    "matched": 4,
+    "recall_fuzzy": 0.23529411764705882,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_write_uint32",
+    "condition": "A",
+    "gt_count": 15,
+    "llm_count": 12,
+    "matched": 8,
+    "recall_fuzzy": 0.5333333333333333,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_copy",
+    "condition": "A",
+    "gt_count": 14,
+    "llm_count": 14,
+    "matched": 6,
+    "recall_fuzzy": 0.42857142857142855,
+    "converged": false,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_extract_blob",
+    "condition": "A",
+    "gt_count": 21,
+    "llm_count": 13,
+    "matched": 6,
+    "recall_fuzzy": 0.2857142857142857,
+    "converged": false,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_reserve_space",
+    "condition": "A",
+    "gt_count": 27,
+    "llm_count": 23,
+    "matched": 12,
+    "recall_fuzzy": 0.4444444444444444,
+    "converged": true,
+    "note": ""
+  },
+  {
+    "func": "s2n_stuffer_is_consumed",
+    "condition": "A",
+    "gt_count": 18,
+    "llm_count": 9,
+    "matched": 3,
+    "recall_fuzzy": 0.16666666666666666,
+    "converged": true,
+    "note": ""
+  }
+]

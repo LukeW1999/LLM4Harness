@@ -1,0 +1,47 @@
+{
+  "variant": "feedback_loop_C_claude",
+  "iteration": 1,
+  "functions": [
+    {
+      "func": "aws_array_list_back",
+      "total_mutants": 1,
+      "gt_score": 0.0,
+      "llm_score": 0.0,
+      "missed_by_llm": []
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "total_mutants": 1,
+      "gt_score": 0.0,
+      "llm_score": 0.0,
+      "missed_by_llm": []
+    },
+    {
+      "func": "aws_byte_cursor_from_array",
+      "total_mutants": 4,
+      "gt_score": 1.0,
+      "llm_score": 1.0,
+      "missed_by_llm": []
+    },
+    {
+      "func": "aws_byte_cursor_from_buf",
+      "total_mutants": 4,
+      "gt_score": 1.0,
+      "llm_score": 1.0,
+      "missed_by_llm": []
+    },
+    {
+      "func": "aws_byte_cursor_from_c_str",
+      "total_mutants": 4,
+      "gt_score": 0.75,
+      "llm_score": 1.0,
+      "missed_by_llm": []
+    }
+  ],
+  "aggregate": {
+    "n": 5,
+    "avg_gt_score": 0.55,
+    "avg_llm_score": 0.6,
+    "total_mutants": 14
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "func": "aws_byte_cursor_from_c_str",
+  "total_mutants": 4,
+  "gt_score": 0.75,
+  "llm_score": 1.0,
+  "missed_by_llm": []
+}

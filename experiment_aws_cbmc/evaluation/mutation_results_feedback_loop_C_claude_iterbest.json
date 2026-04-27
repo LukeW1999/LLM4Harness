@@ -1,0 +1,93 @@
+{
+  "variant": "feedback_loop_C_claude",
+  "iteration": "best",
+  "functions": [
+    {
+      "func": "aws_byte_buf_init",
+      "total_mutants": 9,
+      "gt_score": 0.667,
+      "llm_score": 0.778,
+      "missed_by_llm": []
+    },
+    {
+      "func": "aws_array_list_back",
+      "total_mutants": 1,
+      "gt_score": 0.0,
+      "llm_score": 0.0,
+      "missed_by_llm": []
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "total_mutants": 1,
+      "gt_score": 0.0,
+      "llm_score": 0.0,
+      "missed_by_llm": []
+    },
+    {
+      "func": "aws_array_list_init_dynamic",
+      "total_mutants": 10,
+      "gt_score": 0.7,
+      "llm_score": 0.7,
+      "missed_by_llm": []
+    },
+    {
+      "func": "aws_array_list_init_static",
+      "total_mutants": 8,
+      "gt_score": 0.5,
+      "llm_score": 0.5,
+      "missed_by_llm": []
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "total_mutants": 1,
+      "gt_score": 1.0,
+      "llm_score": 1.0,
+      "missed_by_llm": []
+    },
+    {
+      "func": "aws_byte_buf_from_c_str",
+      "total_mutants": 7,
+      "gt_score": 1.0,
+      "llm_score": 0.571,
+      "missed_by_llm": [
+        "ASSIGN_ZERO(buf.len)",
+        "ASSIGN_ZERO(buf.capacity)",
+        "ASSIGN_ZERO(buf.buffer)"
+      ]
+    },
+    {
+      "func": "aws_byte_buf_init_copy",
+      "total_mutants": 9,
+      "gt_score": 0.556,
+      "llm_score": 0.556,
+      "missed_by_llm": []
+    },
+    {
+      "func": "aws_byte_cursor_from_array",
+      "total_mutants": 4,
+      "gt_score": 1.0,
+      "llm_score": 1.0,
+      "missed_by_llm": []
+    },
+    {
+      "func": "aws_byte_cursor_from_buf",
+      "total_mutants": 4,
+      "gt_score": 1.0,
+      "llm_score": 1.0,
+      "missed_by_llm": []
+    },
+    {
+      "func": "aws_byte_cursor_from_c_str",
+      "total_mutants": 4,
+      "gt_score": 0.75,
+      "llm_score": 1.0,
+      "missed_by_llm": []
+    }
+  ],
+  "aggregate": {
+    "n": 11,
+    "avg_gt_score": 0.652,
+    "avg_llm_score": 0.646,
+    "total_mutants": 58
+  }
+}

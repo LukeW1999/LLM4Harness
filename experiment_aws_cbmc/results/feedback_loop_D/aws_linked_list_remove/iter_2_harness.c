@@ -1,0 +1,54 @@
+#include <aws/common/linked_list.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+
+void aws_linked_list_remove_harness() {
+    struct aws_linked_list_node node;
+    struct aws_linked_list_node prev_node;
+    struct aws_linked_list_node next_node;
+
+    // Initialize nodes
+    node.prev = &prev_node;
+    node.next = &next_node;
+    prev_node.next = &node;
+    next_node.prev = &node;
+
+    // Add assumptions for valid nodes
+    __CPROVER_assume(aws_linked_list_node_is_valid(&node));
+    __CPROVER_assume(aws_linked_list_node_is_valid(&prev_node));
+    __CPROVER_assume(aws_linked_list_node_is_valid(&next_node));
+
+    // Save old states
+    struct aws_linked_list_node old_node = node;
+    struct aws_linked_list_node old_prev_node = prev_node;
+    struct aws_linked_list_node old_next_node = next_node;
+
+    // Call the function under test
+    int result = aws_linked_list_remove(&node);
+
+    // Assertions for frame conditions and validity invariants
+    if (result == AWS_OP_SUCCESS) {
+        assert(node.next == old_node.next); // node->next: UNCHANGED always
+        assert(node.prev == old_node.prev); // node->prev: UNCHANGED always
+
+        assert(prev_node.next == &node ? prev_node.next == &next_node : prev_node.next == old_prev_node.next); // prev_node->next: CHANGED on success
+        assert(prev_node.prev == old_prev_node.prev); // prev_node->prev: UNCHANGED always
+
+        assert(next_node.prev == &node ? next_node.prev == &prev_node : next_node.prev == old_next_node.prev); // next_node->prev: CHANGED on success
+        assert(next_node.next == old_next_node.next); // next_node->next: UNCHANGED always
+    } else {
+        assert(node.next == old_node.next); // node->next: UNCHANGED always
+        assert(node.prev == old_node.prev); // node->prev: UNCHANGED always
+
+        assert(prev_node.next == old_prev_node.next); // prev_node->next: UNCHANGED always
+        assert(prev_node.prev == old_prev_node.prev); // prev_node->prev: UNCHANGED always
+
+        assert(next_node.prev == old_next_node.prev); // next_node->prev: UNCHANGED always
+        assert(next_node.next == old_next_node.next); // next_node->next: UNCHANGED always
+    }
+
+    // Validity invariants
+    assert(aws_linked_list_node_is_valid(&node));
+    assert(aws_linked_list_node_is_valid(&prev_node));
+    assert(aws_linked_list_node_is_valid(&next_node));
+}

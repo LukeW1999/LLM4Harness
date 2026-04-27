@@ -1,0 +1,7 @@
+{
+  "func": "aws_array_list_back",
+  "total_mutants": 1,
+  "gt_score": 0.0,
+  "llm_score": 0.0,
+  "missed_by_llm": []
+}
