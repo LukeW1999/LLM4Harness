@@ -9,9 +9,9 @@
 **Core Claim**
 > LLM-generated CBMC proof harnesses verify behavioural consistency of an implementation rather than the semantic specification of a function. We formally quantify this deviation using mutation testing with bidirectional CEX confirmation, and reveal its root cause through bug injection experiments.
 
-**Target Venue:** ICSE 2028 research track (fallback: FSE 2027)
+**Target Venue:** FSE 2027 (deadline ~October 2026; fallback: ASE 2027)
 
-**Submission Target:** 2027/03
+**Submission Target:** 2026/10
 
 **Corpus**
 - aws-c-common: 83 functions, 7 data structure families
@@ -29,7 +29,7 @@
 |----|----------|--------|--------|
 | RQ1 | What properties do LLM-generated harnesses systematically miss? | H_LLM vs H_GT assertion comparison, taxonomy classification | Core results in hand, replication needed |
 | RQ2 | What is the gap between H_LLM and H_GT in detecting real bugs? Are there cases where H_LLM is stronger? | Broad mutant set + bidirectional CEX confirmation | Not started |
-| RQ3 | When generating harnesses, is the LLM understanding function semantics or conforming to the current implementation? | Bug injection experiment, H_buggy vs H_original | Not started |
+| RQ3 | Does the feedback strategy (delete vs refine) determine whether bugs are silenced or detected, and does this effect vary per assertion category? | Pipeline A vs B on stratified subset of RQ2 confirmed bugs; per-category SR and PR | Not started |
 
 ---
 
@@ -44,15 +44,23 @@
 | UNSAT | SAT | H_LLM is stronger | **Most interesting**, classify CEX |
 | UNSAT | UNSAT | Both miss | Discard |
 
-### RQ3 Core Test Logic
+### RQ3 Design: Pipeline A vs Pipeline B
 
-```
-Give LLM f_buggy (without revealing it is a mutant) → generate H_buggy
+Both pipelines receive the same mutant function (presented as correct code); LLM is unaware it is a mutant.
 
-ESBMC(H_buggy, f_buggy)    → expect UNSAT (sanity check)
-ESBMC(H_buggy, f_original) → SAT   = semantic understanding
-                              UNSAT = code conformance
-```
+**Pipeline A — Delete:** On SAT, LLM may remove the violated assertion. Iterates to UNSAT. Replicates default behaviour; expected to silence bugs.
+
+**Pipeline B — Refine:** On SAT, LLM receives full CEX (concrete input + violated assertion + category) and must refine the assertion without deleting it. May tighten assumes with explicit justification.
+
+**Confirmation (after both pipelines):** Run CBMC(H_buggy_P, f_original) for P ∈ {A, B}. SAT + concrete execution divergence confirms real bug detection; UNSAT means bug silenced.
+
+**Subject selection:** Stratified subset of RQ2 GT SAT / LLM UNSAT cases, balanced across three taxonomy categories. RQ1 category labels reused directly.
+
+**Primary metrics per pipeline P and category c:**
+- Silencing rate SR_{P,c}: proportion where CBMC(H_buggy_P, f_original) = UNSAT
+- Pass rate PR_{P,c}: proportion where pipeline achieves UNSAT on the mutant within budget
+
+The joint (SR, PR) per category is the primary result: identifies where refine is low-cost vs where it strains LLM capability.
 
 ### Taxonomy (from RQ1)
 
@@ -306,88 +314,95 @@ ESBMC(H_buggy, f_original) → SAT   = semantic understanding
 ---
 
 ### Phase 7: RQ3 Experiment Run
-**Goal:** Complete bug injection experiment; obtain preliminary semantic-understanding vs conformance distribution
+**Goal:** Run Pipeline A and Pipeline B on stratified subset; obtain per-category SR and PR
 **Duration:** 3 weeks
-**Criteria:** Sanity check pass rate > 80%; valid sample size > 60
+**Criteria:** Sufficient sample per category (target ≥ 20 per category per pipeline); pipeline reaches UNSAT within budget for > 70% of subjects
 
-#### Sample Selection
+#### Subject Selection
 
-- [ ] Select ~100 functions from the SAT/UNSAT set
-- [ ] Prioritise functions with lowest kill rate per category
-- [ ] Prepare f_buggy files (= mutant m)
+- [ ] From RQ2 GT SAT / LLM UNSAT cases, stratify by category
+- [ ] Target balanced sample: ~20–30 per category (adjust if RQ2 counts are low)
+- [ ] If any category is under-represented, supplement with additional mutants of that type
+- [ ] Prepare mutant files and confirm f_original is available for each subject
 
-#### H_buggy Generation
+#### Pipeline A — Delete
 
-- [ ] Provide LLM with f_buggy (same prompt conditions)
-- [ ] Generate H_buggy for ~100 functions
+- [ ] Provide LLM with mutant function labelled as correct implementation
+- [ ] Run CBMC feedback loop; record each assertion deletion with iteration number
+- [ ] Iterate until UNSAT or budget exhausted
+- [ ] Pipeline A pass rate per category: ___
 
-#### Sanity Check
+#### Pipeline B — Refine
 
-- [ ] ESBMC(H_buggy, f_buggy) → expect UNSAT
-- [ ] Record and discard failing samples
-- [ ] Sanity check pass rate: ___%
+- [ ] Same subjects; same LLM; provide full CEX on SAT (concrete input + violated assertion + category label)
+- [ ] Instruct LLM: refine without deleting; justification required for any assume tightening
+- [ ] Iterate until UNSAT or budget exhausted
+- [ ] Pipeline B pass rate per category: ___
 
-#### Core Test
+#### Confirmation Step
 
-- [ ] ESBMC(H_buggy, f_original) batch run
-- [ ] Record SAT / UNSAT results
+- [ ] Run CBMC(H_buggy_A, f_original) for all Pipeline A subjects
+- [ ] Run CBMC(H_buggy_B, f_original) for all Pipeline B subjects
+- [ ] For SAT cases: execute concrete CEX input against both f_original and f_buggy; confirm f_original(I) ≠ f_buggy(I)
 
 #### Outputs
 
-- [ ] Valid sample count: ___
-- [ ] Preliminary results:
-  - Semantic understanding (SAT): ___%
-  - Code conformance (UNSAT): ___%
-- [ ] Outcome category: A (conformance dominant) / B (understanding dominant) / C (split)
+- [ ] Per-category pass rate table:
+
+  |  | Pipeline A PR | Pipeline B PR |
+  |--|---------------|---------------|
+  | validity | | |
+  | length | | |
+  | frame | | |
+
+- [ ] Per-category silencing rate table:
+
+  |  | Pipeline A SR | Pipeline B SR |
+  |--|---------------|---------------|
+  | validity | | |
+  | length | | |
+  | frame | | |
+
+- [ ] Preliminary narrative: which category is low-cost for refine, which forces tradeoff
 
 ---
 
 ### Phase 8: RQ3 Fine-Grained Analysis
-**Goal:** Complete all fine-grained stratifications and determine final narrative
+**Goal:** Complete per-category SR/PR analysis, cross-RQ consistency check, determine final narrative
 **Duration:** 3 weeks
-**Criteria:** Fine-grained stratifications are statistically significant; conclusions across all three RQs are internally consistent
+**Criteria:** SR gap (A−B) is statistically significant in at least one category; cross-RQ consistency holds
 
-#### Stratification by Taxonomy Category
+#### Per-Category SR and PR Analysis
 
-- [ ] Conformance rate for validity class: ___%
-- [ ] Conformance rate for length class: ___%
-- [ ] Conformance rate for frame class: ___%
-- [ ] Statistical significance test
+- [ ] SR_{A,c} vs SR_{B,c} for each category c; compute gap SR_A − SR_B per category
+- [ ] PR_{A,c} vs PR_{B,c} for each category c; compute cost PR_A − PR_B per category
+- [ ] Statistical significance test (Fisher's exact or chi-squared per category)
+- [ ] Identify: which category is low-cost refine (PR barely changes, SR drops sharply)?
+- [ ] Identify: which category forces tradeoff (SR improves but PR degrades)?
 
-#### Stratification by Function Characteristics
+#### Assertion Deletion Log Analysis (Pipeline A)
 
-- [ ] With comments vs without comments: ___% vs ___%
-- [ ] Simple (< 20 lines) vs complex (> 50 lines): ___% vs ___%
+- [ ] Distribution of deleted assertion categories across iterations
+- [ ] Average iteration at which each category is first deleted
+- [ ] Consistency with RQ1 active sacrifice distribution
 
-#### Assertion Comparison Analysis
+#### Internal Consistency Check (Three-RQ Chain)
 
-- [ ] Differences between H_original and H_buggy assertions
-- [ ] Distribution of disappeared assertion categories
-- [ ] Analysis of newly introduced assertions (conforming to buggy behaviour)
-
-#### Stratification by Prompt Condition
-
-- [ ] Conformance rate for code-only: ___%
-- [ ] Conformance rate for code+NL: ___%
-- [ ] Conformance rate for same-family: ___%
-
-#### Internal Consistency Check
-
-- [ ] Categories with high RQ1 miss → low RQ2 kill rate → high RQ3 conformance rate?
+- [ ] High RQ1 miss rate → low RQ2 kill rate → high SR_A (bug silenced) per category?
   - validity: consistent / inconsistent
   - length: consistent / inconsistent
   - frame: consistent / inconsistent
 
 #### Figures
 
-- [ ] Fine-grained distribution heatmap
-- [ ] Assertion disappearance pattern chart
-- [ ] Three-RQ consistency summary figure
+- [ ] (SR, PR) scatter per category for both pipelines
+- [ ] SR gap and PR gap bar chart per category
+- [ ] Three-RQ consistency summary table
 
 #### Outputs
 
-- [ ] Fine-grained distribution table (category × characteristic × prompt condition)
-- [ ] Final narrative confirmed: Outcome A / B / C
+- [ ] Final per-category joint (SR, PR) table
+- [ ] RQ3 conclusion: frame condition is low-cost / validity forces tradeoff / (actual result)
 - [ ] RQ3 conclusion draft
 
 ---
@@ -406,8 +421,9 @@ ESBMC(H_buggy, f_original) → SAT   = semantic understanding
 #### Venue Decision
 
 - [ ] Discuss results with supervisor
-- [ ] Decide between ICSE 2028 and FSE 2027
-- [ ] Decision: ___
+- [ ] Primary: FSE 2027 (~October 2026 deadline)
+- [ ] Fallback: ASE 2027 (if RQ3 not stable by Oct 2026)
+- [ ] Decision confirmed: ___
 
 #### Paper Structure
 
@@ -515,7 +531,7 @@ ESBMC(H_buggy, f_original) → SAT   = semantic understanding
 | 9 | Results Integration | ☐ | | |
 | 10 | Writing | ☐ | | |
 | 11 | Review + Revision | ☐ | | |
-| 12 | Submission | ☐ | 2027/03 | |
+| 12 | Submission | ☐ | 2026/10 (FSE) / 2027 (ASE fallback) | |
 
 ---
 
@@ -533,9 +549,8 @@ After RQ2:
     Is the kill rate gap significant? (p > 0.05 → revisit design)
 
 After RQ3:
-    Outcome A → target ICSE 2028
-    Outcome B → consider FSE 2027
-    Outcome C → either ICSE 2028 or FSE 2027
+    SR/PR results stable by Oct 2026 → submit FSE 2027
+    Results not stable by Oct 2026 → submit ASE 2027 (same scope, no reduction)
 ```
 
 ---
@@ -554,4 +569,4 @@ After RQ3:
 
 ---
 
-*Last updated: 2026/05/26*
+*Last updated: 2026/05/28*
