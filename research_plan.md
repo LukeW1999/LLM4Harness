@@ -104,15 +104,22 @@ RQ1 establishes that active sacrifices — assertions removed to achieve UNSAT �
 
 RQ3 operates on a stratified subset of the RQ2 confirmed bugs (GT SAT / LLM UNSAT cases), sampled to achieve balanced representation across the three taxonomy categories. Assertion-category labels from RQ1 are reused directly; no re-annotation is required. The same LLM is used throughout RQ3 to hold model capability constant; the feedback protocol is the sole independent variable.
 
-### Two Pipelines
+### Three Pipelines
 
-Both pipelines receive the same mutant function $f_\mathrm{buggy}$, presented to the LLM as the correct implementation. The LLM is not informed that the function is a mutant.
+All pipelines receive the same mutant function $f_\mathrm{buggy}$, presented to the LLM as the correct implementation. The LLM is not informed that the function is a mutant. The input domain is established in a **setup phase** (structural validity and bounding assumes, matching GT harness practice) before the function call; this setup is identical across all pipelines.
 
-**Pipeline A — Delete.** The LLM receives full CBMC output after each iteration. On SAT, the LLM may respond by removing or weakening the violated assertion. Iteration continues until UNSAT. This replicates the default behaviour observed in RQ1 and is expected to produce harnesses that silence bugs, because any assertion that $f_\mathrm{buggy}$ violates will be eliminated to achieve UNSAT.
+**Pipeline A — Delete.** On SAT, the LLM may remove or weaken the violated assertion. `__CPROVER_assume` additions are prohibited as a response to SAT (they are permitted only during the initial setup phase). Iteration continues until UNSAT. This replicates the default behaviour observed in RQ1 and is expected to produce harnesses that silence bugs, because any assertion that $f_\mathrm{buggy}$ violates will be eliminated to achieve UNSAT.
 
-**Pipeline B — Refine.** On SAT, the LLM receives the full counterexample, including the concrete input assignment, the violated assertion, and the assertion category. The LLM is instructed to analyse the counterexample and refine the assertion to be more precise without deleting it. The LLM may additionally tighten `__CBMC_assume` constraints to exclude the counterexample input if it judges that input to be outside the function's valid domain, but must provide an explicit justification for any such exclusion. Iteration continues until UNSAT.
+**Pipeline B-strict — Predicate Refinement Only (primary comparator).** On SAT, the LLM receives the full counterexample (concrete input assignment, violated assertion, assertion category) and must refine the *assertion predicate itself* to be more precise. The input domain established in the setup phase is frozen for the remainder of the run: no `__CPROVER_assume` clause may be added or modified after setup. Only assertion-predicate edits are permitted as a response to a counterexample. If the LLM cannot refine the predicate to satisfy the mutant while maintaining the intended postcondition, iteration budget is exhausted.
 
-**Assume-tightening detection (Pipeline B only):** After a Pipeline B harness reaches UNSAT, the final harness is post-processed: all `__CBMC_assume` clauses that were added or modified during the pipeline run are temporarily removed, and CBMC is re-run. If the harness reverts to SAT, the UNSAT was driven by assume tightening rather than genuine assertion refinement — this subject is classified as *vacuous UNSAT* and reported separately, not counted as a Pipeline B success. This guards against the pathological case where Pipeline B achieves UNSAT by effectively excluding the bug-triggering input domain rather than asserting the correct postcondition.
+*B-strict fix_verification_prompt (per-arm, distinct from Pipeline A):*
+> The input-domain assumptions set up before the function call are fixed. Do NOT add, strengthen, or modify any `__CPROVER_assume` after setup. If an assertion is too strong: make its predicate more precise so it states the true postcondition that holds for all inputs already admitted by setup. Do NOT delete the assertion. Do NOT exclude the counterexample input. If no refined predicate can hold for an admitted input, stop and report failure.
+
+**Pipeline B-relaxed — Refine with Justified Domain Restriction (secondary arm).** Identical to B-strict except the LLM may additionally tighten `__CPROVER_assume` constraints if it provides explicit written justification that the excluded input is outside the function's valid contract. This arm is included as a secondary comparison to quantify how much of B-strict's difficulty is attributable to legitimate domain-restriction needs vs. assume-based gaming.
+
+*Rationale for three-arm design:* Code inspection of the actual feedback loop implementation revealed that the existing `fix_verification_prompt` instructs the LLM to "add `__CPROVER_assume` to constrain the input" as a response to SAT failures. Ground-truth AWS harnesses use `__CPROVER_assume` only as structural preconditions set before the function call, never in response to assertion failures. A two-arm design with the permissive Pipeline B would confound assertion-predicate refinement with input-domain restriction, undermining the controlled comparison. The three-arm design isolates these mechanisms: the A→B-strict gap measures the causal effect of deletion prohibition; the B-strict→B-relaxed gap measures how much assume-based escape contributes when permitted.
+
+**Assume-tightening audit (B-relaxed only):** After B-relaxed reaches UNSAT, post-setup assumes are stripped and CBMC is re-run. If SAT reverts: classified *vacuous UNSAT*, reported separately with genuine/vacuous split. This audit is a validation layer confirming B-strict's domain-freeze held (zero post-setup assumes expected), not the primary control mechanism.
 
 ### Confirmation
 
@@ -120,13 +127,18 @@ After both pipelines complete, $f_\mathrm{original}$ is introduced for the first
 
 ### Metrics
 
-**Bug silencing rate** $\mathrm{SR}_{P,c}$: proportion of category-$c$ subjects for which CBMC($\mathcal{H}_\mathrm{buggy}^P$, $f_\mathrm{original}$) = UNSAT (bug silenced), excluding vacuous UNSAT cases. **Pass rate** $\mathrm{PR}_{P,c}$: proportion for which Pipeline $P$ reaches genuine UNSAT on $f_\mathrm{buggy}$ within the iteration budget (vacuous UNSAT excluded).
+**Bug silencing rate** $\mathrm{SR}_{P,c}$: proportion of category-$c$ subjects for which CBMC($\mathcal{H}_\mathrm{buggy}^P$, $f_\mathrm{original}$) = UNSAT (bug silenced). For B-relaxed, vacuous UNSAT (assume-driven) is reported separately. **Pass rate** $\mathrm{PR}_{P,c}$: proportion for which Pipeline $P$ reaches UNSAT on $f_\mathrm{buggy}$ within the iteration budget.
 
-**Power:** With a binary silencing outcome and expected effect $\mathrm{SR}_A - \mathrm{SR}_B \geq 0.35$ (based on the conformance hypothesis: Pipeline A near-always silences, Pipeline B detects a substantial fraction), Fisher's exact test at $\alpha = 0.05$, power = 0.80 requires $n \approx 22$ per category per pipeline. Target is 25–30 per category to provide a buffer for vacuous UNSAT exclusions. If any category yields fewer than 22 confirmed bugs from RQ2, that category's RQ3 result is reported as exploratory only.
+**Primary comparisons:**
+- $\mathrm{SR}_A - \mathrm{SR}_{B\text{-strict}}$: causal effect of deletion prohibition on bug silencing
+- $\mathrm{SR}_{B\text{-strict}} - \mathrm{SR}_{B\text{-relaxed}}$: marginal effect of allowing assume-based domain restriction
+- $\mathrm{PR}_A - \mathrm{PR}_{B\text{-strict}}$: pass-rate cost of enforcing predicate-only refinement
 
-**Null-result narrative:** If $\mathrm{SR}_A - \mathrm{SR}_B$ is not significant in any category, the finding is: "Even CEX-guided refinement cannot overcome the feedback-loop incentive toward specification weakening — the conformance pressure operates at a level that prompt-level interventions cannot address." This is a publishable and practically important negative result.
+**Power:** B-strict vs A is the primary comparison. With $\mathrm{SR}_A - \mathrm{SR}_{B\text{-strict}} \geq 0.35$, Fisher's exact at $\alpha = 0.05$, power = 0.80 requires $n \approx 22$ per category per pipeline. Target is 25–30 per category. If any category yields fewer than 22 confirmed bugs from RQ2, that category's RQ3 result is reported as exploratory.
 
-The joint $(\mathrm{SR}, \mathrm{PR})$ per category is the primary result: it identifies whether refine is low-cost (PR maintained, SR drops) or forces a tradeoff (PR degrades as the refine constraint is enforced).
+**Null-result narrative:** If $\mathrm{SR}_A - \mathrm{SR}_{B\text{-strict}}$ is not significant in any category: "Prohibiting assertion deletion is insufficient — conformance pressure is robust to this protocol constraint. LLMs under formal verifier feedback find alternative silencing paths regardless of the deletion rule." If B-strict ≈ B-relaxed: "Assume-based domain restriction accounts for little of the residual silencing; LLMs do not systematically exploit the assume escape route when deletion is already prohibited." Both are publishable findings.
+
+The joint $(\mathrm{SR}, \mathrm{PR})$ per category across three arms is the primary result table.
 
 ---
 
@@ -136,9 +148,9 @@ The joint $(\mathrm{SR}, \mathrm{PR})$ per category is the primary result: it id
 
 **External validity.** The corpus is limited to aws-c-common and s2n-tls. These are safety-critical C libraries subject to rigorous continuous formal verification, representative of the domain where BMC is most commonly practised at scale, but results may not generalise to other C software or to languages with different memory models. The two-library design partially mitigates this by covering distinct functional domains (data structures versus TLS protocol handling).
 
-**Construct validity.** The taxonomy categories are manually defined and require human judgement for boundary cases. Inter-rater $\kappa$ is reported with a minimum acceptance threshold of 0.8 before full annotation proceeds. In RQ2 and RQ3, classification via the triggered assertion in the BMC counterexample replaces human annotation for the majority of cases, reducing subjective influence on the primary quantitative results.
+**Construct validity.** The taxonomy categories are manually defined and require human judgement for boundary cases. Inter-rater $\kappa$ is reported with a minimum acceptance threshold of 0.8 before full annotation proceeds. In RQ2 and RQ3, classification via the triggered assertion in the BMC counterexample replaces human annotation for the majority of cases. The RQ3 treatment variable (feedback protocol) is operationalised at the prompt level; per-arm prompts are published as a replication artefact. The three-arm design (A / B-strict / B-relaxed) prevents confounding deletion-prohibition with input-domain restriction.
 
-**Conclusion validity.** Results are reported per model, per prompt condition, and per assertion category rather than as single aggregates, to prevent averaging effects from obscuring category-level differences. The Pipeline A versus Pipeline B comparison in RQ3 controls for LLM capability by construction; any observed difference in silencing rate and pass rate is attributable to the feedback protocol alone.
+**Conclusion validity.** Results are reported per model, per prompt condition, and per assertion category. The A vs B-strict comparison controls for LLM capability by construction; the B-strict vs B-relaxed comparison controls for model and subject. Any observed SR/PR difference between arms is attributable solely to the permitted operations in the feedback prompt.
 
 ---
 
@@ -165,7 +177,7 @@ Given the October 2026 submission deadline, the following scope decisions apply:
 **In scope (required for submission):**
 - RQ1: full run, 1 primary LLM × conditions A, B, D, F, G (drop C: CoT-only adds neither recall signal nor ablation value); taxonomy annotation (κ ≥ 0.8); active-sacrifice fraction as primary output
 - RQ2: ~1,900 mutants, ESBMC dual-oracle, soundness-parity enforced; concrete CEX confirmation for primary cases; focus analysis on the two gap-heavy categories identified by RQ1 (full 4-outcome table still reported for all categories)
-- RQ3: stratified subset from RQ2, 1 primary LLM, both pipelines, assume-tightening detection, per-category (SR, PR)
+- RQ3: stratified subset from RQ2, 1 primary LLM, three arms (A / B-strict / B-relaxed); per-arm distinct prompts; per-category (SR, PR) across all three arms
 
 **Confirmatory replication (second LLM, conditions A/B/E):** run in parallel with RQ1 main analysis; included in submission if results replicate; reported as "pending replication" in ASE fallback if not complete.
 
@@ -175,4 +187,4 @@ Given the October 2026 submission deadline, the following scope decisions apply:
 
 ---
 
-*Last updated: 2026/05/29*
+*Last updated: 2026/05/30*
