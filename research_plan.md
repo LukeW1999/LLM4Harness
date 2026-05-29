@@ -26,7 +26,7 @@ When LLMs generate CBMC proof harnesses under iterative verifier feedback, they 
 
 The study uses two production C libraries from Amazon's formal verification programme: aws-c-common (83 functions across 7 data-structure families) and the `s2n_stuffer` module of s2n-tls (25 functions), giving 108 functions in total. Amazon's formal verification engineers have written 238 proof harnesses for these functions as part of a continuously maintained verification pipeline; these constitute the expert ground truth corpus $\mathcal{H}_\mathrm{GT}$. The corpus has two properties that make it suitable as a research substrate: the underlying codebase is production-correct and formally verified against $\mathcal{H}_\mathrm{GT}$, and the harnesses are written by engineers with deep knowledge of both the library internals and the CBMC toolchain, making them the strongest available oracle for what a complete harness should assert.
 
-Two LLMs generate harnesses under seven prompt conditions: (A) source code only; (B) source code with natural language documentation; (C) source code with chain-of-thought elicitation; (D) source code with documentation and chain-of-thought; (E) source code with a same-family harness as a one-shot example; (F) source code with a wrong-family harness as an ablation control; **(G) source code only, single-pass — no CBMC feedback loop**. Condition G is a zero-feedback baseline: the LLM generates exactly once and receives no verifier output. Comparing G against A isolates the contribution of the iterative feedback loop itself to recall loss, independent of prompt design. Conditions E and F isolate the effect of in-context exemplar family match. For the main RQ1/RQ2 analysis one primary LLM is used across all seven conditions; a second LLM runs conditions A, B, and E as a confirmatory replication. RQ3 uses the primary LLM only, to hold model capability constant.
+Two LLMs generate harnesses under eight prompt conditions: (A) source code only; (B) source code with natural language documentation; (D) source code with documentation and chain-of-thought; (E) source code with a same-family harness as a one-shot example; (F) source code with a wrong-family harness as an ablation control; **(G) source code only, single-pass — no CBMC feedback loop**; **(H) source code only, iterative feedback — deletion-neutral prompt**. Condition G is a zero-feedback baseline: the LLM generates exactly once and receives no verifier output. Condition H uses the same iterative loop as A but the `fix_verification_prompt` makes no mention of weakening, removing, or adding `__CPROVER_assume` as a response to SAT — the LLM receives only the violated assertion and counterexample trace with no suggested repair strategy. Comparing G against A isolates the feedback loop's contribution to recall loss; comparing H against A isolates the contribution of the *deletion-permitting prompt* specifically. **If active sacrifice occurs at similar rates under H as under A, the conformance pressure is emergent in the LLM, not merely instructed by the prompt.** Conditions E and F isolate the effect of in-context exemplar family match. For the main RQ1/RQ2 analysis one primary LLM is used across all eight conditions; a second LLM runs conditions A, B, and E as a confirmatory replication. RQ3 uses the primary LLM only, to hold model capability constant.
 
 All harnesses are generated and evaluated under CBMC, which is the tool used natively by AWS. Compatible harnesses are subsequently migrated to ESBMC to provide a second verification backend. Migration validity requires two checks: (1) ESBMC($\mathcal{H}_\mathrm{GT}$, $f$) remains UNSAT after migration (UNSAT preservation); (2) for a random sample of 30 mutants known to produce CBMC($\mathcal{H}_\mathrm{GT}$, $m$) = SAT, ESBMC($\mathcal{H}_\mathrm{GT}$, $m$) also returns SAT (SAT-SAT agreement ≥ 90%). This **soundness-parity check** ensures that tool-configuration differences (unwinding bounds, object-bits, stub models) are not driving divergences between H_GT and H_LLM results. Incompatible cases are retained under CBMC and reported separately.
 
@@ -52,21 +52,31 @@ This taxonomy is not post-hoc: it is grounded in the CBMC Dynamic Frame Conditio
 
 Taxonomy reliability is established before full annotation proceeds. Two independent raters annotate 30 functions drawn from both libraries. Full annotation begins only if inter-rater Cohen's $\kappa \geq 0.8$; disagreements are resolved by adjudication and used to refine the codebook.
 
-Each missed assertion is then classified as either a knowledge gap (never appeared in any iteration) or an active sacrifice (appeared in at least one iteration but was removed to achieve UNSAT). This classification is derived from the iteration log without further human judgement.
+Each missed assertion is then classified using a **three-state outcome**:
+
+- **Never-generated (knowledge gap):** the assertion never appeared in any iteration log entry — the LLM never produced it.
+- **Weakened:** an assertion semantically equivalent to the H_GT target appeared but was progressively weakened (predicate loosened) without full deletion.
+- **Deleted (active sacrifice):** an assertion appeared in at least one iteration and was subsequently removed entirely after a CBMC violation.
+
+**Critical constraint on active sacrifice attribution:** a removal or weakening is counted as an active sacrifice *only if the affected assertion is entailed by H_GT* — i.e., H_GT contains a corresponding assertion for the same property. Removals of assertions that have no H_GT counterpart are self-corrections of incorrect attempts and are not sacrifices. This constraint prevents conflating legitimate self-correction with conformance-driven gaming.
+
+**Attribution validation:** the iteration logger records whether each deletion/weakening was preceded by a triggered CBMC violation on that assertion. This temporal attribution (violation → removal) is validated on a 30-function human-annotated subsample, with inter-rater Cohen's κ reported for the sacrifice attribution specifically (separately from the taxonomy category κ). Full annotation proceeds only if both κ values meet the ≥0.8 threshold.
 
 ### Metrics
 
 **Recall** is defined relative to AWS expert practice: $\mathrm{Recall} = |\mathcal{H}_\mathrm{LLM} \cap \mathcal{H}_\mathrm{GT}| \,/\, |\mathcal{H}_\mathrm{GT}|$. This measures alignment with expert-written harnesses, not completeness against an abstract specification oracle — H_GT is an engineering artefact and may itself omit properties judged unnecessary for verification tractability. RQ2 provides empirical validation that H_GT assertions are safety-relevant (by confirming they catch real bugs), partially justifying their use as a quality reference. Recall is reported overall and per category (validity / length / frame). Per-category miss rate is reported separately for knowledge gaps and active sacrifices. The effect of prompt condition on recall is reported as $\Delta$recall in percentage points with 95% CIs. Pass rate is reported alongside recall to establish the baseline pass-vs-recall divergence.
 
-**Active-sacrifice fraction** is a primary output: the proportion of total missed assertions that were generated in at least one iteration and subsequently removed (derived from the iteration log). This fraction determines the paper's central narrative:
+**Active-sacrifice fraction** is a primary output: the proportion of H_GT-entailed missed assertions that were deleted or weakened after a CBMC violation (derived from the iteration log, validated by κ ≥ 0.8). Results are reported per category (validity / length / frame) and per prompt condition. The pre-registered narrative thresholds are:
 
-| Active sacrifice fraction | Narrative |
-|--------------------------|-----------|
+| Active sacrifice fraction (H_GT-entailed) | Narrative |
+|------------------------------------------|-----------|
 | > 30% | Conformance pressure is the dominant mechanism; feedback redesign is actionable |
-| 10–30% | Both mechanisms operate; RQ3 distinguishes their contribution |
-| < 10% | Capability gaps dominate; finding reframed as "LLMs lack coverage of tool-idiomatic spec categories" |
+| 10–30% | Both mechanisms operate; RQ3 distinguishes their relative contribution |
+| < 10% | Capability gaps dominate; reframed as "LLMs lack coverage of tool-idiomatic spec categories" |
 
-**Zero-feedback gap** (condition G vs A): $\Delta$recall between single-pass and iterative generation, per category. Positive gap confirms that iteration *reduces* recall in those categories — direct evidence that the feedback loop itself drives specification weakening.
+These thresholds are pre-registered and apply to the aggregate across conditions A–F. Results are reported for all conditions including H (deletion-neutral) — if H produces a comparable sacrifice fraction to A, the mechanism is emergent; if H produces substantially lower sacrifice, the prompt is the primary driver.
+
+**Zero-feedback gap** (condition G vs A vs H, per category): $\Delta$recall isolates (i) the feedback loop's contribution (G vs A) and (ii) the deletion-permitting prompt's contribution (H vs A). Together they decompose how much of the recall loss is due to iteration itself vs. what the prompt permits the LLM to do on SAT.
 
 ---
 
@@ -90,7 +100,9 @@ The four outcome combinations are interpreted as follows. GT SAT / LLM SAT: both
 
 ### Metrics
 
-Per-category kill rate for $\mathcal{H}_\mathrm{LLM}$ relative to $\mathcal{H}_\mathrm{GT}$, computed over the set of mutants for which $\mathcal{H}_\mathrm{GT}$ returns SAT. Cross-referencing per-category kill rate against per-category recall from RQ1 tests whether the taxonomy predicts verification failure: if recall and kill rate are correlated per category, the taxonomy is a reliable diagnostic of safety-relevant gaps. The distribution of GT UNSAT / LLM SAT cases is reported separately, including the function and category characteristics that predict $\mathcal{H}_\mathrm{LLM}$ strength.
+Per-category kill rate for $\mathcal{H}_\mathrm{LLM}$ relative to $\mathcal{H}_\mathrm{GT}$, computed over the set of mutants for which $\mathcal{H}_\mathrm{GT}$ returns SAT.
+
+**RQ1↔RQ2 correlation decomposition.** Both RQ1 recall and RQ2 kill rate are measured against H_GT, so a category-level correlation between "low recall" and "low kill rate" is partly mechanical: if H_LLM misses an assertion that H_GT uses to catch a mutant, a kill-rate miss is guaranteed by construction. To isolate the informative residual from this mechanical component, the analysis additionally computes: (a) the *mechanical kill-rate floor* — the kill-rate deficit attributable directly to the missing H_GT assertions — and (b) the *residual kill-rate gap* — the deficit beyond what missing assertions alone explains, attributable to assertion-strength or domain-coverage differences. If the residual gap is substantial, the taxonomy has independent diagnostic value; if the residual is near zero, the correlation is fully explained by the missing assertions. The distribution of GT UNSAT / LLM SAT cases is reported separately, including the function and category characteristics that predict $\mathcal{H}_\mathrm{LLM}$ strength.
 
 ---
 
@@ -115,11 +127,13 @@ All pipelines receive the same mutant function $f_\mathrm{buggy}$, presented to 
 *B-strict fix_verification_prompt (per-arm, distinct from Pipeline A):*
 > The input-domain assumptions set up before the function call are fixed. Do NOT add, strengthen, or modify any `__CPROVER_assume` after setup. If an assertion is too strong: make its predicate more precise so it states the true postcondition that holds for all inputs already admitted by setup. Do NOT delete the assertion. Do NOT exclude the counterexample input. If no refined predicate can hold for an admitted input, stop and report failure.
 
+**Predicate-weakening detection (B-strict and B-relaxed):** A refined assertion `assert(Q)` that replaces `assert(P)` is classified as *genuine refinement* only if Q is strictly stronger than P on the GT-admissible input domain — i.e., every input satisfying Q also satisfies P, and Q excludes at least one additional input. If Q is weaker than P (e.g., `assert(P || always_true)`), the refinement is classified as *predicate-weakening-as-refinement* — a form of silencing that B-strict nominally prohibits but cannot syntactically prevent. This is detected by checking Q ⊆ P on a random sample of inputs via CBMC: add `assert(!P)` alongside `assert(Q)` and check if UNSAT; if SAT, Q is weaker. Predicate-weakening cases are reported as a third silencing mechanism alongside deletion (Pipeline A) and assume-tightening (B-relaxed), and are excluded from B-strict's "genuine refinement" count in SR_{B-strict}.
+
 **Pipeline B-relaxed — Refine with Justified Domain Restriction (secondary arm).** Identical to B-strict except the LLM may additionally tighten `__CPROVER_assume` constraints if it provides explicit written justification that the excluded input is outside the function's valid contract. This arm is included as a secondary comparison to quantify how much of B-strict's difficulty is attributable to legitimate domain-restriction needs vs. assume-based gaming.
 
 *Rationale for three-arm design:* Code inspection of the actual feedback loop implementation revealed that the existing `fix_verification_prompt` instructs the LLM to "add `__CPROVER_assume` to constrain the input" as a response to SAT failures. Ground-truth AWS harnesses use `__CPROVER_assume` only as structural preconditions set before the function call, never in response to assertion failures. A two-arm design with the permissive Pipeline B would confound assertion-predicate refinement with input-domain restriction, undermining the controlled comparison. The three-arm design isolates these mechanisms: the A→B-strict gap measures the causal effect of deletion prohibition; the B-strict→B-relaxed gap measures how much assume-based escape contributes when permitted.
 
-**Assume-tightening audit (B-relaxed only):** After B-relaxed reaches UNSAT, post-setup assumes are stripped and CBMC is re-run. If SAT reverts: classified *vacuous UNSAT*, reported separately with genuine/vacuous split. This audit is a validation layer confirming B-strict's domain-freeze held (zero post-setup assumes expected), not the primary control mechanism.
+**Vacuity audit (all three arms, including setup phase):** After each arm reaches UNSAT on $f_\mathrm{buggy}$, a vacuity check is run on the *entire* harness — including setup-phase assumes — not only post-setup additions. The check proceeds in two steps: (1) strip all post-setup `__CPROVER_assume` additions (B-relaxed only) and re-run; revert to SAT → vacuous via assume-tightening. (2) For all arms including A and B-strict: run CBMC with the setup-phase assumes individually negated to check whether any single setup assume is load-bearing for UNSAT — if so, the setup has over-constrained the input domain and the UNSAT may not represent genuine silencing. Cases where setup-phase vacuity is detected are flagged and reported separately; they are not excluded from SR counts but serve as a sensitivity analysis. This ensures that SR_A − SR_{B-strict} is not confounded by differential setup-induced vacuity across arms.
 
 ### Confirmation
 
@@ -148,7 +162,7 @@ The joint $(\mathrm{SR}, \mathrm{PR})$ per category across three arms is the pri
 
 **External validity.** The corpus is limited to aws-c-common and s2n-tls. These are safety-critical C libraries subject to rigorous continuous formal verification, representative of the domain where BMC is most commonly practised at scale, but results may not generalise to other C software or to languages with different memory models. The two-library design partially mitigates this by covering distinct functional domains (data structures versus TLS protocol handling).
 
-**Construct validity.** The taxonomy categories are manually defined and require human judgement for boundary cases. Inter-rater $\kappa$ is reported with a minimum acceptance threshold of 0.8 before full annotation proceeds. In RQ2 and RQ3, classification via the triggered assertion in the BMC counterexample replaces human annotation for the majority of cases. The RQ3 treatment variable (feedback protocol) is operationalised at the prompt level; per-arm prompts are published as a replication artefact. The three-arm design (A / B-strict / B-relaxed) prevents confounding deletion-prohibition with input-domain restriction.
+**Construct validity.** The taxonomy categories are manually defined and require human judgement for boundary cases. Two independent κ thresholds are gated: (1) taxonomy category annotation (κ ≥ 0.8 for validity / length / frame classification); (2) active-sacrifice attribution (κ ≥ 0.8 for "this removal was caused by a CBMC violation on the removed assertion"). Both gates must pass before full annotation. The active-sacrifice construct is additionally restricted to H_GT-entailed assertions to prevent conflating correct self-correction with conformance gaming. The RQ3 treatment variable (feedback protocol) is operationalised at the prompt level; per-arm prompts are published as a replication artefact. The three-arm design (A / B-strict / B-relaxed) prevents confounding deletion-prohibition with input-domain restriction. Predicate-weakening detection in B-strict and setup-vacuity audit across all arms address residual silencing channels.
 
 **Conclusion validity.** Results are reported per model, per prompt condition, and per assertion category. The A vs B-strict comparison controls for LLM capability by construction; the B-strict vs B-relaxed comparison controls for model and subject. Any observed SR/PR difference between arms is attributable solely to the permitted operations in the feedback prompt.
 
@@ -175,9 +189,9 @@ The use of BMC as a mutation oracle rather than dynamic testing is a deliberate 
 Given the October 2026 submission deadline, the following scope decisions apply:
 
 **In scope (required for submission):**
-- RQ1: full run, 1 primary LLM × conditions A, B, D, F, G (drop C: CoT-only adds neither recall signal nor ablation value); taxonomy annotation (κ ≥ 0.8); active-sacrifice fraction as primary output
+- RQ1: full run, 1 primary LLM × conditions A, B, D, F, G, H (G=zero-feedback baseline; H=deletion-neutral control prompt); two κ gates (taxonomy annotation + sacrifice attribution); active-sacrifice fraction (H_GT-entailed only) as primary output; H vs A comparison establishes whether conformance is emergent or prompt-instructed
 - RQ2: ~1,900 mutants, ESBMC dual-oracle, soundness-parity enforced; concrete CEX confirmation for primary cases; focus analysis on the two gap-heavy categories identified by RQ1 (full 4-outcome table still reported for all categories)
-- RQ3: stratified subset from RQ2, 1 primary LLM, three arms (A / B-strict / B-relaxed); per-arm distinct prompts; per-category (SR, PR) across all three arms
+- RQ3: stratified subset from RQ2, 1 primary LLM, three arms (A / B-strict / B-relaxed); per-arm distinct prompts; predicate-weakening detection in B-strict; vacuity audit on all three arms including setup phase; per-category (SR, PR) across all three arms
 
 **Confirmatory replication (second LLM, conditions A/B/E):** run in parallel with RQ1 main analysis; included in submission if results replicate; reported as "pending replication" in ASE fallback if not complete.
 
@@ -187,4 +201,4 @@ Given the October 2026 submission deadline, the following scope decisions apply:
 
 ---
 
-*Last updated: 2026/05/30*
+*Last updated: 2026/05/31*
