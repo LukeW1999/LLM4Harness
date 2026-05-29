@@ -26,9 +26,9 @@ When LLMs generate CBMC proof harnesses under iterative verifier feedback, they 
 
 The study uses two production C libraries from Amazon's formal verification programme: aws-c-common (83 functions across 7 data-structure families) and the `s2n_stuffer` module of s2n-tls (25 functions), giving 108 functions in total. Amazon's formal verification engineers have written 238 proof harnesses for these functions as part of a continuously maintained verification pipeline; these constitute the expert ground truth corpus $\mathcal{H}_\mathrm{GT}$. The corpus has two properties that make it suitable as a research substrate: the underlying codebase is production-correct and formally verified against $\mathcal{H}_\mathrm{GT}$, and the harnesses are written by engineers with deep knowledge of both the library internals and the CBMC toolchain, making them the strongest available oracle for what a complete harness should assert.
 
-Two LLMs generate harnesses under six prompt conditions: (A) source code only; (B) source code with natural language documentation; (C) source code with chain-of-thought elicitation; (D) source code with documentation and chain-of-thought; (E) source code with a same-family harness as a one-shot example; (F) source code with a wrong-family harness as an ablation control. Conditions E and F isolate the effect of in-context exemplar family match, motivated by the pilot finding that same-family examples improve recall by 9 pp ($p < 0.04$) while wrong-family examples do not.
+Two LLMs generate harnesses under seven prompt conditions: (A) source code only; (B) source code with natural language documentation; (C) source code with chain-of-thought elicitation; (D) source code with documentation and chain-of-thought; (E) source code with a same-family harness as a one-shot example; (F) source code with a wrong-family harness as an ablation control; **(G) source code only, single-pass — no CBMC feedback loop**. Condition G is a zero-feedback baseline: the LLM generates exactly once and receives no verifier output. Comparing G against A isolates the contribution of the iterative feedback loop itself to recall loss, independent of prompt design. Conditions E and F isolate the effect of in-context exemplar family match. For the main RQ1/RQ2 analysis one primary LLM is used across all seven conditions; a second LLM runs conditions A, B, and E as a confirmatory replication. RQ3 uses the primary LLM only, to hold model capability constant.
 
-All harnesses are generated and evaluated under CBMC, which is the tool used natively by AWS. Compatible harnesses are subsequently migrated to ESBMC to provide a second verification backend; migration is verified by confirming that ESBMC($\mathcal{H}_\mathrm{GT}$, $f$) remains UNSAT after migration. Incompatible cases are retained under CBMC and reported separately as a validity threat.
+All harnesses are generated and evaluated under CBMC, which is the tool used natively by AWS. Compatible harnesses are subsequently migrated to ESBMC to provide a second verification backend. Migration validity requires two checks: (1) ESBMC($\mathcal{H}_\mathrm{GT}$, $f$) remains UNSAT after migration (UNSAT preservation); (2) for a random sample of 30 mutants known to produce CBMC($\mathcal{H}_\mathrm{GT}$, $m$) = SAT, ESBMC($\mathcal{H}_\mathrm{GT}$, $m$) also returns SAT (SAT-SAT agreement ≥ 90%). This **soundness-parity check** ensures that tool-configuration differences (unwinding bounds, object-bits, stub models) are not driving divergences between H_GT and H_LLM results. Incompatible cases are retained under CBMC and reported separately.
 
 ---
 
@@ -40,7 +40,9 @@ Characterise what LLM-generated harnesses miss relative to expert harnesses, qua
 
 ### Iterative Generation Protocol
 
-LLMs generate harnesses under each of the six prompt conditions in a CBMC feedback loop. The iteration proceeds as follows. If compilation fails, the LLM receives the compiler error and retries. If CBMC returns SAT, the LLM receives the full verifier output, including the specific assertion that triggered the violation and the counterexample trace, and modifies the harness to eliminate the violation before retrying. If CBMC returns UNSAT, iteration stops. Each assertion that is removed or weakened during this process is recorded along with the prompt condition and iteration number at which the removal occurred.
+LLMs generate harnesses under each of the seven prompt conditions in a CBMC feedback loop (condition G runs once only, with no feedback). For conditions A–F, the iteration proceeds as follows: if compilation fails, the LLM receives the compiler error and retries; if CBMC returns SAT, the LLM receives the full verifier output including the triggered assertion and counterexample trace, and modifies the harness before retrying; if CBMC returns UNSAT, iteration stops.
+
+**Iteration logger (automated):** The generation script instruments every harness transition. After each LLM response, a diff is computed against the previous harness version. Every assertion that is added, modified, or deleted is recorded as a structured log entry: `{iteration, condition, assert_text, action: add|weaken|delete, triggered_violation: bool}`. This log is the primary data source for the active-sacrifice vs knowledge-gap classification — no post-hoc human annotation of iteration history is required. The taxonomy annotation step (κ ≥ 0.8) applies only to the final harness-vs-H_GT matching, not to the iteration log.
 
 ### Taxonomy and Classification
 
@@ -54,7 +56,17 @@ Each missed assertion is then classified as either a knowledge gap (never appear
 
 ### Metrics
 
-Postcondition recall = $|\mathcal{H}_\mathrm{LLM} \cap \mathcal{H}_\mathrm{GT}| \,/\, |\mathcal{H}_\mathrm{GT}|$, reported overall and per category. Per-category miss rate is reported separately for knowledge gaps and active sacrifices. The effect of prompt condition on recall is reported as $\Delta$ recall in percentage points with 95% confidence intervals. Pass rate is reported alongside recall for each condition to establish the baseline divergence between the two metrics.
+**Recall** is defined relative to AWS expert practice: $\mathrm{Recall} = |\mathcal{H}_\mathrm{LLM} \cap \mathcal{H}_\mathrm{GT}| \,/\, |\mathcal{H}_\mathrm{GT}|$. This measures alignment with expert-written harnesses, not completeness against an abstract specification oracle — H_GT is an engineering artefact and may itself omit properties judged unnecessary for verification tractability. RQ2 provides empirical validation that H_GT assertions are safety-relevant (by confirming they catch real bugs), partially justifying their use as a quality reference. Recall is reported overall and per category (validity / length / frame). Per-category miss rate is reported separately for knowledge gaps and active sacrifices. The effect of prompt condition on recall is reported as $\Delta$recall in percentage points with 95% CIs. Pass rate is reported alongside recall to establish the baseline pass-vs-recall divergence.
+
+**Active-sacrifice fraction** is a primary output: the proportion of total missed assertions that were generated in at least one iteration and subsequently removed (derived from the iteration log). This fraction determines the paper's central narrative:
+
+| Active sacrifice fraction | Narrative |
+|--------------------------|-----------|
+| > 30% | Conformance pressure is the dominant mechanism; feedback redesign is actionable |
+| 10–30% | Both mechanisms operate; RQ3 distinguishes their contribution |
+| < 10% | Capability gaps dominate; finding reframed as "LLMs lack coverage of tool-idiomatic spec categories" |
+
+**Zero-feedback gap** (condition G vs A): $\Delta$recall between single-pass and iterative generation, per category. Positive gap confirms that iteration *reduces* recall in those categories — direct evidence that the feedback loop itself drives specification weakening.
 
 ---
 
@@ -70,7 +82,9 @@ RQ2 uses the taxonomy established in RQ1 to classify mutants after the fact. Mut
 
 ### Mutation and Oracle Protocol
 
-Universalmutator is applied to each of the 108 functions to generate approximately 1,900 compiled mutants. For each mutant $m$, two ESBMC invocations run in parallel: ESBMC($\mathcal{H}_\mathrm{GT}$, $m$) and ESBMC($\mathcal{H}_\mathrm{LLM}$, $m$). A SAT result with a counterexample is a bounded proof that the mutant violates at least one assertion in the harness under all inputs within the unrolling bound — not a sampled witness, but a bounded certificate of functional deviation. The primary analysis object is the case where ESBMC($\mathcal{H}_\mathrm{GT}$, $m$) returns SAT (the expert harness confirms the bug) and ESBMC($\mathcal{H}_\mathrm{LLM}$, $m$) returns UNSAT (the LLM harness silences it). The assertion named in the $\mathcal{H}_\mathrm{GT}$ counterexample is extracted automatically and used to assign the mutant to a taxonomy category.
+Universalmutator is applied to each of the 108 functions to generate approximately 1,900 compiled mutants. For each mutant $m$, two ESBMC invocations run in parallel: ESBMC($\mathcal{H}_\mathrm{GT}$, $m$) and ESBMC($\mathcal{H}_\mathrm{LLM}$, $m$), with identical unwinding bounds, object-bits, and stub configurations (**soundness-parity requirement**: the same tool flags are applied to both harnesses for every mutant, and the configuration is fixed to match the migration-validated settings from the Corpus setup). A SAT result with a counterexample is a bounded proof that the mutant violates at least one assertion in the harness under all inputs within the unrolling bound — not a sampled witness, but a bounded certificate of functional deviation.
+
+The primary analysis object is the case where ESBMC($\mathcal{H}_\mathrm{GT}$, $m$) returns SAT and ESBMC($\mathcal{H}_\mathrm{LLM}$, $m$) returns UNSAT. For these **GT SAT / LLM UNSAT** primary cases, the SAT result is additionally confirmed by concrete execution: the counterexample input $I$ from the ESBMC($\mathcal{H}_\mathrm{GT}$, $m$) trace is executed against both $f_\mathrm{original}$ and the mutant $m$; a genuine bug confirmation requires $f_\mathrm{original}(I) \neq m(I)$ on a semantically meaningful output. This rules out tool-configuration artefacts as the source of the SAT divergence. The assertion named in the $\mathcal{H}_\mathrm{GT}$ counterexample is extracted automatically and used to assign the mutant to a taxonomy category.
 
 The four outcome combinations are interpreted as follows. GT SAT / LLM SAT: both harnesses detect the bug; $\mathcal{H}_\mathrm{LLM}$ is adequate for this mutant class. GT SAT / LLM UNSAT: $\mathcal{H}_\mathrm{GT}$ formally confirms the bug; $\mathcal{H}_\mathrm{LLM}$ silences it; this is the primary finding. GT UNSAT / LLM SAT: $\mathcal{H}_\mathrm{LLM}$ detects a deviation that $\mathcal{H}_\mathrm{GT}$ does not; this is an independently reportable finding, expected to arise for functions with rich inline documentation under prompt condition B or D. GT UNSAT / LLM UNSAT: the mutant falls outside both harnesses' coverage; discarded with count reported as a validity bound.
 
@@ -98,13 +112,21 @@ Both pipelines receive the same mutant function $f_\mathrm{buggy}$, presented to
 
 **Pipeline B — Refine.** On SAT, the LLM receives the full counterexample, including the concrete input assignment, the violated assertion, and the assertion category. The LLM is instructed to analyse the counterexample and refine the assertion to be more precise without deleting it. The LLM may additionally tighten `__CBMC_assume` constraints to exclude the counterexample input if it judges that input to be outside the function's valid domain, but must provide an explicit justification for any such exclusion. Iteration continues until UNSAT.
 
+**Assume-tightening detection (Pipeline B only):** After a Pipeline B harness reaches UNSAT, the final harness is post-processed: all `__CBMC_assume` clauses that were added or modified during the pipeline run are temporarily removed, and CBMC is re-run. If the harness reverts to SAT, the UNSAT was driven by assume tightening rather than genuine assertion refinement — this subject is classified as *vacuous UNSAT* and reported separately, not counted as a Pipeline B success. This guards against the pathological case where Pipeline B achieves UNSAT by effectively excluding the bug-triggering input domain rather than asserting the correct postcondition.
+
 ### Confirmation
 
 After both pipelines complete, $f_\mathrm{original}$ is introduced for the first time. CBMC($\mathcal{H}_\mathrm{buggy\_A}$, $f_\mathrm{original}$) and CBMC($\mathcal{H}_\mathrm{buggy\_B}$, $f_\mathrm{original}$) are run. A SAT result means the harness contains an assertion that distinguishes the mutant from the original. To confirm the detection is genuine rather than an artefact of overly specific refinement, the counterexample concrete input $I$ is executed against both $f_\mathrm{original}$ and $f_\mathrm{buggy}$: a real detection requires $f_\mathrm{original}(I) \neq f_\mathrm{buggy}(I)$ on a semantically meaningful output. An UNSAT result means the bug has been silenced.
 
 ### Metrics
 
-Bug silencing rate per pipeline and per assertion category: the proportion of subjects for which CBMC($\mathcal{H}_\mathrm{buggy}$, $f_\mathrm{original}$) returns UNSAT. Pass rate per pipeline and per category: the proportion of subjects for which the pipeline achieves UNSAT on $f_\mathrm{buggy}$ within the iteration budget. The joint distribution of silencing rate and pass rate per category is the primary result: it characterises the tradeoff between verification conformance and specification completeness as a function of assertion type, and identifies which categories support low-cost refinement (high pass rate maintained, silencing rate reduced) versus which categories force a tradeoff (pass rate degraded as refine constraint is enforced).
+**Bug silencing rate** $\mathrm{SR}_{P,c}$: proportion of category-$c$ subjects for which CBMC($\mathcal{H}_\mathrm{buggy}^P$, $f_\mathrm{original}$) = UNSAT (bug silenced), excluding vacuous UNSAT cases. **Pass rate** $\mathrm{PR}_{P,c}$: proportion for which Pipeline $P$ reaches genuine UNSAT on $f_\mathrm{buggy}$ within the iteration budget (vacuous UNSAT excluded).
+
+**Power:** With a binary silencing outcome and expected effect $\mathrm{SR}_A - \mathrm{SR}_B \geq 0.35$ (based on the conformance hypothesis: Pipeline A near-always silences, Pipeline B detects a substantial fraction), Fisher's exact test at $\alpha = 0.05$, power = 0.80 requires $n \approx 22$ per category per pipeline. Target is 25–30 per category to provide a buffer for vacuous UNSAT exclusions. If any category yields fewer than 22 confirmed bugs from RQ2, that category's RQ3 result is reported as exploratory only.
+
+**Null-result narrative:** If $\mathrm{SR}_A - \mathrm{SR}_B$ is not significant in any category, the finding is: "Even CEX-guided refinement cannot overcome the feedback-loop incentive toward specification weakening — the conformance pressure operates at a level that prompt-level interventions cannot address." This is a publishable and practically important negative result.
+
+The joint $(\mathrm{SR}, \mathrm{PR})$ per category is the primary result: it identifies whether refine is low-cost (PR maintained, SR drops) or forces a tradeoff (PR degrades as the refine constraint is enforced).
 
 ---
 
@@ -136,4 +158,21 @@ The use of BMC as a mutation oracle rather than dynamic testing is a deliberate 
 
 ---
 
-*Last updated: 2026/05/28*
+## Scope and Prioritisation for FSE 2027
+
+Given the October 2026 submission deadline, the following scope decisions apply:
+
+**In scope (required for submission):**
+- RQ1: full run, 1 primary LLM × conditions A, B, D, F, G (drop C: CoT-only adds neither recall signal nor ablation value); taxonomy annotation (κ ≥ 0.8); active-sacrifice fraction as primary output
+- RQ2: ~1,900 mutants, ESBMC dual-oracle, soundness-parity enforced; concrete CEX confirmation for primary cases; focus analysis on the two gap-heavy categories identified by RQ1 (full 4-outcome table still reported for all categories)
+- RQ3: stratified subset from RQ2, 1 primary LLM, both pipelines, assume-tightening detection, per-category (SR, PR)
+
+**Confirmatory replication (second LLM, conditions A/B/E):** run in parallel with RQ1 main analysis; included in submission if results replicate; reported as "pending replication" in ASE fallback if not complete.
+
+**Critical path:** RQ1 iteration logger → RQ1 full run + annotation → RQ2 setup + soundness-parity validation → RQ2 batch run → RQ3 subject selection + pipeline run → writing. The RQ1 annotation is the only manually-gated step; all other transitions are script-driven.
+
+**Trigger for ASE fallback:** if RQ1 annotation is not complete with κ ≥ 0.8 by 2026-08-01, or if RQ3 pipeline runs are not stable by 2026-09-01, shift to ASE 2027. No scope reduction under the fallback — same paper, later deadline.
+
+---
+
+*Last updated: 2026/05/29*
