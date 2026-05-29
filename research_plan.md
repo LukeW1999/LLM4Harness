@@ -227,4 +227,44 @@ Given the October 2026 submission deadline, the following scope decisions apply:
 
 ---
 
+---
+
+## Design Rationale — Key Decisions and Why
+
+This section records the reasoning behind non-obvious design choices so that future collaborators (human or LLM) can understand the intent, not just the specification.
+
+### Why silenced-mutant count is the primary result, not recall
+
+Early versions of the plan used recall against H_GT as the headline metric. A reviewer (correctly) flagged that this creates circularity: "LLMs fail to match H_GT → defined as incomplete." AWS engineers write harnesses for verification tractability, not specification completeness; H_GT may omit properties they judged unnecessary. Using H_GT to define completeness and then measuring LLM alignment against it is circular.
+
+The fix: promote the **silenced-mutant count** (GT SAT / LLM UNSAT per category, with concrete CEX confirmation) as the primary result. This depends only on the mutation oracle, not on H_GT's completeness. Recall is retained as a descriptive lower bound — a useful signal for understanding the gap's structure, but not a completeness claim. RQ2's mutation oracle also serves as validation of H_GT's safety relevance: the subset of H_GT assertions that are empirically certified by silenced mutants is reported explicitly.
+
+### Why three RQ3 arms (A / B-strict / B-relaxed) instead of two
+
+The original two-arm design (Pipeline A: delete, Pipeline B: refine) had a critical flaw discovered by reading the actual `feedback_loop.py` code: the `fix_verification_prompt` explicitly tells the LLM "if assertion too strong: weaken or remove it, **or add `__CPROVER_assume` to constrain the input**." AWS ground-truth harnesses never add `__CPROVER_assume` in response to assertion failures — assumes are structural preconditions set before the function call. So a Pipeline B that prohibits deletion but still allows assume-tightening has the same bug-silencing effect as Pipeline A via a different mechanism.
+
+The three-arm design separates the two mechanisms: A (delete) → B-strict (predicate refinement only, frozen domain) → B-relaxed (refinement + justified assumes). The A→B-strict gap measures the causal effect of deletion prohibition; B-strict→B-relaxed measures how much assume-tightening contributes when permitted.
+
+### Why Pipeline C (agentic arm) was dropped
+
+A ReAct-style agent with persistent memory and CBMC as a callable tool was proposed as an additional arm to test whether "agency" closes the specification gap. This was rejected as scope creep: it doubles infrastructure, invites reviewers to treat the paper as a tool paper (with tool-paper baselines), and the scientific question ("does the phenomenon persist under stronger scaffolding?") can be addressed in future work. The ablation conditions I/J/K (category label, deletion log, spec-first) test specific agency-adjacent hypotheses at much lower cost.
+
+### Why Condition H (strategy-neutral repair prompt) was added
+
+The central claim "LLMs actively sacrifice assertions under conformance pressure" could be reduced to "LLMs follow the repair prompt's instructions." Condition H tests this: it runs the same iterative loop as A but the repair prompt provides no strategy — the LLM receives only the violated assertion and counterexample trace and must decide how to respond without being told it can delete/weaken/add assumes. If active sacrifice occurs at comparable rates under H as under A (after the manipulation check passes), the behavior is emergent in the LLM, not merely instructed. The manipulation check: run both A and H on 20 correct-code functions (where no H_GT-entailed deletion is ever necessary) and verify A produces more gratuitous deletions than H.
+
+### Why the active sacrifice construct is restricted to H_GT-entailed assertions
+
+An early version counted all assertion removals as potential "sacrifices." A reviewer identified that this conflates two different behaviors: (1) removing a correct, H_GT-entailed property under verifier pressure (genuine sacrifice), and (2) removing an incorrect or ill-formed assertion the LLM wrote itself (self-correction). Only (1) is evidence of conformance pressure. The fix: active sacrifice is counted only for assertions that are entailed by H_GT (H_GT contains a corresponding assertion for the same property). Self-corrections have no H_GT counterpart and are excluded.
+
+### Why recall is reported per category with separate denominators
+
+Frame conditions (unchanged-field assertions) are predominantly never-generated — LLMs rarely save old state before the function call, so they rarely generate `assert(to_old.allocator == to.allocator)`. The denominator of the per-category sacrifice fraction must be "H_GT-entailed assertions in category c that were ever generated" (not all H_GT assertions), because an assertion that never appeared cannot be sacrificed. If a pooled fraction is used without this per-category structure, frame conditions (small denominator, low sacrifice rate) and length invariants (larger denominator, higher sacrifice rate) are averaged together in a way that makes the narrative threshold (>30%/<10%) uninterpretable.
+
+### Why the FSE 2027 deadline was chosen over ASE 2027
+
+FSE 2027 deadline ≈ October 2026, giving ~5 months from May 2026. This is tight but feasible for the minimum viable scope (RQ1 conditions A–H + RQ2 silenced-mutant count). RQ3 is a stretch goal. ASE 2027 is the explicit fallback with the same scope (no reduction), triggered if RQ1 annotation κ < 0.8 by Aug 1 2026 or RQ3 pipeline is unstable by Sep 1 2026.
+
+---
+
 *Last updated: 2026/05/29*
