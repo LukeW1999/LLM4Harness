@@ -126,13 +126,13 @@ RQ1 establishes the phenomenon (active sacrifice) and classifies its origin. RQ2
 
 ### Subject Selection
 
-RQ3 operates on a stratified subset of the RQ2 confirmed bugs (GT SAT / LLM UNSAT cases), sampled to achieve balanced representation across the three taxonomy categories. Assertion-category labels from RQ1 are reused directly; no re-annotation is required. The same LLM is used throughout RQ3 to hold model capability constant; the feedback protocol is the sole independent variable.
+RQ3 operates on a stratified subset of the RQ2 confirmed bugs (GT SAT / LLM UNSAT cases), sampled to achieve balanced representation across the three taxonomy categories. These subjects are pre-validated: $\mathcal{H}_\mathrm{GT}$ already confirms they are real bugs (from RQ2). $\mathcal{H}_\mathrm{GT}$ is used only as a confirmation oracle and is **not shown to the LLM at any point** — the LLM sees only the mutant function (presented as correct code) and the CBMC verifier output. Assertion-category labels from RQ1 are reused directly; no re-annotation is required. The same LLM is used throughout RQ3 to hold model capability constant; the feedback protocol is the sole independent variable.
 
 ### Three Pipelines
 
 All pipelines receive the same mutant function $f_\mathrm{buggy}$, presented to the LLM as the correct implementation. The LLM is not informed that the function is a mutant. The input domain is established in a **setup phase** (structural validity and bounding assumes, matching GT harness practice) before the function call; this setup is identical across all pipelines.
 
-**Pipeline A — Delete.** On SAT, the LLM may remove or weaken the violated assertion. `__CPROVER_assume` additions are prohibited as a response to SAT (they are permitted only during the initial setup phase). Iteration continues until UNSAT. This replicates the default behaviour observed in RQ1 and is expected to produce harnesses that silence bugs, because any assertion that $f_\mathrm{buggy}$ violates will be eliminated to achieve UNSAT.
+**Pipeline A — Delete/Weaken.** On SAT, the LLM may remove *or weaken* the violated assertion (e.g., replacing `assert(buf.len == old.len + from.len)` with `assert(buf.len >= 0)`). `__CPROVER_assume` additions are prohibited as a response to SAT (they are permitted only during the initial setup phase). Iteration continues until UNSAT. This replicates the default behaviour observed in RQ1.
 
 **Pipeline B-strict — Predicate Refinement Only (primary comparator).** On SAT, the LLM receives the full counterexample (concrete input assignment, violated assertion, assertion category) and must refine the *assertion predicate itself* to be more precise. The input domain established in the setup phase is frozen for the remainder of the run: no `__CPROVER_assume` clause may be added or modified after setup. Only assertion-predicate edits are permitted as a response to a counterexample. If the LLM cannot refine the predicate to satisfy the mutant while maintaining the intended postcondition, iteration budget is exhausted.
 
