@@ -143,6 +143,14 @@ CONDITION_FEEDBACK_DIR = {
     "B_claude": RESULTS_DIR / "feedback_loop_B_claude",
     "C_claude": RESULTS_DIR / "feedback_loop_C_claude",
     "D_claude": RESULTS_DIR / "feedback_loop_D_claude",
+    "E_claude": RESULTS_DIR / "feedback_loop_E_claude",
+    "F_claude": RESULTS_DIR / "feedback_loop_F_claude",
+    "A_gptoss120b": RESULTS_DIR / "feedback_loop_A_gptoss120b",
+    "G_gptoss120b": RESULTS_DIR / "feedback_loop_G_gptoss120b",
+    "H_gptoss120b": RESULTS_DIR / "feedback_loop_H_gptoss120b",
+    "E_qwen":   RESULTS_DIR / "feedback_loop_E",
+    "C_qwen":   RESULTS_DIR / "feedback_loop_C",
+    "D_qwen":   RESULTS_DIR / "feedback_loop_D",
 }
 
 
@@ -668,7 +676,7 @@ def main():
     parser.add_argument("--save-json", action="store_true", help="Save results to JSON")
     parser.add_argument("--quiet", action="store_true", help="Suppress per-function verbose output")
     parser.add_argument("--workers", type=int, default=8, help="Parallel workers (default: 8)")
-    parser.add_argument("--condition", choices=["original", "A", "B", "C", "D", "A_v3", "B_v3", "A_claude", "B_claude", "C_claude", "D_claude"], default="original",
+    parser.add_argument("--condition", choices=list(CONDITION_FEEDBACK_DIR.keys()), default="original",
                         help="Which feedback loop results to evaluate")
     args = parser.parse_args()
 
