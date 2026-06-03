@@ -38,6 +38,8 @@ def _load_model_backend(model: str):
     global call_qwen, read_file, get_function_name
     if model == "claude":
         from call_claude_api import call_qwen as _cq, read_file as _rf, get_function_name as _gfn
+    elif model == "openrouter":
+        from call_openrouter_api import call_qwen as _cq, read_file as _rf, get_function_name as _gfn
     else:
         from call_qwen_api import call_qwen as _cq, read_file as _rf, get_function_name as _gfn
     call_qwen = _cq
@@ -77,6 +79,8 @@ CONDITION_DATASET = {
     "D":        experiment_dir / "dataset_condB",   # same as B, CoT prompt (no NL)
     "E":        experiment_dir / "dataset_condA",   # same as A, with few-shot GT example (same family)
     "F":        experiment_dir / "dataset_condA",   # same as A, with few-shot GT example (WRONG family)
+    "G":        experiment_dir / "dataset_condA",   # single-pass baseline: no CBMC feedback
+    "H":        experiment_dir / "dataset_condA",   # strategy-neutral: repair prompt gives no deletion instruction
     "A_v3":     experiment_dir / "dataset_condA",
     "B_v3":     experiment_dir / "dataset_condB",
 }
@@ -88,9 +92,28 @@ CONDITION_PROMPT = {
     "D":        "prompt_condD.txt",   # condB dataset + chain-of-thought reasoning (no NL)
     "E":        "prompt_condE.txt",   # condA dataset + few-shot GT example from same family
     "F":        "prompt_condE.txt",   # condA dataset + few-shot GT example from WRONG family (ablation)
+    "G":        "prompt_condA.txt",   # same initial prompt as A; loop never runs
+    "H":        "prompt_condA.txt",   # same initial prompt as A; repair prompt is strategy-neutral
     "A_v3":     "prompt_condA.txt",
     "B_v3":     "prompt_condB.txt",
 }
+
+def _model_dir_suffix(model: str) -> str:
+    """Return a filesystem-safe directory suffix for the active model.
+    For openrouter, includes the model slug so gpt-oss-120b and deepseek results
+    never share a directory.
+    """
+    if model == "qwen":
+        return ""
+    if model == "openrouter":
+        import os
+        slug = os.getenv("OPENROUTER_MODEL", "openrouter")
+        # e.g. "openai/gpt-oss-120b" → "gptoss120b"
+        slug = slug.split("/")[-1]                     # take part after /
+        slug = slug.replace("-", "").replace(".", "")  # strip punctuation
+        return f"_{slug}"
+    return f"_{model}"
+
 
 # Active condition (set by --condition arg in main())
 ACTIVE_CONDITION = "original"
@@ -544,6 +567,43 @@ def build_fix_verification_prompt(
 Output ONLY the corrected C harness code. No explanations. Iteration {iteration}."""
 
 
+def build_fix_verification_h_prompt(
+    harness_code: str,
+    func_name: str,
+    failed_lines: str,
+    cbmc_stdout: str,
+    iteration: int
+) -> str:
+    """Condition H — strategy-neutral repair prompt.
+
+    Gives the LLM only the violated assertion and counterexample trace.
+    Provides NO instruction on whether to delete, weaken, add assumes, or refine.
+    Tests whether active sacrifice is emergent (LLM-intrinsic) vs instructed.
+    """
+    return f"""Your CBMC harness for `{func_name}` has a verification failure.
+
+## Your harness:
+```c
+{harness_code}
+```
+
+## CBMC output:
+```
+{cbmc_stdout[:2000]}
+```
+
+## Failed checks:
+```
+{failed_lines[:1000]}
+```
+
+Modify the harness so CBMC verification succeeds.
+- Use `aws_default_allocator()` for `struct aws_allocator *` (NOT `can_fail_allocator`)
+- Only use standard includes: `aws/common/*.h`, `proof_helpers/make_common_data_structures.h`, `assert.h`, `stdlib.h`, `stdint.h`
+
+Output ONLY the corrected C harness code. Iteration {iteration}."""
+
+
 def build_fix_unknown_prompt(
     harness_code: str,
     func_name: str,
@@ -559,8 +619,10 @@ This means the harness likely has no assert() calls, or all code paths are unrea
 
 Please rewrite the harness correctly, ensuring:
 - There are `assert(condition)` calls to check postconditions
-- The function is actually called
+- The function `{func_name}` is actually called (not a different function)
 - All code branches are reachable
+- Use `aws_default_allocator()` for any `struct aws_allocator *` (NOT `can_fail_allocator`)
+- Only use these includes: `aws/common/*.h`, `proof_helpers/make_common_data_structures.h`, `proof_helpers/nondet.h`, `proof_helpers/utils.h`, `assert.h`, `stdlib.h`, `stdint.h`, `stdbool.h`
 
 Output ONLY the corrected C code. No explanations. Iteration {iteration}."""
 
@@ -646,7 +708,7 @@ def run_feedback_loop(
                             gt_result=run_gt(func_name))
     print(f"  GT baseline: {result.gt_result.verification_result}")
 
-    model_suffix = f"_{ACTIVE_MODEL}" if ACTIVE_MODEL != "qwen" else ""
+    model_suffix = _model_dir_suffix(ACTIVE_MODEL)
     output_dir = RESULTS_DIR / f"feedback_loop_{ACTIVE_CONDITION}{model_suffix}" / func_name
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -670,11 +732,29 @@ def run_feedback_loop(
     )
     result.iterations.append(record)
 
+    # Condition G: single-pass baseline — no feedback loop
+    if ACTIVE_CONDITION == "G":
+        print(f"  Condition G: single-pass, stopping after iter 1.")
+        (output_dir / "summary.json").write_text(json.dumps(result.to_dict(), indent=2))
+        return result
+
     # Feedback loop
+    consecutive_unknown = 0
     for i in range(2, max_iterations + 1):
         if cbmc_result.verification_result == "SUCCESS":
             print(f"  Converged at iteration {i-1}!")
             break
+
+        # Early exit: 3 consecutive UNKNOWN means the model cannot add assertions
+        # under this prompt condition — further iterations add no research value.
+        if cbmc_result.verification_result == "UNKNOWN":
+            consecutive_unknown += 1
+            if consecutive_unknown >= 3:
+                print(f"  Early exit: {consecutive_unknown} consecutive UNKNOWN — "
+                      f"model cannot add assertions under condition {ACTIVE_CONDITION}.")
+                break
+        else:
+            consecutive_unknown = 0
 
         # Extract failed check lines for better LLM context
         failed_lines = "\n".join(
@@ -693,9 +773,14 @@ def run_feedback_loop(
             action = "fix_verify"
             print(f"\n  [Iter {i}] Fixing verification failure...")
             print(f"    Failed checks: {failed_lines[:200]}")
-            fix_prompt = build_fix_verification_prompt(
-                harness_code, func_name, failed_lines, i
-            )
+            if ACTIVE_CONDITION == "H":
+                fix_prompt = build_fix_verification_h_prompt(
+                    harness_code, func_name, failed_lines, cbmc_result.stdout, i
+                )
+            else:
+                fix_prompt = build_fix_verification_prompt(
+                    harness_code, func_name, failed_lines, i
+                )
         elif cbmc_result.verification_result == "UNKNOWN":
             action = "fix_unknown"
             print(f"\n  [Iter {i}] Fixing UNKNOWN (no reachable assertions)...")
@@ -772,12 +857,16 @@ def main():
     parser = argparse.ArgumentParser(description="CBMC feedback loop for harness refinement")
     parser.add_argument("--func", help="Function name (e.g. aws_array_list_back)")
     parser.add_argument("--all", action="store_true", help="Run all 30 functions")
-    parser.add_argument("--max-iter", type=int, default=4, help="Max iterations (default: 4)")
+    parser.add_argument("--max-iter", type=int, default=15, help="Max iterations (default: 15)")
     parser.add_argument("--save-json", action="store_true", help="Save aggregate results JSON")
-    parser.add_argument("--condition", choices=["original", "A", "B", "C", "D", "E", "F", "A_v3", "B_v3"], default="original",
-                        help="Dataset condition: original, A (NL), B (no NL), C (NL+CoT), D (no NL+CoT), E (NL+same-family GT example), F (NL+wrong-family GT example, ablation)")
-    parser.add_argument("--model", choices=["qwen", "claude"], default="qwen",
-                        help="LLM backend: qwen (default) or claude")
+    parser.add_argument("--condition",
+                        choices=["original", "A", "B", "C", "D", "E", "F", "G", "H", "A_v3", "B_v3"],
+                        default="original",
+                        help=("Prompt condition: A=source+NL, B=source only, C=NL+CoT, D=no-NL+CoT, "
+                              "E=same-family few-shot, F=wrong-family few-shot, "
+                              "G=single-pass no-feedback, H=strategy-neutral repair"))
+    parser.add_argument("--model", choices=["qwen", "claude", "openrouter"], default="qwen",
+                        help="LLM backend: qwen (DashScope), claude (Anthropic), openrouter")
     args = parser.parse_args()
 
     ACTIVE_CONDITION = args.condition
@@ -799,7 +888,7 @@ def main():
     results = []
     for func_dir, func_name in funcs:
         # Skip if already completed (resume support)
-        model_suffix = f"_{ACTIVE_MODEL}" if ACTIVE_MODEL != "qwen" else ""
+        model_suffix = _model_dir_suffix(ACTIVE_MODEL)
         output_dir = RESULTS_DIR / f"feedback_loop_{ACTIVE_CONDITION}{model_suffix}" / func_name
         summary_path = output_dir / "summary.json"
         if summary_path.exists():
@@ -819,7 +908,7 @@ def main():
 
     if args.save_json and results:
         EVAL_DIR.mkdir(parents=True, exist_ok=True)
-        model_suffix = f"_{ACTIVE_MODEL}" if ACTIVE_MODEL != "qwen" else ""
+        model_suffix = _model_dir_suffix(ACTIVE_MODEL)
         out = EVAL_DIR / f"feedback_loop_results_cond{ACTIVE_CONDITION}{model_suffix}.json"
         out.write_text(json.dumps([r.to_dict() for r in results], indent=2))
         print(f"\nSaved to: {out}")

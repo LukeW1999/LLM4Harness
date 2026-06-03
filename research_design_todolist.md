@@ -18,7 +18,7 @@
 - s2n-tls: 25 functions (s2n_stuffer module)
 - 238 AWS engineer harnesses (ground truth H_GT)
 - Primary LLM: 120B open-source × 11 conditions (A–H core + I/J/K ablations + Oracle Setup)
-- Replication LLM: Qwen 3.5 7B × 3 conditions (A, Oracle Setup, E)
+- Replication LLM: DeepSeek V4 Flash (`deepseek/deepseek-v4-flash` via OpenRouter) × 3 conditions (A, G, H)
 
 **Core Premise:** AWS code is correct and verified; H_GT is the strongest expert oracle; we do not assume H_GT is always stronger than H_LLM.
 
@@ -84,48 +84,111 @@ The joint (SR, PR) per category across three arms is the primary result table.
 
 ### Phase 1: Literature Review
 **Goal:** Confirm novelty position, complete related work draft
-**Duration:** 2 weeks
-**Criteria:** 8–10 papers read in depth; 2–3 page related work draft; able to articulate the distinction from NL2Contract / SpecMind in one sentence
+**Duration:** 2 weeks (2026/06/02 – 2026/06/15)
+**Criteria:** 7 competitor papers read in depth + 4 foundational papers scanned; 2–3 page related work draft; one-sentence differentiator from BMC-Agent / SpecMind / NL2Contract / HarnessAgent
 
-#### Core Paper List
+#### Reading Strategy
 
-- [ ] NL2Contract (arxiv 2510.12702)
+Priority logic: read competitors first to establish novelty boundary, then foundations to justify design choices. Papers marked ⚠️ need arxiv ID verified at arxiv.org *before* reading.
+
+**Week 1 schedule (competitors):**
+- Day 1–2: BMC-Agent — highest-priority novelty threat (Kroening + Amazon, CBMC + agents, soundness guard)
+- Day 3: SpecMind — architecturally closest to the iterative feedback loop
+- Day 4–5: NL2Contract + HarnessAgent — define the broader competitive landscape
+
+**Week 2 schedule (remaining papers + draft):**
+- Day 1–2: AssertLLM + Clover (verify IDs first)
+- Day 3: Papadakis mutation survey (mutation oracle justification)
+- Day 4–5: Write related work draft (4-group structure)
+
+#### Core Paper List — Competitors (deep read)
+
+- [ ] **BMC-Agent / Agentic Model Checking** (arxiv 2605.21434) — PRIORITY 1 ⚠️ highest novelty risk
+  - What it does: LLM agents + CBMC/Kani backend under "agents propose, solvers verify"; top-down spec generation; 4-stage validation pipeline (reachability, callee feasibility, dynamic replay, realism audit); adaptive refinement loop with **soundness guard** that rejects refinements masking real bugs. Daniel Kroening (CBMC author) + Amazon co-authors.
+  - How it differs from our work: BMC-Agent is a *tool* that prevents sacrifice via a soundness guard; we are an *empirical study* that quantifies what sacrifice costs (per-category) and establishes the safety consequences via mutation oracle. BMC-Agent has no expert GT harness corpus, no active-sacrifice fraction metric, no controlled protocol experiment (RQ3). The soundness guard is essentially an engineering implementation of Pipeline B-strict — our paper provides the empirical motivation for why such a guard is necessary.
+  - One-sentence differentiator: *BMC-Agent engineers a solution to specification erosion; we provide the first empirical characterisation of its magnitude, per-category structure, and safety cost that motivates why such a solution is needed.*
+
+- [ ] **SpecMind** (arxiv 2602.20610) — PRIORITY 2
   - What it does:
   - How it differs from our work:
-- [ ] SpecMind (arxiv 2602.20610)
+  - Key question to answer: does it distinguish spec completeness from verifier pass rate?
+
+- [ ] **NL2Contract** (arxiv 2510.12702) — PRIORITY 3
   - What it does:
   - How it differs from our work:
-- [ ] HarnessAgent (arxiv 2512.03420)
+  - Key question to answer: iterative verifier feedback? mutation oracle for validation?
+
+- [ ] **HarnessAgent** (arxiv 2512.03420) — PRIORITY 4
   - What it does:
   - How it differs from our work:
-- [ ] AWS CBMC DFCC documentation
+  - Key question to answer: BMC or fuzzing? per-assertion completeness analysis?
+
+- [ ] **AssertLLM** — PRIORITY 5 ⚠️ verify full citation before reading
   - What it does:
   - How it differs from our work:
-- [ ] AssertLLM
+  - Key question to answer: does it use mutation testing to evaluate assertion quality?
+
+- [ ] **Clover** — PRIORITY 6 ⚠️ verify full citation before reading
   - What it does:
   - How it differs from our work:
-- [ ] Clover
+
+- [ ] **Re:Form** ⚠️ arxiv ID unknown — search "Re:Form formal verification LLM 2025" first
   - What it does:
   - How it differs from our work:
-- [ ] Re:Form (arxiv 2505.xxxx)
+
+- [ ] **Contract Strengthening via CHC** (arxiv 2211.12228)
   - What it does:
   - How it differs from our work:
-- [ ] Contract Strengthening via CHC (arxiv 2211.12228)
-  - What it does:
-  - How it differs from our work:
+
+#### Core Paper List — Foundations (scan + targeted read)
+
+- [ ] **Chong et al. (2021)** — *Code-level model checking in the software development workflow at Amazon Web Services*, SPE 2021
+  - Why: institutional basis for treating H_GT as "safety-relevant expert practice"; explains harness anatomy, assumes usage, CI integration
+  - Read: Section 4 (harness structure) in depth; rest at scan pace
+
+- [ ] **CBMC tool paper** (arxiv 2302.02384) — Kroening et al. 2023
+  - Why: tool foundation; DFCC mechanism is what makes frame conditions a first-class verification object
+  - Read: DFCC / assigns clause section in depth
+
+- [ ] **Papadakis et al. (2019)** — *Mutation Testing Advances: An Analysis and Survey*, Advances in Computers
+  - Why: theoretical basis for "silenced-mutant count" as spec adequacy metric; establishes mutation oracle as circularity-free validation
+  - Read: Sections 2–3 (adequacy criteria and mutation score)
+
+- [ ] **Groce et al. (2018)** — *universalmutator*, ICSE 2018 tool paper
+  - Why: justifies mutation tool choice; documents operator coverage
+  - Scan only. Source: agroce.github.io/icse18t.pdf
 
 #### Related Work Grouping Structure
 
-- [ ] LLM spec synthesis group
-- [ ] Mutation testing for specs group
-- [ ] Harness generation group
-- [ ] LLM behaviour analysis group
+- [ ] **Group 1: LLM spec / contract synthesis**
+  - Papers: NL2Contract, SpecMind, Contract Strengthening via CHC
+  - Contrast point: these synthesise specs but do not track per-assertion sacrifice under verifier pressure; no mutation oracle for validation
+
+- [ ] **Group 2: LLM harness generation**
+  - Papers: HarnessAgent, [search for others]
+  - Contrast point: harness generation for fuzzing ≠ BMC; no formal spec completeness metric; no iterative CBMC feedback
+
+- [ ] **Group 3: Mutation testing as spec oracle**
+  - Papers: AssertLLM, Papadakis survey, [search for others]
+  - Contrast point: mutation testing evaluates spec quality, but not combined with LLM iterative generation and sacrifice attribution
+
+- [ ] **Group 4: LLM behaviour under iterative feedback**
+  - Papers: Re:Form, [search for Reflexion / self-debug / SpecLoop]
+  - Contrast point: these study LLM self-correction capability; we study the specific conformance-vs-specification trade-off that emerges in formal verification loops
+
+- [ ] **Group 5: Agentic verification systems** ← new group, added 2026/06/02
+  - Papers: BMC-Agent (2605.21434)
+  - Contrast point: BMC-Agent engineers a soundness guard to *prevent* specification erosion; our study *quantifies* its magnitude and per-category safety cost, providing the empirical motivation for why such a guard is necessary. BMC-Agent has no GT harness corpus, no sacrifice-attribution metric, no mutation oracle validation, no controlled protocol experiment.
 
 #### Outputs
 
-- [ ] Related work draft (2–3 pages)
+- [ ] Related work draft (2–3 pages, 5-group structure above)
 - [ ] Novelty positioning map (X-axis: formal backing strength, Y-axis: industrial code scale)
-- [ ] One-sentence differentiators: distinction from NL2Contract is ___; distinction from SpecMind is ___
+- [ ] One-sentence differentiators filled in:
+  - Distinction from BMC-Agent: ___
+  - Distinction from SpecMind: ___
+  - Distinction from NL2Contract: ___
+  - Distinction from HarnessAgent: ___
 
 ---
 
@@ -134,10 +197,16 @@ The joint (SR, PR) per category across three arms is the primary result table.
 **Duration:** 2–3 weeks
 **Criteria:** Two independent κ gates both ≥ 0.8 before full annotation proceeds
 
+#### Prerequisite Check
+
+- [x] Confirm iteration logger is operational for aws-c-common corpus — 935 iteration_log.json files written across 13 conditions (2026-06-03)
+- [ ] Confirm iteration logger operational for s2n-tls corpus (blocked: s2n LLM generation not yet run)
+- [ ] Confirm s2n-tls LLM generation data is available for all core conditions
+
 #### Blind Pilot Preparation
 
 - [ ] Select 30 functions (covering all three categories, split evenly between aws-c-common and s2n-tls)
-- [ ] Identify second rater (lab colleague or supervisor)
+- [ ] Identify second rater (lab colleague or supervisor) — recruit early, availability is the slow path
 - [ ] Write taxonomy classification criteria document
   - [ ] Definition and examples for validity predicate
   - [ ] Definition and examples for length invariant
@@ -158,9 +227,10 @@ The joint (SR, PR) per category across three arms is the primary result table.
 - [ ] κ₂ ≥ 0.8 → proceed to full annotation; κ₂ < 0.8 → refine criteria and re-pilot
 - [ ] Resolve disagreements; update both criteria documents
 
-#### Knowing-Misalignment Probe (E1 — held-out subset)
+#### Knowing-Misalignment Probe (E1 — separate held-out subset, not the 30-function pilot)
 
-- [ ] Split 30-function held-out subset into two groups: standard pipeline vs probe pipeline
+- [ ] Select a separate 20–30 function subset for E1 (distinct from the κ pilot set)
+- [ ] Split into two groups: standard pipeline vs probe pipeline
 - [ ] Probe group: add API call after each H_GT-entailed deletion asking "Is the assertion you just removed actually true of this function?"
 - [ ] Compare sacrifice rates between groups; if similar → correlational evidence of knowing sacrifice; if divergent → report as exploratory
 
@@ -185,12 +255,15 @@ The joint (SR, PR) per category across three arms is the primary result table.
 **Duration:** 2 weeks
 **Criteria:** ~1,900 compilation-passing mutants; at least 10 per function
 
+**Tool:** universalmutator (Groce et al. 2018) — github.com/agroce/universalmutator
+
 #### Environment Setup
 
 - [ ] Install universalmutator
-- [ ] Configure gcc/clang compilation environment
+- [ ] Configure gcc/clang compilation environment matching the aws-c-common / s2n-tls build system
 - [ ] Write compilation filter script
 - [ ] Write mutant metadata recording script (source function, operator type, file path)
+- [ ] Define equivalent-mutant exclusion strategy (record but do not discard at this stage; mark as "potentially equivalent" after Phase 5 if both GT and LLM return UNSAT)
 
 #### Trial Run
 
@@ -204,7 +277,7 @@ The joint (SR, PR) per category across three arms is the primary result table.
 - [ ] Batch run on all 108 functions
 - [ ] Apply compilation filter
 - [ ] Count mutants per function
-- [ ] Check whether distribution is even
+- [ ] Check whether distribution is even; flag any function with < 10 mutants
 
 #### Outputs
 
@@ -212,6 +285,7 @@ The joint (SR, PR) per category across three arms is the primary result table.
 - [ ] Compilation pass rate: ___%
 - [ ] Average mutants per function: ___
 - [ ] Mutant operator type distribution
+- [ ] Decision point: M_all < 1,000 → tune operator parameters before proceeding
 
 ---
 
@@ -219,6 +293,12 @@ The joint (SR, PR) per category across three arms is the primary result table.
 **Goal:** Build a reliable batch-run and auto-classification pipeline
 **Duration:** 2 weeks
 **Criteria:** 100% accuracy on manual validation of 10 samples; total runtime estimate is reasonable
+
+#### CBMC-to-ESBMC Migration Validity Check (prerequisite for batch)
+
+- [ ] UNSAT preservation check: ESBMC(H_GT, f) = UNSAT for all functions where CBMC(H_GT, f) = UNSAT
+- [ ] SAT-SAT agreement: randomly sample 30 mutants where CBMC(H_GT, m) = SAT; confirm ESBMC(H_GT, m) = SAT for ≥ 27/30 (90%)
+- [ ] Document any incompatible cases; retain those under CBMC only and report separately
 
 #### ESBMC Batch Run Script
 
@@ -260,7 +340,7 @@ The joint (SR, PR) per category across three arms is the primary result table.
 - [ ] ESBMC(H_GT, m) for all ~1,900 mutants (single run; shared oracle across conditions)
 - [ ] ESBMC(H_LLM, m) for all ~1,900 mutants
   - [ ] Primary LLM (120B) × conditions A, B, D, E, F, G, H (core) + I, J, K (ablations) + Oracle Setup
-  - [ ] Replication LLM (Qwen 3.5 7B) × conditions A, Oracle Setup, E
+  - [ ] Replication LLM (DeepSeek V4 Flash) × conditions A, G, H
 - [ ] Soundness-parity validation before batch: UNSAT preservation check on H_GT + SAT-SAT agreement ≥ 90% on 30 known-SAT mutants
 
 #### Result Classification
@@ -287,6 +367,7 @@ The joint (SR, PR) per category across three arms is the primary result table.
   - length: ___
   - frame: ___
 - [ ] UNSAT/SAT exists: ___
+- [ ] Decision point: M_confirmed < 400 → generate additional mutants before proceeding
 
 ---
 
@@ -345,6 +426,7 @@ The joint (SR, PR) per category across three arms is the primary result table.
 - [ ] E4 transfer check: ___ % semantic, ___ % tool-specific
 - [ ] GT UNSAT / LLM SAT secondary finding: ___
 - [ ] RQ2 conclusion draft
+- [ ] Decision point: p > 0.05 → revisit design before proceeding to RQ3
 
 ---
 
@@ -509,7 +591,7 @@ The joint (SR, PR) per category across three arms is the primary result table.
 | RQ3 | ☐ Not started | |
 | Discussion | ☐ Not started | |
 | Threats to Validity | ☐ Not started | |
-| Related Work | ☐ Not started | Draft available |
+| Related Work | ☐ Not started | Draft available from Phase 1 |
 | Abstract | ☐ Not started | Write last |
 | Conclusion | ☐ Not started | |
 
@@ -567,7 +649,7 @@ The joint (SR, PR) per category across three arms is the primary result table.
 
 | Phase | Content | Status | Start | End |
 |-------|---------|--------|-------|-----|
-| 1 | Literature Review | ☐ | 2026/06/01 | |
+| 1 | Literature Review | 🔵 In progress | 2026/06/02 | |
 | 2 | RQ1 Replication | ☐ | | |
 | 3 | Mutant Generation | ☐ | | |
 | 4 | CEX Infrastructure | ☐ | | |
@@ -585,17 +667,17 @@ The joint (SR, PR) per category across three arms is the primary result table.
 ## Key Decision Points
 
 ```
-After mutant generation:
-    Is M_all large enough? (< 1,000 → tune parameters)
+After mutant generation (Phase 3):
+    M_all < 1,000 → tune operator parameters
 
-After CEX confirmation:
-    Is M_confirmed large enough? (< 400 → generate more mutants)
-    Do UNSAT/SAT outcomes exist? (critical for the finding)
+After CEX confirmation (Phase 5):
+    M_confirmed < 400 → generate more mutants
+    UNSAT/SAT outcomes absent → investigate ESBMC configuration
 
-After RQ2:
-    Is the kill rate gap significant? (p > 0.05 → revisit design)
+After RQ2 (Phase 6):
+    Kill rate gap p > 0.05 → revisit design
 
-After RQ3:
+After RQ3 (Phase 8):
     SR/PR results stable by Oct 2026 → submit FSE 2027
     Results not stable by Oct 2026 → submit ASE 2027 (same scope, no reduction)
 ```
@@ -616,4 +698,4 @@ After RQ3:
 
 ---
 
-*Last updated: 2026/06/01 — aligned with research_plan.md (three-arm RQ3, active sacrifice framing, dual-κ gate, E1/E4, primary LLM spec)*
+*Last updated: 2026/06/02 — Phase 1 rewrite: prioritised reading schedule, foundation papers added, uncertain arxiv IDs flagged, E1 probe clarified as separate subset, Phase 3 equivalent-mutant strategy added, Phase 4 CBMC-to-ESBMC migration check moved forward*
