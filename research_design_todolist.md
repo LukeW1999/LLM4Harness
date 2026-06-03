@@ -199,9 +199,15 @@ Priority logic: read competitors first to establish novelty boundary, then found
 
 #### Prerequisite Check
 
-- [x] Confirm iteration logger is operational for aws-c-common corpus — 935 iteration_log.json files written across 13 conditions (2026-06-03)
+- [x] Confirm iteration logger is operational for aws-c-common corpus — 1433 iteration_log.json files written across 18 conditions including G/H/gptoss120b (2026-06-04)
+- [x] Cross-verification recall computed for A/G/H/gptoss120b: G=0.290, A=0.357, H=0.303 (2026-06-04)
+- [x] RQ1 analysis script (analyze_rq1.py) operational — 87.2% sacrifice ratio confirmed across all conditions
+- [x] DeepSeek V4 Flash replaced with Meta Llama 3.3 70B as replication model (proof_allocators.h hallucination, 97-100% UNKNOWN)
+- [x] Prompt guard added against hallucinated includes (prompt_condA.txt + feedback_loop.py)
+- [x] Mutation pipeline (gen_mutants.py) built and validated: 46 compiled mutants from aws_byte_buf_init (47% pass rate), ~3818 extrapolated for 83 funcs
 - [ ] Confirm iteration logger operational for s2n-tls corpus (blocked: s2n LLM generation not yet run)
 - [ ] Confirm s2n-tls LLM generation data is available for all core conditions
+- [ ] Run Llama 3.3 70B replication (A/G/H) — script at run_replication_llama.sh, needs server restart
 
 #### Blind Pilot Preparation
 
