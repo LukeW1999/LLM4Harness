@@ -1168,27 +1168,202 @@ def run_gt(func_name: str) -> ESBMCResult:
     return run_esbmc(func_name, harness)
 
 
+# ── RQ2 Mutation Oracle ───────────────────────────────────────────────────────
+
+import json
+import shutil
+from dataclasses import dataclass
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from collections import Counter
+from typing import Optional
+
+RESULTS_DIR = _REPO_DIR / "results"
+MUTANTS_DIR = _REPO_DIR / "mutants"
+EVAL_DIR    = _REPO_DIR / "evaluation"
+DATASET_DIR = _REPO_DIR / "dataset_condA"
+
+
+@dataclass
+class MutantOracleResult:
+    func_name: str
+    mutant_path: str
+    condition: str
+    gt_result: str
+    llm_result: str
+    outcome: str
+    gt_triggered_assertion: str = ""
+    llm_triggered_assertion: str = ""
+    taxonomy_category: str = ""
+
+
+def _classify_outcome(gt: str, llm: str) -> str:
+    if gt == "SAT" and llm != "SAT":
+        return "GT_SAT_LLM_UNSAT"
+    elif gt == "SAT" and llm == "SAT":
+        return "GT_SAT_LLM_SAT"
+    elif gt != "SAT" and llm == "SAT":
+        return "GT_UNSAT_LLM_SAT"
+    return "GT_UNSAT_LLM_UNSAT"
+
+
+def _classify_assertion_category(text: str) -> str:
+    t = text.lower()
+    if any(kw in t for kw in ["allocator", "old_", ".impl", "frame"]):
+        return "frame_condition"
+    if any(kw in t for kw in [".len", ".capacity", "offset", "length", ".size"]):
+        return "length_invariant"
+    return "validity_predicate"
+
+
+def _get_gt_harness_path(func_name: str) -> Optional[Path]:
+    for d in DATASET_DIR.iterdir():
+        if d.is_dir() and func_name in d.name:
+            p = d / "ground_truth_harness.c"
+            if p.exists():
+                return p
+    return None
+
+
+def _get_llm_harness_path(func_name: str, condition: str) -> Optional[Path]:
+    cond_dir = RESULTS_DIR / f"feedback_loop_{condition}" / func_name
+    if not cond_dir.exists():
+        return None
+    hs = sorted(cond_dir.glob("iter_*_harness.c"),
+                key=lambda p: int(p.stem.split("_")[1]))
+    return hs[-1] if hs else None
+
+
+def _get_mutants(func_name: str) -> list:
+    d = MUTANTS_DIR / func_name
+    return sorted(d.glob("*.c")) if d.exists() else []
+
+
+def _run_one_mutant(func_name, mutant_path, gt_harness, llm_harness, condition):
+    gt_r  = run_esbmc(func_name, gt_harness,  mutant_path)
+    llm_r = run_esbmc(func_name, llm_harness, mutant_path)
+    outcome = _classify_outcome(gt_r.verification_result, llm_r.verification_result)
+    cat = _classify_assertion_category(gt_r.error_summary)
+    return MutantOracleResult(
+        func_name=func_name, mutant_path=str(mutant_path), condition=condition,
+        gt_result=gt_r.verification_result, llm_result=llm_r.verification_result,
+        outcome=outcome,
+        gt_triggered_assertion=gt_r.error_summary[:200],
+        llm_triggered_assertion=llm_r.error_summary[:200],
+        taxonomy_category=cat,
+    )
+
+
+def run_parity_check(workers: int = 4) -> dict:
+    """UNSAT-preservation check: ESBMC(H_GT, f_original) should be UNSAT."""
+    print("\n=== Soundness-Parity Check (UNSAT preservation) ===")
+    funcs = list(FUNC_CONFIGS.keys())
+    failures = []
+
+    def check(func_name):
+        gt = _get_gt_harness_path(func_name)
+        if gt is None:
+            return func_name, "NO_GT_HARNESS"
+        r = run_esbmc(func_name, gt)
+        return func_name, r.verification_result
+
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        futs = {ex.submit(check, f): f for f in funcs}
+        for fut in as_completed(futs):
+            fname, res = fut.result()
+            mark = "✓" if res == "SUCCESS" else "⚠"
+            print(f"  {mark} {fname}: {res}")
+            if res != "SUCCESS":
+                failures.append({"func": fname, "result": res})
+
+    passed = len(funcs) - len(failures)
+    print(f"\nPassed: {passed}/{len(funcs)}")
+    if failures:
+        print("Failures:", failures)
+    return {"passed": passed, "total": len(funcs), "failures": failures}
+
+
+def run_rq2_batch(condition: str, func_filter: Optional[str] = None,
+                  workers: int = 4, save_json: bool = False):
+    """Full RQ2 batch: all mutants × GT harness × LLM harness."""
+    funcs = [func_filter] if func_filter else list(FUNC_CONFIGS.keys())
+    tasks = []
+    for fn in funcs:
+        gt  = _get_gt_harness_path(fn)
+        llm = _get_llm_harness_path(fn, condition)
+        muts = _get_mutants(fn)
+        if not gt or not llm or not muts:
+            continue
+        for m in muts:
+            tasks.append((fn, m, gt, llm))
+
+    print(f"\n=== RQ2 Batch: condition={condition}, tasks={len(tasks)} ===")
+    results = []
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        futs = {ex.submit(_run_one_mutant, fn, m, gt, llm, condition): (fn, m)
+                for fn, m, gt, llm in tasks}
+        for i, fut in enumerate(as_completed(futs)):
+            r = fut.result()
+            results.append(r)
+            if (i + 1) % 100 == 0:
+                primary = sum(1 for x in results if x.outcome == "GT_SAT_LLM_UNSAT")
+                print(f"  {i+1}/{len(tasks)}  GT_SAT_LLM_UNSAT: {primary}")
+
+    # Summary
+    total = len(results)
+    counts = Counter(r.outcome for r in results)
+    print(f"\nTotal: {total}")
+    for k, v in sorted(counts.items()):
+        note = " ← PRIMARY" if k == "GT_SAT_LLM_UNSAT" else ""
+        print(f"  {k:<30}: {v:4d} ({100*v//total}%){note}")
+
+    primary = [r for r in results if r.outcome == "GT_SAT_LLM_UNSAT"]
+    if primary:
+        cats = Counter(r.taxonomy_category for r in primary)
+        print("\nGT_SAT_LLM_UNSAT by category:")
+        for k, v in sorted(cats.items()):
+            print(f"  {k:<30}: {v}")
+
+    if save_json:
+        out = EVAL_DIR / f"rq2_oracle_{condition}.json"
+        out.write_text(json.dumps([vars(r) for r in results], indent=2))
+        print(f"Saved: {out}")
+
+    return results
+
+
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description="Run ESBMC on aws-c-common harnesses")
-    parser.add_argument("func_name", help="Function name (e.g. aws_byte_buf_init)")
-    parser.add_argument("--llm", metavar="HARNESS", help="Run LLM harness at this path instead of GT")
+    parser = argparse.ArgumentParser(description="Run ESBMC on aws-c-common harnesses (RQ2)")
+    parser.add_argument("--func", help="Function name for single-function run")
+    parser.add_argument("--all", action="store_true", help="Run all functions (RQ2 batch)")
+    parser.add_argument("--condition", default="A_gptoss120b", help="LLM condition name")
+    parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument("--save-json", action="store_true")
+    parser.add_argument("--parity-check", action="store_true",
+                        help="Run UNSAT-preservation soundness check only")
+    parser.add_argument("--gt", action="store_true", help="Run GT harness only (single func)")
+    parser.add_argument("--llm-harness", metavar="HARNESS",
+                        help="Run specific LLM harness path")
     parser.add_argument("--timeout", type=int, default=300)
     args = parser.parse_args()
 
-    if args.llm:
-        r = run_esbmc(args.func_name, Path(args.llm), args.timeout)
-        label = "LLM"
+    if args.parity_check:
+        run_parity_check(workers=args.workers)
+    elif args.all or args.func:
+        run_rq2_batch(
+            condition=args.condition,
+            func_filter=args.func,
+            workers=args.workers,
+            save_json=args.save_json,
+        )
+    elif args.gt and args.func:
+        r = run_gt(args.func)
+        print(f"[GT] {args.func}: {r.verification_result}")
+    elif args.llm_harness and args.func:
+        r = run_esbmc(args.func, Path(args.llm_harness), timeout=args.timeout)
+        print(f"[LLM] {args.func}: {r.verification_result}")
     else:
-        r = run_gt(args.func_name)
-        label = "GT"
-
-    print(f"[{label}] {args.func_name}")
-    print(f"  Compilation : {'OK' if r.compilation_ok else 'FAIL'}")
-    print(f"  Verification: {r.verification_result}")
-    print(f"  VCCs        : {r.num_checks} generated, {r.num_failed} failed")
-    if r.error_summary:
-        print(f"  Errors:\n{r.error_summary}")
+        parser.print_help()

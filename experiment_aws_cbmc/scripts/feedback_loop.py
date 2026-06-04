@@ -81,6 +81,11 @@ CONDITION_DATASET = {
     "F":        experiment_dir / "dataset_condA",   # same as A, with few-shot GT example (WRONG family)
     "G":        experiment_dir / "dataset_condA",   # single-pass baseline: no CBMC feedback
     "H":        experiment_dir / "dataset_condA",   # strategy-neutral: repair prompt gives no deletion instruction
+    # Ablation conditions
+    "I":        experiment_dir / "dataset_condA",   # like A + GT assertion category label at each SAT failure
+    "J":        experiment_dir / "dataset_condA",   # like A + running deletion log shown
+    "K":        experiment_dir / "dataset_condA",   # spec-first: NL contract before CBMC loop
+    "Oracle":   experiment_dir / "dataset_condA",   # GT __CPROVER_assume preconditions provided
     "A_v3":     experiment_dir / "dataset_condA",
     "B_v3":     experiment_dir / "dataset_condB",
 }
@@ -94,6 +99,10 @@ CONDITION_PROMPT = {
     "F":        "prompt_condE.txt",   # condA dataset + few-shot GT example from WRONG family (ablation)
     "G":        "prompt_condA.txt",   # same initial prompt as A; loop never runs
     "H":        "prompt_condA.txt",   # same initial prompt as A; repair prompt is strategy-neutral
+    "I":        "prompt_condA.txt",   # same initial prompt; fix_unknown prompt injects GT category label
+    "J":        "prompt_condA.txt",   # same initial prompt; fix_unknown prompt shows deletion log
+    "K":        "prompt_condK.txt",   # spec-first: asks for NL contract first, then harness
+    "Oracle":   "prompt_condOracle.txt",  # GT preconditions pre-loaded in initial prompt
     "A_v3":     "prompt_condA.txt",
     "B_v3":     "prompt_condB.txt",
 }
@@ -119,6 +128,24 @@ def _model_dir_suffix(model: str) -> str:
 ACTIVE_CONDITION = "original"
 # Active model backend (set by --model arg in main())
 ACTIVE_MODEL = "qwen"
+
+
+def _guess_gt_category_for_harness(harness_code: str, func_name: str) -> str:
+    """Condition I: heuristically guess the GT assertion category for the current harness.
+    Used to inject category label into fix_unknown_prompt for Condition I.
+    Returns a comma-separated list of suspected categories based on assertion text."""
+    import re
+    asserts = re.findall(r'assert\s*\(([^;]+)\)', harness_code)
+    cats = set()
+    for a in asserts:
+        a_lower = a.lower()
+        if any(kw in a_lower for kw in ['allocator', 'old_', '.impl', 'unchanged']):
+            cats.add('frame_condition')
+        elif any(kw in a_lower for kw in ['.len', '.capacity', 'offset', 'length', 'size']):
+            cats.add('length_invariant')
+        else:
+            cats.add('validity_predicate')
+    return ", ".join(sorted(cats)) if cats else "validity_predicate"
 
 # ── Condition E: few-shot family example mapping ──────────────────────────────
 # Maps each function to a same-family GT harness used as a few-shot example.
@@ -508,6 +535,14 @@ def build_initial_prompt(func_dir: str, func_name: str) -> str:
             prompt = prompt.replace("{EXAMPLE_FUNC}", "(no example available)")
             prompt = prompt.replace("{EXAMPLE_HARNESS}", "/* No reference harness available. */")
 
+    # Condition K: spec-first — override entirely with dynamic spec-first prompt
+    elif ACTIVE_CONDITION == "K":
+        return build_spec_first_prompt(func_dir, func_name)
+
+    # Condition Oracle: override entirely with GT-precondition-injected prompt
+    elif ACTIVE_CONDITION == "Oracle":
+        return build_oracle_initial_prompt(func_dir, func_name)
+
     return prompt
 
 
@@ -607,9 +642,13 @@ Output ONLY the corrected C harness code. Iteration {iteration}."""
 def build_fix_unknown_prompt(
     harness_code: str,
     func_name: str,
-    iteration: int
+    iteration: int,
+    # Condition I: GT category label for the failed assertion (optional)
+    gt_category_label: str = "",
+    # Condition J: running deletion log (optional)
+    deletion_log: list = None,
 ) -> str:
-    return f"""Your CBMC harness for `{func_name}` produced UNKNOWN result (CBMC found no reachable assertions).
+    base = f"""Your CBMC harness for `{func_name}` produced UNKNOWN result (CBMC found no reachable assertions).
 This means the harness likely has no assert() calls, or all code paths are unreachable.
 
 ## Your harness:
@@ -622,9 +661,120 @@ Please rewrite the harness correctly, ensuring:
 - The function `{func_name}` is actually called (not a different function)
 - All code branches are reachable
 - Use `aws_default_allocator()` for any `struct aws_allocator *` (NOT `can_fail_allocator`)
-- Only use these includes: `aws/common/*.h`, `proof_helpers/make_common_data_structures.h`, `proof_helpers/nondet.h`, `proof_helpers/utils.h`, `assert.h`, `stdlib.h`, `stdint.h`, `stdbool.h`
+- Only use these includes: `aws/common/*.h`, `proof_helpers/make_common_data_structures.h`, `proof_helpers/nondet.h`, `proof_helpers/utils.h`, `assert.h`, `stdlib.h`, `stdint.h`, `stdbool.h`"""
 
-Output ONLY the corrected C code. No explanations. Iteration {iteration}."""
+    # Condition I: inject GT assertion category label
+    if gt_category_label:
+        base += f"""
+
+## Assertion category hint (Condition I):
+The assertion(s) causing UNKNOWN belong to category: **{gt_category_label}**
+- validity_predicate: pointer non-null, return value range, error-code postconditions
+- length_invariant: buffer length/capacity/offset relationships after the call
+- frame_condition: unchanged memory — allocator, pointer identity, side-effect discipline
+Do NOT remove assertions of this category — they are safety-relevant postconditions."""
+
+    # Condition J: inject running deletion log
+    if deletion_log:
+        deleted_text = "\n".join(f"  - {a}" for a in deletion_log[-10:])
+        base += f"""
+
+## Assertions you have removed in prior iterations (Condition J):
+{deleted_text}
+These were removed in earlier iterations. If any were correct postconditions, consider restoring them
+with a more precise predicate instead of deleting them permanently."""
+
+    base += f"\n\nOutput ONLY the corrected C code. No explanations. Iteration {iteration}."
+    return base
+
+
+def build_spec_first_prompt(func_dir: str, func_name: str) -> str:
+    """Condition K: spec-first phase. Ask LLM to write NL contract before generating harness."""
+    active_dataset = CONDITION_DATASET["K"]
+    func_path = active_dataset / func_dir
+    header = read_file(func_path / "header.h")
+    impl = read_file(func_path / "implementation.c")
+    return f"""You are writing a CBMC proof harness for `{func_name}`.
+
+## Function declaration:
+```c
+{header}
+```
+
+## Implementation:
+```c
+{impl}
+```
+
+**Step 1 — Write a formal contract FIRST** (before any code):
+
+```
+Preconditions: [list each __CPROVER_assume condition you will set up]
+Postconditions (validity): [pointer non-null, return value, error codes]
+Postconditions (length): [buffer length/capacity invariants after the call]
+Postconditions (frame): [memory locations NOT modified by the function]
+```
+
+**Step 2 — Generate the CBMC harness** that verifies your contract using assert() statements.
+
+Rules:
+- Use `aws_default_allocator()` for any `struct aws_allocator *`
+- Include only: `aws/common/*.h`, `proof_helpers/make_common_data_structures.h`, `assert.h`, `stdlib.h`, `stdint.h`, `stdbool.h`
+- FORBIDDEN: `proof_helpers/proof_allocators.h`, `can_fail_allocator()`
+
+Output the contract block first, then the complete C harness code."""
+
+
+def build_oracle_initial_prompt(func_dir: str, func_name: str) -> str:
+    """Oracle Setup condition: inject GT __CPROVER_assume preconditions into initial prompt."""
+    active_dataset = CONDITION_DATASET["Oracle"]
+    func_path = active_dataset / func_dir
+    header = read_file(func_path / "header.h")
+    impl = read_file(func_path / "implementation.c")
+
+    # Load GT harness to extract its __CPROVER_assume lines
+    gt_path = func_path / "ground_truth_harness.c"
+    gt_assumes = ""
+    if gt_path.exists():
+        gt_code = gt_path.read_text()
+        import re
+        assumes = re.findall(r'__CPROVER_assume\([^;]+\);', gt_code)
+        if assumes:
+            gt_assumes = "\n".join(f"  {a}" for a in assumes)
+
+    assume_block = f"""
+## Ground-truth preconditions (use these exactly in your harness setup):
+```c
+{gt_assumes if gt_assumes else "// No GT preconditions available — generate your own"}
+```
+These are the structural validity assumptions an expert uses for `{func_name}`.
+Copy them into your harness BEFORE the function call.
+You only need to write the POSTCONDITION assert() statements — do NOT modify the setup above.
+""" if gt_assumes else ""
+
+    return f"""Write a CBMC proof harness for `{func_name}`.
+
+## Function declaration:
+```c
+{header}
+```
+
+## Implementation:
+```c
+{impl}
+```
+{assume_block}
+Write assert() postconditions that verify:
+1. Return value / error code correctness (validity predicates)
+2. Output buffer length/capacity invariants (length invariants)
+3. Memory not modified beyond the function's contract (frame conditions)
+
+Rules:
+- Use `aws_default_allocator()` for any `struct aws_allocator *`
+- Include only: `aws/common/*.h`, `proof_helpers/make_common_data_structures.h`, `assert.h`, `stdlib.h`, `stdint.h`, `stdbool.h`
+- FORBIDDEN: `proof_helpers/proof_allocators.h`, `can_fail_allocator()`
+
+Output ONLY complete C harness code."""
 
 
 @dataclass
@@ -738,6 +888,9 @@ def run_feedback_loop(
         (output_dir / "summary.json").write_text(json.dumps(result.to_dict(), indent=2))
         return result
 
+    # Condition J: track deletion log for running history
+    deletion_log_j: list[str] = []
+
     # Feedback loop
     consecutive_unknown = 0
     for i in range(2, max_iterations + 1):
@@ -784,7 +937,20 @@ def run_feedback_loop(
         elif cbmc_result.verification_result == "UNKNOWN":
             action = "fix_unknown"
             print(f"\n  [Iter {i}] Fixing UNKNOWN (no reachable assertions)...")
-            fix_prompt = build_fix_unknown_prompt(harness_code, func_name, i)
+
+            # Condition I: inject GT category label for the previous iteration's assertions
+            gt_cat = ""
+            if ACTIVE_CONDITION == "I":
+                gt_cat = _guess_gt_category_for_harness(harness_code, func_name)
+
+            # Condition J: pass running deletion log
+            del_log = deletion_log_j if ACTIVE_CONDITION == "J" else []
+
+            fix_prompt = build_fix_unknown_prompt(
+                harness_code, func_name, i,
+                gt_category_label=gt_cat,
+                deletion_log=del_log,
+            )
         else:
             print(f"  No fix possible for result: {cbmc_result.verification_result}")
             break
@@ -804,6 +970,14 @@ def run_feedback_loop(
             action_taken=action
         )
         result.iterations.append(record)
+
+        # Condition J: update deletion log from this iteration's diff
+        if ACTIVE_CONDITION == "J" and len(result.iterations) >= 2:
+            import re
+            prev_asserts = set(re.findall(r'assert\s*\(([^;]+)\)', result.iterations[-2].harness_code))
+            curr_asserts = set(re.findall(r'assert\s*\(([^;]+)\)', harness_code))
+            deleted_this_iter = prev_asserts - curr_asserts
+            deletion_log_j.extend(sorted(deleted_this_iter))
 
     # Save summary
     summary = result.to_dict()
@@ -860,7 +1034,8 @@ def main():
     parser.add_argument("--max-iter", type=int, default=15, help="Max iterations (default: 15)")
     parser.add_argument("--save-json", action="store_true", help="Save aggregate results JSON")
     parser.add_argument("--condition",
-                        choices=["original", "A", "B", "C", "D", "E", "F", "G", "H", "A_v3", "B_v3"],
+                        choices=["original", "A", "B", "C", "D", "E", "F", "G", "H",
+                                 "I", "J", "K", "Oracle", "A_v3", "B_v3"],
                         default="original",
                         help=("Prompt condition: A=source+NL, B=source only, C=NL+CoT, D=no-NL+CoT, "
                               "E=same-family few-shot, F=wrong-family few-shot, "

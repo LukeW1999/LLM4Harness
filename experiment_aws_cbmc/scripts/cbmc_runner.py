@@ -14,6 +14,10 @@ from typing import Optional
 SRCDIR = Path("/home/weiqi/Verification/aws-c-common")
 PROOFDIR = SRCDIR / "verification/cbmc"
 
+# s2n-tls source and proof directories
+S2N_SRCDIR  = Path("/home/weiqi/Verification/s2n-tls")
+S2N_PROOFDIR = Path("/home/weiqi/Verification/LLM4Harness/study_derivability/corpora/s2n-tls/tests/cbmc")
+
 # Common CBMC flags
 COMMON_FLAGS = [
     f"-I{SRCDIR}/include",
@@ -23,6 +27,18 @@ COMMON_FLAGS = [
     "-DCBMC_MAX_OBJECT_SIZE=(SIZE_MAX>>(CBMC_OBJECT_BITS+1))",
     "--object-bits", "8",
     "--no-standard-checks",
+]
+
+# s2n-tls common CBMC flags
+S2N_COMMON_FLAGS = [
+    f"-I{S2N_SRCDIR}/api",
+    f"-I{S2N_SRCDIR}",
+    f"-I{S2N_PROOFDIR}/include",
+    f"-I{S2N_PROOFDIR}/proofs/cbmc_proof",
+    "-DCBMC",
+    "--object-bits", "8",
+    "--no-standard-checks",
+    "-DS2N_SAFETY_ASSERT_SIDE_EFFECT_FREE",
 ]
 
 # Per-function compilation config
@@ -1564,6 +1580,292 @@ FUNC_CONFIGS = {
         "defines": [],
         "unwind": ['--unwind', '3'],
         "unwindset": [],
+    },
+
+    # ── s2n-tls: s2n_stuffer module (25 functions) ────────────────────────────
+    # Include pattern: cbmc_proof/make_common_datastructures.h (not proof_helpers/)
+    # Sources: stuffer/s2n_stuffer.c + per-function deps (from Makefile)
+
+    "s2n_stuffer_init": {
+        "source": None,  # s2n uses multiple source files; see "sources" list
+        "harness_entry": "s2n_stuffer_init_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS,
+        "unwind": ['--unwind', '3'],
+        "unwindset": [],
+    },
+    "s2n_stuffer_alloc": {
+        "source": None, "harness_entry": "s2n_stuffer_alloc_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_SRCDIR / "utils/s2n_mem.c",
+            S2N_SRCDIR / "utils/s2n_safety.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_free": {
+        "source": None, "harness_entry": "s2n_stuffer_free_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_mem.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_SRCDIR / "utils/s2n_safety.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_growable_alloc": {
+        "source": None, "harness_entry": "s2n_stuffer_growable_alloc_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_SRCDIR / "utils/s2n_mem.c",
+            S2N_SRCDIR / "utils/s2n_safety.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_copy": {
+        "source": None, "harness_entry": "s2n_stuffer_copy_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_SRCDIR / "utils/s2n_mem.c",
+            S2N_SRCDIR / "utils/s2n_safety.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_raw_read": {
+        "source": None, "harness_entry": "s2n_stuffer_raw_read_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_raw_write": {
+        "source": None, "harness_entry": "s2n_stuffer_raw_write_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_SRCDIR / "utils/s2n_mem.c",
+            S2N_SRCDIR / "utils/s2n_safety.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_read": {
+        "source": None, "harness_entry": "s2n_stuffer_read_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_write": {
+        "source": None, "harness_entry": "s2n_stuffer_write_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_SRCDIR / "utils/s2n_mem.c",
+            S2N_SRCDIR / "utils/s2n_safety.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_read_bytes": {
+        "source": None, "harness_entry": "s2n_stuffer_read_bytes_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_write_bytes": {
+        "source": None, "harness_entry": "s2n_stuffer_write_bytes_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_SRCDIR / "utils/s2n_mem.c",
+            S2N_SRCDIR / "utils/s2n_safety.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_skip_read": {
+        "source": None, "harness_entry": "s2n_stuffer_skip_read_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_skip_write": {
+        "source": None, "harness_entry": "s2n_stuffer_skip_write_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_SRCDIR / "utils/s2n_mem.c",
+            S2N_SRCDIR / "utils/s2n_safety.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_wipe": {
+        "source": None, "harness_entry": "s2n_stuffer_wipe_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_wipe_n": {
+        "source": None, "harness_entry": "s2n_stuffer_wipe_n_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_reread": {
+        "source": None, "harness_entry": "s2n_stuffer_reread_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_rewrite": {
+        "source": None, "harness_entry": "s2n_stuffer_rewrite_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_is_consumed": {
+        "source": None, "harness_entry": "s2n_stuffer_is_consumed_harness",
+        "sources": [
+            S2N_SRCDIR / "error/s2n_errno.c",
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_erase_and_read": {
+        "source": None, "harness_entry": "s2n_stuffer_erase_and_read_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_read_uint8": {
+        "source": None, "harness_entry": "s2n_stuffer_read_uint8_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "stuffer/s2n_stuffer_network_order.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_read_uint16": {
+        "source": None, "harness_entry": "s2n_stuffer_read_uint16_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "stuffer/s2n_stuffer_network_order.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_read_uint32": {
+        "source": None, "harness_entry": "s2n_stuffer_read_uint32_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "stuffer/s2n_stuffer_network_order.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_write_uint8": {
+        "source": None, "harness_entry": "s2n_stuffer_write_uint8_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "stuffer/s2n_stuffer_network_order.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_SRCDIR / "utils/s2n_mem.c",
+            S2N_SRCDIR / "utils/s2n_safety.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
+    },
+    "s2n_stuffer_write_uint16": {
+        "source": None, "harness_entry": "s2n_stuffer_write_uint16_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "stuffer/s2n_stuffer_network_order.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_SRCDIR / "utils/s2n_mem.c",
+            S2N_SRCDIR / "utils/s2n_safety.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'],
+        "unwindset": ["--unwindset", "s2n_stuffer_write_network_order.10:3"],
+    },
+    "s2n_stuffer_write_uint32": {
+        "source": None, "harness_entry": "s2n_stuffer_write_uint32_harness",
+        "sources": [
+            S2N_SRCDIR / "stuffer/s2n_stuffer.c",
+            S2N_SRCDIR / "stuffer/s2n_stuffer_network_order.c",
+            S2N_SRCDIR / "utils/s2n_blob.c",
+            S2N_SRCDIR / "utils/s2n_ensure.c",
+            S2N_SRCDIR / "utils/s2n_mem.c",
+            S2N_SRCDIR / "utils/s2n_safety.c",
+            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+        ],
+        "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'],
+        "unwindset": ["--unwindset", "s2n_stuffer_write_network_order.10:5"],
     },
 
 }
