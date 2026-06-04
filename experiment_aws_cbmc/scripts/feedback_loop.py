@@ -51,6 +51,8 @@ def extract_c_code(response: str) -> str:
     Robustly extract C code from LLM response.
     Strips markdown fences, trailing explanatory text, and non-code paragraphs.
     """
+    if not response:
+        return ""
     s = response.strip()
     # Strip leading markdown fence
     if s.startswith("```c\n"):
@@ -503,6 +505,12 @@ PROOFDIR = Path("/home/weiqi/aws-c-common/verification/cbmc")
 
 def build_initial_prompt(func_dir: str, func_name: str) -> str:
     """Build the initial generation prompt for the active condition."""
+    # Conditions K and Oracle build their prompts dynamically — no template file needed
+    if ACTIVE_CONDITION == "K":
+        return build_spec_first_prompt(func_dir, func_name)
+    if ACTIVE_CONDITION == "Oracle":
+        return build_oracle_initial_prompt(func_dir, func_name)
+
     active_dataset = CONDITION_DATASET[ACTIVE_CONDITION]
     prompt_file = CONDITION_PROMPT[ACTIVE_CONDITION]
     func_path = active_dataset / func_dir
@@ -534,14 +542,6 @@ def build_initial_prompt(func_dir: str, func_name: str) -> str:
         else:
             prompt = prompt.replace("{EXAMPLE_FUNC}", "(no example available)")
             prompt = prompt.replace("{EXAMPLE_HARNESS}", "/* No reference harness available. */")
-
-    # Condition K: spec-first — override entirely with dynamic spec-first prompt
-    elif ACTIVE_CONDITION == "K":
-        return build_spec_first_prompt(func_dir, func_name)
-
-    # Condition Oracle: override entirely with GT-precondition-injected prompt
-    elif ACTIVE_CONDITION == "Oracle":
-        return build_oracle_initial_prompt(func_dir, func_name)
 
     return prompt
 

@@ -70,8 +70,13 @@ def call_qwen(system_prompt: str, user_prompt: str, temperature: float = 0.0,
             r = requests.post(API_URL, headers=headers, json=body, timeout=300)
             r.raise_for_status()
             content = r.json()["choices"][0]["message"]["content"]
+            if not content:
+                # API returned empty/null content — treat as transient error and retry
+                last_err = ValueError(f"API returned null content (attempt {attempt+1})")
+                time.sleep(retry_delay * (2 ** attempt))
+                continue
             # Strip any <think>...</think> blocks (some models emit these by default)
-            if content and "<think>" in content:
+            if "<think>" in content:
                 content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
             return content
         except (requests.exceptions.SSLError,

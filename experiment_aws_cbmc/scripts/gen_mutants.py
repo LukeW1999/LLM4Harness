@@ -55,10 +55,15 @@ from cbmc_runner import COMMON_FLAGS, PROOFDIR
 
 # Manual overrides for known-hard-to-find functions
 FUNC_SOURCE_OVERRIDES = {
-    "aws_add_size_checked":     SRCDIR_AWS / "include/aws/common/math.h",
-    "aws_add_size_saturating":  SRCDIR_AWS / "source/byte_buf.c",
-    "aws_mul_size_checked":     SRCDIR_AWS / "include/aws/common/math.h",
-    "aws_mul_size_saturating":  SRCDIR_AWS / "include/aws/common/math.h",
+    "aws_add_size_checked":     SRCDIR_AWS / "include/aws/common/math.inl",
+    "aws_add_size_saturating":  SRCDIR_AWS / "include/aws/common/math.inl",
+    "aws_mul_size_checked":     SRCDIR_AWS / "include/aws/common/math.inl",
+    "aws_mul_size_saturating":  SRCDIR_AWS / "include/aws/common/math.inl",
+    "aws_array_eq":             SRCDIR_AWS / "source/byte_buf.c",
+    "aws_array_eq_c_str":       SRCDIR_AWS / "source/byte_buf.c",
+    "aws_array_list_back":      SRCDIR_AWS / "include/aws/common/array_list.inl",
+    "aws_array_list_capacity":  SRCDIR_AWS / "include/aws/common/array_list.inl",
+    "aws_array_list_clean_up":  SRCDIR_AWS / "include/aws/common/array_list.inl",
     "aws_is_power_of_two":      SRCDIR_AWS / "source/hash_table.c",
     "aws_round_up_to_power_of_two": SRCDIR_AWS / "source/allocator_sba.c",
     "aws_linked_list_init":     SRCDIR_AWS / "source/thread_scheduler.c",

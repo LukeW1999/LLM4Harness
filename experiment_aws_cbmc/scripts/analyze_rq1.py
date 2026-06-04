@@ -218,6 +218,11 @@ CONDITIONS = [
     ("A/llama3370b",      "A_llama3370binstruct"),
     ("G/llama3370b",      "G_llama3370binstruct"),
     ("H/llama3370b",      "H_llama3370binstruct"),
+    # Ablation conditions (gptoss120b)
+    ("I/gptoss120b",      "I_gptoss120b"),
+    ("J/gptoss120b",      "J_gptoss120b"),
+    ("K/gptoss120b",      "K_gptoss120b"),
+    ("Oracle/gptoss120b", "Oracle_gptoss120b"),
 ]
 
 

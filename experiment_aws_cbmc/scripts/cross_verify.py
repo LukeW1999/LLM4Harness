@@ -154,6 +154,10 @@ CONDITION_FEEDBACK_DIR = {
     "A_llama3370binstruct": RESULTS_DIR / "feedback_loop_A_llama3370binstruct",
     "G_llama3370binstruct": RESULTS_DIR / "feedback_loop_G_llama3370binstruct",
     "H_llama3370binstruct": RESULTS_DIR / "feedback_loop_H_llama3370binstruct",
+    "I_gptoss120b":    RESULTS_DIR / "feedback_loop_I_gptoss120b",
+    "J_gptoss120b":    RESULTS_DIR / "feedback_loop_J_gptoss120b",
+    "K_gptoss120b":    RESULTS_DIR / "feedback_loop_K_gptoss120b",
+    "Oracle_gptoss120b": RESULTS_DIR / "feedback_loop_Oracle_gptoss120b",
 }
 
 
@@ -498,7 +502,7 @@ def cross_verify_one(func_name: str, verbose: bool = True,
         key=lambda p: int(p.stem.split('_')[1])
     )
     if not iter_files:
-        raise FileNotFoundError(f"No iter harnesses found in {llm_dir}")
+        return None  # skip functions with no harness files (e.g. K spec-first extraction failures)
     llm_harness_path = iter_files[-1]
 
     if verbose:
@@ -712,6 +716,8 @@ def main():
             for r, err in ex.map(_worker, work):
                 if err:
                     print(f"  ERROR ({err[0]}): {err[1][:200]}")
+                elif r is None:
+                    pass  # skipped (no harness files)
                 else:
                     print(f"  done: {r.func_name}  verify_equiv={r.verification_equivalent()}  recall={r.harness_recall:.0%}")
                     results.append(r)
