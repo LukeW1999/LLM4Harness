@@ -214,6 +214,10 @@ CONDITIONS = [
     ("A/deepseekv4flash", "A_deepseekv4flash"),
     ("G/deepseekv4flash", "G_deepseekv4flash"),
     ("H/deepseekv4flash", "H_deepseekv4flash"),
+    # Replication (Llama 3.3 70B)
+    ("A/llama3370b",      "A_llama3370binstruct"),
+    ("G/llama3370b",      "G_llama3370binstruct"),
+    ("H/llama3370b",      "H_llama3370binstruct"),
 ]
 
 

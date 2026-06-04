@@ -151,6 +151,9 @@ CONDITION_FEEDBACK_DIR = {
     "E_qwen":   RESULTS_DIR / "feedback_loop_E",
     "C_qwen":   RESULTS_DIR / "feedback_loop_C",
     "D_qwen":   RESULTS_DIR / "feedback_loop_D",
+    "A_llama3370binstruct": RESULTS_DIR / "feedback_loop_A_llama3370binstruct",
+    "G_llama3370binstruct": RESULTS_DIR / "feedback_loop_G_llama3370binstruct",
+    "H_llama3370binstruct": RESULTS_DIR / "feedback_loop_H_llama3370binstruct",
 }
 
 

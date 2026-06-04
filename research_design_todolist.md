@@ -18,7 +18,7 @@
 - s2n-tls: 25 functions (s2n_stuffer module)
 - 238 AWS engineer harnesses (ground truth H_GT)
 - Primary LLM: 120B open-source × 11 conditions (A–H core + I/J/K ablations + Oracle Setup)
-- Replication LLM: DeepSeek V4 Flash (`deepseek/deepseek-v4-flash` via OpenRouter) × 3 conditions (A, G, H)
+- Replication LLM: Meta Llama 3.3 70B Instruct (`meta-llama/llama-3.3-70b-instruct` via OpenRouter) × 3 conditions (A, G, H) ✅ COMPLETE
 
 **Core Premise:** AWS code is correct and verified; H_GT is the strongest expert oracle; we do not assume H_GT is always stronger than H_LLM.
 
@@ -207,7 +207,7 @@ Priority logic: read competitors first to establish novelty boundary, then found
 - [x] Mutation pipeline (gen_mutants.py) built and validated: 46 compiled mutants from aws_byte_buf_init (47% pass rate), ~3818 extrapolated for 83 funcs
 - [ ] Confirm iteration logger operational for s2n-tls corpus (blocked: s2n LLM generation not yet run)
 - [ ] Confirm s2n-tls LLM generation data is available for all core conditions
-- [ ] Run Llama 3.3 70B replication (A/G/H) — script at run_replication_llama.sh, needs server restart
+- [x] Run Llama 3.3 70B replication (A/G/H) — COMPLETE (2026-06-04): A=83/83, G=83/83, H=83/83; cross-verify done; A/G replicate gptoss (Δ≤1.1pp PASS); H shows 17pp gap (model-specific sensitivity to strategy-neutral prompt)
 
 #### Blind Pilot Preparation
 
@@ -346,7 +346,7 @@ Priority logic: read competitors first to establish novelty boundary, then found
 - [ ] ESBMC(H_GT, m) for all ~1,900 mutants (single run; shared oracle across conditions)
 - [ ] ESBMC(H_LLM, m) for all ~1,900 mutants
   - [ ] Primary LLM (120B) × conditions A, B, D, E, F, G, H (core) + I, J, K (ablations) + Oracle Setup
-  - [ ] Replication LLM (DeepSeek V4 Flash) × conditions A, G, H
+  - [ ] Replication LLM (Llama 3.3 70B) × conditions A, G, H ← data collected ✅; ESBMC run pending
 - [ ] Soundness-parity validation before batch: UNSAT preservation check on H_GT + SAT-SAT agreement ≥ 90% on 30 known-SAT mutants
 
 #### Result Classification
@@ -656,7 +656,7 @@ Priority logic: read competitors first to establish novelty boundary, then found
 | Phase | Content | Status | Start | End |
 |-------|---------|--------|-------|-----|
 | 1 | Literature Review | 🔵 In progress | 2026/06/02 | |
-| 2 | RQ1 Replication | ☐ | | |
+| 2 | RQ1 Replication | 🔵 In progress | 2026/06/04 | LLM data ✅; κ gate pending |
 | 3 | Mutant Generation | ☐ | | |
 | 4 | CEX Infrastructure | ☐ | | |
 | 5 | CEX Batch Run | ☐ | | |
