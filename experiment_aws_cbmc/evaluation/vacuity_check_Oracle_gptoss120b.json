@@ -1,0 +1,388 @@
+[
+  {
+    "func": "aws_array_list_clean_up",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_add_size_checked",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_array_list_clear",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_array_list_init_dynamic",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_add_size_saturating",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_array_eq",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_array_eq_c_str",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_array_list_get_at",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_array_list_get_at_ptr",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_array_list_swap",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_array_list_push_back",
+    "vacuous": true,
+    "error": null,
+    "cbmc_rc": 0
+  },
+  {
+    "func": "aws_array_list_swap_contents",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_array_list_length",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_array_list_init_static",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_array_list_pop_back",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_array_list_pop_front_n",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_advance",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_append",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_cat",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_clean_up",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_clean_up_secure",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_eq",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_init",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_byte_buf_eq_c_str",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_from_array",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_from_c_str",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_from_empty_array",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_init_copy",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_init_copy_from_cursor",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_reset",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_cursor_from_array",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_byte_cursor_advance",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_cursor_from_string",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_byte_cursor_eq",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_linked_list_back",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_is_power_of_two",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_linked_list_begin",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_end",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_front",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_init",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_byte_cursor_eq_byte_buf",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_linked_list_next",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_cursor_eq_c_str",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_linked_list_node_reset",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_linked_list_pop_back",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_prev",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_pop_front",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_cursor_from_buf",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_linked_list_rbegin",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_push_front",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_byte_cursor_from_c_str",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_linked_list_rend",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_insert_after",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_linked_list_insert_before",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_nospec_mask",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_ptr_eq",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_ring_buffer_acquire",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_ring_buffer_buf_belongs_to_pool",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_ring_buffer_clean_up",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_ring_buffer_release",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_round_up_to_power_of_two",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_string_bytes",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_mul_size_checked",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_string_new_from_c_str",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_push_back",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_linked_list_remove",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_linked_list_swap_contents",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_mul_size_saturating",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_string_destroy",
+    "vacuous": null,
+    "error": "timeout"
+  }
+]

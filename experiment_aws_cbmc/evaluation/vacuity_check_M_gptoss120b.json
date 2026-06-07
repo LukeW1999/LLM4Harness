@@ -1,0 +1,364 @@
+[
+  {
+    "func": "aws_array_list_clean_up",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_array_eq",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_array_list_back",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_array_list_capacity",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_add_size_checked",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_array_list_erase",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_array_list_get_at_ptr",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_array_list_init_dynamic",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_array_list_push_back",
+    "vacuous": null,
+    "error": "call to aws_array_list_push_back not found"
+  },
+  {
+    "func": "aws_array_list_init_static",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_array_list_set_at",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_array_list_pop_front",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_array_list_pop_front_n",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_array_list_swap_contents",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_buf_advance",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_buf_append",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_buf_cat",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_buf_clean_up",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_buf_clean_up_secure",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_buf_eq_c_str",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_buf_from_c_str",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_buf_eq",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_byte_buf_init",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_buf_init_copy",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_array_list_get_at",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_byte_buf_init_copy_from_cursor",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_cursor_eq",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_cursor_eq_byte_buf",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_cursor_eq_c_str",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_cursor_from_array",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_cursor_from_buf",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_cursor_from_c_str",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_back",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_begin",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_byte_cursor_from_string",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_is_power_of_two",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_linked_list_end",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_front",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_next",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_insert_after",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_insert_before",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_prev",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_node_reset",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_linked_list_pop_front",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_rbegin",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_push_back",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_rend",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_remove",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_linked_list_swap_contents",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_nospec_mask",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_ptr_eq",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_string_bytes",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_ring_buffer_clean_up",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_round_up_to_power_of_two",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_string_eq",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_string_eq_byte_cursor",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_string_new_from_c_str",
+    "vacuous": null,
+    "error": null,
+    "cbmc_rc": 6
+  },
+  {
+    "func": "aws_mul_size_checked",
+    "vacuous": false,
+    "error": null,
+    "cbmc_rc": 10
+  },
+  {
+    "func": "aws_array_eq_c_str",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "vacuous": null,
+    "error": "timeout"
+  },
+  {
+    "func": "aws_string_destroy",
+    "vacuous": null,
+    "error": "timeout"
+  }
+]
