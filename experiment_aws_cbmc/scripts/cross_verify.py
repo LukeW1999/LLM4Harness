@@ -143,21 +143,11 @@ CONDITION_FEEDBACK_DIR = {
     "B_claude": RESULTS_DIR / "feedback_loop_B_claude",
     "C_claude": RESULTS_DIR / "feedback_loop_C_claude",
     "D_claude": RESULTS_DIR / "feedback_loop_D_claude",
-    "E_claude": RESULTS_DIR / "feedback_loop_E_claude",
-    "F_claude": RESULTS_DIR / "feedback_loop_F_claude",
-    "A_gptoss120b": RESULTS_DIR / "feedback_loop_A_gptoss120b",
-    "G_gptoss120b": RESULTS_DIR / "feedback_loop_G_gptoss120b",
-    "H_gptoss120b": RESULTS_DIR / "feedback_loop_H_gptoss120b",
-    "E_qwen":   RESULTS_DIR / "feedback_loop_E",
-    "C_qwen":   RESULTS_DIR / "feedback_loop_C",
-    "D_qwen":   RESULTS_DIR / "feedback_loop_D",
-    "A_llama3370binstruct": RESULTS_DIR / "feedback_loop_A_llama3370binstruct",
-    "G_llama3370binstruct": RESULTS_DIR / "feedback_loop_G_llama3370binstruct",
-    "H_llama3370binstruct": RESULTS_DIR / "feedback_loop_H_llama3370binstruct",
-    "I_gptoss120b":    RESULTS_DIR / "feedback_loop_I_gptoss120b",
-    "J_gptoss120b":    RESULTS_DIR / "feedback_loop_J_gptoss120b",
-    "K_gptoss120b":    RESULTS_DIR / "feedback_loop_K_gptoss120b",
+    "I_gptoss120b": RESULTS_DIR / "feedback_loop_I_gptoss120b",
+    "J_gptoss120b": RESULTS_DIR / "feedback_loop_J_gptoss120b",
+    "K_gptoss120b": RESULTS_DIR / "feedback_loop_K_gptoss120b",
     "Oracle_gptoss120b": RESULTS_DIR / "feedback_loop_Oracle_gptoss120b",
+    "M_gptoss120b": RESULTS_DIR / "feedback_loop_M_gptoss120b",
 }
 
 
@@ -502,7 +492,7 @@ def cross_verify_one(func_name: str, verbose: bool = True,
         key=lambda p: int(p.stem.split('_')[1])
     )
     if not iter_files:
-        return None  # skip functions with no harness files (e.g. K spec-first extraction failures)
+        raise FileNotFoundError(f"No iter harnesses found in {llm_dir}")
     llm_harness_path = iter_files[-1]
 
     if verbose:
@@ -683,7 +673,7 @@ def main():
     parser.add_argument("--save-json", action="store_true", help="Save results to JSON")
     parser.add_argument("--quiet", action="store_true", help="Suppress per-function verbose output")
     parser.add_argument("--workers", type=int, default=8, help="Parallel workers (default: 8)")
-    parser.add_argument("--condition", choices=list(CONDITION_FEEDBACK_DIR.keys()), default="original",
+    parser.add_argument("--condition", choices=["original", "A", "B", "C", "D", "A_v3", "B_v3", "A_claude", "B_claude", "C_claude", "D_claude", "I_gptoss120b", "J_gptoss120b", "K_gptoss120b", "Oracle_gptoss120b", "M_gptoss120b"], default="original",
                         help="Which feedback loop results to evaluate")
     args = parser.parse_args()
 
@@ -716,8 +706,6 @@ def main():
             for r, err in ex.map(_worker, work):
                 if err:
                     print(f"  ERROR ({err[0]}): {err[1][:200]}")
-                elif r is None:
-                    pass  # skipped (no harness files)
                 else:
                     print(f"  done: {r.func_name}  verify_equiv={r.verification_equivalent()}  recall={r.harness_recall:.0%}")
                     results.append(r)

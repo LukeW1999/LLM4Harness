@@ -49,16 +49,18 @@ def _load_model_backend(model: str):
 def extract_c_code(response: str) -> str:
     """
     Robustly extract C code from LLM response.
-    Strips markdown fences, trailing explanatory text, and non-code paragraphs.
+    Handles responses where C code is preceded by markdown spec text (Condition K).
     """
     if not response:
         return ""
     s = response.strip()
-    # Strip leading markdown fence
-    if s.startswith("```c\n"):
-        s = s[5:]
-    elif s.startswith("```\n"):
-        s = s[4:]
+    # Find the first ```c or ``` fence anywhere in the response.
+    # This handles spec-first responses (Condition K) where markdown text precedes the code.
+    for fence in ["```c\n", "```c ", "```\n"]:
+        idx = s.find(fence)
+        if idx != -1:
+            s = s[idx + len(fence):]
+            break
     # Find last closing brace — everything after is likely prose
     last_brace = s.rfind("}")
     if last_brace != -1:
@@ -66,6 +68,14 @@ def extract_c_code(response: str) -> str:
     # Strip trailing markdown fence
     s = s.rstrip("`").strip()
     return s + "\n"
+
+
+def normalize_entry_point(code: str, func_name: str) -> str:
+    """Rename int main() to void {func_name}_harness(void) for CBMC --function compatibility."""
+    import re
+    code = re.sub(r'\bint\s+main\s*\(\s*void\s*\)\s*\{', f'void {func_name}_harness(void) {{', code)
+    code = re.sub(r'\bint\s+main\s*\(\s*\)\s*\{', f'void {func_name}_harness(void) {{', code)
+    return code
 
 DATASET_DIR = experiment_dir / "dataset"
 PROMPTS_DIR = experiment_dir / "prompts"
@@ -88,6 +98,7 @@ CONDITION_DATASET = {
     "J":        experiment_dir / "dataset_condA",   # like A + running deletion log shown
     "K":        experiment_dir / "dataset_condA",   # spec-first: NL contract before CBMC loop
     "Oracle":   experiment_dir / "dataset_condA",   # GT __CPROVER_assume preconditions provided
+    "M":        experiment_dir / "dataset_condA",   # minimal CBMC guidance: scalar bounding instruction
     "A_v3":     experiment_dir / "dataset_condA",
     "B_v3":     experiment_dir / "dataset_condB",
 }
@@ -105,6 +116,7 @@ CONDITION_PROMPT = {
     "J":        "prompt_condA.txt",   # same initial prompt; fix_unknown prompt shows deletion log
     "K":        "prompt_condK.txt",   # spec-first: asks for NL contract first, then harness
     "Oracle":   "prompt_condOracle.txt",  # GT preconditions pre-loaded in initial prompt
+    "M":        "prompt_condM.txt",   # minimal CBMC guidance: explicit scalar bounding + corrected UNKNOWN message
     "A_v3":     "prompt_condA.txt",
     "B_v3":     "prompt_condB.txt",
 }
@@ -648,8 +660,20 @@ def build_fix_unknown_prompt(
     # Condition J: running deletion log (optional)
     deletion_log: list = None,
 ) -> str:
-    base = f"""Your CBMC harness for `{func_name}` produced UNKNOWN result (CBMC found no reachable assertions).
-This means the harness likely has no assert() calls, or all code paths are unreachable.
+    # Condition M: accurate UNKNOWN diagnosis (unbounded inputs OR unreachable assertions)
+    if ACTIVE_CONDITION == "M":
+        unknown_explanation = f"""Your CBMC harness for `{func_name}` produced UNKNOWN result.
+
+CBMC UNKNOWN has two possible causes — check BOTH before rewriting:
+1. **Unbounded scalar inputs**: if you used `nondet_size_t()`, `nondet_uint32_t()` etc. without an immediately following `__CPROVER_assume` bound, the state space is infinite and CBMC cannot complete. FIX: add bounds like `__CPROVER_assume(capacity > 0 && capacity <= MAX_BUFFER_SIZE)`.
+2. **Unreachable assertions**: assert() calls exist but no code path reaches them. FIX: check that setup assumptions don't over-constrain the path to your assertions.
+
+**Try fixing the bounding first** — this is the most common cause of UNKNOWN."""
+    else:
+        unknown_explanation = f"""Your CBMC harness for `{func_name}` produced UNKNOWN result (CBMC found no reachable assertions).
+This means the harness likely has no assert() calls, or all code paths are unreachable."""
+
+    base = f"""{unknown_explanation}
 
 ## Your harness:
 ```c
@@ -865,7 +889,8 @@ def run_feedback_loop(
     # Step 1: Initial generation
     print(f"\n  [Iter 1] Generating initial harness...")
     initial_prompt = build_initial_prompt(func_dir, func_name)
-    harness_code = extract_c_code(call_qwen(SYSTEM_PROMPT, initial_prompt))
+    harness_code = normalize_entry_point(
+        extract_c_code(call_qwen(SYSTEM_PROMPT, initial_prompt)), func_name)
 
     harness_path = output_dir / "iter_1_harness.c"
     harness_path.write_text(harness_code, encoding="utf-8")
@@ -955,7 +980,8 @@ def run_feedback_loop(
             print(f"  No fix possible for result: {cbmc_result.verification_result}")
             break
 
-        harness_code = extract_c_code(call_qwen(SYSTEM_PROMPT, fix_prompt))
+        harness_code = normalize_entry_point(
+            extract_c_code(call_qwen(SYSTEM_PROMPT, fix_prompt)), func_name)
         harness_path = output_dir / f"iter_{i}_harness.c"
         harness_path.write_text(harness_code, encoding="utf-8")
 
@@ -1035,7 +1061,7 @@ def main():
     parser.add_argument("--save-json", action="store_true", help="Save aggregate results JSON")
     parser.add_argument("--condition",
                         choices=["original", "A", "B", "C", "D", "E", "F", "G", "H",
-                                 "I", "J", "K", "Oracle", "A_v3", "B_v3"],
+                                 "I", "J", "K", "Oracle", "M", "A_v3", "B_v3"],
                         default="original",
                         help=("Prompt condition: A=source+NL, B=source only, C=NL+CoT, D=no-NL+CoT, "
                               "E=same-family few-shot, F=wrong-family few-shot, "

@@ -33,6 +33,9 @@ venv/
 *.gb
 *.o
 
+# Literature PDFs (tracked locally, not in repo)
+literature/
+
 # Editor / OS
 .DS_Store
 .idea/

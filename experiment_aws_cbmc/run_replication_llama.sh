@@ -16,7 +16,7 @@ mkdir -p logs
 log() { echo "[$(date '+%H:%M:%S')] $*"; }
 
 REPLICATION_MODEL="meta-llama/llama-3.3-70b-instruct"
-PYTHON="${PYTHON:-python3}"
+PYTHON=/root/venv/bin/python3
 
 run_batch() {
     local COND="$1"

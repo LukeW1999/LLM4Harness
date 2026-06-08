@@ -1958,9 +1958,13 @@ def run_cbmc(func_name: str, harness_path: Path, timeout: int = 120) -> CBMCResu
             error_summary="CBMC timed out after {timeout}s",
         )
 
-    # Check compilation
-    compilation_ok = "PARSING ERROR" not in stdout and "CONVERSION ERROR" not in stdout and \
-                     "fatal error" not in stderr and "compilation terminated" not in stderr
+    # Check compilation — CBMC sends PARSING ERROR and entry-point errors to stderr
+    compilation_ok = (
+        "PARSING ERROR" not in stdout and "CONVERSION ERROR" not in stdout and
+        "PARSING ERROR" not in stderr and "CONVERSION ERROR" not in stderr and
+        "Invalid User Input" not in stderr and
+        "fatal error" not in stderr and "compilation terminated" not in stderr
+    )
 
     # Parse verification result
     verification_result = "UNKNOWN"

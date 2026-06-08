@@ -24,13 +24,42 @@
 
 ---
 
+## Progress Snapshot — 2026-06-06
+
+| Component | Status | Key number |
+|-----------|--------|-----------|
+| A/G/H/gptoss120b | ✅ Complete | PASS: 62.5/31.3/62.7%; Sac: 81.8/—/86.3% |
+| A/G/H/Llama3370b | ✅ Complete | PASS: 61.4/31.3/45.8%; Sac: 71.7/—/64.1% |
+| I/gptoss120b | ✅ Complete | PASS: 70.5%; Sac: **92.7%** — conformance pressure confirmed |
+| J/gptoss120b | ✅ Complete | PASS: 67.5%; Sac: **93.0%** — forgetting ruled out |
+| K/gptoss120b | ✅ Complete | PASS: 81.9%; Sac: **25.0%**; Recall: **0.268** (over-constrained!) |
+| Oracle/gptoss120b | ✅ Complete | PASS: 84.3%; Sac: **11.8%**; Recall: **0.251** (laziness effect!) |
+| M/gptoss120b (NEW) | ✅ Complete | PASS: 75.3%; Sac: **0.0%**; Recall: **0.384** (only condition improving both) |
+| Cross-verify K/Oracle/M | ✅ Complete | **PASS rate ordering reversed by recall: M>A>K>Oracle** |
+| Deletion_scope metric | ✅ Computed | A: mean 6.7 (72% panic); K: mean 1.6 (80% targeted) |
+| Vacuity check script | ✅ Written + running | `scripts/vacuity_check.py` — results overnight |
+| Mutant corpus | ✅ Complete | 2584 mutants, 61/83 functions |
+| ESBMC runner | ✅ Written | Parity check pending |
+| Annotation materials | ✅ Ready for pilot | 101 assertions, codebook fixed |
+| κ pilot | ⏳ Human bottleneck | Need second annotator |
+| RQ2 batch | ❌ Not started | Blocked on parity check |
+| RQ3 pipeline | ❌ Not started | Blocked on RQ2 |
+| Writing | ❌ Not started | Target: Sep 2026 |
+
+**Critical path:** κ gate (second annotator) → full annotation → RQ1 final numbers
+**Parallel track:** Vacuity check → ESBMC parity → RQ2 batch
+
+**Major finding (2026-06-06):** PASS rate is a misleading metric. Cross-verify recall ordering (M>A>K>Oracle) contradicts PASS rate ordering (Oracle>K>M>A). K and Oracle inflate PASS via over-constraining assumes (31%, 24%). M is the only ablation improving both PASS and recall.
+
+---
+
 ## Three Research Questions
 
 | RQ | Question | Method | Status |
 |----|----------|--------|--------|
-| RQ1 | What properties do LLM-generated harnesses systematically miss, and are omissions knowledge gaps (never generated) or active sacrifices (generated then removed under CBMC pressure)? | H_LLM vs H_GT assertion comparison; three-state outcome; iteration logger; two-κ gate | Core results in hand, replication needed |
-| RQ2 | Do the specification gaps correspond to real verification failures on functionally incorrect code? (Primary: GT SAT / LLM UNSAT silenced-mutant count. Secondary: GT UNSAT / LLM SAT cases.) | ~1,900 mutants; dual ESBMC oracle; assertion-level sacrifice attribution; E4 cross-oracle transfer | Not started |
-| RQ3 | Does the feedback protocol — not model capability — determine whether bugs are silenced, and does this vary per assertion category? | Three arms: A (delete/weaken) / B-strict (refine only) / B-relaxed (refine + assume); per-category SR and PR | Not started |
+| RQ1 | What properties do LLM-generated harnesses systematically miss, and are omissions knowledge gaps (never generated) or active sacrifices (generated then removed under CBMC pressure)? | H_LLM vs H_GT assertion comparison; three-state outcome; iteration logger; taxonomy κ gate | **Core results in hand**; K/Oracle pending; κ pilot pending |
+| RQ2 | Do the specification gaps correspond to real verification failures on functionally incorrect code? (Primary: GT SAT / LLM UNSAT silenced-mutant count. Secondary: GT UNSAT / LLM SAT cases.) | 2584 mutants; dual ESBMC oracle; assertion-level sacrifice attribution | **Not started** — blocked on ESBMC parity check |
+| RQ3 | Does the feedback protocol — not model capability — determine whether bugs are silenced, and does this vary per assertion category? | Three arms: A (delete/weaken) / B-strict (refine only) / B-relaxed (refine + assume); per-category SR and PR | **Not started** — blocked on RQ2 subject selection |
 
 ---
 
@@ -216,47 +245,46 @@ Priority logic: read competitors first to establish novelty boundary, then found
 - [x] **Run I/J conditions on server** ← COMPLETE (83/83 each)
   - I: 70.5% PASS (+8pp vs A), sacrifice ratio 92.7% — category label INCREASES sacrifice → conformance pressure confirmed
   - J: 67.5% PASS (+5pp vs A), sacrifice ratio 93.0% — deletion log has no effect → statelessness ruled out
-- [ ] **Re-run K/Oracle on server** ← IN PROGRESS (API null-content bug fixed, re-running now)
-  - K (spec-first): harness extraction failed (API returned null content), re-running
-  - Oracle Setup: same bug, re-running
-- [ ] Sync K/Oracle results; build iteration logs; cross-verify
-- [ ] Update analyze_rq1.py with K/Oracle results
+- [x] **K/Oracle pipeline bugs diagnosed and fixed** (2026-06-05):
+  - Bug 1: `extract_c_code()` only stripped fences at response start — K produces markdown+C responses; fixed to search for fence anywhere in response
+  - Bug 2: `compilation_ok` checked stdout only; CBMC sends "PARSING ERROR" and "Invalid User Input" to stderr — fixed to check both streams
+  - Bug 3: LLM generated `int main()` entry point; CBMC called with `--function {func}_harness` — fixed with `normalize_entry_point()` post-processing
+  - All fixes in `feedback_loop.py` + `cbmc_runner.py`; synced to server
+- [x] **K/Oracle re-run completed** (2026-06-06): K=83/83 (81.9% PASS), Oracle=83/83 (84.3% PASS)
+- [x] **Condition M designed and completed** (2026-06-06): M=81/83 (75.3% PASS); bounding hint eliminates UNKNOWN-triggered sacrifice entirely (0.0% ratio)
+- [x] **Cross-verify K/Oracle/M complete** (2026-06-06): Recall M=0.384 > A=0.346 > K=0.268 > Oracle=0.251
+- [x] **Plan 2: deletion_scope computed** (2026-06-06):
+  - A: mean 6.7 (72% panic, max single-event=20 deletions)
+  - I: mean 5.5 (71% panic — category label does NOT convert panic→targeted)
+  - K: mean 1.6 (80% targeted — NL contract enables precise deletion)
+  - Result: `scripts/vacuity_check.py` written; running overnight on K/Oracle/M SUCCESS harnesses
+- [ ] **Read vacuity check results** — `cat /tmp/vacuity.log` on server next session
+- [ ] Sync all results locally from server
+- [ ] Update analyze_rq1.py to include K/Oracle/M in full table
 
-#### Annotation Helper Tool + Pre-Annotation
+#### Annotation Task — Redesigned (2026-06-05)
 
-- [ ] **Build scripts/annotate_helper.py** ← scripting (local)
-  - Per function: H_GT assertions vs LLM final harness side-by-side
-  - Per missed H_GT assertion: check iteration log → never-generated / weakened / deleted
-  - Auto-suggest taxonomy category (validity_predicate / length_invariant / frame_condition)
-  - Output: HTML report + CSV for human rater
-- [ ] **Run pre-annotation on all 83 functions** (A/gptoss120b condition)
-  - Produce annotation_pilot.csv with pre-suggested labels
-  - Weiqi + second rater review and override — κ pilot takes 1-2h not a full day
+**Design decision:** Taxonomy κ and attribution validation are now separate tasks.
+- **κ gate:** taxonomy classification only (validity_predicate / length_invariant / frame_condition). No LLM output shown. Genuine judgment task.
+- **Attribution validation:** automated log-matching + 5-case human audit. Precision estimate, not κ.
 
-#### Blind Pilot Preparation
+**Key codebook rule (2026-06-05):** frame_condition requires comparison to old_X snapshot AND delta=0. null/constant/input_param comparisons → validity_predicate. old_X with non-zero delta → length_invariant. 20/101 auto-classifier errors corrected using this rule.
 
-- [ ] Select 30 functions from pre-annotation output (covering all three categories)
-- [ ] Identify second rater (lab colleague or supervisor) — recruit early, availability is the slow path
-- [ ] Share annotation_pilot.csv + HTML report with second rater
-- [ ] Taxonomy classification criteria document — generated by annotate_helper.py codebook section
-- [ ] Sacrifice-attribution criteria document — included in annotate_helper.py output
-
-#### Replication Execution — Two κ Gates
-
-- [ ] Two raters independently classify 30 functions (taxonomy: validity / length / frame)
-- [ ] Compute inter-rater κ₁ (taxonomy category)
-- [ ] κ₁ ≥ 0.8 → proceed to full taxonomy annotation; κ₁ < 0.8 → refine codebook and re-pilot
-- [ ] Two raters independently annotate sacrifice attribution on the same 30 functions (sacrifice / knowledge-gap / weakened)
-- [ ] Compute inter-rater κ₂ (sacrifice attribution)
-- [ ] κ₂ ≥ 0.8 → proceed to full annotation; κ₂ < 0.8 → refine criteria and re-pilot
-- [ ] Resolve disagreements; update both criteria documents
-
-#### Knowing-Misalignment Probe (E1 — separate held-out subset, not the 30-function pilot)
-
-- [ ] Select a separate 20–30 function subset for E1 (distinct from the κ pilot set)
-- [ ] Split into two groups: standard pipeline vs probe pipeline
-- [ ] Probe group: add API call after each H_GT-entailed deletion asking "Is the assertion you just removed actually true of this function?"
-- [ ] Compare sacrifice rates between groups; if similar → correlational evidence of knowing sacrifice; if divergent → report as exploratory
+- [x] **Build scripts/annotate_helper.py** ← DONE (2026-06-03)
+- [x] **Run pre-annotation on all 83 functions** — 198 missed GT assertions; 97% never_generated, 2.5% deleted_sacrifice (2026-06-04)
+- [x] **Generate pilot annotation materials** (2026-06-05):
+  - `annotation/pilot_worksheet.csv` — 101 assertions, 30 functions, corrected suggestions
+  - `annotation/pilot_blank.csv` — for second annotator (no suggestions)
+  - `annotation/ANNOTATION_GUIDE.md` — English, with precise frame_condition rule + counter-intuitive examples
+  - `annotation/attribution_audit.csv` — 5 sacrifice cases with iter_1/final evidence chain
+  - `annotation/compute_kappa_pilot.py` — taxonomy κ calculator
+  - `annotation/pilot_worksheet_annotated.csv` — Claude's full reference annotation with reasoning
+- [x] **Auto-classifier bug fixed** — 20/101 wrong suggestions corrected (9 frame→validity, 4 length→validity, 1 frame→length, 6 more on second pass)
+- [ ] **Weiqi annotates pilot** — fill `your_taxonomy` in `pilot_worksheet_annotated.csv` (~60-90 min)
+- [ ] **Recruit second annotator** — lab colleague or supervisor; share `pilot_blank.csv` + `ANNOTATION_GUIDE.md`; 60-90 min
+- [ ] **Run compute_kappa_pilot.py** — compute taxonomy κ; target ≥ 0.8
+- [ ] κ ≥ 0.8 → full annotation on all 198 assertions; κ < 0.8 → review guide disagreements, re-pilot
+- [ ] **Attribution audit** — confirm/dispute 5 sacrifice cases in `attribution_audit.csv`; report precision
 
 #### Outputs
 
@@ -297,18 +325,21 @@ Priority logic: read competitors first to establish novelty boundary, then found
 
 #### Full Run
 
-- [ ] **Run gen_mutants.py --all on all 83 aws-c-common functions** ← NEXT (local, ~2-4h)
-- [ ] Apply TCE filter (compiled object identity)
-- [ ] Count mutants per function; flag < 10 mutants
-- [ ] Extend to s2n-tls 25 functions after s2n corpus setup
+- [x] **Run gen_mutants.py --all on all 83 aws-c-common functions** ← DONE (2026-06-04)
+  - Result: **2584 compiled mutants across 61/83 functions** (avg 29.7/function)
+  - 7 zero-mutant functions: all use AWS_STATIC_IMPL in .inl files — CBMC cannot compile .inl in isolation
+  - 19 low-mutant functions (<10): acceptable, included in RQ2
+  - Distribution: 0 mutants (7), 1-9 (15), 10-29 (26), 30+ (35)
+- [x] TCE filter applied at generation time
+- [x] FUNC_SOURCE_OVERRIDES added for .inl functions (but CBMC limitation accepted)
+- [ ] Extend to s2n-tls 25 functions after s2n LLM generation is complete
 
 #### Outputs
 
-- [ ] M_all size: ___ mutants (expected ~3,818)
-- [ ] Compilation pass rate: ___% (expected ~47%)
-- [ ] Average mutants per function: ___
-- [ ] Mutant operator type distribution
-- [ ] Decision point: M_all < 1,000 → tune operator parameters before proceeding
+- [x] M_all size: **2584 mutants** (61 functions with ≥1 mutant)
+- [x] Avg mutants per covered function: **29.7**
+- [ ] Mutant operator type distribution (pending)
+- **Limitation (Threats to Validity):** 7 inline functions (AWS_STATIC_IMPL in .inl) produce 0 mutants — CBMC compilation limitation. Reported as named limitation; 61/83 functions (73%) have adequate coverage.
 
 ---
 
@@ -325,11 +356,14 @@ Priority logic: read competitors first to establish novelty boundary, then found
 
 #### ESBMC Batch Run Script
 
-- [ ] **Write scripts/esbmc_runner.py** ← scripting task (local)
-  - Input: mutant file + harness file
-  - Output: SAT/UNSAT + CEX content (JSON)
-  - Timeout: 5 min per run; parallelised via multiprocessing
-  - Soundness-parity check: UNSAT preservation on H_GT + SAT-SAT agreement ≥ 90% on 30 known mutants
+- [x] **Write scripts/esbmc_runner.py** ← DONE (2026-06-04)
+  - Implements `MutantOracleResult`, `run_rq2_batch()`, `run_parity_check()`
+  - Four-outcome classification: GT_SAT_LLM_UNSAT (primary), GT_SAT_LLM_SAT, GT_UNSAT_LLM_SAT, GT_UNSAT_LLM_UNSAT
+  - Timeout: 300s per run; multiprocessing with configurable workers
+- [ ] **Run ESBMC parity check** ← NEXT IMMEDIATE TASK (can run now, parallel with K/Oracle analysis)
+  - Step 1: ESBMC(H_GT, f_original) = UNSAT for all 83 functions
+  - Step 2: 30 known CBMC-SAT mutants → ESBMC also SAT (≥90%)
+  - If fails: adjust ESBMC flags or exclude incompatible functions
 - [ ] Install/verify ESBMC locally (check version compatibility with CBMC 6.8.0 harnesses)
 
 #### CEX Assertion Auto-Classification Script
