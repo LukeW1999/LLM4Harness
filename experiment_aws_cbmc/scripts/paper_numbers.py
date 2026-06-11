@@ -143,6 +143,53 @@ def revcell():
 add("rev", "reverse-cell genuine (string-eq)", 51, lambda: revcell()[0], 0.5)
 add("rev", "reverse-cell total (string-eq)",   57, lambda: revcell()[1], 0.5)
 
+
+# ── Table 2 (tab:rq1_main): pass%, assert-recall, VE% from cross_verify; sacrifice via analyze_rq1 ──
+def cv(cond):
+    return json.load(open(EVAL / f"cross_verify_results_cond{cond}_gptoss120b.json"))
+def passrate(cond):
+    # pass rate = fraction of functions whose final feedback-loop iteration verified (SUCCESS/UNSAT)
+    d = RESULTS / f"feedback_loop_{cond}_gptoss120b"
+    tot=succ=0
+    for fd in d.iterdir():
+        sp = fd / "summary.json"
+        if not sp.exists(): continue
+        tot += 1
+        its = json.load(open(sp)).get("iterations", [])
+        if its and its[-1].get("verify") in ("SUCCESS","UNSAT"): succ += 1
+    return 100.0*succ/tot
+def ve(cond):
+    e=cv(cond); return 100.0*sum(1 for x in e if x.get("verification_equivalent"))/len(e)
+def arec(cond):
+    e=cv(cond); d=[x["harness_recall"] for x in e if x["gt_harness_count"]>0]; return sum(d)/len(d)
+
+for loc,c,pa,rc,v in [
+    ("T2/L325","G",31.3,0.290,36.1),("T2/L326","H",62.7,0.303,67.5),
+    ("T2/L327","A",62.5,0.357,65.0),("T2/L328b","I",70.5,0.363,71.6),
+    ("T2/L329","J",67.5,0.377,72.8),("T2/L330","M",75.3,0.384,72.3),
+    ("T2/L331","K",81.9,0.268,80.7),("T2/L332","Oracle",84.3,0.251,80.7)]:
+    add(loc,f"{c} pass%",        pa, (lambda x: lambda: passrate(x))(c), 0.2)
+    add(loc,f"{c} assert-recall",rc, (lambda x: lambda: arec(x))(c), 0.01)
+    add(loc,f"{c} VE%",          v,  (lambda x: lambda: ve(x))(c), 0.2)
+
+# sacrifice ratio — reuse analyze_rq1.analyze_condition (no reimplementation)
+def sacratio(cond_label, ds):
+    import importlib.util as _u
+    spec=_u.spec_from_file_location("arq1", "/root/experiment_aws_cbmc/scripts/analyze_rq1.py")
+    m=_u.module_from_spec(spec); spec.loader.exec_module(m)
+    data=m.load_condition(ds)
+    return m.analyze_condition(cond_label, data)["sacrifice_ratio"]*100
+for loc,c,ds,sr in [("T2/L326","H","H_gptoss120b",86.3),
+                    ("T2/L327","A","A_gptoss120b",91.4),
+                    ("T2/L328b","I","I_gptoss120b",92.7),
+                    ("T2/L329","J","J_gptoss120b",93.0)]:
+    add(loc,f"{c} sacrifice-ratio", sr, (lambda lbl,d: lambda: sacratio(lbl,d))(c,ds), 0.6)
+
+# config constants
+add("L230","mutant-bearing functions (dir count; paper says 58 compile-valid)", 80, lambda: len([d for d in (Path("/root/experiment_aws_cbmc/mutants")).iterdir() if d.is_dir() and any(x.name.endswith(".c") for x in d.iterdir())]), 0.5)
+add("L491","functions in oracle table", 40, lambda: len({r["func"] for r in orc("A_gptoss120b")}), 0.5)
+add("def","total mutants run (A_gptoss)", 1233, lambda: len(orc("A_gptoss120b")), 0.5)
+
 # ── run audit ──
 def main():
     md = "--md" in sys.argv
