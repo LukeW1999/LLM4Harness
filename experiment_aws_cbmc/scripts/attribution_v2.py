@@ -36,6 +36,7 @@ def verdicts(ds,func):
 def classify_func(ds,func):
     gts=A.get_gt_asserts(func); its=A.get_llm_iter_asserts(ds,func)
     if not its: return "UNRESOLVED", {}
+    if not gts: return "UNRESOLVED", {"reason":"no GT assertions parsed"}  # AOC must not fire on empty set
     maxit=max(its); vmap=verdicts(ds,func)
     pres={it:set(norm(a) for a in asl) for it,asl in its.items()}
     final=pres.get(maxit,set())

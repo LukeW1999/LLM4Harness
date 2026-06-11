@@ -59,3 +59,24 @@ over-constrained. Priority SAC > KG > AOC > Unresolved.
 1. Fix AOC detector: require GT-asserts-parsed & present (routes string_destroy to Unresolved); re-run all conditions; the corrected AOC counts go into Table 7.
 2. Luke spot-checks: the 2 disagreements + ~5 agreements (incl. secure_zero, ring_buffer) → upgrade "agent expert adjudication" to "two-rater agreement" for the paper.
 3. Cite this file's agreement (≈93%, SAC/KG boundary 100%) in §construct-validity.
+
+## RESOLUTION (after AOC empty-set fix)
+The 2 disagreements (#12, #27 string_destroy) were both the AOC-on-empty-GT-asserts bug.
+After the fix (route to Unresolved when no GT assertions parsed), v2 labels them Unresolved
+= the agent expert label. **Post-fix agreement = 28/28 (100%).** Clean validation loop:
+adjudication found 2 disagreements -> single root cause -> 1 detector fix -> full concordance.
+
+## FINAL validated attribution (Table 7 replacement)
+| cond | tot | KG | SAC | AOC | Unres |
+|---|---|---|---|---|---|
+| A-gptoss | 41 | 90.2% | 0 | 9.8% | 0 |
+| M-gptoss | 30 | 96.7% | 0 | 0 | 3.3% |
+| A-DeepSeek | 5 | 100% | 0 | 0 | 0 |
+| A-Claude | 16 | 87.5% | 12.5% (2, ring_buffer) | 0 | 0 |
+| H-Claude | 16 | 81.2% | 0 | 12.5% | 6.2% |
+| M-Claude | 11 | 100% | 0 | 0 | 0 |
+| A-Claude seed2 | 9 | 77.8% | 0 | 22.2% | 0 |
+
+gptoss attribution UNCHANGED vs original (90.2/9.8) => Jaccard artifact was Claude-specific.
+SAC = 2/16 Claude-A only, seed->0. AOC real but small/variable. KG dominates everywhere.
+Remaining limitation: string_destroy GT assertions not extracted (macro-based) -> Unresolved.
