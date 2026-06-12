@@ -232,6 +232,33 @@ add("T5/cloze","cloze recovered claude-self (of 16)", 15, lambda: cloze_rec("clo
 add("S7/B2","B2 repair caught Claude-A (of 16)", 11, lambda: b2_caught("b2_repair_A_claude.json"), 0.5)
 add("S7/B2","B2 repair caught gptoss-A (of 41)", 0, lambda: b2_caught("b2_repair_A_gptoss120b.json"), 0.5)
 
+
+# ── Table7 v2.1 (programmatic, table7_v21.json) + cross-seed + screening + Spearman ──
+def t7(cond,field):
+    d=_json.load(open("/root/experiment_aws_cbmc/evaluation/table7_v21.json"))
+    e=d[cond]; 
+    return 100.0*e[field]/e["tot"]
+for cond,kg in [("A_gptoss120b",90.2),("H_gptoss120b",89.2),("M_gptoss120b",96.7),
+                ("Oracle_gptoss120b",89.2),("A_deepseekv4flash",100.0),("H_deepseekv4flash",100.0),
+                ("G_deepseekv4flash",100.0),("A_claude",87.5),("H_claude",81.2),("M_claude",100.0)]:
+    add("T7", f"{cond} KG%", kg, (lambda c: lambda: t7(c,"KG"))(cond), 0.15)
+add("T7","A_claude SAC%",12.5, lambda: t7("A_claude","SAC"), 0.15)
+add("T7","Oracle KG count",141, lambda: _json.load(open("/root/experiment_aws_cbmc/evaluation/table7_v21.json"))["Oracle_gptoss120b"]["KG"], 0.5)
+def spearman_pass_recall():
+    pa=[84.3,81.9,75.3,70.5,67.5,62.7,31.3,28.9]; rc=[0.251,0.268,0.384,0.363,0.377,0.303,0.290,0.357]
+    def rank(x): srt=sorted(x); return [srt.index(v)+1 for v in x]
+    rp,rr=rank(pa),rank(rc); n=len(pa); d2=sum((a-b)**2 for a,b in zip(rp,rr))
+    return 1-6*d2/(n*(n*n-1))
+add("L326","Spearman pass-recall", -0.26, spearman_pass_recall, 0.01)
+def sil(cond):
+    d=_json.load(open(f"/root/experiment_aws_cbmc/evaluation/mutation_oracle_cbmc_feedback_loop_{cond}.json"))
+    return sum(1 for r in d["results"] if r.get("silenced"))
+for cond,v in [("A_claude_r3",16),("A_claude_r4",36),("A_claude_r5",19),("H_claude_r3",14),
+               ("H_claude_r4",15),("H_claude_r5",44),("M_claude_r3",14),("M_claude_r4",11),
+               ("M_claude_r5",9),("A_gpt55",55),("G_gpt55",48),("H_gpt55",67),
+               ("A_llama3370binstruct",18),("G_llama3370binstruct",14),("A_deepseekv4pro",32)]:
+    add("L503/L582", f"silenced {cond}", v, (lambda c: lambda: sil(c))(cond), 0.5)
+
 def main():
     md = "--md" in sys.argv
     rows=[]; nfail=0
