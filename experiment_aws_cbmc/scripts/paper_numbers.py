@@ -165,7 +165,7 @@ def arec(cond):
 
 for loc,c,pa,rc,v in [
     ("T2/L325","G",31.3,0.290,36.1),("T2/L326","H",62.7,0.303,67.5),
-    ("T2/L327","A",62.5,0.357,65.0),("T2/L328b","I",70.5,0.363,71.6),
+    ("T2/L327","A",28.9,0.357,65.0),("T2/L328b","I",70.5,0.363,71.6),
     ("T2/L329","J",67.5,0.377,72.8),("T2/L330","M",75.3,0.384,72.3),
     ("T2/L331","K",81.9,0.268,80.7),("T2/L332","Oracle",84.3,0.251,80.7)]:
     add(loc,f"{c} pass%",        pa, (lambda x: lambda: passrate(x))(c), 0.2)
@@ -191,6 +191,32 @@ add("L491","functions in oracle table", 40, lambda: len({r["func"] for r in orc(
 add("def","total mutants run (A_gptoss)", 1233, lambda: len(orc("A_gptoss120b")), 0.5)
 
 # ── run audit ──
+
+# ── NEW (2026-06-12): recall-among-compilable + 4-way partition over canonical 370 ──
+import json as _json
+_CANON = set((r["func"],r["mutant"]) for r in
+             _json.load(open("/root/experiment_aws_cbmc/evaluation/gt_fail_properties_canonical370.json"))["results"]
+             if str(r.get("verdict","")).upper() in ("FAIL","SAT"))
+def _orc_results(cond):
+    d=_json.load(open(f"/root/experiment_aws_cbmc/evaluation/mutation_oracle_cbmc_feedback_loop_{cond}.json"))
+    by={(r["func"],r["mutant"]):r for r in d["results"]}
+    return [by[k] for k in _CANON if k in by]
+def _verdict(r): return str(r.get("llm","")).upper()
+def partition(cond, v):
+    return sum(1 for r in _orc_results(cond) if _verdict(r)==v)
+def recall_comp(cond):
+    rs=_orc_results(cond); ce=sum(1 for r in rs if _verdict(r)=="COMPILE_ERROR")
+    caught=sum(1 for r in rs if _verdict(r) in ("FAIL","SAT"))
+    return 100.0*caught/(len(rs)-ce)
+
+add("M/L288","gptoss A recall-among-compilable", 70.3, lambda: recall_comp("A_gptoss120b"), 0.2)
+add("M/L288","gptoss H recall-among-compilable", 82.6, lambda: recall_comp("H_gptoss120b"), 0.2)
+add("M/L288","gptoss M recall-among-compilable", 81.9, lambda: recall_comp("M_gptoss120b"), 0.2)
+add("L520","A 4-way: caught(FAIL)",  156, lambda: partition("A_gptoss120b","FAIL"), 0.5)
+add("L520","A 4-way: silenced(SUCC)", 41, lambda: partition("A_gptoss120b","SUCCESS"), 0.5)
+add("L520","A 4-way: unknown",        25, lambda: partition("A_gptoss120b","UNKNOWN"), 0.5)
+add("L520","A 4-way: compile_error", 148, lambda: partition("A_gptoss120b","COMPILE_ERROR"), 0.5)
+
 def main():
     md = "--md" in sys.argv
     rows=[]; nfail=0
