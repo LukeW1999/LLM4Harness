@@ -217,6 +217,21 @@ add("L520","A 4-way: silenced(SUCC)", 41, lambda: partition("A_gptoss120b","SUCC
 add("L520","A 4-way: unknown",        25, lambda: partition("A_gptoss120b","UNKNOWN"), 0.5)
 add("L520","A 4-way: compile_error", 148, lambda: partition("A_gptoss120b","COMPILE_ERROR"), 0.5)
 
+
+# ── cloze + B2 (2026-06-12 evening) ──
+def cloze_rec(f):
+    d=_json.load(open(f"/root/experiment_aws_cbmc/evaluation/{f}"))
+    ok=[r for r in d if r["status"]=="OK"]
+    return sum(1 for r in ok if r.get("cbmc") and r["cbmc"]["orig"] in ("SUCCESS","UNKNOWN") and r["cbmc"]["catches"]>0)
+def b2_caught(f):
+    d=_json.load(open(f"/root/experiment_aws_cbmc/evaluation/{f}"))
+    return sum(r.get("n_caught",0) for r in d)
+add("T5/cloze","cloze recovered gptoss-self (of 9)", 9, lambda: cloze_rec("cloze_A_gptoss120b_openrouter.json"), 0.5)
+add("T5/cloze","cloze recovered claude-fills-gptoss (of 9)", 9, lambda: cloze_rec("cloze_A_gptoss120b_claude.json"), 0.5)
+add("T5/cloze","cloze recovered claude-self (of 16)", 15, lambda: cloze_rec("cloze_A_claude_claude.json"), 0.5)
+add("S7/B2","B2 repair caught Claude-A (of 16)", 11, lambda: b2_caught("b2_repair_A_claude.json"), 0.5)
+add("S7/B2","B2 repair caught gptoss-A (of 41)", 0, lambda: b2_caught("b2_repair_A_gptoss120b.json"), 0.5)
+
 def main():
     md = "--md" in sys.argv
     rows=[]; nfail=0
