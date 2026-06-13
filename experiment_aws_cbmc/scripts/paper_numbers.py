@@ -259,6 +259,18 @@ for cond,v in [("A_claude_r3",16),("A_claude_r4",36),("A_claude_r5",19),("H_clau
                ("A_llama3370binstruct",18),("G_llama3370binstruct",14),("A_deepseekv4pro",32)]:
     add("L503/L582", f"silenced {cond}", v, (lambda c: lambda: sil(c))(cond), 0.5)
 
+
+# ── behavioral-mutation subset (behavioral_subset.json) ──
+def _beh(key,field):
+    d=_json.load(open("/root/experiment_aws_cbmc/evaluation/behavioral_subset.json"))
+    return d[key][field] if field else d[key]
+add("S7/beh","behavioral GT-FAIL denom", 329, lambda: _json.load(open("/root/experiment_aws_cbmc/evaluation/behavioral_subset.json"))["denom_behavioral"], 0.5)
+add("S7/beh","A-gptoss sil behavioral", 41, lambda: _beh("A_gptoss120b","sil_beh"), 0.5)
+add("S7/beh","Oracle sil behavioral", 149, lambda: _beh("Oracle_gptoss120b","sil_beh"), 0.5)
+add("S7/beh","Claude-A sil behavioral", 15, lambda: _beh("A_claude","sil_beh"), 0.5)
+add("S7/beh","A-gptoss SilGT behavioral %", 12.5, lambda: 100*_beh("A_gptoss120b","sil_beh")/_json.load(open("/root/experiment_aws_cbmc/evaluation/behavioral_subset.json"))["denom_behavioral"], 0.2)
+add("S7/beh","Oracle SilGT behavioral %", 45.3, lambda: 100*_beh("Oracle_gptoss120b","sil_beh")/_json.load(open("/root/experiment_aws_cbmc/evaluation/behavioral_subset.json"))["denom_behavioral"], 0.2)
+
 def main():
     md = "--md" in sys.argv
     rows=[]; nfail=0
