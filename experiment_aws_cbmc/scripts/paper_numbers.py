@@ -152,6 +152,7 @@ def passrate(cond):
     d = RESULTS / f"feedback_loop_{cond}_gptoss120b"
     tot=succ=0
     for fd in d.iterdir():
+        if fd.name.startswith("s2n_"): continue  # exclude s2n cross-corpus funcs from aws aggregate
         sp = fd / "summary.json"
         if not sp.exists(): continue
         tot += 1
@@ -302,6 +303,19 @@ add("S4/mr","M-gptoss run3 silenced", 45, lambda: _mr("M_gptoss120b",2), 0.5)
 add("S4/mr","G-gptoss run2 silenced", 40, lambda: _mr("G_gptoss120b",1), 0.5)
 add("S4/mr","G-gptoss run3 silenced", 43, lambda: _mr("G_gptoss120b",2), 0.5)
 add("S4/mr","Oracle run2 silenced", 168, lambda: _mr("Oracle_gptoss120b",1), 0.5)
+
+
+# ── s2n cross-corpus (sec:s2n) ──
+def _s2n(cond,field):
+    d=_json.load(open(f"/root/experiment_aws_cbmc/evaluation/mutation_oracle_s2n_{cond}.json"))
+    res=d["results"]; gtf=[r for r in res if str(r.get("gt","")).upper() in ("FAIL","SAT")]
+    sil=[r for r in gtf if r.get("silenced")]
+    return {"gtfail":len(gtf),"sil":len(sil)}[field]
+add("S6/s2n","s2n GT-FAIL denom", 253, lambda: _s2n("A_claude","gtfail"), 1)
+add("S6/s2n","s2n Claude-A silenced", 57, lambda: _s2n("A_claude","sil"), 1)
+add("S6/s2n","s2n gptoss-A silenced", 42, lambda: _s2n("A_gptoss120b","sil"), 1)
+add("S6/s2n","s2n Claude-A Sil/GT %", 22.5, lambda: 100*_s2n("A_claude","sil")/_s2n("A_claude","gtfail"), 0.3)
+add("S6/s2n","s2n gptoss-A Sil/GT %", 16.6, lambda: 100*_s2n("A_gptoss120b","sil")/_s2n("A_gptoss120b","gtfail"), 0.3)
 
 def main():
     md = "--md" in sys.argv
