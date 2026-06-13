@@ -271,6 +271,27 @@ add("S7/beh","Claude-A sil behavioral", 15, lambda: _beh("A_claude","sil_beh"), 
 add("S7/beh","A-gptoss SilGT behavioral %", 12.5, lambda: 100*_beh("A_gptoss120b","sil_beh")/_json.load(open("/root/experiment_aws_cbmc/evaluation/behavioral_subset.json"))["denom_behavioral"], 0.2)
 add("S7/beh","Oracle SilGT behavioral %", 45.3, lambda: 100*_beh("Oracle_gptoss120b","sil_beh")/_json.load(open("/root/experiment_aws_cbmc/evaluation/behavioral_subset.json"))["denom_behavioral"], 0.2)
 
+
+# ── reverse cell (sec:reverse) ──
+add("S4/rev","Claude-A behavioral reverse cells", 81, lambda: _json.load(open("/root/experiment_aws_cbmc/evaluation/behavioral_subset.json"))["A_claude"]["rev_beh"], 0.5)
+def _rev_stringeq():
+    import os, re, difflib, sys
+    sys.path.insert(0,"/root/experiment_aws_cbmc/scripts"); import run_mutation_oracle_cbmc as _O
+    C=re.compile(r'AWS_PRECONDITION|AWS_POSTCONDITION|AWS_FATAL|AWS_ASSUME|__CPROVER|^\s*[+-]\s*assert\s*\(')
+    res=_json.load(open("/root/experiment_aws_cbmc/evaluation/mutation_oracle_cbmc_feedback_loop_A_claude.json"))["results"]
+    fam={"aws_string_eq_c_str","aws_string_eq_byte_cursor","aws_string_eq_byte_buf"}
+    n=0
+    for r in res:
+        if r["func"] not in fam: continue
+        if not(str(r.get("gt","")).upper() in("SUCCESS","UNSAT") and str(r.get("llm","")).upper() in("FAIL","SAT")): continue
+        mc=f"/root/experiment_aws_cbmc/mutants/{r['func']}/{r['mutant']}.c"
+        cfg=_O.FUNC_CONFIGS.get(r["func"],{}); idx=_O.get_mutated_source_idx(r["func"])
+        orig=open(cfg["project_sources"][idx]).read().splitlines()
+        d=[l for l in difflib.unified_diff(orig,open(mc).read().splitlines(),n=0,lineterm="") if l and l[0] in "+-" and not l.startswith(("+++","---"))]
+        if not C.search(" ".join(d)): n+=1
+    return n
+add("S4/rev","Claude-A string-eq-family reverse (behavioral)", 51, _rev_stringeq, 0.5)
+
 def main():
     md = "--md" in sys.argv
     rows=[]; nfail=0
