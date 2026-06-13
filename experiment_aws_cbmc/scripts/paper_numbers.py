@@ -292,6 +292,17 @@ def _rev_stringeq():
     return n
 add("S4/rev","Claude-A string-eq-family reverse (behavioral)", 51, _rev_stringeq, 0.5)
 
+
+# ── multi-run silenced (multirun_silenced.json) ──
+def _mr(cond,i):
+    return _json.load(open("/root/experiment_aws_cbmc/evaluation/multirun_silenced.json"))[cond][i]
+add("S4/mr","A-gptoss run2 silenced", 34, lambda: _mr("A_gptoss120b",1), 0.5)
+add("S4/mr","A-gptoss run3 silenced", 36, lambda: _mr("A_gptoss120b",2), 0.5)
+add("S4/mr","M-gptoss run3 silenced", 45, lambda: _mr("M_gptoss120b",2), 0.5)
+add("S4/mr","G-gptoss run2 silenced", 40, lambda: _mr("G_gptoss120b",1), 0.5)
+add("S4/mr","G-gptoss run3 silenced", 43, lambda: _mr("G_gptoss120b",2), 0.5)
+add("S4/mr","Oracle run2 silenced", 168, lambda: _mr("Oracle_gptoss120b",1), 0.5)
+
 def main():
     md = "--md" in sys.argv
     rows=[]; nfail=0
