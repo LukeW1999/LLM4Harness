@@ -10,13 +10,14 @@ paper prints as MISMATCH.
 Usage:  python3 paper_numbers.py            # full audit table
         python3 paper_numbers.py --md       # markdown table
 """
-import json, sys
+import json, os, sys
 from pathlib import Path
 import numpy as np
 from scipy.stats import wilcoxon, fisher_exact, beta, rankdata
 
-EVAL = Path("/root/experiment_aws_cbmc/evaluation")
-RESULTS = Path("/root/experiment_aws_cbmc/results")
+_BASE = "/root/experiment_aws_cbmc" if os.path.isdir("/root/experiment_aws_cbmc") else str(Path(__file__).resolve().parent.parent)
+EVAL = Path(f"{_BASE}/evaluation")
+RESULTS = Path(f"{_BASE}/results")
 
 def orc(cond):
     return json.load(open(EVAL / f"mutation_oracle_cbmc_feedback_loop_{cond}.json"))["results"]
@@ -176,7 +177,7 @@ for loc,c,pa,rc,v in [
 # sacrifice ratio — reuse analyze_rq1.analyze_condition (no reimplementation)
 def sacratio(cond_label, ds):
     import importlib.util as _u
-    spec=_u.spec_from_file_location("arq1", "/root/experiment_aws_cbmc/scripts/analyze_rq1.py")
+    spec=_u.spec_from_file_location("arq1", f"{_BASE}/scripts/analyze_rq1.py")
     m=_u.module_from_spec(spec); spec.loader.exec_module(m)
     data=m.load_condition(ds)
     return m.analyze_condition(cond_label, data)["sacrifice_ratio"]*100
@@ -187,7 +188,7 @@ for loc,c,ds,sr in [("T2/L326","H","H_gptoss120b",86.3),
     add(loc,f"{c} sacrifice-ratio", sr, (lambda lbl,d: lambda: sacratio(lbl,d))(c,ds), 0.6)
 
 # config constants
-add("L230","mutant-bearing functions (dir count; paper says 58 compile-valid)", 80, lambda: len([d for d in (Path("/root/experiment_aws_cbmc/mutants")).iterdir() if d.is_dir() and any(x.name.endswith(".c") for x in d.iterdir())]), 0.5)
+add("L230","mutant-bearing functions (dir count; paper says 58 compile-valid)", 80, lambda: len([d for d in (Path(f"{_BASE}/mutants")).iterdir() if d.is_dir() and any(x.name.endswith(".c") for x in d.iterdir())]), 0.5)
 add("L491","functions in oracle table", 40, lambda: len({r["func"] for r in orc("A_gptoss120b")}), 0.5)
 add("def","total mutants run (A_gptoss)", 1233, lambda: len(orc("A_gptoss120b")), 0.5)
 
@@ -196,10 +197,10 @@ add("def","total mutants run (A_gptoss)", 1233, lambda: len(orc("A_gptoss120b"))
 # ── NEW (2026-06-12): recall-among-compilable + 4-way partition over canonical 370 ──
 import json as _json
 _CANON = set((r["func"],r["mutant"]) for r in
-             _json.load(open("/root/experiment_aws_cbmc/evaluation/gt_fail_properties_canonical370.json"))["results"]
+             _json.load(open(f"{_BASE}/evaluation/gt_fail_properties_canonical370.json"))["results"]
              if str(r.get("verdict","")).upper() in ("FAIL","SAT"))
 def _orc_results(cond):
-    d=_json.load(open(f"/root/experiment_aws_cbmc/evaluation/mutation_oracle_cbmc_feedback_loop_{cond}.json"))
+    d=_json.load(open(f"{_BASE}/evaluation/mutation_oracle_cbmc_feedback_loop_{cond}.json"))
     by={(r["func"],r["mutant"]):r for r in d["results"]}
     return [by[k] for k in _CANON if k in by]
 def _verdict(r): return str(r.get("llm","")).upper()
@@ -221,11 +222,11 @@ add("L520","A 4-way: compile_error", 148, lambda: partition("A_gptoss120b","COMP
 
 # ── cloze + B2 (2026-06-12 evening) ──
 def cloze_rec(f):
-    d=_json.load(open(f"/root/experiment_aws_cbmc/evaluation/{f}"))
+    d=_json.load(open(f"{_BASE}/evaluation/{f}"))
     ok=[r for r in d if r["status"]=="OK"]
     return sum(1 for r in ok if r.get("cbmc") and r["cbmc"]["orig"] in ("SUCCESS","UNKNOWN") and r["cbmc"]["catches"]>0)
 def b2_caught(f):
-    d=_json.load(open(f"/root/experiment_aws_cbmc/evaluation/{f}"))
+    d=_json.load(open(f"{_BASE}/evaluation/{f}"))
     return sum(r.get("n_caught",0) for r in d)
 add("T5/cloze","cloze recovered gptoss-self (of 9)", 9, lambda: cloze_rec("cloze_A_gptoss120b_openrouter.json"), 0.5)
 add("T5/cloze","cloze recovered claude-fills-gptoss (of 9)", 9, lambda: cloze_rec("cloze_A_gptoss120b_claude.json"), 0.5)
@@ -236,7 +237,7 @@ add("S7/B2","B2 repair caught gptoss-A (of 41)", 0, lambda: b2_caught("b2_repair
 
 # ── Table7 v2.1 (programmatic, table7_v21.json) + cross-seed + screening + Spearman ──
 def t7(cond,field):
-    d=_json.load(open("/root/experiment_aws_cbmc/evaluation/table7_v21.json"))
+    d=_json.load(open(f"{_BASE}/evaluation/table7_v21.json"))
     e=d[cond]; 
     return 100.0*e[field]/e["tot"]
 for cond,kg in [("A_gptoss120b",90.2),("H_gptoss120b",89.2),("M_gptoss120b",96.7),
@@ -244,7 +245,7 @@ for cond,kg in [("A_gptoss120b",90.2),("H_gptoss120b",89.2),("M_gptoss120b",96.7
                 ("G_deepseekv4flash",100.0),("A_claude",87.5),("H_claude",81.2),("M_claude",100.0)]:
     add("T7", f"{cond} KG%", kg, (lambda c: lambda: t7(c,"KG"))(cond), 0.15)
 add("T7","A_claude SAC%",12.5, lambda: t7("A_claude","SAC"), 0.15)
-add("T7","Oracle KG count",141, lambda: _json.load(open("/root/experiment_aws_cbmc/evaluation/table7_v21.json"))["Oracle_gptoss120b"]["KG"], 0.5)
+add("T7","Oracle KG count",141, lambda: _json.load(open(f"{_BASE}/evaluation/table7_v21.json"))["Oracle_gptoss120b"]["KG"], 0.5)
 def spearman_pass_recall():
     pa=[84.3,81.9,75.3,70.5,67.5,62.7,31.3,28.9]; rc=[0.251,0.268,0.384,0.363,0.377,0.303,0.290,0.357]
     def rank(x): srt=sorted(x); return [srt.index(v)+1 for v in x]
@@ -252,7 +253,7 @@ def spearman_pass_recall():
     return 1-6*d2/(n*(n*n-1))
 add("L326","Spearman pass-recall", -0.26, spearman_pass_recall, 0.01)
 def sil(cond):
-    d=_json.load(open(f"/root/experiment_aws_cbmc/evaluation/mutation_oracle_cbmc_feedback_loop_{cond}.json"))
+    d=_json.load(open(f"{_BASE}/evaluation/mutation_oracle_cbmc_feedback_loop_{cond}.json"))
     return sum(1 for r in d["results"] if r.get("silenced"))
 for cond,v in [("A_claude_r3",16),("A_claude_r4",36),("A_claude_r5",19),("H_claude_r3",14),
                ("H_claude_r4",15),("H_claude_r5",44),("M_claude_r3",14),("M_claude_r4",11),
@@ -263,29 +264,29 @@ for cond,v in [("A_claude_r3",16),("A_claude_r4",36),("A_claude_r5",19),("H_clau
 
 # ── behavioral-mutation subset (behavioral_subset.json) ──
 def _beh(key,field):
-    d=_json.load(open("/root/experiment_aws_cbmc/evaluation/behavioral_subset.json"))
+    d=_json.load(open(f"{_BASE}/evaluation/behavioral_subset.json"))
     return d[key][field] if field else d[key]
-add("S7/beh","behavioral GT-FAIL denom", 329, lambda: _json.load(open("/root/experiment_aws_cbmc/evaluation/behavioral_subset.json"))["denom_behavioral"], 0.5)
+add("S7/beh","behavioral GT-FAIL denom", 329, lambda: _json.load(open(f"{_BASE}/evaluation/behavioral_subset.json"))["denom_behavioral"], 0.5)
 add("S7/beh","A-gptoss sil behavioral", 41, lambda: _beh("A_gptoss120b","sil_beh"), 0.5)
 add("S7/beh","Oracle sil behavioral", 149, lambda: _beh("Oracle_gptoss120b","sil_beh"), 0.5)
 add("S7/beh","Claude-A sil behavioral", 15, lambda: _beh("A_claude","sil_beh"), 0.5)
-add("S7/beh","A-gptoss SilGT behavioral %", 12.5, lambda: 100*_beh("A_gptoss120b","sil_beh")/_json.load(open("/root/experiment_aws_cbmc/evaluation/behavioral_subset.json"))["denom_behavioral"], 0.2)
-add("S7/beh","Oracle SilGT behavioral %", 45.3, lambda: 100*_beh("Oracle_gptoss120b","sil_beh")/_json.load(open("/root/experiment_aws_cbmc/evaluation/behavioral_subset.json"))["denom_behavioral"], 0.2)
+add("S7/beh","A-gptoss SilGT behavioral %", 12.5, lambda: 100*_beh("A_gptoss120b","sil_beh")/_json.load(open(f"{_BASE}/evaluation/behavioral_subset.json"))["denom_behavioral"], 0.2)
+add("S7/beh","Oracle SilGT behavioral %", 45.3, lambda: 100*_beh("Oracle_gptoss120b","sil_beh")/_json.load(open(f"{_BASE}/evaluation/behavioral_subset.json"))["denom_behavioral"], 0.2)
 
 
 # ── reverse cell (sec:reverse) ──
-add("S4/rev","Claude-A behavioral reverse cells", 81, lambda: _json.load(open("/root/experiment_aws_cbmc/evaluation/behavioral_subset.json"))["A_claude"]["rev_beh"], 0.5)
+add("S4/rev","Claude-A behavioral reverse cells", 81, lambda: _json.load(open(f"{_BASE}/evaluation/behavioral_subset.json"))["A_claude"]["rev_beh"], 0.5)
 def _rev_stringeq():
     import os, re, difflib, sys
-    sys.path.insert(0,"/root/experiment_aws_cbmc/scripts"); import run_mutation_oracle_cbmc as _O
+    sys.path.insert(0,f"{_BASE}/scripts"); import run_mutation_oracle_cbmc as _O
     C=re.compile(r'AWS_PRECONDITION|AWS_POSTCONDITION|AWS_FATAL|AWS_ASSUME|__CPROVER|^\s*[+-]\s*assert\s*\(')
-    res=_json.load(open("/root/experiment_aws_cbmc/evaluation/mutation_oracle_cbmc_feedback_loop_A_claude.json"))["results"]
+    res=_json.load(open(f"{_BASE}/evaluation/mutation_oracle_cbmc_feedback_loop_A_claude.json"))["results"]
     fam={"aws_string_eq_c_str","aws_string_eq_byte_cursor","aws_string_eq_byte_buf"}
     n=0
     for r in res:
         if r["func"] not in fam: continue
         if not(str(r.get("gt","")).upper() in("SUCCESS","UNSAT") and str(r.get("llm","")).upper() in("FAIL","SAT")): continue
-        mc=f"/root/experiment_aws_cbmc/mutants/{r['func']}/{r['mutant']}.c"
+        mc=f"{_BASE}/mutants/{r['func']}/{r['mutant']}.c"
         cfg=_O.FUNC_CONFIGS.get(r["func"],{}); idx=_O.get_mutated_source_idx(r["func"])
         orig=open(cfg["project_sources"][idx]).read().splitlines()
         d=[l for l in difflib.unified_diff(orig,open(mc).read().splitlines(),n=0,lineterm="") if l and l[0] in "+-" and not l.startswith(("+++","---"))]
@@ -296,7 +297,7 @@ add("S4/rev","Claude-A string-eq-family reverse (behavioral)", 51, _rev_stringeq
 
 # ── multi-run silenced (multirun_silenced.json) ──
 def _mr(cond,i):
-    return _json.load(open("/root/experiment_aws_cbmc/evaluation/multirun_silenced.json"))[cond][i]
+    return _json.load(open(f"{_BASE}/evaluation/multirun_silenced.json"))[cond][i]
 add("S4/mr","A-gptoss run2 silenced", 34, lambda: _mr("A_gptoss120b",1), 0.5)
 add("S4/mr","A-gptoss run3 silenced", 36, lambda: _mr("A_gptoss120b",2), 0.5)
 add("S4/mr","M-gptoss run3 silenced", 45, lambda: _mr("M_gptoss120b",2), 0.5)
@@ -307,7 +308,7 @@ add("S4/mr","Oracle run2 silenced", 168, lambda: _mr("Oracle_gptoss120b",1), 0.5
 
 # ── s2n cross-corpus (sec:s2n) ──
 def _s2n(cond,field):
-    d=_json.load(open(f"/root/experiment_aws_cbmc/evaluation/mutation_oracle_s2n_{cond}.json"))
+    d=_json.load(open(f"{_BASE}/evaluation/mutation_oracle_s2n_{cond}.json"))
     res=d["results"]; gtf=[r for r in res if str(r.get("gt","")).upper() in ("FAIL","SAT")]
     sil=[r for r in gtf if r.get("silenced")]
     return {"gtfail":len(gtf),"sil":len(sil)}[field]
@@ -324,7 +325,7 @@ def _vct(cond, status):
                and str(r.get("llm","")).upper()==status)
 def _kg_mod(cond):
     import importlib.util as _iu
-    sp=_iu.spec_from_file_location("av2","/root/experiment_aws_cbmc/scripts/attribution_v2.py")
+    sp=_iu.spec_from_file_location("av2",f"{_BASE}/scripts/attribution_v2.py")
     m=_iu.module_from_spec(sp); sp.loader.exec_module(m)
     s,_=m.run(cond); return s["KNOWLEDGE-GAP"]
 # H multi-run
@@ -358,7 +359,7 @@ add("S6/s2n","CP upper 0/57 (s2n Claude)", 6.3, lambda: _cp_upper0(57), 0.3)
 
 # ── behavioural rename-immune KG re-attribution (ARS C1, 2026-06-14) ──
 def _bkg(cond, field):
-    d=_json.load(open(f"/root/experiment_aws_cbmc/evaluation/behavioural_kg_feedback_loop_{cond}.json"))
+    d=_json.load(open(f"{_BASE}/evaluation/behavioural_kg_feedback_loop_{cond}.json"))
     return d[field]
 add("RQ2/bkg","behav-KG A_gptoss", 37, lambda: _bkg("A_gptoss120b","behavioural_KG"), 0.5)
 add("RQ2/bkg","behav-KG M_gptoss", 30, lambda: _bkg("M_gptoss120b","behavioural_KG"), 0.5)
