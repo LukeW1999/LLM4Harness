@@ -22,10 +22,10 @@ from dataclasses import dataclass
 from typing import Optional
 
 # ── paths ────────────────────────────────────────────────────────────────────
-SRCDIR  = Path("/home/weiqi/aws-c-common")
+SRCDIR  = Path("/root/aws-c-common")
 PROOFDIR = SRCDIR / "verification/cbmc"
 
-ESBMC_BIN   = Path("/home/weiqi/ESBMC_Project/release/bin/esbmc")
+ESBMC_BIN = Path("/usr/local/bin/esbmc")
 
 # Override directory: ESBMC-compatible headers and utilities, stored in the
 # repo so they survive reboots (unlike /tmp).

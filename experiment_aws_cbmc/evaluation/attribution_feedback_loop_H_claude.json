@@ -1,0 +1,73 @@
+{
+  "dataset": "feedback_loop_H_claude",
+  "total_silenced": 16,
+  "summary": {
+    "knowledge_gap": 9,
+    "sacrifice": 0,
+    "aoc": 4,
+    "unknown": 3
+  },
+  "per_function": {
+    "aws_byte_buf_cat": {
+      "silenced": 9,
+      "n_iters": 1,
+      "gt_asserts": 6,
+      "kg_asserts": 5,
+      "sac_asserts": 0,
+      "present_final": 1,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert((old_dest.capacity - old_dest.len) >= (buffer1.len + buffer2.len + buffer3.len));",
+        "assert((old_dest.capacity - old_dest.len) < (buffer1.len + buffer2.len + buffer3.len));",
+        "assert(aws_byte_buf_is_valid(&buffer1));",
+        "assert(aws_byte_buf_is_valid(&buffer2));",
+        "assert(aws_byte_buf_is_valid(&buffer3));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_eq_c_str": {
+      "silenced": 1,
+      "n_iters": 1,
+      "gt_asserts": 2,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 2,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_from_empty_array": {
+      "silenced": 2,
+      "n_iters": 2,
+      "gt_asserts": 4,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 4,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_reset": {
+      "silenced": 3,
+      "n_iters": 2,
+      "gt_asserts": 4,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 4,
+      "attribution": "UNKNOWN (structural)",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_string_destroy": {
+      "silenced": 1,
+      "n_iters": 2,
+      "gt_asserts": 0,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    }
+  }
+}

@@ -1,0 +1,110 @@
+[
+ {
+  "func": "aws_byte_buf_cat",
+  "assert": "assert((old_dest.capacity - old_dest.len) >= (buffer1.len + buffer2.len + buffer3.len));",
+  "filled": "assert(dest.len == old_dest.len + buffer1.len + buffer2.len + buffer3.len);",
+  "exact": false,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_mut": 33
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "assert": "assert((old_dest.capacity - old_dest.len) < (buffer1.len + buffer2.len + buffer3.len));",
+  "filled": "assert((old_dest.capacity - old_dest.len) < (buffer1.len + buffer2.len + buffer3.len));",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_mut": 33
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "assert": "assert(aws_byte_buf_is_valid(&buffer1));",
+  "filled": "assert(aws_byte_buf_is_valid(&buffer1));",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_mut": 33
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "assert": "assert(aws_byte_buf_is_valid(&buffer2));",
+  "filled": "assert(aws_byte_buf_is_valid(&buffer2));",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_mut": 33
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "assert": "assert(aws_byte_buf_is_valid(&buffer3));",
+  "filled": "assert(aws_byte_buf_is_valid(&buffer3));",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_mut": 33
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_nospec_mask",
+  "assert": "assert((index >= bound) || (bound > (SIZE_MAX / 2)) || (index > (SIZE_MAX / 2)));",
+  "filled": "assert((index >= bound) || (bound > (SIZE_MAX / 2)) || (index > (SIZE_MAX / 2)));",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_mut": 2
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_nospec_mask",
+  "assert": "assert(rval == UINTPTR_MAX);",
+  "filled": "assert(rval == SIZE_MAX);",
+  "exact": false,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_mut": 2
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_nospec_mask",
+  "assert": "assert(!((index >= bound) || (bound > (SIZE_MAX / 2)) || (index > (SIZE_MAX / 2))));",
+  "filled": "assert((index < bound) && (bound <= (SIZE_MAX / 2)) && (index <= (SIZE_MAX / 2)));",
+  "exact": false,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_mut": 2
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_ptr_eq",
+  "assert": "assert(rval == (p1 == p2));",
+  "filled": "assert(rval == (p1 == p2));",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_mut": 2
+  },
+  "status": "OK"
+ }
+]

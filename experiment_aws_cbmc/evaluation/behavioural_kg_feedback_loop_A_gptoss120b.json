@@ -1,0 +1,32 @@
+{
+  "condition": "feedback_loop_A_gptoss120b",
+  "silenced_total": 41,
+  "decided": 41,
+  "behavioural_KG": 37,
+  "ever_caught_some_iter": 4,
+  "undecided": 0,
+  "behavioural_KG_pct_of_decided": 90.2,
+  "ever_caught_cases": [
+    {
+      "func": "aws_nospec_mask",
+      "mutant": "mutant_0005",
+      "verdicts": "FAIL/orig:SUCCESS,FAIL/orig:SUCCESS,SUCCESS"
+    },
+    {
+      "func": "aws_nospec_mask",
+      "mutant": "mutant_0100",
+      "verdicts": "FAIL/orig:SUCCESS,FAIL/orig:SUCCESS,SUCCESS"
+    },
+    {
+      "func": "aws_ptr_eq",
+      "mutant": "mutant_0005",
+      "verdicts": "FAIL/orig:SUCCESS,FAIL/orig:SUCCESS,SUCCESS"
+    },
+    {
+      "func": "aws_ptr_eq",
+      "mutant": "mutant_0006",
+      "verdicts": "FAIL/orig:SUCCESS,FAIL/orig:SUCCESS,SUCCESS"
+    }
+  ],
+  "undecided_reasons": []
+}

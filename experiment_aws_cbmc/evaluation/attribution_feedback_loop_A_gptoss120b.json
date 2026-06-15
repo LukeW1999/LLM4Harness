@@ -1,0 +1,68 @@
+{
+  "dataset": "feedback_loop_A_gptoss120b",
+  "total_silenced": 41,
+  "summary": {
+    "knowledge_gap": 37,
+    "sacrifice": 0,
+    "aoc": 4,
+    "unknown": 0
+  },
+  "per_function": {
+    "aws_byte_buf_cat": {
+      "silenced": 33,
+      "n_iters": 3,
+      "gt_asserts": 6,
+      "kg_asserts": 5,
+      "sac_asserts": 0,
+      "present_final": 1,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert((old_dest.capacity - old_dest.len) >= (buffer1.len + buffer2.len + buffer3.len));",
+        "assert((old_dest.capacity - old_dest.len) < (buffer1.len + buffer2.len + buffer3.len));",
+        "assert(aws_byte_buf_is_valid(&buffer1));",
+        "assert(aws_byte_buf_is_valid(&buffer2));",
+        "assert(aws_byte_buf_is_valid(&buffer3));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_clean_up": {
+      "silenced": 4,
+      "n_iters": 3,
+      "gt_asserts": 4,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 4,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_nospec_mask": {
+      "silenced": 2,
+      "n_iters": 3,
+      "gt_asserts": 3,
+      "kg_asserts": 3,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert((index >= bound) || (bound > (SIZE_MAX / 2)) || (index > (SIZE_MAX / 2)));",
+        "assert(rval == UINTPTR_MAX);",
+        "assert(!((index >= bound) || (bound > (SIZE_MAX / 2)) || (index > (SIZE_MAX / 2))));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_ptr_eq": {
+      "silenced": 2,
+      "n_iters": 3,
+      "gt_asserts": 1,
+      "kg_asserts": 1,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(rval == (p1 == p2));"
+      ],
+      "sac_assertion_texts": []
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+ "A_gptoss120b": {
+  "tot": 41,
+  "KG": 37,
+  "SAC": 0,
+  "AOC": 4,
+  "UN": 0
+ },
+ "H_gptoss120b": {
+  "tot": 37,
+  "KG": 33,
+  "SAC": 0,
+  "AOC": 0,
+  "UN": 4
+ },
+ "M_gptoss120b": {
+  "tot": 30,
+  "KG": 29,
+  "SAC": 0,
+  "AOC": 0,
+  "UN": 1
+ },
+ "Oracle_gptoss120b": {
+  "tot": 158,
+  "KG": 141,
+  "SAC": 0,
+  "AOC": 0,
+  "UN": 17
+ },
+ "A_deepseekv4flash": {
+  "tot": 5,
+  "KG": 5,
+  "SAC": 0,
+  "AOC": 0,
+  "UN": 0
+ },
+ "H_deepseekv4flash": {
+  "tot": 18,
+  "KG": 18,
+  "SAC": 0,
+  "AOC": 0,
+  "UN": 0
+ },
+ "G_deepseekv4flash": {
+  "tot": 4,
+  "KG": 4,
+  "SAC": 0,
+  "AOC": 0,
+  "UN": 0
+ },
+ "A_claude": {
+  "tot": 16,
+  "KG": 14,
+  "SAC": 2,
+  "AOC": 0,
+  "UN": 0
+ },
+ "H_claude": {
+  "tot": 16,
+  "KG": 13,
+  "SAC": 0,
+  "AOC": 2,
+  "UN": 1
+ },
+ "M_claude": {
+  "tot": 11,
+  "KG": 11,
+  "SAC": 0,
+  "AOC": 0,
+  "UN": 0
+ }
+}

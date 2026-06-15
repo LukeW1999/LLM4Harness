@@ -1,0 +1,67 @@
+{
+  "dataset": "feedback_loop_A_deepseekv4flash",
+  "total_silenced": 5,
+  "summary": {
+    "knowledge_gap": 4,
+    "sacrifice": 0,
+    "aoc": 1,
+    "unknown": 0
+  },
+  "per_function": {
+    "aws_byte_buf_clean_up_secure": {
+      "silenced": 1,
+      "n_iters": 3,
+      "gt_asserts": 4,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 4,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_from_array": {
+      "silenced": 2,
+      "n_iters": 6,
+      "gt_asserts": 4,
+      "kg_asserts": 4,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(aws_byte_buf_is_valid(&buf));",
+        "assert(buf.len == length);",
+        "assert(buf.capacity == length);",
+        "assert(buf.allocator == NULL);"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_nospec_mask": {
+      "silenced": 1,
+      "n_iters": 3,
+      "gt_asserts": 3,
+      "kg_asserts": 3,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert((index >= bound) || (bound > (SIZE_MAX / 2)) || (index > (SIZE_MAX / 2)));",
+        "assert(rval == UINTPTR_MAX);",
+        "assert(!((index >= bound) || (bound > (SIZE_MAX / 2)) || (index > (SIZE_MAX / 2))));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_ptr_eq": {
+      "silenced": 1,
+      "n_iters": 3,
+      "gt_asserts": 1,
+      "kg_asserts": 1,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(rval == (p1 == p2));"
+      ],
+      "sac_assertion_texts": []
+    }
+  }
+}

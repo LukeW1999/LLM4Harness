@@ -200,6 +200,8 @@ def analyze_condition(cond_label: str, data: dict) -> dict:
 CONDITIONS = [
     ("A/qwen2.5",        "A"),
     ("A/claude",         "A_claude"),
+    ("H/claude",         "H_claude"),
+    ("M/claude",         "M_claude"),
     ("A/gptoss120b",     "A_gptoss120b"),
     ("G/gptoss120b",     "G_gptoss120b"),
     ("H/gptoss120b",     "H_gptoss120b"),

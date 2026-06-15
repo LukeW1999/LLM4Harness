@@ -75,6 +75,8 @@ def normalize_entry_point(code: str, func_name: str) -> str:
     import re
     code = re.sub(r'\bint\s+main\s*\(\s*void\s*\)\s*\{', f'void {func_name}_harness(void) {{', code)
     code = re.sub(r'\bint\s+main\s*\(\s*\)\s*\{', f'void {func_name}_harness(void) {{', code)
+    # Normalize generic harness names (e.g. LLM wrote 'void harness(void)') to the expected entry
+    code = re.sub(r'\b(?:void|int)\s+harness\s*\(\s*(?:void)?\s*\)\s*\{', f'void {func_name}_harness(void) {{', code)
     return code
 
 DATASET_DIR = experiment_dir / "dataset"
@@ -142,6 +144,8 @@ def _model_dir_suffix(model: str) -> str:
 ACTIVE_CONDITION = "original"
 # Active model backend (set by --model arg in main())
 ACTIVE_MODEL = "qwen"
+# Optional run tag to isolate repeat runs (set by --run-tag); never clobbers canonical dirs
+ACTIVE_RUN_TAG = ""
 
 
 def _guess_gt_category_for_harness(harness_code: str, func_name: str) -> str:
@@ -883,7 +887,7 @@ def run_feedback_loop(
     print(f"  GT baseline: {result.gt_result.verification_result}")
 
     model_suffix = _model_dir_suffix(ACTIVE_MODEL)
-    output_dir = RESULTS_DIR / f"feedback_loop_{ACTIVE_CONDITION}{model_suffix}" / func_name
+    output_dir = RESULTS_DIR / f"feedback_loop_{ACTIVE_CONDITION}{model_suffix}{ACTIVE_RUN_TAG}" / func_name
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Step 1: Initial generation
@@ -1066,12 +1070,16 @@ def main():
                         help=("Prompt condition: A=source+NL, B=source only, C=NL+CoT, D=no-NL+CoT, "
                               "E=same-family few-shot, F=wrong-family few-shot, "
                               "G=single-pass no-feedback, H=strategy-neutral repair"))
+    parser.add_argument("--run-tag", default="", help="Suffix to isolate repeat runs (never overwrites canonical)")
     parser.add_argument("--model", choices=["qwen", "claude", "openrouter"], default="qwen",
                         help="LLM backend: qwen (DashScope), claude (Anthropic), openrouter")
     args = parser.parse_args()
 
     ACTIVE_CONDITION = args.condition
     ACTIVE_MODEL = args.model
+    global ACTIVE_RUN_TAG
+    _rt = args.run_tag
+    ACTIVE_RUN_TAG = _rt if (_rt == "" or _rt.startswith("_")) else "_" + _rt
     _load_model_backend(args.model)
     print(f"Running with condition: {ACTIVE_CONDITION}, model: {ACTIVE_MODEL}")
 
@@ -1090,7 +1098,7 @@ def main():
     for func_dir, func_name in funcs:
         # Skip if already completed (resume support)
         model_suffix = _model_dir_suffix(ACTIVE_MODEL)
-        output_dir = RESULTS_DIR / f"feedback_loop_{ACTIVE_CONDITION}{model_suffix}" / func_name
+        output_dir = RESULTS_DIR / f"feedback_loop_{ACTIVE_CONDITION}{model_suffix}{ACTIVE_RUN_TAG}" / func_name
         summary_path = output_dir / "summary.json"
         if summary_path.exists():
             import json as _json

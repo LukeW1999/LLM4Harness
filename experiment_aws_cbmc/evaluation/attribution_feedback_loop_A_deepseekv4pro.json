@@ -1,0 +1,152 @@
+{
+  "dataset": "feedback_loop_A_deepseekv4pro",
+  "total_silenced": 32,
+  "summary": {
+    "knowledge_gap": 27,
+    "sacrifice": 1,
+    "aoc": 3,
+    "unknown": 1
+  },
+  "per_function": {
+    "aws_byte_buf_advance": {
+      "silenced": 1,
+      "n_iters": 2,
+      "gt_asserts": 12,
+      "kg_asserts": 5,
+      "sac_asserts": 0,
+      "present_final": 5,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(output.len == 0);",
+        "assert(output.allocator == NULL);",
+        "assert(output.capacity == 0);",
+        "assert(output.buffer == NULL);",
+        "assert(aws_byte_buf_is_valid(&output));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_cat": {
+      "silenced": 1,
+      "n_iters": 5,
+      "gt_asserts": 6,
+      "kg_asserts": 5,
+      "sac_asserts": 1,
+      "present_final": 0,
+      "attribution": "SACRIFICE-CANDIDATE",
+      "kg_assertion_texts": [
+        "assert((old_dest.capacity - old_dest.len) >= (buffer1.len + buffer2.len + buffer3.len));",
+        "assert((old_dest.capacity - old_dest.len) < (buffer1.len + buffer2.len + buffer3.len));",
+        "assert(aws_byte_buf_is_valid(&buffer1));",
+        "assert(aws_byte_buf_is_valid(&buffer2));",
+        "assert(aws_byte_buf_is_valid(&buffer3));"
+      ],
+      "sac_assertion_texts": [
+        "assert(aws_byte_buf_is_valid(&dest));"
+      ]
+    },
+    "aws_byte_buf_eq_c_str": {
+      "silenced": 1,
+      "n_iters": 2,
+      "gt_asserts": 2,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 2,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_init_copy": {
+      "silenced": 1,
+      "n_iters": 1,
+      "gt_asserts": 5,
+      "kg_asserts": 2,
+      "sac_asserts": 0,
+      "present_final": 3,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(aws_byte_buf_has_allocator(dest));",
+        "assert(aws_byte_buf_is_valid(&src));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_ring_buffer_clean_up": {
+      "silenced": 2,
+      "n_iters": 3,
+      "gt_asserts": 5,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 5,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_string_destroy": {
+      "silenced": 1,
+      "n_iters": 1,
+      "gt_asserts": 0,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "UNKNOWN (structural)",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_string_eq": {
+      "silenced": 1,
+      "n_iters": 1,
+      "gt_asserts": 3,
+      "kg_asserts": 1,
+      "sac_asserts": 0,
+      "present_final": 2,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(str_a->len == str_b->len);"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_string_eq_byte_buf": {
+      "silenced": 14,
+      "n_iters": 5,
+      "gt_asserts": 3,
+      "kg_asserts": 3,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(str->len == buf.len);",
+        "assert(aws_string_is_valid(str));",
+        "assert(aws_byte_buf_is_valid(&buf));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_string_eq_byte_cursor": {
+      "silenced": 9,
+      "n_iters": 6,
+      "gt_asserts": 3,
+      "kg_asserts": 1,
+      "sac_asserts": 0,
+      "present_final": 2,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(aws_byte_cursor_is_valid(&cursor));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_string_new_from_c_str": {
+      "silenced": 1,
+      "n_iters": 1,
+      "gt_asserts": 4,
+      "kg_asserts": 4,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(str->len <= MAX_STRING_LEN);",
+        "assert(str->bytes[str->len] == 0);",
+        "assert(aws_string_is_valid(str));",
+        "assert(aws_c_string_is_valid(c_str));"
+      ],
+      "sac_assertion_texts": []
+    }
+  }
+}

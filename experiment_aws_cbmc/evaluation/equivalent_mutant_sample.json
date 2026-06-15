@@ -1,0 +1,352 @@
+[
+  {
+    "func": "aws_byte_cursor_from_string",
+    "mutant": "mutant_0043",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_init_copy",
+    "mutant": "mutant_0054",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_array_list_swap",
+    "mutant": "mutant_0030",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_cursor_from_string",
+    "mutant": "mutant_0017",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_string_eq_c_str",
+    "mutant": "mutant_0011",
+    "gt": "SUCCESS",
+    "llm": "COMPILE_ERROR",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_init",
+    "mutant": "mutant_0027",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_string_eq_byte_buf",
+    "mutant": "mutant_0063",
+    "gt": "SUCCESS",
+    "llm": "COMPILE_ERROR",
+    "silenced": false
+  },
+  {
+    "func": "aws_string_eq_byte_cursor",
+    "mutant": "mutant_0054",
+    "gt": "SUCCESS",
+    "llm": "COMPILE_ERROR",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_cursor_from_string",
+    "mutant": "mutant_0041",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_nospec_mask",
+    "mutant": "mutant_0013",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "mutant": "mutant_0437",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_array_list_swap",
+    "mutant": "mutant_0007",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_string_eq",
+    "mutant": "mutant_0071",
+    "gt": "SUCCESS",
+    "llm": "COMPILE_ERROR",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_cursor_from_array",
+    "mutant": "mutant_0018",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_array_list_get_at_ptr",
+    "mutant": "mutant_0065",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_cursor_eq_c_str",
+    "mutant": "mutant_0006",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "mutant": "mutant_0278",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_cursor_from_array",
+    "mutant": "mutant_0006",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "mutant": "mutant_0406",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "mutant": "mutant_0131",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_cursor_advance",
+    "mutant": "mutant_0023",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_string_eq_c_str",
+    "mutant": "mutant_0028",
+    "gt": "SUCCESS",
+    "llm": "COMPILE_ERROR",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "mutant": "mutant_0435",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "mutant": "mutant_0402",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_array_list_swap",
+    "mutant": "mutant_0046",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "mutant": "mutant_0415",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "mutant": "mutant_0404",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_cursor_advance",
+    "mutant": "mutant_0002",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_array_list_get_at_ptr",
+    "mutant": "mutant_0031",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_string_destroy_secure",
+    "mutant": "mutant_0018",
+    "gt": "SUCCESS",
+    "llm": "COMPILE_ERROR",
+    "silenced": false
+  },
+  {
+    "func": "aws_string_eq_c_str",
+    "mutant": "mutant_0021",
+    "gt": "SUCCESS",
+    "llm": "COMPILE_ERROR",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_cursor_advance",
+    "mutant": "mutant_0024",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_string_destroy",
+    "mutant": "mutant_0003",
+    "gt": "SUCCESS",
+    "llm": "COMPILE_ERROR",
+    "silenced": false
+  },
+  {
+    "func": "aws_nospec_mask",
+    "mutant": "mutant_0052",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_string_eq_c_str",
+    "mutant": "mutant_0059",
+    "gt": "SUCCESS",
+    "llm": "COMPILE_ERROR",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_cursor_from_string",
+    "mutant": "mutant_0033",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_cursor_advance",
+    "mutant": "mutant_0006",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "mutant": "mutant_0436",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_advance",
+    "mutant": "mutant_0034",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "mutant": "mutant_0426",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_cursor_from_string",
+    "mutant": "mutant_0036",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_cursor_advance",
+    "mutant": "mutant_0025",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_string_destroy_secure",
+    "mutant": "mutant_0047",
+    "gt": "SUCCESS",
+    "llm": "COMPILE_ERROR",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_init_copy",
+    "mutant": "mutant_0095",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_cat",
+    "mutant": "mutant_0074",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_cursor_from_string",
+    "mutant": "mutant_0067",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_init_copy_from_cursor",
+    "mutant": "mutant_0076",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "mutant": "mutant_0445",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "mutant": "mutant_0269",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "mutant": "mutant_0407",
+    "gt": "SUCCESS",
+    "llm": "SUCCESS",
+    "silenced": false
+  }
+]

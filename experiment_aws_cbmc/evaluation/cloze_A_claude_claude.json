@@ -1,0 +1,194 @@
+[
+ {
+  "func": "aws_byte_buf_cat",
+  "assert": "assert((old_dest.capacity - old_dest.len) >= (buffer1.len + buffer2.len + buffer3.len));",
+  "filled": "assert(dest.len == old_dest.len + buffer1.len + buffer2.len + buffer3.len);",
+  "exact": false,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 3,
+   "n_mut": 3
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "assert": "assert((old_dest.capacity - old_dest.len) < (buffer1.len + buffer2.len + buffer3.len));",
+  "filled": "assert(aws_byte_buf_is_valid(&dest));",
+  "exact": false,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 0,
+   "n_mut": 3
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "assert": "assert(aws_byte_buf_is_valid(&buffer1));",
+  "filled": "assert(aws_byte_buf_is_valid(&buffer1));",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 3,
+   "n_mut": 3
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "assert": "assert(aws_byte_buf_is_valid(&buffer2));",
+  "filled": "assert(aws_byte_buf_is_valid(&buffer2));",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 3,
+   "n_mut": 3
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "assert": "assert(aws_byte_buf_is_valid(&buffer3));",
+  "filled": "assert(aws_byte_buf_is_valid(&buffer3));",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 3,
+   "n_mut": 3
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_from_array",
+  "assert": "assert(buf.len == length);",
+  "filled": "assert(buf.len == length);",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_mut": 2
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_from_array",
+  "assert": "assert(buf.capacity == length);",
+  "filled": "assert(buf.capacity == length);",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_mut": 2
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_from_empty_array",
+  "assert": "assert(buf.capacity == capacity);",
+  "filled": "assert(buf.capacity == capacity);",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_mut": 2
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_reset",
+  "assert": "assert(buf.allocator == old.allocator);",
+  "filled": "assert(buf.allocator == old.allocator);",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 3,
+   "n_mut": 3
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_reset",
+  "assert": "assert(buf.buffer == old.buffer);",
+  "filled": "assert(buf.buffer == old.buffer);",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 3,
+   "n_mut": 3
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_reset",
+  "assert": "assert(buf.capacity == old.capacity);",
+  "filled": "assert(buf.capacity == old.capacity);",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 3,
+   "n_mut": 3
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_byte_buf_secure_zero",
+  "assert": "assert(buf.len == 0);",
+  "filled": "assert(buf.len == 0);",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 4,
+   "n_mut": 4
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_ring_buffer_buf_belongs_to_pool",
+  "assert": "assert(is_member == result);",
+  "filled": "assert(is_member == result);",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_mut": 2
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_ring_buffer_buf_belongs_to_pool",
+  "assert": "assert(aws_ring_buffer_is_valid(&ring_buf));",
+  "filled": "assert(aws_ring_buffer_is_valid(&ring_buf));",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_mut": 2
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_ring_buffer_buf_belongs_to_pool",
+  "assert": "assert(ring_buf_old == ring_buf);",
+  "filled": "assert(ring_buf_old.allocation == ring_buf.allocation);",
+  "exact": false,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_mut": 2
+  },
+  "status": "OK"
+ },
+ {
+  "func": "aws_ring_buffer_buf_belongs_to_pool",
+  "assert": "assert(buf_old == buf);",
+  "filled": "assert(buf_old == buf);",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_mut": 2
+  },
+  "status": "OK"
+ }
+]

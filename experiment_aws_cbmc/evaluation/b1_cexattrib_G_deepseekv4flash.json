@@ -1,0 +1,26 @@
+[
+ {
+  "func": "aws_ring_buffer_buf_belongs_to_pool",
+  "mutant": "mutant_0013",
+  "label": "KG_no_bounds",
+  "bounds_removed": 0
+ },
+ {
+  "func": "aws_ring_buffer_buf_belongs_to_pool",
+  "mutant": "mutant_0024",
+  "label": "KG_no_bounds",
+  "bounds_removed": 0
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0033",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0036",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ }
+]

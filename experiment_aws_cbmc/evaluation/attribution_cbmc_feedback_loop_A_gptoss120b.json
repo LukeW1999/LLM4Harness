@@ -1,0 +1,38 @@
+{
+  "dataset": "cbmc_feedback_loop_A_gptoss120b",
+  "total_silenced": 26,
+  "summary": {
+    "knowledge_gap": 26,
+    "sacrifice": 0,
+    "unknown": 0
+  },
+  "per_function": {
+    "aws_byte_buf_cat": {
+      "silenced": 20,
+      "n_iters": 0,
+      "gt_asserts": 6,
+      "kg_asserts": 6,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP"
+    },
+    "aws_byte_buf_clean_up": {
+      "silenced": 4,
+      "n_iters": 0,
+      "gt_asserts": 4,
+      "kg_asserts": 4,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP"
+    },
+    "aws_ptr_eq": {
+      "silenced": 2,
+      "n_iters": 0,
+      "gt_asserts": 1,
+      "kg_asserts": 1,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP"
+    }
+  }
+}

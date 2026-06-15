@@ -1,0 +1,93 @@
+{
+  "dataset": "feedback_loop_A_claude",
+  "total_silenced": 16,
+  "summary": {
+    "knowledge_gap": 3,
+    "sacrifice": 6,
+    "aoc": 4,
+    "unknown": 3
+  },
+  "per_function": {
+    "aws_byte_buf_cat": {
+      "silenced": 3,
+      "n_iters": 2,
+      "gt_asserts": 6,
+      "kg_asserts": 5,
+      "sac_asserts": 0,
+      "present_final": 1,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert((old_dest.capacity - old_dest.len) >= (buffer1.len + buffer2.len + buffer3.len));",
+        "assert((old_dest.capacity - old_dest.len) < (buffer1.len + buffer2.len + buffer3.len));",
+        "assert(aws_byte_buf_is_valid(&buffer1));",
+        "assert(aws_byte_buf_is_valid(&buffer2));",
+        "assert(aws_byte_buf_is_valid(&buffer3));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_from_array": {
+      "silenced": 2,
+      "n_iters": 2,
+      "gt_asserts": 4,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 4,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_from_empty_array": {
+      "silenced": 2,
+      "n_iters": 2,
+      "gt_asserts": 4,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 4,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_reset": {
+      "silenced": 3,
+      "n_iters": 2,
+      "gt_asserts": 4,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 4,
+      "attribution": "UNKNOWN (structural)",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_secure_zero": {
+      "silenced": 4,
+      "n_iters": 3,
+      "gt_asserts": 2,
+      "kg_asserts": 0,
+      "sac_asserts": 1,
+      "present_final": 1,
+      "attribution": "SACRIFICE-CANDIDATE",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": [
+        "assert(buf.len == 0);"
+      ]
+    },
+    "aws_ring_buffer_buf_belongs_to_pool": {
+      "silenced": 2,
+      "n_iters": 4,
+      "gt_asserts": 5,
+      "kg_asserts": 3,
+      "sac_asserts": 2,
+      "present_final": 0,
+      "attribution": "SACRIFICE-CANDIDATE",
+      "kg_assertion_texts": [
+        "assert(aws_ring_buffer_is_valid(&ring_buf));",
+        "assert(ring_buf_old == ring_buf);",
+        "assert(buf_old == buf);"
+      ],
+      "sac_assertion_texts": [
+        "assert(is_member == result);",
+        "assert(aws_byte_buf_is_valid(&buf));"
+      ]
+    }
+  }
+}

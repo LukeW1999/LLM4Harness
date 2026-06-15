@@ -317,6 +317,82 @@ add("S6/s2n","s2n gptoss-A silenced", 42, lambda: _s2n("A_gptoss120b","sil"), 1)
 add("S6/s2n","s2n Claude-A Sil/GT %", 22.5, lambda: 100*_s2n("A_claude","sil")/_s2n("A_claude","gtfail"), 0.3)
 add("S6/s2n","s2n gptoss-A Sil/GT %", 16.6, lambda: 100*_s2n("A_gptoss120b","sil")/_s2n("A_gptoss120b","gtfail"), 0.3)
 
+# ── confirmatory pinned run + H multi-run (added 2026-06-14, validated) ──
+def _vct(cond, status):
+    return sum(1 for r in orc(cond)
+               if str(r.get("gt","")).upper() in ("FAIL","SAT")
+               and str(r.get("llm","")).upper()==status)
+def _kg_mod(cond):
+    import importlib.util as _iu
+    sp=_iu.spec_from_file_location("av2","/root/experiment_aws_cbmc/scripts/attribution_v2.py")
+    m=_iu.module_from_spec(sp); sp.loader.exec_module(m)
+    s,_=m.run(cond); return s["KNOWLEDGE-GAP"]
+# H multi-run
+add("S4/mr","H-gptoss run2 silenced", 40, lambda: silenced("H_gptoss120b_r2"), 0.5)
+add("S4/mr","H-gptoss run3 silenced",  5, lambda: silenced("H_gptoss120b_r3"), 0.5)
+add("S4/mr","H-gptoss run2 Sil/GT %", 10.8, lambda: silgt("H_gptoss120b_r2"), 0.3)
+add("S4/mr","H-gptoss run3 Sil/GT %",  1.4, lambda: silgt("H_gptoss120b_r3"), 0.3)
+# pinned confirmatory (DeepInfra/bf16)
+add("Threats/pin","pinned-A silenced", 21, lambda: silenced("A_gptoss120b_pin"), 0.5)
+add("Threats/pin","pinned-A Sil/GT %", 5.7, lambda: silgt("A_gptoss120b_pin"), 0.3)
+add("Threats/pin","pinned-A KG", 21, lambda: _kg_mod("A_gptoss120b_pin"), 0.5)
+# verdict-level breakdown cited in Threats + RQ2
+add("Threats/pin","pinned-A compile-err", 109, lambda: _vct("A_gptoss120b_pin","COMPILE_ERROR"), 1)
+add("Threats/pin","pinned-A caught(FAIL)", 240, lambda: _vct("A_gptoss120b_pin","FAIL"), 1)
+add("Threats/pin","unpinned-A compile-err", 148, lambda: _vct("A_gptoss120b","COMPILE_ERROR"), 1)
+add("Threats/pin","unpinned-A caught(FAIL)", 156, lambda: _vct("A_gptoss120b","FAIL"), 1)
+add("S4/mr","H-r1 compile-err", 156, lambda: _vct("H_gptoss120b","COMPILE_ERROR"), 1)
+add("S4/mr","H-r2 compile-err", 129, lambda: _vct("H_gptoss120b_r2","COMPILE_ERROR"), 1)
+add("S4/mr","H-r3 compile-err", 109, lambda: _vct("H_gptoss120b_r3","COMPILE_ERROR"), 1)
+add("S4/mr","H-r1 caught(FAIL)", 176, lambda: _vct("H_gptoss120b","FAIL"), 1)
+add("S4/mr","H-r2 caught(FAIL)", 201, lambda: _vct("H_gptoss120b_r2","FAIL"), 1)
+add("S4/mr","H-r3 caught(FAIL)", 256, lambda: _vct("H_gptoss120b_r3","FAIL"), 1)
+
+
+# ── Clopper-Pearson bounds for SAC rarity (added 2026-06-14, ARS review C3) ──
+def _cp_upper0(n):  # 95% two-sided CP upper bound for 0/n (closed form)
+    return 100.0 * (1 - 0.025**(1.0/n))
+add("RQ2/sac","CP upper 0/41 (gptoss-A)", 8.6, lambda: _cp_upper0(41), 0.2)
+add("RQ2/sac","CP upper 0/16 (16-bug cond)", 20.6, lambda: _cp_upper0(16), 0.3)
+add("S6/s2n","CP upper 0/57 (s2n Claude)", 6.3, lambda: _cp_upper0(57), 0.3)
+
+# ── behavioural rename-immune KG re-attribution (ARS C1, 2026-06-14) ──
+def _bkg(cond, field):
+    d=_json.load(open(f"/root/experiment_aws_cbmc/evaluation/behavioural_kg_feedback_loop_{cond}.json"))
+    return d[field]
+add("RQ2/bkg","behav-KG A_gptoss", 37, lambda: _bkg("A_gptoss120b","behavioural_KG"), 0.5)
+add("RQ2/bkg","behav-KG M_gptoss", 30, lambda: _bkg("M_gptoss120b","behavioural_KG"), 0.5)
+add("RQ2/bkg","behav-KG A_claude", 16, lambda: _bkg("A_claude","behavioural_KG"), 0.5)
+add("RQ2/bkg","behav-KG H_claude", 16, lambda: _bkg("H_claude","behavioural_KG"), 0.5)
+add("RQ2/bkg","behav-KG M_claude", 11, lambda: _bkg("M_claude","behavioural_KG"), 0.5)
+add("RQ2/bkg","behav-sacrifice A_gptoss", 4, lambda: _bkg("A_gptoss120b","ever_caught_some_iter"), 0.5)
+add("RQ2/bkg","behav-KG total", 111, lambda: sum(_bkg(c,"behavioural_KG") for c in
+     ["A_gptoss120b","M_gptoss120b","G_gptoss120b","A_claude","H_claude","M_claude"]), 0.5)
+add("RQ2/bkg","behav-silenced total", 115, lambda: sum(_bkg(c,"silenced_total") for c in
+     ["A_gptoss120b","M_gptoss120b","G_gptoss120b","A_claude","H_claude","M_claude"]), 0.5)
+
+# ── Sil/GT-among-compilable (ARS C7/D, 2026-06-14) ──
+def _acsilgt(cond):
+    rs=[r for r in orc(cond) if (r["func"],r["mutant"]) in CANON]
+    sil=sum(1 for r in rs if r.get("silenced"))
+    defi=sum(1 for r in rs if str(r.get("llm","")).upper() in ("SUCCESS","UNSAT","FAIL","SAT"))
+    return 100.0*sil/defi if defi else 0.0
+add("RQ2/ac","amongComp Sil/GT Oracle", 53.2, lambda: _acsilgt("Oracle_gptoss120b"), 0.3)
+add("RQ2/ac","amongComp Sil/GT A_gptoss", 20.8, lambda: _acsilgt("A_gptoss120b"), 0.3)
+add("RQ2/ac","amongComp Sil/GT M_gptoss", 11.1, lambda: _acsilgt("M_gptoss120b"), 0.3)
+add("RQ2/ac","amongComp Sil/GT A_claude", 4.3, lambda: _acsilgt("A_claude"), 0.2)
+
+# ── Claude multi-run Sil/GT range endpoints (tab:multirun, 2026-06-15) ──
+_CLA={"A":[16,16,36,19],"H":[16,14,15,44],"M":[11,14,11,9]}
+def _clmin(c): return 100.0*min(_CLA[c])/370
+def _clmax(c): return 100.0*max(_CLA[c])/370
+add("T-mr","Claude A Sil/GT max", 9.7, lambda: _clmax("A"), 0.15)
+add("T-mr","Claude A Sil/GT min", 4.3, lambda: _clmin("A"), 0.15)
+add("T-mr","Claude H Sil/GT max", 11.9, lambda: _clmax("H"), 0.15)
+add("T-mr","Claude H Sil/GT min", 3.8, lambda: _clmin("H"), 0.15)
+add("T-mr","Claude M Sil/GT max", 3.8, lambda: _clmax("M"), 0.15)
+add("T-mr","Claude M Sil/GT min", 2.4, lambda: _clmin("M"), 0.15)
+
 def main():
     md = "--md" in sys.argv
     rows=[]; nfail=0

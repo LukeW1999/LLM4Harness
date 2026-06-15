@@ -1,0 +1,98 @@
+[
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0011",
+  "label": "KG_no_bounds",
+  "bounds_removed": 0
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0013",
+  "label": "KG_no_bounds",
+  "bounds_removed": 0
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0061",
+  "label": "KG_no_bounds",
+  "bounds_removed": 0
+ },
+ {
+  "func": "aws_byte_buf_from_array",
+  "mutant": "mutant_0004",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_array",
+  "mutant": "mutant_0016",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_empty_array",
+  "mutant": "mutant_0006",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_empty_array",
+  "mutant": "mutant_0018",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_reset",
+  "mutant": "mutant_0003",
+  "label": "KG_no_bounds",
+  "bounds_removed": 0
+ },
+ {
+  "func": "aws_byte_buf_reset",
+  "mutant": "mutant_0004",
+  "label": "KG_no_bounds",
+  "bounds_removed": 0
+ },
+ {
+  "func": "aws_byte_buf_reset",
+  "mutant": "mutant_0008",
+  "label": "KG_no_bounds",
+  "bounds_removed": 0
+ },
+ {
+  "func": "aws_byte_buf_secure_zero",
+  "mutant": "mutant_0003",
+  "label": "KG_no_bounds",
+  "bounds_removed": 0
+ },
+ {
+  "func": "aws_byte_buf_secure_zero",
+  "mutant": "mutant_0476",
+  "label": "KG_no_bounds",
+  "bounds_removed": 0
+ },
+ {
+  "func": "aws_byte_buf_secure_zero",
+  "mutant": "mutant_0477",
+  "label": "KG_no_bounds",
+  "bounds_removed": 0
+ },
+ {
+  "func": "aws_byte_buf_secure_zero",
+  "mutant": "mutant_0483",
+  "label": "KG_no_bounds",
+  "bounds_removed": 0
+ },
+ {
+  "func": "aws_ring_buffer_buf_belongs_to_pool",
+  "mutant": "mutant_0013",
+  "label": "KG_confirmed",
+  "bounds_removed": 3
+ },
+ {
+  "func": "aws_ring_buffer_buf_belongs_to_pool",
+  "mutant": "mutant_0024",
+  "label": "KG_confirmed",
+  "bounds_removed": 3
+ }
+]

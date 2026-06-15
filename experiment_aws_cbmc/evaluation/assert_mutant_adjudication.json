@@ -1,0 +1,371 @@
+[
+ {
+  "func": "aws_array_list_swap",
+  "mutant": "mutant_0002",
+  "line": 196,
+  "kind": "fatal",
+  "mutated": "AWS_FATAL_PRECONDITION(a == list->length);",
+  "gt_fail_property": "aws_array_list_swap_harness.1",
+  "verdict": "FATAL_REVIEW"
+ },
+ {
+  "func": "aws_array_list_swap",
+  "mutant": "mutant_0014",
+  "line": 196,
+  "kind": "fatal",
+  "mutated": "AWS_FATAL_PRECONDITION(a >= list->length);",
+  "gt_fail_property": "aws_array_list_swap_harness.1",
+  "verdict": "FATAL_REVIEW"
+ },
+ {
+  "func": "aws_array_list_swap",
+  "mutant": "mutant_0019",
+  "line": 197,
+  "kind": "fatal",
+  "mutated": "AWS_FATAL_PRECONDITION(b > list->length);",
+  "gt_fail_property": "aws_array_list_swap_harness.2",
+  "verdict": "FATAL_REVIEW"
+ },
+ {
+  "func": "aws_array_list_swap",
+  "mutant": "mutant_0023",
+  "line": 197,
+  "kind": "fatal",
+  "mutated": "AWS_FATAL_PRECONDITION(b >= list->length);",
+  "gt_fail_property": "aws_array_list_swap_harness.2",
+  "verdict": "FATAL_REVIEW"
+ },
+ {
+  "func": "aws_array_list_swap",
+  "mutant": "mutant_0020",
+  "line": 197,
+  "kind": "fatal",
+  "mutated": "AWS_FATAL_PRECONDITION(b == list->length);",
+  "gt_fail_property": "aws_array_list_swap_harness.2",
+  "verdict": "FATAL_REVIEW"
+ },
+ {
+  "func": "aws_array_list_swap",
+  "mutant": "mutant_0099",
+  "line": 196,
+  "kind": "fatal",
+  "mutated": "AWS_FATAL_PRECONDITION(a > list->length);",
+  "gt_fail_property": "aws_array_list_swap_harness.1",
+  "verdict": "FATAL_REVIEW"
+ },
+ {
+  "func": "aws_byte_buf_eq_c_str",
+  "mutant": "mutant_0007",
+  "line": 123,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(c_str == NULL);",
+  "gt_fail_property": "aws_byte_buf_eq_c_str.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_byte_buf_eq_c_str",
+  "mutant": "mutant_0008",
+  "line": 123,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(c_str <= NULL);",
+  "gt_fail_property": "aws_byte_buf_eq_c_str.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_byte_buf_eq_c_str",
+  "mutant": "mutant_0009",
+  "line": 123,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(c_str >= NULL);",
+  "gt_fail_property": "aws_byte_buf_eq_c_str.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_byte_buf_eq_c_str",
+  "mutant": "mutant_0010",
+  "line": 123,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(c_str > NULL);",
+  "gt_fail_property": "aws_byte_buf_eq_c_str.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_byte_buf_eq_c_str",
+  "mutant": "mutant_0011",
+  "line": 123,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(c_str < NULL);",
+  "gt_fail_property": "aws_byte_buf_eq_c_str.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_byte_buf_from_array",
+  "mutant": "mutant_0004",
+  "line": 980,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(AWS_MEM_IS_WRITABLE ( len,bytes), \"Input array [bytes",
+  "gt_fail_property": "aws_byte_buf_from_array_harness.1",
+  "verdict": "KEEP_CHECK"
+ },
+ {
+  "func": "aws_byte_cursor_eq_c_str",
+  "mutant": "mutant_0007",
+  "line": 548,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(c_str == NULL);",
+  "gt_fail_property": "aws_byte_cursor_eq_c_str.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_byte_cursor_eq_c_str",
+  "mutant": "mutant_0008",
+  "line": 548,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(c_str <= NULL);",
+  "gt_fail_property": "aws_byte_cursor_eq_c_str.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_byte_cursor_eq_c_str",
+  "mutant": "mutant_0009",
+  "line": 548,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(c_str >= NULL);",
+  "gt_fail_property": "aws_byte_cursor_eq_c_str.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_byte_cursor_eq_c_str",
+  "mutant": "mutant_0010",
+  "line": 548,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(c_str > NULL);",
+  "gt_fail_property": "aws_byte_cursor_eq_c_str.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_byte_cursor_eq_c_str",
+  "mutant": "mutant_0011",
+  "line": 548,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(c_str < NULL);",
+  "gt_fail_property": "aws_byte_cursor_eq_c_str.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_byte_cursor_from_array",
+  "mutant": "mutant_0009",
+  "line": 1020,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(len == 0 && AWS_MEM_IS_READABLE(bytes, len), \"Input a",
+  "gt_fail_property": "aws_byte_cursor_from_array_harness.1",
+  "verdict": "KEEP_CHECK"
+ },
+ {
+  "func": "aws_byte_cursor_from_array",
+  "mutant": "mutant_0016",
+  "line": 1020,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(len == 0 || (0==1));",
+  "gt_fail_property": "aws_byte_cursor_from_array_harness.1",
+  "verdict": "KEEP_CHECK"
+ },
+ {
+  "func": "aws_string_destroy",
+  "mutant": "mutant_0004",
+  "line": 224,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!str || (0==1));",
+  "gt_fail_property": "aws_string_destroy_harness.1",
+  "verdict": "KEEP_CHECK"
+ },
+ {
+  "func": "aws_string_destroy",
+  "mutant": "mutant_0041",
+  "line": 224,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!str && aws_string_is_valid(str));",
+  "gt_fail_property": "aws_string_destroy.precondition.1",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_destroy_secure",
+  "mutant": "mutant_0004",
+  "line": 231,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!str || (0==1));",
+  "gt_fail_property": "aws_string_destroy_secure_harness.1",
+  "verdict": "KEEP_CHECK"
+ },
+ {
+  "func": "aws_string_destroy_secure",
+  "mutant": "mutant_0046",
+  "line": 231,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!str && aws_string_is_valid(str));",
+  "gt_fail_property": "aws_string_destroy_secure.precondition.1",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq",
+  "mutant": "mutant_0004",
+  "line": 291,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!a && aws_string_is_valid(a));",
+  "gt_fail_property": "aws_string_eq.precondition.1",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq",
+  "mutant": "mutant_0009",
+  "line": 291,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!a || (0==1));",
+  "gt_fail_property": "aws_string_eq_harness.1",
+  "verdict": "KEEP_CHECK"
+ },
+ {
+  "func": "aws_string_eq",
+  "mutant": "mutant_0018",
+  "line": 292,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!b && aws_string_is_valid(b));",
+  "gt_fail_property": "aws_string_eq.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq",
+  "mutant": "mutant_0024",
+  "line": 292,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!b || (0==1));",
+  "gt_fail_property": "aws_string_eq.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0016",
+  "line": 352,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!str && aws_string_is_valid(str));",
+  "gt_fail_property": "aws_string_eq_byte_buf.precondition.1",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0021",
+  "line": 352,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!str || (0==1));",
+  "gt_fail_property": "aws_string_eq_byte_buf_harness.1",
+  "verdict": "KEEP_CHECK"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0030",
+  "line": 353,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!buf && aws_byte_buf_is_valid(buf));",
+  "gt_fail_property": "aws_string_eq_byte_buf.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0031",
+  "line": 353,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(buf || aws_byte_buf_is_valid(buf));",
+  "gt_fail_property": "aws_string_eq_byte_buf.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0036",
+  "line": 353,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!buf || (0==1));",
+  "gt_fail_property": "aws_string_eq_byte_buf.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0038",
+  "line": 353,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION((0==1) || aws_byte_buf_is_valid(buf));",
+  "gt_fail_property": "aws_string_eq_byte_buf.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0016",
+  "line": 321,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!str && aws_string_is_valid(str));",
+  "gt_fail_property": "aws_string_eq_byte_cursor.precondition.1",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0021",
+  "line": 321,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!str || (0==1));",
+  "gt_fail_property": "aws_string_eq_byte_cursor_harness.1",
+  "verdict": "KEEP_CHECK"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0030",
+  "line": 322,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!cur && aws_byte_cursor_is_valid(cur));",
+  "gt_fail_property": "aws_string_eq_byte_cursor.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0031",
+  "line": 322,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(cur || aws_byte_cursor_is_valid(cur));",
+  "gt_fail_property": "aws_string_eq_byte_cursor.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0036",
+  "line": 322,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!cur || (0==1));",
+  "gt_fail_property": "aws_string_eq_byte_cursor.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0038",
+  "line": 322,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION((0==1) || aws_byte_cursor_is_valid(cur));",
+  "gt_fail_property": "aws_string_eq_byte_cursor.precondition.2",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0004",
+  "line": 380,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!str && aws_string_is_valid(str));",
+  "gt_fail_property": "aws_string_eq_c_str.precondition.1",
+  "verdict": "EQUIVALENT_ASSERT"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0009",
+  "line": 380,
+  "kind": "nonfatal",
+  "mutated": "AWS_PRECONDITION(!str || (0==1));",
+  "gt_fail_property": "aws_string_eq_c_str_harness.1",
+  "verdict": "KEEP_CHECK"
+ }
+]

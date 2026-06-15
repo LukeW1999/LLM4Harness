@@ -1,0 +1,11 @@
+{
+  "condition": "feedback_loop_M_gptoss120b",
+  "silenced_total": 30,
+  "decided": 30,
+  "behavioural_KG": 30,
+  "ever_caught_some_iter": 0,
+  "undecided": 0,
+  "behavioural_KG_pct_of_decided": 100.0,
+  "ever_caught_cases": [],
+  "undecided_reasons": []
+}

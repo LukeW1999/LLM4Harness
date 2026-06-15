@@ -1,0 +1,83 @@
+[
+ {
+  "func": "aws_byte_buf_cat",
+  "orig_after": "SUCCESS",
+  "per_mutant": {
+   "mutant_0010": "SUCCESS",
+   "mutant_0011": "SUCCESS",
+   "mutant_0009": "SUCCESS",
+   "mutant_0020": "SUCCESS",
+   "mutant_0013": "SUCCESS",
+   "mutant_0021": "SUCCESS",
+   "mutant_0024": "SUCCESS",
+   "mutant_0026": "SUCCESS",
+   "mutant_0022": "SUCCESS",
+   "mutant_0027": "SUCCESS",
+   "mutant_0028": "SUCCESS",
+   "mutant_0029": "SUCCESS",
+   "mutant_0030": "SUCCESS",
+   "mutant_0031": "SUCCESS",
+   "mutant_0032": "SUCCESS",
+   "mutant_0043": "SUCCESS",
+   "mutant_0044": "SUCCESS",
+   "mutant_0048": "SUCCESS",
+   "mutant_0049": "SUCCESS",
+   "mutant_0057": "SUCCESS",
+   "mutant_0055": "SUCCESS",
+   "mutant_0052": "SUCCESS",
+   "mutant_0053": "SUCCESS",
+   "mutant_0061": "SUCCESS",
+   "mutant_0060": "SUCCESS",
+   "mutant_0059": "SUCCESS",
+   "mutant_0062": "SUCCESS",
+   "mutant_0066": "SUCCESS",
+   "mutant_0063": "SUCCESS",
+   "mutant_0068": "SUCCESS",
+   "mutant_0072": "SUCCESS",
+   "mutant_0073": "SUCCESS",
+   "mutant_0087": "SUCCESS"
+  },
+  "n_silenced": 33,
+  "n_caught": 0,
+  "valid": true,
+  "caught": []
+ },
+ {
+  "func": "aws_byte_buf_clean_up",
+  "orig_after": "COMPILE_ERROR",
+  "per_mutant": {
+   "mutant_0002": "COMPILE_ERROR",
+   "mutant_0006": "COMPILE_ERROR",
+   "mutant_0008": "COMPILE_ERROR",
+   "mutant_0011": "COMPILE_ERROR"
+  },
+  "n_silenced": 4,
+  "n_caught": 0,
+  "valid": false,
+  "caught": []
+ },
+ {
+  "func": "aws_nospec_mask",
+  "orig_after": "SUCCESS",
+  "per_mutant": {
+   "mutant_0005": "SUCCESS",
+   "mutant_0100": "SUCCESS"
+  },
+  "n_silenced": 2,
+  "n_caught": 0,
+  "valid": true,
+  "caught": []
+ },
+ {
+  "func": "aws_ptr_eq",
+  "orig_after": "SUCCESS",
+  "per_mutant": {
+   "mutant_0005": "SUCCESS",
+   "mutant_0006": "SUCCESS"
+  },
+  "n_silenced": 2,
+  "n_caught": 0,
+  "valid": true,
+  "caught": []
+ }
+]

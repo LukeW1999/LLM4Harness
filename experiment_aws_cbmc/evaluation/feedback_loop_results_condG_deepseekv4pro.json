@@ -1,0 +1,1496 @@
+[
+  {
+    "func": "aws_add_size_checked",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_init",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_back",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_append",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_push_back",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_add_size_saturating",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_mul_size_checked",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_mul_size_saturating",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_is_power_of_two",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_round_up_to_power_of_two",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_clean_up",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_secure_zero",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_reset",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_from_array",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_from_empty_array",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_eq",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_cursor_advance",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_length",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_capacity",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_front",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_clear",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_pop_back",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_push_back",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_get_at",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_push_front",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_pop_back",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_pop_front",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_init",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_node_reset",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_eq",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_eq_c_str",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_clean_up",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_erase",
+    "gt_verification": "UNKNOWN",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "UNKNOWN",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_get_at_ptr",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_init_dynamic",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_init_static",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_pop_front",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_pop_front_n",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_push_front",
+    "gt_verification": "UNKNOWN",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "UNKNOWN",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_set_at",
+    "gt_verification": "UNKNOWN",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_swap",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 2
+      }
+    ]
+  },
+  {
+    "func": "aws_array_list_swap_contents",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_advance",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 2
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_cat",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_clean_up_secure",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_eq_c_str",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_from_c_str",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_init_copy",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_buf_init_copy_from_cursor",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_cursor_eq",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_cursor_eq_byte_buf",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_cursor_eq_c_str",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_cursor_from_array",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_cursor_from_buf",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_cursor_from_c_str",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1
+      }
+    ]
+  },
+  {
+    "func": "aws_byte_cursor_from_string",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_back",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_begin",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_end",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_front",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_insert_after",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 1
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_insert_before",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_next",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 3
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_prev",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "FAIL",
+        "num_failed": 3
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_rbegin",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_rend",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_remove",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_linked_list_swap_contents",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_nospec_mask",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_ptr_eq",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_ring_buffer_buf_belongs_to_pool",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_ring_buffer_clean_up",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_ring_buffer_init",
+    "gt_verification": "UNKNOWN",
+    "first_pass_compile": true,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "UNKNOWN",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_ring_buffer_release",
+    "gt_verification": "UNKNOWN",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_string_bytes",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_string_destroy",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_string_destroy_secure",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_string_eq",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_string_eq_byte_buf",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_string_eq_byte_cursor",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_string_eq_c_str",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_string_new_from_c_str",
+    "gt_verification": "SUCCESS",
+    "first_pass_compile": true,
+    "first_pass_verify": true,
+    "converged": true,
+    "verification_equivalent": true,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": true,
+        "verify": "SUCCESS",
+        "num_failed": 0
+      }
+    ]
+  },
+  {
+    "func": "aws_ring_buffer_acquire",
+    "gt_verification": "UNKNOWN",
+    "first_pass_compile": false,
+    "first_pass_verify": false,
+    "converged": false,
+    "verification_equivalent": false,
+    "num_iterations": 1,
+    "iterations": [
+      {
+        "iter": 1,
+        "action": "initial",
+        "compile_ok": false,
+        "verify": "COMPILE_ERROR",
+        "num_failed": 0
+      }
+    ]
+  }
+]

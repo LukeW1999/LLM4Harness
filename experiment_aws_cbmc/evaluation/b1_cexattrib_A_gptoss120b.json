@@ -1,0 +1,248 @@
+[
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0010",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0011",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0009",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0020",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0013",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0021",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0024",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0026",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0022",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0027",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0028",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0029",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0030",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0031",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0032",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0043",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0044",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0048",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0049",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0057",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0055",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0052",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0053",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0061",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0060",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0059",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0062",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0066",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0063",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0068",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0072",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0073",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_clean_up",
+  "mutant": "mutant_0002",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_clean_up",
+  "mutant": "mutant_0006",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0087",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_buf_clean_up",
+  "mutant": "mutant_0008",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_clean_up",
+  "mutant": "mutant_0011",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_nospec_mask",
+  "mutant": "mutant_0005",
+  "label": "INCONCLUSIVE_relax_broke_validity",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_nospec_mask",
+  "mutant": "mutant_0100",
+  "label": "INCONCLUSIVE_relax_broke_validity",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_ptr_eq",
+  "mutant": "mutant_0005",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_ptr_eq",
+  "mutant": "mutant_0006",
+  "label": "KG_confirmed",
+  "bounds_removed": 2
+ }
+]

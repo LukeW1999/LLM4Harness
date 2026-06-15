@@ -1,0 +1,75 @@
+{
+  "dataset": "feedback_loop_M_claude",
+  "total_silenced": 11,
+  "summary": {
+    "knowledge_gap": 5,
+    "sacrifice": 0,
+    "aoc": 3,
+    "unknown": 3
+  },
+  "per_function": {
+    "aws_byte_buf_cat": {
+      "silenced": 4,
+      "n_iters": 2,
+      "gt_asserts": 6,
+      "kg_asserts": 5,
+      "sac_asserts": 0,
+      "present_final": 1,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert((old_dest.capacity - old_dest.len) >= (buffer1.len + buffer2.len + buffer3.len));",
+        "assert((old_dest.capacity - old_dest.len) < (buffer1.len + buffer2.len + buffer3.len));",
+        "assert(aws_byte_buf_is_valid(&buffer1));",
+        "assert(aws_byte_buf_is_valid(&buffer2));",
+        "assert(aws_byte_buf_is_valid(&buffer3));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_from_empty_array": {
+      "silenced": 2,
+      "n_iters": 3,
+      "gt_asserts": 4,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 4,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_reset": {
+      "silenced": 3,
+      "n_iters": 2,
+      "gt_asserts": 4,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 4,
+      "attribution": "UNKNOWN (structural)",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_string_eq_byte_buf": {
+      "silenced": 1,
+      "n_iters": 1,
+      "gt_asserts": 3,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 3,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_string_eq_byte_cursor": {
+      "silenced": 1,
+      "n_iters": 1,
+      "gt_asserts": 3,
+      "kg_asserts": 1,
+      "sac_asserts": 0,
+      "present_final": 2,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(aws_byte_cursor_is_valid(&cursor));"
+      ],
+      "sac_assertion_texts": []
+    }
+  }
+}

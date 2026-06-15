@@ -1,0 +1,110 @@
+[
+ {
+  "func": "aws_byte_buf_cat",
+  "mutant": "mutant_0061",
+  "label": "KG_no_bounds",
+  "bounds_removed": 0
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "mutant": "mutant_0006",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "mutant": "mutant_0013",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "mutant": "mutant_0018",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "mutant": "mutant_0009",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "mutant": "mutant_0020",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "mutant": "mutant_0021",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "mutant": "mutant_0022",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "mutant": "mutant_0025",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "mutant": "mutant_0027",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "mutant": "mutant_0031",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "mutant": "mutant_0029",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "mutant": "mutant_0036",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "mutant": "mutant_0039",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "mutant": "mutant_0047",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ },
+ {
+  "func": "aws_byte_cursor_eq",
+  "mutant": "mutant_0013",
+  "label": "AOC_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_byte_cursor_eq",
+  "mutant": "mutant_0015",
+  "label": "AOC_confirmed",
+  "bounds_removed": 2
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0012",
+  "label": "KG_confirmed",
+  "bounds_removed": 1
+ }
+]

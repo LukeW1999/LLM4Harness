@@ -64,6 +64,14 @@ def call_qwen(system_prompt: str, user_prompt: str, temperature: float = 0.0,
             {"role": "user", "content": user_prompt},
         ],
     }
+    import os as _os
+    _pin = _os.environ.get("OPENROUTER_PIN_PROVIDER")  # e.g. "DeepInfra"
+    _pinq = _os.environ.get("OPENROUTER_PIN_QUANT")    # e.g. "bf16"
+    if _pin or _pinq:
+        prov = {"allow_fallbacks": False}
+        if _pin:  prov["order"] = [_pin]
+        if _pinq: prov["quantizations"] = [_pinq]
+        body["provider"] = prov
     last_err = None
     for attempt in range(max_retries):
         try:

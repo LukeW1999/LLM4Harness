@@ -1,0 +1,804 @@
+{
+  "common_functions": 53,
+  "a_mean_sacrifice": 0.19886486712886695,
+  "h_mean_sacrifice": 0.15760211441097413,
+  "a_nonzero_functions": 28,
+  "h_nonzero_functions": 23,
+  "per_function": {
+    "aws_add_size_saturating": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 2,
+        "n_retained": 4,
+        "sacrifice_rate": 0.3333333333333333
+      },
+      "h": {
+        "n_iterations": 15,
+        "n_sacrificed": 5,
+        "n_retained": 4,
+        "sacrifice_rate": 0.5555555555555556
+      },
+      "diff": -0.22222222222222227
+    },
+    "aws_array_list_capacity": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 8,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 13,
+        "n_sacrificed": 1,
+        "n_retained": 10,
+        "sacrifice_rate": 0.09090909090909091
+      },
+      "diff": -0.09090909090909091
+    },
+    "aws_array_list_clean_up": {
+      "a": {
+        "n_iterations": 5,
+        "n_sacrificed": 2,
+        "n_retained": 5,
+        "sacrifice_rate": 0.2857142857142857
+      },
+      "h": {
+        "n_iterations": 2,
+        "n_sacrificed": 1,
+        "n_retained": 5,
+        "sacrifice_rate": 0.16666666666666666
+      },
+      "diff": 0.11904761904761904
+    },
+    "aws_array_list_clear": {
+      "a": {
+        "n_iterations": 6,
+        "n_sacrificed": 2,
+        "n_retained": 8,
+        "sacrifice_rate": 0.2
+      },
+      "h": {
+        "n_iterations": 2,
+        "n_sacrificed": 0,
+        "n_retained": 9,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.2
+    },
+    "aws_array_list_erase": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 10,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 11,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_array_list_front": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 10,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 9,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_array_list_get_at": {
+      "a": {
+        "n_iterations": 2,
+        "n_sacrificed": 0,
+        "n_retained": 8,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 2,
+        "n_sacrificed": 0,
+        "n_retained": 8,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_array_list_init_dynamic": {
+      "a": {
+        "n_iterations": 2,
+        "n_sacrificed": 0,
+        "n_retained": 12,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 2,
+        "n_sacrificed": 0,
+        "n_retained": 8,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_array_list_length": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 9,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 5,
+        "n_sacrificed": 0,
+        "n_retained": 5,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_array_list_pop_back": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 10,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 7,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_array_list_pop_front_n": {
+      "a": {
+        "n_iterations": 4,
+        "n_sacrificed": 0,
+        "n_retained": 7,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 2,
+        "n_sacrificed": 0,
+        "n_retained": 8,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_array_list_push_back": {
+      "a": {
+        "n_iterations": 2,
+        "n_sacrificed": 0,
+        "n_retained": 10,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 4,
+        "n_sacrificed": 0,
+        "n_retained": 8,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_array_list_push_front": {
+      "a": {
+        "n_iterations": 6,
+        "n_sacrificed": 1,
+        "n_retained": 9,
+        "sacrifice_rate": 0.1
+      },
+      "h": {
+        "n_iterations": 5,
+        "n_sacrificed": 0,
+        "n_retained": 10,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.1
+    },
+    "aws_array_list_set_at": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 10,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 1,
+        "n_retained": 9,
+        "sacrifice_rate": 0.1
+      },
+      "diff": -0.1
+    },
+    "aws_array_list_swap": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 1,
+        "n_retained": 11,
+        "sacrifice_rate": 0.08333333333333333
+      },
+      "h": {
+        "n_iterations": 4,
+        "n_sacrificed": 11,
+        "n_retained": 11,
+        "sacrifice_rate": 0.5
+      },
+      "diff": -0.4166666666666667
+    },
+    "aws_byte_buf_advance": {
+      "a": {
+        "n_iterations": 15,
+        "n_sacrificed": 0,
+        "n_retained": 24,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 15,
+        "n_sacrificed": 1,
+        "n_retained": 20,
+        "sacrifice_rate": 0.047619047619047616
+      },
+      "diff": -0.047619047619047616
+    },
+    "aws_byte_buf_clean_up": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 6,
+        "n_retained": 18,
+        "sacrifice_rate": 0.25
+      },
+      "h": {
+        "n_iterations": 4,
+        "n_sacrificed": 8,
+        "n_retained": 13,
+        "sacrifice_rate": 0.38095238095238093
+      },
+      "diff": -0.13095238095238093
+    },
+    "aws_byte_buf_clean_up_secure": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 1,
+        "n_retained": 9,
+        "sacrifice_rate": 0.1
+      },
+      "h": {
+        "n_iterations": 6,
+        "n_sacrificed": 0,
+        "n_retained": 8,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.1
+    },
+    "aws_byte_buf_eq": {
+      "a": {
+        "n_iterations": 6,
+        "n_sacrificed": 22,
+        "n_retained": 5,
+        "sacrifice_rate": 0.8148148148148148
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 15,
+        "n_retained": 8,
+        "sacrifice_rate": 0.6521739130434783
+      },
+      "diff": 0.1626409017713365
+    },
+    "aws_byte_buf_from_array": {
+      "a": {
+        "n_iterations": 6,
+        "n_sacrificed": 18,
+        "n_retained": 14,
+        "sacrifice_rate": 0.5625
+      },
+      "h": {
+        "n_iterations": 15,
+        "n_sacrificed": 16,
+        "n_retained": 19,
+        "sacrifice_rate": 0.45714285714285713
+      },
+      "diff": 0.10535714285714287
+    },
+    "aws_byte_buf_from_empty_array": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 11,
+        "n_retained": 9,
+        "sacrifice_rate": 0.55
+      },
+      "h": {
+        "n_iterations": 15,
+        "n_sacrificed": 19,
+        "n_retained": 26,
+        "sacrifice_rate": 0.4222222222222222
+      },
+      "diff": 0.12777777777777782
+    },
+    "aws_byte_buf_init": {
+      "a": {
+        "n_iterations": 2,
+        "n_sacrificed": 2,
+        "n_retained": 11,
+        "sacrifice_rate": 0.15384615384615385
+      },
+      "h": {
+        "n_iterations": 2,
+        "n_sacrificed": 0,
+        "n_retained": 9,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.15384615384615385
+    },
+    "aws_byte_buf_init_copy": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 15,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 4,
+        "n_sacrificed": 0,
+        "n_retained": 16,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_byte_buf_init_copy_from_cursor": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 4,
+        "n_retained": 11,
+        "sacrifice_rate": 0.26666666666666666
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 12,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.26666666666666666
+    },
+    "aws_byte_buf_reset": {
+      "a": {
+        "n_iterations": 2,
+        "n_sacrificed": 11,
+        "n_retained": 10,
+        "sacrifice_rate": 0.5238095238095238
+      },
+      "h": {
+        "n_iterations": 15,
+        "n_sacrificed": 8,
+        "n_retained": 12,
+        "sacrifice_rate": 0.4
+      },
+      "diff": 0.12380952380952381
+    },
+    "aws_byte_buf_secure_zero": {
+      "a": {
+        "n_iterations": 2,
+        "n_sacrificed": 12,
+        "n_retained": 9,
+        "sacrifice_rate": 0.5714285714285714
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 11,
+        "n_retained": 10,
+        "sacrifice_rate": 0.5238095238095238
+      },
+      "diff": 0.04761904761904756
+    },
+    "aws_byte_cursor_advance": {
+      "a": {
+        "n_iterations": 15,
+        "n_sacrificed": 15,
+        "n_retained": 5,
+        "sacrifice_rate": 0.75
+      },
+      "h": {
+        "n_iterations": 4,
+        "n_sacrificed": 13,
+        "n_retained": 13,
+        "sacrifice_rate": 0.5
+      },
+      "diff": 0.25
+    },
+    "aws_byte_cursor_eq_byte_buf": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 1,
+        "n_retained": 9,
+        "sacrifice_rate": 0.1
+      },
+      "h": {
+        "n_iterations": 2,
+        "n_sacrificed": 0,
+        "n_retained": 9,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.1
+    },
+    "aws_byte_cursor_from_buf": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 8,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 8,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_byte_cursor_from_string": {
+      "a": {
+        "n_iterations": 15,
+        "n_sacrificed": 0,
+        "n_retained": 8,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 4,
+        "n_sacrificed": 0,
+        "n_retained": 12,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_is_power_of_two": {
+      "a": {
+        "n_iterations": 2,
+        "n_sacrificed": 5,
+        "n_retained": 1,
+        "sacrifice_rate": 0.8333333333333334
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 8,
+        "n_retained": 5,
+        "sacrifice_rate": 0.6153846153846154
+      },
+      "diff": 0.21794871794871795
+    },
+    "aws_linked_list_init": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 13,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 14,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_linked_list_node_reset": {
+      "a": {
+        "n_iterations": 4,
+        "n_sacrificed": 17,
+        "n_retained": 1,
+        "sacrifice_rate": 0.9444444444444444
+      },
+      "h": {
+        "n_iterations": 2,
+        "n_sacrificed": 10,
+        "n_retained": 6,
+        "sacrifice_rate": 0.625
+      },
+      "diff": 0.3194444444444444
+    },
+    "aws_linked_list_pop_back": {
+      "a": {
+        "n_iterations": 7,
+        "n_sacrificed": 10,
+        "n_retained": 13,
+        "sacrifice_rate": 0.43478260869565216
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 16,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.43478260869565216
+    },
+    "aws_linked_list_pop_front": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 17,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 2,
+        "n_sacrificed": 5,
+        "n_retained": 19,
+        "sacrifice_rate": 0.20833333333333334
+      },
+      "diff": -0.20833333333333334
+    },
+    "aws_linked_list_push_front": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 18,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 16,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_linked_list_remove": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 2,
+        "n_retained": 6,
+        "sacrifice_rate": 0.25
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 20,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.25
+    },
+    "aws_linked_list_swap_contents": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 20,
+        "n_retained": 4,
+        "sacrifice_rate": 0.8333333333333334
+      },
+      "h": {
+        "n_iterations": 2,
+        "n_sacrificed": 0,
+        "n_retained": 16,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.8333333333333334
+    },
+    "aws_mul_size_checked": {
+      "a": {
+        "n_iterations": 15,
+        "n_sacrificed": 7,
+        "n_retained": 7,
+        "sacrifice_rate": 0.5
+      },
+      "h": {
+        "n_iterations": 5,
+        "n_sacrificed": 3,
+        "n_retained": 6,
+        "sacrifice_rate": 0.3333333333333333
+      },
+      "diff": 0.16666666666666669
+    },
+    "aws_mul_size_saturating": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 4,
+        "n_retained": 7,
+        "sacrifice_rate": 0.36363636363636365
+      },
+      "h": {
+        "n_iterations": 15,
+        "n_sacrificed": 3,
+        "n_retained": 9,
+        "sacrifice_rate": 0.25
+      },
+      "diff": 0.11363636363636365
+    },
+    "aws_ring_buffer_acquire": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 4,
+        "n_retained": 22,
+        "sacrifice_rate": 0.15384615384615385
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 16,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.15384615384615385
+    },
+    "aws_ring_buffer_buf_belongs_to_pool": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 20,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 15,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_ring_buffer_clean_up": {
+      "a": {
+        "n_iterations": 6,
+        "n_sacrificed": 1,
+        "n_retained": 6,
+        "sacrifice_rate": 0.14285714285714285
+      },
+      "h": {
+        "n_iterations": 4,
+        "n_sacrificed": 1,
+        "n_retained": 9,
+        "sacrifice_rate": 0.1
+      },
+      "diff": 0.042857142857142844
+    },
+    "aws_ring_buffer_init": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 13,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 7,
+        "n_retained": 0,
+        "sacrifice_rate": 1.0
+      },
+      "diff": -1.0
+    },
+    "aws_ring_buffer_release": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 24,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 1,
+        "n_retained": 14,
+        "sacrifice_rate": 0.06666666666666667
+      },
+      "diff": -0.06666666666666667
+    },
+    "aws_string_bytes": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 4,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 10,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_string_destroy": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 7,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 5,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_string_destroy_secure": {
+      "a": {
+        "n_iterations": 4,
+        "n_sacrificed": 1,
+        "n_retained": 7,
+        "sacrifice_rate": 0.125
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 3,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.125
+    },
+    "aws_string_eq": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 9,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 11,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_string_eq_byte_buf": {
+      "a": {
+        "n_iterations": 5,
+        "n_sacrificed": 1,
+        "n_retained": 19,
+        "sacrifice_rate": 0.05
+      },
+      "h": {
+        "n_iterations": 5,
+        "n_sacrificed": 0,
+        "n_retained": 13,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.05
+    },
+    "aws_string_eq_byte_cursor": {
+      "a": {
+        "n_iterations": 9,
+        "n_sacrificed": 5,
+        "n_retained": 14,
+        "sacrifice_rate": 0.2631578947368421
+      },
+      "h": {
+        "n_iterations": 15,
+        "n_sacrificed": 3,
+        "n_retained": 11,
+        "sacrifice_rate": 0.21428571428571427
+      },
+      "diff": 0.04887218045112782
+    },
+    "aws_string_eq_c_str": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 7,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 7,
+        "sacrifice_rate": 0.0
+      },
+      "diff": 0.0
+    },
+    "aws_string_new_from_c_str": {
+      "a": {
+        "n_iterations": 3,
+        "n_sacrificed": 0,
+        "n_retained": 6,
+        "sacrifice_rate": 0.0
+      },
+      "h": {
+        "n_iterations": 3,
+        "n_sacrificed": 1,
+        "n_retained": 6,
+        "sacrifice_rate": 0.14285714285714285
+      },
+      "diff": -0.14285714285714285
+    }
+  }
+}

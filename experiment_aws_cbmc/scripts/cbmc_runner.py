@@ -11,12 +11,14 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import Optional
 
-SRCDIR = Path("/home/weiqi/Verification/aws-c-common")
+# Resolve SRCDIR: server uses /root/aws-c-common, local dev uses /home/weiqi/Verification/aws-c-common
+_server_path = Path("/root/aws-c-common")
+SRCDIR = _server_path if _server_path.exists() else Path("/home/weiqi/Verification/aws-c-common")
 PROOFDIR = SRCDIR / "verification/cbmc"
 
 # s2n-tls source and proof directories
-S2N_SRCDIR  = Path("/home/weiqi/Verification/s2n-tls")
-S2N_PROOFDIR = Path("/home/weiqi/Verification/LLM4Harness/study_derivability/corpora/s2n-tls/tests/cbmc")
+S2N_SRCDIR  = Path("/root/s2n-tls")
+S2N_PROOFDIR = Path("/root/s2n-tls/tests/cbmc")
 
 # Common CBMC flags
 COMMON_FLAGS = [
@@ -26,18 +28,18 @@ COMMON_FLAGS = [
     "-DCBMC_OBJECT_BITS=8",
     "-DCBMC_MAX_OBJECT_SIZE=(SIZE_MAX>>(CBMC_OBJECT_BITS+1))",
     "--object-bits", "8",
-    "--no-standard-checks",
 ]
 
 # s2n-tls common CBMC flags
 S2N_COMMON_FLAGS = [
+    "-DS2N_MIN(a,b)=((a)<(b)?(a):(b))",
+    "-DS2N_MAX(a,b)=((a)>(b)?(a):(b))",
     f"-I{S2N_SRCDIR}/api",
     f"-I{S2N_SRCDIR}",
     f"-I{S2N_PROOFDIR}/include",
-    f"-I{S2N_PROOFDIR}/proofs/cbmc_proof",
+    f"-I{S2N_PROOFDIR}/include/cbmc_proof",
     "-DCBMC",
     "--object-bits", "8",
-    "--no-standard-checks",
     "-DS2N_SAFETY_ASSERT_SIDE_EFFECT_FREE",
 ]
 
@@ -1593,7 +1595,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "stuffer/s2n_stuffer.c",
             S2N_SRCDIR / "utils/s2n_blob.c",
             S2N_SRCDIR / "utils/s2n_ensure.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS,
         "unwind": ['--unwind', '3'],
@@ -1607,7 +1609,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "utils/s2n_ensure.c",
             S2N_SRCDIR / "utils/s2n_mem.c",
             S2N_SRCDIR / "utils/s2n_safety.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1619,7 +1621,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "utils/s2n_blob.c",
             S2N_SRCDIR / "utils/s2n_ensure.c",
             S2N_SRCDIR / "utils/s2n_safety.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1631,7 +1633,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "utils/s2n_ensure.c",
             S2N_SRCDIR / "utils/s2n_mem.c",
             S2N_SRCDIR / "utils/s2n_safety.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1643,7 +1645,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "utils/s2n_ensure.c",
             S2N_SRCDIR / "utils/s2n_mem.c",
             S2N_SRCDIR / "utils/s2n_safety.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1653,7 +1655,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "stuffer/s2n_stuffer.c",
             S2N_SRCDIR / "utils/s2n_blob.c",
             S2N_SRCDIR / "utils/s2n_ensure.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1665,7 +1667,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "utils/s2n_ensure.c",
             S2N_SRCDIR / "utils/s2n_mem.c",
             S2N_SRCDIR / "utils/s2n_safety.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1675,7 +1677,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "stuffer/s2n_stuffer.c",
             S2N_SRCDIR / "utils/s2n_blob.c",
             S2N_SRCDIR / "utils/s2n_ensure.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1687,7 +1689,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "utils/s2n_ensure.c",
             S2N_SRCDIR / "utils/s2n_mem.c",
             S2N_SRCDIR / "utils/s2n_safety.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1697,7 +1699,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "stuffer/s2n_stuffer.c",
             S2N_SRCDIR / "utils/s2n_blob.c",
             S2N_SRCDIR / "utils/s2n_ensure.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1709,7 +1711,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "utils/s2n_ensure.c",
             S2N_SRCDIR / "utils/s2n_mem.c",
             S2N_SRCDIR / "utils/s2n_safety.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1719,7 +1721,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "stuffer/s2n_stuffer.c",
             S2N_SRCDIR / "utils/s2n_blob.c",
             S2N_SRCDIR / "utils/s2n_ensure.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1731,7 +1733,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "utils/s2n_ensure.c",
             S2N_SRCDIR / "utils/s2n_mem.c",
             S2N_SRCDIR / "utils/s2n_safety.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1741,7 +1743,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "stuffer/s2n_stuffer.c",
             S2N_SRCDIR / "utils/s2n_blob.c",
             S2N_SRCDIR / "utils/s2n_ensure.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1751,7 +1753,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "stuffer/s2n_stuffer.c",
             S2N_SRCDIR / "utils/s2n_blob.c",
             S2N_SRCDIR / "utils/s2n_ensure.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1760,7 +1762,7 @@ FUNC_CONFIGS = {
         "sources": [
             S2N_SRCDIR / "stuffer/s2n_stuffer.c",
             S2N_SRCDIR / "utils/s2n_blob.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1769,7 +1771,7 @@ FUNC_CONFIGS = {
         "sources": [
             S2N_SRCDIR / "stuffer/s2n_stuffer.c",
             S2N_SRCDIR / "utils/s2n_blob.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1779,7 +1781,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "error/s2n_errno.c",
             S2N_SRCDIR / "stuffer/s2n_stuffer.c",
             S2N_SRCDIR / "utils/s2n_blob.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1789,7 +1791,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "stuffer/s2n_stuffer.c",
             S2N_SRCDIR / "utils/s2n_blob.c",
             S2N_SRCDIR / "utils/s2n_ensure.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1800,7 +1802,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "stuffer/s2n_stuffer_network_order.c",
             S2N_SRCDIR / "utils/s2n_blob.c",
             S2N_SRCDIR / "utils/s2n_ensure.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1811,7 +1813,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "stuffer/s2n_stuffer_network_order.c",
             S2N_SRCDIR / "utils/s2n_blob.c",
             S2N_SRCDIR / "utils/s2n_ensure.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1822,7 +1824,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "stuffer/s2n_stuffer_network_order.c",
             S2N_SRCDIR / "utils/s2n_blob.c",
             S2N_SRCDIR / "utils/s2n_ensure.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1835,7 +1837,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "utils/s2n_ensure.c",
             S2N_SRCDIR / "utils/s2n_mem.c",
             S2N_SRCDIR / "utils/s2n_safety.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'], "unwindset": [],
     },
@@ -1848,7 +1850,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "utils/s2n_ensure.c",
             S2N_SRCDIR / "utils/s2n_mem.c",
             S2N_SRCDIR / "utils/s2n_safety.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'],
         "unwindset": ["--unwindset", "s2n_stuffer_write_network_order.10:3"],
@@ -1862,7 +1864,7 @@ FUNC_CONFIGS = {
             S2N_SRCDIR / "utils/s2n_ensure.c",
             S2N_SRCDIR / "utils/s2n_mem.c",
             S2N_SRCDIR / "utils/s2n_safety.c",
-            S2N_PROOFDIR / "proofs/cbmc_proof/make_common_datastructures.c",
+            S2N_PROOFDIR / "sources/make_common_datastructures.c",
         ],
         "flags": S2N_COMMON_FLAGS, "unwind": ['--unwind', '3'],
         "unwindset": ["--unwindset", "s2n_stuffer_write_network_order.10:5"],
@@ -1895,44 +1897,44 @@ def run_cbmc(func_name: str, harness_path: Path, timeout: int = 120) -> CBMCResu
     if cfg is None:
         raise ValueError(f"No config for function: {func_name}")
 
-    all_sources = (
-        cfg["proof_sources"] +
-        [harness_path] +
-        cfg["project_sources"]
-    )
-
-    # Build base flags, allowing per-function object-bits override
-    obj_bits = cfg.get("object_bits", 8)
-    if obj_bits != 8:
-        base_flags = [
-            f"-I{SRCDIR}/include",
-            f"-I{PROOFDIR}/include",
-            "-DCBMC",
-            f"-DCBMC_OBJECT_BITS={obj_bits}",
-            "-DCBMC_MAX_OBJECT_SIZE=(SIZE_MAX>>(CBMC_OBJECT_BITS+1))",
-            f"--object-bits", str(obj_bits),
-            "--no-standard-checks",
-        ]
-        # Remove the object_bits define from cfg["defines"] if already there
-        defines = [d for d in cfg["defines"] if "CBMC_OBJECT_BITS" not in d]
+    if "proof_sources" not in cfg and "sources" in cfg:
+        # ── s2n schema (sources / flags / harness_entry) ──
+        he = cfg.get("harness_entry", f"{func_name}_harness")
+        cmd = (
+            ["cbmc"] + list(cfg["flags"]) + list(cfg["unwind"]) +
+            (list(cfg["unwindset"]) if cfg.get("unwindset") else []) +
+            ["--function", he, str(harness_path)] +
+            [str(s) for s in cfg["sources"]]
+        )
     else:
-        base_flags = COMMON_FLAGS
-        defines = cfg["defines"]
-
-    remove_flags = []
-    for fn in cfg.get("remove_function_body", []):
-        remove_flags += ["--remove-function-body", fn]
-
-    cmd = (
-        ["cbmc"] +
-        base_flags +
-        defines +
-        cfg["unwind"] +
-        (cfg["unwindset"] if cfg["unwindset"] else []) +
-        remove_flags +
-        ["--function", f"{func_name}_harness"] +
-        [str(s) for s in all_sources]
-    )
+        all_sources = (
+            cfg["proof_sources"] +
+            [harness_path] +
+            cfg["project_sources"]
+        )
+        obj_bits = cfg.get("object_bits", 8)
+        if obj_bits != 8:
+            base_flags = [
+                f"-I{SRCDIR}/include",
+                f"-I{PROOFDIR}/include",
+                "-DCBMC",
+                f"-DCBMC_OBJECT_BITS={obj_bits}",
+                "-DCBMC_MAX_OBJECT_SIZE=(SIZE_MAX>>(CBMC_OBJECT_BITS+1))",
+                f"--object-bits", str(obj_bits),
+            ]
+            defines = [d for d in cfg["defines"] if "CBMC_OBJECT_BITS" not in d]
+        else:
+            base_flags = COMMON_FLAGS
+            defines = cfg["defines"]
+        remove_flags = []
+        for fn in cfg.get("remove_function_body", []):
+            remove_flags += ["--remove-function-body", fn]
+        cmd = (
+            ["cbmc"] + base_flags + defines + cfg["unwind"] +
+            (cfg["unwindset"] if cfg["unwindset"] else []) + remove_flags +
+            ["--function", f"{func_name}_harness"] +
+            [str(s) for s in all_sources]
+        )
 
     try:
         proc = subprocess.run(
@@ -2010,7 +2012,11 @@ def run_cbmc(func_name: str, harness_path: Path, timeout: int = 120) -> CBMCResu
 
 def run_gt(func_name: str) -> CBMCResult:
     """Run CBMC on the ground truth harness."""
-    harness = PROOFDIR / "proofs" / func_name / f"{func_name}_harness.c"
+    _cfg = FUNC_CONFIGS.get(func_name, {})
+    if "proof_sources" not in _cfg and "sources" in _cfg:
+        harness = S2N_PROOFDIR / "proofs" / func_name / f"{func_name}_harness.c"
+    else:
+        harness = PROOFDIR / "proofs" / func_name / f"{func_name}_harness.c"
     return run_cbmc(func_name, harness)
 
 

@@ -1,0 +1,440 @@
+[
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0005",
+  "verdict": "NO_DIFF_20K"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0011",
+  "verdict": "NO_DIFF_20K"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0018",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "0 1"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0019",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0025",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "0 1"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0026",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0027",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0028",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0029",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "0 1"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0035",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0037",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 6,
+  "orig": "6 0",
+  "mut": "6 1"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0039",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "0 1"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0051",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0054",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0055",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0061",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0062",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0063",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0064",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0065",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0070",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0071",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0073",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0075",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_c_str",
+  "mutant": "mutant_0087",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0017",
+  "verdict": "NO_DIFF_20K"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0023",
+  "verdict": "NO_DIFF_20K"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0044",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "0 1"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0045",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0051",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "0 1"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0052",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0053",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0054",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0055",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "0 1"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0061",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0063",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 6,
+  "orig": "6 0",
+  "mut": "6 1"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0065",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "0 1"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0077",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0081",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0087",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0089",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0098",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 8,
+  "orig": "8 1",
+  "mut": "8 0"
+ },
+ {
+  "func": "aws_string_eq_byte_cursor",
+  "mutant": "mutant_0102",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0017",
+  "verdict": "NO_DIFF_20K"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0023",
+  "verdict": "NO_DIFF_20K"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0045",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0051",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "0 1"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0052",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0053",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0054",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0061",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0063",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 6,
+  "orig": "6 0",
+  "mut": "6 1"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0077",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 3,
+  "orig": "3 1",
+  "mut": "3 0"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0081",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0087",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0089",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ },
+ {
+  "func": "aws_string_eq_byte_buf",
+  "mutant": "mutant_0102",
+  "verdict": "DISTINGUISHED",
+  "first_diff_trial": 0,
+  "orig": "0 0",
+  "mut": "EOF/CRASH"
+ }
+]

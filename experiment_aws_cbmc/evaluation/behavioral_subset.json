@@ -1,0 +1,64 @@
+{
+ "denom_full": 370,
+ "denom_behavioral": 329,
+ "A_gptoss120b": {
+  "sil_full": 41,
+  "sil_beh": 41,
+  "rev_full": 46,
+  "rev_beh": 35
+ },
+ "H_gptoss120b": {
+  "sil_full": 37,
+  "sil_beh": 37,
+  "rev_full": 30,
+  "rev_beh": 24
+ },
+ "M_gptoss120b": {
+  "sil_full": 30,
+  "sil_beh": 30,
+  "rev_full": 61,
+  "rev_beh": 55
+ },
+ "Oracle_gptoss120b": {
+  "sil_full": 158,
+  "sil_beh": 149,
+  "rev_full": 27,
+  "rev_beh": 27
+ },
+ "A_deepseekv4flash": {
+  "sil_full": 5,
+  "sil_beh": 4,
+  "rev_full": 390,
+  "rev_beh": 319
+ },
+ "H_deepseekv4flash": {
+  "sil_full": 18,
+  "sil_beh": 18,
+  "rev_full": 315,
+  "rev_beh": 264
+ },
+ "G_deepseekv4flash": {
+  "sil_full": 4,
+  "sil_beh": 4,
+  "rev_full": 87,
+  "rev_beh": 74
+ },
+ "A_claude": {
+  "sil_full": 16,
+  "sil_beh": 15,
+  "rev_full": 89,
+  "rev_beh": 81
+ },
+ "H_claude": {
+  "sil_full": 16,
+  "sil_beh": 16,
+  "rev_full": 77,
+  "rev_beh": 65
+ },
+ "M_claude": {
+  "sil_full": 11,
+  "sil_beh": 11,
+  "rev_full": 114,
+  "rev_beh": 100
+ }
+}
