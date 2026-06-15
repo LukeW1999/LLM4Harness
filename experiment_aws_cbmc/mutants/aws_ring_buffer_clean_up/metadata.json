@@ -1,0 +1,13 @@
+{
+  "func": "aws_ring_buffer_clean_up",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/ring_buffer.c",
+  "line_range": [
+    55,
+    62
+  ],
+  "n_lines": 8,
+  "n_raw": 31,
+  "n_compiled": 7,
+  "compile_pass_rate": 0.22580645161290322
+}

@@ -1,0 +1,13 @@
+{
+  "func": "aws_add_size_checked",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/array_list.c",
+  "line_range": [
+    14,
+    17
+  ],
+  "n_lines": 4,
+  "n_raw": 22,
+  "n_compiled": 0,
+  "compile_pass_rate": 0.0
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "val[i] == ((uint8_t *)list.data)[index * item_size + i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "add",
+    "assert_text": "val[i] == old_val[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

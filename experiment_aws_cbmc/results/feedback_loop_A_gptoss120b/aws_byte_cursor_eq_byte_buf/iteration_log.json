@@ -1,0 +1,11 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "result == aws_array_eq(a.ptr, a.len, b.buffer, b.len)",
+    "new_text": "result == spec",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

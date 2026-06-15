@@ -1,0 +1,20 @@
+{
+  "func": "TCPReturnPacket_IPv6",
+  "cond": "E",
+  "model": "claude",
+  "gt_count": 10,
+  "matched": 1,
+  "recall": 0.1,
+  "unmatched_gt": [
+    "__cprover_r_ok( pucethernetbuffer, uxbufferlength )",
+    "__cprover_r_ok( pucnextdata, uxbytecount )",
+    "__cprover_r_ok( pxipaddress, sizeof( ipv6_address_t ) )",
+    "__cprover_w_ok( pxmacaddress, sizeof( macaddress_t ) )",
+    "_v_.pucethernetbuffer != null",
+    "pucethernetbuffer != null",
+    "pucnextdata != null",
+    "pxdescriptor != null",
+    "pxsocket != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_claude/TCPReturnPacket_IPv6/iter_1_harness.c"
+}

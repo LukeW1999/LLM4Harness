@@ -1,0 +1,11 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "!(buf.buffer >= ring_buffer.allocation && buf.buffer < ring_buffer.allocation_end)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

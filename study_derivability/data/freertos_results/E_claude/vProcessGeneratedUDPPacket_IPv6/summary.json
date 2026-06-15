@@ -1,0 +1,10 @@
+{
+  "func": "vProcessGeneratedUDPPacket_IPv6",
+  "cond": "E",
+  "model": "claude",
+  "gt_count": 7,
+  "matched": 7,
+  "recall": 1.0,
+  "unmatched_gt": [],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_claude/vProcessGeneratedUDPPacket_IPv6/iter_1_harness.c"
+}

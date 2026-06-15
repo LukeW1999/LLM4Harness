@@ -1,0 +1,13 @@
+{
+  "func": "aws_byte_cursor_from_c_str",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/byte_buf.c",
+  "line_range": [
+    1011,
+    1017
+  ],
+  "n_lines": 7,
+  "n_raw": 38,
+  "n_compiled": 8,
+  "compile_pass_rate": 0.21052631578947367
+}

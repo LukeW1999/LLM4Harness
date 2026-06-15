@@ -1,0 +1,11 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "cur.ptr == (uint8_t *)bytes",
+    "new_text": "cur.ptr == bytes",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

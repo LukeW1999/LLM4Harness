@@ -1,0 +1,13 @@
+{
+  "func": "aws_linked_list_node_reset",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/task_scheduler.c",
+  "line_range": [
+    165,
+    181
+  ],
+  "n_lines": 17,
+  "n_raw": 78,
+  "n_compiled": 35,
+  "compile_pass_rate": 0.44871794871794873
+}

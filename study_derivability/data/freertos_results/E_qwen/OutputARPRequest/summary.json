@@ -1,0 +1,12 @@
+{
+  "func": "OutputARPRequest",
+  "cond": "E",
+  "model": "qwen",
+  "gt_count": 4,
+  "matched": 3,
+  "recall": 0.75,
+  "unmatched_gt": [
+    "!__cprover_overflow_mult( 2, xrequestedsizebytes )"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_qwen/OutputARPRequest/iter_1_harness.c"
+}

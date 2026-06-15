@@ -1,0 +1,13 @@
+{
+  "func": "aws_round_up_to_power_of_two",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/allocator_sba.c",
+  "line_range": [
+    386,
+    405
+  ],
+  "n_lines": 20,
+  "n_raw": 148,
+  "n_compiled": 53,
+  "compile_pass_rate": 0.3581081081081081
+}

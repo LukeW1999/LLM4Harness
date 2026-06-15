@@ -1,0 +1,13 @@
+{
+  "func": "aws_ptr_eq",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/hash_table.c",
+  "line_range": [
+    1017,
+    1019
+  ],
+  "n_lines": 3,
+  "n_raw": 22,
+  "n_compiled": 7,
+  "compile_pass_rate": 0.3181818181818182
+}

@@ -1,0 +1,13 @@
+{
+  "func": "SkipNameField",
+  "cond": "A",
+  "model": "qwen",
+  "gt_count": 2,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "index <= uxlength",
+    "network_buffer_size < cbmc_max_object_size"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_qwen/SkipNameField/iter_1_harness.c"
+}

@@ -1,0 +1,12 @@
+{
+  "func": "prvChecksumIPv6Checks",
+  "cond": "A",
+  "model": "claude",
+  "gt_count": 1,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "( _v_.usprotocolbytes <= freertos_ntohs( _v_._v_.uspayloadlength ) )"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_claude/prvChecksumIPv6Checks/iter_1_harness.c"
+}

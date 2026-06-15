@@ -1,0 +1,47 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "list.item_size == 0",
+    "new_text": "list.item_size == old.item_size",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "list.alloc == null",
+    "new_text": "list.alloc == old.alloc",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "weaken",
+    "assert_text": "list.alloc == old.alloc",
+    "new_text": "list.alloc == null",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "delete",
+    "assert_text": "aws_array_list_is_valid(&list)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 10,
+    "to_iter": 11,
+    "action": "weaken",
+    "assert_text": "list.item_size == old.item_size",
+    "new_text": "list.item_size == 0",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  }
+]

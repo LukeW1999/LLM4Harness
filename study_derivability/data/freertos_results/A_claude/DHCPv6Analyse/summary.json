@@ -1,0 +1,15 @@
+{
+  "func": "DHCPv6Analyse",
+  "cond": "A",
+  "model": "claude",
+  "gt_count": 4,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "__cprover_r_ok( pxdhcpmessage, sizeof( dhcpmessage_ipv6_t ) )",
+    "__cprover_r_ok( pxendpoint, sizeof( struct xnetworkendpoint ) )",
+    "__cprover_r_ok( pxmessage, sizeof( bitconfig_t ) )",
+    "__cprover_r_ok( pxset, sizeof( dhcpoptionset_t ) )"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_claude/DHCPv6Analyse/iter_1_harness.c"
+}

@@ -1,0 +1,12 @@
+{
+  "func": "usGenerateProtocolChecksum_IPv6",
+  "cond": "A",
+  "model": "claude",
+  "gt_count": 1,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "__cprover_r_ok( pucnextdata, uxbytecount )"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_claude/usGenerateProtocolChecksum_IPv6/iter_1_harness.c"
+}

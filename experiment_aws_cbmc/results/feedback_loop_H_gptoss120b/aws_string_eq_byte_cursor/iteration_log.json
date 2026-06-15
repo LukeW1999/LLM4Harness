@@ -1,0 +1,110 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "str->len == old_str_copy.len",
+    "new_text": "str->allocator == old_str.allocator",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "str->bytes == old_str_copy.bytes",
+    "new_text": "str->allocator == old_str.allocator",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "cur->ptr == old_cur_copy.ptr",
+    "new_text": "cur->len == old_cur.len",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "cur->len == old_cur_copy.len",
+    "new_text": "cur->len == old_cur.len",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "str->allocator == old_str_copy.allocator",
+    "new_text": "str->allocator == old_str.allocator",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "str->bytes == old_str.bytes",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "str->len == old_str.len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "cur->ptr == old_cur.ptr",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 12,
+    "to_iter": 13,
+    "action": "delete",
+    "assert_text": "aws_byte_cursor_is_bounded(cur, max_buffer_size)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 12,
+    "to_iter": 13,
+    "action": "add",
+    "assert_text": "aws_byte_cursor_is_bounded(cur, 256)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 14,
+    "to_iter": 15,
+    "action": "delete",
+    "assert_text": "aws_byte_cursor_is_bounded(cur, 256)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 14,
+    "to_iter": 15,
+    "action": "delete",
+    "assert_text": "aws_string_is_valid(str)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  }
+]

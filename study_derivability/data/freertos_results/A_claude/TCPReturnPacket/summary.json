@@ -1,0 +1,21 @@
+{
+  "func": "TCPReturnPacket",
+  "cond": "A",
+  "model": "claude",
+  "gt_count": 10,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "__cprover_r_ok( pucethernetbuffer, uxbufferlength )",
+    "__cprover_r_ok( pucnextdata, uxbytecount )",
+    "_v_.pucethernetbuffer != null",
+    "pucethernetbuffer != null",
+    "pucnextdata != null",
+    "pulipaddress != null",
+    "pxdescriptor != null",
+    "pxmacaddress != null",
+    "pxnetworkbuffer != null",
+    "pxsocket != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_claude/TCPReturnPacket/iter_1_harness.c"
+}

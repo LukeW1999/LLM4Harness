@@ -1,0 +1,13 @@
+{
+  "func": "aws_byte_buf_from_array",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/byte_buf.c",
+  "line_range": [
+    979,
+    988
+  ],
+  "n_lines": 10,
+  "n_raw": 56,
+  "n_compiled": 18,
+  "compile_pass_rate": 0.32142857142857145
+}

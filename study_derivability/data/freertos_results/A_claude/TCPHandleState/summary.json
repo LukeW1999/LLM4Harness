@@ -1,0 +1,20 @@
+{
+  "func": "TCPHandleState",
+  "cond": "A",
+  "model": "claude",
+  "gt_count": 9,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "( xaddressfamily == freertos_af_inet6 && __cprover_r_ok( pvsource, 16 ) ) || ( xaddressfamily == freertos_af_inet && __cprover_r_ok( pvsource, 4 ) )",
+    "*ppxnetworkbuffer != null",
+    "__cprover_r_ok( pcdestination, uxsize )",
+    "__cprover_r_ok( pxwindow, sizeof( tcpwindow_t ) )",
+    "pxbuffer != null",
+    "pxnetworkbuffer != null",
+    "pxsocket != null",
+    "pxtcpheader != null",
+    "pxwindow != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_claude/TCPHandleState/iter_1_harness.c"
+}

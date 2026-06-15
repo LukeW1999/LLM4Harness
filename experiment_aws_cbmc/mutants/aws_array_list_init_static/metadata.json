@@ -1,0 +1,13 @@
+{
+  "func": "aws_array_list_init_static",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/priority_queue.c",
+  "line_range": [
+    186,
+    194
+  ],
+  "n_lines": 9,
+  "n_raw": 31,
+  "n_compiled": 10,
+  "compile_pass_rate": 0.3225806451612903
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "!aws_mem_is_readable(last_old_element, list.item_size)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "func": "DHCPProcess",
+  "cond": "A",
+  "model": "claude",
+  "gt_count": 4,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "pvbuffer != null",
+    "pxbindaddress != null",
+    "pxendpoint != null",
+    "pxsocket != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_claude/DHCPProcess/iter_1_harness.c"
+}

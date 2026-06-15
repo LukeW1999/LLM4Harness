@@ -1,0 +1,74 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "list.tail.next == old_list.tail.next",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "list.head.prev == old_list.head.prev",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "list.head.next == old_list.head.next",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "list.tail.prev == old_list.tail.prev",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "list.tail.next == old_list.tail.next",
+    "new_text": "list.tail.next == (struct aws_linked_list_node *)nondet_ptr()",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "list.head.prev == old_list.head.prev",
+    "new_text": "list.head.prev == (struct aws_linked_list_node *)nondet_ptr()",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "list.head.next == old_list.head.next",
+    "new_text": "list.head.next == (struct aws_linked_list_node *)nondet_ptr()",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "list.tail.prev == old_list.tail.prev",
+    "new_text": "list.tail.prev == (struct aws_linked_list_node *)nondet_ptr()",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

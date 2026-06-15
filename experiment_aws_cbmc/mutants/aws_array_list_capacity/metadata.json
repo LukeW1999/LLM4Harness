@@ -1,0 +1,13 @@
+{
+  "func": "aws_array_list_capacity",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/priority_queue.c",
+  "line_range": [
+    401,
+    413
+  ],
+  "n_lines": 13,
+  "n_raw": 74,
+  "n_compiled": 0,
+  "compile_pass_rate": 0.0
+}

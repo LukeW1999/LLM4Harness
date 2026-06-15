@@ -1,0 +1,20 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "aws_string_is_valid(str)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "str->bytes[0] == old.bytes[0]",
+    "new_text": "str->bytes[i] == old.bytes[i]",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

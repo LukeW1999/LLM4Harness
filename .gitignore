@@ -3,8 +3,9 @@
 .env.*
 *.key
 
-# Paper draft PDF (keep .tex, regenerate locally)
+# Paper / slide PDFs (keep .tex, regenerate locally)
 paper/main.pdf
+**/slides*.pdf
 
 # Python
 __pycache__/

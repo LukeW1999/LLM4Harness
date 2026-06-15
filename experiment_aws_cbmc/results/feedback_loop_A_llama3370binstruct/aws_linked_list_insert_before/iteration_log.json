@@ -1,0 +1,38 @@
+[
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "add",
+    "assert_text": "aws_linked_list_node_prev_is_valid(&before)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "add",
+    "assert_text": "aws_linked_list_node_next_is_valid(old_before.prev)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 9,
+    "to_iter": 10,
+    "action": "add",
+    "assert_text": "aws_linked_list_node_is_valid(&to_add)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 9,
+    "to_iter": 10,
+    "action": "add",
+    "assert_text": "aws_linked_list_node_is_valid(&before)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  }
+]

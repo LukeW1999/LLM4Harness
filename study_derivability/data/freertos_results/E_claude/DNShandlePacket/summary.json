@@ -1,0 +1,12 @@
+{
+  "func": "DNShandlePacket",
+  "cond": "E",
+  "model": "claude",
+  "gt_count": 1,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "pucudppayloadbuffer != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_claude/DNShandlePacket/iter_1_harness.c"
+}

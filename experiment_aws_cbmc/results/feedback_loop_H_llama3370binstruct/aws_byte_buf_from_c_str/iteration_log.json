@@ -1,0 +1,83 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "buf.buffer == (uint8_t *)c_str",
+    "new_text": "buf.buffer != null",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "buf.capacity == buf.len",
+    "new_text": "buf.capacity >= buf.len",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "buf.allocator == aws_default_allocator()",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "weaken",
+    "assert_text": "buf.buffer != null",
+    "new_text": "buf.buffer!= null",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "weaken",
+    "assert_text": "buf.buffer!= null",
+    "new_text": "buf.buffer != null",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "weaken",
+    "assert_text": "buf.buffer != null",
+    "new_text": "buf.buffer!= null",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "weaken",
+    "assert_text": "buf.buffer!= null",
+    "new_text": "buf.buffer != null",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 9,
+    "to_iter": 10,
+    "action": "weaken",
+    "assert_text": "buf.buffer != null",
+    "new_text": "buf.buffer!= null",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 10,
+    "to_iter": 11,
+    "action": "weaken",
+    "assert_text": "buf.buffer!= null",
+    "new_text": "buf.buffer != null",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  }
+]

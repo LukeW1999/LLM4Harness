@@ -1,0 +1,13 @@
+{
+  "func": "aws_string_new_from_array",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/string.c",
+  "line_range": [
+    186,
+    196
+  ],
+  "n_lines": 11,
+  "n_raw": 75,
+  "n_compiled": 17,
+  "compile_pass_rate": 0.22666666666666666
+}

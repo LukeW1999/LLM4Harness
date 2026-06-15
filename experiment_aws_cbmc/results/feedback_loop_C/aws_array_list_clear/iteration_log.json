@@ -1,0 +1,20 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "list.length == old_list.length",
+    "new_text": "list.length == initial_length",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "list.data == old_list.data",
+    "new_text": "list.data == initial_data",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

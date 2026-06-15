@@ -1,0 +1,38 @@
+[
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "weaken",
+    "assert_text": "src.len == old_dest.len",
+    "new_text": "src.len <= src.capacity",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "weaken",
+    "assert_text": "src.buffer == old_dest.buffer",
+    "new_text": "src.buffer != null",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "weaken",
+    "assert_text": "src.allocator == old_dest.allocator",
+    "new_text": "src.allocator == allocator",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "src.capacity == old_dest.capacity",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

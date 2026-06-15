@@ -1,0 +1,26 @@
+#include <aws/common/byte_buf.h>
+#include <aws/common/string.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <stdint.h>
+
+void aws_string_destroy_secure_harness() {
+    struct aws_string str;
+    __CPROVER_assume(aws_string_is_valid(&str));
+    ensure_byte_buf_has_allocated_buffer_member((struct aws_byte_buf *)&str);
+
+    struct aws_string old_str = str;
+
+    aws_string_destroy_secure(&str);
+
+    assert(str.allocator == old_str.allocator);
+    assert(str.len == 0);
+    assert(str.bytes == NULL);
+    assert(aws_string_is_valid(&str));
+}
+
+int main() {
+    aws_string_destroy_secure_harness();
+    return 0;
+}

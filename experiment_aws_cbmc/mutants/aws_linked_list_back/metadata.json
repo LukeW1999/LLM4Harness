@@ -1,0 +1,13 @@
+{
+  "func": "aws_linked_list_back",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/lifo_cache.c",
+  "line_range": [
+    52,
+    55
+  ],
+  "n_lines": 4,
+  "n_raw": 19,
+  "n_compiled": 5,
+  "compile_pass_rate": 0.2631578947368421
+}

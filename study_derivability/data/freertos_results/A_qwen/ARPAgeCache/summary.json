@@ -1,0 +1,15 @@
+{
+  "func": "ARPAgeCache",
+  "cond": "A",
+  "model": "qwen",
+  "gt_count": 4,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "_v_.pucethernetbuffer != null",
+    "pxdescriptor != null",
+    "pxendpoint != null",
+    "pxnetworkbuffer != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_qwen/ARPAgeCache/iter_1_harness.c"
+}

@@ -1,0 +1,15 @@
+{
+  "func": "ProcessEthernetPacket",
+  "cond": "E",
+  "model": "qwen",
+  "gt_count": 4,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "_v_.pucethernetbuffer != null",
+    "pxarpframe != null",
+    "pxippacket != null",
+    "pxnetworkbuffer != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_qwen/ProcessEthernetPacket/iter_1_harness.c"
+}

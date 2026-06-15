@@ -1,0 +1,56 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "a.ptr == old_a.ptr",
+    "new_text": "a.ptr == old_a_ptr",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "b.len == old_b.len",
+    "new_text": "b.len == old_b_len",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "b.capacity == old_b.capacity",
+    "new_text": "b.capacity == old_b_capacity",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "a.len == old_a.len",
+    "new_text": "a.len == old_a_len",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "b.allocator == old_b.allocator",
+    "new_text": "b.allocator == old_b_allocator",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "b.buffer == old_b.buffer",
+    "new_text": "b.buffer == old_b_buffer",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

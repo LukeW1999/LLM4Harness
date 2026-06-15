@@ -1,0 +1,13 @@
+{
+  "func": "aws_linked_list_next",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/file.c",
+  "line_range": [
+    232,
+    242
+  ],
+  "n_lines": 11,
+  "n_raw": 51,
+  "n_compiled": 16,
+  "compile_pass_rate": 0.3137254901960784
+}

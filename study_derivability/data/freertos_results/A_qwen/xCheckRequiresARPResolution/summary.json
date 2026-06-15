@@ -1,0 +1,16 @@
+{
+  "func": "xCheckRequiresARPResolution",
+  "cond": "A",
+  "model": "qwen",
+  "gt_count": 5,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "__cprover_r_ok( _v_.pucethernetbuffer, _v_.xdatalength )",
+    "__cprover_r_ok( pxaddress, sizeof( ipv6_address_t ) )",
+    "__cprover_r_ok( pxipaddress, sizeof( ipv6_address_t ) )",
+    "__cprover_r_ok( pxnetworkbuffer, sizeof( networkbufferdescriptor_t ) )",
+    "__cprover_w_ok( pxmacaddress, sizeof( macaddress_t ) )"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_qwen/xCheckRequiresARPResolution/iter_1_harness.c"
+}

@@ -1,0 +1,16 @@
+{
+  "func": "ReadNameField",
+  "cond": "A",
+  "model": "qwen",
+  "gt_count": 5,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "index <= uxdestlen + 1 && index <= _v_.uxsourcebytesremaining",
+    "name_size < cbmc_max_object_size",
+    "name_size >= 4",
+    "network_buffer_size < cbmc_max_object_size",
+    "pxset != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_qwen/ReadNameField/iter_1_harness.c"
+}

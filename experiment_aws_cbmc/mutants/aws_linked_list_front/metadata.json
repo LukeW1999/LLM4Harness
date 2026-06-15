@@ -1,0 +1,13 @@
+{
+  "func": "aws_linked_list_front",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/lru_cache.c",
+  "line_range": [
+    83,
+    93
+  ],
+  "n_lines": 11,
+  "n_raw": 57,
+  "n_compiled": 8,
+  "compile_pass_rate": 0.14035087719298245
+}

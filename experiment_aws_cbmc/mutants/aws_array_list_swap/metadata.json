@@ -1,0 +1,13 @@
+{
+  "func": "aws_array_list_swap",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/array_list.c",
+  "line_range": [
+    195,
+    211
+  ],
+  "n_lines": 17,
+  "n_raw": 110,
+  "n_compiled": 40,
+  "compile_pass_rate": 0.36363636363636365
+}

@@ -1,0 +1,13 @@
+{
+  "func": "aws_ring_buffer_init",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/ring_buffer.c",
+  "line_range": [
+    33,
+    53
+  ],
+  "n_lines": 21,
+  "n_raw": 95,
+  "n_compiled": 41,
+  "compile_pass_rate": 0.43157894736842106
+}

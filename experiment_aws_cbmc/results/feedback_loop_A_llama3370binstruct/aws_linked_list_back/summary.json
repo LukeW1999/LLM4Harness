@@ -1,0 +1,18 @@
+{
+  "func": "aws_linked_list_back",
+  "gt_verification": "SUCCESS",
+  "first_pass_compile": true,
+  "first_pass_verify": true,
+  "converged": true,
+  "verification_equivalent": true,
+  "num_iterations": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "action": "initial",
+      "compile_ok": true,
+      "verify": "SUCCESS",
+      "num_failed": 0
+    }
+  ]
+}

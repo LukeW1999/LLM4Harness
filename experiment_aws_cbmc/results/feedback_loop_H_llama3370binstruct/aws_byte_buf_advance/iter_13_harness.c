@@ -1,0 +1,54 @@
+#include <aws/common/byte_buf.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <stdint.h>
+
+void aws_byte_buf_advance_harness() {
+    struct aws_byte_buf buffer;
+    struct aws_byte_buf output;
+    size_t len = nondet_size_t();
+
+    __CPROVER_assume(aws_byte_buf_is_bounded(&buffer, MAX_BUFFER_SIZE));
+    ensure_byte_buf_has_allocated_buffer_member(&buffer);
+    __CPROVER_assume(aws_byte_buf_is_valid(&buffer));
+
+    struct aws_byte_buf old_buffer = buffer;
+
+    bool result = aws_byte_buf_advance(&buffer, &output, len);
+
+    if (result) {
+        assert(output.len == 0);
+        assert(output.capacity == len);
+        assert(output.allocator == aws_default_allocator());
+        assert(buffer.len == old_buffer.len + len);
+        assert(buffer.capacity == old_buffer.capacity);
+        assert(buffer.allocator == old_buffer.allocator);
+        assert(buffer.buffer == old_buffer.buffer);
+        if (old_buffer.len + len <= old_buffer.capacity) {
+            assert(output.buffer == buffer.buffer + old_buffer.len);
+        } else {
+            assert(output.buffer == NULL);
+        }
+        if (old_buffer.len + len <= old_buffer.capacity) {
+            assert(aws_byte_buf_is_valid(&output));
+        }
+    } else {
+        assert(output.len == 0);
+        assert(output.capacity == 0);
+        assert(output.allocator == aws_default_allocator());
+        assert(buffer.len == old_buffer.len);
+        assert(buffer.capacity == old_buffer.capacity);
+        assert(buffer.allocator == old_buffer.allocator);
+        assert(buffer.buffer == old_buffer.buffer);
+        assert(output.buffer == NULL);
+    }
+
+    assert(aws_byte_buf_is_valid(&buffer));
+    assert(output.allocator == aws_default_allocator());
+}
+
+int main() {
+    aws_byte_buf_advance_harness();
+    return 0;
+}

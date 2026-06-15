@@ -1,0 +1,13 @@
+{
+  "func": "aws_linked_list_init",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/thread_scheduler.c",
+  "line_range": [
+    67,
+    84
+  ],
+  "n_lines": 18,
+  "n_raw": 112,
+  "n_compiled": 63,
+  "compile_pass_rate": 0.5625
+}

@@ -1,0 +1,66 @@
+#include <aws/common/array_list.h>
+#include <aws/common/byte_buf.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <proof_helpers/nondet.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
+
+void aws_array_list_push_front_harness() {
+    /* 1. Declare and bound the array list */
+    struct aws_array_list list;
+    __CPROVER_assume(aws_array_list_is_bounded(&list,
+                                               MAX_INITIAL_ITEM_ALLOCATION,
+                                               MAX_ITEM_SIZE));
+    ensure_array_list_has_allocated_data_member(&list);
+    __CPROVER_assume(aws_array_list_is_valid(&list));
+
+    /* Allocate a readable buffer for the value to push */
+    uint8_t *val_buf = NULL;
+    if (list.item_size > 0) {
+        val_buf = malloc(list.item_size);
+        __CPROVER_assume(val_buf != NULL);
+    }
+
+    /* 2. Save old state */
+    struct aws_array_list old = list;
+
+    /* 3. Call function under test */
+    int result = aws_array_list_push_front(&list, val_buf);
+
+    /* 4. Post‑condition checks */
+    if (result == AWS_OP_SUCCESS) {
+        /* Length increases by one */
+        assert(list.length == old.length + 1);
+
+        /* Fields that must stay the same */
+        assert(list.alloc == old.alloc);
+        assert(list.item_size == old.item_size);
+        /* current_size may change if capacity grows – no assertion */
+
+        /* First element now equals the value we pushed */
+        assert_bytes_match((uint8_t *)list.data, val_buf, list.item_size);
+
+        /* Remaining elements are the old elements shifted right */
+        if (old.length > 0) {
+            assert_bytes_match((uint8_t *)list.data + list.item_size,
+                               (uint8_t *)old.data,
+                               old.length * old.item_size);
+        }
+    } else {
+        /* On failure the list must be unchanged */
+        assert(list.alloc == old.alloc);
+        assert(list.item_size == old.item_size);
+        assert(list.length == old.length);
+        assert(list.current_size == old.current_size);
+        assert(list.data == old.data);
+    }
+
+    /* 5. Invariant must hold after the call */
+    assert(aws_array_list_is_valid(&list));
+
+    /* Clean up */
+    free(val_buf);
+}

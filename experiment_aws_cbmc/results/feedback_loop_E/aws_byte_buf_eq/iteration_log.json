@@ -1,0 +1,20 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "!(a.len == b.len && aws_byte_cursor_eq_ignore_case(aws_byte_cursor_from_buf(&a), aws_byte_cursor_from_buf(&b)))",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "a.len != b.len || !aws_byte_cursor_eq_ignore_case(aws_byte_cursor_from_buf(&a), aws_byte_cursor_from_buf(&b))",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

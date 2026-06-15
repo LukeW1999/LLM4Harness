@@ -1,0 +1,17 @@
+{
+  "func": "vProcessGeneratedUDPPacket",
+  "cond": "A",
+  "model": "qwen",
+  "gt_count": 7,
+  "matched": 1,
+  "recall": 0.143,
+  "unmatched_gt": [
+    "pucethernetbuffer != null",
+    "pucnextdata != null",
+    "pulipaddress != null",
+    "pxdescriptor != null",
+    "pxmacaddress != null",
+    "pxnetworkbuffer != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_qwen/vProcessGeneratedUDPPacket/iter_1_harness.c"
+}

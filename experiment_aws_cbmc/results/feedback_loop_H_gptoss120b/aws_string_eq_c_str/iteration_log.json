@@ -1,0 +1,11 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "c_str == c_str",
+    "new_text": "c_str == old_c_str",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

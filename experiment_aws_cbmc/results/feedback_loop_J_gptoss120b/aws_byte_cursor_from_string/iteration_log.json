@@ -1,0 +1,56 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "src->bytes[i] == old_bytes[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "delete",
+    "assert_text": "src->bytes[i] == old_bytes[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "add",
+    "assert_text": "aws_string_bytes(src)[i] == old_bytes[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "weaken",
+    "assert_text": "src->len == old.len",
+    "new_text": "src->allocator == old_allocator",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "weaken",
+    "assert_text": "src->allocator == old.allocator",
+    "new_text": "src->allocator == old_allocator",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "add",
+    "assert_text": "src->len == old_len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

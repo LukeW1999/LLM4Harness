@@ -1,0 +1,65 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "result.len == result.capacity",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 4,
+    "action": "add",
+    "assert_text": "result.buffer != (uint8_t *)0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 4,
+    "action": "add",
+    "assert_text": "result.capacity != 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 4,
+    "action": "add",
+    "assert_text": "result.capacity > 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 4,
+    "action": "add",
+    "assert_text": "result.len > 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 4,
+    "action": "add",
+    "assert_text": "result.len != 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 4,
+    "action": "add",
+    "assert_text": "result.buffer != null",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  }
+]

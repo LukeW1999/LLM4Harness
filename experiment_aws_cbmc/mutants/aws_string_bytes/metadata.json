@@ -1,0 +1,13 @@
+{
+  "func": "aws_string_bytes",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/string.c",
+  "line_range": [
+    233,
+    236
+  ],
+  "n_lines": 4,
+  "n_raw": 19,
+  "n_compiled": 6,
+  "compile_pass_rate": 0.3157894736842105
+}

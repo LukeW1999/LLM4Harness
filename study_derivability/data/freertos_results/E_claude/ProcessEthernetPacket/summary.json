@@ -1,0 +1,13 @@
+{
+  "func": "ProcessEthernetPacket",
+  "cond": "E",
+  "model": "claude",
+  "gt_count": 4,
+  "matched": 2,
+  "recall": 0.5,
+  "unmatched_gt": [
+    "pxarpframe != null",
+    "pxippacket != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_claude/ProcessEthernetPacket/iter_1_harness.c"
+}

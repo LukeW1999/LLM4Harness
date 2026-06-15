@@ -1,0 +1,17 @@
+{
+  "func": "CheckOptionsOuter",
+  "cond": "A",
+  "model": "claude",
+  "gt_count": 6,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "( ( index == -1 ) || ( index == 1 ) || ( index <= uxtotallength ) )",
+    "buffer_size < cbmc_max_object_size",
+    "pucptr != null",
+    "pxsocket != null",
+    "uxindex + 8 <= buffer_size",
+    "uxindex <= buffer_size"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_claude/CheckOptionsOuter/iter_1_harness.c"
+}

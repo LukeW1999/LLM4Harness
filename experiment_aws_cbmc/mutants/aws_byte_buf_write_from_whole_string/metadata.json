@@ -1,0 +1,13 @@
+{
+  "func": "aws_byte_buf_write_from_whole_string",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/string.c",
+  "line_range": [
+    404,
+    413
+  ],
+  "n_lines": 10,
+  "n_raw": 82,
+  "n_compiled": 28,
+  "compile_pass_rate": 0.34146341463414637
+}

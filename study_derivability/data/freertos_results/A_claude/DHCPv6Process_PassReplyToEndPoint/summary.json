@@ -1,0 +1,10 @@
+{
+  "func": "DHCPv6Process_PassReplyToEndPoint",
+  "cond": "A",
+  "model": "claude",
+  "gt_count": 2,
+  "matched": 2,
+  "recall": 1.0,
+  "unmatched_gt": [],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_claude/DHCPv6Process_PassReplyToEndPoint/iter_1_harness.c"
+}

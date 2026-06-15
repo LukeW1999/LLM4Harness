@@ -1,0 +1,13 @@
+{
+  "func": "aws_ring_buffer_buf_belongs_to_pool",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/ring_buffer.c",
+  "line_range": [
+    254,
+    261
+  ],
+  "n_lines": 8,
+  "n_raw": 33,
+  "n_compiled": 6,
+  "compile_pass_rate": 0.18181818181818182
+}

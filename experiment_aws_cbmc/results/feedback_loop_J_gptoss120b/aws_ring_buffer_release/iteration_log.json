@@ -1,0 +1,20 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "aws_ring_buffer_check_atomic_ptr(&ring_buffer, old_buf.buffer + old_buf.capacity)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "aws_ring_buffer_check_atomic_ptr(&ring_buffer, (uint8_t *)old_buf.buffer + old_buf.capacity)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

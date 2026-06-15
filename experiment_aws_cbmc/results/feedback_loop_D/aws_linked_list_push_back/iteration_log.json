@@ -1,0 +1,56 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "node.prev == (old_list.tail.prev == &old_list.head ? &list.head : old_list.tail.prev)",
+    "new_text": "node.prev == (&old_list.head == old_list.tail.prev ? &list.head : old_list.tail.prev)",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "list.head.next == (old_list.tail.prev == &old_list.head ? &node : old_list.head.next)",
+    "new_text": "list.head.next == (&old_list.head == old_list.tail.prev ? &node : old_list.head.next)",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "list.head.next == (&old_list.head == old_list.tail.prev ? &node : old_list.head.next)",
+    "new_text": "list.head.next == (old_list.head.next == &old_list.tail ? &node : old_list.head.next)",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "list.tail.next == old_list.tail.next",
+    "new_text": "list.tail.next == &list.tail",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "list.head.prev == old_list.head.prev",
+    "new_text": "list.head.prev == &list.head",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "node.prev == (&old_list.head == old_list.tail.prev ? &list.head : old_list.tail.prev)",
+    "new_text": "node.prev == (old_list.head.next == &old_list.tail ? &list.head : old_list.tail.prev)",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

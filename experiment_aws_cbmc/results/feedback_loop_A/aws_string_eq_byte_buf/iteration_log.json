@@ -1,0 +1,38 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "aws_mem_is_readable(buf.buffer, buf.len)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "str.len != buf.len || !aws_mem_is_readable(str.bytes, str.len) || !aws_mem_is_readable(buf.buffer, buf.len) || !bytes_match(str.bytes, buf.buffer, str.len)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "aws_mem_is_readable(str.bytes, str.len)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "!bytes_match(str.bytes, buf.buffer, str.len) || str.len != buf.len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  }
+]

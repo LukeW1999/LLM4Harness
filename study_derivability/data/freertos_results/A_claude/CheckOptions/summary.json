@@ -1,0 +1,17 @@
+{
+  "func": "CheckOptions",
+  "cond": "A",
+  "model": "claude",
+  "gt_count": 6,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "8 <= buffer_size",
+    "buffer_size < cbmc_max_object_size",
+    "pucptr != null",
+    "pxnetworkbuffer != null",
+    "pxsocket != null",
+    "uxtotallength <= buffer_size"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_claude/CheckOptions/iter_1_harness.c"
+}

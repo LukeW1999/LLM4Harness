@@ -1,0 +1,13 @@
+{
+  "func": "aws_add_size_saturating",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/byte_buf.c",
+  "line_range": [
+    675,
+    680
+  ],
+  "n_lines": 6,
+  "n_raw": 23,
+  "n_compiled": 0,
+  "compile_pass_rate": 0.0
+}

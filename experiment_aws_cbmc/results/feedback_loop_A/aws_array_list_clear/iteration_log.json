@@ -1,0 +1,11 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "list.length == (index >= old.length ? index + 1 : old.length)",
+    "new_text": "list.length == 0",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

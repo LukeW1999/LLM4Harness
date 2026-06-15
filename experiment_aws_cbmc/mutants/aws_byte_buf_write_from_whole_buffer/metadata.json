@@ -1,0 +1,13 @@
+{
+  "func": "aws_byte_buf_write_from_whole_buffer",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/byte_buf.c",
+  "line_range": [
+    1500,
+    1504
+  ],
+  "n_lines": 5,
+  "n_raw": 22,
+  "n_compiled": 5,
+  "compile_pass_rate": 0.22727272727272727
+}

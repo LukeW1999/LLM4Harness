@@ -1,0 +1,13 @@
+{
+  "func": "aws_array_list_pop_back",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/allocator_sba.c",
+  "line_range": [
+    306,
+    308
+  ],
+  "n_lines": 3,
+  "n_raw": 12,
+  "n_compiled": 4,
+  "compile_pass_rate": 0.3333333333333333
+}

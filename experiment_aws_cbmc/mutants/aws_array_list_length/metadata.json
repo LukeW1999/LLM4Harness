@@ -1,0 +1,13 @@
+{
+  "func": "aws_array_list_length",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/log_channel.c",
+  "line_range": [
+    159,
+    168
+  ],
+  "n_lines": 10,
+  "n_raw": 43,
+  "n_compiled": 36,
+  "compile_pass_rate": 0.8372093023255814
+}

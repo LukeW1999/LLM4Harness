@@ -1,0 +1,13 @@
+{
+  "func": "aws_string_destroy",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/string.c",
+  "line_range": [
+    223,
+    228
+  ],
+  "n_lines": 6,
+  "n_raw": 44,
+  "n_compiled": 13,
+  "compile_pass_rate": 0.29545454545454547
+}

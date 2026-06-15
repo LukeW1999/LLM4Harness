@@ -1,0 +1,13 @@
+{
+  "func": "aws_mul_size_checked",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/allocator.c",
+  "line_range": [
+    223,
+    230
+  ],
+  "n_lines": 8,
+  "n_raw": 34,
+  "n_compiled": 14,
+  "compile_pass_rate": 0.4117647058823529
+}

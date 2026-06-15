@@ -1,0 +1,62 @@
+#include <aws/common/byte_buf.h>
+#include <aws/common/allocator.h>
+#include "proof_helpers/make_common_data_structures.h"
+
+void aws_byte_buf_advance_harness(void) {
+    /* 1. Declare and bound data structures */
+    struct aws_byte_buf buffer;
+    struct aws_byte_buf output; /* no pre‑conditions needed for output */
+
+    __CPROVER_assume(aws_byte_buf_is_bounded(&buffer, MAX_BUFFER_SIZE));
+    ensure_byte_buf_has_allocated_buffer_member(&buffer);
+    __CPROVER_assume(aws_byte_buf_is_valid(&buffer));
+
+    size_t len = nondet_size_t();
+    __CPROVER_assume(len <= MAX_BUFFER_SIZE);
+
+    /* 2. Save old state */
+    struct aws_byte_buf old_buffer = buffer;
+
+    /* 3. Additional assumptions to guarantee the success path */
+    __CPROVER_assume(len <= old_buffer.capacity - old_buffer.len);
+    /* If we are advancing by a non‑zero length, the source buffer must be non‑NULL */
+    __CPROVER_assume(len == 0 || old_buffer.buffer != NULL);
+
+    /* 4. Call function under test */
+    bool result = aws_byte_buf_advance(&buffer, &output, len);
+
+    /* 5. Assert postconditions for both success and failure paths */
+    if (result) {
+        /* Success: buffer advanced */
+        assert(buffer.len == old_buffer.len + len);
+        assert(buffer.capacity == old_buffer.capacity);
+        assert(buffer.buffer == old_buffer.buffer);
+        assert(buffer.allocator == old_buffer.allocator);
+
+        /* Success: output initialized */
+        assert(output.len == len);
+        assert(output.capacity == len);
+        if (old_buffer.buffer == NULL) {
+            assert(output.buffer == NULL);
+        } else {
+            assert(output.buffer == old_buffer.buffer + old_buffer.len);
+        }
+        assert(output.allocator == old_buffer.allocator);
+    } else {
+        /* Failure: buffer unchanged */
+        assert(buffer.len == old_buffer.len);
+        assert(buffer.capacity == old_buffer.capacity);
+        assert(buffer.buffer == old_buffer.buffer);
+        assert(buffer.allocator == old_buffer.allocator);
+
+        /* Failure: output zeroed */
+        assert(output.len == 0);
+        assert(output.capacity == 0);
+        assert(output.buffer == NULL);
+        assert(output.allocator == NULL);
+    }
+
+    /* 6. Validity invariants always hold */
+    assert(aws_byte_buf_is_valid(&buffer));
+    assert(aws_byte_buf_is_valid(&output));
+}

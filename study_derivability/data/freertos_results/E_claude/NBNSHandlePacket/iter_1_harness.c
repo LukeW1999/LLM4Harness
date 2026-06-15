@@ -1,0 +1,40 @@
+/* FreeRTOS includes. */
+#include "FreeRTOS.h"
+#include "queue.h"
+
+/* FreeRTOS+TCP includes. */
+#include "FreeRTOS_IP.h"
+#include "FreeRTOS_DNS.h"
+#include "FreeRTOS_IP_Private.h"
+#include "FreeRTOS_DNS_Networking.h"
+
+/* CBMC includes. */
+#include "cbmc.h"
+
+/* Function DNS_ParseDNSReply is proven to be correct separately. */
+uint32_t DNS_ParseDNSReply( uint8_t * pucUDPPayloadBuffer,
+                            size_t uxBufferLength,
+                            struct freertos_addrinfo ** ppxAddressInfo,
+                            BaseType_t xExpected,
+                            uint16_t usPort )
+{
+    __CPROVER_assert( pucUDPPayloadBuffer != NULL, "pucUDPPayloadBuffer cannot be NULL" );
+    return nondet_uint32();
+}
+
+void harness()
+{
+    NetworkBufferDescriptor_t xNetworkBuffer;
+    size_t uxBufferLength;
+
+    /* The buffer must be large enough to hold a UDPPacket_t plus an NBNSRequest_t.
+     * Assume a minimum size that covers the headers needed by NBNSHandlePacket. */
+    __CPROVER_assume( uxBufferLength >= sizeof( UDPPacket_t ) + sizeof( NBNSRequest_t ) );
+    __CPROVER_assume( uxBufferLength < ipconfigNETWORK_MTU );
+
+    xNetworkBuffer.pucEthernetBuffer = malloc( uxBufferLength );
+    __CPROVER_assume( xNetworkBuffer.pucEthernetBuffer != NULL );
+    xNetworkBuffer.xDataLength = uxBufferLength;
+
+    NBNSHandlePacket( &xNetworkBuffer );
+}

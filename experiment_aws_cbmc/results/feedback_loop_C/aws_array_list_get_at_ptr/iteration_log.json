@@ -1,0 +1,11 @@
+[
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "add",
+    "assert_text": "*(void **)val == *(void **)(list.data + index * list.item_size)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

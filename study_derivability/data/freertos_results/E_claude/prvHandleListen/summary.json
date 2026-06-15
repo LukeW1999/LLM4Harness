@@ -1,0 +1,10 @@
+{
+  "func": "prvHandleListen",
+  "cond": "E",
+  "model": "claude",
+  "gt_count": 3,
+  "matched": 3,
+  "recall": 1.0,
+  "unmatched_gt": [],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_claude/prvHandleListen/iter_1_harness.c"
+}

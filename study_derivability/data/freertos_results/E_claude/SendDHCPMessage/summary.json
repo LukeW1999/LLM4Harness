@@ -1,0 +1,15 @@
+{
+  "func": "SendDHCPMessage",
+  "cond": "E",
+  "model": "claude",
+  "gt_count": 4,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "pcsource != null",
+    "pucdata != null",
+    "pvdestination != null",
+    "pxconfig != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_claude/SendDHCPMessage/iter_1_harness.c"
+}

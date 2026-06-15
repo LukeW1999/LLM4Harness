@@ -1,0 +1,38 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "*allocator == old_allocator",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "c_str == old_c_str",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "weaken",
+    "assert_text": "memcmp(result->bytes, c_str, result->len) == 0",
+    "new_text": "memcmp(result->bytes, c_str, len) == 0",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "weaken",
+    "assert_text": "result->len == strlen(c_str)",
+    "new_text": "result->len == len",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  }
+]

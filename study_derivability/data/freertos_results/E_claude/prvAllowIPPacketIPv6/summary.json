@@ -1,0 +1,13 @@
+{
+  "func": "prvAllowIPPacketIPv6",
+  "cond": "E",
+  "model": "claude",
+  "gt_count": 3,
+  "matched": 1,
+  "recall": 0.333,
+  "unmatched_gt": [
+    "pxipaddress != null",
+    "pxmacaddress != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_claude/prvAllowIPPacketIPv6/iter_1_harness.c"
+}

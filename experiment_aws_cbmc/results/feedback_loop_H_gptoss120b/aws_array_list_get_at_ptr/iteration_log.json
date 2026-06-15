@@ -1,0 +1,11 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "out == (void *)((uint8_t *)list.data + (list.item_size * index)",
+    "new_text": "out == (void *)((uint8_t *)list.data + (list.item_size * index))",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

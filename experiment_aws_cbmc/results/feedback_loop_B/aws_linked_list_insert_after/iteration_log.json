@@ -1,0 +1,11 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "to_add.next == node.next->prev",
+    "new_text": "to_add.next == node.next",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  }
+]

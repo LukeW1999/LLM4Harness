@@ -1,0 +1,38 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "list.tail.next == old_tail_next",
+    "new_text": "list.tail.next == &list.head",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "list.head.next == old_head_next",
+    "new_text": "list.head.next == node",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "list.tail.prev == old_tail_prev",
+    "new_text": "list.tail.prev == node",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "list.head.prev == old_head_prev",
+    "new_text": "list.head.prev == &list.tail",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

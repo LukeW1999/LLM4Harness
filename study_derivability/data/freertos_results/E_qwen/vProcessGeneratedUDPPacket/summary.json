@@ -1,0 +1,12 @@
+{
+  "func": "vProcessGeneratedUDPPacket",
+  "cond": "E",
+  "model": "qwen",
+  "gt_count": 7,
+  "matched": 6,
+  "recall": 0.857,
+  "unmatched_gt": [
+    "pulipaddress != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_qwen/vProcessGeneratedUDPPacket/iter_1_harness.c"
+}

@@ -1,0 +1,13 @@
+{
+  "func": "ProcessICMPPacket",
+  "cond": "A",
+  "model": "qwen",
+  "gt_count": 2,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "pxicmppacket != null",
+    "pxnetworkbuffer != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_qwen/ProcessICMPPacket/iter_1_harness.c"
+}

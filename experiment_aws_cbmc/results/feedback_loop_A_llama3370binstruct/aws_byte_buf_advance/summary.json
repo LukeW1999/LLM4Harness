@@ -1,0 +1,116 @@
+{
+  "func": "aws_byte_buf_advance",
+  "gt_verification": "SUCCESS",
+  "first_pass_compile": true,
+  "first_pass_verify": false,
+  "converged": false,
+  "verification_equivalent": false,
+  "num_iterations": 15,
+  "iterations": [
+    {
+      "iter": 1,
+      "action": "initial",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 1
+    },
+    {
+      "iter": 2,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 1
+    },
+    {
+      "iter": 3,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 2
+    },
+    {
+      "iter": 4,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 4
+    },
+    {
+      "iter": 5,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 6
+    },
+    {
+      "iter": 6,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 4
+    },
+    {
+      "iter": 7,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 4
+    },
+    {
+      "iter": 8,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 3
+    },
+    {
+      "iter": 9,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 3
+    },
+    {
+      "iter": 10,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 2
+    },
+    {
+      "iter": 11,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 2
+    },
+    {
+      "iter": 12,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 2
+    },
+    {
+      "iter": 13,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 2
+    },
+    {
+      "iter": 14,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 4
+    },
+    {
+      "iter": 15,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 4
+    }
+  ]
+}

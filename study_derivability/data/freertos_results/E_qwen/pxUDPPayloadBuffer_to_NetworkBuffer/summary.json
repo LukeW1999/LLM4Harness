@@ -1,0 +1,12 @@
+{
+  "func": "pxUDPPayloadBuffer_to_NetworkBuffer",
+  "cond": "E",
+  "model": "qwen",
+  "gt_count": 1,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "pvbuffer != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_qwen/pxUDPPayloadBuffer_to_NetworkBuffer/iter_1_harness.c"
+}

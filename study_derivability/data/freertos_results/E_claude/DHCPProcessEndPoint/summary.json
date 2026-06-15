@@ -1,0 +1,13 @@
+{
+  "func": "DHCPProcessEndPoint",
+  "cond": "E",
+  "model": "claude",
+  "gt_count": 6,
+  "matched": 4,
+  "recall": 0.667,
+  "unmatched_gt": [
+    "_v_.pxnetworkinterface != null",
+    "enetworkevent == enetworkup || enetworkevent == enetworkdown"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_claude/DHCPProcessEndPoint/iter_1_harness.c"
+}

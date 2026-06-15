@@ -1,0 +1,13 @@
+{
+  "func": "aws_byte_buf_clean_up_secure",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/byte_buf.c",
+  "line_range": [
+    96,
+    101
+  ],
+  "n_lines": 6,
+  "n_raw": 21,
+  "n_compiled": 4,
+  "compile_pass_rate": 0.19047619047619047
+}

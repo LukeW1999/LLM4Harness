@@ -1,0 +1,74 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "b.tail.next == &b.tail",
+    "new_text": "b.tail.next == &b.head",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "a.tail.next == &a.tail",
+    "new_text": "a.tail.next == &a.head",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "b.head.next == &b.head",
+    "new_text": "b.head.next == &b.tail",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "a.head.prev == &a.head",
+    "new_text": "a.head.prev == &a.tail",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "b.head.prev == &b.head",
+    "new_text": "b.head.prev == &b.tail",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "b.tail.prev == &b.tail",
+    "new_text": "b.tail.prev == &b.head",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "a.head.next == &a.head",
+    "new_text": "a.head.next == &a.tail",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "a.tail.prev == &a.tail",
+    "new_text": "a.tail.prev == &a.head",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  }
+]

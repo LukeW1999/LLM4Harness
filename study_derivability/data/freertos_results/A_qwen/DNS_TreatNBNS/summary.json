@@ -1,0 +1,15 @@
+{
+  "func": "DNS_TreatNBNS",
+  "cond": "A",
+  "model": "qwen",
+  "gt_count": 5,
+  "matched": 1,
+  "recall": 0.2,
+  "unmatched_gt": [
+    "__cprover_r_ok( _v_.pucethernetbuffer, _v_.xdatalength )",
+    "pvbuffer != null",
+    "pxnetworkbuffer != null",
+    "strlen( pcname ) < ipconfigdns_cache_name_length"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_qwen/DNS_TreatNBNS/iter_1_harness.c"
+}

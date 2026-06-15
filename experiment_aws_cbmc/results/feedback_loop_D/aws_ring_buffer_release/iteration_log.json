@@ -1,0 +1,38 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "ring_buffer.tail.var == old_ring_buffer.tail.var",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "buf.len == old_buf.len",
+    "new_text": "buf.len == 0",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "buf.buffer == old_buf.buffer",
+    "new_text": "buf.buffer == null",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "buf.capacity == old_buf.capacity",
+    "new_text": "buf.capacity == 0",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

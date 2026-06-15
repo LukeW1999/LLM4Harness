@@ -1,0 +1,19 @@
+{
+  "func": "DNSgetHostByName_a",
+  "cond": "A",
+  "model": "claude",
+  "gt_count": 8,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "_v_.pucethernetbuffer != null",
+    "pchostname != null",
+    "pucudppayloadbuffer != null",
+    "pvbuffer != null",
+    "pvsearchid != null",
+    "pxdescriptor != null",
+    "pxnetworkbuffer != null",
+    "xdnssocket != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/A_claude/DNSgetHostByName_a/iter_1_harness.c"
+}

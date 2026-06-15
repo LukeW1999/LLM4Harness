@@ -1,0 +1,13 @@
+{
+  "func": "aws_array_list_get_at_ptr",
+  "status": "ok",
+  "source_file": "/home/weiqi/Verification/aws-c-common/source/array_list.c",
+  "line_range": [
+    207,
+    217
+  ],
+  "n_lines": 11,
+  "n_raw": 68,
+  "n_compiled": 22,
+  "compile_pass_rate": 0.3235294117647059
+}

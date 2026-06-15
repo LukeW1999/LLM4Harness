@@ -1,0 +1,15 @@
+{
+  "func": "ProcessIPPacket",
+  "cond": "E",
+  "model": "qwen",
+  "gt_count": 7,
+  "matched": 3,
+  "recall": 0.429,
+  "unmatched_gt": [
+    "__cprover_r_ok( _v_.pucethernetbuffer, _v_.xdatalength )",
+    "pucnextdata != null",
+    "pxendpoint != null",
+    "pxnetworkbuffer != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_qwen/ProcessIPPacket/iter_1_harness.c"
+}

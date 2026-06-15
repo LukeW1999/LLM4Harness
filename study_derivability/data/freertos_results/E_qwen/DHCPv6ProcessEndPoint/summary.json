@@ -1,0 +1,17 @@
+{
+  "func": "DHCPv6ProcessEndPoint",
+  "cond": "E",
+  "model": "qwen",
+  "gt_count": 6,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "pxbindaddress != null",
+    "pxdhcpmessage != null",
+    "pxendpoint != null",
+    "pxsocket != null",
+    "xsocket != freertos_invalid_socket",
+    "xsocket != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_qwen/DHCPv6ProcessEndPoint/iter_1_harness.c"
+}

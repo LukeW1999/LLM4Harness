@@ -1,0 +1,61 @@
+#include <proof_helpers/make_common_data_structures.h>
+
+void aws_array_list_length_harness(void) {
+    /* Non‑deterministic fields for the list */
+    struct aws_array_list list;
+    size_t item_size;
+    size_t length;
+    size_t current_size;
+    bool have_alloc;
+
+    /* Reasonable, non‑overflowing values */
+    __CPROVER_assume(item_size > 0);
+    __CPROVER_assume(current_size <= 1024 * 1024);
+    __CPROVER_assume(length <= current_size / item_size);
+
+    /* Allocate backing storage if needed */
+    uint8_t *data = NULL;
+    if (current_size > 0) {
+        data = malloc(current_size);
+        __CPROVER_assume(data != NULL);
+    }
+
+    /* Set allocator (dynamic vs static mode) */
+    struct aws_allocator *allocator = NULL;
+    if (have_alloc) {
+        allocator = aws_default_allocator();
+    }
+    list.alloc = allocator;
+
+    /* Populate the list structure */
+    list.data = data;
+    list.current_size = current_size;
+    list.length = length;
+    list.item_size = item_size;
+
+    /* Satisfy the precondition of aws_array_list_length */
+    __CPROVER_assume(aws_array_list_is_valid(&list));
+
+    /* Snapshot the initial state for frame condition checks */
+    struct aws_array_list old_list = list;
+    uint8_t *old_data = NULL;
+    if (data) {
+        old_data = malloc(current_size);
+        __CPROVER_assume(old_data != NULL);
+        memcpy(old_data, data, current_size);
+    }
+
+    /* Invoke the function under test */
+    size_t ret = aws_array_list_length(&list);
+
+    /* Return value correctness */
+    assert(ret == old_list.length);
+
+    /* List structure unchanged */
+    assert(memcmp(&list, &old_list, sizeof(list)) == 0);
+
+    /* Underlying buffer unchanged */
+    if (data) {
+        assert(memcmp(data, old_data, current_size) == 0);
+    }
+}

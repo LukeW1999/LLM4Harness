@@ -1,0 +1,56 @@
+[
+  {
+    "from_iter": 14,
+    "to_iter": 15,
+    "action": "weaken",
+    "assert_text": "str.len == old_str.len",
+    "new_text": "str.len == cur.len",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 14,
+    "to_iter": 15,
+    "action": "delete",
+    "assert_text": "str.allocator == old_str.allocator",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 14,
+    "to_iter": 15,
+    "action": "delete",
+    "assert_text": "cur.ptr == old_cur.ptr",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 14,
+    "to_iter": 15,
+    "action": "delete",
+    "assert_text": "cur.len == old_cur.len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 14,
+    "to_iter": 15,
+    "action": "add",
+    "assert_text": "memcmp(str.bytes, cur.ptr, str.len) == 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 14,
+    "to_iter": 15,
+    "action": "add",
+    "assert_text": "str.len != cur.len || memcmp(str.bytes, cur.ptr, str.len) != 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

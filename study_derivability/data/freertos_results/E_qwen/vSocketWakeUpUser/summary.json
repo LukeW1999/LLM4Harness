@@ -1,0 +1,17 @@
+{
+  "func": "vSocketWakeUpUser",
+  "cond": "E",
+  "model": "qwen",
+  "gt_count": 6,
+  "matched": 0,
+  "recall": 0.0,
+  "unmatched_gt": [
+    "!( ( pvitemtoqueue == null ) && ( _v_.uxitemsize != ( ubasetype_t ) 0u ) )",
+    "!( ( xcopyposition == queueoverwrite ) && ( _v_.uxlength != 1 ) )",
+    "( uxbitstoset & eventevent_bits_control_bytes ) == 0",
+    "pxsocket != null",
+    "xeventgroup != null",
+    "xqueue != null"
+  ],
+  "harness_path": "/home/weiqi/Verification/LLM4Harness/study_derivability/data/freertos_results/E_qwen/vSocketWakeUpUser/iter_1_harness.c"
+}
