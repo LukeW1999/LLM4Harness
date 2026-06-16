@@ -152,6 +152,15 @@ CONDITION_FEEDBACK_DIR = {
     "A_llama": RESULTS_DIR / "feedback_loop_A_llama3370binstruct",
     "H_llama": RESULTS_DIR / "feedback_loop_H_llama3370binstruct",
     "G_llama": RESULTS_DIR / "feedback_loop_G_llama3370binstruct",
+    # provider/precision-pinned (DeepInfra, bf16, fallbacks off) gpt-oss-120b — RQ1 reproducibility
+    "A_pin":      RESULTS_DIR / "feedback_loop_A_gptoss120b_pin",
+    "G_pin":      RESULTS_DIR / "feedback_loop_G_gptoss120b_pin",
+    "H_pin":      RESULTS_DIR / "feedback_loop_H_gptoss120b_pin",
+    "I_pin":      RESULTS_DIR / "feedback_loop_I_gptoss120b_pin",
+    "J_pin":      RESULTS_DIR / "feedback_loop_J_gptoss120b_pin",
+    "K_pin":      RESULTS_DIR / "feedback_loop_K_gptoss120b_pin",
+    "M_pin":      RESULTS_DIR / "feedback_loop_M_gptoss120b_pin",
+    "Oracle_pin": RESULTS_DIR / "feedback_loop_Oracle_gptoss120b_pin",
 }
 
 
@@ -677,7 +686,7 @@ def main():
     parser.add_argument("--save-json", action="store_true", help="Save results to JSON")
     parser.add_argument("--quiet", action="store_true", help="Suppress per-function verbose output")
     parser.add_argument("--workers", type=int, default=8, help="Parallel workers (default: 8)")
-    parser.add_argument("--condition", choices=["original", "A", "B", "C", "D", "A_v3", "B_v3", "A_claude", "B_claude", "C_claude", "D_claude", "I_gptoss120b", "J_gptoss120b", "K_gptoss120b", "Oracle_gptoss120b", "M_gptoss120b", "M_claude", "A_llama", "H_llama", "G_llama"], default="original",
+    parser.add_argument("--condition", choices=["original", "A", "B", "C", "D", "A_v3", "B_v3", "A_claude", "B_claude", "C_claude", "D_claude", "I_gptoss120b", "J_gptoss120b", "K_gptoss120b", "Oracle_gptoss120b", "M_gptoss120b", "M_claude", "A_llama", "H_llama", "G_llama", "A_pin", "G_pin", "H_pin", "I_pin", "J_pin", "K_pin", "M_pin", "Oracle_pin"], default="original",
                         help="Which feedback loop results to evaluate")
     args = parser.parse_args()
 
