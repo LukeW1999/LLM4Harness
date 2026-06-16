@@ -394,6 +394,20 @@ add("T-mr","Claude H Sil/GT min", 3.8, lambda: _clmin("H"), 0.15)
 add("T-mr","Claude M Sil/GT max", 3.8, lambda: _clmax("M"), 0.15)
 add("T-mr","Claude M Sil/GT min", 2.4, lambda: _clmin("M"), 0.15)
 
+# ── s2n silenced-bug spread (abstract + §s2n: rules out single-function artifact) ──
+try:
+    from collections import Counter as _Ctr
+    def _s2n_spread(cond):
+        d = json.load(open(f"{_BASE}/evaluation/mutation_oracle_s2n_{cond}.json"))
+        r = d.get("results", d) if isinstance(d, dict) else d
+        c = _Ctr(x["func"] for x in r if x.get("silenced"))
+        return len(c), 100.0 * max(c.values()) / sum(c.values())
+    add("abs/s2n","s2n Claude #silenced funcs", 9,    lambda: _s2n_spread("A_claude")[0], 0)
+    add("abs/s2n","s2n gptoss #silenced funcs", 5,    lambda: _s2n_spread("A_gptoss120b")[0], 0)
+    add("abs/s2n","s2n gptoss max func share %", 35.7, lambda: _s2n_spread("A_gptoss120b")[1], 0.3)
+except Exception:
+    pass  # s2n oracle jsons absent; skip
+
 # ── Pinned-rho finding (#46, Threats §sec:threats; recomputed by pinned_rho.compute) ──
 try:
     import pinned_rho as _PR
