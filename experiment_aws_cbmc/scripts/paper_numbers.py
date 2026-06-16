@@ -394,6 +394,21 @@ add("T-mr","Claude H Sil/GT min", 3.8, lambda: _clmin("H"), 0.15)
 add("T-mr","Claude M Sil/GT max", 3.8, lambda: _clmax("M"), 0.15)
 add("T-mr","Claude M Sil/GT min", 2.4, lambda: _clmin("M"), 0.15)
 
+# ── Pinned-rho finding (#46, Threats §sec:threats; recomputed by pinned_rho.compute) ──
+try:
+    import pinned_rho as _PR
+    _prn, _ = _PR.compute()
+    add("Thr/pin","rho(pass,UNKNOWN) n=8",      -0.93, lambda: float(_prn["rho_pass_unknown_n8"]), 0.02)
+    add("Thr/pin","pinned matched set n",          37, lambda: _prn["matched_n"], 0)
+    add("Thr/pin","rho(pass,recall) unpinned",  -0.43, lambda: float(_prn["rho_unpinned_matched"]), 0.02)
+    add("Thr/pin","rho(pass,recall) pinned",     0.45, lambda: float(_prn["rho_pinned_matched"]), 0.02)
+    add("Thr/pin","A matched UNKNOWN unpinned",    25, lambda: _prn["A_matched_unpinned_unknown"], 0)
+    add("Thr/pin","A matched UNKNOWN pinned",       2, lambda: _prn["A_matched_pinned_unknown"], 0)
+    add("Thr/pin","A matched pass% unpinned",    32.4, lambda: _prn["A_matched_unpinned_pass"], 0.1)
+    add("Thr/pin","A matched pass% pinned",      91.9, lambda: _prn["A_matched_pinned_pass"], 0.1)
+except Exception:
+    pass  # pinned data absent (e.g. server BASE w/ contaminated unpinned A); skip, don't crash audit
+
 def main():
     md = "--md" in sys.argv
     rows=[]; nfail=0

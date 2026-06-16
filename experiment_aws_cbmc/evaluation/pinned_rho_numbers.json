@@ -1,0 +1,13 @@
+{
+ "matched_n": 37,
+ "rho_unpinned_matched": -0.4297,
+ "p_unpinned_matched": 0.288,
+ "rho_pinned_matched": 0.4486,
+ "p_pinned_matched": 0.265,
+ "rho_pass_unknown_n8": -0.9286,
+ "p_pass_unknown_n8": 0.001,
+ "A_matched_unpinned_pass": 32.4,
+ "A_matched_unpinned_unknown": 25,
+ "A_matched_pinned_pass": 91.9,
+ "A_matched_pinned_unknown": 2
+}
