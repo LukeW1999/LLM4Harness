@@ -1,0 +1,17 @@
+# LLM4Harness / experiment_aws_cbmc — Python dependencies
+# Python 3.12 (tested on 3.12.3). Install: python3 -m pip install -r requirements.txt
+#
+# Core (analysis + paper-number audit; required to run paper_numbers.py):
+numpy
+scipy
+#
+# LLM generation backends (required only to RE-GENERATE harnesses, not to audit):
+requests          # OpenRouter / DashScope (Qwen) HTTP backends
+anthropic         # Claude backend (call_claude_api.py)
+python-dotenv     # loads API keys from .env (never committed)
+#
+# Figures only (figures/*.py):
+matplotlib
+#
+# External tools (NOT pip — see ENVIRONMENT.md):
+#   cbmc 5.95.1, esbmc 8.3.0
