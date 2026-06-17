@@ -246,6 +246,19 @@ for cond,kg in [("A_gptoss120b",90.2),("H_gptoss120b",89.2),("M_gptoss120b",96.7
     add("T7", f"{cond} KG%", kg, (lambda c: lambda: t7(c,"KG"))(cond), 0.15)
 add("T7","A_claude SAC%",12.5, lambda: t7("A_claude","SAC"), 0.15)
 add("T7","Oracle KG count",141, lambda: _json.load(open(f"{_BASE}/evaluation/table7_v21.json"))["Oracle_gptoss120b"]["KG"], 0.5)
+
+# ── Clopper-Pearson 95% CIs on per-condition KG share (§5.2), 2026-06-17 ──
+def _cp_kg(cond, bound):
+    from scipy.stats import beta as _b
+    v=_json.load(open(f"{_BASE}/evaluation/table7_v21.json"))[cond]
+    k,n=v["KG"],v["tot"]; a=0.05
+    lo=0.0 if k==0 else _b.ppf(a/2,k,n-k+1)
+    hi=1.0 if k==n else _b.ppf(1-a/2,k+1,n-k)
+    return 100*(lo if bound=="lo" else hi)
+add("S5.2/ci","Oracle KG CI lower %", 83, lambda: _cp_kg("Oracle_gptoss120b","lo"), 2)
+add("S5.2/ci","gptoss-A KG CI lower %", 77, lambda: _cp_kg("A_gptoss120b","lo"), 3)
+add("S5.2/ci","gptoss-H KG CI lower %", 75, lambda: _cp_kg("H_gptoss120b","lo"), 3)
+add("S5.2/ci","Claude-A KG CI lower %", 62, lambda: _cp_kg("A_claude","lo"), 4)
 def spearman_pass_recall():
     pa=[84.3,81.9,75.3,70.5,67.5,62.7,31.3,28.9]; rc=[0.251,0.268,0.384,0.363,0.377,0.303,0.290,0.357]
     def rank(x): srt=sorted(x); return [srt.index(v)+1 for v in x]
