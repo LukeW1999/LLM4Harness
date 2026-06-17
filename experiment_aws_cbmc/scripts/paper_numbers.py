@@ -329,6 +329,8 @@ add("S6/s2n","s2n GT-FAIL denom", 253, lambda: _s2n("A_claude","gtfail"), 1)
 add("S6/s2n","s2n Claude-A silenced", 57, lambda: _s2n("A_claude","sil"), 1)
 add("S6/s2n","s2n gptoss-A silenced", 42, lambda: _s2n("A_gptoss120b","sil"), 1)
 add("S6/s2n","s2n Claude-A Sil/GT %", 22.5, lambda: 100*_s2n("A_claude","sil")/_s2n("A_claude","gtfail"), 0.3)
+add("S6/cost","oracle LLM-side calls/condition", 1233, lambda: len(_json.load(open(f"{_BASE}/evaluation/mutation_oracle_cbmc_feedback_loop_A_gptoss120b_pin.json"))["results"]), 1)
+add("S6/cost","mutants per function (1233/83)", 14.9, lambda: len(_json.load(open(f"{_BASE}/evaluation/mutation_oracle_cbmc_feedback_loop_A_gptoss120b_pin.json"))["results"])/83, 0.3)
 add("S6/s2n","s2n gptoss-A Sil/GT %", 16.6, lambda: 100*_s2n("A_gptoss120b","sil")/_s2n("A_gptoss120b","gtfail"), 0.3)
 
 # ── A3: s2n assume-relaxation cross-check (CBMC-decided KG vs AOC), 2026-06-17 ──
