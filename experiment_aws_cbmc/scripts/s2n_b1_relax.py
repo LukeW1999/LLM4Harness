@@ -46,9 +46,11 @@ def orig_source(func, mutated_name):
             return s
     return None
 
-def classify(cond, timeout=90):
+def classify(cond, timeout=90, func_filter=None):
     op = S.EVAL / f"mutation_oracle_s2n_{cond}.json"
     sil = [r for r in json.load(open(op))["results"] if r.get("silenced")]
+    if func_filter:
+        sil = [r for r in sil if r["func"] == func_filter]
     out = []
     for r in sil:
         func, mut = r["func"], r["mutant"]
@@ -79,9 +81,10 @@ def classify(cond, timeout=90):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--cond", required=True)
+    ap.add_argument("--func", default=None, help="restrict to one function (smoke test)")
     ap.add_argument("--timeout", type=int, default=90)
     a = ap.parse_args()
-    res = classify(a.cond, a.timeout)
+    res = classify(a.cond, a.timeout, a.func)
     from collections import Counter
     cnt = Counter(lab for _, _, lab, _ in res)
     kg  = cnt.get("KG_confirmed", 0) + cnt.get("KG_no_bounds", 0)
