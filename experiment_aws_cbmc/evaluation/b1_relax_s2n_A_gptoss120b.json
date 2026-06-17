@@ -1,0 +1,254 @@
+[
+  {
+    "func": "s2n_stuffer_alloc",
+    "mutant": "mutant_0028",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_alloc",
+    "mutant": "mutant_0030",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_alloc",
+    "mutant": "mutant_0032",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_alloc",
+    "mutant": "mutant_0034",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_alloc",
+    "mutant": "mutant_0035",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_alloc",
+    "mutant": "mutant_0038",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_alloc",
+    "mutant": "mutant_0039",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_alloc",
+    "mutant": "mutant_0040",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_alloc",
+    "mutant": "mutant_0050",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_alloc",
+    "mutant": "mutant_0067",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_copy",
+    "mutant": "mutant_0024",
+    "label": "INCONCLUSIVE_relax_broke_validity",
+    "n_relaxed": 6
+  },
+  {
+    "func": "s2n_stuffer_copy",
+    "mutant": "mutant_0065",
+    "label": "INCONCLUSIVE_relax_broke_validity",
+    "n_relaxed": 6
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "mutant": "mutant_0012",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "mutant": "mutant_0043",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "mutant": "mutant_0045",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "mutant": "mutant_0059",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "mutant": "mutant_0060",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "mutant": "mutant_0061",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "mutant": "mutant_0062",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "mutant": "mutant_0063",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "mutant": "mutant_0064",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "mutant": "mutant_0067",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "mutant": "mutant_0076",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "mutant": "mutant_0150",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "mutant": "mutant_0156",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_read_uint32",
+    "mutant": "mutant_0161",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_read_uint8",
+    "mutant": "mutant_0053",
+    "label": "KG_confirmed",
+    "n_relaxed": 2
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0028",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0029",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0031",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0034",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0037",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0039",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0050",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0051",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0052",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0053",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0054",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0055",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0059",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0067",
+    "label": "KG_confirmed",
+    "n_relaxed": 1
+  },
+  {
+    "func": "s2n_stuffer_skip_read",
+    "mutant": "mutant_0068",
+    "label": "AOC_confirmed",
+    "n_relaxed": 1
+  }
+]
