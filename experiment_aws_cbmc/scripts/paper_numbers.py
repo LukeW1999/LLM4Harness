@@ -318,6 +318,17 @@ add("S6/s2n","s2n gptoss-A silenced", 42, lambda: _s2n("A_gptoss120b","sil"), 1)
 add("S6/s2n","s2n Claude-A Sil/GT %", 22.5, lambda: 100*_s2n("A_claude","sil")/_s2n("A_claude","gtfail"), 0.3)
 add("S6/s2n","s2n gptoss-A Sil/GT %", 16.6, lambda: 100*_s2n("A_gptoss120b","sil")/_s2n("A_gptoss120b","gtfail"), 0.3)
 
+# ── A3: s2n assume-relaxation cross-check (CBMC-decided KG vs AOC), 2026-06-17 ──
+def _a3(cond, field):
+    d=_json.load(open(f"{_BASE}/evaluation/b1_relax_s2n_{cond}.json"))
+    tot=len(d)
+    kg =sum(1 for r in d if r["label"] in ("KG_confirmed","KG_no_bounds"))
+    aoc=sum(1 for r in d if r["label"]=="AOC_confirmed")
+    return {"tot":tot,"kg":kg,"aoc":aoc,"kgpct":100*kg/tot if tot else 0,"aocpct":100*aoc/tot if tot else 0}[field]
+add("S6/a3","s2n Claude-A KG% (CBMC relax)", 96.5, lambda: _a3("A_claude","kgpct"), 1)
+add("S6/a3","s2n gptoss-A KG% (CBMC relax)", 59.5, lambda: _a3("A_gptoss120b","kgpct"), 2)
+add("S6/a3","s2n gptoss-A AOC% (CBMC relax)", 35.7, lambda: _a3("A_gptoss120b","aocpct"), 2)
+
 # ── confirmatory pinned run + H multi-run (added 2026-06-14, validated) ──
 def _vct(cond, status):
     return sum(1 for r in orc(cond)
