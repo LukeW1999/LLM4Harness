@@ -101,6 +101,7 @@ CONDITION_DATASET = {
     "K":        experiment_dir / "dataset_condA",   # spec-first: NL contract before CBMC loop
     "Oracle":   experiment_dir / "dataset_condA",   # GT __CPROVER_assume preconditions provided
     "M":        experiment_dir / "dataset_condA",   # minimal CBMC guidance: scalar bounding instruction
+    "SF":       experiment_dir / "dataset_condA",   # scaffolding-first: two-phase scaffold then fill (dynamic prompts)
     "A_v3":     experiment_dir / "dataset_condA",
     "B_v3":     experiment_dir / "dataset_condB",
 }
@@ -716,6 +717,87 @@ with a more precise predicate instead of deleting them permanently."""
     return base
 
 
+# ── Condition SF (scaffolding-first): two-phase generation ──────────────────
+# Phase 1 synthesizes the verification SCAFFOLD only (symbolic inputs,
+# __CPROVER_assume preconditions, allocation, a pre-call state SNAPSHOT, and the
+# call) with an assertion PLACEHOLDER and no postcondition asserts. Phase 2 fills
+# the postcondition assert()s given the completed scaffold. Motivated by the cloze
+# result (models fill assertions correctly given scaffolding): isolates scaffold
+# construction -- the hypothesised failure unit -- from assertion knowledge.
+SF_PLACEHOLDER = "/* ASSERT_POSTCONDITIONS_HERE */"
+
+def build_sf_phase1_prompt(func_dir: str, func_name: str) -> str:
+    """SF Phase 1: scaffold only (no postcondition assertions)."""
+    func_path = CONDITION_DATASET["SF"] / func_dir
+    header = read_file(func_path / "header.h")
+    impl = read_file(func_path / "implementation.c")
+    return f"""You are writing the SCAFFOLD of a CBMC proof harness for `{func_name}`.
+
+## Function declaration:
+```c
+{header}
+```
+
+## Implementation:
+```c
+{impl}
+```
+
+Write ONLY the harness scaffold -- everything EXCEPT the postcondition assertions:
+1. Includes and the `{func_name}_harness(void)` entry point.
+2. Symbolic/nondeterministic inputs (CBMC nondet + `make_common_data_structures.h` initializers).
+3. `__CPROVER_assume(...)` PRECONDITIONS constraining inputs to the valid envelope.
+4. A PRE-CALL SNAPSHOT: save any input state you will compare against after the call (e.g. original length, pointers, byte contents) into local variables.
+5. The call to `{func_name}(...)`.
+6. Where the postconditions belong, emit EXACTLY this placeholder line and nothing else there:
+   {SF_PLACEHOLDER}
+
+Rules:
+- Use `aws_default_allocator()` for any `struct aws_allocator *`.
+- Include only: `aws/common/*.h`, `proof_helpers/make_common_data_structures.h`, `assert.h`, `stdlib.h`, `stdint.h`, `stdbool.h`.
+- FORBIDDEN: `proof_helpers/proof_allocators.h`, `can_fail_allocator()`.
+- DO NOT write any `assert(...)` postcondition checks -- only the placeholder. Preconditions via `__CPROVER_assume` are expected.
+
+Output only the complete C scaffold code."""
+
+def build_sf_phase2_prompt(func_name: str, scaffold_code: str) -> str:
+    """SF Phase 2: fill postcondition assertions given the completed scaffold."""
+    return f"""Here is a CBMC proof harness SCAFFOLD for `{func_name}` with inputs, preconditions, a pre-call snapshot, and the call already set up. The postcondition assertions are missing, marked by the placeholder line `{SF_PLACEHOLDER}`.
+
+```c
+{scaffold_code}
+```
+
+Replace the `{SF_PLACEHOLDER}` line with `assert(...)` statements checking the function's postconditions, using the snapshot variables already in scope:
+- validity: pointer non-null, return value, error codes;
+- length/capacity invariants after the call;
+- frame conditions: memory that must be UNCHANGED (compare against the snapshot).
+
+Do not change the scaffold above it. Output the complete C harness."""
+
+def score_scaffold(func_name: str, scaffold_code: str, output_dir) -> dict:
+    """Score Phase-1 scaffold quality independently of assertion filling.
+    A valid scaffold compiles and verifies SUCCESS on the ORIGINAL source with the
+    placeholder removed (its setup/assumptions are memory-safe and non-vacuous).
+    Anti-null-result instrument: if scaffolds fail here, scaffold construction --
+    not assertion knowledge -- is confirmed as the failure unit."""
+    (output_dir / "sf_scaffold.c").write_text(scaffold_code, encoding="utf-8")
+    neutral = normalize_entry_point(scaffold_code.replace(SF_PLACEHOLDER, ""), func_name)
+    tmp = output_dir / "sf_scaffold_neutral_harness.c"
+    tmp.write_text(neutral, encoding="utf-8")
+    r = run_cbmc(func_name, tmp)
+    score = {
+        "compiles": r.compilation_ok,
+        "cbmc_on_original": r.verification_result,
+        "has_assume": "__CPROVER_assume" in scaffold_code,
+        "has_placeholder": SF_PLACEHOLDER in scaffold_code,
+        # vacuity caveat: a contradictory assume also yields SUCCESS; flagged for follow-up
+        "scaffold_valid": bool(r.compilation_ok and r.verification_result in ("SUCCESS", "UNSAT")),
+    }
+    (output_dir / "sf_scaffold_score.json").write_text(json.dumps(score, indent=2))
+    return score
+
+
 def build_spec_first_prompt(func_dir: str, func_name: str) -> str:
     """Condition K: spec-first phase. Ask LLM to write NL contract before generating harness."""
     active_dataset = CONDITION_DATASET["K"]
@@ -892,9 +974,19 @@ def run_feedback_loop(
 
     # Step 1: Initial generation
     print(f"\n  [Iter 1] Generating initial harness...")
-    initial_prompt = build_initial_prompt(func_dir, func_name)
-    harness_code = normalize_entry_point(
-        extract_c_code(call_qwen(SYSTEM_PROMPT, initial_prompt)), func_name)
+    if ACTIVE_CONDITION == "SF":
+        # Two-phase scaffolding-first: Phase 1 scaffold -> score -> Phase 2 fill.
+        scaffold_code = normalize_entry_point(
+            extract_c_code(call_qwen(SYSTEM_PROMPT, build_sf_phase1_prompt(func_dir, func_name))), func_name)
+        sc = score_scaffold(func_name, scaffold_code, output_dir)
+        print(f"    [SF] scaffold_valid={sc['scaffold_valid']} "
+              f"(compile={sc['compiles']}, cbmc_orig={sc['cbmc_on_original']}, assume={sc['has_assume']})")
+        harness_code = normalize_entry_point(
+            extract_c_code(call_qwen(SYSTEM_PROMPT, build_sf_phase2_prompt(func_name, scaffold_code))), func_name)
+    else:
+        initial_prompt = build_initial_prompt(func_dir, func_name)
+        harness_code = normalize_entry_point(
+            extract_c_code(call_qwen(SYSTEM_PROMPT, initial_prompt)), func_name)
 
     harness_path = output_dir / "iter_1_harness.c"
     harness_path.write_text(harness_code, encoding="utf-8")
@@ -1065,7 +1157,7 @@ def main():
     parser.add_argument("--save-json", action="store_true", help="Save aggregate results JSON")
     parser.add_argument("--condition",
                         choices=["original", "A", "B", "C", "D", "E", "F", "G", "H",
-                                 "I", "J", "K", "Oracle", "M", "A_v3", "B_v3"],
+                                 "I", "J", "K", "Oracle", "M", "SF", "A_v3", "B_v3"],
                         default="original",
                         help=("Prompt condition: A=source+NL, B=source only, C=NL+CoT, D=no-NL+CoT, "
                               "E=same-family few-shot, F=wrong-family few-shot, "
