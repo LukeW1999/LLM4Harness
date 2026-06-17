@@ -333,6 +333,19 @@ add("S6/cost","oracle LLM-side calls/condition", 1233, lambda: len(_json.load(op
 add("S6/cost","mutants per function (1233/83)", 14.9, lambda: len(_json.load(open(f"{_BASE}/evaluation/mutation_oracle_cbmc_feedback_loop_A_gptoss120b_pin.json"))["results"])/83, 0.3)
 add("S6/s2n","s2n gptoss-A Sil/GT %", 16.6, lambda: 100*_s2n("A_gptoss120b","sil")/_s2n("A_gptoss120b","gtfail"), 0.3)
 
+# ── severity stratification of silenced bugs (memory-safety %), §6.3, 2026-06-18 ──
+import re as _re
+_MEM=_re.compile(r"memcpy|memmove|memset|overlap|bounds|deref|null|out-of-bounds|pointer|is_valid|valid_memory|object", _re.I)
+def _sev_mem(cond):
+    canon={(r["func"],r["mutant"]):r.get("failed_properties",[]) for r in _json.load(open(f"{_BASE}/evaluation/gt_fail_properties_canonical370.json"))["results"]}
+    res=_json.load(open(f"{_BASE}/evaluation/mutation_oracle_cbmc_feedback_loop_{cond}.json"))["results"]
+    sil=[(r["func"],r["mutant"]) for r in res if r.get("silenced") and (r["func"],r["mutant"]) in canon]
+    mem=sum(1 for k in sil if any(_MEM.search(p.get("desc","")+" "+p.get("property","")) for p in canon[k]))
+    return mem
+add("S6.3/sev","gptoss-A memory-safety silenced", 10, lambda: _sev_mem("A_gptoss120b"), 1)
+add("S6.3/sev","Claude-A memory-safety silenced", 2, lambda: _sev_mem("A_claude"), 1)
+add("S6.3/sev","Oracle memory-safety silenced", 66, lambda: _sev_mem("Oracle_gptoss120b"), 2)
+
 # ── A3: s2n assume-relaxation cross-check (CBMC-decided KG vs AOC), 2026-06-17 ──
 def _a3(cond, field):
     d=_json.load(open(f"{_BASE}/evaluation/b1_relax_s2n_{cond}.json"))
