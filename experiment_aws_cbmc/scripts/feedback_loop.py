@@ -102,6 +102,7 @@ CONDITION_DATASET = {
     "Oracle":   experiment_dir / "dataset_condA",   # GT __CPROVER_assume preconditions provided
     "M":        experiment_dir / "dataset_condA",   # minimal CBMC guidance: scalar bounding instruction
     "SF":       experiment_dir / "dataset_condA",   # scaffolding-first: two-phase scaffold then fill (dynamic prompts)
+    "PC":       experiment_dir / "dataset_condA",   # postcondition-checklist probe (condA base + generic postcondition checklist)
     "A_v3":     experiment_dir / "dataset_condA",
     "B_v3":     experiment_dir / "dataset_condB",
 }
@@ -120,6 +121,7 @@ CONDITION_PROMPT = {
     "K":        "prompt_condK.txt",   # spec-first: asks for NL contract first, then harness
     "Oracle":   "prompt_condOracle.txt",  # GT preconditions pre-loaded in initial prompt
     "M":        "prompt_condM.txt",   # minimal CBMC guidance: explicit scalar bounding + corrected UNKNOWN message
+    "PC":       "prompt_condA.txt",   # postcondition-checklist probe: condA base + generic postcondition checklist (tests if better prompting closes KG)
     "A_v3":     "prompt_condA.txt",
     "B_v3":     "prompt_condB.txt",
 }
@@ -559,6 +561,17 @@ def build_initial_prompt(func_dir: str, func_name: str) -> str:
         else:
             prompt = prompt.replace("{EXAMPLE_FUNC}", "(no example available)")
             prompt = prompt.replace("{EXAMPLE_HARNESS}", "/* No reference harness available. */")
+
+    # Condition PC: append a GENERIC postcondition checklist (no GT-specific hints) to test
+    # whether systematic postcondition elicitation closes the knowledge gap.
+    if ACTIVE_CONDITION == "PC":
+        prompt += """
+
+## Postcondition checklist --- assert EVERY item that applies, do not skip any as "obvious":
+1. RETURN / OUTPUTS: for the return value and every output parameter, assert its expected value (and error code) on BOTH the success and the failure path of the function.
+2. FRAME (inputs that must not change): for every input the function is not supposed to modify, snapshot it BEFORE the call and assert after the call that it is unchanged (length, capacity, pointer, and byte contents).
+3. INVARIANTS: after the call, assert every length / capacity / validity invariant the result must satisfy (e.g. the data structure is still valid; lengths and capacities remain consistent).
+Write an explicit assert() for each applicable item above; completeness of postconditions is the priority."""
 
     return prompt
 
@@ -1157,7 +1170,7 @@ def main():
     parser.add_argument("--save-json", action="store_true", help="Save aggregate results JSON")
     parser.add_argument("--condition",
                         choices=["original", "A", "B", "C", "D", "E", "F", "G", "H",
-                                 "I", "J", "K", "Oracle", "M", "SF", "A_v3", "B_v3"],
+                                 "I", "J", "K", "Oracle", "M", "SF", "PC", "A_v3", "B_v3"],
                         default="original",
                         help=("Prompt condition: A=source+NL, B=source only, C=NL+CoT, D=no-NL+CoT, "
                               "E=same-family few-shot, F=wrong-family few-shot, "
