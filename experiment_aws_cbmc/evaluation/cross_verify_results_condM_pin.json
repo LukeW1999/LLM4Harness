@@ -33,9 +33,9 @@
       "(b > 0) && (a > (uint32_max - b))|assertion"
     ],
     "llm_only_harness": [
+      "*r == old_r|assertion",
       "result == aws_op_success || result == aws_op_err|assertion",
-      "*r == a + b|assertion",
-      "*r == old_r|assertion"
+      "*r == a + b|assertion"
     ]
   },
   {
@@ -67,11 +67,11 @@
     "classification": "STRONG_EQUIV",
     "unmatched_gt_harness": [],
     "llm_only_harness": [
-      "result == aws_op_success || result == aws_op_err|assertion",
-      "buf.allocator == null|assertion",
-      "buf.buffer == null|assertion",
+      "buf check failed|precondition_instance",
       "buf.buffer != null|assertion",
-      "buf.capacity == 0|assertion"
+      "buf.capacity == 0|assertion",
+      "buf.buffer == null|assertion",
+      "result == aws_op_success || result == aws_op_err|assertion"
     ]
   },
   {
@@ -105,10 +105,10 @@
     ],
     "llm_only_harness": [
       "list.length > 0|assertion",
-      "list.length == old.length|assertion",
+      "list.alloc == old.alloc|assertion",
       "list.current_size == old.current_size|assertion",
-      "list.length == 0|assertion",
-      "list.data == old.data|assertion"
+      "list.data == old.data|assertion",
+      "list.length == old.length|assertion"
     ]
   },
   {
@@ -144,11 +144,11 @@
       "old_from.len == from.len|assertion"
     ],
     "llm_only_harness": [
-      "to.allocator == old_to.allocator|assertion",
+      "to.capacity == old_to.capacity|assertion",
+      "to.buffer == old_to.buffer|assertion",
       "to.buffer[idx] == old_to.buffer[idx]|assertion",
       "to.len == old_to.len|assertion",
-      "to.buffer == old_to.buffer|assertion",
-      "to.capacity == old_to.capacity|assertion"
+      "to.allocator == old_to.allocator|assertion"
     ]
   },
   {
@@ -183,11 +183,11 @@
       "to_add.prev == old_last|assertion"
     ],
     "llm_only_harness": [
-      "list.tail.next == null|assertion",
+      "node.next == &list.tail|assertion",
+      "old_last.next == &node|assertion",
       "list.tail.prev == &node|assertion",
-      "node.prev == old_last|assertion",
       "list.head.prev == null|assertion",
-      "old_last.next == &node|assertion"
+      "list.tail.next == null|assertion"
     ]
   },
   {
@@ -227,12 +227,12 @@
   {
     "func": "aws_mul_size_checked",
     "gt_verify": "SUCCESS",
-    "llm_verify": "TIMEOUT",
-    "verification_equivalent": false,
+    "llm_verify": "SUCCESS",
+    "verification_equivalent": true,
     "gt_all_count": 109,
-    "llm_all_count": 106,
+    "llm_all_count": 108,
     "gt_harness_count": 4,
-    "llm_harness_count": 1,
+    "llm_harness_count": 3,
     "harness_matched": 0,
     "harness_recall": 0.0,
     "harness_precision": 0.0,
@@ -240,13 +240,16 @@
     "harness_recall_fuzzy": 0.0,
     "harness_precision_fuzzy": 0.0,
     "gt_assume_count": 0,
-    "llm_assume_count": 0,
-    "llm_extra_assume_count": 0,
-    "stripped_assumes": [],
+    "llm_assume_count": 2,
+    "llm_extra_assume_count": 2,
+    "stripped_assumes": [
+      "a <= 1000",
+      "b <= 1000"
+    ],
     "weakened_verify": "TIMEOUT",
-    "over_constrained": false,
-    "assume_adequacy": "TIGHT",
-    "classification": "NOT_EQUIV",
+    "over_constrained": true,
+    "assume_adequacy": "OVER",
+    "classification": "VERIFY_EQUIV_ONLY",
     "unmatched_gt_harness": [
       "r == a * b|assertion",
       "__cprover_overflow_mult(a, b)|assertion",
@@ -254,6 +257,8 @@
       "__cprover_overflow_mult(a, b)|assertion"
     ],
     "llm_only_harness": [
+      "result == old_result|assertion",
+      "overflow == expected_overflow|assertion",
       "result == a * b|assertion"
     ]
   },
@@ -289,11 +294,11 @@
       "r == a * b|assertion"
     ],
     "llm_only_harness": [
-      "b == old_b|assertion",
-      "result == a * b|assertion",
       "a == old_a|assertion",
+      "result == 0|assertion",
       "result / a == b|assertion",
-      "result == 0|assertion"
+      "result == a * b|assertion",
+      "b == old_b|assertion"
     ]
   },
   {
@@ -358,11 +363,11 @@
       "test_val > ((size_max >> 1) + 1)|assertion"
     ],
     "llm_only_harness": [
-      "*result == 1|assertion",
-      "rc == aws_op_err|assertion",
+      "*result == old_result|assertion",
       "n > size_max_power_of_two|assertion",
-      "*result >= n|assertion",
-      "result == &result_val|assertion"
+      "n == n|assertion",
+      "(*result & (*result - 1)) == 0|assertion",
+      "*result == 1|assertion"
     ]
   },
   {
@@ -424,9 +429,9 @@
     "unmatched_gt_harness": [],
     "llm_only_harness": [
       "buf.buffer == old_buf.buffer|assertion",
-      "buf.buffer[i] == 0|assertion",
+      "buf.capacity == old_buf.capacity|assertion",
       "buf.allocator == old_buf.allocator|assertion",
-      "buf.capacity == old_buf.capacity|assertion"
+      "buf.buffer[i] == 0|assertion"
     ]
   },
   {
@@ -458,11 +463,11 @@
       "buf.capacity == old.capacity|assertion"
     ],
     "llm_only_harness": [
-      "buf.capacity == old_buf.capacity|assertion",
+      "buf.buffer == old_buf.buffer|assertion",
       "buf.buffer[i] == 0|assertion",
       "aws_byte_buf_is_valid(&_arg_)|assertion",
-      "buf.allocator == old_buf.allocator|assertion",
-      "buf.buffer == old_buf.buffer|assertion"
+      "buf.capacity == old_buf.capacity|assertion",
+      "buf.allocator == old_buf.allocator|assertion"
     ]
   },
   {
@@ -484,7 +489,7 @@
     "llm_assume_count": 1,
     "llm_extra_assume_count": 1,
     "stripped_assumes": [
-      "src_len <= 1024"
+      "len <= MAX_BUFFER_SIZE"
     ],
     "weakened_verify": "COMPILE_ERROR",
     "over_constrained": false,
@@ -564,10 +569,10 @@
     ],
     "llm_only_harness": [
       "a.capacity == old_a.capacity|assertion",
-      "b.buffer == old_b.buffer|assertion",
-      "a.allocator == old_a.allocator|assertion",
       "a.len == old_a.len|assertion",
-      "b.allocator == old_b.allocator|assertion"
+      "b.buffer == old_b.buffer|assertion",
+      "a.buffer == old_a.buffer|assertion",
+      "a.allocator == old_a.allocator|assertion"
     ]
   },
   {
@@ -625,9 +630,9 @@
     "llm_assume_count": 5,
     "llm_extra_assume_count": 3,
     "stripped_assumes": [
-      "val != NULL",
-      "AWS_MEM_IS_READABLE(val, list.item_size)",
-      "index <= MAX_INITIAL_ITEM_ALLOCATION"
+      "index <= MAX_INITIAL_ITEM_ALLOCATION",
+      "list.item_size == 0 || index <= SIZE_MAX / list.item_size",
+      "val_buf != NULL || list.item_size == 0"
     ],
     "weakened_verify": "COMPILE_ERROR",
     "over_constrained": false,
@@ -658,8 +663,8 @@
     "llm_assume_count": 4,
     "llm_extra_assume_count": 2,
     "stripped_assumes": [
-      "val_buf != NULL",
-      "index <= (MAX_INITIAL_ITEM_ALLOCATION * 2U)"
+      "index <= list.length",
+      "val != NULL"
     ],
     "weakened_verify": "COMPILE_ERROR",
     "over_constrained": false,
@@ -702,10 +707,10 @@
     ],
     "llm_only_harness": [
       "list.length > 0|assertion",
-      "list.length == old.length|assertion",
+      "list.alloc == old.alloc|assertion",
       "list.current_size == old.current_size|assertion",
-      "list.length == 0|assertion",
-      "list.item_size == old.item_size|assertion"
+      "list.length == old.length|assertion",
+      "list.length == 0|assertion"
     ]
   },
   {
@@ -724,11 +729,10 @@
     "harness_recall_fuzzy": 0.0,
     "harness_precision_fuzzy": 0.0,
     "gt_assume_count": 2,
-    "llm_assume_count": 4,
-    "llm_extra_assume_count": 2,
+    "llm_assume_count": 2,
+    "llm_extra_assume_count": 1,
     "stripped_assumes": [
-      "index <= MAX_INITIAL_ITEM_ALLOCATION",
-      "val_buf != NULL"
+      "list.item_size > 0"
     ],
     "weakened_verify": "COMPILE_ERROR",
     "over_constrained": false,
@@ -777,35 +781,38 @@
   {
     "func": "aws_array_list_push_back",
     "gt_verify": "SUCCESS",
-    "llm_verify": "COMPILE_ERROR",
-    "verification_equivalent": false,
+    "llm_verify": "SUCCESS",
+    "verification_equivalent": true,
     "gt_all_count": 344,
-    "llm_all_count": 0,
+    "llm_all_count": 368,
     "gt_harness_count": 2,
-    "llm_harness_count": 0,
-    "harness_matched": 0,
-    "harness_recall": 0.0,
-    "harness_precision": 0.0,
-    "harness_matched_fuzzy": 0,
-    "harness_recall_fuzzy": 0.0,
-    "harness_precision_fuzzy": 0.0,
+    "llm_harness_count": 18,
+    "harness_matched": 2,
+    "harness_recall": 1.0,
+    "harness_precision": 0.111,
+    "harness_matched_fuzzy": 2,
+    "harness_recall_fuzzy": 1.0,
+    "harness_precision_fuzzy": 0.111,
     "gt_assume_count": 5,
-    "llm_assume_count": 4,
+    "llm_assume_count": 5,
     "llm_extra_assume_count": 3,
     "stripped_assumes": [
       "list.item_size > 0",
-      "list.item_size <= MAX_ITEM_SIZE",
-      "index <= (MAX_INITIAL_ITEM_ALLOCATION * 2)"
+      "val != NULL",
+      "read_buf != NULL"
     ],
-    "weakened_verify": "COMPILE_ERROR",
+    "weakened_verify": "SUCCESS",
     "over_constrained": false,
     "assume_adequacy": "REDUNDANT",
-    "classification": "NOT_EQUIV",
-    "unmatched_gt_harness": [
-      "list.length == old.length + 1|assertion",
-      "aws_array_list_is_valid(&_arg_)|assertion"
-    ],
-    "llm_only_harness": []
+    "classification": "STRONG_EQUIV",
+    "unmatched_gt_harness": [],
+    "llm_only_harness": [
+      "size != 0 check failed|precondition_instance",
+      "list.alloc == old.alloc|assertion",
+      "get_res == aws_op_success|assertion",
+      "list.current_size == old.current_size|assertion",
+      "allocator.mem_release != ((void *)0) check failed|precondition_instance"
+    ]
   },
   {
     "func": "aws_array_list_get_at",
@@ -838,46 +845,49 @@
       "list.length > index|assertion"
     ],
     "llm_only_harness": [
-      "list.length == old.length|assertion",
-      "result == aws_op_success || result == aws_op_err|assertion",
+      "index < old.length|assertion",
+      "list.alloc == old.alloc|assertion",
       "list.current_size == old.current_size|assertion",
-      "list.data == old.data|assertion",
-      "dereferenced function pointer must be one of [s_aligned_malloc, s_non_aligned_malloc, nondet_compare]|pointer dereference"
+      "dereferenced function pointer must be one of [s_aligned_malloc, s_non_aligned_malloc, nondet_compare]|pointer dereference",
+      "list.data == old.data|assertion"
     ]
   },
   {
     "func": "aws_linked_list_push_front",
     "gt_verify": "SUCCESS",
-    "llm_verify": "COMPILE_ERROR",
-    "verification_equivalent": false,
+    "llm_verify": "SUCCESS",
+    "verification_equivalent": true,
     "gt_all_count": 176,
-    "llm_all_count": 0,
+    "llm_all_count": 186,
     "gt_harness_count": 5,
-    "llm_harness_count": 0,
-    "harness_matched": 0,
-    "harness_recall": 0.0,
-    "harness_precision": 0.0,
-    "harness_matched_fuzzy": 0,
-    "harness_recall_fuzzy": 0.0,
-    "harness_precision_fuzzy": 0.0,
+    "llm_harness_count": 12,
+    "harness_matched": 1,
+    "harness_recall": 0.2,
+    "harness_precision": 0.083,
+    "harness_matched_fuzzy": 1,
+    "harness_recall_fuzzy": 0.2,
+    "harness_precision_fuzzy": 0.083,
     "gt_assume_count": 0,
-    "llm_assume_count": 1,
-    "llm_extra_assume_count": 1,
-    "stripped_assumes": [
-      "aws_linked_list_is_valid(&list)"
-    ],
-    "weakened_verify": "COMPILE_ERROR",
+    "llm_assume_count": 0,
+    "llm_extra_assume_count": 0,
+    "stripped_assumes": [],
+    "weakened_verify": "SUCCESS",
     "over_constrained": false,
-    "assume_adequacy": "REDUNDANT",
-    "classification": "NOT_EQUIV",
+    "assume_adequacy": "TIGHT",
+    "classification": "VERIFY_EQUIV_ONLY",
     "unmatched_gt_harness": [
-      "aws_linked_list_is_valid(&_arg_)|assertion",
       "aws_linked_list_node_prev_is_valid(&_arg_)|assertion",
       "aws_linked_list_node_next_is_valid(&_arg_)|assertion",
       "list.head.next == &to_add|assertion",
       "to_add.next == old_first|assertion"
     ],
-    "llm_only_harness": []
+    "llm_only_harness": [
+      "list.tail.prev != &list.head|assertion",
+      "node.next == &list.tail|assertion",
+      "list.tail.prev == &node|assertion",
+      "node.prev == &list.head|assertion",
+      "node.next == old_head_next|assertion"
+    ]
   },
   {
     "func": "aws_linked_list_pop_back",
@@ -913,35 +923,36 @@
   {
     "func": "aws_linked_list_pop_front",
     "gt_verify": "SUCCESS",
-    "llm_verify": "COMPILE_ERROR",
+    "llm_verify": "FAIL",
     "verification_equivalent": false,
     "gt_all_count": 182,
-    "llm_all_count": 0,
+    "llm_all_count": 185,
     "gt_harness_count": 4,
-    "llm_harness_count": 0,
-    "harness_matched": 0,
-    "harness_recall": 0.0,
-    "harness_precision": 0.0,
-    "harness_matched_fuzzy": 0,
-    "harness_recall_fuzzy": 0.0,
-    "harness_precision_fuzzy": 0.0,
+    "llm_harness_count": 4,
+    "harness_matched": 2,
+    "harness_recall": 0.5,
+    "harness_precision": 0.5,
+    "harness_matched_fuzzy": 2,
+    "harness_recall_fuzzy": 0.5,
+    "harness_precision_fuzzy": 0.5,
     "gt_assume_count": 1,
     "llm_assume_count": 1,
     "llm_extra_assume_count": 1,
     "stripped_assumes": [
       "aws_linked_list_is_valid(&list)"
     ],
-    "weakened_verify": "COMPILE_ERROR",
+    "weakened_verify": "FAIL",
     "over_constrained": false,
     "assume_adequacy": "REDUNDANT",
     "classification": "NOT_EQUIV",
     "unmatched_gt_harness": [
-      "list check failed|precondition_instance",
-      "aws_linked_list_is_valid(&_arg_)|assertion",
       "ret.next == null && ret.prev == null|assertion",
       "list.head.next == old_next_first|assertion"
     ],
-    "llm_only_harness": []
+    "llm_only_harness": [
+      "list.tail.prev == &list.head|assertion",
+      "list.head.next == &list.tail|assertion"
+    ]
   },
   {
     "func": "aws_linked_list_init",
@@ -969,43 +980,41 @@
     "unmatched_gt_harness": [],
     "llm_only_harness": [
       "list.tail.next == null|assertion",
+      "list.head.prev == null|assertion",
       "list.tail.prev == &list.head|assertion",
-      "list.head.next == &list.tail|assertion",
-      "list.head.prev == null|assertion"
+      "list.head.next == &list.tail|assertion"
     ]
   },
   {
     "func": "aws_linked_list_node_reset",
     "gt_verify": "SUCCESS",
-    "llm_verify": "COMPILE_ERROR",
-    "verification_equivalent": false,
+    "llm_verify": "SUCCESS",
+    "verification_equivalent": true,
     "gt_all_count": 165,
-    "llm_all_count": 0,
+    "llm_all_count": 166,
     "gt_harness_count": 2,
-    "llm_harness_count": 0,
-    "harness_matched": 0,
-    "harness_recall": 0.0,
-    "harness_precision": 0.0,
-    "harness_matched_fuzzy": 0,
-    "harness_recall_fuzzy": 0.0,
-    "harness_precision_fuzzy": 0.0,
+    "llm_harness_count": 3,
+    "harness_matched": 1,
+    "harness_recall": 0.5,
+    "harness_precision": 0.333,
+    "harness_matched_fuzzy": 1,
+    "harness_recall_fuzzy": 0.5,
+    "harness_precision_fuzzy": 0.333,
     "gt_assume_count": 0,
-    "llm_assume_count": 3,
-    "llm_extra_assume_count": 3,
-    "stripped_assumes": [
-      "aws_linked_list_is_valid(&dst)",
-      "aws_linked_list_is_valid(&src)",
-      "&dst != &src"
-    ],
-    "weakened_verify": "COMPILE_ERROR",
+    "llm_assume_count": 0,
+    "llm_extra_assume_count": 0,
+    "stripped_assumes": [],
+    "weakened_verify": "SUCCESS",
     "over_constrained": false,
-    "assume_adequacy": "REDUNDANT",
-    "classification": "NOT_EQUIV",
+    "assume_adequacy": "TIGHT",
+    "classification": "WEAK_EQUIV",
     "unmatched_gt_harness": [
-      "node != ((void *)0) check failed|precondition_instance",
       "aws_is_zeroed(node)|assertion"
     ],
-    "llm_only_harness": []
+    "llm_only_harness": [
+      "node.prev is null after reset|assertion",
+      "node.next is null after reset|assertion"
+    ]
   },
   {
     "func": "aws_array_eq",
@@ -1039,11 +1048,11 @@
       "lhs_len == rhs_len|assertion"
     ],
     "llm_only_harness": [
-      "result == expected|assertion",
-      "double free|precondition_instance",
-      "free called for stack-allocated object|precondition_instance",
       "free argument has offset zero|precondition_instance",
-      "input array [array_b] must be readable up to [len_b].|precondition_instance"
+      "double free|precondition_instance",
+      "free argument must be null or valid pointer|precondition_instance",
+      "free argument must be dynamic object|precondition_instance",
+      "result == expected|assertion"
     ]
   },
   {
@@ -1078,11 +1087,11 @@
       "array_len == str_len|assertion"
     ],
     "llm_only_harness": [
-      "result == expected|assertion",
-      "c_str != ((void *)0) check failed|precondition_instance",
+      "c_str == c_str|assertion",
       "c_str_len == c_str_len|assertion",
-      "array == array|assertion",
-      "array_len == array_len|assertion"
+      "either input pointer [array_a] mustn't be null or input [array_len] mustn't be zero.|precondition_instance",
+      "array_len == array_len|assertion",
+      "array == array|assertion"
     ]
   },
   {
@@ -1112,11 +1121,11 @@
       "aws_is_zeroed(list)|assertion"
     ],
     "llm_only_harness": [
-      "list.length == 0|assertion",
+      "list.current_size == 0|assertion",
       "list.item_size == 0|assertion",
-      "list.alloc == null|assertion",
       "list.data == null|assertion",
-      "list.current_size == 0|assertion"
+      "list.alloc == null|assertion",
+      "list.length == 0|assertion"
     ]
   },
   {
@@ -1182,11 +1191,11 @@
       "list.length > index|assertion"
     ],
     "llm_only_harness": [
-      "list.length == old.length|assertion",
+      "list.alloc == old.alloc|assertion",
       "list.current_size == old.current_size|assertion",
-      "list.data == old.data|assertion",
       "val == old_val|assertion",
-      "val == (void *)((uint8_t *)list.data + (list.item_size * index))|assertion"
+      "val == (void *)((uint8_t *)list.data + (list.item_size * index))|assertion",
+      "list.data == old.data|assertion"
     ]
   },
   {
@@ -1221,11 +1230,11 @@
       "aws_is_zeroed(list)|assertion"
     ],
     "llm_only_harness": [
-      "list.length == old.length|assertion",
-      "list.current_size == old.current_size|assertion",
-      "list.alloc == alloc|assertion",
-      "list.data != null|assertion",
-      "list.item_size == 0|assertion"
+      "list.current_size == 0|assertion",
+      "list.data == null|assertion",
+      "list.item_size == 0|assertion",
+      "list.alloc == old.alloc|assertion",
+      "list.current_size == old.current_size|assertion"
     ]
   },
   {
@@ -1263,10 +1272,10 @@
       "list.current_size == initial_item_allocation * item_size|assertion"
     ],
     "llm_only_harness": [
-      "list.data == raw_array|assertion",
-      "size != 0 check failed|precondition_instance",
       "list.current_size == current_size|assertion",
+      "size != 0 check failed|precondition_instance",
       "allocator != ((void *)0) check failed|precondition_instance",
+      "list.data == raw_array|assertion",
       "allocator.mem_acquire != ((void *)0) check failed|precondition_instance"
     ]
   },
@@ -1363,11 +1372,11 @@
     "classification": "LLM_STRONGER",
     "unmatched_gt_harness": [],
     "llm_only_harness": [
-      "list.length == old.length|assertion",
+      "list.alloc == old.alloc|assertion",
       "list.current_size == old.current_size|assertion",
-      "list.data != null|assertion",
       "list.data == old.data|assertion",
-      "list.item_size == old.item_size|assertion"
+      "list.length == old.length|assertion",
+      "list.data != null|assertion"
     ]
   },
   {
@@ -1398,49 +1407,57 @@
     "classification": "STRONG_EQUIV",
     "unmatched_gt_harness": [],
     "llm_only_harness": [
-      "list.length == old.length|assertion",
+      "list.alloc == old.alloc|assertion",
       "list.current_size == old.current_size|assertion",
-      "list.data != null|assertion",
       "list.data == old.data|assertion",
-      "list.item_size == old.item_size|assertion"
+      "list.length == old.length|assertion",
+      "list.data != null|assertion"
     ]
   },
   {
     "func": "aws_array_list_swap",
     "gt_verify": "SUCCESS",
-    "llm_verify": "COMPILE_ERROR",
+    "llm_verify": "UNKNOWN",
     "verification_equivalent": false,
     "gt_all_count": 303,
-    "llm_all_count": 0,
+    "llm_all_count": 307,
     "gt_harness_count": 9,
-    "llm_harness_count": 0,
-    "harness_matched": 0,
-    "harness_recall": 0.0,
-    "harness_precision": 0.0,
-    "harness_matched_fuzzy": 0,
-    "harness_recall_fuzzy": 0.0,
-    "harness_precision_fuzzy": 0.0,
+    "llm_harness_count": 8,
+    "harness_matched": 7,
+    "harness_recall": 0.778,
+    "harness_precision": 0.875,
+    "harness_matched_fuzzy": 7,
+    "harness_recall_fuzzy": 0.778,
+    "harness_precision_fuzzy": 0.875,
     "gt_assume_count": 4,
-    "llm_assume_count": 6,
-    "llm_extra_assume_count": 4,
+    "llm_assume_count": 15,
+    "llm_extra_assume_count": 13,
     "stripped_assumes": [
+      "list.length > 0",
+      "list.item_size > 0",
+      "list.current_size == list.length * list.item_size",
       "a < list.length",
       "b < list.length",
-      "list.item_size <= MAX_ITEM_SIZE",
-      "result == AWS_OP_SUCCESS"
+      "old_elem_a != NULL",
+      "old_elem_b != NULL",
+      "get_a_res == AWS_OP_SUCCESS",
+      "get_b_res == AWS_OP_SUCCESS",
+      "new_elem_a != NULL",
+      "new_elem_b != NULL",
+      "get_a2_res == AWS_OP_SUCCESS",
+      "get_b2_res == AWS_OP_SUCCESS"
     ],
-    "weakened_verify": "COMPILE_ERROR",
+    "weakened_verify": "UNKNOWN",
     "over_constrained": false,
     "assume_adequacy": "REDUNDANT",
     "classification": "NOT_EQUIV",
     "unmatched_gt_harness": [
       "!list.length || list.data check failed|precondition_instance",
-      "!list.length || list.data check failed|precondition_instance",
-      "a < list.length check failed|precondition_instance",
-      "b < list.length check failed|precondition_instance",
-      "aws_array_list_is_valid(&_arg_)|assertion"
+      "!list.length || list.data check failed|precondition_instance"
     ],
-    "llm_only_harness": []
+    "llm_only_harness": [
+      "list.data == old.data|assertion"
+    ]
   },
   {
     "func": "aws_array_list_swap_contents",
@@ -1475,11 +1492,11 @@
     "classification": "CONSTRAINED_EQUIV",
     "unmatched_gt_harness": [],
     "llm_only_harness": [
-      "list_b.alloc == old_a.alloc|assertion",
+      "list_b.item_size == old_a.item_size|assertion",
+      "list_b.data == old_a.data|assertion",
       "list_a.item_size == old_b.item_size|assertion",
-      "list_a.data == old_b.data|assertion",
-      "list_b.length == old_a.length|assertion",
-      "list_b.item_size == old_a.item_size|assertion"
+      "list_b.alloc == old_a.alloc|assertion",
+      "list_a.length == old_b.length|assertion"
     ]
   },
   {
@@ -1491,21 +1508,25 @@
     "llm_all_count": 545,
     "gt_harness_count": 12,
     "llm_harness_count": 18,
-    "harness_matched": 9,
-    "harness_recall": 0.75,
-    "harness_precision": 0.5,
-    "harness_matched_fuzzy": 9,
-    "harness_recall_fuzzy": 0.75,
-    "harness_precision_fuzzy": 0.5,
+    "harness_matched": 3,
+    "harness_recall": 0.25,
+    "harness_precision": 0.167,
+    "harness_matched_fuzzy": 3,
+    "harness_recall_fuzzy": 0.25,
+    "harness_precision_fuzzy": 0.167,
     "gt_assume_count": 4,
-    "llm_assume_count": 7,
-    "llm_extra_assume_count": 5,
+    "llm_assume_count": 10,
+    "llm_extra_assume_count": 9,
     "stripped_assumes": [
       "aws_byte_buf_is_bounded(&buffer, MAX_BUFFER_SIZE)",
       "aws_byte_buf_is_valid(&buffer)",
+      "buffer.capacity > 0",
+      "buffer.len <= buffer.capacity",
+      "buffer.allocator != NULL",
       "buffer.buffer != NULL",
       "len <= MAX_BUFFER_SIZE",
-      "len <= buffer.capacity - buffer.len"
+      "len <= buffer.len",
+      "len <= buffer.capacity"
     ],
     "weakened_verify": "FAIL",
     "over_constrained": false,
@@ -1514,14 +1535,16 @@
     "unmatched_gt_harness": [
       "buf.len == old.len + len|assertion",
       "buf.capacity == old.capacity|assertion",
-      "buf.allocator == old.allocator|assertion"
+      "buf.allocator == old.allocator|assertion",
+      "output.len == 0|assertion",
+      "output.allocator == null|assertion"
     ],
     "llm_only_harness": [
-      "buffer.len == old_buffer.len + len|assertion",
-      "buffer.len == old_buffer.len|assertion",
-      "buffer.buffer == old_buffer.buffer|assertion",
-      "buffer.capacity == old_buffer.capacity|assertion",
-      "output.buffer == buffer.buffer + old_buffer.len|assertion"
+      "buffer.len == old_buffer.len - len|assertion",
+      "buffer.allocator == old_buffer.allocator|assertion",
+      "buffer.capacity == old_buffer.capacity - len|assertion",
+      "output.allocator == old_buffer.allocator|assertion",
+      "output.buffer == old_output.buffer|assertion"
     ]
   },
   {
@@ -1559,10 +1582,10 @@
     ],
     "llm_only_harness": [
       "dest.allocator == old_dest.allocator|assertion",
-      "src[i].allocator == old_src[i].allocator|assertion",
-      "src[i].capacity == old_src[i].capacity|assertion",
-      "dest.len == old_dest.len + total_src_len|assertion",
-      "dest.len <= old_dest.len + total_src_len|assertion"
+      "dest.len <= old_dest.len + total_src_len|assertion",
+      "src[i].buffer == old_src[i].buffer|assertion",
+      "dest.len >= old_dest.len|assertion",
+      "src[i].capacity == old_src[i].capacity|assertion"
     ]
   },
   {
@@ -1666,8 +1689,8 @@
     ],
     "llm_only_harness": [
       "buf.buffer != null|assertion",
-      "buf.len == actual_len|assertion",
       "buf.buffer == null|assertion",
+      "buf.len == actual_len|assertion",
       "buf.capacity == actual_len|assertion"
     ]
   },
@@ -1701,11 +1724,11 @@
       "aws_byte_buf_has_allocator(dest)|assertion"
     ],
     "llm_only_harness": [
-      "dest.buffer == null|assertion",
-      "dest.allocator == allocator|assertion",
+      "src.allocator == old_src.allocator|assertion",
+      "src.buffer == old_src.buffer|assertion",
       "src.capacity == old_src.capacity|assertion",
-      "dest.allocator == null|assertion",
-      "src.buffer == old_src.buffer|assertion"
+      "dest.len == 0|assertion",
+      "dest.buffer != src.buffer|assertion"
     ]
   },
   {
@@ -1740,9 +1763,9 @@
       "buf.allocator == allocator|assertion"
     ],
     "llm_only_harness": [
-      "dest.buffer == null|assertion",
-      "dest.allocator == allocator|assertion",
       "memset destination region writeable|precondition_instance",
+      "dest.len == 0|assertion",
+      "dest check failed|precondition_instance",
       "dest.capacity == src.len|assertion",
       "dest.allocator == null|assertion"
     ]
@@ -1779,11 +1802,11 @@
       "lhs.len == rhs.len|assertion"
     ],
     "llm_only_harness": [
-      "a.ptr == old_a.ptr|assertion",
-      "result == expected|assertion",
       "b.ptr == old_b.ptr|assertion",
       "a.len == old_a.len|assertion",
-      "b.len == old_b.len|assertion"
+      "b.len == old_b.len|assertion",
+      "result == expected|assertion",
+      "a.ptr == old_a.ptr|assertion"
     ]
   },
   {
@@ -1818,11 +1841,11 @@
       "cur.len == buf.len|assertion"
     ],
     "llm_only_harness": [
-      "result == expected|assertion",
-      "a.ptr == old_a.ptr|assertion",
-      "b.buffer == old_b.buffer|assertion",
       "a.len == old_a.len|assertion",
-      "input array [array_b] must be readable up to [len_b].|precondition_instance"
+      "b.buffer == old_b.buffer|assertion",
+      "b.capacity == old_b.capacity|assertion",
+      "b.len == old_b.len|assertion",
+      "result == expected|assertion"
     ]
   },
   {
@@ -1857,11 +1880,11 @@
       "cur.len == str_len|assertion"
     ],
     "llm_only_harness": [
-      "c_str != ((void *)0) check failed|precondition_instance",
-      "result == aws_array_eq_c_str(cursor.ptr, cursor.len, c_str)|assertion",
       "either input pointer [array_a] mustn't be null or input [array_len] mustn't be zero.|precondition_instance",
+      "result == aws_array_eq_c_str(cursor.ptr, cursor.len, c_str)|assertion",
+      "cursor.ptr == old.ptr|assertion",
       "cursor.len == old.len|assertion",
-      "cursor.ptr == old.ptr|assertion"
+      "c_str != ((void *)0) check failed|precondition_instance"
     ]
   },
   {
@@ -1895,11 +1918,11 @@
       "cur.len == length|assertion"
     ],
     "llm_only_harness": [
-      "cur.ptr == (uint8_t *)bytes|assertion",
-      "cur.len == len|assertion",
+      "free argument has offset zero|precondition_instance",
       "double free|precondition_instance",
-      "free called for stack-allocated object|precondition_instance",
-      "free argument has offset zero|precondition_instance"
+      "cur.len == len|assertion",
+      "input array [bytes] must be readable up to [len].|precondition_instance",
+      "free argument must be dynamic object|precondition_instance"
     ]
   },
   {
@@ -1927,10 +1950,10 @@
     "classification": "STRONG_EQUIV",
     "unmatched_gt_harness": [],
     "llm_only_harness": [
-      "buf.buffer == old.buffer|assertion",
       "buf.capacity == old.capacity|assertion",
-      "cur.ptr == buf.buffer|assertion",
       "buf.allocator == old.allocator|assertion",
+      "buf.buffer == old.buffer|assertion",
+      "cur.ptr == buf.buffer|assertion",
       "buf.len == old.len|assertion"
     ]
   },
@@ -1967,10 +1990,10 @@
       "cur.len == 0|assertion"
     ],
     "llm_only_harness": [
-      "result.len == str_len|assertion",
-      "result.ptr == null|assertion",
       "result.ptr == (uint8_t *)c_str|assertion",
-      "result.len == 0|assertion"
+      "result.len == 0|assertion",
+      "result.len == str_len|assertion",
+      "result.ptr == null|assertion"
     ]
   },
   {
@@ -2038,11 +2061,11 @@
       "back == old_last|assertion"
     ],
     "llm_only_harness": [
+      "list.tail.prev == old.tail.prev|assertion",
       "result == list.tail.prev|assertion",
       "list.tail.next == old.tail.next|assertion",
-      "list.head.next == old.head.next|assertion",
-      "list.tail.prev == old.tail.prev|assertion",
-      "list.head.prev == old.head.prev|assertion"
+      "list.head.prev == old.head.prev|assertion",
+      "list.head.next == old.head.next|assertion"
     ]
   },
   {
@@ -2072,11 +2095,11 @@
       "rval == list.head.next|assertion"
     ],
     "llm_only_harness": [
+      "list.tail.prev == old.tail.prev|assertion",
       "result == list.head.next|assertion",
       "result == &list.tail || aws_linked_list_node_is_in_list(result)|assertion",
       "list.tail.next == old.tail.next|assertion",
-      "list.head.next == old.head.next|assertion",
-      "list.tail.prev == old.tail.prev|assertion"
+      "list.head.prev == old.head.prev|assertion"
     ]
   },
   {
@@ -2106,8 +2129,8 @@
     "llm_only_harness": [
       "list.tail.prev == old.tail.prev|assertion",
       "list.head.prev == old.head.prev|assertion",
-      "list.tail.next == old.tail.next|assertion",
-      "list.head.next == old.head.next|assertion"
+      "list.head.next == old.head.next|assertion",
+      "list.tail.next == old.tail.next|assertion"
     ]
   },
   {
@@ -2142,11 +2165,11 @@
       "front == old_first|assertion"
     ],
     "llm_only_harness": [
-      "list.tail.next == old.tail.next|assertion",
-      "list.head.next == old.head.next|assertion",
-      "aws_linked_list_is_valid_deep(&list)|assertion",
       "list.tail.prev == old.tail.prev|assertion",
-      "list.head.prev == old.head.prev|assertion"
+      "result == old.head.next|assertion",
+      "list.tail.next == old.tail.next|assertion",
+      "list.head.prev == old.head.prev|assertion",
+      "aws_linked_list_is_valid_deep(&list)|assertion"
     ]
   },
   {
@@ -2188,11 +2211,11 @@
       "after.next == &to_add|assertion"
     ],
     "llm_only_harness": [
+      "after.next == to_add|assertion",
       "node != ((void *)0) check failed|precondition_instance",
       "aws_linked_list_node_is_in_list(to_add)|assertion",
-      "list check failed|precondition_instance",
-      "after.next == to_add|assertion",
-      "aws_linked_list_is_valid_deep(&list)|assertion"
+      "old_after_next.next == old_next_next|assertion",
+      "old_after_next.prev == to_add|assertion"
     ]
   },
   {
@@ -2232,11 +2255,11 @@
       "before.prev == &to_add|assertion"
     ],
     "llm_only_harness": [
+      "aws_linked_list_node_is_in_list(to_add)|assertion",
       "to_add.prev == old_last|assertion",
-      "old_last.next == to_add|assertion",
-      "list.tail.prev == to_add|assertion",
       "to_add.next == &list.tail|assertion",
-      "list.tail.next == old.tail.next|assertion"
+      "old_last.next == to_add|assertion",
+      "list.tail.prev == to_add|assertion"
     ]
   },
   {
@@ -2270,11 +2293,11 @@
       "rval == &after|assertion"
     ],
     "llm_only_harness": [
+      "node.next == old_node.next|assertion",
+      "list.head.next == old_list.head.next|assertion",
       "node.prev == old_node.prev|assertion",
       "list.tail.prev == old_list.tail.prev|assertion",
-      "list.head.next == old_list.head.next|assertion",
-      "aws_linked_list_is_valid_deep(&list)|assertion",
-      "node.next == old_node.next|assertion"
+      "list.head.prev == old_list.head.prev|assertion"
     ]
   },
   {
@@ -2312,9 +2335,9 @@
       "rval == &before|assertion"
     ],
     "llm_only_harness": [
-      "list.tail.prev == old_list.tail.prev|assertion",
-      "list.head.next == old_list.head.next|assertion",
       "result == old_prev|assertion",
+      "list.head.next == old_list.head.next|assertion",
+      "list.tail.prev == old_list.tail.prev|assertion",
       "list check failed|precondition_instance",
       "list.head.prev == old_list.head.prev|assertion"
     ]
@@ -2346,11 +2369,11 @@
       "rval == list.tail.prev|assertion"
     ],
     "llm_only_harness": [
+      "list.tail.prev == old.tail.prev|assertion",
       "result == list.tail.prev|assertion",
-      "list.tail.next == old.tail.next|assertion",
-      "list.head.next == old.head.next|assertion",
       "result == old.tail.prev|assertion",
-      "list.tail.prev == old.tail.prev|assertion"
+      "list.tail.next == old.tail.next|assertion",
+      "list.head.prev == old.head.prev|assertion"
     ]
   },
   {
@@ -2380,11 +2403,11 @@
       "rval == &list.head|assertion"
     ],
     "llm_only_harness": [
-      "list.tail.next == old.tail.next|assertion",
-      "list.head.next == old.head.next|assertion",
-      "r == &list.head|assertion",
       "list.tail.prev == old.tail.prev|assertion",
-      "list.head.prev == old.head.prev|assertion"
+      "r == &list.head|assertion",
+      "list.tail.next == old.tail.next|assertion",
+      "list.head.prev == old.head.prev|assertion",
+      "list.head.next == old.head.next|assertion"
     ]
   },
   {
@@ -2421,11 +2444,11 @@
       "prev.next == &next|assertion"
     ],
     "llm_only_harness": [
-      "list check failed|precondition_instance",
-      "aws_linked_list_is_valid_deep(&list)|assertion",
       "next.prev == prev|assertion",
-      "prev.next == next|assertion",
-      "aws_linked_list_is_valid(&_arg_)|assertion"
+      "!aws_linked_list_node_is_in_list(node)|assertion",
+      "aws_linked_list_is_valid(&_arg_)|assertion",
+      "list check failed|precondition_instance",
+      "aws_linked_list_is_valid_deep(&list)|assertion"
     ]
   },
   {
@@ -2459,11 +2482,11 @@
       "old_a.tail.prev == old_a_head|assertion"
     ],
     "llm_only_harness": [
-      "a.head.next.prev == &a.head|assertion",
       "b.head.next.prev == &b.head|assertion",
-      "b.tail.prev.next == &b.tail|assertion",
+      "aws_linked_list_empty(&a)|assertion",
+      "aws_linked_list_empty(&b)|assertion",
       "a.tail.prev.next == &a.tail|assertion",
-      "aws_linked_list_empty(&b)|assertion"
+      "b.tail.prev.next == &b.tail|assertion"
     ]
   },
   {
@@ -2567,11 +2590,11 @@
       "old_buf == buf|assertion"
     ],
     "llm_only_harness": [
+      "ring.allocator == old_ring.allocator|assertion",
+      "buf.buffer < ring.allocation_end|assertion",
+      "buf.buffer == old_buf.buffer|assertion",
       "buf.buffer >= ring.allocation|assertion",
-      "!(buf.buffer >= ring.allocation && buf.buffer < ring.allocation_end)|assertion",
-      "buf.len == old_buf.len|assertion",
-      "ring.head == old_ring.head|assertion",
-      "buf.capacity == old_buf.capacity|assertion"
+      "ring.allocation == old_ring.allocation|assertion"
     ]
   },
   {
@@ -2609,9 +2632,9 @@
       "aws_atomic_load_ptr(&ring_buf.tail) == null|assertion"
     ],
     "llm_only_harness": [
+      "aws_ring_buffer_is_valid(&_arg_)|assertion",
       "aws_atomic_load_int(&ring_buf.head) == 0|assertion",
-      "aws_atomic_load_int(&ring_buf.tail) == 0|assertion",
-      "aws_ring_buffer_is_valid(&_arg_)|assertion"
+      "aws_atomic_load_int(&ring_buf.tail) == 0|assertion"
     ]
   },
   {
@@ -2684,8 +2707,8 @@
     ],
     "llm_only_harness": [
       "ring.allocator == old_ring.allocator|assertion",
-      "ring.allocation_end == old_ring.allocation_end|assertion",
-      "ring.allocation == old_ring.allocation|assertion"
+      "ring.allocation == old_ring.allocation|assertion",
+      "ring.allocation_end == old_ring.allocation_end|assertion"
     ]
   },
   {
@@ -2704,7 +2727,7 @@
     "harness_recall_fuzzy": 0.0,
     "harness_precision_fuzzy": 0.0,
     "gt_assume_count": 1,
-    "llm_assume_count": 2,
+    "llm_assume_count": 1,
     "llm_extra_assume_count": 1,
     "stripped_assumes": [
       "len <= MAX_BUFFER_SIZE"
@@ -2815,11 +2838,11 @@
       "aws_string_is_valid(str_b)|assertion"
     ],
     "llm_only_harness": [
-      "result == expected|assertion",
-      "aws_string_is_valid(b)|assertion",
       "a == null|assertion",
-      "b == null|assertion",
-      "a.allocator == old_a.allocator|assertion"
+      "aws_string_is_valid(a)|assertion",
+      "a.len == old_a.len|assertion",
+      "a.allocator == old_a.allocator|assertion",
+      "b == null|assertion"
     ]
   },
   {
@@ -2874,12 +2897,13 @@
     "harness_recall_fuzzy": 0.0,
     "harness_precision_fuzzy": 0.0,
     "gt_assume_count": 2,
-    "llm_assume_count": 3,
-    "llm_extra_assume_count": 3,
+    "llm_assume_count": 4,
+    "llm_extra_assume_count": 4,
     "stripped_assumes": [
       "len <= MAX_BUFFER_SIZE",
-      "cur->len <= MAX_BUFFER_SIZE",
-      "cur->ptr != NULL"
+      "aws_string_is_valid(tmp)",
+      "cur_len <= MAX_BUFFER_SIZE",
+      "aws_byte_cursor_is_bounded(cur, MAX_BUFFER_SIZE)"
     ],
     "weakened_verify": "COMPILE_ERROR",
     "over_constrained": false,
@@ -2959,10 +2983,10 @@
       "aws_c_string_is_valid(c_str)|assertion"
     ],
     "llm_only_harness": [
+      "result.len == len|assertion",
       "result.allocator == allocator|assertion",
       "aws_string_is_valid(result)|assertion",
-      "allocator == old_allocator|assertion",
-      "result.len == len|assertion"
+      "allocator == old_allocator|assertion"
     ]
   },
   {
@@ -3003,11 +3027,11 @@
       "aws_ring_buffer_buf_belongs_to_pool(&ring_buf, &buf)|assertion"
     ],
     "llm_only_harness": [
-      "atomic_head_ptr(&ring_buf) == old_head|assertion",
       "ring_buf.allocation_end == old_ring.allocation_end|assertion",
-      "dest.len == old_dest.len|assertion",
-      "dest.buffer >= ring_buf.allocation|assertion",
-      "dest.capacity == old_dest.capacity|assertion"
+      "dest.len == 0|assertion",
+      "atomic_tail_ptr(&ring_buf) == old_tail|assertion",
+      "dest.capacity == old_dest.capacity|assertion",
+      "dest.len == old_dest.len|assertion"
     ]
   }
 ]

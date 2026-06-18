@@ -1,0 +1,9 @@
+{
+  "note": "Full-corpus pinned RQ1 after #48 completion (de-biased; 80-83 funcs/cond, DeepInfra/bf16). Supersedes the n=37 common-complete (#46).",
+  "date": "2026-06-18",
+  "pass_pct":   {"A":71.1,"G":38.6,"H":78.8,"I":66.2,"J":79.5,"K":81.7,"M":77.1,"Oracle":90.4},
+  "recall_pct": {"A":35.3,"G":27.6,"H":33.1,"I":31.5,"J":35.2,"K":25.1,"M":37.3,"Oracle":22.1},
+  "spearman_pass_recall": -0.357, "p": 0.385, "n_conditions": 8,
+  "highest_pass": ["Oracle","K"], "their_recall_rank": [8,7],
+  "finding": "On the de-biased full corpus, pinned rho(pass,recall)=-0.357 (n.s.), SAME negative direction as unpinned (-0.26); highest-pass conditions (Oracle 90.4%/K 81.7%) have the LOWEST recall (22.1%/25.1%). The earlier +0.45 (n=37 common-complete, #46) was a truncation/survivorship artifact, not a real sign flip. Precision-robust claim holds: pass rate carries no positive info about recall; de-biased pinned pass rates (A 71.1%, not the optimistic 91.9% on n=37)."
+}

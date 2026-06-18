@@ -31,11 +31,11 @@
       "(b > 0) && (a > (uint32_max - b))|assertion"
     ],
     "llm_only_harness": [
-      "buf.dummy_before == dummy_before_old|assertion",
-      "ret == aws_op_err|assertion",
-      "buf.result == a + b|assertion",
+      "buf.result <= size_max|assertion",
       "free argument has offset zero|precondition_instance",
-      "buf.dummy_after == dummy_after_old|assertion"
+      "free argument must be null or valid pointer|precondition_instance",
+      "buf.result == a + b|assertion",
+      "ret == aws_op_err|assertion"
     ]
   },
   {
@@ -70,11 +70,11 @@
     "classification": "STRONG_EQUIV",
     "unmatched_gt_harness": [],
     "llm_only_harness": [
-      "old_buffer[i] == old_content[i]|assertion",
-      "allocator.mem_release != ((void *)0) check failed|precondition_instance",
+      "buf.buffer == null|assertion",
+      "buf.buffer != null|assertion",
       "buf.capacity == 0|assertion",
-      "double free|precondition_instance",
-      "free argument has offset zero|precondition_instance"
+      "allocator.mem_release != ((void *)0) check failed|precondition_instance",
+      "old_buffer[i] == old_content[i]|assertion"
     ]
   },
   {
@@ -115,11 +115,11 @@
       "list.length != 0|assertion"
     ],
     "llm_only_harness": [
-      "aws_mem_is_readable(old_data, list.current_size)|assertion",
-      "list.length == old_length|assertion",
-      "ret == aws_op_success|assertion",
       "list.item_size == old_item_sz|assertion",
-      "list.current_size == old_current_sz|assertion"
+      "list.current_size == old_current_sz|assertion",
+      "list.length == old_length|assertion",
+      "aws_mem_is_readable(old_data, list.current_size)|assertion",
+      "ret == aws_op_success|assertion"
     ]
   },
   {
@@ -159,11 +159,11 @@
       "old_to.allocator == to.allocator|assertion"
     ],
     "llm_only_harness": [
-      "to.len increased by from.len on success|assertion",
-      "return value matches capacity condition|assertion",
       "pre\u2011existing data in to.buffer unchanged|assertion",
+      "free argument has offset zero|precondition_instance",
       "to remains a valid aws_byte_buf|assertion",
-      "free argument has offset zero|precondition_instance"
+      "to.len increased by from.len on success|assertion",
+      "free argument must be null or valid pointer|precondition_instance"
     ]
   },
   {
@@ -201,11 +201,11 @@
       "to_add.prev == old_last|assertion"
     ],
     "llm_only_harness": [
-      "head.next unchanged for non\u2011empty list|assertion",
-      "node is the new last element (tail.prev == node)|assertion",
+      "list remains a valid linked list after push_back|assertion",
       "old_last.prev unchanged|assertion",
-      "previous last element now points to the new node|assertion",
-      "node.prev points to the previous last element|assertion"
+      "node.next points to the tail sentinel|assertion",
+      "node.prev points to the previous last element|assertion",
+      "head.next unchanged for non\u2011empty list|assertion"
     ]
   },
   {
@@ -238,9 +238,9 @@
       "r == a + b|assertion"
     ],
     "llm_only_harness": [
+      "result == size_max|assertion",
       "dummy_buf[i] == dummy_buf_snapshot[i]|assertion",
-      "result == a + b|assertion",
-      "result == size_max|assertion"
+      "result == a + b|assertion"
     ]
   },
   {
@@ -273,11 +273,11 @@
       "__cprover_overflow_mult(a, b)|assertion"
     ],
     "llm_only_harness": [
+      "ret == aws_op_success || ret == aws_op_err|assertion",
       "result == a * b|assertion",
       "guard_before == old_guard_before|assertion",
-      "guard_after == old_guard_after|assertion",
       "result == old_result|assertion",
-      "ret == aws_op_success || ret == aws_op_err|assertion"
+      "guard_after == old_guard_after|assertion"
     ]
   },
   {
@@ -310,11 +310,11 @@
       "r == a * b|assertion"
     ],
     "llm_only_harness": [
+      "result == expected|assertion",
       "free argument has offset zero|precondition_instance",
-      "snapshot[i] == before[i]|assertion",
-      "free argument must be dynamic object|precondition_instance",
       "free argument must be null or valid pointer|precondition_instance",
-      "double free|precondition_instance"
+      "double free|precondition_instance",
+      "free argument must be dynamic object|precondition_instance"
     ]
   },
   {
@@ -344,11 +344,11 @@
       "rval == (popcount == 1)|assertion"
     ],
     "llm_only_harness": [
-      "memcpy destination region writeable|precondition_instance",
-      "dummy[i] == dummy_snapshot[i]|assertion",
-      "memcpy src/dst overlap|precondition_instance",
       "memcpy source region readable|precondition_instance",
-      "result == expected|assertion"
+      "memcpy src/dst overlap|precondition_instance",
+      "result == expected|assertion",
+      "dummy[i] == dummy_snapshot[i]|assertion",
+      "memcpy destination region writeable|precondition_instance"
     ]
   },
   {
@@ -382,10 +382,10 @@
     ],
     "llm_only_harness": [
       "result == 1|assertion",
-      "aws_is_power_of_two(result)|assertion",
-      "ret != aws_op_success|assertion",
-      "(result >> 1) < n|assertion",
-      "pre[i] == pre_copy[i]|assertion"
+      "pre[i] == pre_copy[i]|assertion",
+      "post[i] == post_copy[i]|assertion",
+      "result >= n|assertion",
+      "ret != aws_op_success|assertion"
     ]
   },
   {
@@ -417,11 +417,11 @@
     "classification": "STRONG_EQUIV",
     "unmatched_gt_harness": [],
     "llm_only_harness": [
-      "memcpy destination region writeable|precondition_instance",
-      "memcmp(other, other_before, sizeof(other)) == 0|assertion",
-      "memcpy src/dst overlap|precondition_instance",
       "memcpy source region readable|precondition_instance",
-      "allocator.mem_acquire != ((void *)0) check failed|precondition_instance"
+      "memcpy src/dst overlap|precondition_instance",
+      "memcmp(other, other_before, sizeof(other)) == 0|assertion",
+      "size != 0 check failed|precondition_instance",
+      "allocator != ((void *)0) check failed|precondition_instance"
     ]
   },
   {
@@ -457,11 +457,11 @@
       "buf.len == 0|assertion"
     ],
     "llm_only_harness": [
-      "guard byte after buffer unchanged|assertion",
+      "free called for stack-allocated object|precondition_instance",
+      "free argument has offset zero|precondition_instance",
+      "postcondition: len reset to zero|assertion",
       "precondition: aws_byte_buf_is_valid|assertion",
-      "postcondition: aws_byte_buf_is_valid after secure_zero|assertion",
-      "guard byte before buffer unchanged|assertion",
-      "double free|precondition_instance"
+      "free argument must be null or valid pointer|precondition_instance"
     ]
   },
   {
@@ -498,11 +498,11 @@
       "buf.capacity == old.capacity|assertion"
     ],
     "llm_only_harness": [
-      "free called for stack-allocated object|precondition_instance",
-      "raw[capacity + 1] == guard_after|assertion",
+      "buf.buffer == null|assertion",
+      "buf.buffer[i] == orig[i]|assertion",
       "buf.capacity == capacity|assertion",
-      "buf.buffer == raw + 1|assertion",
-      "double free|precondition_instance"
+      "free argument has offset zero|precondition_instance",
+      "free argument must be null or valid pointer|precondition_instance"
     ]
   },
   {
@@ -537,11 +537,11 @@
       "buf.capacity == length|assertion"
     ],
     "llm_only_harness": [
-      "memcpy destination region writeable|precondition_instance",
+      "memcpy source region readable|precondition_instance",
+      "buf.buffer == null|assertion",
       "buf.buffer == bytes|assertion",
       "memcpy src/dst overlap|precondition_instance",
-      "input array [bytes] must be writable up to [len] bytes.|precondition_instance",
-      "memcpy source region readable|precondition_instance"
+      "buf.capacity == len|assertion"
     ]
   },
   {
@@ -575,11 +575,11 @@
       "buf.allocator == null|assertion"
     ],
     "llm_only_harness": [
-      "bytes[capacity] == canary|assertion",
-      "buf.buffer == bytes|assertion",
       "input array [bytes] must be writable up to [capacity] bytes.|precondition_instance",
-      "double free|precondition_instance",
-      "free argument has offset zero|precondition_instance"
+      "buf.buffer == null|assertion",
+      "buf.buffer == bytes|assertion",
+      "free argument has offset zero|precondition_instance",
+      "free argument must be null or valid pointer|precondition_instance"
     ]
   },
   {
@@ -618,11 +618,11 @@
       "lhs.len == rhs.len|assertion"
     ],
     "llm_only_harness": [
+      "free argument must be null or valid pointer|precondition_instance",
       "allocator.mem_acquire != ((void *)0) check failed|precondition_instance",
-      "double free|precondition_instance",
-      "b.len == old_b.len|assertion",
-      "allocator != ((void *)0) check failed|precondition_instance",
-      "allocator.mem_release != ((void *)0) check failed|precondition_instance"
+      "free argument has offset zero|precondition_instance",
+      "free called for new[] object|precondition_instance",
+      "b.capacity == old_b.capacity|assertion"
     ]
   },
   {
@@ -661,11 +661,11 @@
       "cursor.len == old.len - len|assertion"
     ],
     "llm_only_harness": [
+      "cursor.len == pre_cursor.len|assertion",
+      "rv.len == adv_len|assertion",
+      "free argument must be null or valid pointer|precondition_instance",
       "allocator.mem_acquire != ((void *)0) check failed|precondition_instance",
-      "double free|precondition_instance",
-      "allocator != ((void *)0) check failed|precondition_instance",
-      "allocator.mem_release != ((void *)0) check failed|precondition_instance",
-      "memcmp(mem_snapshot, orig_buf, orig_len) == 0|assertion"
+      "cursor.len == pre_cursor.len - adv_len|assertion"
     ]
   },
   {
@@ -699,11 +699,11 @@
     "classification": "NOT_EQUIV",
     "unmatched_gt_harness": [],
     "llm_only_harness": [
-      "free called for stack-allocated object|precondition_instance",
-      "memcpy destination region writeable|precondition_instance",
+      "memcpy source region readable|precondition_instance",
       "ret == list.length|assertion",
+      "list.length == old_list.length|assertion",
       "memcpy src/dst overlap|precondition_instance",
-      "double free|precondition_instance"
+      "old_data != null|assertion"
     ]
   },
   {
@@ -738,11 +738,11 @@
       "capacity == list.current_size / list.item_size|assertion"
     ],
     "llm_only_harness": [
-      "memcmp(list.data, old_data, current_size) == 0|assertion",
-      "memcpy destination region writeable|precondition_instance",
+      "memcpy source region readable|precondition_instance",
+      "list.length == old_list.length|assertion",
+      "memcpy src/dst overlap|precondition_instance",
       "free called for stack-allocated object|precondition_instance",
-      "free called for new[] object|precondition_instance",
-      "memcpy src/dst overlap|precondition_instance"
+      "list.alloc == old_list.alloc|assertion"
     ]
   },
   {
@@ -813,11 +813,11 @@
       "list.data == old.data|assertion"
     ],
     "llm_only_harness": [
-      "memcpy destination region writeable|precondition_instance",
-      "free called for new[] object|precondition_instance",
+      "memcpy source region readable|precondition_instance",
+      "memcmp(old_data, list.data, old_current_size) == 0|assertion",
       "memcpy src/dst overlap|precondition_instance",
-      "item_size > 0 check failed|precondition_instance",
-      "free argument has offset zero|precondition_instance"
+      "free called for stack-allocated object|precondition_instance",
+      "alloc != ((void *)0) check failed|precondition_instance"
     ]
   },
   {
@@ -858,11 +858,11 @@
       "list.item_size == old.item_size|assertion"
     ],
     "llm_only_harness": [
-      "list.length == old_length|assertion",
-      "allocator.mem_acquire != ((void *)0) check failed|precondition_instance",
+      "free argument must be null or valid pointer|precondition_instance",
+      "list.length == old_length - 1|assertion",
       "ret == aws_op_success|assertion",
-      "double free|precondition_instance",
-      "allocator != ((void *)0) check failed|precondition_instance"
+      "allocator.mem_acquire != ((void *)0) check failed|precondition_instance",
+      "buffer[i] == old_buffer[i]|assertion"
     ]
   },
   {
@@ -900,10 +900,10 @@
       "list.length == old.length + 1|assertion"
     ],
     "llm_only_harness": [
-      "list.data == old_list.data|assertion",
-      "double free|precondition_instance",
-      "allocator != ((void *)0) check failed|precondition_instance",
-      "allocator.mem_release != ((void *)0) check failed|precondition_instance",
+      "list.length == old_list.length|assertion",
+      "item_size > 0 check failed|precondition_instance",
+      "list.current_size == old_list.current_size|assertion",
+      "free argument must be null or valid pointer|precondition_instance",
       "list.current_size / list.item_size >= list.length|assertion"
     ]
   },
@@ -944,10 +944,10 @@
     ],
     "llm_only_harness": [
       "allocator.mem_release != ((void *)0) check failed|precondition_instance",
-      "item_size > 0 check failed|precondition_instance",
-      "allocator.mem_acquire != ((void *)0) check failed|precondition_instance",
       "size != 0 check failed|precondition_instance",
-      "allocator != ((void *)0) check failed|precondition_instance"
+      "alloc != ((void *)0) check failed|precondition_instance",
+      "allocator != ((void *)0) check failed|precondition_instance",
+      "item_size > 0 check failed|precondition_instance"
     ]
   },
   {
@@ -985,11 +985,11 @@
       "to_add.next == old_first|assertion"
     ],
     "llm_only_harness": [
-      "list check failed|precondition_instance",
-      "aws_linked_list_is_valid(list) after push_front|assertion",
-      "node != ((void *)0) check failed|precondition_instance",
-      "list.tail.prev == node when list was empty|assertion",
-      "free argument has offset zero|precondition_instance"
+      "free called for stack-allocated object|precondition_instance",
+      "node.prev == &list.head after push_front|assertion",
+      "list.tail.next unchanged|assertion",
+      "free argument has offset zero|precondition_instance",
+      "list.head.next == node after push_front|assertion"
     ]
   },
   {
@@ -1023,11 +1023,11 @@
       "list.tail.prev == old_prev_last|assertion"
     ],
     "llm_only_harness": [
-      "nodes[i].prev == old_prev[i]|assertion",
-      "new_back.next == &list.tail|assertion",
-      "double free|precondition_instance",
-      "nodes[i].next == old_next[i]|assertion",
-      "free argument must be dynamic object|precondition_instance"
+      "free argument must be null or valid pointer|precondition_instance",
+      "node != ((void *)0) check failed|precondition_instance",
+      "nodes[n - 2].next == &list.tail|assertion",
+      "free argument has offset zero|precondition_instance",
+      "removed == old_back|assertion"
     ]
   },
   {
@@ -1060,11 +1060,11 @@
       "list.head.next == old_next_first|assertion"
     ],
     "llm_only_harness": [
-      "popped.next == null|assertion",
-      "cur.prev.next == cur|assertion",
+      "cur.next.prev == cur|assertion",
+      "popped == expected_front|assertion",
+      "popped.prev == null|assertion",
       "node != ((void *)0) check failed|precondition_instance",
-      "len_after + 1 == len_before|assertion",
-      "popped.prev == null|assertion"
+      "len_after + 1 == len_before|assertion"
     ]
   },
   {
@@ -1095,11 +1095,11 @@
     "classification": "STRONG_EQUIV",
     "unmatched_gt_harness": [],
     "llm_only_harness": [
-      "aws_linked_list_empty(&list)|assertion",
-      "other.head.next == other_before.head.next|assertion",
-      "other.tail.next == other_before.tail.next|assertion",
       "other.head.prev == other_before.head.prev|assertion",
-      "other.tail.prev == other_before.tail.prev|assertion"
+      "other.head.next == other_before.head.next|assertion",
+      "other.tail.prev == other_before.tail.prev|assertion",
+      "aws_linked_list_empty(&list)|assertion",
+      "other.tail.next == other_before.tail.next|assertion"
     ]
   },
   {
@@ -1136,11 +1136,11 @@
       "aws_is_zeroed(node)|assertion"
     ],
     "llm_only_harness": [
-      "other_node.next == other_node_copy.next|assertion",
-      "aws_is_zeroed(*other_node) == aws_is_zeroed(other_node_copy)|assertion",
+      "other_node.prev == other_node_copy.prev|assertion",
       "node.next == null|assertion",
-      "aws_is_zeroed(*node)|assertion",
-      "node.prev == null|assertion"
+      "free argument has offset zero|precondition_instance",
+      "free argument must be null or valid pointer|precondition_instance",
+      "double free|precondition_instance"
     ]
   },
   {
@@ -1173,11 +1173,11 @@
       "lhs_len == rhs_len|assertion"
     ],
     "llm_only_harness": [
-      "memcpy destination region writeable|precondition_instance",
-      "rhs[i] == rhs_copy[i]|assertion",
-      "memcpy src/dst overlap|precondition_instance",
+      "memcpy source region readable|precondition_instance",
       "lhs[i] == lhs_copy[i]|assertion",
-      "free argument has offset zero|precondition_instance"
+      "memcpy src/dst overlap|precondition_instance",
+      "result == expected|assertion",
+      "free called for stack-allocated object|precondition_instance"
     ]
   },
   {
@@ -1213,11 +1213,11 @@
       "array_len == str_len|assertion"
     ],
     "llm_only_harness": [
-      "either input pointer [array_a] mustn't be null or input [array_len] mustn't be zero.|precondition_instance",
+      "result == expected|assertion",
+      "c_str != ((void *)0) check failed|precondition_instance",
       "free argument has offset zero|precondition_instance",
-      "array[i] == array_copy[i]|assertion",
-      "free argument must be dynamic object|precondition_instance",
-      "free argument must be null or valid pointer|precondition_instance"
+      "free argument must be null or valid pointer|precondition_instance",
+      "double free|precondition_instance"
     ]
   },
   {
@@ -1253,21 +1253,21 @@
     ],
     "llm_only_harness": [
       "list.current_size == 0u|assertion",
-      "old.alloc != list.alloc|assertion",
+      "list.data == null|assertion",
       "list.length == 0u|assertion",
-      "dereferenced function pointer must be one of [s_non_aligned_malloc, s_aligned_malloc, nondet_compare]|pointer dereference",
-      "list.alloc == null|assertion"
+      "list.item_size == 0u|assertion",
+      "dereferenced function pointer must be one of [s_non_aligned_malloc, s_aligned_malloc, nondet_compare]|pointer dereference"
     ]
   },
   {
     "func": "aws_array_list_erase",
     "gt_verify": "UNKNOWN",
-    "llm_verify": "COMPILE_ERROR",
-    "verification_equivalent": false,
+    "llm_verify": "UNKNOWN",
+    "verification_equivalent": true,
     "gt_all_count": 296,
-    "llm_all_count": 0,
+    "llm_all_count": 342,
     "gt_harness_count": 6,
-    "llm_harness_count": 0,
+    "llm_harness_count": 29,
     "harness_matched": 0,
     "harness_recall": 0.0,
     "harness_precision": 0.0,
@@ -1275,18 +1275,22 @@
     "harness_recall_fuzzy": 0.0,
     "harness_precision_fuzzy": 0.0,
     "gt_assume_count": 2,
-    "llm_assume_count": 4,
-    "llm_extra_assume_count": 4,
+    "llm_assume_count": 9,
+    "llm_extra_assume_count": 8,
     "stripped_assumes": [
-      "list.length <= list.item_capacity",
-      "buf != NULL",
-      "old_data != NULL",
-      "old_data != list.data"
+      "init_allocation <= 10U",
+      "item_size > 0 && item_size <= 16U",
+      "init_res == AWS_OP_SUCCESS",
+      "aws_array_list_is_bounded(&list, 10U, 16U)",
+      "push_count <= max_push",
+      "elem != NULL",
+      "push_res == AWS_OP_SUCCESS",
+      "old_buffer != NULL"
     ],
     "weakened_verify": "UNKNOWN",
     "over_constrained": false,
     "assume_adequacy": "REDUNDANT",
-    "classification": "NOT_EQUIV",
+    "classification": "VERIFY_EQUIV_ONLY",
     "unmatched_gt_harness": [
       "list.length == old.length - 1|assertion",
       "list.item_size == old.item_size|assertion",
@@ -1294,7 +1298,13 @@
       "list.current_size == old.current_size|assertion",
       "index < old.length|assertion"
     ],
-    "llm_only_harness": []
+    "llm_only_harness": [
+      "item_size > 0 check failed|precondition_instance",
+      "free argument must be null or valid pointer|precondition_instance",
+      "((uint8_t *)old_data)[i] == old_buffer[i]|assertion",
+      "free argument has offset zero|precondition_instance",
+      "aws_array_list_length(&list) == old_length|assertion"
+    ]
   },
   {
     "func": "aws_array_list_get_at_ptr",
@@ -1336,11 +1346,11 @@
       "aws_array_list_is_valid(&_arg_)|assertion"
     ],
     "llm_only_harness": [
+      "!list.length || list.data check failed|precondition_instance",
+      "list.length == old_list.length|assertion",
       "free called for stack-allocated object|precondition_instance",
-      "free called for new[] object|precondition_instance",
-      "index < aws_array_list_length(&old_list)|assertion",
-      "val == old_val|assertion",
-      "double free|precondition_instance"
+      "list.alloc == old_list.alloc|assertion",
+      "free argument has offset zero|precondition_instance"
     ]
   },
   {
@@ -1374,11 +1384,11 @@
       "list.current_size == item_size * initial_item_allocation|assertion"
     ],
     "llm_only_harness": [
-      "item_size should be set to input item_size on success|assertion",
-      "return should be success when allocation succeeds|assertion",
-      "data must be null on error|assertion",
+      "return should be success when allocation size is zero|assertion",
+      "length should be zero after initialization|assertion",
+      "return should be error when allocation fails|assertion",
       "length must be zero on error|assertion",
-      "unrelated memory must remain unchanged|assertion"
+      "data must be null on error|assertion"
     ]
   },
   {
@@ -1410,11 +1420,11 @@
       "list.current_size == initial_item_allocation * item_size|assertion"
     ],
     "llm_only_harness": [
-      "memcpy destination region writeable|precondition_instance",
-      "memcmp(raw_array, raw_array_copy, len) == 0|assertion",
+      "memcpy source region readable|precondition_instance",
       "memcpy src/dst overlap|precondition_instance",
+      "free called for stack-allocated object|precondition_instance",
       "free argument has offset zero|precondition_instance",
-      "list.current_size == len|assertion"
+      "list.data == raw_array|assertion"
     ]
   },
   {
@@ -1452,11 +1462,11 @@
       "list.item_size == old.item_size|assertion"
     ],
     "llm_only_harness": [
-      "ret == aws_error_list_empty|assertion",
-      "list.length == old_len|assertion",
+      "list.length == old_len - 1|assertion",
+      "alloc != ((void *)0) check failed|precondition_instance",
       "item_size > 0 check failed|precondition_instance",
-      "list.data == old_data|assertion",
-      "list.current_size <= old_capacity * list.item_size|assertion"
+      "list.item_size check failed|precondition_instance",
+      "list.length == old_len|assertion"
     ]
   },
   {
@@ -1536,11 +1546,11 @@
       "list.length == old.length + 1|assertion"
     ],
     "llm_only_harness": [
-      "((uint8_t *)list.data)[i] == old_data[i]|assertion",
-      "free called for new[] object|precondition_instance",
-      "item_size > 0 check failed|precondition_instance",
+      "!list.length || list.data check failed|precondition_instance",
+      "aws_array_list_length(&list) == old_len + 1u|assertion",
+      "alloc != ((void *)0) check failed|precondition_instance",
       "free argument has offset zero|precondition_instance",
-      "!list.length || list.data check failed|precondition_instance"
+      "aws_array_list_capacity(&list) >= old_cap|assertion"
     ]
   },
   {
@@ -1579,11 +1589,11 @@
       "list.length == index + 1|assertion"
     ],
     "llm_only_harness": [
-      "byte_memcmp((uint8_t *)list.data + (index * list.item_size), val, list.item_size) == 0|assertion",
-      "list.length == old_length|assertion",
+      "ret == aws_op_success || ret == aws_op_err|assertion",
       "new_capacity >= old_capacity|assertion",
+      "list.item_size == old_item_sz|assertion",
       "free argument has offset zero|precondition_instance",
-      "list.length <= new_capacity|assertion"
+      "free argument must be null or valid pointer|precondition_instance"
     ]
   },
   {
@@ -1622,11 +1632,11 @@
       "list.item_size == old.item_size|assertion"
     ],
     "llm_only_harness": [
-      "list must remain valid after swap|assertion",
-      "double free|precondition_instance",
+      "item_size > 0 check failed|precondition_instance",
+      "free argument must be null or valid pointer|precondition_instance",
       "list allocator must be unchanged after swap|assertion",
-      "list data pointer must be unchanged after swap|assertion",
-      "element at index_b must be swapped with element at index_a|assertion"
+      "element at index_a must be swapped with element at index_b|assertion",
+      "list current_size must be unchanged after swap|assertion"
     ]
   },
   {
@@ -1672,96 +1682,94 @@
   {
     "func": "aws_byte_buf_advance",
     "gt_verify": "SUCCESS",
-    "llm_verify": "FAIL",
-    "verification_equivalent": false,
+    "llm_verify": "SUCCESS",
+    "verification_equivalent": true,
     "gt_all_count": 539,
-    "llm_all_count": 536,
+    "llm_all_count": 527,
     "gt_harness_count": 12,
-    "llm_harness_count": 9,
-    "harness_matched": 1,
-    "harness_recall": 0.083,
-    "harness_precision": 0.111,
-    "harness_matched_fuzzy": 1,
-    "harness_recall_fuzzy": 0.083,
-    "harness_precision_fuzzy": 0.111,
-    "gt_assume_count": 4,
-    "llm_assume_count": 7,
-    "llm_extra_assume_count": 5,
-    "stripped_assumes": [
-      "len > 0",
-      "len <= MAX_BUFFER_SIZE",
-      "buf.allocator != NULL",
-      "buf.len >= len",
-      "buf.capacity >= len"
-    ],
-    "weakened_verify": "FAIL",
-    "over_constrained": false,
-    "assume_adequacy": "REDUNDANT",
-    "classification": "NOT_EQUIV",
-    "unmatched_gt_harness": [
-      "buf.len == old.len + len|assertion",
-      "buf.capacity == old.capacity|assertion",
-      "buf.allocator == old.allocator|assertion",
-      "output.len == 0|assertion",
-      "output.allocator == null|assertion"
-    ],
-    "llm_only_harness": [
-      "buf.buffer == old_buf + len|assertion",
-      "buf.allocator == old_alloc|assertion",
-      "buf.len == old_len - len|assertion",
-      "buf.capacity == old_cap|assertion",
-      "output.allocator == old_alloc|assertion"
-    ]
-  },
-  {
-    "func": "aws_byte_buf_cat",
-    "gt_verify": "SUCCESS",
-    "llm_verify": "TIMEOUT",
-    "verification_equivalent": false,
-    "gt_all_count": 551,
-    "llm_all_count": 572,
-    "gt_harness_count": 6,
-    "llm_harness_count": 25,
+    "llm_harness_count": 0,
     "harness_matched": 0,
     "harness_recall": 0.0,
     "harness_precision": 0.0,
     "harness_matched_fuzzy": 0,
     "harness_recall_fuzzy": 0.0,
     "harness_precision_fuzzy": 0.0,
-    "gt_assume_count": 7,
-    "llm_assume_count": 19,
-    "llm_extra_assume_count": 12,
+    "gt_assume_count": 4,
+    "llm_assume_count": 9,
+    "llm_extra_assume_count": 7,
     "stripped_assumes": [
-      "dest.buffer != NULL",
-      "dest.len <= dest.capacity",
-      "buffer1.buffer != NULL",
-      "buffer1.len <= buffer1.capacity",
-      "buffer2.buffer != NULL",
-      "buffer2.len <= buffer2.capacity",
-      "buffer3.buffer != NULL",
-      "buffer3.len <= buffer3.capacity",
-      "orig_dest_buf != NULL",
-      "orig_buf1 != NULL",
-      "orig_buf2 != NULL",
-      "orig_buf3 != NULL"
+      "buf.capacity > 0 && buf.capacity <= MAX_BUFFER_SIZE",
+      "buf.buffer != NULL",
+      "init_len <= buf.capacity",
+      "len > 0 && len <= buf.len",
+      "len <= MAX_BUFFER_SIZE",
+      "output.capacity >= len && output.capacity <= MAX_BUFFER_SIZE",
+      "output.buffer != NULL"
     ],
-    "weakened_verify": "TIMEOUT",
+    "weakened_verify": "SUCCESS",
     "over_constrained": false,
     "assume_adequacy": "REDUNDANT",
-    "classification": "NOT_EQUIV",
+    "classification": "VERIFY_EQUIV_ONLY",
+    "unmatched_gt_harness": [
+      "buf.len == old.len + len|assertion",
+      "buf.capacity == old.capacity|assertion",
+      "buf.allocator == old.allocator|assertion",
+      "output.len == 0|assertion",
+      "output.capacity == len|assertion"
+    ],
+    "llm_only_harness": []
+  },
+  {
+    "func": "aws_byte_buf_cat",
+    "gt_verify": "SUCCESS",
+    "llm_verify": "SUCCESS",
+    "verification_equivalent": true,
+    "gt_all_count": 551,
+    "llm_all_count": 624,
+    "gt_harness_count": 6,
+    "llm_harness_count": 77,
+    "harness_matched": 4,
+    "harness_recall": 0.667,
+    "harness_precision": 0.052,
+    "harness_matched_fuzzy": 4,
+    "harness_recall_fuzzy": 0.667,
+    "harness_precision_fuzzy": 0.052,
+    "gt_assume_count": 7,
+    "llm_assume_count": 21,
+    "llm_extra_assume_count": 17,
+    "stripped_assumes": [
+      "dest.capacity <= MAX_BUFFER_SIZE",
+      "dest.buffer != NULL",
+      "dest.len <= dest.capacity",
+      "buffer1.capacity <= MAX_BUFFER_SIZE",
+      "buffer1.buffer != NULL",
+      "buffer1.len <= buffer1.capacity",
+      "buffer2.capacity <= MAX_BUFFER_SIZE",
+      "buffer2.buffer != NULL",
+      "buffer2.len <= buffer2.capacity",
+      "buffer3.capacity <= MAX_BUFFER_SIZE",
+      "buffer3.buffer != NULL",
+      "buffer3.len <= buffer3.capacity",
+      "number_of_args >= 1 && number_of_args <= 3",
+      "dest_copy != NULL",
+      "buf1_copy != NULL",
+      "buf2_copy != NULL",
+      "buf3_copy != NULL"
+    ],
+    "weakened_verify": "TIMEOUT",
+    "over_constrained": true,
+    "assume_adequacy": "OVER",
+    "classification": "WEAK_EQUIV",
     "unmatched_gt_harness": [
       "(old_dest.capacity - old_dest.len) >= (buffer1.len + buffer2.len + buffer3.len)|assertion",
-      "(old_dest.capacity - old_dest.len) < (buffer1.len + buffer2.len + buffer3.len)|assertion",
-      "aws_byte_buf_is_valid(&_arg_)|assertion",
-      "aws_byte_buf_is_valid(&_arg_)|assertion",
-      "aws_byte_buf_is_valid(&_arg_)|assertion"
+      "(old_dest.capacity - old_dest.len) < (buffer1.len + buffer2.len + buffer3.len)|assertion"
     ],
     "llm_only_harness": [
-      "memcpy destination region writeable|precondition_instance",
-      "buffer2.len unchanged|assertion",
-      "buffer1 contents unchanged|assertion",
-      "memcpy src/dst overlap|precondition_instance",
-      "buffer3.len unchanged|assertion"
+      "free argument must be null or valid pointer|precondition_instance",
+      "memcmp(dest.buffer + offset, buffer1.buffer, buffer1.len) == 0|assertion",
+      "memcmp(dest.buffer + offset, buffer3.buffer, buffer3.len) == 0|assertion",
+      "memcpy source region readable|precondition_instance",
+      "dest.len <= orig_dest_len + expected_total|assertion"
     ]
   },
   {
@@ -1795,8 +1803,8 @@
       "buf.allocator == null|assertion"
     ],
     "llm_only_harness": [
-      "aws_byte_buf_is_valid(&_arg_)|assertion",
-      "buf.allocator == old_buf.allocator || buf.allocator == null|assertion"
+      "buf.allocator == old_buf.allocator || buf.allocator == null|assertion",
+      "aws_byte_buf_is_valid(&_arg_)|assertion"
     ]
   },
   {
@@ -1836,11 +1844,11 @@
       "aws_byte_buf_is_valid(&_arg_)|assertion"
     ],
     "llm_only_harness": [
-      "memcpy destination region writeable|precondition_instance",
-      "buf.len <= buf.capacity|assertion",
+      "memcpy source region readable|precondition_instance",
+      "buf.capacity == buf_capacity|assertion",
       "memcpy src/dst overlap|precondition_instance",
-      "strcmp(c_str, old_c_str) == 0|assertion",
-      "memcpy source region readable|precondition_instance"
+      "result == expected|assertion",
+      "strcmp(c_str, old_c_str) == 0|assertion"
     ]
   },
   {
@@ -1878,11 +1886,11 @@
       "buf.len == 0|assertion"
     ],
     "llm_only_harness": [
-      "memcpy destination region writeable|precondition_instance",
-      "result.capacity >= expected_len|assertion",
-      "result.capacity == 0|assertion",
-      "memcmp(result.buffer, c_str, expected_len) == 0|assertion",
-      "memcpy src/dst overlap|precondition_instance"
+      "memcpy source region readable|precondition_instance",
+      "memcpy src/dst overlap|precondition_instance",
+      "free called for stack-allocated object|precondition_instance",
+      "free argument has offset zero|precondition_instance",
+      "result.capacity == 0|assertion"
     ]
   },
   {
@@ -1920,11 +1928,11 @@
       "aws_byte_buf_is_valid(&_arg_)|assertion"
     ],
     "llm_only_harness": [
-      "dest.buffer[i] == src_content[i]|assertion",
-      "double free|precondition_instance",
-      "src.len == src_len_orig|assertion",
+      "dest.buffer == null|assertion",
+      "free argument must be null or valid pointer|precondition_instance",
+      "src.capacity == src_cap_orig|assertion",
       "src.buffer == src_buf_orig|assertion",
-      "dest.len == src_len_orig|assertion"
+      "dest.allocator == null|assertion"
     ]
   },
   {
@@ -1964,11 +1972,11 @@
       "buf.allocator == allocator|assertion"
     ],
     "llm_only_harness": [
-      "dest.capacity == src.len|assertion",
-      "!memcmp(dest.buffer, src.ptr, src.len)|assertion",
-      "double free|precondition_instance",
-      "!memcmp(src.ptr, src_before_buf, src_before.len)|assertion",
-      "free argument must be dynamic object|precondition_instance"
+      "dest.buffer == null|assertion",
+      "free argument must be null or valid pointer|precondition_instance",
+      "src.ptr == src_before.ptr|assertion",
+      "dest check failed|precondition_instance",
+      "free argument has offset zero|precondition_instance"
     ]
   },
   {
@@ -2007,11 +2015,11 @@
       "aws_byte_cursor_is_valid(&_arg_)|assertion"
     ],
     "llm_only_harness": [
-      "memcpy destination region writeable|precondition_instance",
+      "memcpy source region readable|precondition_instance",
+      "lhs.ptr == lhs_before.ptr|assertion",
       "memcmp(rhs.ptr, rhs_snapshot, rhs.len) == 0|assertion",
-      "lhs.len == lhs_before.len|assertion",
       "memcpy src/dst overlap|precondition_instance",
-      "input array [array_b] must be readable up to [len_b].|precondition_instance"
+      "result == expected|assertion"
     ]
   },
   {
@@ -2052,11 +2060,11 @@
       "aws_byte_buf_is_valid(&_arg_)|assertion"
     ],
     "llm_only_harness": [
-      "memcmp(cur.ptr, cur_mem_old, cur.len) == 0|assertion",
-      "buf.allocator == old_buf.allocator|assertion",
-      "buf.len == old_buf.len|assertion",
-      "double free|precondition_instance",
-      "cur.ptr == old_cur.ptr|assertion"
+      "free argument must be null or valid pointer|precondition_instance",
+      "memcmp(buf.buffer, buf_mem_old, buf.len) == 0|assertion",
+      "memcpy source region readable|precondition_instance",
+      "memcpy src/dst overlap|precondition_instance",
+      "free argument has offset zero|precondition_instance"
     ]
   },
   {
@@ -2096,11 +2104,11 @@
       "aws_byte_cursor_is_valid(&_arg_)|assertion"
     ],
     "llm_only_harness": [
-      "cur.ptr == old_cur.ptr|assertion",
-      "memcpy destination region writeable|precondition_instance",
-      "cur.len == old_cur.len|assertion",
-      "strcmp(c_str, c_str_old) == 0|assertion",
-      "free called for new[] object|precondition_instance"
+      "memcpy source region readable|precondition_instance",
+      "memcpy src/dst overlap|precondition_instance",
+      "free called for stack-allocated object|precondition_instance",
+      "free argument has offset zero|precondition_instance",
+      "strcpy src/dst overlap|precondition_instance"
     ]
   },
   {
@@ -2134,11 +2142,11 @@
       "cur.len == length|assertion"
     ],
     "llm_only_harness": [
+      "memcpy source region readable|precondition_instance",
       "cur.ptr == buf|assertion",
-      "memcpy destination region writeable|precondition_instance",
-      "cur.len == len|assertion",
       "memcpy src/dst overlap|precondition_instance",
-      "free argument has offset zero|precondition_instance"
+      "input array [bytes] must be readable up to [len].|precondition_instance",
+      "free called for stack-allocated object|precondition_instance"
     ]
   },
   {
@@ -2173,11 +2181,11 @@
       "aws_byte_buf_is_valid(&_arg_)|assertion"
     ],
     "llm_only_harness": [
-      "memcpy destination region writeable|precondition_instance",
-      "buf.buffer == old_buf.buffer|assertion",
-      "buf.allocator == old_buf.allocator|assertion",
+      "memcpy source region readable|precondition_instance",
+      "memcmp(buf.buffer, old_data, buf.capacity) == 0|assertion",
       "memcpy src/dst overlap|precondition_instance",
-      "buf.len == old_buf.len|assertion"
+      "free called for stack-allocated object|precondition_instance",
+      "free argument has offset zero|precondition_instance"
     ]
   },
   {
@@ -2209,11 +2217,11 @@
     "classification": "STRONG_EQUIV",
     "unmatched_gt_harness": [],
     "llm_only_harness": [
-      "memcpy destination region writeable|precondition_instance",
+      "memcpy source region readable|precondition_instance",
       "memcpy src/dst overlap|precondition_instance",
       "cur.ptr == (uint8_t *)c_str|assertion",
-      "memcpy source region readable|precondition_instance",
-      "cur.ptr == null|assertion"
+      "cur.ptr == null|assertion",
+      "memcmp(c_str, c_str_copy, copy_len + 1) == 0|assertion"
     ]
   },
   {
@@ -2252,11 +2260,11 @@
       "cursor.ptr == str.bytes|assertion"
     ],
     "llm_only_harness": [
-      "memcpy destination region writeable|precondition_instance",
+      "memcpy source region readable|precondition_instance",
       "memcpy src/dst overlap|precondition_instance",
-      "free argument has offset zero|precondition_instance",
-      "memcmp(src_bytes_before, aws_string_bytes(src), src_len_before) == 0|assertion",
-      "memcpy source region readable|precondition_instance"
+      "src.len == src_len_before|assertion",
+      "free called for stack-allocated object|precondition_instance",
+      "free argument has offset zero|precondition_instance"
     ]
   },
   {
@@ -2291,10 +2299,10 @@
       "back == old_last|assertion"
     ],
     "llm_only_harness": [
+      "aws_linked_list_back: list.tail.prev unchanged|assertion",
+      "aws_linked_list_back: list must remain valid after call|assertion",
       "aws_linked_list_back: list.head.prev unchanged|assertion",
-      "aws_linked_list_back: return value must be non\u2011null when list is non\u2011empty|assertion",
-      "aws_linked_list_back: node fields unchanged|assertion",
-      "node != ((void *)0) check failed|precondition_instance",
+      "aws_linked_list_back: list.head.next unchanged|assertion",
       "aws_linked_list_back: list.tail.next unchanged|assertion"
     ]
   },
@@ -2328,11 +2336,11 @@
       "aws_linked_list_is_valid(&_arg_)|assertion"
     ],
     "llm_only_harness": [
-      "list check failed|precondition_instance",
+      "aws_linked_list_node_prev_is_valid(rval)|assertion",
+      "aws_linked_list_node_next_is_valid(rval)|assertion",
+      "list.head.prev == old_list.head.prev|assertion",
       "list.head.next == old_list.head.next|assertion",
-      "rval == first|assertion",
-      "list.tail.next == old_list.tail.next|assertion",
-      "aws_linked_list_node_prev_is_valid(rval)|assertion"
+      "list check failed|precondition_instance"
     ]
   },
   {
@@ -2363,10 +2371,10 @@
     ],
     "llm_only_harness": [
       "old.tail.next == list.tail.next|assertion",
-      "old.head.next == list.head.next|assertion",
-      "old.head.prev == list.head.prev|assertion",
       "old.tail.prev == list.tail.prev|assertion",
-      "ret == &list.tail|assertion"
+      "old.head.prev == list.head.prev|assertion",
+      "ret == &list.tail|assertion",
+      "old.head.next == list.head.next|assertion"
     ]
   },
   {
@@ -2401,11 +2409,11 @@
       "front == old_first|assertion"
     ],
     "llm_only_harness": [
-      "front != &list.tail|assertion",
+      "front.prev == &list.head|assertion",
       "list.head.next == old_list.head.next|assertion",
-      "front != null|assertion",
+      "list.head.prev == old_list.head.prev|assertion",
       "node != ((void *)0) check failed|precondition_instance",
-      "list.tail.next == old_list.tail.next|assertion"
+      "front != &list.tail|assertion"
     ]
   },
   {
@@ -2413,9 +2421,9 @@
     "gt_verify": "SUCCESS",
     "llm_verify": "SUCCESS",
     "verification_equivalent": true,
-    "gt_all_count": 0,
+    "gt_all_count": 173,
     "llm_all_count": 205,
-    "gt_harness_count": 0,
+    "gt_harness_count": 6,
     "llm_harness_count": 13,
     "harness_matched": 0,
     "harness_recall": 0.0,
@@ -2436,13 +2444,19 @@
     "over_constrained": true,
     "assume_adequacy": "OVER",
     "classification": "VERIFY_EQUIV_ONLY",
-    "unmatched_gt_harness": [],
+    "unmatched_gt_harness": [
+      "aws_linked_list_node_next_is_valid(&_arg_)|assertion",
+      "aws_linked_list_node_prev_is_valid(&_arg_)|assertion",
+      "aws_linked_list_node_next_is_valid(&_arg_)|assertion",
+      "aws_linked_list_node_prev_is_valid(&_arg_)|assertion",
+      "after.next == &to_add|assertion"
+    ],
     "llm_only_harness": [
-      "list check failed|precondition_instance",
-      "old_next.prev == to_add|assertion",
-      "to_add.prev == after|assertion",
-      "list.head.next != null|assertion",
-      "aws_linked_list_is_valid_deep(&list)|assertion"
+      "aws_linked_list_is_valid(&_arg_)|assertion",
+      "aws_linked_list_is_valid_deep(&list)|assertion",
+      "after.next == to_add|assertion",
+      "list.tail.prev != null|assertion",
+      "to_add.next == old_next|assertion"
     ]
   },
   {
@@ -2451,9 +2465,9 @@
     "llm_verify": "SUCCESS",
     "verification_equivalent": true,
     "gt_all_count": 173,
-    "llm_all_count": 0,
+    "llm_all_count": 209,
     "gt_harness_count": 6,
-    "llm_harness_count": 0,
+    "llm_harness_count": 33,
     "harness_matched": 0,
     "harness_recall": 0.0,
     "harness_precision": 0.0,
@@ -2478,13 +2492,19 @@
       "aws_linked_list_node_next_is_valid(&_arg_)|assertion",
       "before.prev == &to_add|assertion"
     ],
-    "llm_only_harness": []
+    "llm_only_harness": [
+      "old_prev.next points to to_add|assertion",
+      "before.prev points to to_add|assertion",
+      "free argument must be null or valid pointer|precondition_instance",
+      "list check failed|precondition_instance",
+      "node1.prev unchanged|assertion"
+    ]
   },
   {
     "func": "aws_linked_list_next",
     "gt_verify": "SUCCESS",
-    "llm_verify": "TIMEOUT",
-    "verification_equivalent": false,
+    "llm_verify": "SUCCESS",
+    "verification_equivalent": true,
     "gt_all_count": 168,
     "llm_all_count": 195,
     "gt_harness_count": 3,
@@ -2506,27 +2526,27 @@
       "candidate->next != NULL"
     ],
     "weakened_verify": "FAIL",
-    "over_constrained": false,
-    "assume_adequacy": "REDUNDANT",
-    "classification": "NOT_EQUIV",
+    "over_constrained": true,
+    "assume_adequacy": "OVER",
+    "classification": "VERIFY_EQUIV_ONLY",
     "unmatched_gt_harness": [
       "aws_linked_list_node_next_is_valid(&_arg_)|assertion",
       "aws_linked_list_node_prev_is_valid(rval)|assertion",
       "rval == &after|assertion"
     ],
     "llm_only_harness": [
+      "aws_linked_list_is_valid(&_arg_)|assertion",
+      "free called for stack-allocated object|precondition_instance",
       "candidate.next == old_next|assertion",
-      "memcmp(&list, &old_list, sizeof(list)) == 0|assertion",
-      "list check failed|precondition_instance",
-      "node != ((void *)0) check failed|precondition_instance",
-      "aws_linked_list_is_valid(&_arg_)|assertion"
+      "free argument has offset zero|precondition_instance",
+      "free argument must be null or valid pointer|precondition_instance"
     ]
   },
   {
     "func": "aws_linked_list_prev",
-    "gt_verify": "TIMEOUT",
+    "gt_verify": "SUCCESS",
     "llm_verify": "SUCCESS",
-    "verification_equivalent": false,
+    "verification_equivalent": true,
     "gt_all_count": 168,
     "llm_all_count": 199,
     "gt_harness_count": 3,
@@ -2548,18 +2568,18 @@
     "weakened_verify": "FAIL",
     "over_constrained": true,
     "assume_adequacy": "OVER",
-    "classification": "LLM_STRONGER",
+    "classification": "VERIFY_EQUIV_ONLY",
     "unmatched_gt_harness": [
       "aws_linked_list_node_prev_is_valid(&_arg_)|assertion",
       "aws_linked_list_node_next_is_valid(rval)|assertion",
       "rval == &before|assertion"
     ],
     "llm_only_harness": [
+      "memcpy source region readable|precondition_instance",
+      "memcpy src/dst overlap|precondition_instance",
+      "aws_linked_list_is_valid(&_arg_)|assertion",
       "free called for stack-allocated object|precondition_instance",
-      "memcpy destination region writeable|precondition_instance",
-      "list check failed|precondition_instance",
-      "node.next == next_before|assertion",
-      "memcpy src/dst overlap|precondition_instance"
+      "free argument has offset zero|precondition_instance"
     ]
   },
   {
@@ -2591,9 +2611,9 @@
     ],
     "llm_only_harness": [
       "r == old.tail.prev|assertion",
-      "list.tail.prev == old.tail.prev|assertion",
       "list.head.next == old.head.next|assertion",
       "list.head.prev == old.head.prev|assertion",
+      "list.tail.prev == old.tail.prev|assertion",
       "list.tail.next == old.tail.next|assertion"
     ]
   },
@@ -2625,9 +2645,9 @@
       "aws_linked_list_is_valid(&_arg_)|assertion"
     ],
     "llm_only_harness": [
+      "aws_linked_list_rend should return pointer to the list head|assertion",
       "list must remain valid after aws_linked_list_rend|assertion",
-      "aws_linked_list_rend must not modify the list|assertion",
-      "aws_linked_list_rend should return pointer to the list head|assertion"
+      "aws_linked_list_rend must not modify the list|assertion"
     ]
   },
   {
@@ -2665,11 +2685,11 @@
       "node.prev == null|assertion"
     ],
     "llm_only_harness": [
-      "node_to_remove.prev == null|assertion",
-      "list check failed|precondition_instance",
-      "list.tail.prev == list_before.tail.prev || list.tail.prev == node_to_remove.prev|assertion",
-      "found|assertion",
-      "aws_linked_list_is_valid_deep(&list)|assertion"
+      "aws_linked_list_is_valid(&_arg_)|assertion",
+      "free argument has offset zero|precondition_instance",
+      "aws_linked_list_is_valid_deep(&list)|assertion",
+      "free argument must be null or valid pointer|precondition_instance",
+      "double free|precondition_instance"
     ]
   },
   {
@@ -2708,10 +2728,10 @@
       "a.tail.prev == old_b.tail.prev|assertion"
     ],
     "llm_only_harness": [
-      "post: a contains exactly the original nodes of b|assertion",
-      "post: list a is valid|assertion",
-      "post: list a is deep valid|assertion",
       "post: length of a equals original length of b|assertion",
+      "pre: list a is deep valid|assertion",
+      "post: list a is valid|assertion",
+      "post: length of b equals original length of a|assertion",
       "post: list b is deep valid|assertion"
     ]
   },
@@ -2745,9 +2765,9 @@
     ],
     "llm_only_harness": [
       "aws_nospec_mask should return 0 when out of bounds or too large|assertion",
+      "aws_nospec_mask must not modify index argument|assertion",
       "aws_nospec_mask should return uintptr_max when in bounds|assertion",
-      "aws_nospec_mask must not modify bound argument|assertion",
-      "aws_nospec_mask must not modify index argument|assertion"
+      "aws_nospec_mask must not modify bound argument|assertion"
     ]
   },
   {
@@ -2780,11 +2800,11 @@
       "rval == (p1 == p2)|assertion"
     ],
     "llm_only_harness": [
+      "buf_a[i] == snapshot_a[i]|assertion",
       "free argument has offset zero|precondition_instance",
-      "b_is_null ? b == null : b == (const void *)buf_b|assertion",
-      "free argument must be dynamic object|precondition_instance",
       "free argument must be null or valid pointer|precondition_instance",
-      "buf_b[i] == snapshot_b[i]|assertion"
+      "buf_b[i] == snapshot_b[i]|assertion",
+      "free argument must be dynamic object|precondition_instance"
     ]
   },
   {
@@ -2822,11 +2842,11 @@
       "old_buf == buf|assertion"
     ],
     "llm_only_harness": [
-      "ring_buf.head.value == ring_buf_old.head.value|assertion",
-      "free called for stack-allocated object|precondition_instance",
-      "buf.buffer == old_buf.buffer|assertion",
       "ring_buf.allocation_end == ring_buf_old.allocation_end|assertion",
-      "buf.allocator == old_buf.allocator|assertion"
+      "result == expected|assertion",
+      "ring_buf.head.value == ring_buf_old.head.value|assertion",
+      "ring_buf.allocation == ring_buf_old.allocation|assertion",
+      "ring_buf.allocator == ring_buf_old.allocator|assertion"
     ]
   },
   {
@@ -2864,11 +2884,11 @@
       "ring_buf.allocation_end == null|assertion"
     ],
     "llm_only_harness": [
-      "aws_ring_buffer_clean_up: allocation pointer must be null after clean up|assertion",
-      "aws_ring_buffer_clean_up: head atomic must be zero after clean up|assertion",
       "aws_ring_buffer_clean_up: tail atomic must be zero after clean up|assertion",
-      "aws_ring_buffer_clean_up: allocator pointer must be null after clean up|assertion",
-      "aws_ring_buffer_clean_up: allocation_end pointer must be null after clean up|assertion"
+      "aws_ring_buffer_clean_up: allocation pointer must be null after clean up|assertion",
+      "aws_ring_buffer_clean_up: allocation_end pointer must be null after clean up|assertion",
+      "aws_ring_buffer_clean_up: head atomic must be zero after clean up|assertion",
+      "aws_ring_buffer_clean_up: allocator pointer must be null after clean up|assertion"
     ]
   },
   {
@@ -2903,11 +2923,11 @@
       "ring_buf.allocation_end - ring_buf.allocation == size|assertion"
     ],
     "llm_only_harness": [
+      "aws_atomic_load_ptr(&rb.tail) == rb.allocation|assertion",
+      "aws_ring_buffer_is_valid(rb)|assertion",
       "rb.allocator == null|assertion",
       "rb.allocation != null|assertion",
-      "!aws_ring_buffer_is_valid(rb)|assertion",
-      "ret == aws_op_err|assertion",
-      "aws_atomic_load_ptr(&rb.tail) == null|assertion"
+      "rb.allocation_end == (uint8_t *)rb.allocation + size|assertion"
     ]
   },
   {
@@ -2984,11 +3004,11 @@
       "aws_string_is_valid(str)|assertion"
     ],
     "llm_only_harness": [
-      "result[i] == old_copy[i]|assertion",
       "free argument has offset zero|precondition_instance",
-      "free argument must be dynamic object|precondition_instance",
       "free argument must be null or valid pointer|precondition_instance",
-      "result == str.bytes|assertion"
+      "double free|precondition_instance",
+      "free argument must be dynamic object|precondition_instance",
+      "str.len == old_len|assertion"
     ]
   },
   {
@@ -3090,12 +3110,12 @@
   {
     "func": "aws_string_eq_byte_buf",
     "gt_verify": "SUCCESS",
-    "llm_verify": "FAIL",
+    "llm_verify": "COMPILE_ERROR",
     "verification_equivalent": false,
     "gt_all_count": 646,
-    "llm_all_count": 647,
+    "llm_all_count": 0,
     "gt_harness_count": 3,
-    "llm_harness_count": 4,
+    "llm_harness_count": 0,
     "harness_matched": 0,
     "harness_recall": 0.0,
     "harness_precision": 0.0,
@@ -3104,11 +3124,13 @@
     "harness_precision_fuzzy": 0.0,
     "gt_assume_count": 3,
     "llm_assume_count": 3,
-    "llm_extra_assume_count": 1,
+    "llm_extra_assume_count": 3,
     "stripped_assumes": [
-      "str == NULL || aws_string_is_valid(str)"
+      "len <= MAX_STRING_LEN",
+      "capacity <= MAX_STRING_LEN",
+      "buf.len <= capacity"
     ],
-    "weakened_verify": "FAIL",
+    "weakened_verify": "COMPILE_ERROR",
     "over_constrained": false,
     "assume_adequacy": "REDUNDANT",
     "classification": "NOT_EQUIV",
@@ -3117,12 +3139,7 @@
       "aws_string_is_valid(str)|assertion",
       "aws_byte_buf_is_valid(&_arg_)|assertion"
     ],
-    "llm_only_harness": [
-      "aws_string_eq_byte_buf does not modify str.len|assertion",
-      "aws_string_eq_byte_buf does not modify buf.len|assertion",
-      "aws_string_eq_byte_buf returns false when str is null|assertion",
-      "aws_string_eq_byte_buf does not modify buf.capacity|assertion"
-    ]
+    "llm_only_harness": []
   },
   {
     "func": "aws_string_eq_byte_cursor",
@@ -3140,10 +3157,11 @@
     "harness_recall_fuzzy": 0.0,
     "harness_precision_fuzzy": 0.0,
     "gt_assume_count": 2,
-    "llm_assume_count": 3,
-    "llm_extra_assume_count": 2,
+    "llm_assume_count": 4,
+    "llm_extra_assume_count": 3,
     "stripped_assumes": [
-      "len <= 1024",
+      "str_len <= MAX_LEN",
+      "cur_len <= MAX_LEN",
       "str == NULL || aws_string_is_valid(str)"
     ],
     "weakened_verify": "COMPILE_ERROR",
@@ -3226,9 +3244,9 @@
     ],
     "llm_only_harness": [
       "result.len == null_pos|assertion",
-      "((const uint8_t *)result.bytes)[null_pos] == '\\0'|assertion",
+      "result.allocator == allocator|assertion",
       "aws_string_is_valid(result)|assertion",
-      "((const uint8_t *)result.bytes)[i] == (uint8_t)c_str[i]|assertion",
+      "((const uint8_t *)result.bytes)[null_pos] == '\\0'|assertion",
       "c_str[i] == c_str_copy[i]|assertion"
     ]
   },
@@ -3271,11 +3289,11 @@
       "aws_ring_buffer_buf_belongs_to_pool(&ring_buf, &buf)|assertion"
     ],
     "llm_only_harness": [
-      "double free|precondition_instance",
-      "rc == aws_op_success || rc == aws_op_err|assertion",
-      "dest.buffer + requested_size <= ring_buf.allocation_end|assertion",
+      "free argument must be null or valid pointer|precondition_instance",
+      "memcmp(alloc_copy, ring_buf.allocation, alloc_len) == 0|assertion",
       "memcpy source region readable|precondition_instance",
-      "aws_last_error() == aws_error_oom|assertion"
+      "memcpy src/dst overlap|precondition_instance",
+      "free argument has offset zero|precondition_instance"
     ]
   }
 ]
