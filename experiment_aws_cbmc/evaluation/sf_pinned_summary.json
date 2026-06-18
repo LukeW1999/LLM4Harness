@@ -1,0 +1,12 @@
+{
+  "condition": "SF_gptoss120b_pin",
+  "model": "gpt-oss-120b", "serving": "DeepInfra/bf16 pinned", "run": "single",
+  "canonical_denom": 370,
+  "silenced": 68, "sil_gt_pct": 18.4,
+  "attribution": {"KG": 60, "SAC": 0, "AOC": 4, "UNRES": 4, "KG_pct": 88},
+  "scaffold_score": {"n": 83, "valid": 40, "compiles": 51, "has_assume": 80, "valid_pct": 48.2},
+  "compare_A_pinned": {"silenced": 21, "sil_gt_pct": 5.7, "KG": 21},
+  "ratio_SF_over_A": 3.24,
+  "byte_buf_cat_silenced": {"A_pinned": 7, "SF_pinned": 33},
+  "note": "Phase-1 scaffold-only generation; H_construct confirmed (scaffold construction is the bottleneck). vacuity caveat on scaffold_valid (contradictory assume also yields SUCCESS) => 48% is an upper bound."
+}
