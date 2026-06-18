@@ -89,7 +89,10 @@ ESBMC_BASE_FLAGS = [
 STRICT_CONTRACT_FLAGS = [
     "-DCBMC",
     "-D__CPROVER_r_ok(p,s)=__ESBMC_r_ok((void*)(p),(s))",
-    "-D__CPROVER_precondition(c,m)=__ESBMC_assume(c)",
+    # __CPROVER_precondition is an ASSERTION in plain BMC (AWS proofs are not in
+    # function-contract mode), matching how CBMC checks it. Mapping it to assume
+    # would silently swallow precondition mutations (vacuous paths).
+    "-D__CPROVER_precondition(c,m)=assert(c)",
 ]
 if os.environ.get("ESBMC_STRICT") == "1":
     ESBMC_BASE_FLAGS = ESBMC_BASE_FLAGS + STRICT_CONTRACT_FLAGS
