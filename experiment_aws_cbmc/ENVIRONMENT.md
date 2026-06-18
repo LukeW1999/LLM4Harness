@@ -3,6 +3,19 @@
 Pinned versions of everything needed to reproduce the experiments. Recorded
 2026-06-16 from the production server.
 
+## Hardware
+
+| Machine | Spec |
+|---------|------|
+| **Compute server** (Alibaba ECS) | 8 vCPU Intel Xeon Platinum (4 cores x 2 threads/core), 14 GiB RAM, 40 GB disk, Ubuntu 24.04.4 LTS. Billing in stop-mode (data preserved across stops; **public IP may change on restart**). All CBMC oracle / cross-verify / mutant-generation runs ran here. |
+| **Local workstation** | WSL2 Ubuntu on Windows; CBMC 6.8.0; the canonical repo and the `aws-c-common` source tree live here. |
+
+### How the experiments were run
+- **Mutant generation** (`gen_mutants.py`, `s2n_gen_mutants.py`): `universalmutator` over each target source file, compile-checked with the project's CBMC build flags; 1,233 compiled mutants over 58 mutant-bearing aws-c-common functions (plus the s2n_stuffer set).
+- **Harness generation** (`feedback_loop.py`): per (function, condition, model), an iterative CBMC-feedback loop, max 15 iterations, temperature 0, nominal seed 42. Serving non-determinism makes repeated runs independent samples (the multi-run tables).
+- **Differential oracle** (`run_mutation_oracle_cbmc.py`): each mutant is run through CBMC twice (expert H_GT, LLM H_LLM); a full 83-function sweep for one condition is about 2.7 CPU-hours (~2 min CBMC/function on this host).
+- **Determinism**: CBMC SUCCESS/FAILURE verdicts are load-independent; only TIMEOUT is contention-sensitive, so workers are capped at cores-1 and no two CBMC-heavy jobs run concurrently (see Concurrency caveat). The pinned re-run (`*_pin`, DeepInfra bf16, fallbacks off) was done at low concurrency.
+
 ## Tools
 
 | Tool   | Version          | Role                                              |

@@ -49,7 +49,7 @@ API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 
 def call_qwen(system_prompt: str, user_prompt: str, temperature: float = 0.0,
-              max_retries: int = 4, retry_delay: float = 10.0) -> str:
+              max_retries: int = 6, retry_delay: float = 10.0) -> str:
     headers = {
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json",
@@ -96,6 +96,21 @@ def call_qwen(system_prompt: str, user_prompt: str, temperature: float = 0.0,
                   f"waiting {wait:.0f}s...")
             time.sleep(wait)
         except requests.exceptions.HTTPError as e:
+            status = getattr(e.response, "status_code", None)
+            # 429 (rate limit) and 5xx are transient under concurrent load -> back off and retry.
+            # Other 4xx (401/402/403/400) are fatal -> raise immediately.
+            if status == 429 or (status is not None and 500 <= status < 600):
+                last_err = e
+                retry_after = e.response.headers.get("Retry-After") if e.response is not None else None
+                try:
+                    wait = float(retry_after) if retry_after else retry_delay * (2 ** attempt)
+                except ValueError:
+                    wait = retry_delay * (2 ** attempt)
+                wait = min(wait, 60.0)  # cap so a single call stays within the per-func timeout
+                print(f"    [OpenRouter retry {attempt+1}/{max_retries}] HTTP {status}, "
+                      f"waiting {wait:.0f}s...")
+                time.sleep(wait)
+                continue
             raise
     raise last_err
 
