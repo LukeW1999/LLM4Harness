@@ -1,0 +1,7 @@
+{
+  "experiment": "PC postcondition-checklist probe (does generic postcondition prompting close KG?)",
+  "date": "2026-06-18",
+  "claude":  {"baseline_A": "16/370 (4.3%)", "PC": "14/370 (3.8%)", "net": "flat within noise; closed 8 / opened 6"},
+  "gptoss_pinned": {"baseline_A": "21/370 (5.7%)", "PC": "52/370 (14.1%)", "net": "WORSE; on 38 common funcs closed 12 / opened 45; byte_buf_cat 7->33, +byte_buf_advance 16"},
+  "conclusion": "Generic postcondition checklist does NOT close KG: flat on Claude (reshuffles), backfires on weaker gpt-oss. With SF (scaffold-then-fill) also not helping, two generation interventions x two models agree: KG is a deep generation limit, naive prompting does not fix it and harms weaker models. Pre-empts the DA 'prompt-engineering ceiling' alternative."
+}
