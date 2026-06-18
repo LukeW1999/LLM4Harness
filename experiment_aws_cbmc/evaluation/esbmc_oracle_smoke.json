@@ -1,0 +1,1420 @@
+{
+  "cond": "feedback_loop_A_claude",
+  "strict": "1",
+  "results": [
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0009",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0010",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0013",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0003",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0011",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0020",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0021",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0024",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0026",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0027",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0028",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0030",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0022",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0029",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0031",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0032",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0025",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0044",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0043",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0048",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0049",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0052",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0055",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0057",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0060",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0061",
+      "gt": "FAIL",
+      "llm": "SUCCESS",
+      "silenced": true
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0059",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0053",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0062",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0063",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0066",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0065",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0064",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0068",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0069",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0073",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0070",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0072",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0071",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0074",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0081",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0080",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq",
+      "mutant": "mutant_0002",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq",
+      "mutant": "mutant_0006",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0084",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq",
+      "mutant": "mutant_0013",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq",
+      "mutant": "mutant_0014",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq",
+      "mutant": "mutant_0015",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq",
+      "mutant": "mutant_0009",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq",
+      "mutant": "mutant_0022",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq",
+      "mutant": "mutant_0019",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq",
+      "mutant": "mutant_0026",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0001",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0002",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0087",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0003",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0004",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0005",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0007",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0006",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0008",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0009",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0010",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0011",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0012",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0013",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0016",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0014",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0017",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0019",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0021",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_append",
+      "mutant": "mutant_0020",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0005",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0008",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0028",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0025",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0030",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0029",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0031",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0032",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0035",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0034",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0036",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0037",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0038",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0049",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0048",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0050",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0061",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0060",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0051",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0062",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0064",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0063",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0068",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0069",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0070",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0073",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0071",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0072",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0076",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0078",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0079",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0080",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0081",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0087",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0084",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0091",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0094",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0098",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0097",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0106",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0109",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0002",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0006",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0007",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0008",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0009",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0011",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0027",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0032",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0036",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0037",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0038",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0039",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0040",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0043",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0044",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0046",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0047",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0048",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0051",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up",
+      "mutant": "mutant_0057",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0002",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0004",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0005",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0014",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0015",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0016",
+      "gt": "FAIL",
+      "llm": "SUCCESS",
+      "silenced": true
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0017",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0018",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0022",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0020",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0025",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0027",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0031",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0035",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0038",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0041",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0046",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_array",
+      "mutant": "mutant_0049",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0006",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0007",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0009",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0008",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0019",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0010",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0020",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0011",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0016",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0025",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0028",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0006",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0002",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0005",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0007",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0010",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0013",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0014",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0015",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0018",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0019",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0020",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0021",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0023",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0024",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0027",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0030",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0031",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0032",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0034",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0035",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0036",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0040",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0041",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0042",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0046",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0086",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0049",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0077",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0085",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0087",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0098",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0090",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0097",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0106",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0107",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0108",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0099",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0100",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0109",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0103",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    }
+  ]
+}
