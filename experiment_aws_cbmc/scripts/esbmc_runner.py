@@ -21,11 +21,19 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import Optional
 
-# ── paths ────────────────────────────────────────────────────────────────────
-SRCDIR  = Path("/root/aws-c-common")
+# ── paths (env-overridable; falls back to local checkout if /root absent) ─────
+import os
+def _safe_exists(p):
+    try:
+        return Path(p).exists()
+    except (PermissionError, OSError):
+        return False
+_DEF_SRC = "/root/aws-c-common" if _safe_exists("/root/aws-c-common") else "/home/weiqi/Verification/aws-c-common"
+SRCDIR  = Path(os.environ.get("AWSC_SRC", _DEF_SRC))
 PROOFDIR = SRCDIR / "verification/cbmc"
 
-ESBMC_BIN = Path("/usr/local/bin/esbmc")
+_DEF_ESBMC = "/usr/local/bin/esbmc" if _safe_exists("/usr/local/bin/esbmc") else "/home/weiqi/ESBMC_Project/esbmc/build/src/esbmc/esbmc"
+ESBMC_BIN = Path(os.environ.get("ESBMC_BIN", _DEF_ESBMC))
 
 # Override directory: ESBMC-compatible headers and utilities, stored in the
 # repo so they survive reboots (unlike /tmp).
@@ -73,6 +81,22 @@ ESBMC_BASE_FLAGS = [
     "--no-pointer-check",
     "--no-unwinding-assertions",     # don't fail on loops that exceed unwind bound (CBMC-like)
 ]
+
+# Strict-contract mode (env ESBMC_STRICT=1): enable AWS's real CBMC contract
+# path so ESBMC is comparable to CBMC, not the weak base!=NULL fallback. Wires
+# __CPROVER_r_ok to ESBMC's native __ESBMC_r_ok and treats preconditions as
+# assumptions. Verified to lift aws_byte_buf_cat GT from 20 to 44 checks.
+STRICT_CONTRACT_FLAGS = [
+    "-DCBMC",
+    "-D__CPROVER_r_ok(p,s)=__ESBMC_r_ok((void*)(p),(s))",
+    "-D__CPROVER_precondition(c,m)=__ESBMC_assume(c)",
+]
+if os.environ.get("ESBMC_STRICT") == "1":
+    ESBMC_BASE_FLAGS = ESBMC_BASE_FLAGS + STRICT_CONTRACT_FLAGS
+
+_ESBMC_MEMLIMIT = os.environ.get("ESBMC_MEMLIMIT")
+if _ESBMC_MEMLIMIT:
+    ESBMC_BASE_FLAGS = ESBMC_BASE_FLAGS + ["--memlimit", _ESBMC_MEMLIMIT]
 
 # ── per-function configuration (mirrors cbmc_runner.py FUNC_CONFIGS) ─────────
 # Only lists functions from the pilot study; project/proof sources are as in

@@ -2,7 +2,7 @@
 """
 run_esbmc_gt_batch.py - Run all GT harnesses through ESBMC and report results.
 """
-import sys, json
+import sys, json, os
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -11,9 +11,9 @@ from esbmc_runner import run_gt, FUNC_CONFIGS
 
 RESULTS_DIR = Path(__file__).parent.parent / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
-OUT_JSON = RESULTS_DIR / "esbmc_gt_results.json"
+OUT_JSON = RESULTS_DIR / os.environ.get("ESBMC_GT_OUT", "esbmc_gt_results.json")
 
-TIMEOUT = 300   # seconds per function
+TIMEOUT = int(os.environ.get("ESBMC_TIMEOUT", "300"))   # seconds per function
 
 def _run_one(fn):
     try:
@@ -28,7 +28,7 @@ print(f"Running {len(funcs)} functions (timeout={TIMEOUT}s each) ...")
 results = {}
 counts = {"SUCCESS": 0, "FAIL": 0, "TIMEOUT": 0, "COMPILE_ERROR": 0, "UNKNOWN": 0, "ERROR": 0}
 
-with ThreadPoolExecutor(max_workers=6) as pool:
+with ThreadPoolExecutor(max_workers=int(os.environ.get("ESBMC_WORKERS", "6"))) as pool:
     futures = {pool.submit(_run_one, fn): fn for fn in funcs}
     done = 0
     for fut in as_completed(futures):
