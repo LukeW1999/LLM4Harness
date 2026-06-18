@@ -1,0 +1,38 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "((uint8_t *)list.data)[index * list.item_size + i] == val[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "list.length == index + 1",
+    "new_text": "list.length == old.length - 1",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "((uint8_t *)list.data)[index * list.item_size + i] == val[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "((uint8_t *)list.data)[i * list.item_size + j] == ((uint8_t *)old.data)[i * list.item_size + j]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  }
+]

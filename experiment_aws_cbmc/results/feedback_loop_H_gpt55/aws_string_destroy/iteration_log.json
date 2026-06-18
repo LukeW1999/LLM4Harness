@@ -1,0 +1,11 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "!aws_mem_is_readable(str, old_allocation_size)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  }
+]

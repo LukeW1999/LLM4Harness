@@ -1,0 +1,70 @@
+#include <aws/common/math.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
+
+void aws_add_u64_checked_harness() {
+    uint64_t a = nondet_uint64_t();
+    uint64_t b = nondet_uint64_t();
+    uint64_t r;
+
+    int result = aws_add_u64_checked(a, b, &r);
+
+    if (result == AWS_OP_SUCCESS) {
+        /* No overflow: result should equal a + b */
+        assert(r == a + b);
+        /* Verify no overflow actually occurred */
+        assert(b == 0 || a <= UINT64_MAX - b);
+    } else {
+        /* Overflow detected */
+        assert(result == AWS_OP_ERR);
+        assert(b > 0 && a > UINT64_MAX - b);
+    }
+}
+
+void aws_add_u32_checked_harness() {
+    uint32_t a = nondet_uint32_t();
+    uint32_t b = nondet_uint32_t();
+    uint32_t r;
+
+    int result = aws_add_u32_checked(a, b, &r);
+
+    if (result == AWS_OP_SUCCESS) {
+        /* No overflow: result should equal a + b */
+        assert(r == a + b);
+        /* Verify no overflow actually occurred */
+        assert(b == 0 || a <= UINT32_MAX - b);
+    } else {
+        /* Overflow detected */
+        assert(result == AWS_OP_ERR);
+        assert(b > 0 && a > UINT32_MAX - b);
+    }
+}
+
+void aws_add_size_checked_harness() {
+    size_t a = nondet_size_t();
+    size_t b = nondet_size_t();
+    size_t r;
+
+    int result = aws_add_size_checked(a, b, &r);
+
+    if (result == AWS_OP_SUCCESS) {
+        /* No overflow: result should equal a + b */
+        assert(r == a + b);
+        /* Verify no overflow actually occurred */
+        assert(b == 0 || a <= SIZE_MAX - b);
+    } else {
+        /* Overflow detected */
+        assert(result == AWS_OP_ERR);
+        assert(b > 0 && a > SIZE_MAX - b);
+    }
+}
+
+void aws_add_size_checked_harness(void) {
+    aws_add_u64_checked_harness();
+    aws_add_u32_checked_harness();
+    aws_add_size_checked_harness();
+    return 0;
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "list.length == index + 1",
+    "new_text": "list.length <= list.current_size / list.item_size",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "list.length == old.length + 1",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  }
+]

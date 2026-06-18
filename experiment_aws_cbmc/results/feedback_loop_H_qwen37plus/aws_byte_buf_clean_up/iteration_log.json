@@ -1,0 +1,110 @@
+[
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "delete",
+    "assert_text": "out_buf.allocator == null",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "delete",
+    "assert_text": "out_buf.capacity >= out_buf.len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "delete",
+    "assert_text": "out_buf.capacity == 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "delete",
+    "assert_text": "out_buf.buffer != null",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "delete",
+    "assert_text": "aws_byte_buf_is_valid(&out_buf)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "delete",
+    "assert_text": "out_buf.buffer == null",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "delete",
+    "assert_text": "out_buf.len == 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "delete",
+    "assert_text": "out_buf.allocator == alloc",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "add",
+    "assert_text": "buf.buffer == null",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "add",
+    "assert_text": "buf.allocator == null",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "add",
+    "assert_text": "buf.capacity == 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "add",
+    "assert_text": "buf.len == 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  }
+]

@@ -1,0 +1,173 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "result == aws_op_err",
+    "new_text": "result == aws_op_success",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "r == old_r",
+    "new_text": "r == size_max",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "add",
+    "assert_text": "result == aws_error_overflow_detected",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "weaken",
+    "assert_text": "result == aws_error_overflow_detected",
+    "new_text": "result == (int)aws_error_overflow_detected",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "weaken",
+    "assert_text": "r == size_max",
+    "new_text": "r == (size_t)-1",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "weaken",
+    "assert_text": "result == aws_op_success",
+    "new_text": "result == (int)aws_error_overflow_detected",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "add",
+    "assert_text": "result == (int)aws_op_success",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "weaken",
+    "assert_text": "result == (int)aws_error_overflow_detected",
+    "new_text": "result == aws_error_overflow_detected",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "weaken",
+    "assert_text": "result == (int)aws_op_success",
+    "new_text": "result == aws_error_overflow_detected",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "weaken",
+    "assert_text": "r == (size_t)-1",
+    "new_text": "r == size_max",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "add",
+    "assert_text": "result == aws_op_success",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 11,
+    "to_iter": 12,
+    "action": "weaken",
+    "assert_text": "result == aws_error_overflow_detected",
+    "new_text": "result == (int)aws_error_overflow_detected",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 11,
+    "to_iter": 12,
+    "action": "weaken",
+    "assert_text": "result == aws_op_success",
+    "new_text": "result == (int)aws_error_overflow_detected",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 11,
+    "to_iter": 12,
+    "action": "add",
+    "assert_text": "result == (int)aws_op_success",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 12,
+    "to_iter": 13,
+    "action": "weaken",
+    "assert_text": "result == (int)aws_error_overflow_detected",
+    "new_text": "result == aws_op_err",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 12,
+    "to_iter": 13,
+    "action": "weaken",
+    "assert_text": "result == (int)aws_op_success",
+    "new_text": "result == aws_op_err",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 12,
+    "to_iter": 13,
+    "action": "add",
+    "assert_text": "result == aws_op_success",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 13,
+    "to_iter": 14,
+    "action": "delete",
+    "assert_text": "result == aws_op_err",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 14,
+    "to_iter": 15,
+    "action": "weaken",
+    "assert_text": "r == size_max",
+    "new_text": "r == (size_t)-1",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  }
+]

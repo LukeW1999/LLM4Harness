@@ -1,0 +1,56 @@
+[
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "ring_buf.allocation == ring_buf.allocation",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "weaken",
+    "assert_text": "dest.len == requested_size",
+    "new_text": "dest.len == 0",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "add",
+    "assert_text": "new_tail == old_tail",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "add",
+    "assert_text": "new_head != old_head",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 13,
+    "to_iter": 14,
+    "action": "delete",
+    "assert_text": "ring_buf.allocator == aws_default_allocator()",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 13,
+    "to_iter": 14,
+    "action": "delete",
+    "assert_text": "ring_buf.allocation_end == ring_buf.allocation + alloc_size",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  }
+]

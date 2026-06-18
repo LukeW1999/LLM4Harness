@@ -1,0 +1,36 @@
+#include <aws/common/array_list.h>
+#include <aws/common/math.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+
+void aws_array_list_init_static_harness(void) {
+    struct aws_array_list list;
+    size_t item_count = nondet_size_t();
+    size_t item_size = nondet_size_t();
+
+    __CPROVER_assume(item_count > 0);
+    __CPROVER_assume(item_count <= MAX_INITIAL_ITEM_ALLOCATION);
+    __CPROVER_assume(item_size > 0);
+    __CPROVER_assume(item_size <= MAX_ITEM_SIZE);
+
+    size_t current_size = 0;
+    bool no_overflow = !aws_mul_size_checked(item_count, item_size, &current_size);
+    __CPROVER_assume(no_overflow);
+    __CPROVER_assume(current_size > 0);
+    __CPROVER_assume(current_size <= MAX_BUFFER_SIZE);
+
+    struct aws_allocator *allocator = aws_default_allocator();
+    void *raw_array = aws_mem_acquire(allocator, current_size);
+    __CPROVER_assume(raw_array != NULL);
+
+    struct aws_array_list old = list;
+
+    aws_array_list_init_static(&list, raw_array, item_count, item_size);
+
+    assert(list.alloc == NULL);
+    assert(list.current_size == current_size);
+    assert(list.item_size == item_size);
+    assert(list.length == 0);
+    assert(list.data == raw_array);
+    assert(aws_array_list_is_valid(&list));
+}

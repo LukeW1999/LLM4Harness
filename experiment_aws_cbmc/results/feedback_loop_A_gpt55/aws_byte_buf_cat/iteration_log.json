@@ -1,0 +1,65 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "result == aws_op_err",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "dest.capacity == old_dest_capacity",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "dest.len == old_dest_len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "dest.buffer[i] == old_dest_bytes[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "result == aws_op_success",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "dest.len == expected_len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "dest.allocator == allocator",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  }
+]

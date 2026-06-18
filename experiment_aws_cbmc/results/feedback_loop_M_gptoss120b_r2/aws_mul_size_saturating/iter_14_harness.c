@@ -1,0 +1,27 @@
+#include <aws/common/math.h>
+#include <proof_helpers/make_common_data_structures.h>
+
+void aws_mul_size_saturating_harness(void) {
+    size_t a = nondet_size_t();
+    size_t b = nondet_size_t();
+
+    size_t result;
+    size_t *result_ptr = &result;
+
+    size_t old_a = a;
+    size_t old_b = b;
+
+    bool overflow = aws_mul_size_saturating(a, b, result_ptr);
+
+    bool expected_overflow = (a != 0 && b > SIZE_MAX / a);
+
+    assert(overflow == expected_overflow);
+    if (!expected_overflow) {
+        assert(*result_ptr == a * b);
+    } else {
+        assert(*result_ptr == SIZE_MAX);
+    }
+
+    assert(a == old_a);
+    assert(b == old_b);
+}

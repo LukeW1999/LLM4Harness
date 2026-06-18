@@ -1,0 +1,34 @@
+#include <aws/common/ring_buffer.h>
+#include <aws/common/allocator.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+
+void aws_ring_buffer_clean_up_harness(void) {
+    struct aws_ring_buffer ring_buf;
+
+    /* Use the default allocator */
+    ring_buf.allocator = aws_default_allocator();
+
+    /* Nondeterministic initialization of the ring buffer */
+    ensure_ring_buffer_is_valid(&ring_buf);
+
+    /* Precondition: the ring buffer must satisfy its validity predicate */
+    __CPROVER_assume(aws_ring_buffer_is_valid(&ring_buf));
+
+    /* Snapshot of relevant state before the call */
+    struct aws_allocator *orig_allocator = ring_buf.allocator;
+    uint8_t *orig_allocation = ring_buf.allocation;
+    uint8_t *orig_allocation_end = ring_buf.allocation_end;
+
+    /* Call the function under verification */
+    aws_ring_buffer_clean_up(&ring_buf);
+
+    /* Postcondition assertions */
+    assert(ring_buf.allocator == orig_allocator);
+    assert(ring_buf.allocation == NULL);
+    assert(ring_buf.allocation_end == NULL);
+    assert(aws_atomic_load_int(&ring_buf.head) == 0);
+    assert(aws_atomic_load_int(&ring_buf.tail) == 0);
+    assert(ring_buf.capacity == 0);
+    assert(ring_buf.mask == 0);
+}

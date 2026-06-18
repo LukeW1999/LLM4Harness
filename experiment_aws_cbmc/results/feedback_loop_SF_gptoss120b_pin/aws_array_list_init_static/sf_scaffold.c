@@ -1,0 +1,38 @@
+#include <aws/common/array_list.h>
+#include <aws/common/common.h>
+#include <aws/common/math.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <stdbool.h>
+
+void aws_array_list_init_static_harness(void) {
+    /* Allocate the list structure */
+    struct aws_array_list list;
+    struct aws_array_list *list_ptr = &list;
+
+    /* Nondeterministic inputs */
+    size_t item_count = nondet_uint64_t();
+    size_t item_size  = nondet_uint64_t();
+
+    /* Preconditions */
+    __CPROVER_assume(item_count > 0);
+    __CPROVER_assume(item_size > 0);
+    __CPROVER_assume(item_count <= SIZE_MAX / item_size); /* no overflow */
+
+    size_t total_size = item_count * item_size;
+    void *raw_array = malloc(total_size);
+    __CPROVER_assume(raw_array != NULL);
+
+    /* Pre‑call snapshot */
+    struct aws_array_list list_pre = *list_ptr;
+    void *raw_array_pre = raw_array;
+    size_t item_count_pre = item_count;
+    size_t item_size_pre = item_size;
+
+    /* Call the function under verification */
+    aws_array_list_init_static(list_ptr, raw_array, item_count, item_size);
+
+    /* ASSERT_POSTCONDITIONS_HERE */
+}

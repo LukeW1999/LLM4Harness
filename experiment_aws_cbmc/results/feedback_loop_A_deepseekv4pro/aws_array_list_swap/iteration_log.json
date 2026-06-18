@@ -1,0 +1,146 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "memcmp((uint8_t *)list.data + k * item_size, old_data + k * item_size, item_size) == 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "memcmp((uint8_t *)list.data + b * item_size, old_data + a * item_size, item_size) == 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "memcmp(list.data, old_data, length * item_size) == 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "memcmp((uint8_t *)list.data + a * item_size, old_data + b * item_size, item_size) == 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "memcmp((uint8_t *)list.data + k * item_size, old_data + k * item_size, item_size) == 0",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "memcmp((uint8_t *)list.data + b * item_size, old_data + a * item_size, item_size) == 0",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "memcmp(list.data, old_data, length * item_size) == 0",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "memcmp((uint8_t *)list.data + a * item_size, old_data + b * item_size, item_size) == 0",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "memcmp((uint8_t *)list.data + a * list.item_size, old_b, list.item_size) == 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "memcmp((uint8_t *)list.data + b * list.item_size, old_a, list.item_size) == 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "memcmp((uint8_t *)list.data + a * list.item_size, old_b, list.item_size) == 0",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "memcmp((uint8_t *)list.data + b * list.item_size, old_a, list.item_size) == 0",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "add",
+    "assert_text": "((uint8_t *)list.data)[b * list.item_size + i] == old_a[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "add",
+    "assert_text": "((uint8_t *)list.data)[a * list.item_size + i] == old_b[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "add",
+    "assert_text": "((uint8_t *)list.data)[a * list.item_size + i] == old_a[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "add",
+    "assert_text": "((uint8_t *)list.data)[b * list.item_size + i] == old_b[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  }
+]

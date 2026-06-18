@@ -1,0 +1,72 @@
+#include <aws/common/byte_buf.h>
+#include <aws/common/ring_buffer.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <proof_helpers/nondet.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include <stdbool.h>
+
+void aws_ring_buffer_buf_belongs_to_pool_harness(void) {
+    /* 1. Declare and bound data structures */
+    struct aws_ring_buffer ring;
+    struct aws_byte_buf buf;
+
+    /* allocator */
+    ring.allocator = aws_default_allocator();
+
+    /* nondet allocation for the ring buffer */
+    size_t alloc_size;
+    __CPROVER_assume(alloc_size > 0);
+    __CPROVER_assume(alloc_size <= MAX_BUFFER_SIZE);
+    ring.allocation = malloc(alloc_size);
+    __CPROVER_assume(ring.allocation != NULL);
+    ring.allocation_end = ring.allocation + alloc_size;
+
+    /* initialize atomic vars (implementation‑specific field name) */
+    ring.head = (struct aws_atomic_var){ .value = nondet_uint64_t() };
+    ring.tail = (struct aws_atomic_var){ .value = nondet_uint64_t() };
+
+    /* assume the ring buffer satisfies its validity predicate */
+    __CPROVER_assume(aws_ring_buffer_is_valid(&ring));
+
+    /* allocate and bound the byte buffer */
+    ensure_byte_buf_has_allocated_buffer_member(&buf);
+    __CPROVER_assume(aws_byte_buf_is_bounded(&buf, MAX_BUFFER_SIZE));
+
+    /* 2. Save old state */
+    struct aws_ring_buffer old_ring = ring;
+    struct aws_byte_buf old_buf = buf;
+
+    /* 3. Call function under test */
+    bool result = aws_ring_buffer_buf_belongs_to_pool(&ring, &buf);
+
+    /* 4. Postconditions for both success and failure paths */
+    if (result) {
+        /* The buffer must lie within the ring buffer's allocation region */
+        assert(buf.buffer >= ring.allocation);
+        assert(buf.buffer < ring.allocation_end);
+    } else {
+        /* If the function reports false, the buffer is not wholly inside the region */
+        assert(!(buf.buffer >= ring.allocation && buf.buffer < ring.allocation_end));
+    }
+
+    /* 5. Unchanged fields */
+    /* ring buffer fields */
+    assert(ring.allocator == old_ring.allocator);
+    assert(ring.allocation == old_ring.allocation);
+    assert(ring.allocation_end == old_ring.allocation_end);
+    assert(ring.head.value == old_ring.head.value);
+    assert(ring.tail.value == old_ring.tail.value);
+
+    /* byte buffer fields */
+    assert(buf.allocator == old_buf.allocator);
+    assert(buf.buffer == old_buf.buffer);
+    assert(buf.len == old_buf.len);
+    assert(buf.capacity == old_buf.capacity);
+    assert(buf.len <= buf.capacity);
+
+    /* 6. Validity invariants */
+    assert(aws_ring_buffer_is_valid(&ring));
+    assert(aws_byte_buf_is_bounded(&buf, MAX_BUFFER_SIZE));
+}

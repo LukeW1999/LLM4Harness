@@ -1,0 +1,74 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "doubled_result == aws_op_success",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.current_size > old.current_size || old.current_size == 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.length > index",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "required_size_result == aws_op_success",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.current_size >= doubled_size",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "add_result == aws_op_success",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "((uint8_t *)list.data)[saved_byte_index] == saved_byte",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "offset_result == aws_op_success",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  }
+]

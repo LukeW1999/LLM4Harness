@@ -1,0 +1,200 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "old.alloc != null",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.current_size >= old.current_size",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "result == aws_op_success",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "result == aws_op_err",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "list.item_size == item_size",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "list.length <= capacity",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "weaken",
+    "assert_text": "list.current_size >= old_required_size",
+    "new_text": "list.current_size == capacity * item_size",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "add",
+    "assert_text": "a[i] == b[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "add",
+    "assert_text": "list.current_size >= required_len_bytes",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "weaken",
+    "assert_text": "list.current_size == capacity * item_size",
+    "new_text": "list.current_size == initial_size_bytes",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "weaken",
+    "assert_text": "list.length <= capacity",
+    "new_text": "list.length <= initial_capacity",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "add",
+    "assert_text": "item_size > 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "add",
+    "assert_text": "allocator != null",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "add",
+    "assert_text": "old_len_bytes <= harness_max_initial_bytes",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "add",
+    "assert_text": "list.data != null",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "add",
+    "assert_text": "required_len_bytes > old_len_bytes",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "add",
+    "assert_text": "old.item_size == item_size",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "add",
+    "assert_text": "initial_capacity > 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "add",
+    "assert_text": "initial_size_bytes <= sizeof(static_storage)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "add",
+    "assert_text": "old.length <= initial_capacity",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "add",
+    "assert_text": "item_size <= harness_max_item_size",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "add",
+    "assert_text": "initial_capacity <= harness_max_initial_items",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

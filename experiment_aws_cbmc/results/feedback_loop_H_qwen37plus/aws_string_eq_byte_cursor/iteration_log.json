@@ -1,0 +1,209 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "str->len == cur->len",
+    "new_text": "str->len == cur.len",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "aws_array_eq(str->bytes, str->len, cur->ptr, cur->len)",
+    "new_text": "aws_array_eq(str->bytes, str->len, cur.ptr, cur.len)",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "str->len != cur->len || !aws_array_eq(str->bytes, str->len, cur->ptr, cur->len)",
+    "new_text": "str->len == cur.len",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "str->len != cur.len || !aws_array_eq(str->bytes, str->len, cur.ptr, cur.len)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "delete",
+    "assert_text": "str->len == cur.len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "delete",
+    "assert_text": "aws_array_eq(str->bytes, str->len, cur.ptr, cur.len)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "delete",
+    "assert_text": "str->len != cur.len || !aws_array_eq(str->bytes, str->len, cur.ptr, cur.len)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "add",
+    "assert_text": "aws_array_eq(str.bytes, str.len, cur.ptr, cur.len)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "add",
+    "assert_text": "str.len != cur.len || !aws_array_eq(str.bytes, str.len, cur.ptr, cur.len)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "add",
+    "assert_text": "str.len == cur.len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "delete",
+    "assert_text": "aws_array_eq(str.bytes, str.len, cur.ptr, cur.len)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "delete",
+    "assert_text": "str.len != cur.len || !aws_array_eq(str.bytes, str.len, cur.ptr, cur.len)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "delete",
+    "assert_text": "str.len == cur.len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "add",
+    "assert_text": "aws_array_eq(str_ptr->bytes, str_ptr->len, cur_ptr->ptr, cur_ptr->len)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "add",
+    "assert_text": "str_ptr->len != cur_ptr->len || !aws_array_eq(str_ptr->bytes, str_ptr->len, cur_ptr->ptr, cur_ptr->len)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "add",
+    "assert_text": "str_ptr->len == cur_ptr->len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "delete",
+    "assert_text": "aws_array_eq(str_ptr->bytes, str_ptr->len, cur_ptr->ptr, cur_ptr->len)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "delete",
+    "assert_text": "result == true",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "delete",
+    "assert_text": "str_ptr->len != cur_ptr->len || !aws_array_eq(str_ptr->bytes, str_ptr->len, cur_ptr->ptr, cur_ptr->len)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "delete",
+    "assert_text": "str_ptr->len == cur_ptr->len",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "add",
+    "assert_text": "str->len != cur_ptr->len || !aws_array_eq(str->bytes, str->len, cur_ptr->ptr, cur_ptr->len)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "add",
+    "assert_text": "aws_array_eq(str->bytes, str->len, cur_ptr->ptr, cur_ptr->len)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "add",
+    "assert_text": "str->len == cur_ptr->len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  }
+]

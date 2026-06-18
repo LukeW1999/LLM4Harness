@@ -1,0 +1,21 @@
+#include <aws/common/array_list.h>
+#include <aws/common/allocator.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+
+void aws_array_list_clear_harness() {
+    struct aws_array_list list;
+    struct aws_allocator *allocator = aws_default_allocator();
+
+    __CPROVER_assume(aws_array_list_is_bounded(
+        &list, MAX_INITIAL_ITEM_ALLOCATION, MAX_ITEM_SIZE));
+    ensure_array_list_has_allocated_data_member(&list);
+    list.alloc = allocator;
+
+    __CPROVER_assume(aws_array_list_is_valid(&list));
+
+    aws_array_list_clear(&list);
+
+    assert(list.length == 0);
+    assert(aws_array_list_is_valid(&list));
+}

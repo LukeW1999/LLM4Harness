@@ -1,0 +1,551 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "result == &old.head",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "new_last->next == &list.tail",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "old_last->next == &node",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.head.prev == old.head.prev",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "result == &old.tail",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.tail.prev == old.tail.prev",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "aws_linked_list_empty(&list)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "old_prev->next == old_next",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.head.next == &list.tail",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "result == old.head.next",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.tail.prev == &a",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "result == &list.tail",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "b.prev == old_b.prev",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "node.prev == old_last",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "to_add.prev == after",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "result == old.tail.prev",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.head.next == old.head.next",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "node.next == null",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "aws_linked_list_is_valid(&list)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "a.next == &list.tail",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "aws_linked_list_node_is_in_list(&b)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "result == &list.head",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "node.next == old_node_state.next",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "result == old_node.next",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "before->prev == &to_add",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "b.next == &a",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "a.prev == old_a.prev",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "result",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "node.next == old_node.next",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.head.next == old_head_next",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "a.next == old_a.next",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "old_prev->next == &to_add",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "node.prev == old_node.prev",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "node.next == &list.tail",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "result == old_node.prev",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "aws_linked_list_node_prev_is_valid(&to_add)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "aws_linked_list_node_next_is_valid(&to_add)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.tail.prev == new_last",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "!aws_linked_list_node_is_in_list(&node)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "after->next == &to_add",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "to_add.next == old_next",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "node.prev == null",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "to_add.prev == old_prev",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.tail.next == old.tail.next",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.head.prev == old_head_prev",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.tail.next == old_tail_next",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "aws_linked_list_node_is_in_list(&a)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "old_next->prev == old_prev",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.tail.prev == &list.head",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "node.prev == old_node_state.prev",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "b.next == old_b.next",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.head.next == old_first",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.head.next == &b",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "result == &node",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "list.tail.prev == old_tail_prev",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "!result",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "a.prev == &b",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "old_next->prev == &to_add",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "to_add.next == before",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "b.prev == &list.head",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "old_last == &list.head",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  }
+]

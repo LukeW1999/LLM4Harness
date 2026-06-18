@@ -1,0 +1,56 @@
+[
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "delete",
+    "assert_text": "result == true",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 9,
+    "to_iter": 10,
+    "action": "weaken",
+    "assert_text": "result == (c_str[0] == '\\0')",
+    "new_text": "result == (c_str[0] == 0)",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 10,
+    "to_iter": 11,
+    "action": "weaken",
+    "assert_text": "result == false",
+    "new_text": "result == c_str_is_empty",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 10,
+    "to_iter": 11,
+    "action": "weaken",
+    "assert_text": "result == true || result == false",
+    "new_text": "result == c_str_is_empty",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 10,
+    "to_iter": 11,
+    "action": "weaken",
+    "assert_text": "result == (c_str[0] == 0)",
+    "new_text": "result == c_str_is_empty",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 10,
+    "to_iter": 11,
+    "action": "add",
+    "assert_text": "!result",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  }
+]

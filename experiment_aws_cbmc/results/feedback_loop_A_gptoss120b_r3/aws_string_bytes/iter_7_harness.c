@@ -1,0 +1,32 @@
+#include <aws/common/string.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+
+void aws_string_bytes_harness(void) {
+    size_t len = (size_t)nondet_uint64_t();
+    __CPROVER_assume(len <= 1024);
+
+    uint8_t storage[sizeof(struct aws_string) + 1024];
+    struct aws_string *str = (struct aws_string *)storage;
+
+    struct aws_allocator *allocator = aws_default_allocator();
+    if (nondet_bool()) {
+        str->allocator = NULL;
+    } else {
+        str->allocator = allocator;
+    }
+
+    str->len = len;
+
+    __CPROVER_assume(aws_string_is_valid(str));
+
+    struct aws_allocator *old_allocator = str->allocator;
+    size_t old_len = str->len;
+
+    const uint8_t *bytes = aws_string_bytes(str);
+
+    assert(bytes == str->bytes);
+    assert(str->allocator == old_allocator);
+    assert(str->len == old_len);
+    assert(aws_string_is_valid(str));
+}

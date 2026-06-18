@@ -1,0 +1,47 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "result == aws_op_err",
+    "new_text": "result == aws_op_success",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "*r == old_r",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "*r == a + b",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "weaken",
+    "assert_text": "result == aws_op_success",
+    "new_text": "result == 0",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "weaken",
+    "assert_text": "result == 0",
+    "new_text": "result == aws_op_success || result == aws_op_err",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  }
+]

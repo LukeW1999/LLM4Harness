@@ -1,0 +1,119 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "result.ptr == aws_string_bytes(src)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "(const uint8_t *)result.ptr == aws_string_bytes(src)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "(const uint8_t *)result.ptr == aws_string_bytes(src)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "add",
+    "assert_text": "result.ptr == aws_string_bytes(src)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "delete",
+    "assert_text": "result.len == 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "delete",
+    "assert_text": "result.ptr == null",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "weaken",
+    "assert_text": "result.ptr == aws_string_bytes(src)",
+    "new_text": "result.ptr == src->bytes",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "weaken",
+    "assert_text": "result.len == src->len",
+    "new_text": "result.len == str->len",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "weaken",
+    "assert_text": "result.ptr == src->bytes",
+    "new_text": "result.ptr == str->bytes",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 10,
+    "to_iter": 11,
+    "action": "delete",
+    "assert_text": "result.ptr == str->bytes",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 10,
+    "to_iter": 11,
+    "action": "add",
+    "assert_text": "(const void *)result.ptr == (const void *)str->bytes",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 13,
+    "to_iter": 14,
+    "action": "delete",
+    "assert_text": "(const void *)result.ptr == (const void *)str->bytes",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 13,
+    "to_iter": 14,
+    "action": "add",
+    "assert_text": "result.ptr == str->bytes",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  }
+]

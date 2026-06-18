@@ -1,0 +1,101 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "aws_byte_buf_is_valid(&dest)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "dest.buffer == old_buffer",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "dest.len == old_len + total_src_len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "dest.allocator == old_allocator",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "buffers[i]->len == old_buffers[i].len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "dest.len == old_len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "buffers[i]->buffer == old_buffer_ptrs[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "aws_byte_buf_is_valid(buffers[i])",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "buffers[i]->capacity == old_buffers[i].capacity",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "buffers[i]->allocator == old_buffer_allocators[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "dest.capacity == old_capacity",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

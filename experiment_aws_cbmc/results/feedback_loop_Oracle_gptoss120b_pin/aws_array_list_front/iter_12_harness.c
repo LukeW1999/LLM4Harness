@@ -1,0 +1,28 @@
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+
+void aws_array_list_front_harness(void) {
+    struct aws_allocator *allocator = aws_default_allocator();
+    struct aws_array_list list;
+
+    if (aws_array_list_init(&list, allocator, 10, sizeof(int)) != AWS_OP_SUCCESS) {
+        return;
+    }
+
+    __CPROVER_bool do_push = nondet_bool();
+    if (do_push) {
+        int val;
+        if (aws_array_list_push_back(&list, &val) != AWS_OP_SUCCESS) {
+            aws_array_list_clean_up(&list);
+            return;
+        }
+    }
+
+    if (do_push) {
+        assert(aws_array_list_front(&list) != NULL);
+    } else {
+        assert(aws_array_list_front(&list) == NULL);
+    }
+
+    aws_array_list_clean_up(&list);
+}

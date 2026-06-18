@@ -1,0 +1,29 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "result == true",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 6,
+    "to_iter": 7,
+    "action": "delete",
+    "assert_text": "result == false",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "delete",
+    "assert_text": "result == true || result == false",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  }
+]

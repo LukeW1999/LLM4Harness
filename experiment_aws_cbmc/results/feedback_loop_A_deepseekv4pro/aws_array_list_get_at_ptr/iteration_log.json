@@ -1,0 +1,11 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "(uint8_t *)*val_ptr >= (uint8_t *)list.data && (uint8_t *)*val_ptr < (uint8_t *)list.data + list.current_size",
+    "new_text": "(uint8_t *)*val_ptr >= (uint8_t *)list.data && (uint8_t *)*val_ptr < (uint8_t *)list.data + list.length * list.item_size",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "ring_buf.allocator == old_ring_buf.allocator",
+    "new_text": "ring_buf.allocator == old_allocator",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "ring_buf.allocation_end == old_ring_buf.allocation_end",
+    "new_text": "ring_buf.allocation_end == old_allocation_end",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "ring_buf.allocation == old_ring_buf.allocation",
+    "new_text": "ring_buf.allocation == old_allocation",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

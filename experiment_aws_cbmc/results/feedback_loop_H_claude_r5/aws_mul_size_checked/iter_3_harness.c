@@ -1,0 +1,29 @@
+#include <aws/common/math.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
+
+void aws_mul_size_checked_harness(void) {
+    size_t a;
+    size_t b;
+    size_t r = 0;
+
+    __CPROVER_assume(a <= 0xFFFF);
+    __CPROVER_assume(b <= 0xFFFF);
+
+    int result = aws_mul_size_checked(a, b, &r);
+
+    assert(result == AWS_OP_SUCCESS || result == AWS_OP_ERR);
+
+    if (result == AWS_OP_SUCCESS) {
+        assert(r == a * b);
+        if (a != 0) {
+            assert(r / a == b);
+        }
+        if (b != 0) {
+            assert(r / b == a);
+        }
+    }
+}

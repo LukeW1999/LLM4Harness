@@ -1,0 +1,29 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "result == aws_op_err",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "src.ptr[saved_index] == saved_byte",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "dest.buffer[saved_index] == saved_byte",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  }
+]

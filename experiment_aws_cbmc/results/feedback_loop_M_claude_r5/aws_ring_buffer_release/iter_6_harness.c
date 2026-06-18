@@ -1,0 +1,70 @@
+#include <aws/common/byte_buf.h>
+#include <aws/common/ring_buffer.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
+
+#ifndef MAX_BUFFER_SIZE
+#define MAX_BUFFER_SIZE 64
+#endif
+
+void aws_ring_buffer_release_harness() {
+    struct aws_ring_buffer ring_buffer;
+
+    size_t ring_size;
+    __CPROVER_assume(ring_size > 1 && ring_size <= MAX_BUFFER_SIZE);
+
+    struct aws_allocator *allocator = aws_default_allocator();
+    ring_buffer.allocator = allocator;
+    ring_buffer.allocation = malloc(ring_size);
+    __CPROVER_assume(ring_buffer.allocation != NULL);
+    ring_buffer.allocation_end = ring_buffer.allocation + ring_size;
+
+    size_t tail_offset;
+    __CPROVER_assume(tail_offset < ring_size);
+    uint8_t *tail_ptr = ring_buffer.allocation + tail_offset;
+    aws_atomic_store_ptr(&ring_buffer.tail, (void *)tail_ptr);
+
+    size_t buf_capacity;
+    __CPROVER_assume(buf_capacity > 0);
+    __CPROVER_assume(buf_capacity <= (size_t)(ring_buffer.allocation_end - tail_ptr));
+
+    uint8_t *new_tail_raw = tail_ptr + buf_capacity;
+    uint8_t *effective_new_tail = (new_tail_raw == ring_buffer.allocation_end) ? ring_buffer.allocation : new_tail_raw;
+
+    size_t head_offset;
+    __CPROVER_assume(head_offset < ring_size);
+    uint8_t *head_ptr = ring_buffer.allocation + head_offset;
+    aws_atomic_store_ptr(&ring_buffer.head, (void *)head_ptr);
+
+    /* Ensure ring buffer is valid before call */
+    __CPROVER_assume(aws_ring_buffer_is_valid(&ring_buffer));
+
+    /* Ensure effective_new_tail != head_ptr to avoid empty/full ambiguity if needed */
+    /* effective_new_tail must be < allocation_end */
+    __CPROVER_assume(effective_new_tail >= ring_buffer.allocation && effective_new_tail < ring_buffer.allocation_end);
+
+    /* Set up the byte buf to release */
+    struct aws_byte_buf buf;
+    buf.buffer = tail_ptr;
+    buf.capacity = buf_capacity;
+
+    size_t buf_len;
+    __CPROVER_assume(buf_len <= buf_capacity);
+    buf.len = buf_len;
+    buf.allocator = ring_buffer.allocator;
+
+    __CPROVER_assume(aws_byte_buf_is_valid(&buf));
+    __CPROVER_assume(aws_ring_buffer_buf_belongs_to_pool(&ring_buffer, &buf));
+
+    /* Call the function under test */
+    aws_ring_buffer_release(&ring_buffer, &buf);
+
+    /* Assert postconditions */
+    assert(buf.buffer == NULL);
+    assert(buf.len == 0);
+    assert(buf.capacity == 0);
+    assert(buf.allocator == NULL);
+}

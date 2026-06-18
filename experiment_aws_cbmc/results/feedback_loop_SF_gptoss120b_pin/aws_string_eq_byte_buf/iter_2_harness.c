@@ -1,0 +1,102 @@
+#include <aws/common/string.h>
+#include <aws/common/byte_buf.h>
+#include <aws/common/common.h>
+#include "proof_helpers/make_common_data_structures.h"
+#include <assert.h>
+
+void aws_string_eq_byte_buf_harness(void) {
+    struct aws_allocator *allocator = aws_default_allocator();
+
+    /* nondeterministic string */
+    bool str_is_null = nondet_bool();
+    struct aws_string *str = NULL;
+    if (!str_is_null) {
+        size_t str_len = nondet_size_t();
+        __CPROVER_assume(str_len <= 1024);
+        str = malloc(sizeof(struct aws_string) + str_len);
+        __CPROVER_assume(str != NULL);
+        str->allocator = allocator;
+        str->len = str_len;
+        for (size_t i = 0; i < str_len; ++i) {
+            ((uint8_t *)str->bytes)[i] = nondet_uint8_t();
+        }
+    }
+
+    /* nondeterministic byte buffer */
+    bool buf_is_null = nondet_bool();
+    struct aws_byte_buf *buf = NULL;
+    if (!buf_is_null) {
+        size_t buf_len = nondet_size_t();
+        __CPROVER_assume(buf_len <= 1024);
+        buf = malloc(sizeof(struct aws_byte_buf));
+        __CPROVER_assume(buf != NULL);
+        buf->allocator = allocator;
+        buf->capacity = buf_len;
+        buf->len = buf_len;
+        buf->buffer = malloc(buf_len);
+        __CPROVER_assume(buf->buffer != NULL);
+        for (size_t i = 0; i < buf_len; ++i) {
+            buf->buffer[i] = nondet_uint8_t();
+        }
+    }
+
+    /* preconditions */
+    __CPROVER_assume(str == NULL || aws_string_is_valid(str));
+    __CPROVER_assume(buf == NULL || aws_byte_buf_is_valid(buf));
+
+    /* snapshot of input state */
+    size_t old_str_len = 0;
+    const uint8_t *old_str_bytes = NULL;
+    if (str) {
+        old_str_len = str->len;
+        old_str_bytes = str->bytes;
+    }
+
+    size_t old_buf_len = 0;
+    size_t old_buf_capacity = 0;
+    uint8_t *old_buf_buffer = NULL;
+    if (buf) {
+        old_buf_len = buf->len;
+        old_buf_capacity = buf->capacity;
+        old_buf_buffer = buf->buffer;
+    }
+
+    /* call under verification */
+    bool result = aws_string_eq_byte_buf(str, buf);
+
+    /* postconditions */
+    if (str == NULL || buf == NULL) {
+        /* If either argument is NULL the function must return false */
+        assert(!result);
+    } else {
+        /* Lengths must be unchanged */
+        assert(str->len == old_str_len);
+        assert(buf->len == old_buf_len);
+        /* Capacity must be unchanged */
+        assert(buf->capacity == old_buf_capacity);
+        /* Allocators must be unchanged */
+        assert(str->allocator == allocator);
+        assert(buf->allocator == allocator);
+        /* Pointers to internal buffers must be unchanged */
+        assert(str->bytes == old_str_bytes);
+        assert(buf->buffer == old_buf_buffer);
+        /* Result must reflect equality of length and contents */
+        bool lengths_eq = (str->len == buf->len);
+        bool bytes_eq = true;
+        for (size_t i = 0; i < str->len; ++i) {
+            if (((uint8_t *)str->bytes)[i] != buf->buffer[i]) {
+                bytes_eq = false;
+                break;
+            }
+        }
+        assert(result == (lengths_eq && bytes_eq));
+        /* Frame condition: contents of the string must be unchanged */
+        for (size_t i = 0; i < old_str_len; ++i) {
+            assert(((uint8_t *)str->bytes)[i] == old_str_bytes[i]);
+        }
+        /* Frame condition: contents of the byte buffer must be unchanged */
+        for (size_t i = 0; i < old_buf_len; ++i) {
+            assert(buf->buffer[i] == old_buf_buffer[i]);
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "compiles": true,
+  "cbmc_on_original": "SUCCESS",
+  "has_assume": true,
+  "has_placeholder": true,
+  "scaffold_valid": true
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "list.item_size == old.item_size",
+    "new_text": "list.item_size == old_item_size",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "list.length == old.length",
+    "new_text": "list.length == old_length",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "list.alloc == old.alloc",
+    "new_text": "list.alloc == old_alloc",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

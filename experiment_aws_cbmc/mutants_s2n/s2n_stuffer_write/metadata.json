@@ -1,0 +1,12 @@
+{
+  "func": "s2n_stuffer_write",
+  "status": "ok",
+  "source_file": "/root/s2n-tls/stuffer/s2n_stuffer.c",
+  "mutated_name": "s2n_stuffer.c",
+  "line_range": [
+    331,
+    336
+  ],
+  "n_raw": 57,
+  "n_compiled": 12
+}

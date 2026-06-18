@@ -1,0 +1,78 @@
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+
+#define MAX_BUFFER_SIZE 256
+
+union aws_string_storage {
+    struct aws_string s;
+    uint8_t raw[sizeof(struct aws_string) + MAX_BUFFER_SIZE];
+};
+
+static inline uint8_t *aws_string_bytes(const struct aws_string *s) {
+    return (uint8_t *)(s + 1);
+}
+
+void aws_string_destroy_secure_harness(void) {
+    struct aws_string *str;
+
+    /* nondeterministically decide whether str is NULL */
+    if (nondet_bool()) {
+        str = NULL;
+    } else {
+        size_t len = nondet_size_t();
+        __CPROVER_assume(len <= MAX_BUFFER_SIZE);
+
+        /* use stack‑allocated storage for the string */
+        union aws_string_storage storage;
+        str = &storage.s;
+
+        if (nondet_bool()) {
+            /* allocator is NULL – stack‑allocated storage */
+            str->allocator = NULL;
+        } else {
+            /* allocator is default – stack‑allocated storage */
+            str->allocator = aws_default_allocator();
+        }
+
+        str->len = len;
+
+        /* initialise the bytes with nondeterministic values */
+        uint8_t *bytes = aws_string_bytes(str);
+        for (size_t i = 0; i < len; ++i) {
+            bytes[i] = nondet_uint8_t();
+        }
+    }
+
+    if (str) {
+        const struct aws_allocator *old_allocator = str->allocator;
+        const size_t old_len = str->len;
+        const bool old_allocator_is_null = (old_allocator == NULL);
+
+        uint8_t old_bytes_buf[MAX_BUFFER_SIZE];
+        uint8_t *old_bytes = NULL;
+        if (old_len > 0) {
+            old_bytes = old_bytes_buf;
+            const uint8_t *cur_bytes = aws_string_bytes(str);
+            for (size_t i = 0; i < old_len; ++i) {
+                old_bytes[i] = cur_bytes[i];
+            }
+        }
+
+        aws_string_destroy_secure(str);
+
+        if (old_allocator_is_null) {
+            const uint8_t *cur_bytes = aws_string_bytes(str);
+            for (size_t i = 0; i < old_len; ++i) {
+                assert(cur_bytes[i] == 0);
+            }
+            assert(str->allocator == old_allocator);
+            assert(str->len == old_len);
+            assert(aws_string_is_valid(str));
+        } else {
+            /* memory may have been freed; no further dereference of str */
+        }
+    } else {
+        /* str is NULL – the function should be a no‑op. */
+        aws_string_destroy_secure(str);
+    }
+}

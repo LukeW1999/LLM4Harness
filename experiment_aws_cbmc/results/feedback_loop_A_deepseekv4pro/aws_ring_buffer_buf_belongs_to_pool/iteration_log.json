@@ -1,0 +1,218 @@
+[
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "weaken",
+    "assert_text": "ring_buffer.allocator == old_ring_buffer.allocator",
+    "new_text": "ring_buffer.allocator == old_ring.allocator",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "weaken",
+    "assert_text": "ring_buffer.allocation == old_ring_buffer.allocation",
+    "new_text": "ring_buffer.allocation == old_ring.allocation",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "weaken",
+    "assert_text": "ring_buffer.allocation_end == old_ring_buffer.allocation_end",
+    "new_text": "ring_buffer.allocation_end == old_ring.allocation_end",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "delete",
+    "assert_text": "aws_ring_buffer_is_valid(&ring_buffer)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "delete",
+    "assert_text": "aws_atomic_load_int(&ring_buffer.tail) == aws_atomic_load_int(&old_ring_buffer.tail)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "delete",
+    "assert_text": "aws_atomic_load_int(&ring_buffer.head) == aws_atomic_load_int(&old_ring_buffer.head)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "weaken",
+    "assert_text": "buf.buffer >= ring_buffer.allocation",
+    "new_text": "buf.buffer < ring_buf.allocation_end",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "weaken",
+    "assert_text": "buf.buffer < ring_buffer.allocation || buf.buffer >= ring_buffer.allocation_end",
+    "new_text": "buf.buffer < ring_buf.allocation_end",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "weaken",
+    "assert_text": "buf.buffer < ring_buffer.allocation_end",
+    "new_text": "buf.buffer < ring_buf.allocation_end",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "delete",
+    "assert_text": "ring_buffer.allocator == old_ring.allocator",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "delete",
+    "assert_text": "ring_buffer.allocation_end == old_ring.allocation_end",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "delete",
+    "assert_text": "ring_buffer.allocation == old_ring.allocation",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "add",
+    "assert_text": "ring_buf.allocation == old_ring.allocation",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "add",
+    "assert_text": "ring_buf.head == old_ring.head",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "add",
+    "assert_text": "aws_ring_buffer_is_valid(&ring_buf)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "add",
+    "assert_text": "ring_buf.tail == old_ring.tail",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "add",
+    "assert_text": "ring_buf.allocator == old_ring.allocator",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "add",
+    "assert_text": "buf.buffer >= ring_buf.allocation",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "add",
+    "assert_text": "buf.buffer < ring_buf.allocation || buf.buffer >= ring_buf.allocation_end",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "add",
+    "assert_text": "ring_buf.allocation_end == old_ring.allocation_end",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "weaken",
+    "assert_text": "buf.buffer < ring_buf.allocation || buf.buffer >= ring_buf.allocation_end",
+    "new_text": "buf.buffer < ring_buf.allocation || (buf.buffer + buf.capacity) > ring_buf.allocation_end",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "weaken",
+    "assert_text": "buf.buffer < ring_buf.allocation_end",
+    "new_text": "buf.buffer < ring_buf.allocation || (buf.buffer + buf.capacity) > ring_buf.allocation_end",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "add",
+    "assert_text": "(buf.buffer + buf.capacity) <= ring_buf.allocation_end",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 10,
+    "to_iter": 11,
+    "action": "delete",
+    "assert_text": "buf.buffer < ring_buf.allocation || (buf.buffer + buf.capacity) > ring_buf.allocation_end",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  }
+]

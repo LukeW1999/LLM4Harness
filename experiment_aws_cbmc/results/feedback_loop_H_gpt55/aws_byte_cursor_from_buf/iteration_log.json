@@ -1,0 +1,11 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "aws_byte_buf_is_bounded(&buf, max_buffer_size)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_verify"
+  }
+]

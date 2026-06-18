@@ -1,0 +1,51 @@
+#include <aws/common/byte_buf.h>
+#include <aws/common/ring_buffer.h>
+#include <proof_helpers/make_common_data_structures.h>
+
+void aws_ring_buffer_buf_belongs_to_pool_harness() {
+    /* 1. Set up the ring buffer */
+    struct aws_ring_buffer ring_buffer;
+    
+    /* Allocate a backing buffer for the ring buffer */
+    size_t ring_size;
+    __CPROVER_assume(ring_size > 0 && ring_size <= MAX_BUFFER_SIZE);
+    
+    /* Initialize ring buffer fields non-deterministically but validly */
+    ring_buffer.allocator = aws_default_allocator();
+    ring_buffer.allocation = malloc(ring_size);
+    __CPROVER_assume(ring_buffer.allocation != NULL);
+    ring_buffer.allocation_end = ring_buffer.allocation + ring_size;
+    
+    /* Set head and tail atomics to valid positions within the buffer */
+    size_t head_offset;
+    __CPROVER_assume(head_offset <= ring_size);
+    size_t tail_offset;
+    __CPROVER_assume(tail_offset <= ring_size);
+    
+    aws_atomic_init_ptr(&ring_buffer.head, (void *)(ring_buffer.allocation + head_offset));
+    aws_atomic_init_ptr(&ring_buffer.tail, (void *)(ring_buffer.allocation + tail_offset));
+    
+    __CPROVER_assume(aws_ring_buffer_is_valid(&ring_buffer));
+    
+    /* 2. Set up the byte buf */
+    struct aws_byte_buf buf;
+    __CPROVER_assume(aws_byte_buf_is_bounded(&buf, MAX_BUFFER_SIZE));
+    ensure_byte_buf_has_allocated_buffer_member(&buf);
+    __CPROVER_assume(aws_byte_buf_is_valid(&buf));
+    
+    /* 3. Call function under test */
+    bool result = aws_ring_buffer_buf_belongs_to_pool(&ring_buffer, &buf);
+    
+    /* 4. Assert postconditions */
+    
+    /* The function returns true if buf->buffer is within [allocation, allocation_end) */
+    if (result) {
+        assert(buf.buffer != NULL);
+        assert(buf.buffer >= ring_buffer.allocation);
+        assert(buf.buffer < ring_buffer.allocation_end);
+    }
+    
+    /* Validity invariants must still hold */
+    assert(aws_ring_buffer_is_valid(&ring_buffer));
+    assert(aws_byte_buf_is_valid(&buf));
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "aws_atomic_load_ptr(&ring_buffer.tail) == old_buf.buffer + old_buf.capacity",
+    "new_text": "aws_atomic_load_ptr(&ring_buffer.tail) == (void *)(old_buf.buffer + old_buf.capacity)",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "weaken",
+    "assert_text": "ring_buffer.allocation_end == old_ring_buffer.allocation_end",
+    "new_text": "ring_buffer.allocation_end == old_allocation_end",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "weaken",
+    "assert_text": "ring_buffer.allocation == old_ring_buffer.allocation",
+    "new_text": "ring_buffer.allocation == old_allocation",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "weaken",
+    "assert_text": "aws_atomic_load_ptr(&ring_buffer.head) == aws_atomic_load_ptr(&old_ring_buffer.head)",
+    "new_text": "aws_atomic_load_ptr(&ring_buffer.head) == old_head",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "weaken",
+    "assert_text": "ring_buffer.allocator == old_ring_buffer.allocator",
+    "new_text": "ring_buffer.allocator == old_allocator",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "delete",
+    "assert_text": "aws_atomic_load_ptr(&ring_buffer.head) == old_head",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "delete",
+    "assert_text": "ring_buffer.allocator == old_allocator",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "delete",
+    "assert_text": "ring_buffer.allocation_end == old_allocation_end",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "delete",
+    "assert_text": "aws_atomic_load_ptr(&ring_buffer.tail) == (void *)(old_buf.buffer + old_buf.capacity)",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 8,
+    "to_iter": 9,
+    "action": "delete",
+    "assert_text": "ring_buffer.allocation == old_allocation",
+    "new_text": null,
+    "triggered_violation": true,
+    "context": "fix_verify"
+  }
+]

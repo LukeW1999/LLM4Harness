@@ -1,0 +1,56 @@
+#include <aws/common/string.h>
+#include <aws/common/byte_buf.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <proof_helpers/nondet.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
+#include <string.h>
+
+void aws_string_new_from_c_str_harness() {
+    /* 1. Set up allocator */
+    struct aws_allocator *allocator = aws_default_allocator();
+
+    /* 2. Create a bounded c_str input */
+    size_t len = nondet_size_t();
+    __CPROVER_assume(len <= MAX_BUFFER_SIZE);
+
+    /* Allocate a buffer of len+1 bytes (for null terminator) */
+    char *c_str = malloc(len + 1);
+    __CPROVER_assume(c_str != NULL);
+
+    /* Fill with nondet bytes, ensure null terminator */
+    /* CBMC will treat the bytes as nondet since malloc gives nondet memory */
+    c_str[len] = '\0';
+
+    /* Ensure no null bytes before position len so strlen(c_str) == len */
+    __CPROVER_assume(strlen(c_str) == len);
+
+    /* 3. Call function under test */
+    struct aws_string *result = aws_string_new_from_c_str(allocator, c_str);
+
+    /* 4. Assert postconditions */
+    if (result != NULL) {
+        /* On success: the returned string must be valid */
+        assert(aws_string_is_valid(result));
+
+        /* The length must match strlen(c_str) which equals len */
+        assert(result->len == len);
+
+        /* The allocator must be set */
+        assert(result->allocator == allocator);
+
+        /* The bytes must match the input c_str */
+        assert(memcmp(aws_string_bytes(result), c_str, len) == 0);
+
+        /* The string must be null-terminated */
+        assert(result->bytes[len] == '\0');
+
+        /* Clean up */
+        aws_string_destroy(result);
+    }
+
+    free(c_str);
+}

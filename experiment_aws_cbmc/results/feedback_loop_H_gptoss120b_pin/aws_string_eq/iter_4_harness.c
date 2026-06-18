@@ -1,0 +1,85 @@
+#include <proof_helpers/make_common_data_structures.h>
+
+#define MAX_STRING_LEN 256
+
+void aws_string_eq_harness(void) {
+    aws_common_library_init();
+
+    struct aws_allocator *allocator = aws_default_allocator();
+
+    struct aws_string *a;
+    struct aws_string *b;
+
+    if (nondet_bool()) {
+        a = NULL;
+    } else {
+        size_t len_a = nondet_size_t();
+        __CPROVER_assume(len_a <= MAX_STRING_LEN);
+        uint8_t *buf_a = (uint8_t *)malloc(len_a);
+        __CPROVER_assume(buf_a != NULL);
+        for (size_t i = 0; i < len_a; ++i) {
+            buf_a[i] = nondet_uint8_t();
+        }
+        a = aws_string_new_from_array(allocator, buf_a, len_a);
+        free(buf_a);
+        __CPROVER_assume(aws_string_is_valid(a));
+    }
+
+    if (nondet_bool()) {
+        b = NULL;
+    } else {
+        size_t len_b = nondet_size_t();
+        __CPROVER_assume(len_b <= MAX_STRING_LEN);
+        uint8_t *buf_b = (uint8_t *)malloc(len_b);
+        __CPROVER_assume(buf_b != NULL);
+        for (size_t i = 0; i < len_b; ++i) {
+            buf_b[i] = nondet_uint8_t();
+        }
+        b = aws_string_new_from_array(allocator, buf_b, len_b);
+        free(buf_b);
+        __CPROVER_assume(aws_string_is_valid(b));
+    }
+
+    struct aws_string old_a = {0};
+    struct aws_string old_b = {0};
+    struct store_byte_from_buffer a_storage = {0};
+    struct store_byte_from_buffer b_storage = {0};
+
+    if (a != NULL) {
+        old_a = *a;
+        save_byte_from_array(a->bytes, a->len, &a_storage);
+    }
+    if (b != NULL) {
+        old_b = *b;
+        save_byte_from_array(b->bytes, b->len, &b_storage);
+    }
+
+    bool result = aws_string_eq(a, b);
+
+    bool expected;
+    if (a == b) {
+        expected = true;
+    } else if (a == NULL || b == NULL) {
+        expected = false;
+    } else {
+        expected = aws_array_eq(a->bytes, a->len, b->bytes, b->len);
+    }
+    assert(result == expected);
+
+    if (a != NULL) {
+        assert(a->allocator == old_a.allocator);
+        assert(a->len == old_a.len);
+        assert_byte_from_buffer_matches(a->bytes, &a_storage);
+    }
+    if (b != NULL) {
+        assert(b->allocator == old_b.allocator);
+        assert(b->len == old_b.len);
+        assert_byte_from_buffer_matches(b->bytes, &b_storage);
+    }
+
+    assert(aws_string_is_valid(a));
+    assert(aws_string_is_valid(b));
+
+    if (a) aws_string_destroy(a);
+    if (b) aws_string_destroy(b);
+}

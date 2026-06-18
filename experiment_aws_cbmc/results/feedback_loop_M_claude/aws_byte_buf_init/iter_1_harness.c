@@ -1,0 +1,55 @@
+#include <aws/common/byte_buf.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <proof_helpers/nondet.h>
+#include <assert.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdbool.h>
+
+void aws_byte_buf_init_harness() {
+    /* 1. Declare and bound inputs */
+    struct aws_byte_buf buf;
+    struct aws_allocator *allocator = aws_default_allocator();
+
+    size_t capacity = nondet_size_t();
+    __CPROVER_assume(capacity <= MAX_BUFFER_SIZE);
+
+    /* buf must be a valid pointer (non-NULL), but its contents are uninitialized */
+    /* The function will overwrite all fields, so no need to initialize buf */
+
+    /* 2. Call function under test */
+    int result = aws_byte_buf_init(&buf, allocator, capacity);
+
+    /* 3. Assert postconditions */
+    if (result == AWS_OP_SUCCESS) {
+        /* On success:
+         * - buf.len == 0
+         * - buf.capacity == capacity
+         * - buf.allocator == allocator
+         * - buf.buffer != NULL if capacity > 0, NULL if capacity == 0
+         */
+        assert(buf.len == 0);
+        assert(buf.capacity == capacity);
+        assert(buf.allocator == allocator);
+        if (capacity == 0) {
+            assert(buf.buffer == NULL);
+        } else {
+            assert(buf.buffer != NULL);
+        }
+    } else {
+        /* On failure (AWS_OP_ERR):
+         * - The struct is zeroed out (AWS_ZERO_STRUCT)
+         * - capacity must have been non-zero (allocation failed)
+         * - buf.len == 0, buf.buffer == NULL, buf.capacity == 0, buf.allocator == NULL
+         */
+        assert(result == AWS_OP_ERR);
+        assert(capacity != 0); /* failure only possible when capacity != 0 */
+        assert(buf.len == 0);
+        assert(buf.buffer == NULL);
+        assert(buf.capacity == 0);
+        assert(buf.allocator == NULL);
+    }
+
+    /* 4. Assert validity invariant always holds after the call */
+    assert(aws_byte_buf_is_valid(&buf));
+}

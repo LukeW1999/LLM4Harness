@@ -1,0 +1,155 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "((uint8_t *)list.data)[prefix_bytes + trailing_byte] == old_data[prefix_bytes + old.item_size + trailing_byte]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "((uint8_t *)list.data)[prefix_byte] == old_data[prefix_byte]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "delete",
+    "assert_text": "((uint8_t *)list.data)[unchanged_byte] == old_data[unchanged_byte]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "prefix_byte >= prefix_bytes || ((uint8_t *)list.data)[prefix_byte] == old_data[prefix_byte]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "aws_array_list_is_bounded(&list, max_initial_item_allocation, max_item_size)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "trailing_byte >= trailing_bytes || ((uint8_t *)list.data)[prefix_bytes + trailing_byte] == old_data[prefix_bytes + old.item_size + trailing_byte]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "unchanged_byte >= old.current_size || ((uint8_t *)list.data)[unchanged_byte] == old_data[unchanged_byte]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "aws_array_list_is_bounded(&old, max_initial_item_allocation, max_item_size)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "trailing_byte >= trailing_bytes || ((uint8_t *)list.data)[prefix_bytes + trailing_byte] == old_data[prefix_bytes + old.item_size + trailing_byte]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "prefix_byte >= prefix_bytes || ((uint8_t *)list.data)[prefix_byte] == old_data[prefix_byte]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "unchanged_byte >= old.current_size || ((uint8_t *)list.data)[unchanged_byte] == old_data[unchanged_byte]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "((uint8_t *)list.data)[prefix_bound + shifted_byte] == old_data[prefix_bound + old.item_size + shifted_byte]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "((uint8_t *)list.data)[prefix_byte] == old_data[prefix_byte]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "shifted_bytes == 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "shifted_bytes > 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "current_size > 0",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "add",
+    "assert_text": "((uint8_t *)list.data)[unchanged_byte] == old_data[unchanged_byte]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  }
+]

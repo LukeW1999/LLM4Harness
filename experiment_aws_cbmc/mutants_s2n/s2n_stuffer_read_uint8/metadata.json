@@ -1,0 +1,12 @@
+{
+  "func": "s2n_stuffer_read_uint8",
+  "status": "ok",
+  "source_file": "/root/s2n-tls/stuffer/s2n_stuffer_network_order.c",
+  "mutated_name": "s2n_stuffer_network_order.c",
+  "line_range": [
+    56,
+    61
+  ],
+  "n_raw": 60,
+  "n_compiled": 12
+}

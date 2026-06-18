@@ -1,0 +1,18 @@
+{
+  "func": "aws_array_list_swap_contents",
+  "gt_verification": "SUCCESS",
+  "first_pass_compile": true,
+  "first_pass_verify": false,
+  "converged": false,
+  "verification_equivalent": false,
+  "num_iterations": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "action": "initial",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 1
+    }
+  ]
+}

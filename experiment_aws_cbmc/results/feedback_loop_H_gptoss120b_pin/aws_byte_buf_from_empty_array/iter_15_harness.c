@@ -1,0 +1,25 @@
+#include <aws/common/byte_buf.h>
+#include <aws/common/allocator.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+
+#define MAX_BUFFER_SIZE 256
+
+void aws_byte_buf_from_empty_array_harness(void) {
+    struct aws_byte_buf buf;
+    uint8_t static_array[MAX_BUFFER_SIZE];
+    size_t capacity = nondet_size_t();
+
+    __CPROVER_assume(capacity <= MAX_BUFFER_SIZE);
+
+    uint8_t *array = (capacity > 0) ? static_array : NULL;
+
+    int result = aws_byte_buf_from_empty_array(&buf, array, capacity);
+    __CPROVER_assume(result == AWS_OP_SUCCESS);
+
+    assert(buf.buffer == array);
+    assert(buf.len == 0);
+    assert(buf.capacity == capacity);
+    assert(buf.allocator == NULL);
+    assert(aws_byte_buf_is_valid(&buf));
+}

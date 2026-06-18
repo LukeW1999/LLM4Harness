@@ -1,0 +1,60 @@
+{
+  "func": "aws_byte_buf_advance",
+  "gt_verification": "SUCCESS",
+  "first_pass_compile": true,
+  "first_pass_verify": false,
+  "converged": true,
+  "verification_equivalent": true,
+  "num_iterations": 7,
+  "iterations": [
+    {
+      "iter": 1,
+      "action": "initial",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 2
+    },
+    {
+      "iter": 2,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 3
+    },
+    {
+      "iter": 3,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 2
+    },
+    {
+      "iter": 4,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 2
+    },
+    {
+      "iter": 5,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 2
+    },
+    {
+      "iter": 6,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "FAIL",
+      "num_failed": 1
+    },
+    {
+      "iter": 7,
+      "action": "fix_verify",
+      "compile_ok": true,
+      "verify": "SUCCESS",
+      "num_failed": 0
+    }
+  ]
+}

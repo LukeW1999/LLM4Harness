@@ -1,0 +1,49 @@
+#include <aws/common/array_list.h>
+#include <aws/common/byte_buf.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <proof_helpers/nondet.h>
+#include <assert.h>
+#include <stddef.h>
+#include <stdbool.h>
+
+void aws_array_list_erase_harness() {
+    /* 1. Declare and bound the array list */
+    struct aws_array_list list;
+    __CPROVER_assume(aws_array_list_is_bounded(&list,
+                                               MAX_INITIAL_ITEM_ALLOCATION,
+                                               MAX_ITEM_SIZE));
+    ensure_array_list_has_allocated_data_member(&list);
+    list.alloc = aws_default_allocator();
+    __CPROVER_assume(aws_array_list_is_valid(&list));
+
+    /* 2. Save old state */
+    struct aws_array_list old = list;
+
+    /* 3. Nondeterministic index */
+    size_t index = nondet_size_t();
+
+    /* 4. Call function under test */
+    int result = aws_array_list_erase(&list, index);
+
+    /* 5. Postconditions */
+    if (result == AWS_OP_SUCCESS) {
+        /* Length and current_size decrease by one */
+        assert(list.length == old.length - 1);
+        assert(list.current_size == old.current_size - 1);
+
+        /* Data pointer, allocator, and item size remain unchanged */
+        assert(list.data == old.data);
+        assert(list.alloc == old.alloc);
+        assert(list.item_size == old.item_size);
+    } else {
+        /* On failure the list must be unchanged */
+        assert(list.length == old.length);
+        assert(list.current_size == old.current_size);
+        assert(list.data == old.data);
+        assert(list.alloc == old.alloc);
+        assert(list.item_size == old.item_size);
+    }
+
+    /* 6. Invariant: list remains valid */
+    assert(aws_array_list_is_valid(&list));
+}

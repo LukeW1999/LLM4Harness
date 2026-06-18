@@ -1,0 +1,12 @@
+{
+  "func": "s2n_stuffer_alloc",
+  "status": "ok",
+  "source_file": "/root/s2n-tls/stuffer/s2n_stuffer.c",
+  "mutated_name": "s2n_stuffer.c",
+  "line_range": [
+    90,
+    101
+  ],
+  "n_raw": 91,
+  "n_compiled": 23
+}

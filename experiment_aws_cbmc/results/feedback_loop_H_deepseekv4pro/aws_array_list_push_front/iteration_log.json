@@ -1,0 +1,47 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "list.item_size == old.item_size",
+    "new_text": "list.item_size == old_item_size",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "list.length == old.length + 1",
+    "new_text": "list.length == old_length + 1",
+    "triggered_violation": false,
+    "context": "fix_unknown"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "delete",
+    "assert_text": "rval != aws_op_success",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "weaken",
+    "assert_text": "list.length == old_length + 1",
+    "new_text": "list.length == old.length + 1",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  },
+  {
+    "from_iter": 7,
+    "to_iter": 8,
+    "action": "weaken",
+    "assert_text": "list.item_size == old_item_size",
+    "new_text": "list.item_size == old.item_size",
+    "triggered_violation": true,
+    "context": "fix_verify"
+  }
+]

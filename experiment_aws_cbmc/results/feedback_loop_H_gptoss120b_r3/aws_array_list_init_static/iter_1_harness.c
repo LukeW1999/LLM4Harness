@@ -1,0 +1,53 @@
+#include <aws/common/array_list.h>
+#include <aws/common/math.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <proof_helpers/nondet.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+void aws_array_list_init_static_harness(void) {
+    /* 1. Declare and bound the list structure */
+    struct aws_array_list list;
+    __CPROVER_assume(aws_array_list_is_bounded(&list,
+                                               MAX_INITIAL_ITEM_ALLOCATION,
+                                               MAX_ITEM_SIZE));
+
+    /* Save old state for immutability checks (not strictly needed here but follows pattern) */
+    struct aws_array_list old = list;
+
+    /* 2. Non‑deterministic parameters, bounded */
+    size_t item_count = nondet_size_t();
+    size_t item_size  = nondet_size_t();
+
+    __CPROVER_assume(item_count > 0);
+    __CPROVER_assume(item_size > 0);
+    __CPROVER_assume(item_count <= MAX_INITIAL_ITEM_ALLOCATION);
+    __CPROVER_assume(item_size  <= MAX_ITEM_SIZE);
+
+    /* 3. Ensure multiplication does not overflow */
+    size_t current_size;
+    bool no_overflow = !aws_mul_size_checked(item_count, item_size, &current_size);
+    __CPROVER_assume(no_overflow);
+
+    /* 4. Allocate the raw array that will back the list */
+    void *raw_array = malloc(current_size);
+    __CPROVER_assume(raw_array != NULL);
+
+    /* 5. Call the function under test */
+    aws_array_list_init_static(&list, raw_array, item_count, item_size);
+
+    /* 6. Post‑condition asserts */
+
+    /* Changed fields */
+    assert(list.alloc == NULL);
+    assert(list.item_size == item_size);
+    assert(list.length == 0);
+    assert(list.data == raw_array);
+    assert(list.current_size == current_size);
+
+    /* Unchanged fields – none other than those listed above */
+
+    /* 7. Validity invariant must hold */
+    assert(aws_array_list_is_valid(&list));
+}

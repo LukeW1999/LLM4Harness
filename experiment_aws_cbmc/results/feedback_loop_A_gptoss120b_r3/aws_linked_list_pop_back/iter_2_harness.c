@@ -1,0 +1,14 @@
+#include <aws/common/linked_list.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+
+void aws_linked_list_node_reset_harness() {
+    struct aws_linked_list_node node;
+    struct aws_linked_list_node old = node;
+
+    aws_linked_list_node_reset(&node);
+
+    assert(node.next == NULL);
+    assert(node.prev == NULL);
+    assert(aws_linked_list_node_is_in_list(&node) == false);
+}

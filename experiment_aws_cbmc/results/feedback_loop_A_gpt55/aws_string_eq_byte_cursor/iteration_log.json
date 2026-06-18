@@ -1,0 +1,173 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "str->len == old_len",
+    "new_text": "str->bytes == old_str_bytes",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "str->allocator == old_allocator",
+    "new_text": "str->bytes == old_str_bytes",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "str->bytes == old_bytes",
+    "new_text": "str->bytes == old_str_bytes",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "cur->ptr[i] == old_cur_byte_array[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "str->len == old_str_len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "str->allocator == old_str_allocator",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "add",
+    "assert_text": "str->bytes[i] == old_str_byte_array[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "str->bytes == old_str_bytes",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "str->len == old_str_len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "result == true",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "cur->ptr[i] == old_cur_byte_array[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "str->allocator == old_str_allocator",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "result == false",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "str == old_str",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "cur->len == old_cur.len",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "cur->ptr == old_cur.ptr",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "result == byte_arrays_are_equal(str->bytes, str->len, cur->ptr, cur->len)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "str->bytes[i] == old_str_byte_array[i]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "cur == old_cur_ptr",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  }
+]

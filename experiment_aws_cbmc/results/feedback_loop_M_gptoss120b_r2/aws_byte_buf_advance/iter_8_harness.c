@@ -1,0 +1,80 @@
+#include <aws/common/byte_buf.h>
+#include <aws/common/array_list.h>
+#include <aws/common/linked_list.h>
+#include <aws/common/math.h>
+#include <aws/common/string.h>
+#include <aws/common/ring_buffer.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <proof_helpers/nondet.h>
+#include <proof_helpers/utils.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
+
+void aws_byte_buf_advance_harness(void) {
+    /* 1. Declare and bound the source buffer */
+    struct aws_byte_buf buffer;
+    __CPROVER_assume(aws_byte_buf_is_bounded(&buffer, MAX_BUFFER_SIZE));
+    buffer.allocator = aws_default_allocator();
+
+    /* 2. Nondeterministically choose capacity and length within bounds */
+    size_t cap = nondet_size_t();
+    __CPROVER_assume(cap <= MAX_BUFFER_SIZE);
+    buffer.capacity = cap;
+
+    size_t len_src = nondet_size_t();
+    __CPROVER_assume(len_src <= cap);
+    buffer.len = len_src;
+
+    /* 3. Allocate the underlying buffer if needed */
+    ensure_byte_buf_has_allocated_buffer_member(&buffer);
+    __CPROVER_assume(buffer.len <= buffer.capacity);
+    __CPROVER_assume(aws_byte_buf_is_valid(&buffer));
+
+    /* 4. Strengthen precondition: buffer must be fully occupied (no unused capacity) */
+    __CPROVER_assume(buffer.capacity == buffer.len);
+    __CPROVER_assume(buffer.buffer != NULL); /* now guaranteed non‑NULL */
+
+    /* 5. Declare and initialize the output buffer as an empty valid buffer */
+    struct aws_byte_buf output;
+    output.buffer = NULL;
+    output.len = 0;
+    output.capacity = 0;
+    output.allocator = NULL;
+    __CPROVER_assume(aws_byte_buf_is_valid(&output));
+
+    /* 6. Choose a non‑zero advance length that fits in the source buffer */
+    size_t adv_len = nondet_size_t();
+    __CPROVER_assume(adv_len > 0);
+    __CPROVER_assume(adv_len <= buffer.len);
+    __CPROVER_assume(adv_len <= MAX_BUFFER_SIZE);
+
+    /* 7. Save old state */
+    struct aws_byte_buf old_buffer = buffer;
+    struct aws_byte_buf old_output = output;
+
+    /* 8. Call function under test */
+    bool result = aws_byte_buf_advance(&buffer, &output, adv_len);
+
+    /* 9. If the function reports success, check the expected post‑conditions */
+    if (result) {
+        /* source buffer pointer is advanced */
+        assert(buffer.buffer == (uint8_t *)old_buffer.buffer + adv_len);
+        assert(buffer.len == old_buffer.len - adv_len);
+        assert(buffer.capacity == old_buffer.capacity);
+        assert(buffer.allocator == old_buffer.allocator);
+        assert(buffer.len <= buffer.capacity);
+
+        /* destination buffer reflects the advanced slice */
+        assert(output.buffer == old_buffer.buffer);
+        assert(output.len == adv_len);
+        assert(output.capacity == adv_len);
+        assert(output.allocator == old_buffer.allocator);
+    }
+
+    /* 10. Invariant: both structures remain valid regardless of the result */
+    assert(aws_byte_buf_is_valid(&buffer));
+    assert(aws_byte_buf_is_valid(&output));
+}

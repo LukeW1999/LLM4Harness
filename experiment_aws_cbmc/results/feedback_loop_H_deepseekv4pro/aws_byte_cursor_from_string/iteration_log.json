@@ -1,0 +1,56 @@
+[
+  {
+    "from_iter": 1,
+    "to_iter": 2,
+    "action": "weaken",
+    "assert_text": "result.ptr == aws_string_bytes(src)",
+    "new_text": "result.ptr == (uint8_t *)aws_string_bytes(src)",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 2,
+    "to_iter": 3,
+    "action": "weaken",
+    "assert_text": "result.ptr == (uint8_t *)aws_string_bytes(src)",
+    "new_text": "result.ptr == aws_string_bytes(src)",
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "delete",
+    "assert_text": "result.ptr == aws_string_bytes(src)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 3,
+    "to_iter": 4,
+    "action": "add",
+    "assert_text": "(const uint8_t *)result.ptr == aws_string_bytes(src)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "delete",
+    "assert_text": "(const uint8_t *)result.ptr == aws_string_bytes(src)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 4,
+    "to_iter": 5,
+    "action": "add",
+    "assert_text": "result.ptr == aws_string_bytes(src)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  }
+]

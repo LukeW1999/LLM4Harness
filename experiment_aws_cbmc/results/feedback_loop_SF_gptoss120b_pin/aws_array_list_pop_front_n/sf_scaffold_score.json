@@ -1,0 +1,7 @@
+{
+  "compiles": false,
+  "cbmc_on_original": "TIMEOUT",
+  "has_assume": true,
+  "has_placeholder": true,
+  "scaffold_valid": false
+}

@@ -1,0 +1,34 @@
+#include <aws/common/byte_buf.h>
+#include <aws/common/ring_buffer.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+
+#define MAX_BUFFER_SIZE 256
+
+void aws_ring_buffer_buf_belongs_to_pool_harness(void) {
+    struct aws_ring_buffer ring_buffer;
+    __CPROVER_assume(aws_ring_buffer_is_valid(&ring_buffer));
+
+    struct aws_byte_buf buf;
+    __CPROVER_assume(aws_byte_buf_is_bounded(&buf, MAX_BUFFER_SIZE));
+    ensure_byte_buf_has_allocated_buffer_member(&buf);
+    __CPROVER_assume(aws_byte_buf_is_valid(&buf));
+
+    struct aws_ring_buffer old_ring = ring_buffer;
+    struct aws_byte_buf old_buf = buf;
+
+    bool result = aws_ring_buffer_buf_belongs_to_pool(&ring_buffer, &buf);
+
+    /* Ring buffer fields unchanged */
+    assert(ring_buffer.allocator == old_ring.allocator);
+    assert(ring_buffer.allocation == old_ring.allocation);
+    assert(ring_buffer.head == old_ring.head);
+    assert(ring_buffer.tail == old_ring.tail);
+    assert(ring_buffer.allocation_end == old_ring.allocation_end);
+
+    /* Byte buffer fields unchanged */
+    assert(buf.buffer == old_buf.buffer);
+    assert(buf.len == old_buf.len);
+    assert(buf.capacity == old_buf.capacity);
+    assert(buf.allocator == old_buf.allocator);
+}

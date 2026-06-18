@@ -1,0 +1,83 @@
+[
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "delete",
+    "assert_text": "list.current_size == old.current_size",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "delete",
+    "assert_text": "list.alloc == old.alloc",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "delete",
+    "assert_text": "list.length == old.length",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "delete",
+    "assert_text": "a < list.length",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "delete",
+    "assert_text": "new_data[byte_index] == old_data[byte_index]",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "delete",
+    "assert_text": "b < list.length",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "delete",
+    "assert_text": "list.item_size == old.item_size",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "delete",
+    "assert_text": "aws_array_list_is_valid(&list)",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  },
+  {
+    "from_iter": 5,
+    "to_iter": 6,
+    "action": "delete",
+    "assert_text": "list.data == old.data",
+    "new_text": null,
+    "triggered_violation": false,
+    "context": "fix_compile"
+  }
+]

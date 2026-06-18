@@ -1,0 +1,95 @@
+{
+  "func": "aws_mul_size_checked",
+  "gt_verification": "SUCCESS",
+  "first_pass_compile": false,
+  "first_pass_verify": false,
+  "converged": true,
+  "verification_equivalent": true,
+  "num_iterations": 12,
+  "iterations": [
+    {
+      "iter": 1,
+      "action": "initial",
+      "compile_ok": false,
+      "verify": "COMPILE_ERROR",
+      "num_failed": 0
+    },
+    {
+      "iter": 2,
+      "action": "fix_compile",
+      "compile_ok": false,
+      "verify": "TIMEOUT",
+      "num_failed": 0
+    },
+    {
+      "iter": 3,
+      "action": "fix_compile",
+      "compile_ok": false,
+      "verify": "TIMEOUT",
+      "num_failed": 0
+    },
+    {
+      "iter": 4,
+      "action": "fix_compile",
+      "compile_ok": false,
+      "verify": "TIMEOUT",
+      "num_failed": 0
+    },
+    {
+      "iter": 5,
+      "action": "fix_compile",
+      "compile_ok": false,
+      "verify": "TIMEOUT",
+      "num_failed": 0
+    },
+    {
+      "iter": 6,
+      "action": "fix_compile",
+      "compile_ok": false,
+      "verify": "TIMEOUT",
+      "num_failed": 0
+    },
+    {
+      "iter": 7,
+      "action": "fix_compile",
+      "compile_ok": false,
+      "verify": "TIMEOUT",
+      "num_failed": 0
+    },
+    {
+      "iter": 8,
+      "action": "fix_compile",
+      "compile_ok": false,
+      "verify": "TIMEOUT",
+      "num_failed": 0
+    },
+    {
+      "iter": 9,
+      "action": "fix_compile",
+      "compile_ok": false,
+      "verify": "TIMEOUT",
+      "num_failed": 0
+    },
+    {
+      "iter": 10,
+      "action": "fix_compile",
+      "compile_ok": false,
+      "verify": "TIMEOUT",
+      "num_failed": 0
+    },
+    {
+      "iter": 11,
+      "action": "fix_compile",
+      "compile_ok": false,
+      "verify": "TIMEOUT",
+      "num_failed": 0
+    },
+    {
+      "iter": 12,
+      "action": "fix_compile",
+      "compile_ok": true,
+      "verify": "SUCCESS",
+      "num_failed": 0
+    }
+  ]
+}

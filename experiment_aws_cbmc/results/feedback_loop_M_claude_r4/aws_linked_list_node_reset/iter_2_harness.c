@@ -1,0 +1,17 @@
+#include <aws/common/linked_list.h>
+#include <proof_helpers/make_common_data_structures.h>
+#include <assert.h>
+#include <stddef.h>
+#include <stdbool.h>
+
+void aws_linked_list_node_reset_harness() {
+    /* Allocate a linked list node */
+    struct aws_linked_list_node node;
+
+    /* Call function under test */
+    aws_linked_list_node_reset(&node);
+
+    /* Assert postconditions: both next and prev should be NULL after reset */
+    assert(node.next == NULL);
+    assert(node.prev == NULL);
+}
