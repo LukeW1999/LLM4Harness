@@ -13,7 +13,7 @@ Usage:  python3 paper_numbers.py            # full audit table
 import json, os, sys
 from pathlib import Path
 import numpy as np
-from scipy.stats import wilcoxon, fisher_exact, beta, rankdata
+from scipy.stats import wilcoxon, fisher_exact, beta, rankdata, spearmanr
 
 _BASE = "/root/experiment_aws_cbmc" if os.path.isdir("/root/experiment_aws_cbmc") else str(Path(__file__).resolve().parent.parent)
 EVAL = Path(f"{_BASE}/evaluation")
@@ -461,6 +461,40 @@ try:
     add("Thr/pin","A matched pass% pinned",      91.9, lambda: _prn["A_matched_pinned_pass"], 0.1)
 except Exception:
     pass  # pinned data absent (e.g. server BASE w/ contaminated unpinned A); skip, don't crash audit
+
+# ── PC postcondition-checklist probe + de-biased pinned RQ1 (#48/#53), 2026-06-18 ──
+import glob as _glob
+def _canon_set():
+    return {(r["func"],r["mutant"]) for r in _json.load(open(f"{_BASE}/evaluation/gt_fail_properties_canonical370.json"))["results"]}
+def _sil_in_canon(fname):
+    c=_canon_set()
+    res=_json.load(open(f"{_BASE}/evaluation/{fname}"))["results"]
+    return len({(r["func"],r["mutant"]) for r in res if r.get("silenced") and (r["func"],r["mutant"]) in c})
+add("PC/claude","PC-Claude silenced (canon370)", 14, lambda: _sil_in_canon("mutation_oracle_cbmc_feedback_loop_PC_claude_pc.json"), 1)
+add("PC/gptoss","PC-gptoss silenced (canon370)", 52, lambda: _sil_in_canon("mutation_oracle_cbmc_feedback_loop_PC_gptoss120b_pc.json"), 2)
+add("PC/base","Claude-A silenced (canon370)", 16, lambda: _sil_in_canon("mutation_oracle_cbmc_feedback_loop_A_claude.json"), 1)
+
+# de-biased pinned pass/recall/rho — pass needs server summary.json; recall is local cross_verify_*_pin
+def _pin_pass(C):
+    conv=tot=0
+    for sp in _glob.glob(f"{_BASE}/results/feedback_loop_{C}_gptoss120b_pin/*/summary.json"):
+        try:
+            j=_json.load(open(sp)); tot+=1; v=j.get("converged"); its=j.get("iterations",[])
+            if v is True or (its and str(its[-1].get("verify","")).upper() in ("SUCCESS","UNSAT")): conv+=1
+        except: pass
+    return 100*conv/tot if tot else 0
+def _pin_recall(C):
+    e=_json.load(open(f"{_BASE}/evaluation/cross_verify_results_cond{C}_pin.json"))
+    rs=[x["harness_recall"] for x in e if x.get("gt_harness_count",0)>0 and x.get("harness_recall") is not None]
+    return 100*sum(rs)/len(rs) if rs else 0
+_PINC=["A","G","H","I","J","K","M","Oracle"]
+def _pin_rho():
+    P=[_pin_pass(C) for C in _PINC]; R=[_pin_recall(C) for C in _PINC]
+    return spearmanr(P,R)[0]
+add("S.threats/pin","de-biased pinned A pass%", 71.1, lambda: _pin_pass("A"), 3)
+add("S.threats/pin","de-biased pinned Oracle pass%", 90.4, lambda: _pin_pass("Oracle"), 3)
+add("S.threats/pin","de-biased pinned rho(pass,recall)", -0.357, _pin_rho, 0.08)
+
 
 def main():
     md = "--md" in sys.argv
