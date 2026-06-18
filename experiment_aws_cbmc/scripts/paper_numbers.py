@@ -513,6 +513,18 @@ add("S7/op","silenced contract share A-claude %", 6, lambda: 100*_op()["A_claude
 add("S7/op","unique silenced (func,mutant) union", 307, lambda: _op()["UNION_all_conditions"]["n_resolved"], 0.5)
 
 
+# ── equivalent-mutant finalization (equiv_finalize.json) ──
+def _eqf():
+    return json.load(open(f"{_BASE}/evaluation/equiv_finalize.json"))
+def _eqf_n(final_prefix):
+    return sum(1 for x in _eqf() if x["final"].startswith(final_prefix))
+add("S7/eq","contract-line equiv candidates", 41, lambda: len(_eqf()), 0.5)
+add("S7/eq","confirmed EQUIVALENT", 26, lambda: _eqf_n("EQUIVALENT"), 0.5)
+add("S7/eq","confirmed NON-EQUIVALENT", 15, lambda: _eqf_n("NONEQ"), 0.5)
+add("S7/eq","fatal CBMC-proven non-equiv", 6, lambda: _eqf_n("NONEQ_PROVEN"), 0.5)
+add("S7/eq","memory-predicate non-equiv", 9, lambda: _eqf_n("NONEQ_STRUCTURAL"), 0.5)
+
+
 def main():
     md = "--md" in sys.argv
     rows=[]; nfail=0
