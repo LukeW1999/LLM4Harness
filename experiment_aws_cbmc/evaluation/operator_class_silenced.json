@@ -1,0 +1,101 @@
+{
+  "UNION_all_conditions": {
+    "label": "UNION (all conds)",
+    "n_silenced": 307,
+    "n_resolved": 307,
+    "n_unresolved": 0,
+    "contract_line_share": 0.13,
+    "n_contract": 40,
+    "operators": {
+      "AOR (arithmetic operator)": 113,
+      "ROR (relational operator)": 50,
+      "other": 43,
+      "CRP (constant replacement)": 30,
+      "LCR (logical connector)": 21,
+      "UOI (unary/negation)": 19,
+      "CRP off-by-one (constant +/-1)": 15,
+      "SIN (statement insertion)": 13,
+      "VAR/other (identifier swap)": 3
+    },
+    "cwe_classes": {
+      "CWE-190 integer overflow/wraparound": 113,
+      "other / unmapped": 89,
+      "CWE-571/617 wrong condition / broken check": 40,
+      "CWE-125/787 out-of-bounds (off-by-one / bound check)": 35,
+      "CWE-697 incorrect comparison": 30
+    }
+  },
+  "A_claude": {
+    "label": "A_claude",
+    "n_silenced": 16,
+    "n_resolved": 16,
+    "n_unresolved": 0,
+    "contract_line_share": 0.062,
+    "n_contract": 1,
+    "operators": {
+      "AOR (arithmetic operator)": 7,
+      "other": 3,
+      "CRP (constant replacement)": 2,
+      "ROR (relational operator)": 2,
+      "UOI (unary/negation)": 2
+    },
+    "cwe_classes": {
+      "CWE-190 integer overflow/wraparound": 7,
+      "other / unmapped": 5,
+      "CWE-125/787 out-of-bounds (off-by-one / bound check)": 2,
+      "CWE-571/617 wrong condition / broken check": 2
+    }
+  },
+  "A_gptoss120b": {
+    "label": "A_gptoss120b",
+    "n_silenced": 41,
+    "n_resolved": 41,
+    "n_unresolved": 0,
+    "contract_line_share": 0.0,
+    "n_contract": 0,
+    "operators": {
+      "SIN (statement insertion)": 13,
+      "AOR (arithmetic operator)": 10,
+      "ROR (relational operator)": 6,
+      "CRP (constant replacement)": 4,
+      "other": 2,
+      "UOI (unary/negation)": 2,
+      "LCR (logical connector)": 2,
+      "CRP off-by-one (constant +/-1)": 1,
+      "VAR/other (identifier swap)": 1
+    },
+    "cwe_classes": {
+      "other / unmapped": 20,
+      "CWE-190 integer overflow/wraparound": 10,
+      "CWE-697 incorrect comparison": 6,
+      "CWE-571/617 wrong condition / broken check": 4,
+      "CWE-125/787 out-of-bounds (off-by-one / bound check)": 1
+    }
+  },
+  "Oracle_gptoss120b": {
+    "label": "Oracle_gptoss120b",
+    "n_silenced": 158,
+    "n_resolved": 158,
+    "n_unresolved": 0,
+    "contract_line_share": 0.057,
+    "n_contract": 9,
+    "operators": {
+      "AOR (arithmetic operator)": 67,
+      "ROR (relational operator)": 24,
+      "other": 18,
+      "CRP (constant replacement)": 14,
+      "SIN (statement insertion)": 13,
+      "CRP off-by-one (constant +/-1)": 11,
+      "UOI (unary/negation)": 5,
+      "VAR/other (identifier swap)": 3,
+      "LCR (logical connector)": 3
+    },
+    "cwe_classes": {
+      "CWE-190 integer overflow/wraparound": 67,
+      "other / unmapped": 48,
+      "CWE-125/787 out-of-bounds (off-by-one / bound check)": 25,
+      "CWE-697 incorrect comparison": 10,
+      "CWE-571/617 wrong condition / broken check": 8
+    }
+  }
+}

@@ -496,6 +496,23 @@ add("S.threats/pin","de-biased pinned Oracle pass%", 90.4, lambda: _pin_pass("Or
 add("S.threats/pin","de-biased pinned rho(pass,recall)", -0.357, _pin_rho, 0.08)
 
 
+# ── operator-class / defect profile of the silenced set (operator_class_silenced.json) ──
+def _op():
+    return json.load(open(f"{_BASE}/evaluation/operator_class_silenced.json"))
+def _op_share(key, opname):
+    d=_op()[key]; return 100*d["operators"].get(opname,0)/d["n_resolved"]
+add("S7/op","silenced AOR (arithmetic) share %", 37, lambda: _op_share("UNION_all_conditions","AOR (arithmetic operator)"), 0.6)
+add("S7/op","silenced ROR (relational) share %", 16, lambda: _op_share("UNION_all_conditions","ROR (relational operator)"), 0.6)
+add("S7/op","silenced CRP+off-by-one share %", 15,
+    lambda: 100*(_op()["UNION_all_conditions"]["operators"].get("CRP (constant replacement)",0)
+                 +_op()["UNION_all_conditions"]["operators"].get("CRP off-by-one (constant +/-1)",0))
+                 /_op()["UNION_all_conditions"]["n_resolved"], 0.6)
+add("S7/op","silenced contract-line share %", 13, lambda: 100*_op()["UNION_all_conditions"]["contract_line_share"], 0.6)
+add("S7/op","silenced contract share A-gptoss %", 0, lambda: 100*_op()["A_gptoss120b"]["contract_line_share"], 0.6)
+add("S7/op","silenced contract share A-claude %", 6, lambda: 100*_op()["A_claude"]["contract_line_share"], 0.6)
+add("S7/op","unique silenced (func,mutant) union", 307, lambda: _op()["UNION_all_conditions"]["n_resolved"], 0.5)
+
+
 def main():
     md = "--md" in sys.argv
     rows=[]; nfail=0
