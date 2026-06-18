@@ -1,0 +1,13 @@
+aws_add_size_checked
+aws_array_list_front
+aws_array_list_pop_back
+aws_array_list_pop_front
+aws_array_list_pop_front_n
+aws_byte_buf_clean_up_secure
+aws_byte_buf_from_array
+aws_byte_buf_from_c_str
+aws_byte_buf_init
+aws_byte_buf_init_copy
+aws_byte_cursor_from_string
+aws_linked_list_insert_after
+aws_linked_list_insert_before

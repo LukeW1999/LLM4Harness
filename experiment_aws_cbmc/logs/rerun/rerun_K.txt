@@ -1,0 +1,14 @@
+aws_add_size_checked
+aws_add_size_saturating
+aws_array_eq
+aws_array_list_length
+aws_array_list_pop_back
+aws_array_list_pop_front
+aws_byte_buf_clean_up_secure
+aws_byte_buf_reset
+aws_byte_buf_secure_zero
+aws_byte_cursor_from_c_str
+aws_linked_list_back
+aws_linked_list_end
+aws_linked_list_pop_back
+aws_linked_list_pop_front
