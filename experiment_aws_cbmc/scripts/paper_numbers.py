@@ -527,22 +527,33 @@ add("S7/eq","memory-predicate non-equiv", 9, lambda: _eqf_n("NONEQ_STRUCTURAL"),
 
 # ── verifier independence: CBMC vs ESBMC (esbmc_oracle_A_claude_assert.json) ──
 def _vi():
-    ast=json.load(open(f"{_BASE}/evaluation/esbmc_oracle_A_claude_assert.json"))["results"]
-    cb=json.load(open(f"{_BASE}/evaluation/mutation_oracle_cbmc_feedback_loop_A_claude.json"))["results"]
-    fs=set(r["func"] for r in ast)
-    egf=sum(1 for r in ast if r["gt"] in ("FAIL","SAT"))
-    esl=sum(1 for r in ast if r.get("silenced"))
-    cgf=sum(1 for r in cb if r["func"] in fs and r["gt"] in ("FAIL","SAT"))
-    csl=sum(1 for r in cb if r["func"] in fs and r.get("silenced"))
-    es=set((r["func"],r["mutant"]) for r in ast if r.get("silenced"))
-    cs=set((r["func"],r["mutant"]) for r in cb if r.get("silenced") and r["func"] in fs)
-    return dict(egf=egf,esl=esl,cgf=cgf,csl=csl,ov=len(es&cs),eo=len(es-cs))
+    ast={(r["func"],r["mutant"]):r for r in json.load(open(f"{_BASE}/evaluation/esbmc_oracle_A_claude_assert.json"))["results"]}
+    cbl=json.load(open(f"{_BASE}/evaluation/mutation_oracle_cbmc_feedback_loop_A_claude.json"))["results"]
+    cb={(r["func"],r["mutant"]):r for r in cbl}
+    fs=set(f for f,_ in ast)
+    isF=lambda v: v in ("FAIL","SAT")
+    egf=sum(1 for k,r in ast.items() if isF(r["gt"]))
+    esl=sum(1 for k,r in ast.items() if r.get("silenced"))
+    cgf=sum(1 for r in cbl if r["func"] in fs and isF(r["gt"]))
+    csl=sum(1 for r in cbl if r["func"] in fs and r.get("silenced"))
+    es=set(k for k,r in ast.items() if r.get("silenced"))
+    cs=set(k for k,r in cb.items() if r.get("silenced") and k[0] in fs)
+    # two-way GT-detection on common mutants
+    common=[k for k in ast if k in cb]
+    both=sum(1 for k in common if isF(cb[k]["gt"]) and isF(ast[k]["gt"]))
+    cbonly=sum(1 for k in common if isF(cb[k]["gt"]) and not isF(ast[k]["gt"]))
+    esonly=sum(1 for k in common if isF(ast[k]["gt"]) and not isF(cb[k]["gt"]))
+    return dict(egf=egf,esl=esl,cgf=cgf,csl=csl,ov=len(es&cs),eo=len(es-cs),
+                both=both,cbonly=cbonly,esonly=esonly)
 add("S8/vi","ESBMC GT-FAIL (35f)", 284, lambda: _vi()["egf"], 0.5)
 add("S8/vi","ESBMC silenced", 12, lambda: _vi()["esl"], 0.5)
 add("S8/vi","CBMC GT-FAIL (35f)", 354, lambda: _vi()["cgf"], 0.5)
 add("S8/vi","CBMC silenced (35f)", 14, lambda: _vi()["csl"], 0.5)
 add("S8/vi","ESBMC-CBMC silenced overlap", 12, lambda: _vi()["ov"], 0.5)
 add("S8/vi","ESBMC-only silenced", 0, lambda: _vi()["eo"], 0.5)
+add("S8/vi","both-GT-FAIL common mutants", 273, lambda: _vi()["both"], 0.5)
+add("S8/vi","CBMC-only GT-FAIL", 81, lambda: _vi()["cbonly"], 0.5)
+add("S8/vi","ESBMC-only GT-FAIL (two-way)", 11, lambda: _vi()["esonly"], 0.5)
 add("S8/vi","ESBMC Sil/GT %", 4.2, lambda: 100*_vi()["esl"]/_vi()["egf"], 0.15)
 add("S8/vi","CBMC Sil/GT 35f %", 4.0, lambda: 100*_vi()["csl"]/_vi()["cgf"], 0.15)
 
