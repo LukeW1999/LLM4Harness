@@ -525,6 +525,28 @@ add("S7/eq","fatal CBMC-proven non-equiv", 6, lambda: _eqf_n("NONEQ_PROVEN"), 0.
 add("S7/eq","memory-predicate non-equiv", 9, lambda: _eqf_n("NONEQ_STRUCTURAL"), 0.5)
 
 
+# ── verifier independence: CBMC vs ESBMC (esbmc_oracle_A_claude_assert.json) ──
+def _vi():
+    ast=json.load(open(f"{_BASE}/evaluation/esbmc_oracle_A_claude_assert.json"))["results"]
+    cb=json.load(open(f"{_BASE}/evaluation/mutation_oracle_cbmc_feedback_loop_A_claude.json"))["results"]
+    fs=set(r["func"] for r in ast)
+    egf=sum(1 for r in ast if r["gt"] in ("FAIL","SAT"))
+    esl=sum(1 for r in ast if r.get("silenced"))
+    cgf=sum(1 for r in cb if r["func"] in fs and r["gt"] in ("FAIL","SAT"))
+    csl=sum(1 for r in cb if r["func"] in fs and r.get("silenced"))
+    es=set((r["func"],r["mutant"]) for r in ast if r.get("silenced"))
+    cs=set((r["func"],r["mutant"]) for r in cb if r.get("silenced") and r["func"] in fs)
+    return dict(egf=egf,esl=esl,cgf=cgf,csl=csl,ov=len(es&cs),eo=len(es-cs))
+add("S8/vi","ESBMC GT-FAIL (35f)", 284, lambda: _vi()["egf"], 0.5)
+add("S8/vi","ESBMC silenced", 12, lambda: _vi()["esl"], 0.5)
+add("S8/vi","CBMC GT-FAIL (35f)", 354, lambda: _vi()["cgf"], 0.5)
+add("S8/vi","CBMC silenced (35f)", 14, lambda: _vi()["csl"], 0.5)
+add("S8/vi","ESBMC-CBMC silenced overlap", 12, lambda: _vi()["ov"], 0.5)
+add("S8/vi","ESBMC-only silenced", 0, lambda: _vi()["eo"], 0.5)
+add("S8/vi","ESBMC Sil/GT %", 4.2, lambda: 100*_vi()["esl"]/_vi()["egf"], 0.15)
+add("S8/vi","CBMC Sil/GT 35f %", 4.0, lambda: 100*_vi()["csl"]/_vi()["cgf"], 0.15)
+
+
 def main():
     md = "--md" in sys.argv
     rows=[]; nfail=0
