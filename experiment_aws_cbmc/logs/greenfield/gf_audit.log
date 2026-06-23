@@ -1,0 +1,46 @@
+[pool] 14 generators: ['feedback_loop_A_claude', 'feedback_loop_A_claude_r2', 'feedback_loop_A_claude_r3', 'feedback_loop_A_claude_r4', 'feedback_loop_A_claude_r5', 'feedback_loop_A_deepseekv4flash', 'feedback_loop_A_deepseekv4pro', 'feedback_loop_A_gpt55', 'feedback_loop_A_gptoss120b', 'feedback_loop_A_gptoss120b_r2', 'feedback_loop_A_gptoss120b_r3', 'feedback_loop_A_llama3370binstruct', 'feedback_loop_A_qwen37max', 'feedback_loop_A_qwen37plus']
+[gt] 377 GT-FAIL over 32 funcs
+[fidelity] 410 candidate harnesses to verify on original
+[fidelity] 320/410 pass
+[catch] 3731 (candidate x GT-FAIL-mutant) CBMC runs
+   catch 200/3731
+   catch 400/3731
+   catch 600/3731
+   catch 800/3731
+   catch 1000/3731
+   catch 1200/3731
+   catch 1400/3731
+   catch 1600/3731
+   catch 1800/3731
+   catch 2000/3731
+   catch 2200/3731
+   catch 2400/3731
+   catch 2600/3731
+   catch 2800/3731
+   catch 3000/3731
+   catch 3200/3731
+   catch 3400/3731
+   catch 3600/3731
+[matrix] dumped -> /root/experiment_aws_cbmc/evaluation/catch_matrix.json
+  hold-out feedback_loop_A_claude               model=claude             silenced= 17 flagged-by-peers= 15 (88.2%)
+  hold-out feedback_loop_A_claude_r2            model=claude             silenced=  9 flagged-by-peers=  8 (88.9%)
+  hold-out feedback_loop_A_claude_r3            model=claude             silenced= 17 flagged-by-peers= 15 (88.2%)
+  hold-out feedback_loop_A_claude_r4            model=claude             silenced= 37 flagged-by-peers= 35 (94.6%)
+  hold-out feedback_loop_A_claude_r5            model=claude             silenced= 20 flagged-by-peers= 18 (90.0%)
+  hold-out feedback_loop_A_deepseekv4flash      model=deepseekv4flash    silenced=  5 flagged-by-peers=  5 (100.0%)
+  hold-out feedback_loop_A_deepseekv4pro        model=deepseekv4pro      silenced= 31 flagged-by-peers= 31 (100.0%)
+  hold-out feedback_loop_A_gpt55                model=gpt55              silenced= 56 flagged-by-peers= 55 (98.2%)
+  hold-out feedback_loop_A_gptoss120b           model=gptoss120b         silenced= 39 flagged-by-peers= 38 (97.4%)
+  hold-out feedback_loop_A_gptoss120b_r2        model=gptoss120b         silenced= 36 flagged-by-peers= 35 (97.2%)
+  hold-out feedback_loop_A_gptoss120b_r3        model=gptoss120b         silenced= 37 flagged-by-peers= 35 (94.6%)
+  hold-out feedback_loop_A_llama3370binstruct   model=llama3370binstruct silenced= 18 flagged-by-peers= 18 (100.0%)
+  hold-out feedback_loop_A_qwen37max            model=qwen37max          silenced= 20 flagged-by-peers= 18 (90.0%)
+  hold-out feedback_loop_A_qwen37plus           model=qwen37plus         silenced= 28 flagged-by-peers= 26 (92.9%)
+
+=== LEAVE-ONE-OUT GREEN-FIELD AUDIT (no expert) ===
+   total held-out silenced bugs : 370
+   flagged by peer-built reference: 352  (micro 95.1%)
+   macro mean over 14 hold-outs : 94.3%
+   global residual (no harness catches): 2  [('aws_byte_buf_cat', 'mutant_0061'), ('aws_ring_buffer_buf_belongs_to_pool', 'mutant_0013')]
+
+[out] evaluation/gf_audit.json

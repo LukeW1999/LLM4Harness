@@ -1,0 +1,73 @@
+[pool] 14 candidate generators:
+   feedback_loop_A_claude  (model=claude)
+   feedback_loop_A_claude_r2  (model=claude)
+   feedback_loop_A_claude_r3  (model=claude)
+   feedback_loop_A_claude_r4  (model=claude)
+   feedback_loop_A_claude_r5  (model=claude)
+   feedback_loop_A_deepseekv4flash  (model=deepseekv4flash)
+   feedback_loop_A_deepseekv4pro  (model=deepseekv4pro)
+   feedback_loop_A_gpt55  (model=gpt55)
+   feedback_loop_A_gptoss120b  (model=gptoss120b)
+   feedback_loop_A_gptoss120b_r2  (model=gptoss120b)
+   feedback_loop_A_gptoss120b_r3  (model=gptoss120b)
+   feedback_loop_A_llama3370binstruct  (model=llama3370binstruct)
+   feedback_loop_A_qwen37max  (model=qwen37max)
+   feedback_loop_A_qwen37plus  (model=qwen37plus)
+[gt] 377 GT-FAIL (func,mutant) of 1243 total; gt conflicts merged=1
+[gt] spread over 32 functions
+[fidelity] 410 (pool,func) candidate harnesses to verify on original
+   fidelity 100/410
+   fidelity 200/410
+   fidelity 300/410
+   fidelity 400/410
+[fidelity] 320/410 candidates pass the gate (verify SUCCESS on original)
+[catch] 3731 (candidate x GT-FAIL-mutant) CBMC runs
+   catch 200/3731
+   catch 400/3731
+   catch 600/3731
+   catch 800/3731
+   catch 1000/3731
+   catch 1200/3731
+   catch 1400/3731
+   catch 1600/3731
+   catch 1800/3731
+   catch 2000/3731
+   catch 2200/3731
+   catch 2400/3731
+   catch 2600/3731
+   catch 2800/3731
+   catch 3000/3731
+   catch 3200/3731
+   catch 3400/3731
+   catch 3600/3731
+
+=== REFERENCE RECALL (full pool, K=14) ===
+   375/377 GT-FAIL mutants recovered = 99.5%
+   single-model [claude] K=5: 365/377 = 96.8%
+   single-model [deepseekv4flash] K=1: 87/92 = 94.6%
+   single-model [deepseekv4pro] K=1: 260/291 = 89.3%
+   single-model [gpt55] K=1: 308/364 = 84.6%
+   single-model [gptoss120b] K=3: 260/286 = 90.9%
+   single-model [llama3370binstruct] K=1: 176/194 = 90.7%
+   single-model [qwen37max] K=1: 350/370 = 94.6%
+   single-model [qwen37plus] K=1: 260/288 = 90.3%
+   recall@K= 1: 88.6%  [71.3,95.5]
+   recall@K= 2: 92.9%  [84.6,98.1]
+   recall@K= 3: 95.6%  [88.7,99.2]
+   recall@K= 4: 97.3%  [90.8,99.2]
+   recall@K= 5: 98.0%  [92.2,99.5]
+   recall@K= 6: 98.6%  [95.4,99.5]
+   recall@K= 7: 98.8%  [97.0,99.5]
+   recall@K= 8: 99.2%  [98.4,99.5]
+   recall@K= 9: 99.2%  [98.4,99.5]
+   recall@K=10: 99.3%  [98.7,99.5]
+   recall@K=11: 99.4%  [98.7,99.5]
+   recall@K=12: 99.4%  [99.2,99.5]
+   recall@K=13: 99.5%  [99.2,99.5]
+   recall@K=14: 99.5%  [99.5,99.5]
+
+=== DIVERSITY (matched K=8) ===
+   cross-model pool : 99.3%
+   single-model pool: 91.0%
+
+[out] /root/experiment_aws_cbmc/evaluation/gf_reference.json
