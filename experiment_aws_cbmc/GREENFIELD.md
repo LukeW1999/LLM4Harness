@@ -39,15 +39,29 @@ gpt-oss-120b ×3, DeepSeek-V4-flash/pro, gpt-5.5, Llama-3.3-70B, Qwen ×2).
   is what closes 91→99.5. ⇒ LLM blind spots are **partially independent** —
   different models miss different bugs.
 
+## Leave-one-out peer audit (`scripts/gf_audit.py`, `evaluation/gf_audit.json`)
+Removes the expert from the *measurement* too. For each harness `h`: hold it out,
+build `R` from the other 13 fidelity-passed harnesses, and ask whether `R` flags
+`h`'s **own** silenced bugs (GT-FAIL mutants `h` lets pass). No expert anywhere.
+- **352/370 = 95.1%** micro audit-recall (macro 94.3%); every one of the 14
+  hold-outs is covered **88–100%** by its peers — no harness is a blind spot the
+  others cannot audit.
+- **Residual = 2 mutants** that *no* pool member catches (same 2 the full pool
+  misses vs the expert): `aws_byte_buf_cat/mutant_0061` and
+  `aws_ring_buffer_buf_belongs_to_pool/mutant_0013`.
+- Heavy catch matrix dumped to `evaluation/catch_matrix.json` for reuse
+  (`--matrix` skips the 3,731 CBMC runs).
+
 ## Honest scope (do NOT overclaim)
 - The single-harness 88.6% ≈ `1 − Sil/GT` — it just restates the paper's low
   per-condition silence rate, so it is **not new**. The new content is (a)
-  pooling + cross-model diversity close the residual, and (b) the whole thing
-  stays formally sound via the fidelity gate with **zero expert input**.
-- Pending to make it solid: a **leave-one-out audit** (hold out one harness,
-  build R from the other 13, confirm R catches the held-out harness's *silenced*
-  bugs) and identification of the 2 residual mutants nobody catches.
-- This is a proof-of-concept that green-field auditing is *viable*, not a claim
-  that green-field is solved.
+  pooling + cross-model diversity close the residual, (b) the fidelity gate keeps
+  every certificate formally sound with **zero expert input**, and (c) the LOO
+  audit shows a self-generated reference audits a *peer* (95.1%), not just the
+  expert benchmark.
+- This is a proof-of-concept that green-field auditing is *viable* on one corpus,
+  not a claim that green-field is solved.
 
-Run: `python3 scripts/gf_reference.py --exclude feedback_loop_A_v3,feedback_loop_A_gptoss120b_pin --timeout 90 --workers 8`
+Run:
+- `python3 scripts/gf_reference.py --exclude feedback_loop_A_v3,feedback_loop_A_gptoss120b_pin --timeout 90 --workers 8`
+- `python3 scripts/gf_audit.py     --exclude feedback_loop_A_v3,feedback_loop_A_gptoss120b_pin --timeout 90 --workers 8`
