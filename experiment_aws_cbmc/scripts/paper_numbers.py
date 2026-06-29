@@ -448,19 +448,10 @@ except Exception:
     pass  # s2n oracle jsons absent; skip
 
 # ── Pinned-rho finding (#46, Threats §sec:threats; recomputed by pinned_rho.compute) ──
-try:
-    import pinned_rho as _PR
-    _prn, _ = _PR.compute()
-    add("Thr/pin","rho(pass,UNKNOWN) n=8",      -0.93, lambda: float(_prn["rho_pass_unknown_n8"]), 0.02)
-    add("Thr/pin","pinned matched set n",          37, lambda: _prn["matched_n"], 0)
-    add("Thr/pin","rho(pass,recall) unpinned",  -0.43, lambda: float(_prn["rho_unpinned_matched"]), 0.02)
-    add("Thr/pin","rho(pass,recall) pinned",     0.45, lambda: float(_prn["rho_pinned_matched"]), 0.02)
-    add("Thr/pin","A matched UNKNOWN unpinned",    25, lambda: _prn["A_matched_unpinned_unknown"], 0)
-    add("Thr/pin","A matched UNKNOWN pinned",       2, lambda: _prn["A_matched_pinned_unknown"], 0)
-    add("Thr/pin","A matched pass% unpinned",    32.4, lambda: _prn["A_matched_unpinned_pass"], 0.1)
-    add("Thr/pin","A matched pass% pinned",      91.9, lambda: _prn["A_matched_pinned_pass"], 0.1)
-except Exception:
-    pass  # pinned data absent (e.g. server BASE w/ contaminated unpinned A); skip, don't crash audit
+# Matched-set / de-biased-rho sub-analysis checks removed (2026-06-29 revision):
+# the paper no longer presents the detailed pass-rate matched-set rho analysis,
+# so these registry entries were orphaned. Full pinned data remains in the package;
+# the surviving pinned claims (A silenced/Sil-GT/KG, A pass 28.9->71.1) are checked above/below.
 
 # ── PC postcondition-checklist probe + de-biased pinned RQ1 (#48/#53), 2026-06-18 ──
 import glob as _glob
