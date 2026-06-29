@@ -20,14 +20,23 @@ from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from collections import defaultdict
 
+def _path_exists(p):
+    try:
+        return p.exists()
+    except PermissionError:
+        return False
+
 SCRIPT_DIR     = Path(__file__).parent
-EXPERIMENT_DIR = Path("/root/experiment_aws_cbmc")
+_server_exp    = Path("/root/experiment_aws_cbmc")
+EXPERIMENT_DIR = _server_exp if _path_exists(_server_exp) else SCRIPT_DIR.parent
 MUTANTS_DIR    = EXPERIMENT_DIR / "mutants"
 RESULTS_DIR    = EXPERIMENT_DIR / "results"
 EVAL_DIR       = EXPERIMENT_DIR / "evaluation"
-GT_PROOFS_DIR  = Path("/root/aws-c-common/verification/cbmc/proofs")
+_server_aws    = Path("/root/aws-c-common")
+_aws_root      = _server_aws if _path_exists(_server_aws) else Path("/home/weiqi/Verification/aws-c-common")
+GT_PROOFS_DIR  = _aws_root / "verification/cbmc/proofs"
 
-SRCDIR   = Path("/root/aws-c-common")
+SRCDIR   = _aws_root
 PROOFDIR = SRCDIR / "verification/cbmc"
 
 TIMEOUT  = 120  # seconds per CBMC call

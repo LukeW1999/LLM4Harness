@@ -12,8 +12,13 @@ from dataclasses import dataclass
 from typing import Optional
 
 # Resolve SRCDIR: server uses /root/aws-c-common, local dev uses /home/weiqi/Verification/aws-c-common
+def _path_exists(p):
+    try:
+        return p.exists()
+    except PermissionError:
+        return False
 _server_path = Path("/root/aws-c-common")
-SRCDIR = _server_path if _server_path.exists() else Path("/home/weiqi/Verification/aws-c-common")
+SRCDIR = _server_path if _path_exists(_server_path) else Path("/home/weiqi/Verification/aws-c-common")
 PROOFDIR = SRCDIR / "verification/cbmc"
 
 # s2n-tls source and proof directories
