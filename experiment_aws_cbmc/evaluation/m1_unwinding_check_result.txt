@@ -1,0 +1,22 @@
+M1 unwinding-assertions soundness check (reviewer R2 response), CBMC 5.95.1.
+Re-ran each silenced case's LLM harness with --unwinding-assertions ON.
+A SUCCESS->FAIL(unwind) flip means the original UNSAT was under-unwound, not genuine silencing.
+
+[feedback_loop_A_gptoss120b] silenced=41 runnable=41
+  verdicts with --unwinding-assertions ON: {'FAIL(unwind)': 33, 'SUCCESS': 6, 'FAIL(other)': 2}
+  SUCCESS (bounds sufficient, silencing genuine): 6
+  FAIL(unwind) (under-unwinding artifact): 33   <- the aws_byte_buf_cat cluster
+  other: 2
+[feedback_loop_A_claude] silenced=16 runnable=16
+  verdicts with --unwinding-assertions ON: {'SUCCESS': 14, 'FAIL(unwind)': 2}
+  SUCCESS (bounds sufficient, silencing genuine): 14
+  FAIL(unwind) (under-unwinding artifact): 2
+
+Interpretation: the gpt-oss byte_buf_cat harness sets MAX_BUFFER_SIZE=256 (overriding the
+proof's -DMAX_BUFFER_SIZE=10) with MAX_ARGS=5 loops, so it under-unwinds at the inherited
+unwind 3. Sound verification (UA on) is intractable even at size 10/unwind 12 (>480s timeout);
+GT verdicts in seconds and catches the mutant. The mutants are reachable at the small scope
+GT covers, where the LLM harness explores but lacks the capacity assertion -> the ug
+attribution stands; the under-unwinding is an orthogonal soundness wart of the LLM harness.
+Paper: noted as a one-line bounded-verification threat in §7.2; the 33-case deep reframe was
+shelved (the silencing is real deployment behaviour; mechanism story unaffected for the core).
