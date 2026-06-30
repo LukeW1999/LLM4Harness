@@ -19,7 +19,13 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import Optional
 
-S2N_DIR   = Path("/home/weiqi/Verification/s2n-tls")
+def _path_exists(p):
+    try:
+        return p.exists()
+    except PermissionError:
+        return False
+_server_s2n = Path("/root/s2n-tls")
+S2N_DIR   = _server_s2n if _path_exists(_server_s2n) else Path("/home/weiqi/Verification/s2n-tls")
 CBMC_ROOT = S2N_DIR / "tests/cbmc"
 PROOFS_DIR = CBMC_ROOT / "proofs"
 PROOF_SOURCE = CBMC_ROOT / "sources"
@@ -46,7 +52,6 @@ COMPILE_DEFINES = [
 # verifies explicit assert() statements — matching the original proof intent.
 CBMC_ANALYSIS_FLAGS = [
     "--object-bits", "8",
-    "--no-standard-checks",
     "--flush",
 ]
 

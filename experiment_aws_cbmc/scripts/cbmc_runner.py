@@ -43,6 +43,7 @@ S2N_COMMON_FLAGS = [
     f"-I{S2N_SRCDIR}",
     f"-I{S2N_PROOFDIR}/include",
     f"-I{S2N_PROOFDIR}/include/cbmc_proof",
+    f"-I{S2N_PROOFDIR}/aws-verification-model-for-libcrypto/include",
     "-DCBMC",
     "--object-bits", "8",
     "-DS2N_SAFETY_ASSERT_SIDE_EFFECT_FREE",
