@@ -77,8 +77,12 @@ ESBMC_BASE_FLAGS = [
     # ESBMC execution flags
     "--force-malloc-success",
     "--z3",                          # required for __ESBMC_forall (used in AWS_IS_ZEROED)
-    "--no-bounds-check",
-    "--no-pointer-check",
+    # --no-bounds-check/--no-pointer-check REMOVED 2026-07-05: CBMC's COMMON_FLAGS
+    # never disables its own default pointer/bounds checks, so leaving these on
+    # made ESBMC blind to a whole class of real memory-safety mutants (verified:
+    # 16 NULL-deref mutants across aws_string_eq_byte_cursor/aws_string_eq_byte_buf
+    # flip SUCCESS->FAIL once removed, with zero new false positives on GT, ~3.4x
+    # slower). See esbmc-second-verifier memory / esbmc_vs_cbmc_report.md.
     "--no-unwinding-assertions",     # don't fail on loops that exceed unwind bound (CBMC-like)
 ]
 
@@ -217,7 +221,8 @@ FUNC_CONFIGS = {
                             SRCDIR / "source/common.c"],
         "proof_sources":   [PROOFDIR / "sources/make_common_data_structures.c",
                             PROOFDIR / "sources/utils.c",
-                            PROOFDIR / "stubs/error.c"],
+                            PROOFDIR / "stubs/error.c",
+                            ESBMC_MEMCPY_STUB_C],
         "defines": ["-DMAX_BUFFER_SIZE=10"], "unwind": ["--unwind", "3"],
     },
     "aws_byte_buf_advance": {
@@ -281,7 +286,8 @@ FUNC_CONFIGS = {
                             SRCDIR / "source/common.c"],
         "proof_sources":   [PROOFDIR / "sources/make_common_data_structures.c",
                             PROOFDIR / "stubs/error.c",
-                            PROOFDIR / "sources/utils.c"],
+                            PROOFDIR / "sources/utils.c",
+                            ESBMC_MEMCPY_STUB_C],
         "defines": ["-DMAX_BUFFER_SIZE=10"], "unwind": ["--unwind", "3"],
     },
     "aws_byte_buf_init_copy_from_cursor": {
@@ -290,7 +296,8 @@ FUNC_CONFIGS = {
                             SRCDIR / "source/common.c"],
         "proof_sources":   [PROOFDIR / "sources/make_common_data_structures.c",
                             PROOFDIR / "stubs/error.c",
-                            PROOFDIR / "sources/utils.c"],
+                            PROOFDIR / "sources/utils.c",
+                            ESBMC_MEMCPY_STUB_C],
         "defines": ["-DMAX_BUFFER_SIZE=10"], "unwind": ["--unwind", "3"],
     },
     "aws_byte_buf_write": {
@@ -308,7 +315,8 @@ FUNC_CONFIGS = {
                             SRCDIR / "source/common.c"],
         "proof_sources":   [PROOFDIR / "sources/make_common_data_structures.c",
                             PROOFDIR / "stubs/error.c",
-                            PROOFDIR / "sources/utils.c"],
+                            PROOFDIR / "sources/utils.c",
+                            ESBMC_MEMCPY_STUB_C],
         "defines": ["-DMAX_BUFFER_SIZE=10"], "unwind": ["--unwind", "3"],
     },
     "aws_byte_buf_write_be16": {
@@ -317,7 +325,8 @@ FUNC_CONFIGS = {
                             SRCDIR / "source/common.c"],
         "proof_sources":   [PROOFDIR / "sources/make_common_data_structures.c",
                             PROOFDIR / "stubs/error.c",
-                            PROOFDIR / "sources/utils.c"],
+                            PROOFDIR / "sources/utils.c",
+                            ESBMC_MEMCPY_STUB_C],
         "defines": ["-DMAX_BUFFER_SIZE=10"], "unwind": ["--unwind", "3"],
     },
     "aws_byte_buf_write_be32": {
@@ -326,7 +335,8 @@ FUNC_CONFIGS = {
                             SRCDIR / "source/common.c"],
         "proof_sources":   [PROOFDIR / "sources/make_common_data_structures.c",
                             PROOFDIR / "stubs/error.c",
-                            PROOFDIR / "sources/utils.c"],
+                            PROOFDIR / "sources/utils.c",
+                            ESBMC_MEMCPY_STUB_C],
         "defines": ["-DMAX_BUFFER_SIZE=10"], "unwind": ["--unwind", "3"],
     },
     "aws_byte_buf_write_be64": {
@@ -335,7 +345,8 @@ FUNC_CONFIGS = {
                             SRCDIR / "source/common.c"],
         "proof_sources":   [PROOFDIR / "sources/make_common_data_structures.c",
                             PROOFDIR / "stubs/error.c",
-                            PROOFDIR / "sources/utils.c"],
+                            PROOFDIR / "sources/utils.c",
+                            ESBMC_MEMCPY_STUB_C],
         "defines": ["-DMAX_BUFFER_SIZE=10"], "unwind": ["--unwind", "3"],
     },
     "aws_byte_buf_write_from_whole_buffer": {
@@ -344,7 +355,8 @@ FUNC_CONFIGS = {
                             SRCDIR / "source/common.c"],
         "proof_sources":   [PROOFDIR / "sources/make_common_data_structures.c",
                             PROOFDIR / "stubs/error.c",
-                            PROOFDIR / "sources/utils.c"],
+                            PROOFDIR / "sources/utils.c",
+                            ESBMC_MEMCPY_STUB_C],
         "defines": ["-DMAX_BUFFER_SIZE=10"], "unwind": ["--unwind", "3"],
     },
     "aws_byte_buf_write_from_whole_cursor": {
@@ -500,7 +512,8 @@ FUNC_CONFIGS = {
                             SRCDIR / "source/common.c"],
         "proof_sources":   [PROOFDIR / "sources/make_common_data_structures.c",
                             PROOFDIR / "sources/utils.c",
-                            PROOFDIR / "stubs/error.c"],
+                            PROOFDIR / "stubs/error.c",
+                            ESBMC_MEMCPY_STUB_C],
         "defines": ["-DMAX_ITEM_SIZE=2", "-DMAX_INITIAL_ITEM_ALLOCATION=4"],
         "unwind": ["--unwind", "3"],
     },
@@ -590,7 +603,8 @@ FUNC_CONFIGS = {
                             SRCDIR / "source/common.c"],
         "proof_sources":   [PROOFDIR / "sources/make_common_data_structures.c",
                             PROOFDIR / "stubs/error.c",
-                            PROOFDIR / "sources/utils.c"],
+                            PROOFDIR / "sources/utils.c",
+                            ESBMC_MEMCPY_STUB_C],
         "defines": ["-DMAX_ITEM_SIZE=2", "-DMAX_INITIAL_ITEM_ALLOCATION=4"],
         "unwind": ["--unwind", "3"],
     },
@@ -600,7 +614,8 @@ FUNC_CONFIGS = {
                             SRCDIR / "source/common.c"],
         "proof_sources":   [PROOFDIR / "sources/make_common_data_structures.c",
                             PROOFDIR / "stubs/error.c",
-                            PROOFDIR / "sources/utils.c"],
+                            PROOFDIR / "sources/utils.c",
+                            ESBMC_MEMCPY_STUB_C],
         "defines": ["-DMAX_ITEM_SIZE=2", "-DMAX_INITIAL_ITEM_ALLOCATION=4"],
         "unwind": ["--unwind", "3"],
     },
@@ -669,7 +684,8 @@ FUNC_CONFIGS = {
                             SRCDIR / "source/common.c"],
         "proof_sources":   [PROOFDIR / "sources/make_common_data_structures.c",
                             PROOFDIR / "stubs/error.c",
-                            PROOFDIR / "sources/utils.c"],
+                            PROOFDIR / "sources/utils.c",
+                            ESBMC_MEMCPY_STUB_C],
         "defines": ["-DMAX_ITEM_SIZE=2", "-DMAX_INITIAL_ITEM_ALLOCATION=4"],
         "unwind": ["--unwind", "3"],
     },

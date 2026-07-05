@@ -4,35 +4,21 @@
   "results": [
     {
       "func": "aws_array_list_get_at_ptr",
-      "mutant": "mutant_0011",
+      "mutant": "mutant_0022",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
       "func": "aws_array_list_get_at_ptr",
-      "mutant": "mutant_0003",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_get_at_ptr",
-      "mutant": "mutant_0013",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_get_at_ptr",
-      "mutant": "mutant_0010",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_get_at_ptr",
       "mutant": "mutant_0019",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_get_at_ptr",
+      "mutant": "mutant_0011",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -53,23 +39,16 @@
     },
     {
       "func": "aws_array_list_get_at_ptr",
-      "mutant": "mutant_0016",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_get_at_ptr",
-      "mutant": "mutant_0022",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_get_at_ptr",
       "mutant": "mutant_0027",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_get_at_ptr",
+      "mutant": "mutant_0003",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -81,14 +60,7 @@
     },
     {
       "func": "aws_array_list_get_at_ptr",
-      "mutant": "mutant_0028",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_get_at_ptr",
-      "mutant": "mutant_0050",
+      "mutant": "mutant_0010",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -102,9 +74,30 @@
     },
     {
       "func": "aws_array_list_get_at_ptr",
-      "mutant": "mutant_0061",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
+      "mutant": "mutant_0016",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_get_at_ptr",
+      "mutant": "mutant_0050",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_get_at_ptr",
+      "mutant": "mutant_0013",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_get_at_ptr",
+      "mutant": "mutant_0028",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -116,16 +109,9 @@
     },
     {
       "func": "aws_array_list_get_at_ptr",
-      "mutant": "mutant_0055",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_get_at_ptr",
-      "mutant": "mutant_0057",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0061",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
@@ -137,7 +123,21 @@
     },
     {
       "func": "aws_array_list_get_at_ptr",
-      "mutant": "mutant_0062",
+      "mutant": "mutant_0055",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0006",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_get_at_ptr",
+      "mutant": "mutant_0057",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -151,6 +151,13 @@
     },
     {
       "func": "aws_array_list_get_at_ptr",
+      "mutant": "mutant_0062",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_get_at_ptr",
       "mutant": "mutant_0067",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -158,9 +165,9 @@
     },
     {
       "func": "aws_array_list_swap",
-      "mutant": "mutant_0006",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
+      "mutant": "mutant_0007",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -179,7 +186,14 @@
     },
     {
       "func": "aws_array_list_swap",
-      "mutant": "mutant_0007",
+      "mutant": "mutant_0014",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0013",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -193,14 +207,14 @@
     },
     {
       "func": "aws_array_list_swap",
-      "mutant": "mutant_0013",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0019",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_array_list_swap",
-      "mutant": "mutant_0014",
+      "mutant": "mutant_0020",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -221,14 +235,7 @@
     },
     {
       "func": "aws_array_list_swap",
-      "mutant": "mutant_0019",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_swap",
-      "mutant": "mutant_0020",
+      "mutant": "mutant_0023",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -238,13 +245,6 @@
       "mutant": "mutant_0021",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_swap",
-      "mutant": "mutant_0023",
-      "gt": "FAIL",
-      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -271,13 +271,27 @@
     {
       "func": "aws_array_list_swap",
       "mutant": "mutant_0031",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0032",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_array_list_swap",
-      "mutant": "mutant_0032",
+      "mutant": "mutant_0035",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0042",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -291,51 +305,23 @@
     },
     {
       "func": "aws_array_list_swap",
-      "mutant": "mutant_0035",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_swap",
-      "mutant": "mutant_0036",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_swap",
       "mutant": "mutant_0040",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_array_list_swap",
       "mutant": "mutant_0041",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_array_list_swap",
-      "mutant": "mutant_0042",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_swap",
-      "mutant": "mutant_0046",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_swap",
-      "mutant": "mutant_0049",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0036",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -347,20 +333,6 @@
     },
     {
       "func": "aws_array_list_swap",
-      "mutant": "mutant_0077",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_swap",
-      "mutant": "mutant_0087",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_swap",
       "mutant": "mutant_0098",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
@@ -368,23 +340,9 @@
     },
     {
       "func": "aws_array_list_swap",
-      "mutant": "mutant_0090",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_swap",
-      "mutant": "mutant_0085",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_swap",
-      "mutant": "mutant_0097",
-      "gt": "FAIL",
-      "llm": "FAIL",
+      "mutant": "mutant_0046",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -396,6 +354,13 @@
     },
     {
       "func": "aws_array_list_swap",
+      "mutant": "mutant_0049",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
       "mutant": "mutant_0107",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
@@ -403,16 +368,9 @@
     },
     {
       "func": "aws_array_list_swap",
-      "mutant": "mutant_0100",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_array_list_swap",
-      "mutant": "mutant_0099",
-      "gt": "FAIL",
-      "llm": "FAIL",
+      "mutant": "mutant_0077",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -431,7 +389,56 @@
     },
     {
       "func": "aws_array_list_swap",
+      "mutant": "mutant_0087",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0090",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0100",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0099",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0085",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
       "mutant": "mutant_0103",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_array_list_swap",
+      "mutant": "mutant_0097",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0005",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -439,13 +446,6 @@
     {
       "func": "aws_byte_buf_advance",
       "mutant": "mutant_0008",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_advance",
-      "mutant": "mutant_0005",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -480,21 +480,7 @@
     },
     {
       "func": "aws_byte_buf_advance",
-      "mutant": "mutant_0032",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_advance",
       "mutant": "mutant_0031",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_advance",
-      "mutant": "mutant_0035",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -504,6 +490,20 @@
       "mutant": "mutant_0034",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0032",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0035",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -522,13 +522,6 @@
     },
     {
       "func": "aws_byte_buf_advance",
-      "mutant": "mutant_0048",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_advance",
       "mutant": "mutant_0038",
       "gt": "FAIL",
       "llm": "FAIL",
@@ -536,7 +529,7 @@
     },
     {
       "func": "aws_byte_buf_advance",
-      "mutant": "mutant_0050",
+      "mutant": "mutant_0048",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -546,6 +539,13 @@
       "mutant": "mutant_0049",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0050",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -564,13 +564,6 @@
     },
     {
       "func": "aws_byte_buf_advance",
-      "mutant": "mutant_0061",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_advance",
       "mutant": "mutant_0062",
       "gt": "FAIL",
       "llm": "FAIL",
@@ -578,16 +571,23 @@
     },
     {
       "func": "aws_byte_buf_advance",
+      "mutant": "mutant_0061",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_advance",
       "mutant": "mutant_0063",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_advance",
       "mutant": "mutant_0064",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -634,14 +634,14 @@
     },
     {
       "func": "aws_byte_buf_advance",
-      "mutant": "mutant_0076",
+      "mutant": "mutant_0078",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_advance",
-      "mutant": "mutant_0078",
+      "mutant": "mutant_0076",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -669,16 +669,16 @@
     },
     {
       "func": "aws_byte_buf_advance",
-      "mutant": "mutant_0087",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0084",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_advance",
-      "mutant": "mutant_0084",
-      "gt": "FAIL",
-      "llm": "FAIL",
+      "mutant": "mutant_0087",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -704,14 +704,14 @@
     },
     {
       "func": "aws_byte_buf_advance",
-      "mutant": "mutant_0097",
+      "mutant": "mutant_0106",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_advance",
-      "mutant": "mutant_0106",
+      "mutant": "mutant_0097",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -746,14 +746,14 @@
     },
     {
       "func": "aws_byte_buf_append",
-      "mutant": "mutant_0005",
+      "mutant": "mutant_0004",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_append",
-      "mutant": "mutant_0004",
+      "mutant": "mutant_0005",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -802,14 +802,21 @@
     },
     {
       "func": "aws_byte_buf_append",
-      "mutant": "mutant_0013",
+      "mutant": "mutant_0012",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0009",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
       "func": "aws_byte_buf_append",
-      "mutant": "mutant_0012",
+      "mutant": "mutant_0013",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -850,45 +857,10 @@
       "silenced": false
     },
     {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0009",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
       "func": "aws_byte_buf_append",
       "mutant": "mutant_0021",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0003",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0010",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0011",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0013",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -928,14 +900,14 @@
     },
     {
       "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0027",
+      "mutant": "mutant_0030",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0030",
+      "mutant": "mutant_0027",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -963,27 +935,6 @@
     },
     {
       "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0022",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0025",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0043",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
       "mutant": "mutant_0044",
       "gt": "SUCCESS",
       "llm": "FAIL",
@@ -991,7 +942,7 @@
     },
     {
       "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0048",
+      "mutant": "mutant_0043",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -1005,7 +956,7 @@
     },
     {
       "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0052",
+      "mutant": "mutant_0048",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -1026,15 +977,15 @@
     },
     {
       "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0060",
-      "gt": "SUCCESS",
+      "mutant": "mutant_0052",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0059",
-      "gt": "FAIL",
+      "mutant": "mutant_0060",
+      "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
     },
@@ -1047,8 +998,8 @@
     },
     {
       "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0053",
-      "gt": "SUCCESS",
+      "mutant": "mutant_0059",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -1061,44 +1012,51 @@
     },
     {
       "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0003",
+      "gt": "TIMEOUT",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0011",
+      "gt": "TIMEOUT",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0013",
+      "gt": "TIMEOUT",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0010",
+      "gt": "TIMEOUT",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0022",
+      "gt": "TIMEOUT",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0025",
+      "gt": "TIMEOUT",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
       "mutant": "mutant_0066",
       "gt": "FAIL",
       "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0063",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0064",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0065",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0068",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0069",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -1110,44 +1068,65 @@
     },
     {
       "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0071",
-      "gt": "SUCCESS",
+      "mutant": "mutant_0053",
+      "gt": "TIMEOUT",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0063",
+      "gt": "TIMEOUT",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0064",
+      "gt": "TIMEOUT",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0065",
+      "gt": "TIMEOUT",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0068",
+      "gt": "TIMEOUT",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0069",
+      "gt": "TIMEOUT",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_cat",
       "mutant": "mutant_0070",
-      "gt": "SUCCESS",
+      "gt": "TIMEOUT",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0071",
+      "gt": "TIMEOUT",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_cat",
       "mutant": "mutant_0072",
-      "gt": "SUCCESS",
+      "gt": "TIMEOUT",
       "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0074",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0081",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0080",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -1167,13 +1146,6 @@
     {
       "func": "aws_byte_buf_clean_up",
       "mutant": "mutant_0007",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0084",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -1217,13 +1189,6 @@
       "func": "aws_byte_buf_clean_up",
       "mutant": "mutant_0036",
       "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_cat",
-      "mutant": "mutant_0087",
-      "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
     },
@@ -1281,6 +1246,13 @@
       "mutant": "mutant_0047",
       "gt": "FAIL",
       "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0074",
+      "gt": "TIMEOUT",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -1326,24 +1298,17 @@
       "silenced": false
     },
     {
-      "func": "aws_byte_buf_clean_up_secure",
-      "mutant": "mutant_0020",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_eq",
-      "mutant": "mutant_0002",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
       "func": "aws_byte_buf_eq",
       "mutant": "mutant_0013",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_clean_up_secure",
+      "mutant": "mutant_0020",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -1355,16 +1320,30 @@
     },
     {
       "func": "aws_byte_buf_eq",
-      "mutant": "mutant_0006",
+      "mutant": "mutant_0015",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq",
+      "mutant": "mutant_0002",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_eq",
-      "mutant": "mutant_0015",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
+      "mutant": "mutant_0006",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0080",
+      "gt": "TIMEOUT",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -1376,7 +1355,21 @@
     },
     {
       "func": "aws_byte_buf_eq",
+      "mutant": "mutant_0022",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq",
       "mutant": "mutant_0019",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0006",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -1389,38 +1382,10 @@
       "silenced": false
     },
     {
-      "func": "aws_byte_buf_eq",
-      "mutant": "mutant_0022",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_eq_c_str",
-      "mutant": "mutant_0006",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_eq_c_str",
-      "mutant": "mutant_0008",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
       "func": "aws_byte_buf_eq_c_str",
       "mutant": "mutant_0007",
       "gt": "FAIL",
       "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_eq_c_str",
-      "mutant": "mutant_0009",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -1432,13 +1397,6 @@
     },
     {
       "func": "aws_byte_buf_eq_c_str",
-      "mutant": "mutant_0010",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_eq_c_str",
       "mutant": "mutant_0020",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
@@ -1446,7 +1404,28 @@
     },
     {
       "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0008",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0009",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
       "mutant": "mutant_0011",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_eq_c_str",
+      "mutant": "mutant_0010",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -1488,16 +1467,16 @@
     },
     {
       "func": "aws_byte_buf_from_array",
-      "mutant": "mutant_0005",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0014",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_from_array",
-      "mutant": "mutant_0014",
-      "gt": "FAIL",
-      "llm": "FAIL",
+      "mutant": "mutant_0005",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -1516,7 +1495,7 @@
     },
     {
       "func": "aws_byte_buf_from_array",
-      "mutant": "mutant_0017",
+      "mutant": "mutant_0020",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -1530,7 +1509,7 @@
     },
     {
       "func": "aws_byte_buf_from_array",
-      "mutant": "mutant_0020",
+      "mutant": "mutant_0017",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -1550,6 +1529,13 @@
       "silenced": false
     },
     {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0081",
+      "gt": "TIMEOUT",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
       "func": "aws_byte_buf_from_array",
       "mutant": "mutant_0027",
       "gt": "FAIL",
@@ -1565,14 +1551,14 @@
     },
     {
       "func": "aws_byte_buf_from_array",
-      "mutant": "mutant_0035",
+      "mutant": "mutant_0038",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_from_array",
-      "mutant": "mutant_0038",
+      "mutant": "mutant_0035",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -1582,6 +1568,13 @@
       "mutant": "mutant_0041",
       "gt": "FAIL",
       "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0084",
+      "gt": "TIMEOUT",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -1621,15 +1614,15 @@
     },
     {
       "func": "aws_byte_buf_from_c_str",
-      "mutant": "mutant_0005",
-      "gt": "SUCCESS",
+      "mutant": "mutant_0006",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_from_c_str",
-      "mutant": "mutant_0006",
-      "gt": "FAIL",
+      "mutant": "mutant_0005",
+      "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
     },
@@ -1642,21 +1635,21 @@
     },
     {
       "func": "aws_byte_buf_from_c_str",
-      "mutant": "mutant_0018",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_from_c_str",
       "mutant": "mutant_0013",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
+      "func": "aws_byte_buf_cat",
+      "mutant": "mutant_0087",
+      "gt": "TIMEOUT",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
       "func": "aws_byte_buf_from_c_str",
-      "mutant": "mutant_0020",
+      "mutant": "mutant_0018",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -1666,6 +1659,13 @@
       "mutant": "mutant_0019",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_c_str",
+      "mutant": "mutant_0020",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -1698,14 +1698,14 @@
     },
     {
       "func": "aws_byte_buf_from_c_str",
-      "mutant": "mutant_0031",
+      "mutant": "mutant_0029",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_from_c_str",
-      "mutant": "mutant_0029",
+      "mutant": "mutant_0031",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -1852,6 +1852,13 @@
     },
     {
       "func": "aws_byte_buf_from_empty_array",
+      "mutant": "mutant_0041",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_from_empty_array",
       "mutant": "mutant_0044",
       "gt": "FAIL",
       "llm": "FAIL",
@@ -1859,7 +1866,7 @@
     },
     {
       "func": "aws_byte_buf_from_empty_array",
-      "mutant": "mutant_0041",
+      "mutant": "mutant_0048",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -1869,13 +1876,6 @@
       "mutant": "mutant_0052",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_from_empty_array",
-      "mutant": "mutant_0048",
-      "gt": "FAIL",
-      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -1908,41 +1908,6 @@
     },
     {
       "func": "aws_byte_buf_init",
-      "mutant": "mutant_0014",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0011",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0016",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0015",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0017",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
       "mutant": "mutant_0024",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
@@ -1950,15 +1915,8 @@
     },
     {
       "func": "aws_byte_buf_init",
-      "mutant": "mutant_0019",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0018",
-      "gt": "FAIL",
+      "mutant": "mutant_0026",
+      "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
     },
@@ -1971,8 +1929,8 @@
     },
     {
       "func": "aws_byte_buf_init",
-      "mutant": "mutant_0026",
-      "gt": "SUCCESS",
+      "mutant": "mutant_0019",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -1985,7 +1943,21 @@
     },
     {
       "func": "aws_byte_buf_init",
+      "mutant": "mutant_0017",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
       "mutant": "mutant_0030",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0014",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -2006,23 +1978,23 @@
     },
     {
       "func": "aws_byte_buf_init",
-      "mutant": "mutant_0020",
+      "mutant": "mutant_0016",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_init",
-      "mutant": "mutant_0035",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0011",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_init",
-      "mutant": "mutant_0036",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0020",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -2034,7 +2006,42 @@
     },
     {
       "func": "aws_byte_buf_init",
-      "mutant": "mutant_0038",
+      "mutant": "mutant_0018",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0032",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0042",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0015",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0048",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0040",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
@@ -2048,51 +2055,9 @@
     },
     {
       "func": "aws_byte_buf_init",
-      "mutant": "mutant_0040",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0041",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0042",
+      "mutant": "mutant_0035",
       "gt": "FAIL",
       "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0031",
-      "gt": "SUCCESS",
-      "llm": "TIMEOUT",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0048",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0032",
-      "gt": "SUCCESS",
-      "llm": "TIMEOUT",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0033",
-      "gt": "SUCCESS",
-      "llm": "TIMEOUT",
       "silenced": false
     },
     {
@@ -2104,7 +2069,14 @@
     },
     {
       "func": "aws_byte_buf_init",
-      "mutant": "mutant_0052",
+      "mutant": "mutant_0033",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0041",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
@@ -2118,7 +2090,7 @@
     },
     {
       "func": "aws_byte_buf_init",
-      "mutant": "mutant_0049",
+      "mutant": "mutant_0038",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
@@ -2139,14 +2111,63 @@
     },
     {
       "func": "aws_byte_buf_init",
-      "mutant": "mutant_0076",
+      "mutant": "mutant_0036",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_init",
-      "mutant": "mutant_0075",
+      "mutant": "mutant_0052",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0049",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0092",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0031",
+      "gt": "SUCCESS",
+      "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0095",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0082",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0079",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0088",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -2166,8 +2187,43 @@
       "silenced": false
     },
     {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0014",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
       "func": "aws_byte_buf_init",
-      "mutant": "mutant_0082",
+      "mutant": "mutant_0075",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0015",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0017",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0005",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init",
+      "mutant": "mutant_0076",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -2180,113 +2236,15 @@
       "silenced": false
     },
     {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0092",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0079",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0095",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init",
-      "mutant": "mutant_0088",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0005",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
       "func": "aws_byte_buf_init_copy_from_cursor",
       "mutant": "mutant_0011",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0008",
       "gt": "FAIL",
       "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0014",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0015",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0009",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0017",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
       "mutant": "mutant_0010",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0012",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0016",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0025",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0022",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -2300,15 +2258,8 @@
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0018",
+      "mutant": "mutant_0009",
       "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0028",
-      "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
     },
@@ -2317,6 +2268,20 @@
       "mutant": "mutant_0036",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0022",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0012",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -2342,9 +2307,51 @@
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0008",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
       "mutant": "mutant_0066",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0028",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0016",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0018",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0076",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0025",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -2356,15 +2363,22 @@
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0039",
-      "gt": "SUCCESS",
+      "mutant": "mutant_0030",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0030",
-      "gt": "FAIL",
+      "mutant": "mutant_0089",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0039",
+      "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
     },
@@ -2384,23 +2398,23 @@
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0076",
+      "mutant": "mutant_0072",
+      "gt": "SUCCESS",
+      "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0095",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0075",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0072",
+      "mutant": "mutant_0096",
       "gt": "SUCCESS",
-      "llm": "TIMEOUT",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -2412,9 +2426,9 @@
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0089",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
+      "mutant": "mutant_0075",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -2422,6 +2436,13 @@
       "mutant": "mutant_0080",
       "gt": "SUCCESS",
       "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0097",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -2447,9 +2468,9 @@
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0095",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0098",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -2461,13 +2482,6 @@
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0096",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
       "mutant": "mutant_0094",
       "gt": "SUCCESS",
       "llm": "TIMEOUT",
@@ -2475,72 +2489,16 @@
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0098",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
       "mutant": "mutant_0100",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
       "mutant": "mutant_0101",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0097",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0099",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0090",
-      "gt": "SUCCESS",
-      "llm": "TIMEOUT",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0102",
-      "gt": "SUCCESS",
-      "llm": "TIMEOUT",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0104",
-      "gt": "SUCCESS",
-      "llm": "TIMEOUT",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0105",
-      "gt": "SUCCESS",
-      "llm": "TIMEOUT",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0106",
-      "gt": "SUCCESS",
-      "llm": "TIMEOUT",
       "silenced": false
     },
     {
@@ -2552,15 +2510,8 @@
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0107",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0115",
-      "gt": "SUCCESS",
+      "mutant": "mutant_0099",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -2573,16 +2524,16 @@
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0116",
+      "mutant": "mutant_0107",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0108",
-      "gt": "FAIL",
-      "llm": "FAIL",
+      "mutant": "mutant_0102",
+      "gt": "SUCCESS",
+      "llm": "TIMEOUT",
       "silenced": false
     },
     {
@@ -2590,6 +2541,20 @@
       "mutant": "mutant_0130",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0104",
+      "gt": "SUCCESS",
+      "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0090",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
       "silenced": false
     },
     {
@@ -2614,6 +2579,13 @@
       "silenced": false
     },
     {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0108",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
       "func": "aws_byte_buf_reset",
       "mutant": "mutant_0008",
       "gt": "FAIL",
@@ -2625,6 +2597,13 @@
       "mutant": "mutant_0011",
       "gt": "FAIL",
       "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0105",
+      "gt": "SUCCESS",
+      "llm": "TIMEOUT",
       "silenced": false
     },
     {
@@ -2667,6 +2646,13 @@
       "mutant": "mutant_0006",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0115",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -2713,23 +2699,16 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0048",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0051",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0054",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0048",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -2744,6 +2723,20 @@
       "mutant": "mutant_0056",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0051",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0116",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -2769,30 +2762,16 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0082",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0086",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0089",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0093",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0082",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -2811,7 +2790,14 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0099",
+      "mutant": "mutant_0086",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0089",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -2825,7 +2811,7 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0106",
+      "mutant": "mutant_0099",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -2839,21 +2825,35 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0106",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0126",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0135",
-      "gt": "FAIL",
-      "llm": "FAIL",
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0127",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0127",
+      "mutant": "mutant_0139",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0129",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -2867,9 +2867,9 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0129",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0140",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
@@ -2888,28 +2888,7 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0139",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0140",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0136",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0144",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -2923,16 +2902,23 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0148",
+      "mutant": "mutant_0144",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0157",
+      "mutant": "mutant_0148",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0106",
+      "gt": "SUCCESS",
+      "llm": "TIMEOUT",
       "silenced": false
     },
     {
@@ -2950,10 +2936,24 @@
       "silenced": false
     },
     {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0118",
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0157",
       "gt": "SUCCESS",
-      "llm": "TIMEOUT",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0181",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0180",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
@@ -2972,30 +2972,9 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0171",
+      "mutant": "mutant_0176",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_init_copy_from_cursor",
-      "mutant": "mutant_0126",
-      "gt": "SUCCESS",
-      "llm": "TIMEOUT",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0180",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0181",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
@@ -3007,7 +2986,7 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0176",
+      "mutant": "mutant_0171",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3028,13 +3007,6 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0201",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0212",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -3042,7 +3014,7 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0216",
+      "mutant": "mutant_0201",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3063,14 +3035,14 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0225",
+      "mutant": "mutant_0216",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0235",
+      "mutant": "mutant_0225",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3091,6 +3063,20 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0235",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0241",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0239",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -3105,9 +3091,9 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0241",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0255",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
@@ -3122,13 +3108,6 @@
       "mutant": "mutant_0244",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0255",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
@@ -3161,14 +3140,14 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0257",
+      "mutant": "mutant_0258",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0258",
+      "mutant": "mutant_0257",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3189,13 +3168,6 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0262",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0261",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -3204,6 +3176,13 @@
     {
       "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0263",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0262",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3308,7 +3287,7 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0284",
+      "mutant": "mutant_0296",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3322,7 +3301,7 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0296",
+      "mutant": "mutant_0284",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3336,13 +3315,6 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0305",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0308",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -3350,14 +3322,14 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0309",
+      "mutant": "mutant_0305",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0310",
+      "mutant": "mutant_0309",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3378,6 +3350,13 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0310",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0314",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -3392,6 +3371,13 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0317",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0316",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -3399,7 +3385,14 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0317",
+      "mutant": "mutant_0329",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0322",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3413,23 +3406,9 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0322",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0324",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0329",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
@@ -3462,13 +3441,6 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0340",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0360",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -3477,6 +3449,13 @@
     {
       "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0363",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0340",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3525,14 +3504,14 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0399",
+      "mutant": "mutant_0386",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0386",
+      "mutant": "mutant_0399",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3553,14 +3532,14 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0403",
+      "mutant": "mutant_0404",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0404",
+      "mutant": "mutant_0403",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3577,6 +3556,13 @@
       "mutant": "mutant_0407",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0135",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -3616,14 +3602,14 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0415",
+      "mutant": "mutant_0417",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0417",
+      "mutant": "mutant_0415",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3672,13 +3658,6 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0427",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0428",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -3687,6 +3666,13 @@
     {
       "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0429",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0427",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3703,6 +3689,13 @@
       "mutant": "mutant_0431",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0118",
+      "gt": "SUCCESS",
+      "llm": "TIMEOUT",
       "silenced": false
     },
     {
@@ -3756,13 +3749,6 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0444",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0445",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -3770,28 +3756,21 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0444",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_init_copy_from_cursor",
+      "mutant": "mutant_0126",
+      "gt": "SUCCESS",
+      "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0446",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0447",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0448",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0451",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3805,7 +3784,28 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0451",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0447",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0453",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0448",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3819,14 +3819,21 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0455",
+      "mutant": "mutant_0482",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0458",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0458",
+      "mutant": "mutant_0455",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -3854,20 +3861,6 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0476",
-      "gt": "FAIL",
-      "llm": "SUCCESS",
-      "silenced": true
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
-      "mutant": "mutant_0482",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0477",
       "gt": "FAIL",
       "llm": "SUCCESS",
@@ -3882,6 +3875,13 @@
     },
     {
       "func": "aws_byte_buf_secure_zero",
+      "mutant": "mutant_0476",
+      "gt": "FAIL",
+      "llm": "SUCCESS",
+      "silenced": true
+    },
+    {
+      "func": "aws_byte_buf_secure_zero",
       "mutant": "mutant_0483",
       "gt": "FAIL",
       "llm": "SUCCESS",
@@ -3892,6 +3892,13 @@
       "mutant": "mutant_0486",
       "gt": "FAIL",
       "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_write_u8",
+      "mutant": "mutant_0022",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
@@ -3917,6 +3924,13 @@
     },
     {
       "func": "aws_byte_buf_write_u8",
+      "mutant": "mutant_0015",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_buf_write_u8",
       "mutant": "mutant_0013",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -3931,23 +3945,9 @@
     },
     {
       "func": "aws_byte_buf_write_u8",
-      "mutant": "mutant_0015",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_write_u8",
       "mutant": "mutant_0016",
       "gt": "FAIL",
       "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_buf_write_u8",
-      "mutant": "mutant_0022",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
@@ -3987,6 +3987,13 @@
     },
     {
       "func": "aws_byte_cursor_advance",
+      "mutant": "mutant_0004",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_advance",
       "mutant": "mutant_0002",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -3994,14 +4001,14 @@
     },
     {
       "func": "aws_byte_cursor_advance",
-      "mutant": "mutant_0003",
+      "mutant": "mutant_0007",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_cursor_advance",
-      "mutant": "mutant_0004",
+      "mutant": "mutant_0003",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -4022,7 +4029,7 @@
     },
     {
       "func": "aws_byte_cursor_advance",
-      "mutant": "mutant_0007",
+      "mutant": "mutant_0010",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -4036,56 +4043,7 @@
     },
     {
       "func": "aws_byte_cursor_advance",
-      "mutant": "mutant_0010",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_advance",
-      "mutant": "mutant_0011",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_advance",
-      "mutant": "mutant_0014",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_advance",
       "mutant": "mutant_0013",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_advance",
-      "mutant": "mutant_0015",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_advance",
-      "mutant": "mutant_0016",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_advance",
-      "mutant": "mutant_0017",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_advance",
-      "mutant": "mutant_0018",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -4099,9 +4057,72 @@
     },
     {
       "func": "aws_byte_cursor_advance",
+      "mutant": "mutant_0011",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_advance",
+      "mutant": "mutant_0015",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_advance",
+      "mutant": "mutant_0014",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_advance",
+      "mutant": "mutant_0018",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_advance",
+      "mutant": "mutant_0016",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_advance",
       "mutant": "mutant_0022",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_advance",
+      "mutant": "mutant_0017",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_eq",
+      "mutant": "mutant_0014",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_eq",
+      "mutant": "mutant_0013",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_eq",
+      "mutant": "mutant_0015",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
@@ -4112,14 +4133,7 @@
       "silenced": false
     },
     {
-      "func": "aws_byte_cursor_advance",
-      "mutant": "mutant_0025",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_eq",
+      "func": "aws_byte_cursor_eq_byte_buf",
       "mutant": "mutant_0013",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
@@ -4140,17 +4154,31 @@
       "silenced": false
     },
     {
-      "func": "aws_byte_cursor_eq",
+      "func": "aws_byte_cursor_advance",
+      "mutant": "mutant_0025",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_eq_byte_buf",
       "mutant": "mutant_0014",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
-      "func": "aws_byte_cursor_eq",
+      "func": "aws_byte_cursor_eq_byte_buf",
       "mutant": "mutant_0015",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_eq",
+      "mutant": "mutant_0022",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -4169,13 +4197,6 @@
     },
     {
       "func": "aws_byte_cursor_eq",
-      "mutant": "mutant_0022",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_eq",
       "mutant": "mutant_0026",
       "gt": "FAIL",
       "llm": "FAIL",
@@ -4183,30 +4204,9 @@
     },
     {
       "func": "aws_byte_cursor_eq_byte_buf",
-      "mutant": "mutant_0013",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_eq_byte_buf",
-      "mutant": "mutant_0014",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_eq_byte_buf",
       "mutant": "mutant_0006",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_eq_byte_buf",
-      "mutant": "mutant_0015",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
@@ -4231,13 +4231,6 @@
       "silenced": false
     },
     {
-      "func": "aws_byte_cursor_eq_byte_buf",
-      "mutant": "mutant_0026",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
       "func": "aws_byte_cursor_eq_c_str",
       "mutant": "mutant_0006",
       "gt": "SUCCESS",
@@ -4245,24 +4238,10 @@
       "silenced": false
     },
     {
-      "func": "aws_byte_cursor_eq_c_str",
-      "mutant": "mutant_0008",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_eq_c_str",
-      "mutant": "mutant_0007",
+      "func": "aws_byte_cursor_eq_byte_buf",
+      "mutant": "mutant_0026",
       "gt": "FAIL",
       "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_eq_c_str",
-      "mutant": "mutant_0009",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -4281,14 +4260,28 @@
     },
     {
       "func": "aws_byte_cursor_eq_c_str",
-      "mutant": "mutant_0010",
+      "mutant": "mutant_0009",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_cursor_eq_c_str",
-      "mutant": "mutant_0011",
+      "mutant": "mutant_0008",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_eq_c_str",
+      "mutant": "mutant_0007",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_eq_c_str",
+      "mutant": "mutant_0010",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -4302,16 +4295,16 @@
     },
     {
       "func": "aws_byte_cursor_eq_c_str",
-      "mutant": "mutant_0025",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0011",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_cursor_eq_c_str",
-      "mutant": "mutant_0028",
-      "gt": "FAIL",
-      "llm": "FAIL",
+      "mutant": "mutant_0025",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -4326,6 +4319,13 @@
       "mutant": "mutant_0003",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_eq_c_str",
+      "mutant": "mutant_0028",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -4400,6 +4400,13 @@
     },
     {
       "func": "aws_byte_cursor_from_array",
+      "mutant": "mutant_0042",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_from_array",
       "mutant": "mutant_0025",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -4410,13 +4417,6 @@
       "mutant": "mutant_0018",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_from_array",
-      "mutant": "mutant_0042",
-      "gt": "FAIL",
-      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -4442,21 +4442,14 @@
     },
     {
       "func": "aws_byte_cursor_from_array",
-      "mutant": "mutant_0058",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_from_array",
       "mutant": "mutant_0059",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
-      "func": "aws_byte_cursor_from_buf",
-      "mutant": "mutant_0000",
+      "func": "aws_byte_cursor_from_array",
+      "mutant": "mutant_0058",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -4464,6 +4457,13 @@
     {
       "func": "aws_byte_cursor_from_buf",
       "mutant": "mutant_0001",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_from_buf",
+      "mutant": "mutant_0000",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -4519,14 +4519,14 @@
     },
     {
       "func": "aws_byte_cursor_from_buf",
-      "mutant": "mutant_0009",
+      "mutant": "mutant_0010",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_byte_cursor_from_buf",
-      "mutant": "mutant_0010",
+      "mutant": "mutant_0009",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -4568,13 +4568,6 @@
     },
     {
       "func": "aws_byte_cursor_from_buf",
-      "mutant": "mutant_0016",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_from_buf",
       "mutant": "mutant_0019",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -4582,7 +4575,14 @@
     },
     {
       "func": "aws_byte_cursor_from_buf",
-      "mutant": "mutant_0020",
+      "mutant": "mutant_0016",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_from_buf",
+      "mutant": "mutant_0023",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -4596,7 +4596,7 @@
     },
     {
       "func": "aws_byte_cursor_from_buf",
-      "mutant": "mutant_0023",
+      "mutant": "mutant_0020",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -4610,14 +4610,14 @@
     },
     {
       "func": "aws_byte_cursor_from_c_str",
-      "mutant": "mutant_0015",
+      "mutant": "mutant_0016",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_byte_cursor_from_c_str",
-      "mutant": "mutant_0016",
+      "mutant": "mutant_0015",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
@@ -4631,16 +4631,16 @@
     },
     {
       "func": "aws_byte_cursor_from_c_str",
-      "mutant": "mutant_0018",
+      "mutant": "mutant_0026",
       "gt": "SUCCESS",
-      "llm": "FAIL",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
-      "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0000",
+      "func": "aws_byte_cursor_from_c_str",
+      "mutant": "mutant_0018",
       "gt": "SUCCESS",
-      "llm": "COMPILE_ERROR",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -4651,22 +4651,15 @@
       "silenced": false
     },
     {
-      "func": "aws_byte_cursor_from_c_str",
-      "mutant": "mutant_0026",
+      "func": "aws_byte_cursor_from_string",
+      "mutant": "mutant_0001",
       "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_from_c_str",
-      "mutant": "mutant_0029",
-      "gt": "FAIL",
-      "llm": "FAIL",
+      "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0001",
+      "mutant": "mutant_0000",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -4707,8 +4700,15 @@
       "silenced": false
     },
     {
+      "func": "aws_byte_cursor_from_c_str",
+      "mutant": "mutant_0029",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0007",
+      "mutant": "mutant_0009",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -4716,13 +4716,6 @@
     {
       "func": "aws_byte_cursor_from_string",
       "mutant": "mutant_0008",
-      "gt": "SUCCESS",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0009",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -4764,6 +4757,13 @@
     },
     {
       "func": "aws_byte_cursor_from_string",
+      "mutant": "mutant_0007",
+      "gt": "SUCCESS",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_from_string",
       "mutant": "mutant_0015",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
@@ -4841,13 +4841,6 @@
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0027",
-      "gt": "SUCCESS",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_from_string",
       "mutant": "mutant_0026",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
@@ -4862,14 +4855,7 @@
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0030",
-      "gt": "SUCCESS",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0031",
+      "mutant": "mutant_0027",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -4883,7 +4869,21 @@
     },
     {
       "func": "aws_byte_cursor_from_string",
+      "mutant": "mutant_0030",
+      "gt": "SUCCESS",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_from_string",
       "mutant": "mutant_0032",
+      "gt": "SUCCESS",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_from_string",
+      "mutant": "mutant_0031",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -4897,14 +4897,14 @@
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0034",
+      "mutant": "mutant_0035",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0035",
+      "mutant": "mutant_0034",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -4939,21 +4939,14 @@
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0040",
-      "gt": "SUCCESS",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0042",
-      "gt": "SUCCESS",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_from_string",
       "mutant": "mutant_0041",
+      "gt": "SUCCESS",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_from_string",
+      "mutant": "mutant_0040",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -4974,7 +4967,7 @@
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0046",
+      "mutant": "mutant_0042",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -4982,6 +4975,13 @@
     {
       "func": "aws_byte_cursor_from_string",
       "mutant": "mutant_0045",
+      "gt": "SUCCESS",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_from_string",
+      "mutant": "mutant_0046",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -5002,7 +5002,7 @@
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0050",
+      "mutant": "mutant_0049",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -5016,7 +5016,7 @@
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0049",
+      "mutant": "mutant_0050",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -5030,14 +5030,14 @@
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0054",
+      "mutant": "mutant_0053",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0053",
+      "mutant": "mutant_0054",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -5065,14 +5065,14 @@
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0059",
+      "mutant": "mutant_0058",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0058",
+      "mutant": "mutant_0061",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -5093,20 +5093,6 @@
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0063",
-      "gt": "SUCCESS",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0061",
-      "gt": "SUCCESS",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_byte_cursor_from_string",
       "mutant": "mutant_0064",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
@@ -5114,7 +5100,7 @@
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0067",
+      "mutant": "mutant_0063",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -5135,14 +5121,14 @@
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0068",
+      "mutant": "mutant_0067",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
       "func": "aws_byte_cursor_from_string",
-      "mutant": "mutant_0069",
+      "mutant": "mutant_0068",
       "gt": "SUCCESS",
       "llm": "COMPILE_ERROR",
       "silenced": false
@@ -5162,8 +5148,29 @@
       "silenced": false
     },
     {
+      "func": "aws_byte_cursor_from_string",
+      "mutant": "mutant_0069",
+      "gt": "SUCCESS",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_byte_cursor_from_string",
+      "mutant": "mutant_0059",
+      "gt": "SUCCESS",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
       "func": "aws_nospec_mask",
       "mutant": "mutant_0003",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_nospec_mask",
+      "mutant": "mutant_0004",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -5184,7 +5191,14 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0004",
+      "mutant": "mutant_0028",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_nospec_mask",
+      "mutant": "mutant_0010",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -5192,13 +5206,6 @@
     {
       "func": "aws_nospec_mask",
       "mutant": "mutant_0009",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_nospec_mask",
-      "mutant": "mutant_0010",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -5226,9 +5233,9 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0028",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
+      "mutant": "mutant_0014",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -5241,13 +5248,6 @@
     {
       "func": "aws_nospec_mask",
       "mutant": "mutant_0020",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_nospec_mask",
-      "mutant": "mutant_0014",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -5289,14 +5289,14 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0040",
+      "mutant": "mutant_0039",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0039",
+      "mutant": "mutant_0040",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -5317,14 +5317,14 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0045",
+      "mutant": "mutant_0044",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0044",
+      "mutant": "mutant_0045",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -5345,7 +5345,7 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0050",
+      "mutant": "mutant_0048",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -5359,7 +5359,7 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0048",
+      "mutant": "mutant_0052",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -5367,6 +5367,13 @@
     {
       "func": "aws_nospec_mask",
       "mutant": "mutant_0051",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_nospec_mask",
+      "mutant": "mutant_0050",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -5381,13 +5388,6 @@
     {
       "func": "aws_nospec_mask",
       "mutant": "mutant_0053",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_nospec_mask",
-      "mutant": "mutant_0052",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -5422,6 +5422,13 @@
     },
     {
       "func": "aws_nospec_mask",
+      "mutant": "mutant_0059",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_nospec_mask",
       "mutant": "mutant_0060",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
@@ -5436,14 +5443,14 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0059",
+      "mutant": "mutant_0062",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0062",
+      "mutant": "mutant_0063",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -5464,21 +5471,7 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0063",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_nospec_mask",
       "mutant": "mutant_0071",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_nospec_mask",
-      "mutant": "mutant_0076",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -5492,14 +5485,14 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0078",
+      "mutant": "mutant_0076",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0079",
+      "mutant": "mutant_0078",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -5513,14 +5506,14 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0081",
+      "mutant": "mutant_0079",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0083",
+      "mutant": "mutant_0081",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -5534,7 +5527,7 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0088",
+      "mutant": "mutant_0083",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -5548,7 +5541,7 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0089",
+      "mutant": "mutant_0088",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -5562,7 +5555,7 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0099",
+      "mutant": "mutant_0089",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -5570,6 +5563,13 @@
     {
       "func": "aws_nospec_mask",
       "mutant": "mutant_0094",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_nospec_mask",
+      "mutant": "mutant_0099",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -5590,6 +5590,13 @@
     },
     {
       "func": "aws_nospec_mask",
+      "mutant": "mutant_0110",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_nospec_mask",
       "mutant": "mutant_0103",
       "gt": "FAIL",
       "llm": "FAIL",
@@ -5604,13 +5611,6 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0105",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_nospec_mask",
       "mutant": "mutant_0104",
       "gt": "FAIL",
       "llm": "FAIL",
@@ -5618,9 +5618,9 @@
     },
     {
       "func": "aws_nospec_mask",
-      "mutant": "mutant_0110",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
+      "mutant": "mutant_0105",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -5639,16 +5639,16 @@
     },
     {
       "func": "aws_ptr_eq",
-      "mutant": "mutant_0002",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0004",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_ptr_eq",
-      "mutant": "mutant_0004",
-      "gt": "FAIL",
-      "llm": "FAIL",
+      "mutant": "mutant_0002",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -5688,20 +5688,6 @@
     },
     {
       "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0006",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0007",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_ring_buffer_init",
       "mutant": "mutant_0010",
       "gt": "FAIL",
       "llm": "FAIL",
@@ -5723,9 +5709,16 @@
     },
     {
       "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0016",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0006",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0007",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
       "silenced": false
     },
     {
@@ -5746,14 +5739,21 @@
       "func": "aws_ring_buffer_init",
       "mutant": "mutant_0015",
       "gt": "TIMEOUT",
-      "llm": "FAIL",
+      "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0016",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
       "silenced": false
     },
     {
       "func": "aws_ring_buffer_init",
       "mutant": "mutant_0017",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
       "silenced": false
     },
     {
@@ -5765,15 +5765,8 @@
     },
     {
       "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0020",
-      "gt": "TIMEOUT",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_ring_buffer_init",
       "mutant": "mutant_0018",
-      "gt": "FAIL",
+      "gt": "TIMEOUT",
       "llm": "TIMEOUT",
       "silenced": false
     },
@@ -5796,41 +5789,6 @@
       "mutant": "mutant_0029",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0025",
-      "gt": "TIMEOUT",
-      "llm": "TIMEOUT",
-      "silenced": false
-    },
-    {
-      "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0026",
-      "gt": "TIMEOUT",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0028",
-      "gt": "TIMEOUT",
-      "llm": "TIMEOUT",
-      "silenced": false
-    },
-    {
-      "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0030",
-      "gt": "TIMEOUT",
-      "llm": "TIMEOUT",
-      "silenced": false
-    },
-    {
-      "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0031",
-      "gt": "TIMEOUT",
-      "llm": "TIMEOUT",
       "silenced": false
     },
     {
@@ -5891,16 +5849,58 @@
     },
     {
       "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0032",
-      "gt": "FAIL",
+      "mutant": "mutant_0049",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
+      "silenced": false
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0020",
+      "gt": "TIMEOUT",
       "llm": "TIMEOUT",
       "silenced": false
     },
     {
       "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0049",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0025",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0026",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0028",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0030",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0031",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0032",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
       "silenced": false
     },
     {
@@ -5912,44 +5912,9 @@
     },
     {
       "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0065",
-      "gt": "TIMEOUT",
-      "llm": "TIMEOUT",
-      "silenced": false
-    },
-    {
-      "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0070",
-      "gt": "FAIL",
-      "llm": "TIMEOUT",
-      "silenced": false
-    },
-    {
-      "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0071",
-      "gt": "TIMEOUT",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0075",
-      "gt": "TIMEOUT",
-      "llm": "TIMEOUT",
-      "silenced": false
-    },
-    {
-      "func": "aws_ring_buffer_init",
       "mutant": "mutant_0088",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0076",
-      "gt": "TIMEOUT",
-      "llm": "TIMEOUT",
       "silenced": false
     },
     {
@@ -6030,6 +5995,13 @@
       "silenced": false
     },
     {
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0065",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
       "func": "aws_string_destroy",
       "mutant": "mutant_0018",
       "gt": "SUCCESS",
@@ -6086,13 +6058,6 @@
       "silenced": false
     },
     {
-      "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0077",
-      "gt": "FAIL",
-      "llm": "TIMEOUT",
-      "silenced": false
-    },
-    {
       "func": "aws_string_eq",
       "mutant": "mutant_0002",
       "gt": "SUCCESS",
@@ -6136,16 +6101,16 @@
     },
     {
       "func": "aws_string_eq",
-      "mutant": "mutant_0019",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "mutant": "mutant_0018",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq",
-      "mutant": "mutant_0018",
-      "gt": "FAIL",
-      "llm": "FAIL",
+      "mutant": "mutant_0019",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -6177,13 +6142,6 @@
       "silenced": false
     },
     {
-      "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0092",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
       "func": "aws_string_eq",
       "mutant": "mutant_0033",
       "gt": "FAIL",
@@ -6200,15 +6158,15 @@
     {
       "func": "aws_string_eq",
       "mutant": "mutant_0036",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq",
       "mutant": "mutant_0037",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
@@ -6256,57 +6214,64 @@
     {
       "func": "aws_string_eq",
       "mutant": "mutant_0052",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq",
       "mutant": "mutant_0053",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq",
       "mutant": "mutant_0054",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq",
       "mutant": "mutant_0055",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq",
       "mutant": "mutant_0057",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq",
       "mutant": "mutant_0058",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq",
       "mutant": "mutant_0059",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq",
       "mutant": "mutant_0060",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0070",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
       "silenced": false
     },
     {
@@ -6339,13 +6304,6 @@
     },
     {
       "func": "aws_string_eq",
-      "mutant": "mutant_0069",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_eq",
       "mutant": "mutant_0088",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
@@ -6356,6 +6314,13 @@
       "mutant": "mutant_0090",
       "gt": "COMPILE_ERROR",
       "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq",
+      "mutant": "mutant_0069",
+      "gt": "SUCCESS",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -6401,15 +6366,15 @@
       "silenced": false
     },
     {
-      "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0004",
-      "gt": "SUCCESS",
+      "func": "aws_string_eq",
+      "mutant": "mutant_0092",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
-      "func": "aws_string_eq",
-      "mutant": "mutant_0092",
+      "func": "aws_string_eq_byte_buf",
+      "mutant": "mutant_0004",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -6423,15 +6388,15 @@
     },
     {
       "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0017",
-      "gt": "SUCCESS",
+      "mutant": "mutant_0016",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0016",
-      "gt": "FAIL",
+      "mutant": "mutant_0017",
+      "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
     },
@@ -6458,14 +6423,14 @@
     },
     {
       "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0030",
+      "mutant": "mutant_0031",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0031",
+      "mutant": "mutant_0030",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -6499,15 +6464,15 @@
       "silenced": false
     },
     {
-      "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0045",
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0092",
       "gt": "SUCCESS",
-      "llm": "FAIL",
+      "llm": "TIMEOUT",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0048",
+      "mutant": "mutant_0045",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
@@ -6520,9 +6485,9 @@
       "silenced": false
     },
     {
-      "func": "aws_ring_buffer_init",
-      "mutant": "mutant_0085",
-      "gt": "TIMEOUT",
+      "func": "aws_string_eq_byte_buf",
+      "mutant": "mutant_0048",
+      "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
     },
@@ -6543,14 +6508,7 @@
     {
       "func": "aws_string_eq_byte_buf",
       "mutant": "mutant_0051",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0053",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -6563,7 +6521,7 @@
     },
     {
       "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0055",
+      "mutant": "mutant_0053",
       "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
@@ -6577,8 +6535,8 @@
     },
     {
       "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0061",
-      "gt": "SUCCESS",
+      "mutant": "mutant_0055",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -6591,7 +6549,7 @@
     },
     {
       "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0063",
+      "mutant": "mutant_0061",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
@@ -6605,8 +6563,22 @@
     },
     {
       "func": "aws_string_eq_byte_buf",
+      "mutant": "mutant_0063",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq_byte_buf",
       "mutant": "mutant_0065",
       "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq_byte_buf",
+      "mutant": "mutant_0077",
+      "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
     },
@@ -6620,84 +6592,84 @@
     {
       "func": "aws_string_eq_byte_buf",
       "mutant": "mutant_0082",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0077",
-      "gt": "SUCCESS",
+      "mutant": "mutant_0083",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq_byte_buf",
+      "mutant": "mutant_0084",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_buf",
       "mutant": "mutant_0085",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0083",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0084",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_buf",
       "mutant": "mutant_0086",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0089",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_buf",
       "mutant": "mutant_0087",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0091",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_buf",
       "mutant": "mutant_0088",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0096",
-      "gt": "SUCCESS",
+      "mutant": "mutant_0089",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq_byte_buf",
+      "mutant": "mutant_0091",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_buf",
       "mutant": "mutant_0092",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq_byte_buf",
+      "mutant": "mutant_0096",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq_byte_buf",
+      "mutant": "mutant_0097",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -6710,8 +6682,8 @@
     },
     {
       "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0097",
-      "gt": "SUCCESS",
+      "mutant": "mutant_0099",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -6738,13 +6710,6 @@
     },
     {
       "func": "aws_string_eq_byte_buf",
-      "mutant": "mutant_0099",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_eq_byte_buf",
       "mutant": "mutant_0102",
       "gt": "SUCCESS",
       "llm": "FAIL",
@@ -6753,7 +6718,7 @@
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0004",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -6794,15 +6759,15 @@
     },
     {
       "func": "aws_string_eq_byte_cursor",
-      "mutant": "mutant_0030",
-      "gt": "FAIL",
+      "mutant": "mutant_0023",
+      "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_cursor",
-      "mutant": "mutant_0023",
-      "gt": "SUCCESS",
+      "mutant": "mutant_0030",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -6822,6 +6787,13 @@
     },
     {
       "func": "aws_string_eq_byte_cursor",
+      "mutant": "mutant_0036",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0038",
       "gt": "FAIL",
       "llm": "FAIL",
@@ -6836,13 +6808,6 @@
     },
     {
       "func": "aws_string_eq_byte_cursor",
-      "mutant": "mutant_0036",
-      "gt": "FAIL",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0045",
       "gt": "SUCCESS",
       "llm": "FAIL",
@@ -6851,7 +6816,7 @@
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0047",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -6865,7 +6830,7 @@
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0049",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -6879,14 +6844,7 @@
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0051",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_eq_byte_cursor",
-      "mutant": "mutant_0053",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -6899,14 +6857,14 @@
     },
     {
       "func": "aws_string_eq_byte_cursor",
-      "mutant": "mutant_0054",
-      "gt": "SUCCESS",
+      "mutant": "mutant_0053",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_cursor",
-      "mutant": "mutant_0061",
+      "mutant": "mutant_0054",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
@@ -6927,6 +6885,13 @@
     },
     {
       "func": "aws_string_eq_byte_cursor",
+      "mutant": "mutant_0061",
+      "gt": "SUCCESS",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0062",
       "gt": "FAIL",
       "llm": "FAIL",
@@ -6934,14 +6899,14 @@
     },
     {
       "func": "aws_string_eq_byte_cursor",
-      "mutant": "mutant_0065",
+      "mutant": "mutant_0063",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_cursor",
-      "mutant": "mutant_0063",
+      "mutant": "mutant_0065",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
@@ -6963,84 +6928,84 @@
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0082",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0083",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0084",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0085",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0086",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0087",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0088",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0089",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0091",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0092",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0096",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0097",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -7054,7 +7019,7 @@
     {
       "func": "aws_string_eq_byte_cursor",
       "mutant": "mutant_0099",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -7074,16 +7039,16 @@
     },
     {
       "func": "aws_string_eq_c_str",
-      "mutant": "mutant_0008",
+      "mutant": "mutant_0005",
       "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_c_str",
-      "mutant": "mutant_0005",
+      "mutant": "mutant_0008",
       "gt": "SUCCESS",
-      "llm": "FAIL",
+      "llm": "SUCCESS",
       "silenced": false
     },
     {
@@ -7117,7 +7082,7 @@
     {
       "func": "aws_string_eq_c_str",
       "mutant": "mutant_0020",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -7130,6 +7095,13 @@
     },
     {
       "func": "aws_string_eq_c_str",
+      "mutant": "mutant_0022",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq_c_str",
       "mutant": "mutant_0024",
       "gt": "SUCCESS",
       "llm": "FAIL",
@@ -7137,15 +7109,8 @@
     },
     {
       "func": "aws_string_eq_c_str",
-      "mutant": "mutant_0022",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_eq_c_str",
       "mutant": "mutant_0025",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -7159,7 +7124,7 @@
     {
       "func": "aws_string_eq_c_str",
       "mutant": "mutant_0027",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
@@ -7214,7 +7179,7 @@
     },
     {
       "func": "aws_string_eq_c_str",
-      "mutant": "mutant_0055",
+      "mutant": "mutant_0051",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
@@ -7228,7 +7193,7 @@
     },
     {
       "func": "aws_string_eq_c_str",
-      "mutant": "mutant_0051",
+      "mutant": "mutant_0055",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
@@ -7236,62 +7201,118 @@
     {
       "func": "aws_string_eq_c_str",
       "mutant": "mutant_0057",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
-      "func": "aws_string_eq_c_str",
-      "mutant": "mutant_0060",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0071",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0075",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
+      "silenced": false
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0076",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
       "silenced": false
     },
     {
       "func": "aws_string_eq_c_str",
       "mutant": "mutant_0059",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_c_str",
       "mutant": "mutant_0058",
-      "gt": "SUCCESS",
-      "llm": "SUCCESS",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq_c_str",
+      "mutant": "mutant_0060",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0077",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
       "silenced": false
     },
     {
       "func": "aws_string_eq_c_str",
       "mutant": "mutant_0061",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_ring_buffer_init",
+      "mutant": "mutant_0085",
+      "gt": "TIMEOUT",
+      "llm": "TIMEOUT",
       "silenced": false
     },
     {
       "func": "aws_string_eq_c_str",
       "mutant": "mutant_0062",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_eq_c_str",
-      "mutant": "mutant_0064",
-      "gt": "SUCCESS",
+      "gt": "FAIL",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_c_str",
       "mutant": "mutant_0063",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq_c_str",
+      "mutant": "mutant_0064",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq_c_str",
+      "mutant": "mutant_0093",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq_c_str",
+      "mutant": "mutant_0094",
+      "gt": "COMPILE_ERROR",
+      "llm": "COMPILE_ERROR",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_eq_c_str",
+      "mutant": "mutant_0065",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
     },
     {
       "func": "aws_string_eq_c_str",
-      "mutant": "mutant_0065",
+      "mutant": "mutant_0070",
       "gt": "SUCCESS",
       "llm": "FAIL",
       "silenced": false
@@ -7308,27 +7329,6 @@
       "mutant": "mutant_0072",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_eq_c_str",
-      "mutant": "mutant_0070",
-      "gt": "SUCCESS",
-      "llm": "FAIL",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_eq_c_str",
-      "mutant": "mutant_0093",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_eq_c_str",
-      "mutant": "mutant_0094",
-      "gt": "COMPILE_ERROR",
-      "llm": "COMPILE_ERROR",
       "silenced": false
     },
     {
@@ -7361,14 +7361,21 @@
     },
     {
       "func": "aws_string_new_from_c_str",
-      "mutant": "mutant_0008",
+      "mutant": "mutant_0035",
+      "gt": "FAIL",
+      "llm": "FAIL",
+      "silenced": false
+    },
+    {
+      "func": "aws_string_new_from_c_str",
+      "mutant": "mutant_0011",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
     },
     {
       "func": "aws_string_new_from_c_str",
-      "mutant": "mutant_0011",
+      "mutant": "mutant_0008",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
       "silenced": false
@@ -7385,13 +7392,6 @@
       "mutant": "mutant_0015",
       "gt": "SUCCESS",
       "llm": "SUCCESS",
-      "silenced": false
-    },
-    {
-      "func": "aws_string_new_from_c_str",
-      "mutant": "mutant_0035",
-      "gt": "FAIL",
-      "llm": "FAIL",
       "silenced": false
     }
   ]

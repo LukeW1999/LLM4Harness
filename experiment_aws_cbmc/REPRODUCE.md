@@ -95,6 +95,45 @@ cross-verify outputs (A G H I J K M Oracle) were validated 2026-06-16
 
 ---
 
+## Cross-engine corroboration (CBMC vs ESBMC): per-engine breakdown
+
+This section expands the paper's "Cross-engine corroboration" paragraph, which
+points here for the assertion-mapping details and per-engine breakdown. The
+underlying counts are registered in `paper_numbers.py` under group `S8/vi`.
+
+The oracle's own comparable set is already smaller than the full corpus before
+a second engine enters the picture: only 41 of the 83 functions have a runnable
+expert-and-LLM harness pair for CBMC. Porting the same expert harnesses to
+ESBMC narrows the set further, to 35, because on the remaining six functions
+ESBMC's own expert harness does not reach a decisive verdict at all, independent
+of any mutant. One harness fails to parse under ESBMC's front end, one exceeds
+the verification budget without resolving, one is rejected by a stricter
+front-end check that CBMC's parser tolerates, and the rest belong to the same
+function family as the third. This narrowing reflects what each engine's front
+end and resource budget can process, not a completeness gap on the functions
+each one can actually decide.
+
+Within that 35-function set, the two engines still disagree on a minority of
+individual mutants, each missing some that the other catches. Tracing this
+disagreement down to its source points to three distinct and, in kind,
+symmetric causes, none of which favours one engine as generally more capable.
+Some of the disagreement is a front-end effect: the mutation tool occasionally
+produces a mutant that changes a value's type in a way one parser tolerates and
+the other rejects outright. Some of it traces to the library-level scaffolding
+each harness depends on, where a safety property encoded in the expert proof's
+support code was not carried over faithfully when that scaffolding was adapted
+to the second engine. The remainder comes from a genuine difference in how the
+two engines represent pointers internally, which surfaces only on a comparison
+between pointers to unrelated objects, a construct whose behaviour C itself
+leaves unspecified.
+
+None of this disturbs the paper's central claim. On the mutants both engines
+can adjudicate, their silencing verdicts still agree exactly, twelve silenced
+by both and none disputed. The disagreement is confined to the margin of what
+each engine can decide, not to the silencing certificates themselves.
+
+---
+
 ## Canonical data location
 
 **This local repo is authoritative.** The server `/root/experiment_aws_cbmc` is
