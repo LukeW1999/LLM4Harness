@@ -102,8 +102,10 @@ points here for the assertion-mapping details and per-engine breakdown. The
 underlying counts are registered in `paper_numbers.py` under group `S8/vi`.
 
 The oracle's own comparable set is already smaller than the full corpus before
-a second engine enters the picture: only 41 of the 83 functions have a runnable
-expert-and-LLM harness pair for CBMC. Porting the same expert harnesses to
+a second engine enters the picture: the CBMC verdict matrix for condition
+A-Claude covers 41 of the 83 functions. (One of those, `aws_ring_buffer_init`,
+never yields a decided LLM verdict, which is why the paper's cross-condition
+"runnable pair" count is 40, not 41.) Porting the same expert harnesses to
 ESBMC narrows the set further, to 35, because on the remaining six functions
 ESBMC's own expert harness does not reach a decisive verdict at all, independent
 of any mutant. One harness fails to parse under ESBMC's front end, one exceeds
