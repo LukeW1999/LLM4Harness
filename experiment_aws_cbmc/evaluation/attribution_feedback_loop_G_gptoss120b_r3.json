@@ -1,0 +1,75 @@
+{
+  "dataset": "feedback_loop_G_gptoss120b_r3",
+  "total_silenced": 43,
+  "summary": {
+    "knowledge_gap": 43,
+    "sacrifice": 0,
+    "aoc": 0,
+    "unknown": 0
+  },
+  "per_function": {
+    "aws_byte_buf_cat": {
+      "silenced": 33,
+      "n_iters": 1,
+      "gt_asserts": 6,
+      "kg_asserts": 5,
+      "sac_asserts": 0,
+      "present_final": 1,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert((old_dest.capacity - old_dest.len) >= (buffer1.len + buffer2.len + buffer3.len));",
+        "assert((old_dest.capacity - old_dest.len) < (buffer1.len + buffer2.len + buffer3.len));",
+        "assert(aws_byte_buf_is_valid(&buffer1));",
+        "assert(aws_byte_buf_is_valid(&buffer2));",
+        "assert(aws_byte_buf_is_valid(&buffer3));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_from_c_str": {
+      "silenced": 8,
+      "n_iters": 1,
+      "gt_asserts": 7,
+      "kg_asserts": 7,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(aws_byte_buf_is_valid(&buf));",
+        "assert(buf.allocator == NULL);",
+        "assert(buf.len == strlen(c_str));",
+        "assert(buf.capacity == buf.len);",
+        "assert(strlen(c_str) == 0);",
+        "assert(buf.len == 0);",
+        "assert(buf.capacity == 0);"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_init_copy": {
+      "silenced": 1,
+      "n_iters": 1,
+      "gt_asserts": 5,
+      "kg_asserts": 1,
+      "sac_asserts": 0,
+      "present_final": 4,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(aws_byte_buf_has_allocator(dest));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_cursor_eq_c_str": {
+      "silenced": 1,
+      "n_iters": 1,
+      "gt_asserts": 2,
+      "kg_asserts": 2,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(cur.len == str_len);",
+        "assert(aws_byte_cursor_is_valid(&cur));"
+      ],
+      "sac_assertion_texts": []
+    }
+  }
+}

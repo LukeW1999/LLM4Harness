@@ -1,0 +1,199 @@
+{
+  "dataset": "feedback_loop_Oracle_gptoss120b",
+  "total_silenced": 158,
+  "summary": {
+    "knowledge_gap": 108,
+    "sacrifice": 0,
+    "aoc": 33,
+    "unknown": 17
+  },
+  "per_function": {
+    "aws_array_list_swap": {
+      "silenced": 25,
+      "n_iters": 1,
+      "gt_asserts": 5,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 5,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_advance": {
+      "silenced": 11,
+      "n_iters": 3,
+      "gt_asserts": 12,
+      "kg_asserts": 2,
+      "sac_asserts": 0,
+      "present_final": 8,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(buf.allocator == old.allocator);",
+        "assert(output.allocator == NULL);"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_cat": {
+      "silenced": 33,
+      "n_iters": 1,
+      "gt_asserts": 6,
+      "kg_asserts": 6,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert((old_dest.capacity - old_dest.len) >= (buffer1.len + buffer2.len + buffer3.len));",
+        "assert((old_dest.capacity - old_dest.len) < (buffer1.len + buffer2.len + buffer3.len));",
+        "assert(aws_byte_buf_is_valid(&buffer1));",
+        "assert(aws_byte_buf_is_valid(&buffer2));",
+        "assert(aws_byte_buf_is_valid(&buffer3));",
+        "assert(aws_byte_buf_is_valid(&dest));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_clean_up": {
+      "silenced": 16,
+      "n_iters": 2,
+      "gt_asserts": 4,
+      "kg_asserts": 4,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(buf.allocator == NULL);",
+        "assert(buf.buffer == NULL);",
+        "assert(buf.len == 0);",
+        "assert(buf.capacity == 0);"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_clean_up_secure": {
+      "silenced": 1,
+      "n_iters": 1,
+      "gt_asserts": 4,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 4,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_from_array": {
+      "silenced": 2,
+      "n_iters": 1,
+      "gt_asserts": 4,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 4,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_from_empty_array": {
+      "silenced": 3,
+      "n_iters": 2,
+      "gt_asserts": 4,
+      "kg_asserts": 1,
+      "sac_asserts": 0,
+      "present_final": 3,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(buf.allocator == NULL);"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_init": {
+      "silenced": 17,
+      "n_iters": 2,
+      "gt_asserts": 4,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 4,
+      "attribution": "UNKNOWN (structural)",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_buf_secure_zero": {
+      "silenced": 5,
+      "n_iters": 1,
+      "gt_asserts": 2,
+      "kg_asserts": 2,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(aws_byte_buf_is_valid(&buf));",
+        "assert(buf.len == 0);"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_byte_cursor_from_array": {
+      "silenced": 5,
+      "n_iters": 1,
+      "gt_asserts": 2,
+      "kg_asserts": 0,
+      "sac_asserts": 0,
+      "present_final": 2,
+      "attribution": "ASSUMPTION-OVER-CONSTRAINT",
+      "kg_assertion_texts": [],
+      "sac_assertion_texts": []
+    },
+    "aws_nospec_mask": {
+      "silenced": 35,
+      "n_iters": 1,
+      "gt_asserts": 3,
+      "kg_asserts": 3,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert((index >= bound) || (bound > (SIZE_MAX / 2)) || (index > (SIZE_MAX / 2)));",
+        "assert(rval == UINTPTR_MAX);",
+        "assert(!((index >= bound) || (bound > (SIZE_MAX / 2)) || (index > (SIZE_MAX / 2))));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_ptr_eq": {
+      "silenced": 2,
+      "n_iters": 1,
+      "gt_asserts": 1,
+      "kg_asserts": 1,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(rval == (p1 == p2));"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_ring_buffer_buf_belongs_to_pool": {
+      "silenced": 2,
+      "n_iters": 1,
+      "gt_asserts": 5,
+      "kg_asserts": 1,
+      "sac_asserts": 0,
+      "present_final": 4,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(is_member == result);"
+      ],
+      "sac_assertion_texts": []
+    },
+    "aws_string_new_from_c_str": {
+      "silenced": 1,
+      "n_iters": 1,
+      "gt_asserts": 4,
+      "kg_asserts": 4,
+      "sac_asserts": 0,
+      "present_final": 0,
+      "attribution": "KNOWLEDGE-GAP",
+      "kg_assertion_texts": [
+        "assert(str->len <= MAX_STRING_LEN);",
+        "assert(str->bytes[str->len] == 0);",
+        "assert(aws_string_is_valid(str));",
+        "assert(aws_c_string_is_valid(c_str));"
+      ],
+      "sac_assertion_texts": []
+    }
+  }
+}

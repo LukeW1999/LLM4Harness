@@ -13,10 +13,12 @@ from pathlib import Path
 from collections import defaultdict
 
 SCRIPT_DIR     = Path(__file__).parent
-EXPERIMENT_DIR = Path("/root/experiment_aws_cbmc")
+import os as _os
+EXPERIMENT_DIR = Path("/root/experiment_aws_cbmc") if _os.path.isdir("/root/experiment_aws_cbmc") else Path(__file__).resolve().parent.parent
 EVAL_DIR       = EXPERIMENT_DIR / "evaluation"
 RESULTS_DIR    = EXPERIMENT_DIR / "results"
-GT_PROOFS_DIR  = Path("/root/aws-c-common/verification/cbmc/proofs")
+_AWSC          = Path("/root/aws-c-common") if _os.path.isdir("/root/aws-c-common") else Path.home() / "research/projects/aws-c-common"
+GT_PROOFS_DIR  = _AWSC / "verification/cbmc/proofs"
 
 OVERLAP_THRESHOLD = 0.45  # Jaccard similarity to count as "appeared"
 

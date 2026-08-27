@@ -30,8 +30,10 @@ from pathlib import Path
 from collections import defaultdict
 import statistics
 
-RESULTS_DIR = Path("/root/experiment_aws_cbmc/results")
-EVAL_DIR = Path("/root/experiment_aws_cbmc/evaluation")
+import os as _os
+_EXP = Path("/root/experiment_aws_cbmc") if _os.path.isdir("/root/experiment_aws_cbmc") else Path(__file__).resolve().parent.parent
+RESULTS_DIR = _EXP / "results"
+EVAL_DIR = _EXP / "evaluation"
 
 
 def jaccard_similarity(s1, s2):
