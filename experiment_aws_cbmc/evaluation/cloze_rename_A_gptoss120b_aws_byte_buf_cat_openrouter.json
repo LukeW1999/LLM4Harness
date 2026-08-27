@@ -1,0 +1,62 @@
+[
+ {
+  "assert": "assert((old_dest.capacity - old_dest.len) >= (buffer1.len + buffer2.len + buffer3.len));",
+  "filled_renamed": "assert(out.len == old_out.len + p1.len + p2.len + p3.len);",
+  "filled_mapped": "assert(dest.len == old_dest.len + buffer1.len + buffer2.len + buffer3.len);",
+  "exact": false,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_mut": 33
+  },
+  "status": "OK"
+ },
+ {
+  "assert": "assert((old_dest.capacity - old_dest.len) < (buffer1.len + buffer2.len + buffer3.len));",
+  "filled_renamed": "assert((old_out.capacity - old_out.len) < (p1.len + p2.len + p3.len));",
+  "filled_mapped": "assert((old_dest.capacity - old_dest.len) < (buffer1.len + buffer2.len + buffer3.len));",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_mut": 33
+  },
+  "status": "OK"
+ },
+ {
+  "assert": "assert(aws_byte_buf_is_valid(&buffer1));",
+  "filled_renamed": "assert(aws_byte_buf_is_valid(&p1));",
+  "filled_mapped": "assert(aws_byte_buf_is_valid(&buffer1));",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_mut": 33
+  },
+  "status": "OK"
+ },
+ {
+  "assert": "assert(aws_byte_buf_is_valid(&buffer2));",
+  "filled_renamed": "assert(aws_byte_buf_is_valid(&p2));",
+  "filled_mapped": "assert(aws_byte_buf_is_valid(&buffer2));",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_mut": 33
+  },
+  "status": "OK"
+ },
+ {
+  "assert": "assert(aws_byte_buf_is_valid(&buffer3));",
+  "filled_renamed": "assert(aws_byte_buf_is_valid(&p3));",
+  "filled_mapped": "assert(aws_byte_buf_is_valid(&buffer3));",
+  "exact": true,
+  "cbmc": {
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_mut": 33
+  },
+  "status": "OK"
+ }
+]
