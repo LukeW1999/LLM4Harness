@@ -34,6 +34,9 @@ DROP=(
   experiment_aws_cbmc/slides_journal.tex
   research_design.md                           # running research log, dated and personal
   research_design_todolist.md
+  artifact/make_anonymous_package.sh           # author-side tooling; the checker below
+  artifact/check_anonymity.sh                  # lists the names it screens for
+  paper                                        # a superseded 2026-04 draft, not this submission
 )
 for f in "${DROP[@]}"; do rm -rf "${STAGE:?}/$f"; done
 find "$STAGE" -name 'slides*.pdf' -delete

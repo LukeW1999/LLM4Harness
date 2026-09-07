@@ -17,6 +17,10 @@ Every number, table and figure in the paper is recomputed there from the
 released per-mutant verdicts. `artifact/smoke_test.sh` wraps it with a
 dependency and file-presence check.
 
+> **The manuscript is not in this repository.** `paper/` holds a superseded
+> 2026-04 draft under a different title and is excluded from the anonymised
+> package; the submitted paper is supplied separately.
+
 > **Anonymity.** This branch names its authors, in its git history and in its
 > development logs, and is meant for post-acceptance artifact evaluation. The
 > anonymised package for double-anonymous review is produced by
