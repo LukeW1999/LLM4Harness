@@ -30,17 +30,25 @@ _spec.loader.exec_module(av2)
 LABEL = {"KNOWLEDGE-GAP": "NW", "SACRIFICE": "Del", "AOC": "Nar", "UNRESOLVED": "Unres"}
 
 CONDITIONS = ["A_gptoss120b", "H_gptoss120b", "M_gptoss120b", "G_gptoss120b",
-              "Oracle_gptoss120b", "A_claude", "H_claude", "M_claude"]
+              "K_gptoss120b", "Oracle_gptoss120b", "A_claude", "H_claude", "M_claude"]
+
+def _silenced_funcs():
+    """(condition -> silenced functions) under the pinned CBMC 6.4.0 verdicts."""
+    gt = {(r["func"], r["mutant"]): r["gt640"]
+          for r in json.load(open(EVAL / "gtfail_640.json"))["verdicts"]}
+    canon = {k for k, v in gt.items() if v == "FAIL"}
+    out = {}
+    for f in ("silenced_640.json", "kllama_oracle_640.json"):
+        for r in json.load(open(EVAL / f))["verdicts"]:
+            if r["llm640"] == "SUCCESS" and (r["func"], r["mutant"]) in canon:
+                out.setdefault(r["cond"], set()).add(r["func"])
+    return out
+
+_SILENCED = _silenced_funcs()
 
 def labels_for(cond):
-    out = {}
-    run = av2.run(cond)
-    if run is None:
-        return out
-    _summary, per_func = run
-    for func, (attribution, _n) in per_func.items():
-        out[func] = LABEL[attribution]
-    return out
+    return {func: LABEL[av2.classify_func(f"feedback_loop_{cond}", func)[0]]
+            for func in sorted(_SILENCED.get(cond, ()))}
 
 def main():
     labels = {c: labels_for(c) for c in CONDITIONS}

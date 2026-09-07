@@ -12,7 +12,6 @@
   "A_gptoss120b": {
    "aws_byte_buf_cat": "NW",
    "aws_byte_buf_clean_up": "Nar",
-   "aws_nospec_mask": "NW",
    "aws_ptr_eq": "NW"
   },
   "H_gptoss120b": {
@@ -31,6 +30,19 @@
   },
   "G_gptoss120b": {
    "aws_byte_buf_cat": "NW"
+  },
+  "K_gptoss120b": {
+   "aws_byte_buf_cat": "NW",
+   "aws_byte_buf_clean_up": "Nar",
+   "aws_byte_buf_eq_c_str": "NW",
+   "aws_byte_buf_from_array": "NW",
+   "aws_byte_buf_from_empty_array": "NW",
+   "aws_byte_buf_secure_zero": "Nar",
+   "aws_byte_cursor_eq_byte_buf": "NW",
+   "aws_nospec_mask": "NW",
+   "aws_ptr_eq": "NW",
+   "aws_ring_buffer_buf_belongs_to_pool": "NW",
+   "aws_string_destroy": "Unres"
   },
   "Oracle_gptoss120b": {
    "aws_array_list_swap": "NW",
