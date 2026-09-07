@@ -14,15 +14,9 @@
    "UNKNOWN->SUCCESS": 14,
    "UNKNOWN->UNKNOWN": 128
   },
-  "elapsed_s": 830
+  "elapsed_s": 377
  },
  "verdicts": [
-  {
-   "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0022",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
   {
    "func": "aws_array_list_get_at_ptr",
    "mutant": "mutant_0011",
@@ -31,55 +25,7 @@
   },
   {
    "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0031",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0026",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0021",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0028",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0055",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0003",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0027",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0020",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0016",
+   "mutant": "mutant_0022",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -91,7 +37,43 @@
   },
   {
    "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0010",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0020",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0021",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0027",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
    "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0031",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0055",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -103,13 +85,31 @@
   },
   {
    "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0010",
+   "mutant": "mutant_0054",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0054",
+   "mutant": "mutant_0003",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0016",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0028",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0026",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -121,7 +121,7 @@
   },
   {
    "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0062",
+   "mutant": "mutant_0057",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -133,13 +133,13 @@
   },
   {
    "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0057",
+   "mutant": "mutant_0061",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_array_list_get_at_ptr",
-   "mutant": "mutant_0061",
+   "mutant": "mutant_0062",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -157,15 +157,15 @@
   },
   {
    "func": "aws_array_list_swap",
-   "mutant": "mutant_0002",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_array_list_swap",
    "mutant": "mutant_0018",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0002",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_array_list_swap",
@@ -187,19 +187,19 @@
   },
   {
    "func": "aws_array_list_swap",
-   "mutant": "mutant_0014",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_array_list_swap",
    "mutant": "mutant_0027",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_array_list_swap",
-   "mutant": "mutant_0013",
+   "mutant": "mutant_0014",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0024",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -217,19 +217,19 @@
   },
   {
    "func": "aws_array_list_swap",
+   "mutant": "mutant_0023",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
    "mutant": "mutant_0020",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_array_list_swap",
-   "mutant": "mutant_0024",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_array_list_swap",
-   "mutant": "mutant_0034",
+   "mutant": "mutant_0013",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -241,9 +241,9 @@
   },
   {
    "func": "aws_array_list_swap",
-   "mutant": "mutant_0023",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "mutant": "mutant_0034",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_array_list_swap",
@@ -259,15 +259,15 @@
   },
   {
    "func": "aws_array_list_swap",
-   "mutant": "mutant_0031",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_array_list_swap",
    "mutant": "mutant_0021",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0031",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_array_list_swap",
@@ -300,8 +300,8 @@
    "gt595": "FAIL"
   },
   {
-   "func": "aws_byte_buf_advance",
-   "mutant": "mutant_0005",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0077",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -312,22 +312,16 @@
    "gt595": "FAIL"
   },
   {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
    "func": "aws_array_list_swap",
    "mutant": "mutant_0085",
    "gt640": "FAIL",
    "gt595": "FAIL"
-  },
-  {
-   "func": "aws_array_list_swap",
-   "mutant": "mutant_0077",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_array_list_swap",
-   "mutant": "mutant_0046",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
   },
   {
    "func": "aws_array_list_swap",
@@ -342,12 +336,6 @@
    "gt595": "SUCCESS"
   },
   {
-   "func": "aws_array_list_swap",
-   "mutant": "mutant_0097",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
    "func": "aws_byte_buf_advance",
    "mutant": "mutant_0025",
    "gt640": "SUCCESS",
@@ -355,7 +343,19 @@
   },
   {
    "func": "aws_array_list_swap",
-   "mutant": "mutant_0086",
+   "mutant": "mutant_0046",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0097",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0103",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -364,12 +364,6 @@
    "mutant": "mutant_0028",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_array_list_swap",
-   "mutant": "mutant_0103",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_advance",
@@ -384,14 +378,20 @@
    "gt595": "FAIL"
   },
   {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0086",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
    "func": "aws_byte_buf_advance",
    "mutant": "mutant_0031",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
-   "func": "aws_byte_buf_advance",
-   "mutant": "mutant_0032",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0107",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -403,33 +403,21 @@
   },
   {
    "func": "aws_byte_buf_advance",
-   "mutant": "mutant_0034",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_array_list_swap",
-   "mutant": "mutant_0107",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_advance",
    "mutant": "mutant_0035",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
-   "func": "aws_array_list_swap",
-   "mutant": "mutant_0099",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0032",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_advance",
-   "mutant": "mutant_0036",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "mutant": "mutant_0034",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_advance",
@@ -439,13 +427,25 @@
   },
   {
    "func": "aws_byte_buf_advance",
-   "mutant": "mutant_0048",
+   "mutant": "mutant_0036",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_advance",
    "mutant": "mutant_0038",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0048",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0099",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -462,20 +462,14 @@
    "gt595": "FAIL"
   },
   {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0049",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
    "func": "aws_byte_buf_advance",
    "mutant": "mutant_0050",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_array_list_swap",
-   "mutant": "mutant_0108",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_advance",
-   "mutant": "mutant_0060",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -487,27 +481,39 @@
   },
   {
    "func": "aws_byte_buf_advance",
-   "mutant": "mutant_0063",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_advance",
    "mutant": "mutant_0061",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_array_list_swap",
-   "mutant": "mutant_0049",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_advance",
    "mutant": "mutant_0062",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0060",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0063",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0108",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0109",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_advance",
@@ -546,8 +552,8 @@
    "gt595": "FAIL"
   },
   {
-   "func": "aws_array_list_swap",
-   "mutant": "mutant_0109",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0073",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -559,7 +565,7 @@
   },
   {
    "func": "aws_byte_buf_advance",
-   "mutant": "mutant_0073",
+   "mutant": "mutant_0079",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -571,31 +577,7 @@
   },
   {
    "func": "aws_byte_buf_advance",
-   "mutant": "mutant_0079",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_advance",
    "mutant": "mutant_0080",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_advance",
-   "mutant": "mutant_0087",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_advance",
-   "mutant": "mutant_0097",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_advance",
-   "mutant": "mutant_0081",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -607,6 +589,18 @@
   },
   {
    "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0081",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0087",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_advance",
    "mutant": "mutant_0091",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
@@ -614,6 +608,12 @@
   {
    "func": "aws_byte_buf_advance",
    "mutant": "mutant_0094",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0097",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -643,25 +643,19 @@
   },
   {
    "func": "aws_byte_buf_append",
-   "mutant": "mutant_0002",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_append",
    "mutant": "mutant_0003",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_append",
-   "mutant": "mutant_0004",
+   "mutant": "mutant_0002",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_append",
-   "mutant": "mutant_0005",
+   "mutant": "mutant_0004",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -679,7 +673,7 @@
   },
   {
    "func": "aws_byte_buf_append",
-   "mutant": "mutant_0009",
+   "mutant": "mutant_0005",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -691,13 +685,7 @@
   },
   {
    "func": "aws_byte_buf_append",
-   "mutant": "mutant_0014",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_append",
-   "mutant": "mutant_0013",
+   "mutant": "mutant_0009",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -715,7 +703,19 @@
   },
   {
    "func": "aws_byte_buf_append",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
    "mutant": "mutant_0012",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0014",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -739,19 +739,25 @@
   },
   {
    "func": "aws_byte_buf_append",
-   "mutant": "mutant_0020",
+   "mutant": "mutant_0021",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_append",
-   "mutant": "mutant_0021",
+   "mutant": "mutant_0020",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_cat",
    "mutant": "mutant_0020",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0021",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -763,7 +769,7 @@
   },
   {
    "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0021",
+   "mutant": "mutant_0026",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -775,7 +781,7 @@
   },
   {
    "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0026",
+   "mutant": "mutant_0010",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -787,13 +793,7 @@
   },
   {
    "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0010",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0013",
+   "mutant": "mutant_0030",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -805,7 +805,31 @@
   },
   {
    "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0030",
+   "mutant": "mutant_0031",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0013",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0032",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0029",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0043",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -817,13 +841,7 @@
   },
   {
    "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0031",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0029",
+   "mutant": "mutant_0009",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -836,24 +854,6 @@
   {
    "func": "aws_byte_buf_cat",
    "mutant": "mutant_0044",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0032",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0043",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0009",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -877,6 +877,12 @@
   },
   {
    "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0061",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
    "mutant": "mutant_0055",
    "gt640": "FAIL",
    "gt595": "FAIL"
@@ -886,12 +892,6 @@
    "mutant": "mutant_0025",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0061",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_cat",
@@ -913,13 +913,13 @@
   },
   {
    "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0062",
+   "mutant": "mutant_0053",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0053",
+   "mutant": "mutant_0062",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -985,6 +985,12 @@
   },
   {
    "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0087",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
    "mutant": "mutant_0068",
    "gt640": "FAIL",
    "gt595": "FAIL"
@@ -1009,13 +1015,13 @@
   },
   {
    "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0087",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "mutant": "mutant_0071",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0071",
+   "mutant": "mutant_0074",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -1026,20 +1032,8 @@
    "gt595": "SUCCESS"
   },
   {
-   "func": "aws_byte_buf_clean_up",
-   "mutant": "mutant_0032",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
    "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0074",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0064",
+   "mutant": "mutant_0081",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -1051,13 +1045,25 @@
   },
   {
    "func": "aws_byte_buf_clean_up",
-   "mutant": "mutant_0037",
+   "mutant": "mutant_0032",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_clean_up",
    "mutant": "mutant_0036",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0064",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0037",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1069,13 +1075,13 @@
   },
   {
    "func": "aws_byte_buf_clean_up",
-   "mutant": "mutant_0040",
+   "mutant": "mutant_0039",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_clean_up",
-   "mutant": "mutant_0039",
+   "mutant": "mutant_0040",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1098,12 +1104,6 @@
    "gt595": "FAIL"
   },
   {
-   "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0081",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
    "func": "aws_byte_buf_clean_up",
    "mutant": "mutant_0047",
    "gt640": "FAIL",
@@ -1122,14 +1122,26 @@
    "gt595": "FAIL"
   },
   {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0057",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
    "func": "aws_byte_buf_clean_up_secure",
    "mutant": "mutant_0004",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
-   "func": "aws_byte_buf_clean_up",
-   "mutant": "mutant_0057",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0084",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_clean_up_secure",
+   "mutant": "mutant_0010",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -1141,31 +1153,25 @@
   },
   {
    "func": "aws_byte_buf_clean_up_secure",
-   "mutant": "mutant_0010",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_clean_up_secure",
    "mutant": "mutant_0020",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
-   "func": "aws_byte_buf_cat",
-   "mutant": "mutant_0084",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
    "func": "aws_byte_buf_eq",
-   "mutant": "mutant_0009",
+   "mutant": "mutant_0006",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_eq",
    "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0009",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -1189,19 +1195,7 @@
   },
   {
    "func": "aws_byte_buf_eq",
-   "mutant": "mutant_0006",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_eq",
    "mutant": "mutant_0019",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_eq",
-   "mutant": "mutant_0022",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -1213,9 +1207,9 @@
   },
   {
    "func": "aws_byte_buf_eq",
-   "mutant": "mutant_0026",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "mutant": "mutant_0022",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_eq_c_str",
@@ -1230,14 +1224,14 @@
    "gt595": "FAIL"
   },
   {
-   "func": "aws_byte_buf_eq_c_str",
-   "mutant": "mutant_0009",
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0026",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_eq_c_str",
-   "mutant": "mutant_0010",
+   "mutant": "mutant_0009",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1249,19 +1243,13 @@
   },
   {
    "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0010",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_eq_c_str",
    "mutant": "mutant_0016",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_from_array",
-   "mutant": "mutant_0005",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_from_array",
-   "mutant": "mutant_0002",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -1272,8 +1260,8 @@
    "gt595": "FAIL"
   },
   {
-   "func": "aws_byte_buf_from_array",
-   "mutant": "mutant_0004",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0020",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1284,16 +1272,28 @@
    "gt595": "FAIL"
   },
   {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0004",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
    "func": "aws_byte_buf_eq_c_str",
    "mutant": "mutant_0025",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
-   "func": "aws_byte_buf_eq_c_str",
-   "mutant": "mutant_0020",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_from_array",
@@ -1309,9 +1309,9 @@
   },
   {
    "func": "aws_byte_buf_from_array",
-   "mutant": "mutant_0016",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "mutant": "mutant_0018",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_from_array",
@@ -1321,25 +1321,25 @@
   },
   {
    "func": "aws_byte_buf_from_array",
-   "mutant": "mutant_0018",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_from_array",
    "mutant": "mutant_0020",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_from_array",
-   "mutant": "mutant_0022",
+   "mutant": "mutant_0016",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_from_array",
    "mutant": "mutant_0025",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0022",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1357,19 +1357,19 @@
   },
   {
    "func": "aws_byte_buf_from_array",
-   "mutant": "mutant_0031",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_from_array",
    "mutant": "mutant_0035",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_from_array",
-   "mutant": "mutant_0049",
+   "mutant": "mutant_0041",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0031",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1381,7 +1381,7 @@
   },
   {
    "func": "aws_byte_buf_from_array",
-   "mutant": "mutant_0041",
+   "mutant": "mutant_0049",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1405,15 +1405,15 @@
   },
   {
    "func": "aws_byte_buf_from_c_str",
-   "mutant": "mutant_0005",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_from_c_str",
    "mutant": "mutant_0006",
    "gt640": "FAIL",
    "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_from_c_str",
@@ -1429,43 +1429,19 @@
   },
   {
    "func": "aws_byte_buf_from_c_str",
-   "mutant": "mutant_0019",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_from_c_str",
    "mutant": "mutant_0018",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_from_c_str",
-   "mutant": "mutant_0022",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "mutant": "mutant_0019",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_from_c_str",
    "mutant": "mutant_0020",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_from_c_str",
-   "mutant": "mutant_0021",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_from_c_str",
-   "mutant": "mutant_0025",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_from_c_str",
-   "mutant": "mutant_0029",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1477,7 +1453,31 @@
   },
   {
    "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0022",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0025",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0021",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
    "mutant": "mutant_0031",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0029",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1495,25 +1495,7 @@
   },
   {
    "func": "aws_byte_buf_from_c_str",
-   "mutant": "mutant_0043",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_from_empty_array",
-   "mutant": "mutant_0006",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_from_c_str",
    "mutant": "mutant_0047",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_from_empty_array",
-   "mutant": "mutant_0016",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1525,7 +1507,37 @@
   },
   {
    "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0006",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0043",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0016",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
    "mutant": "mutant_0017",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0018",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0019",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1537,7 +1549,25 @@
   },
   {
    "func": "aws_byte_buf_from_empty_array",
-   "mutant": "mutant_0019",
+   "mutant": "mutant_0025",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0020",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0027",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0029",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1549,43 +1579,7 @@
   },
   {
    "func": "aws_byte_buf_from_empty_array",
-   "mutant": "mutant_0029",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_from_empty_array",
-   "mutant": "mutant_0025",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_from_empty_array",
-   "mutant": "mutant_0018",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_from_empty_array",
-   "mutant": "mutant_0027",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_from_empty_array",
-   "mutant": "mutant_0035",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_from_empty_array",
-   "mutant": "mutant_0020",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_from_empty_array",
-   "mutant": "mutant_0036",
+   "mutant": "mutant_0038",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1597,7 +1591,13 @@
   },
   {
    "func": "aws_byte_buf_from_empty_array",
-   "mutant": "mutant_0038",
+   "mutant": "mutant_0036",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0035",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1609,61 +1609,25 @@
   },
   {
    "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0044",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
    "mutant": "mutant_0048",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0010",
+   "mutant": "mutant_0007",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init",
-   "mutant": "mutant_0014",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_from_empty_array",
-   "mutant": "mutant_0044",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init",
-   "mutant": "mutant_0011",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init",
-   "mutant": "mutant_0013",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init",
-   "mutant": "mutant_0017",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init",
-   "mutant": "mutant_0015",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_from_empty_array",
    "mutant": "mutant_0052",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init",
-   "mutant": "mutant_0007",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -1675,13 +1639,37 @@
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0016",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0010",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0011",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0018",
+   "mutant": "mutant_0014",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0015",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0016",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1693,7 +1681,19 @@
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0020",
+   "mutant": "mutant_0018",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0025",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0017",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1705,13 +1705,7 @@
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0027",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init",
-   "mutant": "mutant_0025",
+   "mutant": "mutant_0020",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1723,7 +1717,7 @@
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0028",
+   "mutant": "mutant_0027",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -1735,13 +1729,7 @@
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0032",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init",
-   "mutant": "mutant_0031",
+   "mutant": "mutant_0028",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -1759,7 +1747,13 @@
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0037",
+   "mutant": "mutant_0031",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0032",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -1777,6 +1771,12 @@
   },
   {
    "func": "aws_byte_buf_init",
+   "mutant": "mutant_0037",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
    "mutant": "mutant_0038",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
@@ -1789,13 +1789,37 @@
   },
   {
    "func": "aws_byte_buf_init",
+   "mutant": "mutant_0047",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
    "mutant": "mutant_0040",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0047",
+   "mutant": "mutant_0042",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0048",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0041",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0050",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -1813,13 +1837,13 @@
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0060",
+   "mutant": "mutant_0072",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0048",
+   "mutant": "mutant_0060",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -1831,39 +1855,15 @@
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0041",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init",
-   "mutant": "mutant_0042",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init",
    "mutant": "mutant_0075",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0050",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init",
    "mutant": "mutant_0076",
    "gt640": "FAIL",
    "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init",
-   "mutant": "mutant_0072",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init",
@@ -1885,9 +1885,9 @@
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0085",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "mutant": "mutant_0092",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init",
@@ -1897,13 +1897,13 @@
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0095",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
+   "mutant": "mutant_0085",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_init",
-   "mutant": "mutant_0092",
+   "mutant": "mutant_0095",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -1915,49 +1915,19 @@
   },
   {
    "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0011",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init_copy",
    "mutant": "mutant_0006",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0011",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
    "mutant": "mutant_0007",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0033",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0032",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0015",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0025",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0038",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1969,13 +1939,43 @@
   },
   {
    "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0039",
+   "mutant": "mutant_0025",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0032",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0033",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0015",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
    "mutant": "mutant_0040",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0038",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0039",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -1987,37 +1987,19 @@
   },
   {
    "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0051",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init_copy",
    "mutant": "mutant_0054",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0051",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
    "mutant": "mutant_0057",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0072",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0099",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0075",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -2029,13 +2011,13 @@
   },
   {
    "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0101",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
+   "mutant": "mutant_0072",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0089",
+   "mutant": "mutant_0075",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -2047,13 +2029,19 @@
   },
   {
    "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0091",
+   "mutant": "mutant_0089",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0095",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0094",
+   "mutant": "mutant_0091",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2065,15 +2053,27 @@
   },
   {
    "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0095",
+   "mutant": "mutant_0094",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0100",
+   "mutant": "mutant_0099",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0101",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0008",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
@@ -2088,16 +2088,16 @@
    "gt595": "SUCCESS"
   },
   {
-   "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0009",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0112",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
-   "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0008",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0100",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
@@ -2106,14 +2106,20 @@
    "gt595": "FAIL"
   },
   {
-   "func": "aws_byte_buf_init_copy",
-   "mutant": "mutant_0112",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
    "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0012",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -2125,19 +2131,7 @@
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0014",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0012",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0023",
+   "mutant": "mutant_0015",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -2155,19 +2149,19 @@
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0015",
+   "mutant": "mutant_0014",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0023",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
    "mutant": "mutant_0022",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0025",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -2185,7 +2179,7 @@
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0029",
+   "mutant": "mutant_0025",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -2197,13 +2191,31 @@
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0029",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0039",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
    "mutant": "mutant_0051",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0039",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0058",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2215,21 +2227,15 @@
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0066",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
    "mutant": "mutant_0073",
    "gt640": "FAIL",
    "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0058",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0054",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
@@ -2242,12 +2248,6 @@
    "mutant": "mutant_0075",
    "gt640": "FAIL",
    "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0066",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
@@ -2269,25 +2269,19 @@
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0090",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init_copy_from_cursor",
    "mutant": "mutant_0085",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0083",
+   "mutant": "mutant_0090",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0093",
+   "mutant": "mutant_0083",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2305,25 +2299,19 @@
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0093",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
    "mutant": "mutant_0094",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0096",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0098",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0099",
+   "mutant": "mutant_0097",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2335,13 +2323,25 @@
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0100",
+   "mutant": "mutant_0096",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0097",
+   "mutant": "mutant_0099",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0098",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0100",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2371,13 +2371,13 @@
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0107",
+   "mutant": "mutant_0106",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0106",
+   "mutant": "mutant_0107",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2395,6 +2395,12 @@
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0113",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
    "mutant": "mutant_0115",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
@@ -2407,7 +2413,19 @@
   },
   {
    "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0113",
+   "mutant": "mutant_0126",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0003",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0118",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2425,37 +2443,13 @@
   },
   {
    "func": "aws_byte_buf_reset",
-   "mutant": "mutant_0003",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0118",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_reset",
    "mutant": "mutant_0004",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
-   "func": "aws_byte_buf_init_copy_from_cursor",
-   "mutant": "mutant_0126",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
    "func": "aws_byte_buf_reset",
    "mutant": "mutant_0008",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_reset",
-   "mutant": "mutant_0011",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -2467,7 +2461,13 @@
   },
   {
    "func": "aws_byte_buf_reset",
-   "mutant": "mutant_0013",
+   "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0018",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -2479,21 +2479,15 @@
   },
   {
    "func": "aws_byte_buf_reset",
-   "mutant": "mutant_0015",
+   "mutant": "mutant_0013",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_reset",
-   "mutant": "mutant_0018",
+   "mutant": "mutant_0015",
    "gt640": "FAIL",
    "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0022",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
@@ -2509,7 +2503,7 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0029",
+   "mutant": "mutant_0013",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2521,7 +2515,13 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0013",
+   "mutant": "mutant_0029",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0022",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2533,19 +2533,25 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0048",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0043",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0048",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0051",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0054",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2569,12 +2575,6 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0054",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0064",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
@@ -2587,7 +2587,7 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0086",
+   "mutant": "mutant_0089",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2599,7 +2599,13 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0089",
+   "mutant": "mutant_0086",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0094",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2611,19 +2617,13 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0095",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0099",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0094",
+   "mutant": "mutant_0095",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2653,25 +2653,25 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0127",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0128",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0130",
+   "mutant": "mutant_0127",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0129",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0130",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2689,7 +2689,7 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0144",
+   "mutant": "mutant_0140",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2701,7 +2701,13 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0140",
+   "mutant": "mutant_0144",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0146",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2725,31 +2731,19 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0146",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0167",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0169",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0176",
+   "mutant": "mutant_0170",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0170",
+   "mutant": "mutant_0167",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2767,19 +2761,43 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0181",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0180",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0176",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0181",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0201",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0185",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0188",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0212",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2792,18 +2810,6 @@
   {
    "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0219",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0212",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0188",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2827,31 +2833,13 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0232",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0201",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0238",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0244",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0241",
+   "mutant": "mutant_0232",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2869,13 +2857,19 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0241",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0242",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0247",
+   "mutant": "mutant_0244",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2887,25 +2881,25 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0255",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0251",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0256",
+   "mutant": "mutant_0255",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0260",
+   "mutant": "mutant_0247",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0256",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2929,7 +2923,7 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0261",
+   "mutant": "mutant_0260",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2941,13 +2935,19 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0263",
+   "mutant": "mutant_0261",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0264",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0263",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -2971,6 +2971,12 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0270",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0272",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
@@ -2983,13 +2989,7 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0270",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0273",
+   "mutant": "mutant_0271",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3001,19 +3001,19 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0271",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0280",
+   "mutant": "mutant_0273",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0278",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0280",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3031,13 +3031,13 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0284",
+   "mutant": "mutant_0292",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0292",
+   "mutant": "mutant_0284",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3049,13 +3049,13 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0308",
+   "mutant": "mutant_0302",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0302",
+   "mutant": "mutant_0308",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3067,25 +3067,7 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0311",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0313",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0314",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0310",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3097,13 +3079,31 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0310",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0311",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0315",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0318",
+   "mutant": "mutant_0314",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0317",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3115,13 +3115,13 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0322",
+   "mutant": "mutant_0318",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0317",
+   "mutant": "mutant_0322",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3139,13 +3139,13 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0329",
+   "mutant": "mutant_0337",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0337",
+   "mutant": "mutant_0329",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3169,6 +3169,18 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0363",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0373",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0360",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
@@ -3181,19 +3193,7 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0373",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0372",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0363",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3211,13 +3211,25 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0385",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0399",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0385",
+   "mutant": "mutant_0400",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0402",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3235,18 +3247,6 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0402",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0400",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0404",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
@@ -3254,30 +3254,6 @@
   {
    "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0406",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0411",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0412",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0414",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0413",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3295,37 +3271,31 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0412",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0413",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0414",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0411",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0415",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0420",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0418",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0421",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0425",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0426",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3337,7 +3307,13 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0427",
+   "mutant": "mutant_0418",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0420",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3349,7 +3325,31 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0425",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0428",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0426",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0421",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0427",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3361,13 +3361,19 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0431",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0429",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0431",
+   "mutant": "mutant_0433",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3385,12 +3391,6 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0433",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0436",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
@@ -3398,24 +3398,6 @@
   {
    "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0437",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0443",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0444",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0446",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3433,13 +3415,37 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0448",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0444",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0443",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0451",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0448",
+   "mutant": "mutant_0447",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0446",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3457,7 +3463,7 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0447",
+   "mutant": "mutant_0454",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3469,9 +3475,15 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0454",
+   "mutant": "mutant_0458",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0477",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_secure_zero",
@@ -3481,21 +3493,15 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0472",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
+   "mutant": "mutant_0482",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0459",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0477",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_buf_secure_zero",
@@ -3511,25 +3517,19 @@
   },
   {
    "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0482",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0478",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0458",
+   "mutant": "mutant_0472",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_advance",
    "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0478",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3553,37 +3553,19 @@
   },
   {
    "func": "aws_byte_cursor_advance",
-   "mutant": "mutant_0006",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_advance",
-   "mutant": "mutant_0011",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_advance",
-   "mutant": "mutant_0013",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_advance",
-   "mutant": "mutant_0008",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_advance",
-   "mutant": "mutant_0007",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_advance",
    "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0487",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0006",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3595,21 +3577,45 @@
   },
   {
    "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0007",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
    "mutant": "mutant_0010",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
-   "func": "aws_byte_buf_secure_zero",
-   "mutant": "mutant_0487",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0008",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0011",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_buf_secure_zero",
    "mutant": "mutant_0489",
    "gt640": "FAIL",
    "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0014",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_advance",
@@ -3625,19 +3631,13 @@
   },
   {
    "func": "aws_byte_cursor_advance",
-   "mutant": "mutant_0014",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_advance",
    "mutant": "mutant_0017",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_advance",
-   "mutant": "mutant_0024",
+   "mutant": "mutant_0018",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3654,12 +3654,6 @@
    "gt595": "SUCCESS"
   },
   {
-   "func": "aws_byte_cursor_eq",
-   "mutant": "mutant_0002",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
    "func": "aws_byte_cursor_advance",
    "mutant": "mutant_0025",
    "gt640": "SUCCESS",
@@ -3667,13 +3661,13 @@
   },
   {
    "func": "aws_byte_cursor_advance",
-   "mutant": "mutant_0018",
+   "mutant": "mutant_0024",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_eq",
-   "mutant": "mutant_0009",
+   "mutant": "mutant_0002",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3685,15 +3679,9 @@
   },
   {
    "func": "aws_byte_cursor_eq",
-   "mutant": "mutant_0015",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_cursor_eq",
-   "mutant": "mutant_0013",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "mutant": "mutant_0009",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_eq",
@@ -3703,9 +3691,27 @@
   },
   {
    "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0013",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq",
    "mutant": "mutant_0014",
    "gt640": "FAIL",
    "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0015",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0022",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_eq_byte_buf",
@@ -3720,12 +3726,6 @@
    "gt595": "FAIL"
   },
   {
-   "func": "aws_byte_cursor_eq",
-   "mutant": "mutant_0022",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
    "func": "aws_byte_cursor_eq_byte_buf",
    "mutant": "mutant_0009",
    "gt640": "SUCCESS",
@@ -3745,7 +3745,7 @@
   },
   {
    "func": "aws_byte_cursor_eq_byte_buf",
-   "mutant": "mutant_0022",
+   "mutant": "mutant_0019",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3756,10 +3756,22 @@
    "gt595": "FAIL"
   },
   {
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0022",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
    "func": "aws_byte_cursor_eq_c_str",
    "mutant": "mutant_0006",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0026",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_cursor_eq_c_str",
@@ -3769,27 +3781,9 @@
   },
   {
    "func": "aws_byte_cursor_eq_c_str",
-   "mutant": "mutant_0010",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_cursor_eq_c_str",
    "mutant": "mutant_0007",
    "gt640": "FAIL",
    "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_cursor_eq_byte_buf",
-   "mutant": "mutant_0026",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_cursor_eq_byte_buf",
-   "mutant": "mutant_0019",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_eq_c_str",
@@ -3805,7 +3799,7 @@
   },
   {
    "func": "aws_byte_cursor_eq_c_str",
-   "mutant": "mutant_0020",
+   "mutant": "mutant_0010",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -3814,6 +3808,18 @@
    "mutant": "mutant_0016",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0019",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0020",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_cursor_eq_c_str",
@@ -3826,12 +3832,6 @@
    "mutant": "mutant_0002",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_eq_c_str",
-   "mutant": "mutant_0019",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_cursor_eq_c_str",
@@ -3859,19 +3859,19 @@
   },
   {
    "func": "aws_byte_cursor_from_array",
-   "mutant": "mutant_0008",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_array",
    "mutant": "mutant_0006",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_from_array",
-   "mutant": "mutant_0014",
+   "mutant": "mutant_0007",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0008",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3883,13 +3883,7 @@
   },
   {
    "func": "aws_byte_cursor_from_array",
-   "mutant": "mutant_0007",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_array",
-   "mutant": "mutant_0015",
+   "mutant": "mutant_0014",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3901,13 +3895,13 @@
   },
   {
    "func": "aws_byte_cursor_from_array",
-   "mutant": "mutant_0016",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "mutant": "mutant_0015",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_from_array",
-   "mutant": "mutant_0042",
+   "mutant": "mutant_0016",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -3919,13 +3913,25 @@
   },
   {
    "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0025",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0042",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
    "mutant": "mutant_0046",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_byte_cursor_from_array",
-   "mutant": "mutant_0025",
+   "mutant": "mutant_0050",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3943,19 +3949,7 @@
   },
   {
    "func": "aws_byte_cursor_from_array",
-   "mutant": "mutant_0050",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_array",
    "mutant": "mutant_0059",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_buf",
-   "mutant": "mutant_0002",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3967,19 +3961,13 @@
   },
   {
    "func": "aws_byte_cursor_from_buf",
-   "mutant": "mutant_0003",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_buf",
    "mutant": "mutant_0001",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_from_buf",
-   "mutant": "mutant_0005",
+   "mutant": "mutant_0002",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -3991,55 +3979,19 @@
   },
   {
    "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0003",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
    "mutant": "mutant_0006",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_buf",
-   "mutant": "mutant_0010",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_buf",
-   "mutant": "mutant_0009",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_buf",
-   "mutant": "mutant_0011",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_buf",
-   "mutant": "mutant_0015",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_buf",
-   "mutant": "mutant_0008",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_buf",
-   "mutant": "mutant_0014",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_buf",
-   "mutant": "mutant_0013",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_buf",
-   "mutant": "mutant_0016",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4051,7 +4003,61 @@
   },
   {
    "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0008",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0009",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0010",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0011",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0014",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0015",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0016",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
    "mutant": "mutant_0019",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0017",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4069,13 +4075,13 @@
   },
   {
    "func": "aws_byte_cursor_from_buf",
-   "mutant": "mutant_0017",
+   "mutant": "mutant_0023",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
-   "func": "aws_byte_cursor_from_buf",
-   "mutant": "mutant_0023",
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0015",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4084,12 +4090,6 @@
    "mutant": "mutant_0014",
    "gt640": "FAIL",
    "gt595": "FAIL"
-  },
-  {
-   "func": "aws_byte_cursor_from_c_str",
-   "mutant": "mutant_0015",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_from_c_str",
@@ -4108,6 +4108,12 @@
    "mutant": "mutant_0018",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0021",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_cursor_from_c_str",
@@ -4128,12 +4134,6 @@
    "gt595": "SUCCESS"
   },
   {
-   "func": "aws_byte_cursor_from_c_str",
-   "mutant": "mutant_0021",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
    "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0001",
    "gt640": "SUCCESS",
@@ -4142,6 +4142,12 @@
   {
    "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0003",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4159,12 +4165,6 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0003",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0006",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
@@ -4177,19 +4177,13 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0008",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0009",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0011",
+   "mutant": "mutant_0008",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4201,25 +4195,13 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0011",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0012",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0015",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0017",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0016",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4237,7 +4219,43 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0015",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0016",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0017",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0018",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0020",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0019",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0021",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4255,25 +4273,13 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0020",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0023",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0019",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0021",
+   "mutant": "mutant_0025",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4297,7 +4303,13 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0025",
+   "mutant": "mutant_0030",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0029",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4309,19 +4321,7 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0030",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0032",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0029",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4345,25 +4345,13 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0036",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0035",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0039",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0040",
+   "mutant": "mutant_0036",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4375,25 +4363,13 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0045",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0043",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0046",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0041",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0039",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4405,7 +4381,31 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0040",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0043",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0044",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0045",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0046",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4423,13 +4423,13 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0049",
+   "mutant": "mutant_0050",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0050",
+   "mutant": "mutant_0049",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4441,7 +4441,7 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0054",
+   "mutant": "mutant_0053",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4453,19 +4453,19 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0056",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0055",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0053",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0056",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4483,7 +4483,7 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0061",
+   "mutant": "mutant_0059",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4495,19 +4495,19 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0063",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0059",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0062",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0061",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0063",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4518,10 +4518,28 @@
    "gt595": "SUCCESS"
   },
   {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0003",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
    "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0065",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0004",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0005",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_byte_cursor_from_string",
@@ -4537,39 +4555,9 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0068",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0069",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_nospec_mask",
-   "mutant": "mutant_0003",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_nospec_mask",
-   "mutant": "mutant_0005",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_nospec_mask",
-   "mutant": "mutant_0004",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_nospec_mask",
-   "mutant": "mutant_0009",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
   },
   {
    "func": "aws_nospec_mask",
@@ -4579,19 +4567,25 @@
   },
   {
    "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0070",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
    "mutant": "mutant_0071",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_byte_cursor_from_string",
-   "mutant": "mutant_0070",
+   "mutant": "mutant_0068",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0011",
+   "mutant": "mutant_0009",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -4603,13 +4597,13 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0012",
+   "mutant": "mutant_0011",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0017",
+   "mutant": "mutant_0012",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -4621,13 +4615,13 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0020",
+   "mutant": "mutant_0017",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0031",
+   "mutant": "mutant_0020",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -4639,19 +4633,31 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0029",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_nospec_mask",
    "mutant": "mutant_0028",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_nospec_mask",
+   "mutant": "mutant_0031",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0029",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
    "mutant": "mutant_0035",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0039",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4669,13 +4675,7 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0044",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_nospec_mask",
-   "mutant": "mutant_0039",
+   "mutant": "mutant_0036",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4693,13 +4693,13 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0045",
+   "mutant": "mutant_0044",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0036",
+   "mutant": "mutant_0045",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4723,13 +4723,7 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0052",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_nospec_mask",
-   "mutant": "mutant_0048",
+   "mutant": "mutant_0049",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4741,7 +4735,13 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0049",
+   "mutant": "mutant_0048",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0052",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4759,13 +4759,7 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0055",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_nospec_mask",
-   "mutant": "mutant_0059",
+   "mutant": "mutant_0056",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4777,7 +4771,7 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0056",
+   "mutant": "mutant_0055",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4789,7 +4783,7 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0061",
+   "mutant": "mutant_0059",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4801,13 +4795,19 @@
   },
   {
    "func": "aws_nospec_mask",
+   "mutant": "mutant_0061",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
    "mutant": "mutant_0062",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0063",
+   "mutant": "mutant_0066",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -4819,19 +4819,19 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0071",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_nospec_mask",
    "mutant": "mutant_0076",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0078",
+   "mutant": "mutant_0063",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0071",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -4843,25 +4843,13 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0080",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_nospec_mask",
-   "mutant": "mutant_0066",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_nospec_mask",
-   "mutant": "mutant_0087",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_nospec_mask",
    "mutant": "mutant_0079",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0078",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -4873,7 +4861,31 @@
   },
   {
    "func": "aws_nospec_mask",
+   "mutant": "mutant_0080",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0083",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0087",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
    "mutant": "mutant_0082",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0088",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -4891,19 +4903,7 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0083",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_nospec_mask",
-   "mutant": "mutant_0088",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_nospec_mask",
-   "mutant": "mutant_0094",
+   "mutant": "mutant_0100",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -4915,7 +4915,13 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0100",
+   "mutant": "mutant_0099",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0094",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -4927,19 +4933,13 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0105",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_nospec_mask",
-   "mutant": "mutant_0099",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_nospec_mask",
    "mutant": "mutant_0102",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0105",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -4951,33 +4951,9 @@
   },
   {
    "func": "aws_nospec_mask",
-   "mutant": "mutant_0110",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_nospec_mask",
    "mutant": "mutant_0108",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_ptr_eq",
-   "mutant": "mutant_0005",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_ptr_eq",
-   "mutant": "mutant_0004",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_ptr_eq",
-   "mutant": "mutant_0007",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
   },
   {
    "func": "aws_nospec_mask",
@@ -4986,8 +4962,8 @@
    "gt595": "FAIL"
   },
   {
-   "func": "aws_ptr_eq",
-   "mutant": "mutant_0006",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0110",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -4999,13 +4975,37 @@
   },
   {
    "func": "aws_ptr_eq",
-   "mutant": "mutant_0008",
+   "mutant": "mutant_0004",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0005",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0006",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0007",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_ptr_eq",
    "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0008",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -5017,25 +5017,7 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0020",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0014",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0005",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0007",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5047,19 +5029,37 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0014",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0007",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0017",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0028",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0044",
+   "mutant": "mutant_0020",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0051",
+   "mutant": "mutant_0032",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5077,13 +5077,13 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0032",
+   "mutant": "mutant_0044",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0054",
+   "mutant": "mutant_0051",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5095,19 +5095,13 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0017",
+   "mutant": "mutant_0054",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0055",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0058",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5125,13 +5119,13 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0067",
+   "mutant": "mutant_0064",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0064",
+   "mutant": "mutant_0058",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5143,31 +5137,7 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0078",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0085",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0059",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0086",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0080",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5179,7 +5149,37 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0067",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0065",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0081",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0078",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0080",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0085",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5191,7 +5191,7 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0081",
+   "mutant": "mutant_0086",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5209,7 +5209,13 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0101",
+   "mutant": "mutant_0090",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0099",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5221,49 +5227,7 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0109",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0122",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0100",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0118",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0090",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0129",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0119",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0126",
+   "mutant": "mutant_0101",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5275,7 +5239,37 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0099",
+   "mutant": "mutant_0100",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0109",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0113",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0118",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0119",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0122",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5293,25 +5287,13 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0113",
+   "mutant": "mutant_0129",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0135",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0134",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0141",
+   "mutant": "mutant_0126",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5323,13 +5305,19 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0134",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0136",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0137",
+   "mutant": "mutant_0135",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5341,9 +5329,21 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0146",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
+   "mutant": "mutant_0142",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0137",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0141",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_acquire",
@@ -5353,19 +5353,13 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0150",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
+   "mutant": "mutant_0146",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0144",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0152",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5377,7 +5371,13 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0142",
+   "mutant": "mutant_0150",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0152",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5395,25 +5395,7 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0165",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0167",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0157",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0168",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5425,13 +5407,31 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0165",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0169",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0188",
+   "mutant": "mutant_0167",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0168",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0176",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5443,13 +5443,13 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0190",
+   "mutant": "mutant_0179",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0192",
+   "mutant": "mutant_0188",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5461,25 +5461,25 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0190",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0201",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0176",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0179",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0203",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0192",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5497,7 +5497,7 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0206",
+   "mutant": "mutant_0214",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5515,7 +5515,19 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0206",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0207",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0225",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5533,31 +5545,7 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0237",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0232",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0214",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0240",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0225",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5569,19 +5557,43 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0243",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0235",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0240",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0243",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0237",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0251",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0254",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0293",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5599,25 +5611,7 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0254",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0294",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0296",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0293",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5635,7 +5629,13 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0303",
+   "mutant": "mutant_0296",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0297",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5647,13 +5647,13 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0305",
+   "mutant": "mutant_0303",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0297",
+   "mutant": "mutant_0305",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5683,13 +5683,13 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0318",
+   "mutant": "mutant_0315",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0327",
+   "mutant": "mutant_0318",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5713,7 +5713,7 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0315",
+   "mutant": "mutant_0328",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5725,7 +5725,7 @@
   },
   {
    "func": "aws_ring_buffer_acquire",
-   "mutant": "mutant_0328",
+   "mutant": "mutant_0327",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -5742,38 +5742,20 @@
    "gt595": "UNKNOWN"
   },
   {
-   "func": "aws_ring_buffer_buf_belongs_to_pool",
-   "mutant": "mutant_0009",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
    "func": "aws_ring_buffer_acquire",
    "mutant": "mutant_0331",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
-   "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0005",
-   "gt640": "FAIL",
-   "gt595": "UNKNOWN"
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0009",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_ring_buffer_buf_belongs_to_pool",
    "mutant": "mutant_0013",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0006",
-   "gt640": "FAIL",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_buf_belongs_to_pool",
-   "mutant": "mutant_0024",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -5784,14 +5766,26 @@
    "gt595": "SUCCESS"
   },
   {
-   "func": "aws_ring_buffer_clean_up",
-   "mutant": "mutant_0005",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0024",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0020",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0008",
+   "mutant": "mutant_0005",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0006",
    "gt640": "FAIL",
    "gt595": "UNKNOWN"
   },
@@ -5802,14 +5796,44 @@
    "gt595": "UNKNOWN"
   },
   {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0008",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_clean_up",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
    "func": "aws_ring_buffer_clean_up",
    "mutant": "mutant_0006",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
+   "func": "aws_ring_buffer_clean_up",
+   "mutant": "mutant_0007",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ring_buffer_clean_up",
+   "mutant": "mutant_0010",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
    "func": "aws_ring_buffer_init",
    "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0010",
    "gt640": "FAIL",
    "gt595": "UNKNOWN"
   },
@@ -5821,37 +5845,25 @@
   },
   {
    "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0010",
-   "gt640": "FAIL",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_clean_up",
-   "mutant": "mutant_0010",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_ring_buffer_clean_up",
-   "mutant": "mutant_0007",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_ring_buffer_buf_belongs_to_pool",
-   "mutant": "mutant_0020",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_ring_buffer_init",
    "mutant": "mutant_0015",
    "gt640": "FAIL",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0017",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
    "mutant": "mutant_0016",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0019",
    "gt640": "FAIL",
    "gt595": "UNKNOWN"
   },
@@ -5869,13 +5881,25 @@
   },
   {
    "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0017",
+   "mutant": "mutant_0025",
    "gt640": "FAIL",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0019",
+   "mutant": "mutant_0024",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0026",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0028",
    "gt640": "FAIL",
    "gt595": "UNKNOWN"
   },
@@ -5887,25 +5911,19 @@
   },
   {
    "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0024",
+   "mutant": "mutant_0029",
    "gt640": "SUCCESS",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0028",
+   "mutant": "mutant_0030",
    "gt640": "FAIL",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0025",
-   "gt640": "FAIL",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0026",
+   "mutant": "mutant_0031",
    "gt640": "FAIL",
    "gt595": "UNKNOWN"
   },
@@ -5929,24 +5947,6 @@
   },
   {
    "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0031",
-   "gt640": "FAIL",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0029",
-   "gt640": "SUCCESS",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0030",
-   "gt640": "FAIL",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_init",
    "mutant": "mutant_0044",
    "gt640": "SUCCESS",
    "gt595": "UNKNOWN"
@@ -5959,14 +5959,20 @@
   },
   {
    "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
    "mutant": "mutant_0050",
    "gt640": "SUCCESS",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0054",
-   "gt640": "SUCCESS",
+   "mutant": "mutant_0048",
+   "gt640": "FAIL",
    "gt595": "UNKNOWN"
   },
   {
@@ -5983,12 +5989,6 @@
   },
   {
    "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0070",
-   "gt640": "FAIL",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_init",
    "mutant": "mutant_0060",
    "gt640": "SUCCESS",
    "gt595": "UNKNOWN"
@@ -6001,19 +6001,31 @@
   },
   {
    "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0070",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
    "mutant": "mutant_0071",
    "gt640": "FAIL",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0048",
+   "mutant": "mutant_0075",
    "gt640": "FAIL",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_init",
    "mutant": "mutant_0076",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0077",
    "gt640": "FAIL",
    "gt595": "UNKNOWN"
   },
@@ -6031,27 +6043,21 @@
   },
   {
    "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0075",
-   "gt640": "FAIL",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_init",
-   "mutant": "mutant_0077",
-   "gt640": "FAIL",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_ring_buffer_init",
    "mutant": "mutant_0092",
    "gt640": "SUCCESS",
    "gt595": "UNKNOWN"
   },
   {
+   "func": "aws_string_bytes",
+   "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
    "func": "aws_ring_buffer_clean_up",
-   "mutant": "mutant_0021",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "mutant": "mutant_0030",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_ring_buffer_clean_up",
@@ -6061,43 +6067,25 @@
   },
   {
    "func": "aws_ring_buffer_release",
-   "mutant": "mutant_0009",
+   "mutant": "mutant_0006",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_clean_up",
-   "mutant": "mutant_0030",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_bytes",
-   "mutant": "mutant_0003",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
+   "mutant": "mutant_0021",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_ring_buffer_release",
-   "mutant": "mutant_0015",
-   "gt640": "UNKNOWN",
-   "gt595": "UNKNOWN"
-  },
-  {
-   "func": "aws_string_bytes",
-   "mutant": "mutant_0004",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_ring_buffer_release",
-   "mutant": "mutant_0024",
+   "mutant": "mutant_0009",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_release",
-   "mutant": "mutant_0031",
+   "mutant": "mutant_0014",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -6109,19 +6097,19 @@
   },
   {
    "func": "aws_ring_buffer_release",
-   "mutant": "mutant_0014",
+   "mutant": "mutant_0015",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
   {
-   "func": "aws_string_bytes",
-   "mutant": "mutant_0007",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
+   "func": "aws_ring_buffer_release",
+   "mutant": "mutant_0031",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
   },
   {
    "func": "aws_ring_buffer_release",
-   "mutant": "mutant_0006",
+   "mutant": "mutant_0024",
    "gt640": "UNKNOWN",
    "gt595": "UNKNOWN"
   },
@@ -6133,13 +6121,25 @@
   },
   {
    "func": "aws_string_bytes",
-   "mutant": "mutant_0008",
+   "mutant": "mutant_0003",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_bytes",
-   "mutant": "mutant_0002",
+   "mutant": "mutant_0004",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_bytes",
+   "mutant": "mutant_0007",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_bytes",
+   "mutant": "mutant_0008",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6175,6 +6175,24 @@
   },
   {
    "func": "aws_string_destroy",
+   "mutant": "mutant_0018",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0017",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0020",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_destroy",
    "mutant": "mutant_0019",
    "gt640": "FAIL",
    "gt595": "FAIL"
@@ -6193,13 +6211,7 @@
   },
   {
    "func": "aws_string_destroy",
-   "mutant": "mutant_0018",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_destroy",
-   "mutant": "mutant_0020",
+   "mutant": "mutant_0041",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -6208,12 +6220,6 @@
    "mutant": "mutant_0022",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_destroy",
-   "mutant": "mutant_0041",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
   },
   {
    "func": "aws_string_destroy",
@@ -6234,14 +6240,8 @@
    "gt595": "FAIL"
   },
   {
-   "func": "aws_string_destroy",
-   "mutant": "mutant_0017",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
    "func": "aws_string_destroy_secure",
-   "mutant": "mutant_0006",
+   "mutant": "mutant_0017",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6253,7 +6253,25 @@
   },
   {
    "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy_secure",
    "mutant": "mutant_0026",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0018",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0031",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6265,9 +6283,9 @@
   },
   {
    "func": "aws_string_destroy_secure",
-   "mutant": "mutant_0017",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
+   "mutant": "mutant_0032",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_string_destroy_secure",
@@ -6283,31 +6301,19 @@
   },
   {
    "func": "aws_string_destroy_secure",
-   "mutant": "mutant_0018",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_destroy_secure",
    "mutant": "mutant_0046",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_string_destroy_secure",
-   "mutant": "mutant_0031",
+   "mutant": "mutant_0047",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
-   "func": "aws_string_destroy_secure",
-   "mutant": "mutant_0032",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_destroy_secure",
-   "mutant": "mutant_0047",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0002",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6325,15 +6331,15 @@
   },
   {
    "func": "aws_string_eq",
-   "mutant": "mutant_0009",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "mutant": "mutant_0008",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq",
-   "mutant": "mutant_0002",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_string_eq",
@@ -6343,9 +6349,9 @@
   },
   {
    "func": "aws_string_eq",
-   "mutant": "mutant_0008",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
+   "mutant": "mutant_0018",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_string_eq",
@@ -6361,25 +6367,7 @@
   },
   {
    "func": "aws_string_eq",
-   "mutant": "mutant_0018",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq",
    "mutant": "mutant_0022",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq",
-   "mutant": "mutant_0035",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq",
-   "mutant": "mutant_0026",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6391,15 +6379,27 @@
   },
   {
    "func": "aws_string_eq",
+   "mutant": "mutant_0026",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
    "mutant": "mutant_0033",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq",
-   "mutant": "mutant_0041",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "mutant": "mutant_0035",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0037",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq",
@@ -6409,9 +6409,9 @@
   },
   {
    "func": "aws_string_eq",
-   "mutant": "mutant_0037",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
+   "mutant": "mutant_0041",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_string_eq",
@@ -6427,6 +6427,12 @@
   },
   {
    "func": "aws_string_eq",
+   "mutant": "mutant_0047",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
    "mutant": "mutant_0050",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
@@ -6439,7 +6445,7 @@
   },
   {
    "func": "aws_string_eq",
-   "mutant": "mutant_0047",
+   "mutant": "mutant_0054",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6457,43 +6463,13 @@
   },
   {
    "func": "aws_string_eq",
-   "mutant": "mutant_0057",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq",
    "mutant": "mutant_0055",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq",
-   "mutant": "mutant_0061",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq",
-   "mutant": "mutant_0060",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq",
-   "mutant": "mutant_0054",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq",
-   "mutant": "mutant_0066",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq",
-   "mutant": "mutant_0065",
+   "mutant": "mutant_0057",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6505,7 +6481,7 @@
   },
   {
    "func": "aws_string_eq",
-   "mutant": "mutant_0068",
+   "mutant": "mutant_0065",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6517,7 +6493,25 @@
   },
   {
    "func": "aws_string_eq",
-   "mutant": "mutant_0071",
+   "mutant": "mutant_0060",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0066",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0061",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0068",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6535,35 +6529,35 @@
   },
   {
    "func": "aws_string_eq",
+   "mutant": "mutant_0071",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0088",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0092",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0091",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq",
    "mutant": "mutant_0090",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
-   "func": "aws_string_eq",
-   "mutant": "mutant_0092",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq",
-   "mutant": "mutant_0088",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0004",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq",
-   "mutant": "mutant_0091",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
    "func": "aws_string_eq_byte_buf",
    "mutant": "mutant_0009",
    "gt640": "FAIL",
@@ -6571,7 +6565,7 @@
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0011",
+   "mutant": "mutant_0004",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -6583,25 +6577,19 @@
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0016",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0017",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq_byte_buf",
    "mutant": "mutant_0010",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0031",
+   "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0016",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -6613,9 +6601,9 @@
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0030",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "mutant": "mutant_0017",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_byte_buf",
@@ -6631,13 +6619,13 @@
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0034",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
+   "mutant": "mutant_0031",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0038",
+   "mutant": "mutant_0030",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -6649,13 +6637,13 @@
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0045",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
+   "mutant": "mutant_0044",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0048",
+   "mutant": "mutant_0034",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6667,13 +6655,25 @@
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0044",
+   "mutant": "mutant_0038",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0045",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
    "mutant": "mutant_0049",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0048",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6709,15 +6709,15 @@
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0061",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq_byte_buf",
    "mutant": "mutant_0060",
    "gt640": "FAIL",
    "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0061",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_byte_buf",
@@ -6733,12 +6733,6 @@
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0065",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq_byte_buf",
    "mutant": "mutant_0081",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
@@ -6748,6 +6742,12 @@
    "mutant": "mutant_0063",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0065",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_string_eq_byte_buf",
@@ -6769,19 +6769,13 @@
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0084",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq_byte_buf",
    "mutant": "mutant_0087",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0086",
+   "mutant": "mutant_0084",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6793,25 +6787,7 @@
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0097",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq_byte_buf",
    "mutant": "mutant_0088",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0092",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0096",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -6823,7 +6799,25 @@
   },
   {
    "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0086",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
    "mutant": "mutant_0091",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0096",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0092",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -6835,7 +6829,7 @@
   },
   {
    "func": "aws_string_eq_byte_buf",
-   "mutant": "mutant_0099",
+   "mutant": "mutant_0097",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -6846,6 +6840,12 @@
    "gt595": "SUCCESS"
   },
   {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0099",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
    "func": "aws_string_eq_byte_cursor",
    "mutant": "mutant_0004",
    "gt640": "FAIL",
@@ -6854,6 +6854,12 @@
   {
    "func": "aws_string_eq_byte_cursor",
    "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0012",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -6871,25 +6877,13 @@
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0012",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq_byte_cursor",
    "mutant": "mutant_0016",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0021",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0034",
+   "mutant": "mutant_0020",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6901,7 +6895,7 @@
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0030",
+   "mutant": "mutant_0021",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -6913,15 +6907,21 @@
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0020",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq_byte_cursor",
    "mutant": "mutant_0031",
    "gt640": "FAIL",
    "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0030",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0034",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_byte_cursor",
@@ -6931,19 +6931,7 @@
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0044",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq_byte_cursor",
    "mutant": "mutant_0045",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0047",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6955,13 +6943,13 @@
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0049",
+   "mutant": "mutant_0047",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0050",
+   "mutant": "mutant_0044",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6973,19 +6961,19 @@
   },
   {
    "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0049",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
    "mutant": "mutant_0051",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0055",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0054",
+   "mutant": "mutant_0050",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -6997,13 +6985,19 @@
   },
   {
    "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
    "mutant": "mutant_0053",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0061",
+   "mutant": "mutant_0055",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -7021,15 +7015,27 @@
   },
   {
    "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0065",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0061",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
    "mutant": "mutant_0081",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0065",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
+   "mutant": "mutant_0082",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_string_eq_byte_cursor",
@@ -7045,13 +7051,13 @@
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0082",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
+   "mutant": "mutant_0083",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0083",
+   "mutant": "mutant_0084",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -7069,7 +7075,13 @@
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0084",
+   "mutant": "mutant_0087",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0089",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -7081,25 +7093,7 @@
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0087",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0096",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0089",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0092",
+   "mutant": "mutant_0091",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -7111,13 +7105,13 @@
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0091",
+   "mutant": "mutant_0092",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0097",
+   "mutant": "mutant_0096",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -7129,33 +7123,27 @@
   },
   {
    "func": "aws_string_eq_byte_cursor",
-   "mutant": "mutant_0102",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0009",
+   "mutant": "mutant_0097",
    "gt640": "FAIL",
    "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0004",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0011",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_c_str",
    "mutant": "mutant_0005",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0102",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0004",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
   },
   {
    "func": "aws_string_eq_c_str",
@@ -7165,7 +7153,7 @@
   },
   {
    "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0020",
+   "mutant": "mutant_0011",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -7177,7 +7165,19 @@
   },
   {
    "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_c_str",
    "mutant": "mutant_0018",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0020",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -7195,13 +7195,13 @@
   },
   {
    "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0024",
+   "mutant": "mutant_0025",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0026",
+   "mutant": "mutant_0024",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -7213,31 +7213,19 @@
   },
   {
    "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0029",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0025",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq_c_str",
    "mutant": "mutant_0033",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
   {
    "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0028",
+   "mutant": "mutant_0026",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0037",
+   "mutant": "mutant_0028",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -7249,7 +7237,7 @@
   },
   {
    "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0039",
+   "mutant": "mutant_0029",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -7261,19 +7249,31 @@
   },
   {
    "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0051",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0055",
+   "mutant": "mutant_0037",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_c_str",
    "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0051",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0039",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0055",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -7297,19 +7297,13 @@
   },
   {
    "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0060",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_eq_c_str",
    "mutant": "mutant_0059",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0062",
+   "mutant": "mutant_0060",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -7321,7 +7315,7 @@
   },
   {
    "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0065",
+   "mutant": "mutant_0062",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -7333,13 +7327,13 @@
   },
   {
    "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0070",
+   "mutant": "mutant_0065",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0072",
+   "mutant": "mutant_0070",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -7351,13 +7345,25 @@
   },
   {
    "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0075",
+   "mutant": "mutant_0072",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
   {
    "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0093",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_c_str",
    "mutant": "mutant_0073",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0075",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
@@ -7370,12 +7376,6 @@
   {
    "func": "aws_string_eq_c_str",
    "mutant": "mutant_0094",
-   "gt640": "FAIL",
-   "gt595": "FAIL"
-  },
-  {
-   "func": "aws_string_eq_c_str",
-   "mutant": "mutant_0093",
    "gt640": "FAIL",
    "gt595": "FAIL"
   },
@@ -7393,12 +7393,6 @@
   },
   {
    "func": "aws_string_new_from_c_str",
-   "mutant": "mutant_0015",
-   "gt640": "SUCCESS",
-   "gt595": "SUCCESS"
-  },
-  {
-   "func": "aws_string_new_from_c_str",
    "mutant": "mutant_0011",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
@@ -7406,6 +7400,12 @@
   {
    "func": "aws_string_new_from_c_str",
    "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_new_from_c_str",
+   "mutant": "mutant_0015",
    "gt640": "SUCCESS",
    "gt595": "SUCCESS"
   },
