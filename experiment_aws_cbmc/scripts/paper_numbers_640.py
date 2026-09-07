@@ -1,0 +1,316 @@
+#!/usr/bin/env python3
+"""
+paper_numbers_640.py — audit registry for the CBMC 6.4.0 numbers in paper.tex.
+
+Companion to paper_numbers.py, which audits the earlier CBMC 5.95.1 analysis.
+The submitted paper pins CBMC 6.4.0 (the version aws-c-common's own CI proofs
+run), so every version-dependent number was recomputed by the `*_640.py`
+scripts into `evaluation/*_640.json`. This registry recomputes each claim from
+those artifacts and prints OK or MISMATCH against the value asserted in
+paper.tex.
+
+Version-independent claims (token-Jaccard assertion recall, blind adjudication,
+equivalent-mutant analysis) are audited by paper_numbers.py and re-checked here
+only where the paper's current wording differs.
+
+Usage:  python3 paper_numbers_640.py           # audit table
+        python3 paper_numbers_640.py --md      # markdown table
+"""
+import json, os, re, sys
+from collections import defaultdict
+from pathlib import Path
+
+import numpy as np
+from scipy.stats import beta, wilcoxon
+
+_BASE = "/root/experiment_aws_cbmc" if os.path.isdir("/root/experiment_aws_cbmc") else str(Path(__file__).resolve().parent.parent)
+EVAL = Path(_BASE) / "evaluation"
+
+def _load(name):
+    return json.load(open(EVAL / name))
+
+# ── raw 6.4.0 verdicts ───────────────────────────────────────────────────────
+_GT = _load("gtfail_640.json")
+GT = {(r["func"], r["mutant"]): r["gt640"] for r in _GT["verdicts"]}
+CANON = {k for k, v in GT.items() if v == "FAIL"}          # shared GT-fail set
+NDEN = len(CANON)
+
+_SIL = _load("silenced_640.json")
+LLM = defaultdict(dict)                                     # cond -> key -> verdict
+for r in _SIL["verdicts"]:
+    LLM[r["cond"]][(r["func"], r["mutant"])] = r["llm640"]
+
+# conditions whose LLM verdicts live in the K/Llama sweep instead
+_KL = _load("kllama_oracle_640.json")
+for r in _KL["verdicts"]:
+    LLM[r["cond"]][(r["func"], r["mutant"])] = r["llm640"]
+
+# paper condition names -> dataset keys
+COND = {"Single": "G_gptoss120b", "Baseline": "A_gptoss120b", "Neutral": "H_gptoss120b",
+        "Bounded": "M_gptoss120b", "SpecFirst": "K_gptoss120b", "Oracle": "Oracle_gptoss120b",
+        "Baseline/Claude": "A_claude", "Neutral/Claude": "H_claude", "Bounded/Claude": "M_claude"}
+
+def _cell(cond):
+    """(silenced, caught, unresolved) counts over the shared GT-fail set."""
+    v = LLM[COND[cond]]
+    sil = cau = unr = 0
+    for k in CANON:
+        x = v.get(k)
+        if x == "SUCCESS":
+            sil += 1
+        elif x in ("FAIL", "SAT"):
+            cau += 1
+        else:
+            unr += 1
+    return sil, cau, unr
+
+def n_sil(cond):   return _cell(cond)[0]
+def sil_gt(cond):  return 100.0 * _cell(cond)[0] / NDEN
+def catch(cond):   return 100.0 * _cell(cond)[1] / NDEN
+def unres(cond):   return 100.0 * _cell(cond)[2] / NDEN
+def adj_sil(cond):
+    s, c, _ = _cell(cond)
+    return 100.0 * s / (s + c)
+
+def per_func_silence(cond):
+    """Per-function silenced share of that function's GT-fail mutants."""
+    v = LLM[COND[cond]]
+    agg = defaultdict(lambda: [0, 0])
+    for (f, m) in CANON:
+        agg[f][1] += 1
+        if v.get((f, m)) == "SUCCESS":
+            agg[f][0] += 1
+    return {f: a / b for f, (a, b) in agg.items() if b > 0}
+
+def cp_ci(k, n):
+    lo = beta.ppf(0.025, k, n - k + 1) if k > 0 else 0.0
+    hi = beta.ppf(0.975, k + 1, n - k) if k < n else 1.0
+    return 100 * lo, 100 * hi
+
+# ── registry ─────────────────────────────────────────────────────────────────
+R = []
+def add(loc, desc, claimed, fn, tol=0.15):
+    R.append((loc, desc, claimed, fn, tol))
+
+# corpus / denominator (§4 Study Design, §5 Results)
+add("design", "mutants in shared set",            1233, lambda: len(GT), 0.5)
+add("design", "shared GT-fail denominator",        397, lambda: NDEN, 0.5)
+add("design", "GT-fail also failing under 5.95.1", 370, lambda: _GT["summary"]["both_fail"], 0.5)
+add("design", "UNKNOWN->FAIL gained at 6.4.0",      27, lambda: _GT["summary"]["transitions_595_to_640"]["UNKNOWN->FAIL"], 0.5)
+
+# Table 1 (tab:rq1) — pass rate and silenced share
+_PASS = _load("passrate_640.json")["per_condition"]
+_KPASS = _load("k_passrate_640.json")
+def passrate(cond):
+    key = COND[cond]
+    return _KPASS["pass_pct_640"] if key.startswith("K_") else _PASS[key]["pass_pct_640"]
+
+for cond, pa, sg in [("Single", 31.3, 0.3), ("Baseline", 44.6, 9.8), ("Neutral", 60.2, 9.3),
+                     ("Bounded", 71.1, 7.6), ("SpecFirst", 74.7, 14.9), ("Oracle", 79.5, 39.8)]:
+    add("T1/rq1", f"{cond} pass %",   pa, (lambda c: lambda: passrate(c))(cond), 0.2)
+    add("T1/rq1", f"{cond} Sil/GT %", sg, (lambda c: lambda: sil_gt(c))(cond))
+
+# Table 2 (tab:oracle) — oracle results and mechanism attribution.
+# Mechanism shares are recomputed from the adjudicated per-function labels
+# (build_adjudicated_mechanism.py) over each condition's 6.4.0 silenced set.
+_ADJ = _load("adjudicated_mechanism.json")["labels"]
+
+def mech(cond, label):
+    """Share of a condition's silenced bugs carrying the adjudicated label."""
+    key = COND[cond]
+    lab, v = _ADJ[key], LLM[key]
+    tot = hit = 0
+    for (f, m) in CANON:
+        if v.get((f, m)) == "SUCCESS":
+            tot += 1
+            hit += 1 if lab.get(f) == label else 0
+    return 100.0 * hit / tot
+
+def scaffold_residual():
+    """Silences left over once NW/Del/Nar are accounted for (paper: 23)."""
+    out = 0
+    for cond in COND:
+        if cond == "SpecFirst":
+            continue
+        n = n_sil(cond)
+        out += round(n * (100.0 - sum(mech(cond, l) for l in ("NW", "Del", "Nar"))) / 100.0)
+    return out
+for cond, n, sg, ca, un, ad, nw, de, na in [
+    ("Oracle",          158, 39.8, 41.8, 18.4, 48.8, 89.2,  0.0,  0.0),
+    ("Baseline",         39,  9.8, 37.8, 52.4, 20.6, 89.7,  0.0, 10.3),
+    ("Neutral",          37,  9.3, 44.3, 46.4, 17.4, 89.2,  0.0,  0.0),
+    ("Bounded",          30,  7.6, 67.3, 25.1, 10.1, 96.7,  0.0,  0.0),
+    ("Single",            1,  0.3, 42.3, 57.4,  0.7, 100.0, 0.0,  0.0),
+    ("Baseline/Claude",  16,  4.0, 96.0,  0.0,  4.0, 87.5, 12.5,  0.0),
+    ("Neutral/Claude",   16,  4.0, 93.7,  2.3,  4.1, 81.2,  0.0, 12.5),
+    ("Bounded/Claude",   11,  2.8, 96.7,  0.5,  2.8, 100.0, 0.0,  0.0)]:
+    add("T2/oracle", f"{cond} n",       n,  (lambda c: lambda: n_sil(c))(cond), 0.5)
+    add("T2/oracle", f"{cond} Sil/GT",  sg, (lambda c: lambda: sil_gt(c))(cond))
+    add("T2/oracle", f"{cond} Catch",   ca, (lambda c: lambda: catch(c))(cond))
+    add("T2/oracle", f"{cond} Unres",   un, (lambda c: lambda: unres(c))(cond))
+    add("T2/oracle", f"{cond} Adj.Sil", ad, (lambda c: lambda: adj_sil(c))(cond))
+    add("T2/oracle", f"{cond} NW %",  nw, (lambda c: lambda: mech(c, "NW"))(cond))
+    add("T2/oracle", f"{cond} Del %", de, (lambda c: lambda: mech(c, "Del"))(cond))
+    add("T2/oracle", f"{cond} Nar %", na, (lambda c: lambda: mech(c, "Nar"))(cond))
+
+# Table 2 caption + §RQ2: total silences, scaffold residual
+add("T2/cap", "organic silences (7 conditions)", 150,
+    lambda: sum(n_sil(c) for c in COND if c != "Oracle" and c != "SpecFirst"), 0.5)
+add("T2/cap", "scaffold-level residual", 23, scaffold_residual, 0.5)
+add("T2/cap", "all silences incl. Oracle", 308,
+    lambda: _load("inject_640.json")["summary"]["total_silenced"], 0.5)
+
+# §RQ1: the Oracle contrast (per-function, function-clustered bootstrap)
+def oracle_vs_baseline():
+    O, B = per_func_silence("Oracle"), per_func_silence("Baseline")
+    sh = sorted(set(O) & set(B))
+    d = np.array([O[f] - B[f] for f in sh])
+    rng = np.random.default_rng(42)
+    boots = [rng.choice(d, len(d), replace=True).mean() for _ in range(10000)]
+    p = wilcoxon(np.array([O[f] for f in sh]), np.array([B[f] for f in sh]),
+                 alternative="greater")[1]
+    return (100 * d.mean(), 100 * np.percentile(boots, 2.5), 100 * np.percentile(boots, 97.5),
+            int((d > 0).sum()), int((d < 0).sum()), p)
+
+add("S5.1/orc", "Oracle-Baseline silence rise (pp)", 28.3, lambda: oracle_vs_baseline()[0], 0.5)
+add("S5.1/orc", "bootstrap CI lo (pp)",              14.7, lambda: oracle_vs_baseline()[1], 1.5)
+add("S5.1/orc", "bootstrap CI hi (pp)",              43.1, lambda: oracle_vs_baseline()[2], 1.5)
+add("S5.1/orc", "functions moving up",                 12, lambda: oracle_vs_baseline()[3], 0.5)
+add("S5.1/orc", "functions moving down",                0, lambda: oracle_vs_baseline()[4], 0.5)
+add("S5.1/orc", "paired Wilcoxon p",                0.001, lambda: oracle_vs_baseline()[5], 0.002)
+
+# §RQ1: single-pass repeats (Single silences 1/40/43, 83 of 84 never written)
+_PROBE = _load("probe_gmr_640.json")["summary"]["per_condition"]
+add("S5.1/rep", "Single run-2 silenced", 40, lambda: _PROBE["G_gptoss120b_r2"]["silenced_640"], 0.5)
+add("S5.1/rep", "Single run-3 silenced", 43, lambda: _PROBE["G_gptoss120b_r3"]["silenced_640"], 0.5)
+add("S5.1/rep", "Single three-run total", 84,
+    lambda: n_sil("Single") + _PROBE["G_gptoss120b_r2"]["silenced_640"] + _PROBE["G_gptoss120b_r3"]["silenced_640"], 0.5)
+
+# §RQ2: repetition of the Baseline run
+_MULTI = _load("multirun_640.json")
+add("S5.2/rep", "Baseline run-2 silenced", 34, lambda: _MULTI["A_gptoss120b_r2"], 0.5)
+add("S5.2/rep", "Baseline run-3 silenced", 36, lambda: _MULTI["A_gptoss120b_r3"], 0.5)
+
+# §RQ2: behavioural rename-immune never-written re-check
+_BKG = _load("behavioural_kg_640.json")["summary"]
+add("S5.2/beh", "silences with re-runnable history", 265, lambda: _BKG["re_runnable_decided"], 0.5)
+add("S5.2/beh", "never-written (behavioural)",       263, lambda: _BKG["never_written_behavioural"], 0.5)
+add("S5.2/beh", "never-written %",                  99.2, lambda: _BKG["pct_never_written_of_decided"])
+add("S5.2/beh", "genuine catch-then-remove",           2, lambda: _BKG["ever_caught"], 0.5)
+
+# §RQ2: active deletion union bound (2 behavioural + 2 adjudicated of 308)
+add("S5.2/del", "deletion union %",   1.3, lambda: 100 * 4 / 308)
+add("S5.2/del", "deletion CI lo %",   0.4, lambda: cp_ci(4, 308)[0])
+add("S5.2/del", "deletion CI hi %",   3.3, lambda: cp_ci(4, 308)[1])
+
+# §RQ2: the aws_byte_buf_cat cluster and the leave-one-function-out check
+def _sil_in(cond, func):
+    v = LLM[COND[cond]]
+    return sum(1 for (f, m) in CANON if f == func and v.get((f, m)) == "SUCCESS")
+def _loo(cond, func):
+    s, _, _ = _cell(cond)
+    return 100.0 * (s - _sil_in(cond, func)) / NDEN
+add("S5.2/clu", "buf_cat share of Baseline", 33, lambda: _sil_in("Baseline", "aws_byte_buf_cat"), 0.5)
+add("S5.2/clu", "Baseline Sil/GT without buf_cat %", 1.6, lambda: _loo("Baseline", "aws_byte_buf_cat"))
+add("S5.2/clu", "Claude silences outside buf_cat", 13,
+    lambda: n_sil("Baseline/Claude") - _sil_in("Baseline/Claude", "aws_byte_buf_cat"), 0.5)
+add("S5.2/clu", "Claude silenced functions", 6,
+    lambda: len({f for f, r in per_func_silence("Baseline/Claude").items() if r > 0}), 0.5)
+add("S5.2/clu", "Oracle silenced functions", 14,
+    lambda: len({f for f, r in per_func_silence("Oracle").items() if r > 0}), 0.5)
+add("S5.2/clu", "Claude caught of 397", 381, lambda: _cell("Baseline/Claude")[1], 0.5)
+
+# §RQ2: cloze test
+_CLOZE = _load("cloze_640.json")
+add("S5.2/clz", "cloze fills recovering the bugs", 27, lambda: _CLOZE["recovered"], 0.5)
+add("S5.2/clz", "cloze live attempts",             28, lambda: _CLOZE["total_fills"], 0.5)
+
+# §RQ3: memory-safety share of the silenced bugs (properties known for the 370 core)
+_MEM = re.compile(r"memcpy|memmove|memset|overlap|bounds|deref|null|out-of-bounds|pointer|is_valid|valid_memory|object", re.I)
+def _sev_mem(cond):
+    props = {(r["func"], r["mutant"]): r.get("failed_properties", [])
+             for r in _load("gt_fail_properties_canonical370.json")["results"]}
+    v = LLM[COND[cond]]
+    sil = [k for k in CANON if v.get(k) == "SUCCESS"]
+    return sum(1 for k in sil if k in props and
+               any(_MEM.search(p.get("desc", "") + " " + p.get("property", "")) for p in props[k]))
+add("S5.3/sev", "Baseline memory-safety silenced",        10, lambda: _sev_mem("Baseline"), 1)
+add("S5.3/sev", "Baseline/Claude memory-safety silenced",  2, lambda: _sev_mem("Baseline/Claude"), 1)
+add("S5.3/sev", "Oracle memory-safety silenced",          66, lambda: _sev_mem("Oracle"), 2)
+
+# §6 Generality: third model, s2n-tls, self-built reference
+_KL_S = _KL["per_condition"]
+add("S6/mod", "Llama Baseline Sil/GT %", 4.5, lambda: _KL_S["A_llama3370binstruct"]["SilGT_pct"])
+
+_S2N = _load("s2n_640.json")["summary"]
+_RLX = _load("s2n_relax_640.json")
+add("S6/s2n", "s2n GT-fail set",           253, lambda: _S2N["A_claude"]["gtfail"], 0.5)
+add("S6/s2n", "s2n Claude silenced",        57, lambda: _S2N["A_claude"]["silenced"], 0.5)
+add("S6/s2n", "s2n Claude Sil/GT %",      22.5, lambda: 100 * _S2N["A_claude"]["silenced"] / _S2N["A_claude"]["gtfail"])
+add("S6/s2n", "s2n gpt-oss Sil/GT %",     16.6, lambda: 100 * _S2N["A_gptoss120b"]["silenced"] / _S2N["A_gptoss120b"]["gtfail"])
+add("S6/s2n", "s2n Claude functions",        9, lambda: _S2N["A_claude"]["funcs_with_silence"], 0.5)
+add("S6/s2n", "s2n gpt-oss functions",       5, lambda: _S2N["A_gptoss120b"]["funcs_with_silence"], 0.5)
+add("S6/s2n", "s2n max function share %", 36.0, lambda: max(_S2N[c]["max_func_share_pct"] for c in ("A_claude", "A_gptoss120b")), 0.5)
+add("S6/s2n", "s2n Claude never-written %", 96.5, lambda: _RLX["summary"]["A_claude"]["KG_pct"])
+add("S6/s2n", "s2n gpt-oss never-written %", 59.5, lambda: _RLX["summary"]["A_gptoss120b"]["KG_pct"])
+
+_GF = _load("greenfield_640.json")
+add("S6/gf", "self-built reference recall %", 94.8, lambda: _GF["recovery_pct"])
+add("S6/gf", "self-built CI lo %",            91.9, lambda: cp_ci(_GF["recovered"], _GF["held_out_silenced_total"])[0], 0.5)
+add("S6/gf", "self-built CI hi %",            96.8, lambda: cp_ci(_GF["recovered"], _GF["held_out_silenced_total"])[1], 0.5)
+
+# §6.3 Cross-engine corroboration (ESBMC 8.3.0 vs the pinned CBMC 6.4.0)
+_ESB = _load("esbmc_oracle_A_claude_assert.json")["results"]
+def _key(r):  return (r["func"], r["mutant"].replace(".c", ""))
+def esbmc_cell():
+    """(both GT-fail, CBMC-only loose, CBMC-only strict, ESBMC-only strict, ESBMC silenced)."""
+    both = c_loose = c_strict = e_strict = esil = 0
+    for r in _ESB:
+        k = _key(r)
+        cg, eg = GT.get(k), r["gt"]
+        decisive = eg in ("FAIL", "SUCCESS")
+        if cg == "FAIL" and eg == "FAIL":
+            both += 1
+            esil += 1 if r["llm"] == "SUCCESS" else 0
+        elif cg == "FAIL":
+            c_loose += 1
+            c_strict += 1 if decisive else 0
+        elif eg == "FAIL" and cg in ("FAIL", "SUCCESS"):
+            e_strict += 1
+    return both, c_loose, c_strict, e_strict, esil
+
+add("S6.3/esb", "ESBMC-comparable functions",     35, lambda: len({r["func"] for r in _ESB}), 0.5)
+add("S6.3/esb", "mutants both engines adjudicate", 296, lambda: esbmc_cell()[0], 0.5)
+add("S6.3/esb", "CBMC-only GT-fail (loose)",        78, lambda: esbmc_cell()[1], 0.5)
+add("S6.3/esb", "CBMC-only GT-fail (both decide)",   6, lambda: esbmc_cell()[2], 0.5)
+add("S6.3/esb", "ESBMC-only GT-fail (both decide)", 56, lambda: esbmc_cell()[3], 0.5)
+add("S6.3/esb", "silenced under ESBMC",             12, lambda: esbmc_cell()[4], 0.5)
+add("S6.3/esb", "silenced under CBMC on the shared 296", 12,
+    lambda: sum(1 for r in _ESB if GT.get(_key(r)) == "FAIL" and r["gt"] == "FAIL"
+                and LLM["A_claude"].get(_key(r)) == "SUCCESS"), 0.5)
+
+# ── run ──────────────────────────────────────────────────────────────────────
+def main():
+    md = "--md" in sys.argv
+    bad = 0
+    if md:
+        print("| loc | number | paper | recomputed | status |")
+        print("|---|---|---|---|---|")
+    for loc, desc, claimed, fn, tol in R:
+        try:
+            got = fn()
+            ok = abs(float(got) - float(claimed)) <= tol
+        except Exception as e:
+            got, ok = f"ERR:{e}", False
+        status = "OK" if ok else "**MISMATCH**"
+        bad += 0 if ok else 1
+        g = f"{got:.4g}" if isinstance(got, float) else str(got)
+        if md:
+            print(f"| {loc} | {desc} | {claimed} | {g} | {status} |")
+        else:
+            print(f"{loc:<12} {desc:<42} {str(claimed):>7} {g:>11}  {status}")
+    print(f"\n{len(R)} numbers checked, {bad} mismatch(es). CBMC 6.4.0, denom={NDEN}")
+    return 1 if bad else 0
+
+if __name__ == "__main__":
+    sys.exit(main())

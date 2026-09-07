@@ -1,0 +1,2152 @@
+{
+ "summary": {
+  "cbmc": "6.4.0",
+  "conds": [
+   "A_gptoss120b",
+   "H_gptoss120b",
+   "M_gptoss120b",
+   "G_gptoss120b",
+   "Oracle_gptoss120b"
+  ],
+  "silenced_total": 265,
+  "re_runnable_decided": 265,
+  "never_written_behavioural": 263,
+  "ever_caught": 2,
+  "ever_caught_list": [
+   [
+    "A_gptoss120b",
+    "aws_ptr_eq",
+    "mutant_0005"
+   ],
+   [
+    "A_gptoss120b",
+    "aws_ptr_eq",
+    "mutant_0006"
+   ]
+  ],
+  "pct_never_written_of_decided": 99.2,
+  "elapsed_s": 821
+ },
+ "rows": [
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0011",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0024",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0020",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0010",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0044",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0031",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0021",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0032",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0013",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0026",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0030",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0028",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0027",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0029",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0049",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0009",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0022",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0043",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0060",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0048",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0057",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0052",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0055",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0062",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0061",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0059",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0066",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0002",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0020",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0024",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0005",
+   "ever_caught": true,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0028",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0006",
+   "ever_caught": true,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0021",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0027",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0006",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0053",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0008",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0073",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0013",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0010",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0068",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0011",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0072",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0026",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0063",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0087",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0031",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0022",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0032",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0029",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0011",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0030",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0043",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0044",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0049",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0057",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0048",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0009",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0052",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0061",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0055",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0060",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0059",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0073",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0053",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0062",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0063",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0066",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0087",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0068",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0072",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0002",
+   "ever_caught": false,
+   "n_iter": 4,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0006",
+   "ever_caught": false,
+   "n_iter": 4,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0011",
+   "ever_caught": false,
+   "n_iter": 4,
+   "note": "ok"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0008",
+   "ever_caught": false,
+   "n_iter": 4,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0036",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0030",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0048",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0032",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0035",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0029",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0050",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0031",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0038",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0060",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0028",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0006",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0005",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0061",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0071",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0100",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0013",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0011",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0076",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0087",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0097",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0069",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0061",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0084",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0002",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0006",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0090",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0100",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0019",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0031",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0035",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0036",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0022",
+   "ever_caught": false,
+   "n_iter": 4,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0020",
+   "ever_caught": false,
+   "n_iter": 9,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0014",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0020",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0027",
+   "ever_caught": false,
+   "n_iter": 4,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0031",
+   "ever_caught": false,
+   "n_iter": 4,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0085",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0041",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0005",
+   "ever_caught": false,
+   "n_iter": 6,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0040",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0006",
+   "ever_caught": false,
+   "n_iter": 6,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0087",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0023",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0097",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0086",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0106",
+   "ever_caught": false,
+   "n_iter": 7,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0098",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0107",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0103",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0031",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0029",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0030",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0032",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0035",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0038",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0036",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0099",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0048",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0106",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0020",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0021",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0024",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0050",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0026",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0027",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0108",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0028",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0010",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0013",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0011",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0031",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0030",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0049",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0109",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0022",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0048",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0029",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0044",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0032",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0049",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0043",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0057",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0061",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0055",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0009",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0060",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0052",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0059",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0002",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0062",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0073",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0097",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0053",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0063",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0066",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0011",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0008",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0006",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0032",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0087",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0038",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0068",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0072",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0036",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0037",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0043",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0106",
+   "ever_caught": false,
+   "n_iter": 3,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0039",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0040",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0046",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0048",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up_secure",
+   "mutant": "mutant_0007",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0047",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0044",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0051",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0004",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0006",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0018",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0011",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0016",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0017",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0048",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0015",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0020",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0016",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0024",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0018",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0019",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0025",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0075",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0076",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0079",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0082",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0077",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0042",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0085",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0476",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0483",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0003",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0009",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0088",
+   "ever_caught": false,
+   "n_iter": 2,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0477",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0003",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0016",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0042",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0005",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0046",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0004",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0053",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0009",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0017",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0011",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0006",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0012",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0010",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0031",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0020",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0071",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0076",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0014",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0078",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0080",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0079",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0087",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0077",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0082",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0081",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0094",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0090",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0083",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0105",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0089",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0099",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0100",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0101",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0106",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0088",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0103",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0110",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0102",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0104",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0005",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0006",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0013",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_string_new_from_c_str",
+   "mutant": "mutant_0035",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0024",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0482",
+   "ever_caught": false,
+   "n_iter": 1,
+   "note": "ok"
+  }
+ ]
+}

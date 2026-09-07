@@ -1,0 +1,58 @@
+{
+ "Oracle_gptoss120b": {
+  "n": 158,
+  "NW": 68.4,
+  "Del": 0.0,
+  "Nar": 20.9,
+  "scaffold": 10.8
+ },
+ "A_gptoss120b": {
+  "n": 39,
+  "NW": 89.7,
+  "Del": 0.0,
+  "Nar": 10.3,
+  "scaffold": 0.0
+ },
+ "H_gptoss120b": {
+  "n": 37,
+  "NW": 89.2,
+  "Del": 0.0,
+  "Nar": 0.0,
+  "scaffold": 10.8
+ },
+ "M_gptoss120b": {
+  "n": 30,
+  "NW": 93.3,
+  "Del": 0.0,
+  "Nar": 6.7,
+  "scaffold": 0.0
+ },
+ "G_gptoss120b": {
+  "n": 1,
+  "NW": 100.0,
+  "Del": 0.0,
+  "Nar": 0.0,
+  "scaffold": 0.0
+ },
+ "A_claude": {
+  "n": 16,
+  "NW": 18.8,
+  "Del": 0.0,
+  "Nar": 25.0,
+  "scaffold": 56.2
+ },
+ "H_claude": {
+  "n": 16,
+  "NW": 56.2,
+  "Del": 0.0,
+  "Nar": 25.0,
+  "scaffold": 18.8
+ },
+ "M_claude": {
+  "n": 11,
+  "NW": 45.5,
+  "Del": 0.0,
+  "Nar": 27.3,
+  "scaffold": 27.3
+ }
+}

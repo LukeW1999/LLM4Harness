@@ -7,7 +7,7 @@ Pinned versions of everything needed to reproduce the experiments. Recorded
 
 | Machine | Spec |
 |---------|------|
-| **Compute server** (Alibaba ECS) | 8 vCPU Intel Xeon Platinum (4 cores x 2 threads/core), 14 GiB RAM, 40 GB disk, Ubuntu 24.04.4 LTS. Billing in stop-mode (data preserved across stops; **public IP may change on restart**). All CBMC oracle / cross-verify / mutant-generation runs ran here. |
+| **Compute server** (Alibaba ECS) | 8 vCPU Intel Xeon Platinum (4 cores x 2 threads/core), 14 GiB RAM, 40 GB disk, Ubuntu 24.04.4 LTS. Billing in stop-mode (data preserved across stops; **public IP may change on restart**). All CBMC oracle / cross-verify / mutant-generation runs ran here, under both CBMC builds. |
 | **Local workstation** | WSL2 Ubuntu on Windows; CBMC 6.8.0; the canonical repo and the `aws-c-common` source tree live here. |
 
 ### How the experiments were run
@@ -20,9 +20,22 @@ Pinned versions of everything needed to reproduce the experiments. Recorded
 
 | Tool   | Version          | Role                                              |
 |--------|------------------|---------------------------------------------------|
-| CBMC   | **5.95.1**       | primary model checker (oracle + cross-verify)     |
-| ESBMC  | **8.3.0**        | secondary checker (RQ2 robustness, `esbmc_runner`)|
+| CBMC   | **6.4.0**        | primary model checker for every number in the paper (the version aws-c-common's own CI proofs run) |
+| CBMC   | 5.95.1           | the earlier sweep; retained as the version-sensitivity comparison (`*_640.json` records both verdicts per mutant) |
+| ESBMC  | **8.3.0**        | secondary checker (cross-engine corroboration, `esbmc_runner`) |
 | Python | **3.12** (3.12.3)| all scripts                                       |
+
+### Which CBMC produced which number
+
+The paper pins **CBMC 6.4.0**. The original sweep ran under 5.95.1, and every
+version-dependent result was recomputed under 6.4.0 by the `scripts/*_640.py`
+re-runs into `evaluation/*_640.json`; those files carry both verdicts per mutant,
+so the migration is auditable rather than a replacement. The shared GT-fail
+denominator moves 370 -> 397 (27 mutants go UNKNOWN -> FAIL, none FAIL -> other).
+`scripts/paper_numbers_640.py` audits the paper against the 6.4.0 artifacts;
+`scripts/paper_numbers.py` still audits the superseded 5.95.1 analysis.
+A third build (CBMC 6.8.0, `evaluation/consistency_68_A_gptoss120b.json`) agrees
+with 6.4.0 on the silenced set.
 
 Python packages: see `requirements.txt`.
 

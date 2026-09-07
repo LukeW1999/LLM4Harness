@@ -9,11 +9,42 @@ each claimed value, and prints `OK` or `MISMATCH` against the hardcoded paper cl
 
 ```bash
 cd experiment_aws_cbmc
-python3 scripts/paper_numbers.py      # recomputes & checks every paper number
+python3 scripts/paper_numbers_640.py   # the submitted numbers (CBMC 6.4.0)
+python3 scripts/paper_numbers.py       # the superseded 5.95.1 sweep
 ```
 
-As of 2026-06-16: 181/183 OK; the 2 non-OK are path-portability bugs (server-only
-ground-truth proofs), **not** numeric errors — see task #49 / `ENVIRONMENT.md`.
+The paper pins **CBMC 6.4.0**, so `paper_numbers_640.py` is the registry that
+audits it: it reads the `evaluation/*_640.json` re-runs and checks 132 numbers,
+0 mismatch (denominator 397). `paper_numbers.py` audits the earlier CBMC 5.95.1
+analysis (denominator 370) and is kept for the version-sensitivity comparison;
+as of 2026-06-16 it reports 181/183 OK, the 2 non-OK being path-portability bugs
+on server-only ground-truth proofs, **not** numeric errors (task #49 /
+`ENVIRONMENT.md`).
+
+### The 6.4.0 re-run
+
+Each `scripts/<x>_640.py` recomputes one analysis under CBMC 6.4.0 and writes
+`evaluation/<x>_640.json`, recording the 5.95.1 verdict alongside the new one:
+
+| Script | Recomputes |
+|---|---|
+| `gtfail_640.py` | GT verdicts on all 1,233 mutants; the shared GT-fail set (370 -> 397) |
+| `silenced_640.py` | per-condition silenced / caught / unresolved counts |
+| `passrate_640.py`, `k_passrate_640.py` | verifier pass rate per condition |
+| `behavioural_kg_640.py` | rename-immune never-written re-check (263/265) |
+| `cloze_640.py` | CBMC-scored cloze fills (27/28 live attempts) |
+| `s2n_640.py`, `s2n_relax_640.py` | s2n-tls replication and its assume-relaxation cross-check |
+| `greenfield_640.py`, `greenfield_full_640.py` | self-built-reference recall |
+| `probe_gmr_640.py`, `multirun_640.py` | ablations and run-to-run repeats |
+| `kllama_oracle_640.py` | SpecFirst and the Llama replication |
+| `reverse_640.py`, `inject_640.py` | reverse cell; assertion-injection check |
+
+`scripts/build_adjudicated_mechanism.py` materialises the mechanism labels behind
+the paper's Table 2 into `evaluation/adjudicated_mechanism.json`: it starts from
+the automated `attribution_feedback_loop_*.json` and applies the three documented
+corrections from `ADJUDICATION_attribution_v2.md` (AOC on an empty GT-assertion
+set routes to unresolved; the Oracle control runs under GT's own assume envelope
+so the envelope detector cannot fire for it; one adjudicated KG-over-AOC group).
 
 ---
 

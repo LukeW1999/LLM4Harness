@@ -1,0 +1,81 @@
+{
+ "source": "attribution_feedback_loop_*.json corrected by ADJUDICATION_attribution_v2.md",
+ "labels_key": {
+  "NW": "never-written",
+  "Del": "deleted-to-pass",
+  "Nar": "narrowed-away",
+  "Unres": "unresolved (scaffold-level)"
+ },
+ "corrections": [
+  "M_gptoss120b/aws_byte_buf_eq_c_str: Nar -> NW (catching assertion never written; KG>AOC)",
+  "M_gptoss120b/aws_string_destroy: Nar -> Unres (no GT assertion parsed)",
+  "Oracle_gptoss120b/aws_array_list_swap: Nar -> NW (runs under GT's own assume envelope)",
+  "Oracle_gptoss120b/aws_byte_buf_clean_up_secure: Nar -> NW (runs under GT's own assume envelope)",
+  "Oracle_gptoss120b/aws_byte_buf_from_array: Nar -> NW (runs under GT's own assume envelope)",
+  "Oracle_gptoss120b/aws_byte_cursor_from_array: Nar -> NW (runs under GT's own assume envelope)"
+ ],
+ "claude_note": "Claude groups carry the blind manual adjudication verbatim; silenced counts are identical under CBMC 5.95.1 and 6.4.0 (16/16/11), so the group labels carry over unchanged.",
+ "labels": {
+  "A_gptoss120b": {
+   "aws_byte_buf_cat": "NW",
+   "aws_byte_buf_clean_up": "Nar",
+   "aws_nospec_mask": "NW",
+   "aws_ptr_eq": "NW"
+  },
+  "H_gptoss120b": {
+   "aws_byte_buf_cat": "NW",
+   "aws_byte_buf_clean_up": "Unres"
+  },
+  "M_gptoss120b": {
+   "aws_byte_buf_advance": "NW",
+   "aws_byte_buf_cat": "NW",
+   "aws_byte_buf_eq_c_str": "NW",
+   "aws_byte_buf_from_c_str": "NW",
+   "aws_byte_buf_init_copy": "NW",
+   "aws_nospec_mask": "NW",
+   "aws_ptr_eq": "NW",
+   "aws_string_destroy": "Unres"
+  },
+  "G_gptoss120b": {
+   "aws_byte_buf_cat": "NW"
+  },
+  "Oracle_gptoss120b": {
+   "aws_array_list_swap": "NW",
+   "aws_byte_buf_advance": "NW",
+   "aws_byte_buf_cat": "NW",
+   "aws_byte_buf_clean_up": "NW",
+   "aws_byte_buf_clean_up_secure": "NW",
+   "aws_byte_buf_from_array": "NW",
+   "aws_byte_buf_from_empty_array": "NW",
+   "aws_byte_buf_init": "Unres",
+   "aws_byte_buf_secure_zero": "NW",
+   "aws_byte_cursor_from_array": "NW",
+   "aws_nospec_mask": "NW",
+   "aws_ptr_eq": "NW",
+   "aws_ring_buffer_buf_belongs_to_pool": "NW",
+   "aws_string_new_from_c_str": "NW"
+  },
+  "A_claude": {
+   "aws_byte_buf_cat": "NW",
+   "aws_byte_buf_from_array": "NW",
+   "aws_byte_buf_from_empty_array": "NW",
+   "aws_byte_buf_reset": "NW",
+   "aws_byte_buf_secure_zero": "NW",
+   "aws_ring_buffer_buf_belongs_to_pool": "Del"
+  },
+  "H_claude": {
+   "aws_byte_buf_cat": "NW",
+   "aws_byte_buf_eq_c_str": "NW",
+   "aws_byte_buf_reset": "NW",
+   "aws_byte_buf_from_empty_array": "Nar",
+   "aws_string_destroy": "Unres"
+  },
+  "M_claude": {
+   "aws_byte_buf_cat": "NW",
+   "aws_byte_buf_reset": "NW",
+   "aws_byte_buf_from_empty_array": "NW",
+   "aws_string_eq_byte_cursor": "NW",
+   "aws_string_eq_byte_buf": "NW"
+  }
+ }
+}

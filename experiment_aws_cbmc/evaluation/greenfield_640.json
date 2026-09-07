@@ -1,0 +1,9 @@
+{
+ "cbmc": "6.4.0",
+ "pools": 14,
+ "held_out_silenced_total": 363,
+ "recovered": 344,
+ "recovery_pct": 94.8,
+ "paper_5.95": 95.1,
+ "elapsed_s": 2724
+}

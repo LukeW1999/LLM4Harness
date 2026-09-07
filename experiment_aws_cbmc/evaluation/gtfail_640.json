@@ -1,0 +1,7419 @@
+{
+ "summary": {
+  "cbmc": "6.4.0",
+  "config": "checks off (--no-standard-checks --no-unwinding-assertions)",
+  "gtfail_595": 370,
+  "gtfail_640": 397,
+  "both_fail": 370,
+  "only595": 0,
+  "only640": 27,
+  "transitions_595_to_640": {
+   "FAIL->FAIL": 370,
+   "SUCCESS->SUCCESS": 694,
+   "UNKNOWN->FAIL": 27,
+   "UNKNOWN->SUCCESS": 14,
+   "UNKNOWN->UNKNOWN": 128
+  },
+  "elapsed_s": 830
+ },
+ "verdicts": [
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0022",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0011",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0031",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0026",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0021",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0028",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0055",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0003",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0027",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0020",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0016",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0050",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0019",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0010",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0065",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0062",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0067",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0057",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0061",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_get_at_ptr",
+   "mutant": "mutant_0066",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0007",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0002",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0018",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0010",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0006",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0014",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0027",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0015",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0019",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0020",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0024",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0034",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0032",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0023",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0030",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0042",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0031",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0021",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0041",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0035",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0040",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0087",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0090",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0100",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0085",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0077",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0046",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0036",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0008",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0097",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0025",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0086",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0028",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0103",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0029",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0030",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0031",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0032",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0098",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0034",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0107",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0035",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0099",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0036",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0037",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0048",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0038",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0049",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0106",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0050",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0108",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0060",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0051",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0063",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0061",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0049",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0062",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0064",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0068",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0069",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0070",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0071",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0072",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0109",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0076",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0073",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0078",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0079",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0080",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0087",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0097",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0081",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0084",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0091",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0094",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0098",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0106",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0109",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0001",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0003",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0004",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0007",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0009",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0008",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0014",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0010",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0011",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0012",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0016",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0017",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0019",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0020",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_append",
+   "mutant": "mutant_0021",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0020",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0024",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0021",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0028",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0026",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0027",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0010",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0013",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0030",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0003",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0031",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0029",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0022",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0044",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0032",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0043",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0048",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0049",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0057",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0055",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0025",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0061",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0060",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0052",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0059",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0062",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0053",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0066",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0073",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0063",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0002",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0006",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0007",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0065",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0008",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0009",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0072",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0068",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0069",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0070",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0087",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0071",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0027",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0032",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0074",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0064",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0080",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0037",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0036",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0038",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0040",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0039",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0043",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0044",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0046",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0081",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0047",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0048",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0051",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up_secure",
+   "mutant": "mutant_0004",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0057",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_clean_up_secure",
+   "mutant": "mutant_0007",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_clean_up_secure",
+   "mutant": "mutant_0010",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_clean_up_secure",
+   "mutant": "mutant_0020",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0084",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0009",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0013",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0014",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0015",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0019",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0022",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0026",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0007",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0008",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0010",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0016",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0019",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0004",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0028",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0025",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0020",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0014",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0015",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0016",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0017",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0018",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0020",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0022",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0025",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0027",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0038",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0031",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0035",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0049",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0046",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0041",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0003",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0004",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0006",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0013",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0019",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0018",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0022",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0020",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0021",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0025",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0029",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0027",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0031",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0036",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0039",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0043",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0006",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0047",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0016",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0017",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0022",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0019",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0033",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0029",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0025",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0018",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0027",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0035",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0020",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0036",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0037",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0038",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0041",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0048",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0010",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0014",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0044",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0017",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0015",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0052",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0007",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0055",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0016",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0018",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0019",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0020",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0026",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0027",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0025",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0024",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0028",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0029",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0032",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0031",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0030",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0033",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0037",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0035",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0036",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0038",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0039",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0040",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0047",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0049",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0052",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0060",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0048",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0069",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0041",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0042",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0075",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0050",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0076",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0072",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0077",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0079",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0082",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0085",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0088",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0095",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0092",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0008",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0011",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0006",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0007",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0033",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0032",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0015",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0025",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0038",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0029",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0039",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0040",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0047",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0051",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0057",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0072",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0099",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0075",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0090",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0101",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0089",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0088",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0091",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0094",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0093",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0095",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0100",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0005",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0109",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0008",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0010",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0112",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0016",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0014",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0012",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0023",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0018",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0017",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0015",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0022",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0025",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0030",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0028",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0029",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0036",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0051",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0039",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0072",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0073",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0058",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0074",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0075",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0066",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0076",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0078",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0080",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0090",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0085",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0083",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0093",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0091",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0089",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0094",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0096",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0098",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0099",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0095",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0100",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0097",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0101",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0102",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0104",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0105",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0107",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0106",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0108",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0112",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0115",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0116",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0113",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0130",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0135",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0003",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0118",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0004",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0126",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0008",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0013",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0014",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0015",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0018",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0022",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0003",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0029",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0019",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0026",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0048",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0043",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0051",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0055",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0056",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0061",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0064",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0067",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0086",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0082",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0089",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0093",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0095",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0099",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0094",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0103",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0106",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0112",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0126",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0127",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0128",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0130",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0129",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0131",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0136",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0144",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0139",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0140",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0148",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0157",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0166",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0146",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0167",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0169",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0176",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0170",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0171",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0172",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0181",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0180",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0185",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0216",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0219",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0212",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0188",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0224",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0225",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0235",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0232",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0201",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0238",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0244",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0241",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0239",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0240",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0242",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0247",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0249",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0255",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0251",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0256",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0260",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0257",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0258",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0259",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0261",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0262",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0263",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0264",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0265",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0266",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0267",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0272",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0269",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0270",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0273",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0274",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0271",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0280",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0278",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0281",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0282",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0284",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0292",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0296",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0308",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0302",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0305",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0311",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0313",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0314",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0310",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0309",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0315",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0318",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0316",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0322",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0317",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0324",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0328",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0329",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0337",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0325",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0330",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0340",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0360",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0371",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0373",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0372",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0363",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0374",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0375",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0399",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0385",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0386",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0403",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0402",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0400",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0404",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0406",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0411",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0412",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0414",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0413",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0407",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0408",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0415",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0420",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0418",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0421",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0425",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0426",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0417",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0427",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0424",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0428",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0430",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0429",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0431",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0435",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0432",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0433",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0436",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0437",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0443",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0444",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0446",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0440",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0445",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0451",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0448",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0476",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0452",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0447",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0455",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0454",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0453",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0472",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0459",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0477",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0483",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0470",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0482",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0478",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0458",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0003",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0486",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0004",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0011",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0008",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0007",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0488",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0010",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0487",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0489",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0015",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0016",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0014",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0017",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0024",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0022",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0023",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0025",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_advance",
+   "mutant": "mutant_0018",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0009",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0015",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0013",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0019",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0014",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0026",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0022",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0009",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0013",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0014",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0022",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0015",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0008",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0010",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0007",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0026",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0019",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0020",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0016",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0025",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0019",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0028",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0003",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0004",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0008",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0014",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0007",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0015",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0016",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0042",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0018",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0046",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0025",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0053",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0058",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0050",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0059",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0000",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0003",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0001",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0004",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0010",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0009",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0011",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0015",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0008",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0014",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0016",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0007",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0019",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0020",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0022",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0017",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_buf",
+   "mutant": "mutant_0023",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0014",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0015",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0016",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0017",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0018",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0026",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0029",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0000",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0021",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0001",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0004",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0003",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0007",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0008",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0009",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0011",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0010",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0012",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0015",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0017",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0016",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0014",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0018",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0022",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0024",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0020",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0023",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0019",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0021",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0026",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0027",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0028",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0025",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0031",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0030",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0032",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0029",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0033",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0034",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0037",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0036",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0035",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0039",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0040",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0038",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0045",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0043",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0046",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0041",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0042",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0044",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0048",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0047",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0049",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0050",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0051",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0052",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0056",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0055",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0053",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0057",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0058",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0061",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0060",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0063",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0059",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0062",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0064",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0065",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0066",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0067",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0068",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0069",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0003",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0005",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0004",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0006",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0071",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_byte_cursor_from_string",
+   "mutant": "mutant_0070",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0010",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0012",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0017",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0020",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0031",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0014",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0029",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0028",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0035",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0038",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0040",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0044",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0039",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0041",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0043",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0045",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0036",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0046",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0047",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0050",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0052",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0048",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0051",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0049",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0053",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0055",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0059",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0057",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0056",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0058",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0061",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0060",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0062",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0063",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0065",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0071",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0076",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0078",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0077",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0080",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0066",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0087",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0079",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0081",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0082",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0089",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0090",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0083",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0088",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0094",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0101",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0100",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0103",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0105",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0099",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0102",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0106",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0110",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0108",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0005",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0004",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0007",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0104",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0006",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0008",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0006",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0020",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0014",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0005",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0007",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0010",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0028",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0044",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0051",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0041",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0040",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0032",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0054",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0048",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0017",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0055",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0058",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0056",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0057",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0067",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0064",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0077",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0078",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0085",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0059",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0086",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0080",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0063",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0065",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0087",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0081",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0088",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0089",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0101",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0098",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0109",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0122",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0100",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0118",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0090",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0129",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0119",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0126",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0102",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0099",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0124",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0132",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0113",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0135",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0134",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0141",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0133",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0136",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0137",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0140",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0146",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0143",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0150",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0144",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0152",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0151",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0142",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0154",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0153",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0165",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0167",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0157",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0168",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0166",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0169",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0188",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0184",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0190",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0192",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0185",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0201",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0176",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0179",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0203",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0195",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0204",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0206",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0213",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0205",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0207",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0216",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0215",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0237",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0232",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0214",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0240",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0225",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0233",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0243",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0235",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0251",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0288",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0258",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0254",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0294",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0296",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0293",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0295",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0298",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0303",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0304",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0305",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0297",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0310",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0312",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0313",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0314",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0318",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0327",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0317",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0320",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0319",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0315",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0329",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0328",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0330",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0009",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ring_buffer_acquire",
+   "mutant": "mutant_0331",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0005",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0013",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0006",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0024",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0017",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ring_buffer_clean_up",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0008",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0007",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_clean_up",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0014",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0010",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_clean_up",
+   "mutant": "mutant_0010",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ring_buffer_clean_up",
+   "mutant": "mutant_0007",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0020",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0015",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0016",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0018",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0020",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0017",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0019",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0027",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0024",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0028",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0025",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0026",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0032",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0033",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0037",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0031",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0029",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0030",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0044",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0049",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0050",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0055",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0057",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0070",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0060",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0065",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0071",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0048",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0076",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0085",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0088",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0075",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0077",
+   "gt640": "FAIL",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0092",
+   "gt640": "SUCCESS",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_clean_up",
+   "mutant": "mutant_0021",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_ring_buffer_clean_up",
+   "mutant": "mutant_0011",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ring_buffer_release",
+   "mutant": "mutant_0009",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_clean_up",
+   "mutant": "mutant_0030",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_bytes",
+   "mutant": "mutant_0003",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ring_buffer_release",
+   "mutant": "mutant_0015",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_string_bytes",
+   "mutant": "mutant_0004",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ring_buffer_release",
+   "mutant": "mutant_0024",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_release",
+   "mutant": "mutant_0031",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_release",
+   "mutant": "mutant_0016",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_release",
+   "mutant": "mutant_0014",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_string_bytes",
+   "mutant": "mutant_0007",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_ring_buffer_release",
+   "mutant": "mutant_0006",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_ring_buffer_release",
+   "mutant": "mutant_0035",
+   "gt640": "UNKNOWN",
+   "gt595": "UNKNOWN"
+  },
+  {
+   "func": "aws_string_bytes",
+   "mutant": "mutant_0008",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_bytes",
+   "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_bytes",
+   "mutant": "mutant_0015",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0003",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0004",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0013",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0019",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0033",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0032",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0018",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0020",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0022",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0041",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0042",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0003",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0004",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0017",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0006",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0016",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0026",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0030",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0017",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0036",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0037",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0018",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0046",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0031",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0032",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0047",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0004",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0002",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0011",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0008",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0019",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0032",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0018",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0022",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0035",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0026",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0024",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0033",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0041",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0036",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0037",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0042",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0043",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0050",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0051",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0047",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0052",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0053",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0057",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0055",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0061",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0060",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0066",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0065",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0058",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0068",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0059",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0071",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0069",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0083",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0090",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0092",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0088",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0004",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq",
+   "mutant": "mutant_0091",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0012",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0016",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0017",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0010",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0031",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0020",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0030",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0021",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0023",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0034",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0038",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0036",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0045",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0048",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0047",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0044",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0049",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0050",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0051",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0052",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0053",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0061",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0060",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0055",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0062",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0065",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0081",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0063",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0077",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0083",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0082",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0084",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0087",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0086",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0085",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0097",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0088",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0092",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0096",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0089",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0091",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0098",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0099",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0102",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0004",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0010",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0011",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0012",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0016",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0021",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0034",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0017",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0030",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0023",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0020",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0031",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0036",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0044",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0045",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0047",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0038",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0049",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0050",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0048",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0051",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0055",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0052",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0053",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0061",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0060",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0062",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0081",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0065",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0063",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0077",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0082",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0083",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0085",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0086",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0084",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0088",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0087",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0096",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0089",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0092",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0098",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0091",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0097",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0099",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0102",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0009",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0004",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0011",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0005",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0008",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0020",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0019",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0018",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0021",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0022",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0024",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0026",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0027",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0029",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0025",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0033",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0028",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0037",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0035",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0039",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0036",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0051",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0055",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0054",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0057",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0058",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0061",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0060",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0059",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0062",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0063",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0065",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0064",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0070",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0072",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0071",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0075",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0073",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0087",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0094",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0093",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_new_from_c_str",
+   "mutant": "mutant_0008",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0095",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  },
+  {
+   "func": "aws_string_new_from_c_str",
+   "mutant": "mutant_0015",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_new_from_c_str",
+   "mutant": "mutant_0011",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_new_from_c_str",
+   "mutant": "mutant_0013",
+   "gt640": "SUCCESS",
+   "gt595": "SUCCESS"
+  },
+  {
+   "func": "aws_string_new_from_c_str",
+   "mutant": "mutant_0035",
+   "gt640": "FAIL",
+   "gt595": "FAIL"
+  }
+ ]
+}

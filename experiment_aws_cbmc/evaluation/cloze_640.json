@@ -1,0 +1,282 @@
+{
+ "cbmc": "6.4.0",
+ "total_fills": 28,
+ "recovered": 27,
+ "paper": "27/28",
+ "detail": [
+  {
+   "file": "cloze_A_gptoss120b_openrouter.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_sil": 33,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_gptoss120b_openrouter.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_sil": 33,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_gptoss120b_openrouter.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_sil": 33,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_gptoss120b_openrouter.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_sil": 33,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_gptoss120b_openrouter.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_sil": 33,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_gptoss120b_openrouter.json",
+   "func": "aws_ptr_eq",
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_sil": 2,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_gptoss120b_claude.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_sil": 33,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_gptoss120b_claude.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 28,
+   "n_sil": 33,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_gptoss120b_claude.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_sil": 33,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_gptoss120b_claude.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_sil": 33,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_gptoss120b_claude.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 33,
+   "n_sil": 33,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_gptoss120b_claude.json",
+   "func": "aws_ptr_eq",
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_sil": 2,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 3,
+   "n_sil": 3,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 0,
+   "n_sil": 3,
+   "recovered": false
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 3,
+   "n_sil": 3,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 3,
+   "n_sil": 3,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_byte_buf_cat",
+   "orig": "SUCCESS",
+   "catches": 3,
+   "n_sil": 3,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_byte_buf_from_array",
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_sil": 2,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_byte_buf_from_array",
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_sil": 2,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_byte_buf_from_empty_array",
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_sil": 2,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_byte_buf_reset",
+   "orig": "SUCCESS",
+   "catches": 3,
+   "n_sil": 3,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_byte_buf_reset",
+   "orig": "SUCCESS",
+   "catches": 3,
+   "n_sil": 3,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_byte_buf_reset",
+   "orig": "SUCCESS",
+   "catches": 3,
+   "n_sil": 3,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_byte_buf_secure_zero",
+   "orig": "SUCCESS",
+   "catches": 4,
+   "n_sil": 4,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_sil": 2,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_sil": 2,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_sil": 2,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_claude_claude.json",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "orig": "SUCCESS",
+   "catches": 2,
+   "n_sil": 2,
+   "recovered": true
+  },
+  {
+   "file": "cloze_A_gptoss120b_openrouter.json",
+   "func": "aws_nospec_mask",
+   "orig": "SUCCESS",
+   "catches": 0,
+   "n_sil": 0,
+   "recovered": false
+  },
+  {
+   "file": "cloze_A_gptoss120b_openrouter.json",
+   "func": "aws_nospec_mask",
+   "orig": "SUCCESS",
+   "catches": 0,
+   "n_sil": 0,
+   "recovered": false
+  },
+  {
+   "file": "cloze_A_gptoss120b_openrouter.json",
+   "func": "aws_nospec_mask",
+   "orig": "SUCCESS",
+   "catches": 0,
+   "n_sil": 0,
+   "recovered": false
+  },
+  {
+   "file": "cloze_A_gptoss120b_claude.json",
+   "func": "aws_nospec_mask",
+   "orig": "SUCCESS",
+   "catches": 0,
+   "n_sil": 0,
+   "recovered": false
+  },
+  {
+   "file": "cloze_A_gptoss120b_claude.json",
+   "func": "aws_nospec_mask",
+   "orig": "SUCCESS",
+   "catches": 0,
+   "n_sil": 0,
+   "recovered": false
+  },
+  {
+   "file": "cloze_A_gptoss120b_claude.json",
+   "func": "aws_nospec_mask",
+   "orig": "SUCCESS",
+   "catches": 0,
+   "n_sil": 0,
+   "recovered": false
+  }
+ ],
+ "dead_no_silenced_mutant": 6,
+ "note": "attempts whose condition/function has no silenced mutant under 6.4.0 cannot be scored and are excluded (all aws_nospec_mask)"
+}

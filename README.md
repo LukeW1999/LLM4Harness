@@ -26,7 +26,7 @@ proofs). See the workflow figure in `paper/`.
 
 ## Corpora
 
-- **aws-c-common** — 83 functions, 238 expert harnesses, 1,233 mutants (370 GT-detected).
+- **aws-c-common** — 83 functions, 238 expert harnesses, 1,233 mutants (397 GT-detected under the pinned CBMC 6.4.0; 370 under the earlier 5.95.1 sweep).
 - **s2n-tls** — 25 `stuffer` functions, 253 GT-detected mutants (cross-corpus replication).
 
 ## Models
@@ -62,7 +62,8 @@ preconditions (negative control).
 ## Reproducibility
 
 Every number in the paper is recomputed from released artifacts by an audit
-script (`scripts/paper_numbers.py`, 0 mismatch). Open-model runs use the
+script (`scripts/paper_numbers_640.py`, 132 numbers, 0 mismatch, CBMC 6.4.0;
+`scripts/paper_numbers.py` still audits the superseded 5.95.1 sweep). Open-model runs use the
 OpenRouter API; the precision-mixing caveat is documented, and the headline is
 corroborated on the Anthropic-served Claude and a pinned bf16 re-run.
 
@@ -91,5 +92,8 @@ corroborated on the Anthropic-served Claude and a pinned bf16 re-run.
   Clopper–Pearson bounds on the SAC zeros; Sil/GT-among-compilable; pass-rate vs
   recall and mechanism-attribution figures; positioning against RLVR
   reward-hacking (Helff et al. 2026).
+- **CBMC 6.4.0 migration** — every version-dependent number recomputed under the
+  version aws-c-common's CI proofs run (`scripts/*_640.py`); GT-fail denominator
+  370 -> 397, audited by `scripts/paper_numbers_640.py` (132 numbers, 0 mismatch).
 - *In progress* — pinned-precision re-run of all eight RQ1 conditions to confirm
   the pass-rate/recall inversion is precision-robust.

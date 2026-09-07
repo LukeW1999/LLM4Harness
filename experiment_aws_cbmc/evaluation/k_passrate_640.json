@@ -1,0 +1,8 @@
+{
+ "cond": "K_gptoss120b",
+ "N": 83,
+ "pass": 62,
+ "pass_pct_640": 74.7,
+ "paper_pass_pct": 81.9,
+ "elapsed_s": 215
+}
