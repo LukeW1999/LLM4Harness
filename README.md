@@ -67,6 +67,25 @@ script (`scripts/paper_numbers_640.py`, 132 numbers, 0 mismatch, CBMC 6.4.0;
 OpenRouter API; the precision-mixing caveat is documented, and the headline is
 corroborated on the Anthropic-served Claude and a pinned bf16 re-run.
 
+**The pinned checker is CBMC 6.4.0**, the version aws-c-common's own CI proofs
+run, and no distribution packages it. The audit itself reads the released JSONs
+and needs no checker; regenerating them does:
+
+```bash
+cd experiment_aws_cbmc
+./scripts/get_cbmc640.sh                                    # download, verify sha256, unpack
+export CBMC640=$HOME/tools/cbmc-6.4.0/extracted/usr/bin/cbmc
+python3 scripts/gtfail_640.py                               # or any other scripts/*_640.py
+```
+
+The script unpacks rather than installs, so a system CBMC is left alone; every
+`*_640.py` reads `$CBMC640` and falls back to `cbmc` on PATH, which will give
+the wrong verdicts if that is a different version. The earlier CBMC 5.95.1
+verdict is recorded alongside the 6.4.0 one in each `evaluation/*_640.json`, so
+the version migration is auditable rather than a replacement (the shared GT-fail
+denominator moves 370 → 397). Verified on a second machine with a freshly
+fetched binary: `k_passrate_640.py` reproduces its released JSON exactly.
+
 ## Repository layout
 
 - `experiment_aws_cbmc/` — Study 1: `dataset/`, `scripts/`, `prompts/`,
