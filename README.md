@@ -84,7 +84,10 @@ the wrong verdicts if that is a different version. The earlier CBMC 5.95.1
 verdict is recorded alongside the 6.4.0 one in each `evaluation/*_640.json`, so
 the version migration is auditable rather than a replacement (the shared GT-fail
 denominator moves 370 → 397). Verified on a second machine with a freshly
-fetched binary: `k_passrate_640.py` reproduces its released JSON exactly.
+fetched binary: `gtfail_640.py` rebuilds the GT-fail set from all 1,233 mutants
+with **every per-mutant verdict identical** to the released JSON (397 GT-fail,
+370 shared with the 5.95.1 sweep, the same 27 `UNKNOWN -> FAIL` transitions), and
+`k_passrate_640.py` likewise reproduces its JSON exactly.
 
 ## Repository layout
 
