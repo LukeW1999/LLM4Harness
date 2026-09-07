@@ -1,0 +1,272 @@
+[
+ {
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_byte_buf_cat",
+  "n": 33,
+  "label": "NW"
+ },
+ {
+  "cond": "M_claude",
+  "func": "aws_byte_buf_cat",
+  "n": 4,
+  "label": "NW"
+ },
+ {
+  "cond": "H_claude",
+  "func": "aws_byte_buf_from_empty_array",
+  "n": 2,
+  "label": "Nar"
+ },
+ {
+  "cond": "A_claude",
+  "func": "aws_byte_buf_secure_zero",
+  "n": 4,
+  "label": "NW"
+ },
+ {
+  "cond": "A_claude",
+  "func": "aws_ring_buffer_buf_belongs_to_pool",
+  "n": 2,
+  "label": "Del"
+ },
+ {
+  "cond": "A_gptoss120b",
+  "func": "aws_nospec_mask",
+  "n": 2,
+  "label": "NW"
+ },
+ {
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_ring_buffer_buf_belongs_to_pool",
+  "n": 2,
+  "label": "NW"
+ },
+ {
+  "cond": "M_gptoss120b",
+  "func": "aws_byte_buf_eq_c_str",
+  "n": 1,
+  "label": "NW"
+ },
+ {
+  "cond": "M_claude",
+  "func": "aws_byte_buf_from_empty_array",
+  "n": 2,
+  "label": "NW"
+ },
+ {
+  "cond": "M_claude",
+  "func": "aws_byte_buf_reset",
+  "n": 3,
+  "label": "NW"
+ },
+ {
+  "cond": "H_gptoss120b",
+  "func": "aws_byte_buf_cat",
+  "n": 33,
+  "label": "NW"
+ },
+ {
+  "cond": "M_gptoss120b",
+  "func": "aws_byte_buf_from_c_str",
+  "n": 3,
+  "label": "NW"
+ },
+ {
+  "cond": "A_claude",
+  "func": "aws_byte_buf_from_array",
+  "n": 2,
+  "label": "NW"
+ },
+ {
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_byte_buf_clean_up_secure",
+  "n": 1,
+  "label": "NW"
+ },
+ {
+  "cond": "M_gptoss120b",
+  "func": "aws_byte_buf_advance",
+  "n": 15,
+  "label": "NW"
+ },
+ {
+  "cond": "M_claude",
+  "func": "aws_string_eq_byte_buf",
+  "n": 1,
+  "label": "NW"
+ },
+ {
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_byte_buf_from_empty_array",
+  "n": 3,
+  "label": "NW"
+ },
+ {
+  "cond": "H_gptoss120b",
+  "func": "aws_byte_buf_clean_up",
+  "n": 4,
+  "label": "Unres"
+ },
+ {
+  "cond": "H_claude",
+  "func": "aws_byte_buf_reset",
+  "n": 3,
+  "label": "NW"
+ },
+ {
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_byte_buf_from_array",
+  "n": 2,
+  "label": "NW"
+ },
+ {
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_byte_cursor_from_array",
+  "n": 5,
+  "label": "NW"
+ },
+ {
+  "cond": "A_gptoss120b",
+  "func": "aws_ptr_eq",
+  "n": 2,
+  "label": "NW"
+ },
+ {
+  "cond": "A_gptoss120b",
+  "func": "aws_byte_buf_clean_up",
+  "n": 4,
+  "label": "Nar"
+ },
+ {
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_byte_buf_secure_zero",
+  "n": 5,
+  "label": "NW"
+ },
+ {
+  "cond": "H_claude",
+  "func": "aws_byte_buf_eq_c_str",
+  "n": 1,
+  "label": "NW"
+ },
+ {
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_nospec_mask",
+  "n": 35,
+  "label": "NW"
+ },
+ {
+  "cond": "A_claude",
+  "func": "aws_byte_buf_cat",
+  "n": 3,
+  "label": "NW"
+ },
+ {
+  "cond": "H_claude",
+  "func": "aws_byte_buf_cat",
+  "n": 9,
+  "label": "NW"
+ },
+ {
+  "cond": "A_gptoss120b",
+  "func": "aws_byte_buf_cat",
+  "n": 33,
+  "label": "NW"
+ },
+ {
+  "cond": "M_gptoss120b",
+  "func": "aws_nospec_mask",
+  "n": 3,
+  "label": "NW"
+ },
+ {
+  "cond": "A_claude",
+  "func": "aws_byte_buf_from_empty_array",
+  "n": 2,
+  "label": "NW"
+ },
+ {
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_byte_buf_clean_up",
+  "n": 16,
+  "label": "NW"
+ },
+ {
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_byte_buf_init",
+  "n": 17,
+  "label": "Unres"
+ },
+ {
+  "cond": "M_gptoss120b",
+  "func": "aws_byte_buf_init_copy",
+  "n": 1,
+  "label": "NW"
+ },
+ {
+  "cond": "M_claude",
+  "func": "aws_string_eq_byte_cursor",
+  "n": 1,
+  "label": "NW"
+ },
+ {
+  "cond": "M_gptoss120b",
+  "func": "aws_byte_buf_cat",
+  "n": 4,
+  "label": "NW"
+ },
+ {
+  "cond": "A_claude",
+  "func": "aws_byte_buf_reset",
+  "n": 3,
+  "label": "NW"
+ },
+ {
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_byte_buf_advance",
+  "n": 11,
+  "label": "NW"
+ },
+ {
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_string_new_from_c_str",
+  "n": 1,
+  "label": "NW"
+ },
+ {
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_array_list_swap",
+  "n": 25,
+  "label": "NW"
+ },
+ {
+  "cond": "H_claude",
+  "func": "aws_string_destroy",
+  "n": 1,
+  "label": "Unres"
+ },
+ {
+  "cond": "M_gptoss120b",
+  "func": "aws_string_destroy",
+  "n": 1,
+  "label": "Unres"
+ },
+ {
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_ptr_eq",
+  "n": 2,
+  "label": "NW"
+ },
+ {
+  "cond": "M_gptoss120b",
+  "func": "aws_ptr_eq",
+  "n": 2,
+  "label": "NW"
+ },
+ {
+  "cond": "G_gptoss120b",
+  "func": "aws_byte_buf_cat",
+  "n": 1,
+  "label": "NW"
+ }
+]

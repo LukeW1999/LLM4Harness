@@ -15,13 +15,14 @@ Per-function synthesis priority (explicit):
   elif detect_aoc (all GT assertions present in final, assumes over-constrained) -> AOC
   else -> UNRESOLVED
 """
-import json, re
+import json, os, re
 from pathlib import Path
 from collections import defaultdict
 import importlib.util as u
-spec=u.spec_from_file_location("A","/root/experiment_aws_cbmc/scripts/attribution_analysis.py")
+_BASE=Path("/root/experiment_aws_cbmc") if os.path.isdir("/root/experiment_aws_cbmc") else Path(__file__).resolve().parent.parent
+spec=u.spec_from_file_location("A",str(_BASE/"scripts/attribution_analysis.py"))
 A=u.module_from_spec(spec); spec.loader.exec_module(A)
-EVAL=Path("/root/experiment_aws_cbmc/evaluation"); RES=Path("/root/experiment_aws_cbmc/results")
+EVAL=_BASE/"evaluation"; RES=_BASE/"results"
 
 def norm(s):
     s=s.strip()

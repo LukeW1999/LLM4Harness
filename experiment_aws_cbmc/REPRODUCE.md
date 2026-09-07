@@ -40,11 +40,21 @@ Each `scripts/<x>_640.py` recomputes one analysis under CBMC 6.4.0 and writes
 | `reverse_640.py`, `inject_640.py` | reverse cell; assertion-injection check |
 
 `scripts/build_adjudicated_mechanism.py` materialises the mechanism labels behind
-the paper's Table 2 into `evaluation/adjudicated_mechanism.json`: it starts from
-the automated `attribution_feedback_loop_*.json` and applies the three documented
-corrections from `ADJUDICATION_attribution_v2.md` (AOC on an empty GT-assertion
-set routes to unresolved; the Oracle control runs under GT's own assume envelope
-so the envelope detector cannot fire for it; one adjudicated KG-over-AOC group).
+the paper's Table 2 into `evaluation/adjudicated_mechanism.json` by running
+`attribution_v2.py`'s rule over every silenced (condition, function) group. The
+older `attribution_feedback_loop_*.json` dumps predate the AOC empty-set fix and
+disagree with the paper on four rows; they are kept only as history.
+
+### Re-adjudicating the mechanism labels
+
+`scripts/make_adjudication_worksheet.py` writes `adjudication/worksheet.md`, one
+blind card per silenced group carrying the raw evidence (each GT assertion with
+whether the harness ever wrote it exactly and CBMC's verdict at that iteration,
+the final assertions, the two assume envelopes) and no automated label, plus
+`adjudication/key.json`. Fill each `rating:` line with NW, Del, Nar or Unres,
+then `scripts/score_adjudication.py --rater <name>` reports agreement, Cohen's
+kappa, and the disagreements. `--sample N` produces a shorter sheet that keeps
+every non-NW group.
 
 ---
 

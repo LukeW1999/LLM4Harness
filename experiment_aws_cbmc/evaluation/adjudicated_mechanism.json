@@ -1,20 +1,13 @@
 {
- "source": "attribution_feedback_loop_*.json corrected by ADJUDICATION_attribution_v2.md",
+ "source": "attribution_v2.classify_func, run per (condition, function) silenced group",
  "labels_key": {
   "NW": "never-written",
   "Del": "deleted-to-pass",
   "Nar": "narrowed-away",
   "Unres": "unresolved (scaffold-level)"
  },
- "corrections": [
-  "M_gptoss120b/aws_byte_buf_eq_c_str: Nar -> NW (catching assertion never written; KG>AOC)",
-  "M_gptoss120b/aws_string_destroy: Nar -> Unres (no GT assertion parsed)",
-  "Oracle_gptoss120b/aws_array_list_swap: Nar -> NW (runs under GT's own assume envelope)",
-  "Oracle_gptoss120b/aws_byte_buf_clean_up_secure: Nar -> NW (runs under GT's own assume envelope)",
-  "Oracle_gptoss120b/aws_byte_buf_from_array: Nar -> NW (runs under GT's own assume envelope)",
-  "Oracle_gptoss120b/aws_byte_cursor_from_array: Nar -> NW (runs under GT's own assume envelope)"
- ],
- "claude_note": "Claude groups carry the blind manual adjudication verbatim; silenced counts are identical under CBMC 5.95.1 and 6.4.0 (16/16/11), so the group labels carry over unchanged.",
+ "validation": "ADJUDICATION_attribution_v2.md records a blind re-adjudication of all 28 groups against this rule (28/28 after the AOC empty-set fix). The re-adjudication validates the rule; the labels here are the rule's own output.",
+ "note": "Silenced counts for the Claude conditions are identical under CBMC 5.95.1 and 6.4.0 (16/16/11), so the group labels carry over unchanged.",
  "labels": {
   "A_gptoss120b": {
    "aws_byte_buf_cat": "NW",
@@ -66,16 +59,16 @@
   "H_claude": {
    "aws_byte_buf_cat": "NW",
    "aws_byte_buf_eq_c_str": "NW",
-   "aws_byte_buf_reset": "NW",
    "aws_byte_buf_from_empty_array": "Nar",
+   "aws_byte_buf_reset": "NW",
    "aws_string_destroy": "Unres"
   },
   "M_claude": {
    "aws_byte_buf_cat": "NW",
-   "aws_byte_buf_reset": "NW",
    "aws_byte_buf_from_empty_array": "NW",
-   "aws_string_eq_byte_cursor": "NW",
-   "aws_string_eq_byte_buf": "NW"
+   "aws_byte_buf_reset": "NW",
+   "aws_string_eq_byte_buf": "NW",
+   "aws_string_eq_byte_cursor": "NW"
   }
  }
 }
