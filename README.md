@@ -1,3 +1,31 @@
+# LLM4Harness — artifact for *Convergence Is Not Completeness*
+
+**This branch is the research artifact.** For what to run first, see
+[`INSTALL.md`](INSTALL.md); for badges and reusability, [`STATUS.md`](STATUS.md);
+for hardware, software and API requirements, [`REQUIREMENTS.md`](REQUIREMENTS.md).
+
+The functional claim in one command (about two minutes, no model checker, no
+network, no API key):
+
+```bash
+cd experiment_aws_cbmc && python3 scripts/paper_numbers_640.py
+#  ...
+#  132 numbers checked, 0 mismatch(es). CBMC 6.4.0, denom=397
+```
+
+Every number, table and figure in the paper is recomputed there from the
+released per-mutant verdicts. `artifact/smoke_test.sh` wraps it with a
+dependency and file-presence check.
+
+> **Anonymity.** This branch names its authors, in its git history and in its
+> development logs, and is meant for post-acceptance artifact evaluation. The
+> anonymised package for double-anonymous review is produced by
+> `artifact/make_anonymous_package.sh`, which exports without git metadata,
+> drops the development logs, scrubs personal paths and names, and refuses to
+> write the tarball if `artifact/check_anonymity.sh` still finds anything.
+
+---
+
 # LLM4Harness — Do LLMs Verify or Conform?
 
 A formal study of the **completeness** of LLM-generated CBMC proof harnesses for
