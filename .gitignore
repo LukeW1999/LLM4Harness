@@ -42,3 +42,8 @@ literature/
 .idea/
 .vscode/
 *.swp
+
+# Vendored SDK checkout and server-rescue copies (not part of the artifact)
+boto3/
+_server_rescue_*/
+*.bak_*
