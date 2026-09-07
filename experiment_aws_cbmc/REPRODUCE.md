@@ -13,6 +13,10 @@ python3 scripts/paper_numbers_640.py   # the submitted numbers (CBMC 6.4.0)
 python3 scripts/paper_numbers.py       # the superseded 5.95.1 sweep
 ```
 
+The audit reads the released JSONs, so it needs no model checker. To regenerate
+those JSONs instead, fetch the pinned CBMC first (`scripts/get_cbmc640.sh`, see
+`ENVIRONMENT.md`) and export `CBMC640`; every `scripts/*_640.py` reads it.
+
 The paper pins **CBMC 6.4.0**, so `paper_numbers_640.py` is the registry that
 audits it: it reads the `evaluation/*_640.json` re-runs and checks 132 numbers,
 0 mismatch (denominator 397). `paper_numbers.py` audits the earlier CBMC 5.95.1

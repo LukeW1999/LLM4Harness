@@ -25,6 +25,28 @@ Pinned versions of everything needed to reproduce the experiments. Recorded
 | ESBMC  | **8.3.0**        | secondary checker (cross-engine corroboration, `esbmc_runner`) |
 | Python | **3.12** (3.12.3)| all scripts                                       |
 
+### Getting the pinned CBMC 6.4.0
+
+The paper's verdicts come from CBMC 6.4.0, which is not the version any current
+distribution ships. `scripts/get_cbmc640.sh` fetches the upstream release build,
+verifies its checksum, and unpacks it (it does not install, so a system CBMC is
+left alone):
+
+```bash
+./scripts/get_cbmc640.sh                 # default: ~/tools/cbmc-6.4.0
+export CBMC640=$HOME/tools/cbmc-6.4.0/extracted/usr/bin/cbmc
+```
+
+| | |
+|---|---|
+| Release | <https://github.com/diffblue/cbmc/releases/tag/cbmc-6.4.0> |
+| Asset | `ubuntu-22.04-cbmc-6.4.0-Linux.deb` (also builds from source at tag `cbmc-6.4.0`) |
+| sha256 | `58f94eb3ecf87499389b9f0176656a4a89b303670dd06333fbaf5c8fa4bf38cd` |
+
+Every `scripts/*_640.py` reads `CBMC640`, falling back to whatever `cbmc` is on
+PATH; with the wrong version on PATH the verdicts will not match the released
+JSONs, so set it explicitly.
+
 ### Which CBMC produced which number
 
 The paper pins **CBMC 6.4.0**. The original sweep ran under 5.95.1, and every
