@@ -4,10 +4,11 @@ measure how many silenced bugs become caught. Re-evaluated with the canonical CB
 import sys, os, json, difflib, argparse, tempfile
 from pathlib import Path
 from collections import defaultdict
-sys.path.insert(0, "/root/experiment_aws_cbmc/scripts")
+EXP=Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(EXP/"scripts"))
 import run_mutation_oracle_cbmc as O
 from feedback_loop import extract_c_code, SYSTEM_PROMPT
-EVAL=Path("/root/experiment_aws_cbmc/evaluation"); RES=Path("/root/experiment_aws_cbmc/results"); MUT=Path("/root/experiment_aws_cbmc/mutants")
+EVAL=EXP/"evaluation"; RES=EXP/"results"; MUT=EXP/"mutants"
 CALL=None  # set in main
 
 def get_call(model):
@@ -78,4 +79,9 @@ if __name__=="__main__":
         tot_s=sum(r.get('n_silenced',0) for r in results); tot_c=sum(r.get('n_caught',0) for r in results)
         valid=[r for r in results if r.get('valid')]
         print(f"\n===== B2 SUMMARY {a.cond} ({a.model}): {tot_c}/{tot_s} silenced bugs now CAUGHT; {len(valid)}/{len(results)} funcs valid on original =====")
-        json.dump(results, open(EVAL/f"b2_repair_{a.cond}.json","w"), indent=1)
+        # merge, so driving this one function at a time accumulates instead of
+        # replacing the condition's file with the last function tested
+        out = EVAL/f"b2_repair_{a.cond}.json"
+        prev = json.load(open(out)) if out.exists() else []
+        keep = [r for r in prev if r["func"] not in {x["func"] for x in results}]
+        json.dump(keep + results, open(out, "w"), indent=1)

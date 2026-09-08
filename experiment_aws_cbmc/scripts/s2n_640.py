@@ -68,6 +68,6 @@ def main():
     res["paper_5.95"]={"gtfail":253,"claude_sil":57,"gptoss_sil":42}
     res["elapsed_s"]=round(time.time()-t0)
     json.dump({"summary":res,"rows":[{"cond":c,"func":f,"mutant":m,"gt":g,"llm":l} for c,f,m,g,l in out]},
-              open(EXP/"evaluation/s2n_640.json","w"),indent=1)
+              open(EXP/"evaluation"/(os.environ.get("S2N_OUT") or "s2n_640.json"),"w"),indent=1)
     print("\n=== s2n @ 6.4.0 ==="); print(json.dumps(res,indent=1))
 if __name__=="__main__": main()
