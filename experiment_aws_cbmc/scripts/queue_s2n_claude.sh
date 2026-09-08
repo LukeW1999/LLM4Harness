@@ -9,8 +9,9 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 EXP="$(dirname "$HERE")"
 cd "$EXP" || exit 1
 
-while pgrep -f "run_s2n_conditions.sh [GHM] openrouter" &>/dev/null ||
-      pgrep -f "run_s2n_conditions.sh Oracle openrouter" &>/dev/null; do
+# The bracket keeps the pattern from matching this script's own text in the
+# command line of whatever shell spawned it, which would wait for ever.
+while pgrep -f "feedback_loop.py .*--model o[p]enrouter" &>/dev/null; do
   sleep 60
 done
 echo "=== gpt-oss arm drained at $(date -Is); starting Claude ==="
