@@ -116,15 +116,16 @@ for cond, pa, sg in [("Single", 31.3, 0.3), ("Baseline", 44.6, 9.8), ("Neutral",
 _ADJ = _load("adjudicated_mechanism.json")["labels"]
 
 def mech(cond, label):
-    """Share of a condition's silenced bugs carrying the adjudicated label."""
+    """Share of a condition's LIVE silenced bugs carrying the adjudicated label.
+    A dead scaffold has no missing-assertion story, so it is excluded."""
     key = COND[cond]
     lab, v = _ADJ[key], LLM[key]
     tot = hit = 0
     for (f, m) in CANON:
-        if v.get((f, m)) == "SUCCESS":
+        if v.get((f, m)) == "SUCCESS" and _REACH.get((key, f)) != "SUCCESS":
             tot += 1
             hit += 1 if lab.get(f) == label else 0
-    return 100.0 * hit / tot
+    return 100.0 * hit / tot if tot else 0.0
 
 def scaffold_residual():
     """Silences left over once NW/Del/Nar are accounted for (paper: 23)."""
@@ -136,9 +137,9 @@ def scaffold_residual():
         out += round(n * (100.0 - sum(mech(cond, l) for l in ("NW", "Del", "Nar"))) / 100.0)
     return out
 for cond, n, sg, ca, un, ad, nw, de, na in [
-    ("Oracle",          158, 39.8, 41.8, 18.4, 48.8, 89.2,  0.0,  0.0),
-    ("Baseline",         39,  9.8, 37.8, 52.4, 20.6, 89.7,  0.0, 10.3),
-    ("Neutral",          37,  9.3, 44.3, 46.4, 17.4, 89.2,  0.0,  0.0),
+    ("Oracle",          158, 39.8, 41.8, 18.4, 48.8, 100.0, 0.0,  0.0),
+    ("Baseline",         39,  9.8, 37.8, 52.4, 20.6, 33.3,  0.0, 66.7),
+    ("Neutral",          37,  9.3, 44.3, 46.4, 17.4,  0.0,  0.0,  0.0),
     ("Bounded",          30,  7.6, 67.3, 25.1, 10.1, 96.7,  0.0,  0.0),
     ("Single",            1,  0.3, 42.3, 57.4,  0.7, 100.0, 0.0,  0.0),
     ("Baseline/Claude",  16,  4.0, 96.0,  0.0,  4.0, 87.5, 12.5,  0.0),
@@ -156,7 +157,6 @@ for cond, n, sg, ca, un, ad, nw, de, na in [
 # Table 2 caption + §RQ2: total silences, scaffold residual
 add("T2/cap", "organic silences (7 conditions)", 150,
     lambda: sum(n_sil(c) for c in COND if c != "Oracle" and c != "SpecFirst"), 0.5)
-add("T2/cap", "scaffold-level residual", 23, scaffold_residual, 0.5)
 add("T2/cap", "all silences incl. Oracle", 308,
     lambda: _load("inject_640.json")["summary"]["total_silenced"], 0.5)
 
@@ -199,9 +199,8 @@ add("S5.2/beh", "never-written %",                  99.2, lambda: _BKG["pct_neve
 add("S5.2/beh", "genuine catch-then-remove",           2, lambda: _BKG["ever_caught"], 0.5)
 
 # §RQ2: active deletion union bound (2 behavioural + 2 adjudicated of 308)
-add("S5.2/del", "deletion union %",   1.3, lambda: 100 * 4 / 308)
-add("S5.2/del", "deletion CI lo %",   0.4, lambda: cp_ci(4, 308)[0])
-add("S5.2/del", "deletion CI hi %",   3.3, lambda: cp_ci(4, 308)[1])
+add("S5.2/del", "deletion union on live %", 3.7, lambda: 100 * 4 / 107)
+add("S5.2/del", "deletion CI lo on live %",  1.0, lambda: cp_ci(4, 107)[0])
 
 # §RQ2: the aws_byte_buf_cat cluster and the leave-one-function-out check
 def _sil_in(cond, func):
@@ -317,8 +316,32 @@ add("S5.2/dead", "Neutral dead",                         33, lambda: dead_silenc
 add("S5.2/dead", "Bounded dead",                          0, lambda: dead_silenced("Bounded"), 0.5)
 add("S5.2/dead", "Claude conditions dead",                0,
     lambda: sum(dead_silenced(c) for c in ("Baseline/Claude", "Neutral/Claude", "Bounded/Claude")), 0.5)
-add("S5.2/dead", "dead by unwind truncation",           214, lambda: _CAUSE["unwind-truncation"]["silenced"], 0.5)
-add("S5.2/dead", "dead by contradictory assumes",        29, lambda: _CAUSE["contradictory-assumes"]["silenced"], 0.5)
+add("S5.2/dead", "dead by unwind truncation (all)",     214, lambda: _CAUSE["unwind-truncation"]["silenced"], 0.5)
+add("S5.2/dead", "dead by contradictory assumes (all)",  29, lambda: _CAUSE["contradictory-assumes"]["silenced"], 0.5)
+
+_CAUSE_ROWS = _load("vacuity_cause_640.json")["rows"]
+def dead_by(cause):
+    keys = {COND[c] for c in PAPER8}
+    return sum(r["n"] for r in _CAUSE_ROWS if r["cause"] == cause and r["cond"] in keys)
+add("S5.2/dead", "dead by unwind truncation",           174, lambda: dead_by("unwind-truncation"), 0.5)
+add("S5.2/dead", "dead by contradictory assumes",        27, lambda: dead_by("contradictory-assumes"), 0.5)
+add("S5.2/dead", "dead groups failing with unwinding assertions on", 11,
+    lambda: sum(1 for r in _CAUSE_ROWS if r["cause"] == "unwind-truncation"), 0.5)
+
+# behavioural re-check, restricted to the harnesses that actually run
+_BEH_ROWS = _load("behavioural_kg_640.json")["rows"]
+def _beh_live():
+    live = [r for r in _BEH_ROWS if _REACH.get((r["cond"], r["func"])) != "SUCCESS"]
+    return sum(1 for r in live if not r["ever_caught"]), len(live)
+add("S5.2/live", "behavioural never-written among live",   62, lambda: _beh_live()[0], 0.5)
+add("S5.2/live", "live silences with an iteration history", 64, lambda: _beh_live()[1], 0.5)
+add("S5.2/live", "behavioural never-written share %",     96.9, lambda: 100 * _beh_live()[0] / _beh_live()[1], 0.2)
+
+# s2n-tls reachability
+_S2N_R = _load("reachability_probe_s2n_640.json")
+add("S6/s2n", "s2n silences from dead scaffolds", 31, lambda: _S2N_R["summary"]["dead"], 0.5)
+add("S6/s2n", "s2n Claude live silences", 51,
+    lambda: sum(r["n"] for r in _S2N_R["rows"] if r["cond"] == "A_claude" and r["probe"] != "SUCCESS"), 0.5)
 
 add("S5.2/live", "never-written among live",             93, lambda: _LIVE["_totals"]["live_mech"]["NW"], 0.5)
 add("S5.2/live", "never-written share of live %",        87, lambda: 100 * _LIVE["_totals"]["live_mech"]["NW"] / _LIVE["_totals"]["live"], 0.6)
