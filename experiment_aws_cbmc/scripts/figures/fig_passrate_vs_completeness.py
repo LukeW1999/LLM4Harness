@@ -65,7 +65,7 @@ def baseline_without_cluster():
 def main():
     S.setup()
     pr, runs, rc = pass_rates(), silgt_runs(), recall()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(S.TEXTWIDTH, 2.15), sharex=True)
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(S.TEXTWIDTH, 1.75), sharex=True)
 
     for c in CONDS:
         x, ys = pr[c], runs.get(c, [])

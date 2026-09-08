@@ -47,21 +47,39 @@ def counts():
         out[cond] = c
     return out
 
+def disposition():
+    """Each condition splits the GT-fail set three ways: caught, silenced, unresolved."""
+    canon = S.gt_fail_set()
+    llm = S.llm_verdicts()
+    out = {}
+    for cond in ORDER:
+        v = llm.get(cond, {})
+        c = s_ = u = 0
+        for k in canon:
+            x = v.get(k)
+            if x in ("FAIL", "SAT"):
+                c += 1
+            elif x == "SUCCESS":
+                s_ += 1
+            else:
+                u += 1
+        n = len(canon)
+        out[cond] = (100 * c / n, 100 * s_ / n, 100 * u / n)
+    return out
+
 def main():
     S.setup()
     data = counts()
-    rows = ORDER + ["POOLED"]
-    pooled = collections.Counter()
-    for c in ORDER:
-        pooled.update(data[c])
-    data["POOLED"] = pooled
+    disp = disposition()
+    rows = list(ORDER)   # the pooled totals are quoted in the prose, not drawn
 
     colours = {"dead_loop": S.MECH["dead"], "dead_assume": "#8A8A8A",
                "never": S.MECH["never"], "narrowed": S.MECH["narrowed"],
                "deleted": S.MECH["deleted"], "unresolved": S.MECH["unresolved"]}
     hatch = {"dead_assume": "//", "unresolved": ".."}
 
-    fig, ax = plt.subplots(figsize=(S.TEXTWIDTH, 2.75))
+    fig, (axd, ax) = plt.subplots(1, 2, figsize=(S.TEXTWIDTH, 1.85),
+                                  gridspec_kw={"width_ratios": [1.0, 1.35]}, sharey=True)
     ypos = list(range(len(rows)))[::-1]
     for y, cond in zip(ypos, rows):
         left = 0
@@ -69,7 +87,7 @@ def main():
             n = data[cond].get(k, 0)
             if not n:
                 continue
-            ax.barh(y, n, left=left, height=0.62, color=colours[k],
+            ax.barh(y, n, left=left, height=0.68, color=colours[k],
                     hatch=hatch.get(k), edgecolor="white", linewidth=0.6)
             if n >= 8:
                 ax.text(left + n / 2, y, str(n), ha="center", va="center",
@@ -77,23 +95,38 @@ def main():
             left += n
         ax.text(left + 3, y, str(left), va="center", fontsize=6.5, color="#444444")
 
-    labels = [f"{S.COND_LABEL[c]} / {S.model_of(c)}" if c != "POOLED" else "all eight"
-              for c in rows]
-    ax.set_yticks(ypos, labels)
-    ax.axhline(0.5, color="#cccccc", lw=0.8)
-    ax.set_xlabel("silenced bugs (count)")
+    for y, cond in zip(ypos, rows):
+        caught, sil, unres = disp[cond]
+        left = 0
+        for val, col, hat in ((caught, "#B7D5EA", None), (sil, S.MECH["dead"], None),
+                              (unres, S.MECH["unresolved"], "..")):
+            axd.barh(y, val, left=left, height=0.68, color=col, hatch=hat,
+                     edgecolor="white", linewidth=0.6)
+            left += val
+        axd.text(disp[cond][0] / 2, y, f"{caught:.0f}", ha="center", va="center",
+                 fontsize=6.2, color="#12384f")
+        axd.text(disp[cond][0] + sil / 2, y, f"{sil:.0f}", ha="center", va="center",
+                 fontsize=6.2, color="white")
+    axd.set_xlim(0, 100)
+    axd.set_xlabel("(a) the 397 GT-fail mutants (%)")
+    axd.grid(axis="y", visible=False)
+
+    labels = [f"{S.COND_LABEL[c]} / {S.model_of(c)}" for c in rows]
+    axd.set_yticks(ypos, labels)
+    ax.set_xlabel("(b) mechanism behind the silences (count)")
     ax.set_xlim(0, max(sum(data[c].values()) for c in rows) * 1.12)
     ax.grid(axis="y", visible=False)
 
-    legend = [Patch(facecolor=colours["dead_loop"], label="dead: loop outruns the bound"),
+    legend = [Patch(facecolor="#B7D5EA", label="caught by the LLM harness"),
+              Patch(facecolor=colours["dead_loop"], label="dead: loop outruns the bound"),
               Patch(facecolor=colours["dead_assume"], hatch="//",
                     label="dead: assumptions admit no run"),
               Patch(facecolor=colours["never"], label="never written"),
               Patch(facecolor=colours["narrowed"], label="narrowed away"),
               Patch(facecolor=colours["deleted"], label="deleted to pass"),
               Patch(facecolor=colours["unresolved"], hatch="..", label="unresolved")]
-    ax.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, 1.01), ncol=3,
-              frameon=False, handlelength=1.1, columnspacing=1.2, borderaxespad=0.0)
+    fig.legend(handles=legend, loc="upper center", bbox_to_anchor=(0.5, 1.12), ncol=3,
+               frameon=False, handlelength=1.1, columnspacing=1.4)
     S.save(fig, "fig_mechanism_stack")
 
 if __name__ == "__main__":
