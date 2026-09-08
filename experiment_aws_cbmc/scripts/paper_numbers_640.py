@@ -385,6 +385,31 @@ def _probe_pair():
 add("S5.2/reach", "groups whose first postcondition is reachable", 53, lambda: _probe_pair()[0], 0.5)
 add("S5.2/reach", "of those, last postcondition also reachable", 53, lambda: _probe_pair()[1], 0.5)
 
+# §5.2 the strengthening test: does adding assertions, with the assume envelope
+# held fixed, actually catch the mutant? A catch proves the setup reaches the bad
+# state and the gap really was the assertion; a miss does not, and cannot be read
+# as never-written. Runs whose strengthened harness stops verifying on the
+# unmutated source are dropped, since those catch everything for the wrong reason.
+def _strengthen(model=None):
+    import glob as _g
+    tested = caught = 0
+    for f in _g.glob(str(Path(_BASE) / "evaluation/b2_repair_*.json")):
+        cond = Path(f).stem.replace("b2_repair_", "")
+        if model and (("claude" in cond) != (model == "claude")):
+            continue
+        for r in _load(Path(f).name):
+            if not r.get("valid") or _REACH.get((cond, r["func"])) == "SUCCESS":
+                continue
+            tested += r["n_silenced"]; caught += r["n_caught"]
+    return caught, tested
+
+add("S5.2/str", "live silences given the strengthening test", 62, lambda: _strengthen()[1], 0.5)
+add("S5.2/str", "of those, the assertion really was the gap", 38, lambda: _strengthen()[0], 0.5)
+add("S5.2/str", "Claude confirmed", 27, lambda: _strengthen("claude")[0], 0.5)
+add("S5.2/str", "Claude tested", 34, lambda: _strengthen("claude")[1], 0.5)
+add("S5.2/str", "gpt-oss confirmed", 11, lambda: _strengthen("gptoss")[0], 0.5)
+add("S5.2/str", "gpt-oss tested", 28, lambda: _strengthen("gptoss")[1], 0.5)
+
 add("S5.2/live", "never-written among live",             93, lambda: _LIVE["_totals"]["live_mech"]["NW"], 0.5)
 add("S5.2/live", "never-written share of live %",        87, lambda: 100 * _LIVE["_totals"]["live_mech"]["NW"] / _LIVE["_totals"]["live"], 0.6)
 add("S5.2/live", "active deletion among live",            2, lambda: _LIVE["_totals"]["live_mech"]["Del"], 0.5)

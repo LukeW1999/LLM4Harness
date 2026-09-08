@@ -1,20 +1,5 @@
 [
  {
-  "func": "aws_ptr_eq",
-  "orig_after": "FAIL",
-  "per_mutant": {
-   "mutant_0005": "FAIL",
-   "mutant_0006": "FAIL"
-  },
-  "n_silenced": 2,
-  "n_caught": 2,
-  "valid": false,
-  "caught": [
-   "mutant_0005",
-   "mutant_0006"
-  ]
- },
- {
   "func": "aws_byte_buf_advance",
   "orig_after": "FAIL",
   "per_mutant": {
@@ -98,6 +83,21 @@
    "mutant_0477",
    "mutant_0483",
    "mutant_0482"
+  ]
+ },
+ {
+  "func": "aws_ptr_eq",
+  "orig_after": "FAIL",
+  "per_mutant": {
+   "mutant_0005": "FAIL",
+   "mutant_0006": "FAIL"
+  },
+  "n_silenced": 2,
+  "n_caught": 2,
+  "valid": false,
+  "caught": [
+   "mutant_0005",
+   "mutant_0006"
   ]
  }
 ]
