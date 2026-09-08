@@ -30,7 +30,8 @@ def final_llm(cond,func):
     hs=sorted(glob.glob(str(EXP/f"results/feedback_loop_{cond}/{func}/iter_*_harness.c")),key=lambda p:int(p.split('iter_')[1].split('_')[0]))
     return hs[-1] if hs else None
 FUNCS=sorted(p.name for p in (EXP/"mutants_s2n").iterdir() if p.is_dir())
-CONDS=["A_claude","A_gptoss120b"]
+# The GT harness is re-run per condition, so cost is linear in this list.
+CONDS=(os.environ.get("S2N_CONDS") or "A_claude,A_gptoss120b").split(",")
 def task_list():
     T=[]
     for func in FUNCS:
