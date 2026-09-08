@@ -17,7 +17,7 @@ Usage:  python3 paper_numbers_640.py           # audit table
         python3 paper_numbers_640.py --md      # markdown table
 """
 import json, os, re, sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -289,6 +289,29 @@ add("S6.3/esb", "CBMC-only GT-fail (loose)",        78, lambda: esbmc_cell()[1],
 add("S6.3/esb", "CBMC-only GT-fail (both decide)",   6, lambda: esbmc_cell()[2], 0.5)
 add("S6.3/esb", "ESBMC-only GT-fail (both decide)", 56, lambda: esbmc_cell()[3], 0.5)
 add("S6.3/esb", "silenced under ESBMC",             12, lambda: esbmc_cell()[4], 0.5)
+def esbmc_2x2():
+    """On the 296 both engines call GT-fail: (both silence, CBMC-only, ESBMC-only,
+    both catch, CBMC catches while ESBMC cannot decide)."""
+    c = Counter()
+    for r in _ESB:
+        k = _key(r)
+        if GT.get(k) != "FAIL" or r["gt"] != "FAIL":
+            continue
+        a, b = LLM["A_claude"].get(k), r["llm"]
+        sa, sb = a == "SUCCESS", b == "SUCCESS"
+        if sa and sb:              c["both_sil"] += 1
+        elif sa:                   c["cbmc_only"] += 1
+        elif sb:                   c["esbmc_only"] += 1
+        elif b in ("FAIL", "SAT"): c["both_catch"] += 1
+        else:                      c["esbmc_undec"] += 1
+    return c
+
+add("S6.3/esb", "silenced by both engines",        12, lambda: esbmc_2x2()["both_sil"], 0.5)
+add("S6.3/esb", "silenced by CBMC only",            0, lambda: esbmc_2x2()["cbmc_only"], 0.5)
+add("S6.3/esb", "silenced by ESBMC only",           0, lambda: esbmc_2x2()["esbmc_only"], 0.5)
+add("S6.3/esb", "caught by both engines",         277, lambda: esbmc_2x2()["both_catch"], 0.5)
+add("S6.3/esb", "caught by CBMC, ESBMC undecided",  7, lambda: esbmc_2x2()["esbmc_undec"], 0.5)
+
 add("S6.3/esb", "silenced under CBMC on the shared 296", 12,
     lambda: sum(1 for r in _ESB if GT.get(_key(r)) == "FAIL" and r["gt"] == "FAIL"
                 and LLM["A_claude"].get(_key(r)) == "SUCCESS"), 0.5)
