@@ -4,14 +4,32 @@ Everything below is needed to **re-run** the CBMC mutation-oracle pipeline. The
 **data** (oracle JSONs, attribution, cross_verify, mutants) is already in this
 repo under `experiment_aws_cbmc/`; you only need this to reproduce or extend runs.
 
-## ⚠️ CBMC version is load-bearing — pin 5.95.1, NOT 6.x
-Verifier verdicts are version-sensitive. The study was generated with **CBMC 5.95.1**.
-Under CBMC 6.x the LLM harnesses fail their own fidelity gate on the *unmutated*
-function (e.g. `aws_byte_buf_cat` SUCCESS under 5.95.1 -> FAIL under 6.8.0), which
-collapses the differential (byte_buf_cat: 33 silenced under 5.95.1 vs 0 under 6.8.0).
-Do **not** `apt install cbmc` (pulls latest). Install the 5.95.1 release:
-  - Download the 5.95.1 .deb from https://github.com/diffblue/cbmc/releases/tag/cbmc-5.95.1
-  - `sudo dpkg -i ubuntu-*-cbmc-5.95.1-*.deb` ; verify `cbmc --version` == 5.95.1
+## ⚠️ CBMC version is load-bearing — pin 6.4.0
+The paper's verdicts are CBMC **6.4.0** (`scripts/get_cbmc640.sh` fetches it; the
+earlier 5.95.1 sweep is kept as the version comparison). Do **not**
+`apt install cbmc`: it pulls whatever is current, and one default changed
+between 6.4.0 and 6.8.0 that decides these results.
+
+| invocation | unwinding assertions |
+|---|---|
+| `cbmc 6.4.0` with no unwinding flag | OFF |
+| `cbmc 6.8.0` with no unwinding flag | **ON** |
+
+aws-c-common's `Makefile.common` leaves `CBMC_FLAG_UNWINDING_ASSERTIONS` empty,
+so the production proofs inherit whichever default their CBMC has.
+
+**An earlier version of this file read that the wrong way round.** It recorded
+that under 6.8.0 the LLM harnesses fail their own fidelity gate on the unmutated
+function and the differential collapses (`aws_byte_buf_cat`: 33 silenced -> 0),
+and concluded 6.x was unsuitable. The observation is right and the conclusion was
+not: with unwinding assertions ON, CBMC is correctly reporting that the harness's
+loop outruns its bound, so the harness never executes its postconditions and was
+never entitled to pass. Those 33 silences are the dead-scaffold mechanism
+(`scripts/reachability_probe.py`, `scripts/vacuity_cause.py`), not an artefact of
+the checker. Expert harnesses are unaffected: they still verify with the check on.
+
+Every script passes the unwinding setting explicitly, so the CBMC version only
+decides what you get when you run CBMC by hand.
 ESBMC (cross-engine check) is the version used in §7.2; any recent ESBMC works for that.
 
 ## Sources expected by scripts/cbmc_runner.py
