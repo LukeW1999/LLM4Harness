@@ -91,8 +91,8 @@ def main():
         # the Oracle control is the point the section turns on
         is_oracle = c == "Oracle_gptoss120b"
         ax1.plot(x, primary, "o", ms=6.5 if is_oracle else 4.5,
-                 color="#762A83" if is_oracle else S.MODEL["gpt-oss"],
-                 mec="white" if is_oracle else "none", mew=0.8, zorder=4 if is_oracle else 3)
+                 color=S.MODEL["gpt-oss"], mec="black" if is_oracle else "none", mew=1.1,
+                 zorder=4 if is_oracle else 3)
         # keep labels off the min-max bars
         off = {"M_gptoss120b": (0, -11), "G_gptoss120b": (11, 2),
                "H_gptoss120b": (0, 8), "Oracle_gptoss120b": (0, 9)}.get(c, (0, 7))
@@ -120,8 +120,7 @@ def main():
                          lw=1.2, alpha=0.5, zorder=1, marker="|", ms=4)
             is_oracle = c == "Oracle_gptoss120b"
             ax2.plot(pr[c], rc[c], "o", ms=6.5 if is_oracle else 4.5,
-                     color="#762A83" if is_oracle else S.MODEL["gpt-oss"],
-                     mec="white" if is_oracle else "none", mew=0.8, zorder=4)
+                     color=S.MODEL["gpt-oss"], mec="black" if is_oracle else "none", mew=1.1, zorder=4)
             ax2.annotate(S.COND_LABEL[c], (pr[c], rc[c]), textcoords="offset points",
                          xytext=(0, 8) if not is_oracle else (0, -12), ha="center",
                          fontsize=7 if is_oracle else 6.5,

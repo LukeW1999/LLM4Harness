@@ -19,8 +19,8 @@ import style as S  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.patches import Patch  # noqa: E402
 
-ORDER = ["Oracle_gptoss120b", "A_gptoss120b", "H_gptoss120b", "M_gptoss120b",
-         "G_gptoss120b", "A_claude", "H_claude", "M_claude"]
+ORDER = ["Oracle_gptoss120b", "K_gptoss120b", "A_gptoss120b", "H_gptoss120b",
+         "M_gptoss120b", "G_gptoss120b", "A_claude", "H_claude", "M_claude"]
 # panel (a) classifies every GT-fail mutant, so its "silenced" spans both the dead
 # and the live ones; it needs colours that cannot be read as mechanism swatches.
 DISP = {"caught": "#A8DDB5", "silenced": "#762A83", "unresolved": "#DDDDDD"}
@@ -81,7 +81,7 @@ def main():
                "deleted": S.MECH["deleted"], "unresolved": S.MECH["unresolved"]}
     hatch = {"dead_assume": "//", "unresolved": ".."}
 
-    fig, (axd, ax) = plt.subplots(1, 2, figsize=(S.TEXTWIDTH, 2.0),
+    fig, (axd, ax) = plt.subplots(1, 2, figsize=(S.TEXTWIDTH, 1.9),
                                   gridspec_kw={"width_ratios": [1.0, 1.35]}, sharey=True)
     ypos = list(range(len(rows)))[::-1]
     for y, cond in zip(ypos, rows):

@@ -470,6 +470,24 @@ add("T1/pass", "pass-rate runs audited", 27,
     lambda: sum(len(v) for k, v in _pass_runs().items()
                 if k in {COND[c] for c in PAPER8}), 0.5)
 
+# §5.2 the shape of the omissions: a taxonomy over every missed GT assertion,
+# not over one run's silences
+def _taxonomy():
+    import csv as _csv, collections as _c
+    rows = list(_csv.DictReader(open(Path(_BASE) / "annotation/annotated_missed_properties.csv")))
+    return len(rows), _c.Counter(r["category"] for r in rows)
+
+add("S5.2/tax", "annotated missed GT assertions", 191, lambda: _taxonomy()[0], 0.5)
+add("S5.2/tax", "validity predicates",             39, lambda: _taxonomy()[1]["VALIDITY_PRED"], 0.5)
+add("S5.2/tax", "length invariants and changes",   60,
+    lambda: _taxonomy()[1]["LEN_INVARIANT"] + _taxonomy()[1]["LEN_CHANGE"], 0.5)
+add("S5.2/tax", "frame conditions",                32, lambda: _taxonomy()[1]["FRAME_COND"], 0.5)
+add("S5.2/tax", "pointer/structure relations",     27, lambda: _taxonomy()[1]["STRUCT_PTR"], 0.5)
+
+add("F3/spec", "SpecFirst silenced",        59, lambda: n_sil("SpecFirst"), 0.5)
+add("F3/spec", "SpecFirst dead",            40, lambda: dead_silenced("SpecFirst"), 0.5)
+add("F3/spec", "SpecFirst never-written %", 73.7, lambda: mech("SpecFirst", "NW"), 0.6)
+
 # ── run ──────────────────────────────────────────────────────────────────────
 def main():
     md = "--md" in sys.argv
