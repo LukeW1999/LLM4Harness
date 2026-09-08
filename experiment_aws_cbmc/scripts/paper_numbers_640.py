@@ -444,6 +444,32 @@ add("S5.1/wil", "Baseline>Neutral oracle-silence p", 0.16, h_vs_a_silence_p, 0.0
 add("S5.1/wil", "functions both conditions decide", 32,
     lambda: len(set(per_func_silence("Baseline")) & set(per_func_silence("Neutral"))), 0.5)
 
+# Pass rate is a single draw too; register its spread so the figure's horizontal
+# bars are audited like every other number.
+def _pass_runs():
+    import collections as _c, re as _re
+    out = _c.defaultdict(list)
+    for c, r in _load("passrate_640.json")["per_condition"].items():
+        out[c].append(r["pass_pct_640"])
+    try:
+        for c, r in _load("passrate_repeats_640.json")["per_condition"].items():
+            out[_re.sub(r"_r\d+$", "", c)].append(r["pass_pct_640"])
+    except FileNotFoundError:
+        pass
+    return out
+
+for cond, key, lo, hi in [("Single", "G_gptoss120b", 31.3, 42.2),
+                          ("Baseline", "A_gptoss120b", 44.6, 69.9),
+                          ("Neutral", "H_gptoss120b", 60.2, 63.9),
+                          ("Bounded", "M_gptoss120b", 63.9, 71.1),
+                          ("Oracle", "Oracle_gptoss120b", 79.5, 84.3),
+                          ("Baseline/Claude", "A_claude", 66.7, 97.6)]:
+    add("T1/pass", f"{cond} pass rate min", lo, (lambda k: lambda: min(_pass_runs()[k]))(key))
+    add("T1/pass", f"{cond} pass rate max", hi, (lambda k: lambda: max(_pass_runs()[k]))(key))
+add("T1/pass", "pass-rate runs audited", 27,
+    lambda: sum(len(v) for k, v in _pass_runs().items()
+                if k in {COND[c] for c in PAPER8}), 0.5)
+
 # ── run ──────────────────────────────────────────────────────────────────────
 def main():
     md = "--md" in sys.argv

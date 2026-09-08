@@ -21,10 +21,17 @@ CONDS = ["G_gptoss120b", "A_gptoss120b", "H_gptoss120b", "M_gptoss120b",
          "K_gptoss120b", "Oracle_gptoss120b"]
 
 def pass_rates():
-    pr = S.load("passrate_640.json")["per_condition"]
-    out = {c: r["pass_pct_640"] for c, r in pr.items()}
-    out["K_gptoss120b"] = S.load("k_passrate_640.json")["pass_pct_640"]
-    return out
+    """condition family -> every run's pass rate, the tabled run first."""
+    runs = {}
+    for c, r in S.load("passrate_640.json")["per_condition"].items():
+        runs.setdefault(c, []).append(r["pass_pct_640"])
+    runs.setdefault("K_gptoss120b", []).append(S.load("k_passrate_640.json")["pass_pct_640"])
+    try:
+        for c, r in S.load("passrate_repeats_640.json")["per_condition"].items():
+            runs.setdefault(re.sub(r"_r\d+$", "", c), []).append(r["pass_pct_640"])
+    except FileNotFoundError:
+        pass
+    return runs
 
 def silgt_runs():
     """condition family -> every run's Sil/GT %."""
@@ -64,7 +71,8 @@ def baseline_without_cluster():
 
 def main():
     S.setup()
-    pr, runs, rc = pass_rates(), silgt_runs(), recall()
+    prs, runs, rc = pass_rates(), silgt_runs(), recall()
+    pr = {c: v[0] for c, v in prs.items()}   # the run the text quotes
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(S.TEXTWIDTH, 1.75), sharex=True)
 
     for c in CONDS:
@@ -75,6 +83,11 @@ def main():
         if len(ys) > 1:
             ax1.plot([x, x], [min(ys), max(ys)], color=S.MODEL["gpt-oss"], lw=1.2,
                      alpha=0.5, zorder=1, marker="_", ms=4)
+        # pass rate is a single draw too, and a noisier one than the silenced share
+        xs = prs.get(c, [x])
+        if len(xs) > 1:
+            ax1.plot([min(xs), max(xs)], [primary, primary], color=S.MODEL["gpt-oss"],
+                     lw=1.2, alpha=0.5, zorder=1, marker="|", ms=4)
         # the Oracle control is the point the section turns on
         is_oracle = c == "Oracle_gptoss120b"
         ax1.plot(x, primary, "o", ms=6.5 if is_oracle else 4.5,
@@ -101,6 +114,10 @@ def main():
 
     for c in CONDS:
         if c in rc:
+            xs = prs.get(c, [pr[c]])
+            if len(xs) > 1:
+                ax2.plot([min(xs), max(xs)], [rc[c], rc[c]], color=S.MODEL["gpt-oss"],
+                         lw=1.2, alpha=0.5, zorder=1, marker="|", ms=4)
             is_oracle = c == "Oracle_gptoss120b"
             ax2.plot(pr[c], rc[c], "o", ms=6.5 if is_oracle else 4.5,
                      color="#762A83" if is_oracle else S.MODEL["gpt-oss"],
