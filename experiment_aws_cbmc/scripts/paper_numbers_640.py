@@ -488,6 +488,30 @@ add("F3/spec", "SpecFirst silenced",        59, lambda: n_sil("SpecFirst"), 0.5)
 add("F3/spec", "SpecFirst dead",            40, lambda: dead_silenced("SpecFirst"), 0.5)
 add("F3/spec", "SpecFirst never-written %", 73.7, lambda: mech("SpecFirst", "NW"), 0.6)
 
+# §5.2 the measurement-validity result: what each attribution rule counts
+def _jaccard_deletions():
+    import importlib.util as _u, collections as _c
+    spec = _u.spec_from_file_location("A", Path(_BASE) / "scripts/attribution_analysis.py")
+    A = _u.module_from_spec(spec); spec.loader.exec_module(A)
+    sizes = _c.Counter()
+    for cond in PAPER8:
+        key = COND[cond]
+        v = LLM[key]
+        for (f, m) in CANON:
+            if v.get((f, m)) == "SUCCESS" and _REACH.get((key, f)) != "SUCCESS":
+                sizes[(key, f)] += 1
+    n = 0
+    for (cond, func), size in sizes.items():
+        gts = A.get_gt_asserts(func)
+        its = A.get_llm_iter_asserts(f"feedback_loop_{cond}", func)
+        if not gts or not its:
+            continue
+        if any(A.classify_gt_assert(g, its) == (True, False) for g in gts):
+            n += size
+    return n
+
+add("S5.2/attr", "deletions under token-Jaccard", 6, _jaccard_deletions, 0.5)
+
 # ── run ──────────────────────────────────────────────────────────────────────
 def main():
     md = "--md" in sys.argv
