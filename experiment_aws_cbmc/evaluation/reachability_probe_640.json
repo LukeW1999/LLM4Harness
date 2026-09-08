@@ -1,0 +1,522 @@
+{
+ "summary": {
+  "cbmc": "6.4.0",
+  "groups": 72,
+  "silenced_total": 423,
+  "vacuous_groups": 16,
+  "vacuous_silenced": 256,
+  "by_verdict": {
+   "SUCCESS": 16,
+   "FAIL": 52,
+   "UNKNOWN": 3,
+   "NOCALLSITE": 1
+  },
+  "elapsed_s": 149
+ },
+ "rows": [
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "n": 35,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "probe": "SUCCESS",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "n": 25,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "n": 17,
+   "probe": "SUCCESS",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "n": 16,
+   "probe": "SUCCESS",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "n": 15,
+   "probe": "FAIL",
+   "harness": "iter_7_harness.c"
+  },
+  {
+   "cond": "G_llama3370binstruct",
+   "func": "aws_byte_buf_cat",
+   "n": 12,
+   "probe": "UNKNOWN",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "n": 11,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_byte_buf_cat",
+   "n": 9,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_llama3370binstruct",
+   "func": "aws_byte_buf_cat",
+   "n": 9,
+   "probe": "FAIL",
+   "harness": "iter_15_harness.c"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_string_destroy",
+   "n": 7,
+   "probe": "SUCCESS",
+   "harness": "iter_4_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_cursor_from_array",
+   "n": 5,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 5,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_buf_init_copy",
+   "n": 5,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "H_llama3370binstruct",
+   "func": "aws_string_eq_byte_buf",
+   "n": 5,
+   "probe": "FAIL",
+   "harness": "iter_15_harness.c"
+  },
+  {
+   "cond": "H_llama3370binstruct",
+   "func": "aws_string_eq_byte_cursor",
+   "n": 5,
+   "probe": "UNKNOWN",
+   "harness": "iter_15_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_4_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_byte_buf_cat",
+   "n": 4,
+   "probe": "SUCCESS",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "n": 4,
+   "probe": "NOCALLSITE",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_from_c_str",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_4_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_nospec_mask",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_cat",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_string_eq_c_str",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_ptr_eq",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_ptr_eq",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_6_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_from_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 2,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_ptr_eq",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_from_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_4_harness.c"
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_from_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_nospec_mask",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_ptr_eq",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_cursor_eq_c_str",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_ring_buffer_clean_up",
+   "n": 2,
+   "probe": "SUCCESS",
+   "harness": "iter_7_harness.c"
+  },
+  {
+   "cond": "H_llama3370binstruct",
+   "func": "aws_byte_cursor_eq_c_str",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_llama3370binstruct",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_init_copy",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_string_destroy",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_9_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 1,
+   "probe": "UNKNOWN",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up_secure",
+   "n": 1,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_string_new_from_c_str",
+   "n": 1,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_string_destroy",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_string_eq_byte_cursor",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_string_eq_byte_buf",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_nospec_mask",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_buf_from_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_buf_clean_up_secure",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "G_llama3370binstruct",
+   "func": "aws_nospec_mask",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "G_llama3370binstruct",
+   "func": "aws_byte_buf_clean_up_secure",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_llama3370binstruct",
+   "func": "aws_nospec_mask",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  }
+ ]
+}
