@@ -1,0 +1,587 @@
+{
+ "summary": {
+  "cbmc": "6.4.0",
+  "groups": 72,
+  "head_reachable_groups": 53,
+  "head_reachable_silences": 157,
+  "head_live_but_end_dead_groups": 10,
+  "head_live_but_end_dead_silences": 24,
+  "elapsed_s": 48
+ },
+ "rows": [
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "n": 35,
+   "head": "SUCCESS",
+   "tail": "SUCCESS",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "head": "SUCCESS",
+   "tail": "SUCCESS",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "head": "SUCCESS",
+   "tail": "SUCCESS",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "head": "SUCCESS",
+   "tail": "SUCCESS",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "head": "SUCCESS",
+   "tail": "SUCCESS",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "n": 25,
+   "head": "SUCCESS",
+   "tail": "SUCCESS",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "n": 17,
+   "head": "SUCCESS",
+   "tail": "SUCCESS",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "n": 16,
+   "head": "SUCCESS",
+   "tail": "SUCCESS",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "n": 15,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "G_llama3370binstruct",
+   "func": "aws_byte_buf_cat",
+   "n": 12,
+   "head": "UNKNOWN",
+   "tail": "UNKNOWN",
+   "end": "UNKNOWN"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "n": 11,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_byte_buf_cat",
+   "n": 9,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "H_llama3370binstruct",
+   "func": "aws_byte_buf_cat",
+   "n": 9,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_string_destroy",
+   "n": 7,
+   "head": "SUCCESS",
+   "tail": "SUCCESS",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 5,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_cursor_from_array",
+   "n": 5,
+   "head": "SUCCESS",
+   "tail": "SUCCESS",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "H_llama3370binstruct",
+   "func": "aws_string_eq_byte_cursor",
+   "n": 5,
+   "head": "UNKNOWN",
+   "tail": "UNKNOWN",
+   "end": "UNKNOWN"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_buf_init_copy",
+   "n": 5,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "H_llama3370binstruct",
+   "func": "aws_string_eq_byte_buf",
+   "n": 5,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "n": 4,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "n": 4,
+   "head": "NOCALLSITE",
+   "tail": "NOCALLSITE",
+   "end": "NOCALLSITE"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "n": 4,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 4,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_byte_buf_cat",
+   "n": 4,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 4,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "n": 4,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_nospec_mask",
+   "n": 3,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_from_c_str",
+   "n": 3,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 3,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_cat",
+   "n": 3,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 3,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_string_eq_c_str",
+   "n": 3,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_ptr_eq",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_ptr_eq",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_from_array",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_ptr_eq",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_from_array",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 2,
+   "head": "SUCCESS",
+   "tail": "SUCCESS",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_nospec_mask",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_ptr_eq",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_from_array",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_ring_buffer_clean_up",
+   "n": 2,
+   "head": "SUCCESS",
+   "tail": "SUCCESS",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "H_llama3370binstruct",
+   "func": "aws_byte_cursor_eq_c_str",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "H_llama3370binstruct",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_cursor_eq_c_str",
+   "n": 2,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_init_copy",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_string_destroy",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up_secure",
+   "n": 1,
+   "head": "SUCCESS",
+   "tail": "SUCCESS",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 1,
+   "head": "UNKNOWN",
+   "tail": "UNKNOWN",
+   "end": "UNKNOWN"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_string_new_from_c_str",
+   "n": 1,
+   "head": "SUCCESS",
+   "tail": "SUCCESS",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 1,
+   "end": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_string_destroy",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_string_eq_byte_buf",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_string_eq_byte_cursor",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_buf_clean_up_secure",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_buf_from_c_str",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "SUCCESS"
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_nospec_mask",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "G_llama3370binstruct",
+   "func": "aws_nospec_mask",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "G_llama3370binstruct",
+   "func": "aws_byte_buf_clean_up_secure",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "H_llama3370binstruct",
+   "func": "aws_nospec_mask",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 1,
+   "head": "FAIL",
+   "tail": "FAIL",
+   "end": "FAIL"
+  }
+ ]
+}

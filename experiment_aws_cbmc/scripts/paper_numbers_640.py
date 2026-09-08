@@ -376,6 +376,15 @@ add("S5.2/live", "unresolved among live", 6,
                 if LLM[COND[c]].get((f, m)) == "SUCCESS"
                 and _REACH.get((COND[c], f)) != "SUCCESS"
                 and _ADJ[COND[c]].get(f) not in ("NW", "Nar", "Del")), 0.5)
+# §5.2 the postcondition region is reachable end to end, not just at its first line
+_FULL = _load("reachability_full_640.json")["rows"]
+def _probe_pair():
+    head = [r for r in _FULL if r.get("head") == "FAIL"]
+    return len(head), sum(1 for r in head if r.get("tail") == "FAIL")
+
+add("S5.2/reach", "groups whose first postcondition is reachable", 53, lambda: _probe_pair()[0], 0.5)
+add("S5.2/reach", "of those, last postcondition also reachable", 53, lambda: _probe_pair()[1], 0.5)
+
 add("S5.2/live", "never-written among live",             93, lambda: _LIVE["_totals"]["live_mech"]["NW"], 0.5)
 add("S5.2/live", "never-written share of live %",        87, lambda: 100 * _LIVE["_totals"]["live_mech"]["NW"] / _LIVE["_totals"]["live"], 0.6)
 add("S5.2/live", "active deletion among live",            2, lambda: _LIVE["_totals"]["live_mech"]["Del"], 0.5)

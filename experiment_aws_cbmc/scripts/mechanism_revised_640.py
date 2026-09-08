@@ -54,12 +54,20 @@ def reach_class(full, head_dead, key):
     return "live"
 
 def strengthening():
-    """(cond, func) -> (caught, silenced) from the runs that exist."""
-    out = {}
+    """(cond, func) -> (caught, silenced), keeping only runs whose strengthened
+    harness still verifies on the unmutated source. A harness that stopped
+    verifying there catches every mutant for the wrong reason, so its count is
+    evidence of nothing."""
+    out, dropped = {}, 0
     for p in (EXP / "evaluation").glob("b2_repair_*.json"):
         cond = p.stem.replace("b2_repair_", "")
         for r in json.load(open(p)):
+            if not r.get("valid"):
+                dropped += 1
+                continue
             out[(cond, r["func"])] = (r["n_caught"], r["n_silenced"])
+    if dropped:
+        print(f"(dropped {dropped} strengthening runs invalid on the original source)")
     return out
 
 def cluster_bootstrap(units, stat, n=5000, seed=0):

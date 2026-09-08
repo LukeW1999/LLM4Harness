@@ -81,7 +81,7 @@ def main():
                "deleted": S.MECH["deleted"], "unresolved": S.MECH["unresolved"]}
     hatch = {"dead_assume": "//", "unresolved": ".."}
 
-    fig, (axd, ax) = plt.subplots(1, 2, figsize=(S.TEXTWIDTH, 1.9),
+    fig, (axd, ax) = plt.subplots(1, 2, figsize=(S.TEXTWIDTH, 1.55),
                                   gridspec_kw={"width_ratios": [1.0, 1.35]}, sharey=True)
     ypos = list(range(len(rows)))[::-1]
     for y, cond in zip(ypos, rows):

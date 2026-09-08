@@ -1,0 +1,16 @@
+[
+ {
+  "func": "aws_byte_buf_clean_up",
+  "orig_after": "COMPILE_ERROR",
+  "per_mutant": {
+   "mutant_0002": "COMPILE_ERROR",
+   "mutant_0006": "COMPILE_ERROR",
+   "mutant_0008": "COMPILE_ERROR",
+   "mutant_0011": "COMPILE_ERROR"
+  },
+  "n_silenced": 4,
+  "n_caught": 0,
+  "valid": false,
+  "caught": []
+ }
+]

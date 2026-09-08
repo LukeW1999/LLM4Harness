@@ -1,0 +1,89 @@
+[
+ {
+  "func": "aws_byte_buf_cat",
+  "orig_after": "SUCCESS",
+  "per_mutant": {
+   "mutant_0011": "FAIL",
+   "mutant_0013": "FAIL",
+   "mutant_0052": "FAIL",
+   "mutant_0053": "FAIL",
+   "mutant_0059": "FAIL",
+   "mutant_0061": "FAIL",
+   "mutant_0062": "FAIL",
+   "mutant_0066": "FAIL",
+   "mutant_0087": "FAIL"
+  },
+  "n_silenced": 9,
+  "n_caught": 9,
+  "valid": true,
+  "caught": [
+   "mutant_0011",
+   "mutant_0013",
+   "mutant_0052",
+   "mutant_0053",
+   "mutant_0059",
+   "mutant_0061",
+   "mutant_0062",
+   "mutant_0066",
+   "mutant_0087"
+  ]
+ },
+ {
+  "func": "aws_byte_buf_eq_c_str",
+  "orig_after": "FAIL",
+  "per_mutant": {
+   "mutant_0028": "FAIL"
+  },
+  "n_silenced": 1,
+  "n_caught": 1,
+  "valid": false,
+  "caught": [
+   "mutant_0028"
+  ]
+ },
+ {
+  "func": "aws_byte_buf_from_empty_array",
+  "orig_after": "FAIL",
+  "per_mutant": {
+   "mutant_0006": "FAIL",
+   "mutant_0018": "FAIL"
+  },
+  "n_silenced": 2,
+  "n_caught": 2,
+  "valid": false,
+  "caught": [
+   "mutant_0006",
+   "mutant_0018"
+  ]
+ },
+ {
+  "func": "aws_byte_buf_reset",
+  "orig_after": "FAIL",
+  "per_mutant": {
+   "mutant_0003": "FAIL",
+   "mutant_0004": "FAIL",
+   "mutant_0008": "FAIL"
+  },
+  "n_silenced": 3,
+  "n_caught": 3,
+  "valid": false,
+  "caught": [
+   "mutant_0003",
+   "mutant_0004",
+   "mutant_0008"
+  ]
+ },
+ {
+  "func": "aws_string_destroy",
+  "orig_after": "SUCCESS",
+  "per_mutant": {
+   "mutant_0020": "FAIL"
+  },
+  "n_silenced": 1,
+  "n_caught": 1,
+  "valid": true,
+  "caught": [
+   "mutant_0020"
+  ]
+ }
+]
