@@ -522,6 +522,12 @@ def get_gt_harness(func_name: str) -> str:
 PROOFDIR = Path("/home/weiqi/aws-c-common/verification/cbmc")
 
 
+def corpus_of(func_name: str) -> str:
+    """Which library the function under test comes from. The proof-helper API and the
+    include set differ between them, so every prompt that names either must branch."""
+    return "s2n" if func_name.startswith("s2n_") else "aws"
+
+
 def build_initial_prompt(func_dir: str, func_name: str) -> str:
     """Build the initial generation prompt for the active condition."""
     # Conditions K and Oracle build their prompts dynamically — no template file needed
@@ -532,6 +538,13 @@ def build_initial_prompt(func_dir: str, func_name: str) -> str:
 
     active_dataset = CONDITION_DATASET[ACTIVE_CONDITION]
     prompt_file = CONDITION_PROMPT[ACTIVE_CONDITION]
+    # The templates document aws-c-common's proof_helpers API and forbid s2n's own
+    # cbmc_proof headers, so generating an s2n harness from them tells the model to
+    # include a file that corpus does not have. Route to the s2n twin instead.
+    if corpus_of(func_name) == "s2n":
+        s2n_file = prompt_file.replace(".txt", "_s2n.txt")
+        if (PROMPTS_DIR / s2n_file).exists():
+            prompt_file = s2n_file
     func_path = active_dataset / func_dir
     header = read_file(func_path / "header.h")
     impl = read_file(func_path / "implementation.c")
@@ -576,6 +589,27 @@ Write an explicit assert() for each applicable item above; completeness of postc
     return prompt
 
 
+AWS_REPAIR_RULES = """- `#include <aws/common/X.h>` with angle brackets and full path
+  (e.g. `<aws/common/array_list.h>`, `<aws/common/byte_buf.h>`, `<aws/common/linked_list.h>`)
+- Only include `<proof_helpers/make_common_data_structures.h>` \u2014 it provides everything
+- Do NOT include `<proof_helpers/nondet.h>`, `<proof_helpers/pointer_utils.h>`, etc.
+- For allocator: use `struct aws_allocator *allocator = aws_default_allocator();`
+- Use stack-allocated structs (not malloc) for data structures under test"""
+
+S2N_REPAIR_RULES = """- Include the header that declares the function, e.g. `#include "stuffer/s2n_stuffer.h"`
+- Proof helpers live under `cbmc_proof/`: `<cbmc_proof/make_common_datastructures.h>`,
+  `<cbmc_proof/cbmc_utils.h>`, `<cbmc_proof/nondet.h>`
+- NEVER include a `proof_helpers/` header \u2014 that directory belongs to aws-c-common and
+  does not exist here, so the harness will not preprocess
+- Build inputs with `cbmc_populate_s2n_*` / `cbmc_allocate_s2n_*`, and call
+  `nondet_s2n_mem_init()` before anything that allocates
+- Status is `S2N_SUCCESS` / `S2N_FAILURE`, or `s2n_result_is_ok` for `s2n_result`"""
+
+
+def _repair_rules(func_name: str) -> str:
+    return S2N_REPAIR_RULES if corpus_of(func_name) == "s2n" else AWS_REPAIR_RULES
+
+
 def build_fix_compilation_prompt(
     harness_code: str,
     func_name: str,
@@ -595,12 +629,7 @@ def build_fix_compilation_prompt(
 ```
 
 ## Key rules:
-- `#include <aws/common/X.h>` with angle brackets and full path
-  (e.g. `<aws/common/array_list.h>`, `<aws/common/byte_buf.h>`, `<aws/common/linked_list.h>`)
-- Only include `<proof_helpers/make_common_data_structures.h>` — it provides everything
-- Do NOT include `<proof_helpers/nondet.h>`, `<proof_helpers/pointer_utils.h>`, etc.
-- For allocator: use `struct aws_allocator *allocator = aws_default_allocator();`
-- Use stack-allocated structs (not malloc) for data structures under test
+{_repair_rules(func_name)}
 
 Output ONLY the corrected C code. No explanations. Iteration {iteration}."""
 
