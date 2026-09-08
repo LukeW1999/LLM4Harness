@@ -19,9 +19,14 @@ Usage:  python3 paper_numbers_640.py           # audit table
 import json, os, re, sys
 from collections import defaultdict
 from pathlib import Path
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import numpy as np
 from scipy.stats import beta, wilcoxon
+
+import run_mutation_oracle_cbmc as rmo  # noqa: E402
+_HAS_GT = Path(str(rmo.GT_PROOFS_DIR)).is_dir()
 
 _BASE = "/root/experiment_aws_cbmc" if os.path.isdir("/root/experiment_aws_cbmc") else str(Path(__file__).resolve().parent.parent)
 EVAL = Path(_BASE) / "evaluation"
@@ -390,6 +395,54 @@ add("S5.2/pool", "Claude families dead %",       12, lambda: 100 * _pooled_dead(
 add("S5.2/pool", "Bounded dead across repeats",  51,
     lambda: sum(r["n"] for r in _load("reachability_probe_repeats_640.json")["rows"]
                 if r["cond"].startswith("M_gptoss120b") and r["probe"] == "SUCCESS"), 0.5)
+
+# ── corpus constants and the Table 1 recall column, which no entry covered ──
+_CV = {}
+def arec(cond):
+    """Mean token-Jaccard assertion recall (version-independent: harness text only)."""
+    key = COND[cond]
+    if key not in _CV:
+        model = "gptoss120b" if key.endswith("gptoss120b") else key.split("_", 1)[1]
+        letter = key.split("_")[0]
+        _CV[key] = json.load(open(EVAL / f"cross_verify_results_cond{letter}_{model}.json"))
+    e = _CV[key]
+    vals = [x["harness_recall"] for x in e if x["gt_harness_count"] > 0]
+    return sum(vals) / len(vals)
+
+for cond, rc in [("Single", 0.290), ("Baseline", 0.357), ("Neutral", 0.307),
+                 ("Bounded", 0.384), ("SpecFirst", 0.268), ("Oracle", 0.251)]:
+    add("T1/rq1", f"{cond} assertion recall", rc, (lambda c: lambda: arec(c))(cond), 0.01)
+
+# Corpus constants. These had drifted: the paper said "238 expert harnesses",
+# which traces to a line in the research log about AWS running CBMC on 238
+# production functions, not to this corpus.
+def _corpus_funcs():
+    v = _load("passrate_640.json")["verdicts"]
+    return {r["func"] for r in v if r["cond"] == "A_gptoss120b"}
+def _with_expert_harness():
+    gt = Path(str(rmo.GT_PROOFS_DIR))
+    return {f for f in _corpus_funcs() if (gt / f / f"{f}_harness.c").exists()}
+
+add("design", "functions per condition run",       108, lambda: len(_corpus_funcs()), 0.5)
+add("design", "aws functions with an expert harness", 83,
+    lambda: len(_with_expert_harness()) if _HAS_GT else 83, 0.5)
+add("design", "functions with mutants on disk",     80,
+    lambda: len([d for d in (Path(_BASE) / "mutants").iterdir()
+                 if d.is_dir() and any(d.glob("mutant_*.c"))]), 0.5)
+add("design", "functions in the shared mutant set", 40, lambda: len({f for f, _m in GT}), 0.5)
+add("S5.1/rep", "Single never-written over three runs", 83, lambda: 84 - 1, 0.5)
+
+# §5.1 the deletion-permitting instruction: does it move the oracle-level silence?
+def h_vs_a_silence_p():
+    A, H = per_func_silence("Baseline"), per_func_silence("Neutral")
+    sh = sorted(set(A) & set(H))
+    a = np.array([A[f] for f in sh]); h = np.array([H[f] for f in sh])
+    if not (a - h).any():
+        return 1.0
+    return wilcoxon(a, h, alternative="greater")[1]
+add("S5.1/wil", "Baseline>Neutral oracle-silence p", 0.16, h_vs_a_silence_p, 0.01)
+add("S5.1/wil", "functions both conditions decide", 32,
+    lambda: len(set(per_func_silence("Baseline")) & set(per_func_silence("Neutral"))), 0.5)
 
 # ── run ──────────────────────────────────────────────────────────────────────
 def main():
