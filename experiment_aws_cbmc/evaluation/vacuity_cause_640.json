@@ -1,0 +1,154 @@
+{
+ "summary": {
+  "unwind-truncation": {
+   "groups": 11,
+   "silenced": 214
+  },
+  "contradictory-assumes": {
+   "groups": 3,
+   "silenced": 29
+  }
+ },
+ "rows": [
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "n": 35,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c",
+   "with_unwinding_assertions": "FAIL",
+   "cause": "unwind-truncation",
+   "evidence": "[aws_nospec_mask_harness.unwind.0] line 18 unwinding assertion loop 0: FAILURE"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "probe": "SUCCESS",
+   "harness": "iter_3_harness.c",
+   "with_unwinding_assertions": "FAIL",
+   "cause": "unwind-truncation",
+   "evidence": "[aws_byte_buf_cat_harness.unwind.0] line 31 unwinding assertion loop 0: FAILURE"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c",
+   "with_unwinding_assertions": "FAIL",
+   "cause": "unwind-truncation",
+   "evidence": "[aws_byte_buf_cat_harness.unwind.0] line 19 unwinding assertion loop 0: FAILURE"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c",
+   "with_unwinding_assertions": "FAIL",
+   "cause": "unwind-truncation",
+   "evidence": "[aws_byte_buf_cat_harness.unwind.0] line 35 unwinding assertion loop 0: FAILURE"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c",
+   "with_unwinding_assertions": "FAIL",
+   "cause": "unwind-truncation",
+   "evidence": "[aws_byte_buf_cat_harness.unwind.0] line 35 unwinding assertion loop 0: FAILURE"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "n": 25,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c",
+   "with_unwinding_assertions": "SUCCESS",
+   "cause": "contradictory-assumes",
+   "evidence": ""
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "n": 17,
+   "probe": "SUCCESS",
+   "harness": "iter_2_harness.c",
+   "with_unwinding_assertions": "FAIL",
+   "cause": "unwind-truncation",
+   "evidence": "[aws_byte_buf_init_harness.unwind.0] line 20 unwinding assertion loop 0: FAILURE"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "n": 16,
+   "probe": "SUCCESS",
+   "harness": "iter_2_harness.c",
+   "with_unwinding_assertions": "FAIL",
+   "cause": "unwind-truncation",
+   "evidence": "[aws_byte_buf_clean_up_harness.unwind.0] line 24 unwinding assertion loop 0: FAILURE; [aws_byte_buf_clean_up_harness.unwind.1] line 39 unwinding assertion loop 1: FAILURE"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_string_destroy",
+   "n": 7,
+   "probe": "SUCCESS",
+   "harness": "iter_4_harness.c",
+   "with_unwinding_assertions": "FAIL",
+   "cause": "unwind-truncation",
+   "evidence": "[aws_string_destroy_harness.unwind.0] line 24 unwinding assertion loop 0: FAILURE; [aws_string_destroy_harness.unwind.1] line 37 unwinding assertion loop 1: FAILURE"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_cursor_from_array",
+   "n": 5,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c",
+   "with_unwinding_assertions": "FAIL",
+   "cause": "unwind-truncation",
+   "evidence": "[aws_byte_cursor_from_array_harness.unwind.0] line 21 unwinding assertion loop 0: FAILURE"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 2,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c",
+   "with_unwinding_assertions": "SUCCESS",
+   "cause": "contradictory-assumes",
+   "evidence": ""
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_ring_buffer_clean_up",
+   "n": 2,
+   "probe": "SUCCESS",
+   "harness": "iter_7_harness.c",
+   "with_unwinding_assertions": "SUCCESS",
+   "cause": "contradictory-assumes",
+   "evidence": ""
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up_secure",
+   "n": 1,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c",
+   "with_unwinding_assertions": "FAIL",
+   "cause": "unwind-truncation",
+   "evidence": "[aws_byte_buf_clean_up_secure_harness.unwind.0] line 36 unwinding assertion loop 0: FAILURE; [aws_byte_buf_clean_up_secure_harness.unwind.1] line 51 unwinding assertion loop 1: FAILURE"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_string_new_from_c_str",
+   "n": 1,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c",
+   "with_unwinding_assertions": "FAIL",
+   "cause": "unwind-truncation",
+   "evidence": "[aws_string_new_from_c_str_harness.unwind.0] line 20 unwinding assertion loop 0: FAILURE"
+  }
+ ]
+}

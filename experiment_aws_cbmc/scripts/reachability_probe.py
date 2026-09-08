@@ -49,13 +49,19 @@ def final_harness(cond, func):
     return its[-1] if its else None
 
 def inject(src, func):
-    """Put the probe immediately before the call under test."""
+    """Put the probe in the postcondition region: before the first assertion that
+    follows the LAST call site. A harness may call the function from several
+    branches (a switch over the argument count, say), and probing one branch only
+    tells you about that branch; what matters is whether any assertion can run."""
     lines = src.splitlines(keepends=True)
     call = re.compile(rf"^\s*(?:[\w\s\*]+=\s*)?{re.escape(func)}\s*\(")
-    for i, ln in enumerate(lines):
-        if call.match(ln):
-            return "".join(lines[:i] + [PROBE] + lines[i:]), True
-    return src, False
+    calls = [i for i, ln in enumerate(lines) if call.match(ln)]
+    if not calls:
+        return src, False
+    asserts = [i for i, ln in enumerate(lines)
+               if i > calls[-1] and re.match(r"\s*(?:__CPROVER_)?assert\s*\(", ln)]
+    at = asserts[0] if asserts else len(lines) - 1
+    return "".join(lines[:at] + [PROBE] + lines[at:]), True
 
 def run(func, text):
     cfg = FUNC_CONFIGS.get(func)
