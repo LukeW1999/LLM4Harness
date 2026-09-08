@@ -1,7 +1,7 @@
-import os,shutil
-#!/usr/bin/env python3,shutil
+#!/usr/bin/env python3
 """Recompute RQ1 pass rate on CBMC 6.4.0: run each condition's final H_LLM on the
 ORIGINAL (unmutated) function; SUCCESS = accepted. Reuses stored harnesses (no LLM)."""
+import os,shutil
 import sys, json, subprocess, time
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed
@@ -13,7 +13,7 @@ import run_mutation_oracle_cbmc as rmo
 # 6.4.0 binary; falls back to whatever `cbmc` is on PATH.
 CBMC=os.environ.get("CBMC640") or shutil.which("cbmc") or "cbmc"
 MATCH=["--no-standard-checks","--no-unwinding-assertions"]
-CONDS=["A_gptoss120b","H_gptoss120b","M_gptoss120b","G_gptoss120b","Oracle_gptoss120b","A_claude","H_claude","M_claude"]
+CONDS=(sys.argv[sys.argv.index("--conds")+1].split(",") if "--conds" in sys.argv else ["A_gptoss120b","H_gptoss120b","M_gptoss120b","G_gptoss120b","Oracle_gptoss120b","A_claude","H_claude","M_claude"])
 def verify(cond,func):
     cfg=FUNC_CONFIGS.get(func)
     if not cfg or "project_sources" not in cfg: return None
@@ -54,7 +54,7 @@ def main():
                  "paper_primary_pct":PAPER.get(c)}
     json.dump({"cbmc":"6.4.0","per_condition":rows,"elapsed_s":round(time.time()-t0),
                "verdicts":[{"cond":c,"func":f,"v":v} for c,f,v in out]},
-              open(EXP/"evaluation/passrate_640.json","w"),indent=1)
+              open(EXP/(sys.argv[sys.argv.index("--out")+1] if "--out" in sys.argv else "evaluation/passrate_640.json"),"w"),indent=1)
     print("\n=== PASS RATE @ 6.4.0 (reused primary-run harnesses) ===")
     print(f"{'cond':20} {'N':>4} {'pass':>5} {'pass%_640':>10} {'paper_primary%':>14}")
     for c in CONDS:

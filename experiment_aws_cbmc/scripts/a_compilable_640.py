@@ -1,7 +1,7 @@
-import os,shutil
-#!/usr/bin/env python3,shutil
+#!/usr/bin/env python3
 """A_gptoss120b catch rate on 6.4.0 over the GT-fail set, distinguishing COMPILE_ERROR
 so we can report catch restricted to compilable mutants (paper line 297)."""
+import os,shutil
 import sys, json, subprocess, time
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed

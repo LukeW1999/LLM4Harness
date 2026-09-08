@@ -1,7 +1,7 @@
-import os,shutil
-#!/usr/bin/env python3,shutil
+#!/usr/bin/env python3
 """Recompute the GT-fail set on CBMC 6.4.0 (AWS aws-c-common CI's pinned version),
 paper methodology (built-in checks off). GT-only, reuses AWS expert harnesses. No LLM."""
+import os,shutil
 import sys, json, subprocess, time
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed

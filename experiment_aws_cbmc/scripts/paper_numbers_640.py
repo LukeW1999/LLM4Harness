@@ -349,6 +349,48 @@ add("S5.2/live", "active deletion among live",            2, lambda: _LIVE["_tot
 add("S5.2/live", "narrowed-away among live",              6, lambda: _LIVE["_totals"]["live_mech"]["Nar"], 0.5)
 add("S5.2/live", "deletion CI hi on live %",            9.3, lambda: cp_ci(4, 107)[1], 0.2)
 
+# §5.1/§5.2 run-to-run: every condition regenerated 2-5 times (silenced_repeats_640.json)
+_REP = _load("silenced_repeats_640.json")["summary"]["per_condition"]
+_REPROBE = {(r["cond"], r["func"]): r["probe"]
+            for r in _load("reachability_probe_repeats_640.json")["rows"]}
+
+def _spans():
+    import collections as _c, re as _re
+    out = _c.defaultdict(list)
+    for c, r in list(_load("silenced_640.json")["summary"]["per_condition"].items()) + list(_REP.items()):
+        out[_re.sub(r"_r\d+$", "", c)].append(r["SilGT_640_pct"])
+    return out
+
+for cond, key, lo, hi in [("Single", "G_gptoss120b", 0.3, 10.8), ("Baseline", "A_gptoss120b", 8.6, 9.8),
+                          ("Neutral", "H_gptoss120b", 1.3, 10.1), ("Bounded", "M_gptoss120b", 7.6, 11.3),
+                          ("Oracle", "Oracle_gptoss120b", 39.8, 42.3),
+                          ("Baseline/Claude", "A_claude", 2.3, 9.1)]:
+    add("T1/span", f"{cond} Sil/GT min", lo, (lambda k: lambda: min(_spans()[k]))(key))
+    add("T1/span", f"{cond} Sil/GT max", hi, (lambda k: lambda: max(_spans()[k]))(key))
+
+def _pooled_dead(family=None):
+    import re as _re
+    gpt = {"A_gptoss120b", "H_gptoss120b", "M_gptoss120b", "G_gptoss120b", "Oracle_gptoss120b"}
+    cl = {"A_claude", "H_claude", "M_claude"}
+    keep = gpt if family == "gptoss" else cl if family == "claude" else gpt | cl
+    tot = dead = 0
+    for rows, probe in ((_load("reachability_probe_640.json")["rows"], None),
+                        (_load("reachability_probe_repeats_640.json")["rows"], None)):
+        for r in rows:
+            if _re.sub(r"_r\d+$", "", r["cond"]) not in keep:
+                continue
+            tot += r["n"]
+            dead += r["n"] if r["probe"] == "SUCCESS" else 0
+    return tot, dead
+
+add("S5.2/pool", "silences over all runs",      943, lambda: _pooled_dead()[0], 0.5)
+add("S5.2/pool", "dead over all runs",          533, lambda: _pooled_dead()[1], 0.5)
+add("S5.2/pool", "gpt-oss families dead %",      71, lambda: 100 * _pooled_dead("gptoss")[1] / _pooled_dead("gptoss")[0], 0.6)
+add("S5.2/pool", "Claude families dead %",       12, lambda: 100 * _pooled_dead("claude")[1] / _pooled_dead("claude")[0], 0.6)
+add("S5.2/pool", "Bounded dead across repeats",  51,
+    lambda: sum(r["n"] for r in _load("reachability_probe_repeats_640.json")["rows"]
+                if r["cond"].startswith("M_gptoss120b") and r["probe"] == "SUCCESS"), 0.5)
+
 # ── run ──────────────────────────────────────────────────────────────────────
 def main():
     md = "--md" in sys.argv

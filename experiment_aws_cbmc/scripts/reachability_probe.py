@@ -33,7 +33,10 @@ def silenced_groups():
           for r in json.load(open(EXP / "evaluation/gtfail_640.json"))["verdicts"]}
     canon = {k for k, v in gt.items() if v == "FAIL"}
     llm = collections.defaultdict(dict)
-    for f in ("silenced_640.json", "kllama_oracle_640.json"):
+    sources = (os.environ.get("SILENCED_SOURCES", "").split(",")
+               if os.environ.get("SILENCED_SOURCES")
+               else ["silenced_640.json", "kllama_oracle_640.json"])
+    for f in sources:
         for r in json.load(open(EXP / "evaluation" / f))["verdicts"]:
             llm[r["cond"]][(r["func"], r["mutant"])] = r["llm640"]
     out = []

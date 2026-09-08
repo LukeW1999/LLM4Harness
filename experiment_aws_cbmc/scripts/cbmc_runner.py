@@ -22,8 +22,14 @@ SRCDIR = _server_path if _path_exists(_server_path) else Path("/home/weiqi/Verif
 PROOFDIR = SRCDIR / "verification/cbmc"
 
 # s2n-tls source and proof directories
-S2N_SRCDIR  = Path("/root/s2n-tls")
-S2N_PROOFDIR = Path("/root/s2n-tls/tests/cbmc")
+# s2n-tls sits at /root on the compute box and under the corpora directory in a
+# local checkout. Resolve once here so every consumer (feedback_loop, the oracle,
+# the probes) sees paths that exist, instead of each remapping for itself.
+import os as _os
+_S2N_ROOT = (Path("/root/s2n-tls") if _os.path.isdir("/root/s2n-tls")
+             else Path(__file__).resolve().parent.parent.parent / "study_derivability/corpora/s2n-tls")
+S2N_SRCDIR  = _S2N_ROOT
+S2N_PROOFDIR = _S2N_ROOT / "tests/cbmc"
 
 # Common CBMC flags
 COMMON_FLAGS = [

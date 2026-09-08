@@ -2,11 +2,15 @@
 """Generate dataset_condA/func__<s2n func>/ {implementation.c, header.h, ground_truth_harness.c}."""
 import sys, re, subprocess
 from pathlib import Path
-sys.path.insert(0,"/root/experiment_aws_cbmc/scripts")
+import os
+_HERE=Path(__file__).resolve().parent; _EXP=_HERE.parent
+sys.path.insert(0, "/root/experiment_aws_cbmc/scripts" if os.path.isdir("/root/experiment_aws_cbmc/scripts") else str(_HERE))
 import cbmc_runner as C
-PROOF=Path("/root/s2n-tls/tests/cbmc/proofs"); DS=Path("/root/experiment_aws_cbmc/dataset_condA")
+# s2n-tls lives at /root on the compute box and under the corpora directory locally
+_S2N=Path("/root/s2n-tls") if os.path.isdir("/root/s2n-tls") else _EXP.parent/"study_derivability/corpora/s2n-tls"
+PROOF=_S2N/"tests/cbmc/proofs"; DS=_EXP/"dataset_condA"
 HELPER="make_common_datastructures.c"
-HEADERS=[Path("/root/s2n-tls/stuffer/s2n_stuffer.h"),Path("/root/s2n-tls/api/s2n.h")]
+HEADERS=[_S2N/"stuffer/s2n_stuffer.h", _S2N/"api/s2n.h"]
 
 def find_func(func,fp):
     if not fp.exists(): return None,None,None
@@ -20,6 +24,10 @@ def find_func(func,fp):
             if depth>0: inf=True
             if inf and depth==0: return lines[i:j+1],i+1,j+1
     return None,None,None
+
+def remap(x):
+    """cbmc_runner's s2n configs carry the compute box's absolute paths."""
+    return Path(str(x).replace("/root/s2n-tls", str(_S2N)))
 
 def proto(func):
     for h in HEADERS:
@@ -41,7 +49,7 @@ for f in funcs:
     cfg=C.FUNC_CONFIGS[f]; body=None
     for s in cfg["sources"]:
         if Path(s).name==HELPER: continue
-        b,_,_=find_func(f,Path(s))
+        b,_,_=find_func(f,remap(s))
         if b: body="\n".join(b); break
     if not body: print(f,"NO BODY"); continue
     d=DS/f"func__{f}"; d.mkdir(parents=True,exist_ok=True)

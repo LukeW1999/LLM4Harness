@@ -1,5 +1,5 @@
-import sys,json,subprocess,time,os,shutil
 from pathlib import Path
+import sys,json,subprocess,time,os,shutil
 from concurrent.futures import ProcessPoolExecutor,as_completed
 HERE=Path(__file__).resolve().parent; EXP=HERE.parent; sys.path.insert(0,str(HERE))
 from cbmc_runner import FUNC_CONFIGS,COMMON_FLAGS

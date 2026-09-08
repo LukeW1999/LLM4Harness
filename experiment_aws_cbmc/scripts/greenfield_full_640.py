@@ -1,8 +1,8 @@
-import os,shutil
-#!/usr/bin/env python3,shutil
+#!/usr/bin/env python3
 """6.4.0 green-field self-built reference, full metrics (mirrors gf_reference.py):
 union leave-one-out recovery + single-model vs cross-model at matched K + recall@K=1.
 Reuses generated harnesses (no LLM). CBMC 6.4.0 only."""
+import os,shutil
 import sys,json,subprocess,time,random,collections
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor,as_completed

@@ -1,8 +1,8 @@
-import os,shutil
-#!/usr/bin/env python3,shutil
+#!/usr/bin/env python3
 """6.4.0 silenced counts for the probe conditions I (two-phase scaffold-then-fill)
 and J (postcondition checklist), plus G multi-run repeats (r2,r3), over the 6.4.0
 GT-fail set (397). Reuses generated harnesses (no LLM). CBMC only."""
+import os,shutil
 import sys, json, subprocess, time
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed

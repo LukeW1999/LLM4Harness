@@ -1,7 +1,7 @@
-import os,shutil
-#!/usr/bin/env python3,shutil
+#!/usr/bin/env python3
 """6.4.0 oracle Sil/GT for the two under-reported conditions: K (spec-first) and
 Llama 3.3 (A/G/H), over the 6.4.0 GT-fail set (397). Reuses generated harnesses."""
+import os,shutil
 import sys, json, subprocess, time
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed

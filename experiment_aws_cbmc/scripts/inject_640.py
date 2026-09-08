@@ -1,5 +1,4 @@
-import shutil
-#!/usr/bin/env python3,shutil
+#!/usr/bin/env python3
 """6.4.0 injection test (一.5): for each silenced bug, inject the GT harness's
 assert() statements into the LLM final harness (before its closing brace) and
 re-run CBMC on the mutant.
@@ -9,6 +8,7 @@ re-run CBMC on the mutant.
              reaches the faulting state (reachability / scaffold, not never-written).
   COMPILE -> the GT assertion references variables absent from the LLM harness
              (cross-harness variable mismatch): inconclusive, excluded."""
+import shutil
 import sys, re, json, subprocess, tempfile, os, time
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed

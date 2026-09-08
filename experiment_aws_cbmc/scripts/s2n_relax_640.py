@@ -1,5 +1,4 @@
-import shutil
-#!/usr/bin/env python3,shutil
+#!/usr/bin/env python3
 """6.4.0 s2n assume-relaxation cross-check (mirrors s2n_b1_relax.py / a3 on 6.4.0).
 For each s2n silenced (cond,func,mutant): strip __CPROVER_assume BOUND constraints from
 the LLM final harness, re-run CBMC 6.4.0 on ORIGINAL vs MUTANT.
@@ -7,6 +6,7 @@ the LLM final harness, re-run CBMC 6.4.0 on ORIGINAL vs MUTANT.
   KG_no_bounds  : no bound assumes to strip                                   -> KG
   AOC_confirmed : stripping bounds makes it FAIL on mutant (was silenced)     -> over-constraint
   INCONCLUSIVE  : stripped harness FAILs on original (relaxation broke validity)"""
+import shutil
 import sys,re,json,glob,tempfile,time,os
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor,as_completed

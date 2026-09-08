@@ -1,0 +1,812 @@
+{
+ "summary": {
+  "cbmc": "6.4.0",
+  "llm_groups": 72,
+  "llm_gate_lost_with_unwinding_on": 30,
+  "silences_behind_them": 265,
+  "silences_behind_dead_groups_lost": 214,
+  "gt_functions": 25,
+  "gt_gate_lost_with_unwinding_on": 1,
+  "elapsed_s": 459
+ },
+ "rows": [
+  {
+   "side": "llm",
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "n": 35,
+   "dead": true,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "dead": true,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "dead": true,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "dead": true,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "dead": true,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "n": 25,
+   "dead": true,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "n": 17,
+   "dead": true,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "n": 16,
+   "dead": true,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "n": 15,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "G_llama3370binstruct",
+   "func": "aws_byte_buf_cat",
+   "n": 12,
+   "dead": false,
+   "gate_off": "UNKNOWN",
+   "gate_on": "UNKNOWN"
+  },
+  {
+   "side": "llm",
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "n": 11,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "H_claude",
+   "func": "aws_byte_buf_cat",
+   "n": 9,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "H_llama3370binstruct",
+   "func": "aws_byte_buf_cat",
+   "n": 9,
+   "dead": false,
+   "gate_off": "FAIL",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "K_gptoss120b",
+   "func": "aws_string_destroy",
+   "n": 7,
+   "dead": true,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 5,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_cursor_from_array",
+   "n": 5,
+   "dead": true,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_buf_init_copy",
+   "n": 5,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "H_llama3370binstruct",
+   "func": "aws_string_eq_byte_cursor",
+   "n": 5,
+   "dead": false,
+   "gate_off": "UNKNOWN",
+   "gate_on": "UNKNOWN"
+  },
+  {
+   "side": "llm",
+   "cond": "H_llama3370binstruct",
+   "func": "aws_string_eq_byte_buf",
+   "n": 5,
+   "dead": false,
+   "gate_off": "FAIL",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "n": 4,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "n": 4,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 4,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "A_claude",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 4,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "M_claude",
+   "func": "aws_byte_buf_cat",
+   "n": 4,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "n": 4,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "n": 4,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "M_gptoss120b",
+   "func": "aws_nospec_mask",
+   "n": 3,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_from_c_str",
+   "n": 3,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 3,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "A_claude",
+   "func": "aws_byte_buf_cat",
+   "n": 3,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "A_claude",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "H_claude",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "M_claude",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 3,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "A_llama3370binstruct",
+   "func": "aws_string_eq_c_str",
+   "n": 3,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "A_gptoss120b",
+   "func": "aws_ptr_eq",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "M_gptoss120b",
+   "func": "aws_ptr_eq",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_from_array",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 2,
+   "dead": true,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_ptr_eq",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "A_claude",
+   "func": "aws_byte_buf_from_array",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "A_claude",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "A_claude",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "H_claude",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "M_claude",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "K_gptoss120b",
+   "func": "aws_nospec_mask",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_from_array",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "K_gptoss120b",
+   "func": "aws_ptr_eq",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "A_llama3370binstruct",
+   "func": "aws_ring_buffer_clean_up",
+   "n": 2,
+   "dead": true,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_cursor_eq_c_str",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "H_llama3370binstruct",
+   "func": "aws_byte_cursor_eq_c_str",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "H_llama3370binstruct",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 2,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "M_gptoss120b",
+   "func": "aws_string_destroy",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_init_copy",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "G_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "n": 1,
+   "dead": false,
+   "gate_off": "UNKNOWN",
+   "gate_on": "UNKNOWN"
+  },
+  {
+   "side": "llm",
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up_secure",
+   "n": 1,
+   "dead": true,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_string_new_from_c_str",
+   "n": 1,
+   "dead": true,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "H_claude",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "H_claude",
+   "func": "aws_string_destroy",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "M_claude",
+   "func": "aws_string_eq_byte_cursor",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "M_claude",
+   "func": "aws_string_eq_byte_buf",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "K_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_buf_clean_up_secure",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "A_llama3370binstruct",
+   "func": "aws_byte_buf_from_c_str",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "A_llama3370binstruct",
+   "func": "aws_nospec_mask",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "G_llama3370binstruct",
+   "func": "aws_byte_buf_clean_up_secure",
+   "n": 1,
+   "dead": false,
+   "gate_off": "FAIL",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "llm",
+   "cond": "G_llama3370binstruct",
+   "func": "aws_nospec_mask",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "llm",
+   "cond": "H_llama3370binstruct",
+   "func": "aws_nospec_mask",
+   "n": 1,
+   "dead": false,
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_nospec_mask",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_buf_cat",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_array_list_swap",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_buf_init",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_buf_clean_up",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_buf_advance",
+   "gate_off": "SUCCESS",
+   "gate_on": "FAIL"
+  },
+  {
+   "side": "gt",
+   "func": "aws_string_destroy",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_buf_secure_zero",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_cursor_from_array",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_buf_init_copy",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_string_eq_byte_cursor",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_string_eq_byte_buf",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_buf_from_c_str",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_buf_from_empty_array",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_buf_reset",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_buf_eq_c_str",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_string_eq_c_str",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_ptr_eq",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_buf_from_array",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_ring_buffer_clean_up",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_cursor_eq_c_str",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_byte_buf_clean_up_secure",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  },
+  {
+   "side": "gt",
+   "func": "aws_string_new_from_c_str",
+   "gate_off": "SUCCESS",
+   "gate_on": "SUCCESS"
+  }
+ ]
+}

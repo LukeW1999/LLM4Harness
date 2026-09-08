@@ -1,9 +1,9 @@
-import os,shutil
-#!/usr/bin/env python3,shutil
+#!/usr/bin/env python3
 """6.4.0 behavioural rename-immune KG check (111/115 on 5.95). For each silenced
 bug (llm640==SUCCESS in silenced_640.json), run CBMC 6.4.0 on EVERY LLM iteration
 harness: a legitimate catch = iter FAILs on mutant AND SUCCEEDs on original src.
 never-written unless some valid iteration ever caught it."""
+import os,shutil
 import sys, json, subprocess, time
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed
