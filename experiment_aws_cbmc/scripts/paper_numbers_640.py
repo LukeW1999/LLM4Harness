@@ -289,6 +289,43 @@ add("S6.3/esb", "silenced under CBMC on the shared 296", 12,
     lambda: sum(1 for r in _ESB if GT.get(_key(r)) == "FAIL" and r["gt"] == "FAIL"
                 and LLM["A_claude"].get(_key(r)) == "SUCCESS"), 0.5)
 
+# §5.2 Reachability partition: a harness whose postcondition region is unreachable
+# passes on every mutant without checking anything (scripts/reachability_probe.py).
+_REACH = {(r["cond"], r["func"]): r["probe"]
+          for r in _load("reachability_probe_640.json")["rows"]}
+_LIVE = _load("mechanism_live_640.json")
+_CAUSE = _load("vacuity_cause_640.json")["summary"]
+
+PAPER8 = ["Oracle", "Baseline", "Neutral", "Bounded", "Single",
+          "Baseline/Claude", "Neutral/Claude", "Bounded/Claude"]
+
+def dead_silenced(cond=None):
+    conds = [cond] if cond else PAPER8
+    out = 0
+    for c in conds:
+        v = LLM[COND[c]]
+        for (f, m) in CANON:
+            if v.get((f, m)) == "SUCCESS" and _REACH.get((COND[c], f)) == "SUCCESS":
+                out += 1
+    return out
+
+add("S5.2/dead", "silences from dead scaffolds",        201, lambda: dead_silenced(), 0.5)
+add("S5.2/dead", "live silences",                       107, lambda: 308 - dead_silenced(), 0.5)
+add("S5.2/dead", "Oracle dead",                         135, lambda: dead_silenced("Oracle"), 0.5)
+add("S5.2/dead", "Baseline dead",                        33, lambda: dead_silenced("Baseline"), 0.5)
+add("S5.2/dead", "Neutral dead",                         33, lambda: dead_silenced("Neutral"), 0.5)
+add("S5.2/dead", "Bounded dead",                          0, lambda: dead_silenced("Bounded"), 0.5)
+add("S5.2/dead", "Claude conditions dead",                0,
+    lambda: sum(dead_silenced(c) for c in ("Baseline/Claude", "Neutral/Claude", "Bounded/Claude")), 0.5)
+add("S5.2/dead", "dead by unwind truncation",           214, lambda: _CAUSE["unwind-truncation"]["silenced"], 0.5)
+add("S5.2/dead", "dead by contradictory assumes",        29, lambda: _CAUSE["contradictory-assumes"]["silenced"], 0.5)
+
+add("S5.2/live", "never-written among live",             93, lambda: _LIVE["_totals"]["live_mech"]["NW"], 0.5)
+add("S5.2/live", "never-written share of live %",        87, lambda: 100 * _LIVE["_totals"]["live_mech"]["NW"] / _LIVE["_totals"]["live"], 0.6)
+add("S5.2/live", "active deletion among live",            2, lambda: _LIVE["_totals"]["live_mech"]["Del"], 0.5)
+add("S5.2/live", "narrowed-away among live",              6, lambda: _LIVE["_totals"]["live_mech"]["Nar"], 0.5)
+add("S5.2/live", "deletion CI hi on live %",            9.3, lambda: cp_ci(4, 107)[1], 0.2)
+
 # ── run ──────────────────────────────────────────────────────────────────────
 def main():
     md = "--md" in sys.argv

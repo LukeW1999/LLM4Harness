@@ -1,0 +1,86 @@
+{
+ "Oracle_gptoss120b": {
+  "silenced": 158,
+  "dead": 135,
+  "live": 23,
+  "live_mech": {
+   "NW": 23
+  }
+ },
+ "A_gptoss120b": {
+  "silenced": 39,
+  "dead": 33,
+  "live": 6,
+  "live_mech": {
+   "NW": 2,
+   "Nar": 4
+  }
+ },
+ "H_gptoss120b": {
+  "silenced": 37,
+  "dead": 33,
+  "live": 4,
+  "live_mech": {
+   "Unres": 4
+  }
+ },
+ "M_gptoss120b": {
+  "silenced": 30,
+  "dead": 0,
+  "live": 30,
+  "live_mech": {
+   "NW": 29,
+   "Unres": 1
+  }
+ },
+ "G_gptoss120b": {
+  "silenced": 1,
+  "dead": 0,
+  "live": 1,
+  "live_mech": {
+   "NW": 1
+  }
+ },
+ "A_claude": {
+  "silenced": 16,
+  "dead": 0,
+  "live": 16,
+  "live_mech": {
+   "NW": 14,
+   "Del": 2
+  }
+ },
+ "H_claude": {
+  "silenced": 16,
+  "dead": 0,
+  "live": 16,
+  "live_mech": {
+   "NW": 13,
+   "Nar": 2,
+   "Unres": 1
+  }
+ },
+ "M_claude": {
+  "silenced": 11,
+  "dead": 0,
+  "live": 11,
+  "live_mech": {
+   "NW": 11
+  }
+ },
+ "_totals": {
+  "silenced": 308,
+  "dead": 201,
+  "live": 107,
+  "live_mech": {
+   "NW": 93,
+   "Del": 2,
+   "Nar": 6,
+   "Unres": 6
+  },
+  "deletion_live_ci": [
+   1.0,
+   9.3
+  ]
+ }
+}
