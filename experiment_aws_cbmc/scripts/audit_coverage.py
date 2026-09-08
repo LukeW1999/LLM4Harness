@@ -84,10 +84,16 @@ def main():
         seen.add((val, ctx[:40]))
         uniq.append((val, ctx))
 
+    figs = sorted({m for m in re.findall(r"includegraphics\[[^\]]*\]\{([^}]*)\}", tex)})
     print(f"registry entries      : {len(entries)}")
     print(f"numeric claims in tex : {len(claims)}")
     print(f"covered by registry   : {len(covered)}")
-    print(f"NOT covered           : {len(uniq)} distinct\n")
+    print(f"NOT covered           : {len(uniq)} distinct")
+    if figs:
+        print(f"\nnumbers inside figures are not in the tex and cannot drift from the data:")
+        for f in figs:
+            print(f"  {f} (drawn by scripts/figures/)")
+    print()
     for val, ctx in uniq:
         print(f"  {val:>10}  ...{ctx}...")
     if args.show_covered:
