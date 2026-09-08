@@ -371,6 +371,11 @@ add("S6/s2n", "s2n silences from dead scaffolds", 31, lambda: _S2N_R["summary"][
 add("S6/s2n", "s2n Claude live silences", 51,
     lambda: sum(r["n"] for r in _S2N_R["rows"] if r["cond"] == "A_claude" and r["probe"] != "SUCCESS"), 0.5)
 
+add("S5.2/live", "unresolved among live", 6,
+    lambda: sum(1 for c in PAPER8 for (f, m) in CANON
+                if LLM[COND[c]].get((f, m)) == "SUCCESS"
+                and _REACH.get((COND[c], f)) != "SUCCESS"
+                and _ADJ[COND[c]].get(f) not in ("NW", "Nar", "Del")), 0.5)
 add("S5.2/live", "never-written among live",             93, lambda: _LIVE["_totals"]["live_mech"]["NW"], 0.5)
 add("S5.2/live", "never-written share of live %",        87, lambda: 100 * _LIVE["_totals"]["live_mech"]["NW"] / _LIVE["_totals"]["live"], 0.6)
 add("S5.2/live", "active deletion among live",            2, lambda: _LIVE["_totals"]["live_mech"]["Del"], 0.5)
