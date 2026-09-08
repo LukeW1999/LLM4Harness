@@ -10,6 +10,13 @@ import shutil
 import sys,re,json,glob,tempfile,time,os
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor,as_completed
+
+# CBMC is memory-hungry: one process can hold a gigabyte, so a fixed worker
+# count that fits one machine will OOM another. Default to cores-1 and let
+# CBMC_WORKERS override.
+def _workers():
+    import os as _os
+    return int(_os.environ.get("CBMC_WORKERS") or max(1, (_os.cpu_count() or 8) - 1))
 sys.path.insert(0,"scripts"); import cbmc_runner as C
 EXP=Path("/home/weiqi/research/projects/LLM4Harness/experiment_aws_cbmc")
 # CBMC 6.4.0 (the version aws-c-common's CI proofs run). Point CBMC640 at your
@@ -68,7 +75,7 @@ def main():
     tasks=[(c,f,m) for c in sil for (f,m) in sil[c]]
     print(f"s2n silenced tasks: {{k:len(v) for k,v in sil.items()}} -> {len(tasks)}",flush=True)
     out=[]
-    with ProcessPoolExecutor(max_workers=12) as ex:
+    with ProcessPoolExecutor(max_workers=_workers()) as ex:
         futs=[ex.submit(classify,t) for t in tasks]; n=0
         for fu in as_completed(futs):
             out.append(fu.result()); n+=1

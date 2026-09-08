@@ -12,6 +12,13 @@ import shutil
 import sys, re, json, subprocess, tempfile, os, time
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed
+
+# CBMC is memory-hungry: one process can hold a gigabyte, so a fixed worker
+# count that fits one machine will OOM another. Default to cores-1 and let
+# CBMC_WORKERS override.
+def _workers():
+    import os as _os
+    return int(_os.environ.get("CBMC_WORKERS") or max(1, (_os.cpu_count() or 8) - 1))
 HERE=Path(__file__).resolve().parent; EXP=HERE.parent; sys.path.insert(0,str(HERE))
 from cbmc_runner import FUNC_CONFIGS, COMMON_FLAGS
 import run_mutation_oracle_cbmc as rmo
@@ -61,7 +68,7 @@ def main():
     tasks=[(v["cond"],v["func"],v["mutant"]) for v in sil if v["llm640"]=="SUCCESS"]
     print(f"silenced bugs to inject: {len(tasks)}",flush=True)
     out=[]
-    with ProcessPoolExecutor(max_workers=14) as ex:
+    with ProcessPoolExecutor(max_workers=_workers()) as ex:
         futs=[ex.submit(work,t) for t in tasks]; n=0
         for fu in as_completed(futs):
             out.append(fu.result()); n+=1

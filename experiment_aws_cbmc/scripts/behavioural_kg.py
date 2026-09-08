@@ -14,6 +14,13 @@ import sys, json, importlib.util as iu
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
+# CBMC is memory-hungry: one process can hold a gigabyte, so a fixed worker
+# count that fits one machine will OOM another. Default to cores-1 and let
+# CBMC_WORKERS override.
+def _workers():
+    import os as _os
+    return int(_os.environ.get("CBMC_WORKERS") or max(1, (_os.cpu_count() or 8) - 1))
+
 ROOT = Path("/root/experiment_aws_cbmc")
 spec = iu.spec_from_file_location("orc", str(ROOT / "scripts/run_mutation_oracle_cbmc.py"))
 O = iu.module_from_spec(spec); spec.loader.exec_module(O)
@@ -63,7 +70,7 @@ def run_condition(cond):
     data = json.loads(op.read_text())["results"]
     sil = [(r["func"], r["mutant"]) for r in data if r.get("silenced")]
     tasks = []
-    with ThreadPoolExecutor(max_workers=8) as ex:
+    with ThreadPoolExecutor(max_workers=_workers()) as ex:
         futs = [ex.submit(check_one, cond, f, m) for f, m in sil]
         rows = [fu.result() for fu in futs]
     decided = [r for r in rows if r[2] is not None]

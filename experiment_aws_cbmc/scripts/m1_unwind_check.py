@@ -7,6 +7,13 @@ from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import run_mutation_oracle_cbmc as R
 
+# CBMC is memory-hungry: one process can hold a gigabyte, so a fixed worker
+# count that fits one machine will OOM another. Default to cores-1 and let
+# CBMC_WORKERS override.
+def _workers():
+    import os as _os
+    return int(_os.environ.get("CBMC_WORKERS") or max(1, (_os.cpu_count() or 8) - 1))
+
 def run_with_ua(func, mutant_c, harness_c, idx, timeout=R.TIMEOUT):
     cfg = R.FUNC_CONFIGS.get(func)
     if cfg is None: return "NO_CFG"
@@ -61,7 +68,7 @@ def main(dataset):
     print(f"[{dataset}] silenced={len(sil)} runnable={len(tasks)}")
     from collections import Counter
     verd = Counter()
-    with ProcessPoolExecutor(max_workers=6) as ex:
+    with ProcessPoolExecutor(max_workers=_workers()) as ex:
         for fut in as_completed([ex.submit(task, t) for t in tasks]):
             f, m, v = fut.result(); verd[v] += 1
     print(f"  verdicts with --unwinding-assertions ON: {dict(verd)}")

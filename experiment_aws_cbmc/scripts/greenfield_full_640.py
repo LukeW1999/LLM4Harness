@@ -6,6 +6,13 @@ import os,shutil
 import sys,json,subprocess,time,random,collections
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor,as_completed
+
+# CBMC is memory-hungry: one process can hold a gigabyte, so a fixed worker
+# count that fits one machine will OOM another. Default to cores-1 and let
+# CBMC_WORKERS override.
+def _workers():
+    import os as _os
+    return int(_os.environ.get("CBMC_WORKERS") or max(1, (_os.cpu_count() or 8) - 1))
 HERE=Path(__file__).resolve().parent; EXP=HERE.parent; sys.path.insert(0,str(HERE))
 from cbmc_runner import FUNC_CONFIGS,COMMON_FLAGS
 import run_mutation_oracle_cbmc as rmo
@@ -46,12 +53,12 @@ def main():
     t0=time.time(); funcs=sorted(set(f for f,m in GTF))
     ftasks=[(p,f) for p in POOLS for f in funcs]
     fid={}
-    with ProcessPoolExecutor(max_workers=16) as ex:
+    with ProcessPoolExecutor(max_workers=_workers()) as ex:
         for p,f,ok in ex.map(fid_task,ftasks): fid[(p,f)]=ok
     ctasks=[(p,f,m) for p in POOLS for (f,m) in GTF if fid.get((p,f))]
     print(f"fidelity done; catch tasks {len(ctasks)} ({time.time()-t0:.0f}s)",flush=True)
     catch=collections.defaultdict(dict); n=0
-    with ProcessPoolExecutor(max_workers=16) as ex:
+    with ProcessPoolExecutor(max_workers=_workers()) as ex:
         for p,f,m,killed in ex.map(catch_task,ctasks):
             if killed is not None: catch[(f,m)][p]=killed
             n+=1

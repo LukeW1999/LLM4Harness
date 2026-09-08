@@ -1,6 +1,13 @@
 from pathlib import Path
 import sys,json,subprocess,time,os,shutil
 from concurrent.futures import ProcessPoolExecutor,as_completed
+
+# CBMC is memory-hungry: one process can hold a gigabyte, so a fixed worker
+# count that fits one machine will OOM another. Default to cores-1 and let
+# CBMC_WORKERS override.
+def _workers():
+    import os as _os
+    return int(_os.environ.get("CBMC_WORKERS") or max(1, (_os.cpu_count() or 8) - 1))
 HERE=Path(__file__).resolve().parent; EXP=HERE.parent; sys.path.insert(0,str(HERE))
 from cbmc_runner import FUNC_CONFIGS,COMMON_FLAGS
 import run_mutation_oracle_cbmc as rmo
@@ -24,7 +31,7 @@ def llm(cond,func,mut):
 def work(t):c,f,m=t;return(c,llm(c,f,m))
 t0=time.time(); tasks=[(c,f,m) for c in CONDS for f,m in GTF]
 out=[]
-with ProcessPoolExecutor(max_workers=16) as ex:
+with ProcessPoolExecutor(max_workers=_workers()) as ex:
     for r in ex.map(work,tasks): out.append(r)
 res={}
 for c in CONDS: res[c]=sum(1 for cc,v in out if cc==c and v=="SUCCESS")
