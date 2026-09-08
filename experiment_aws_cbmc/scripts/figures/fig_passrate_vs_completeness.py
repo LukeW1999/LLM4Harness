@@ -75,29 +75,40 @@ def main():
         if len(ys) > 1:
             ax1.plot([x, x], [min(ys), max(ys)], color=S.MODEL["gpt-oss"], lw=1.2,
                      alpha=0.5, zorder=1, marker="_", ms=4)
-        ax1.plot(x, primary, "o", ms=4.5, color=S.MODEL["gpt-oss"], zorder=3)
+        # the Oracle control is the point the section turns on
+        is_oracle = c == "Oracle_gptoss120b"
+        ax1.plot(x, primary, "o", ms=6.5 if is_oracle else 4.5,
+                 color="#762A83" if is_oracle else S.MODEL["gpt-oss"],
+                 mec="white" if is_oracle else "none", mew=0.8, zorder=4 if is_oracle else 3)
+        # keep labels off the min-max bars
+        off = {"M_gptoss120b": (0, -11), "G_gptoss120b": (11, 2),
+               "H_gptoss120b": (0, 8), "Oracle_gptoss120b": (0, 9)}.get(c, (0, 7))
         ax1.annotate(S.COND_LABEL[c], (x, primary), textcoords="offset points",
-                     xytext=(0, 7 if c != "M_gptoss120b" else -11), ha="center", fontsize=6.5)
+                     xytext=off, ha="center" if off[0] == 0 else "left",
+                     fontsize=7 if is_oracle else 6.5,
+                     fontweight="bold" if is_oracle else "normal")
 
     bx, by = pr["A_gptoss120b"], baseline_without_cluster()
     ax1.plot(bx, by, "o", ms=4.5, mfc="white", mec=S.MODEL["gpt-oss"], mew=1, zorder=3)
-    ax1.annotate("Baseline less its\none dominant function", (bx, by),
-                 textcoords="offset points", xytext=(8, -3), va="center",
-                 fontsize=6, color="#555555")
 
     ax1.annotate("", xy=(pr["Oracle_gptoss120b"], runs["Oracle_gptoss120b"][0] - 3),
                  xytext=(pr["A_gptoss120b"], runs["A_gptoss120b"][0] + 3),
                  arrowprops=dict(arrowstyle="->", ls="--", lw=0.8, color="#666666"))
-    ax1.annotate("+ expert preconditions", (60, 24), fontsize=6.5, color="#444444", ha="center")
+    ax1.annotate("+ expert preconditions", (58, 27), fontsize=6.5, color="#444444", ha="center")
     ax1.set_xlabel("verifier pass rate (%)")
     ax1.set_ylabel("silenced share of GT-fail set (%)")
     ax1.set_title("(a) more acceptance, more silencing", loc="left")
 
     for c in CONDS:
         if c in rc:
-            ax2.plot(pr[c], rc[c], "o", ms=4.5, color=S.MODEL["gpt-oss"])
+            is_oracle = c == "Oracle_gptoss120b"
+            ax2.plot(pr[c], rc[c], "o", ms=6.5 if is_oracle else 4.5,
+                     color="#762A83" if is_oracle else S.MODEL["gpt-oss"],
+                     mec="white" if is_oracle else "none", mew=0.8, zorder=4)
             ax2.annotate(S.COND_LABEL[c], (pr[c], rc[c]), textcoords="offset points",
-                         xytext=(0, 7), ha="center", fontsize=6.5)
+                         xytext=(0, 8) if not is_oracle else (0, -12), ha="center",
+                         fontsize=7 if is_oracle else 6.5,
+                         fontweight="bold" if is_oracle else "normal")
     ax2.set_xlabel("verifier pass rate (%)")
     ax2.set_ylabel("assertion recall")
     ax2.set_ylim(0.20, 0.44)

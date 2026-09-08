@@ -21,6 +21,9 @@ from matplotlib.patches import Patch  # noqa: E402
 
 ORDER = ["Oracle_gptoss120b", "A_gptoss120b", "H_gptoss120b", "M_gptoss120b",
          "G_gptoss120b", "A_claude", "H_claude", "M_claude"]
+# panel (a) classifies every GT-fail mutant, so its "silenced" spans both the dead
+# and the live ones; it needs colours that cannot be read as mechanism swatches.
+DISP = {"caught": "#A8DDB5", "silenced": "#762A83", "unresolved": "#DDDDDD"}
 KEYS = ["dead_loop", "dead_assume", "never", "narrowed", "deleted", "unresolved"]
 
 def counts():
@@ -78,7 +81,7 @@ def main():
                "deleted": S.MECH["deleted"], "unresolved": S.MECH["unresolved"]}
     hatch = {"dead_assume": "//", "unresolved": ".."}
 
-    fig, (axd, ax) = plt.subplots(1, 2, figsize=(S.TEXTWIDTH, 1.85),
+    fig, (axd, ax) = plt.subplots(1, 2, figsize=(S.TEXTWIDTH, 2.0),
                                   gridspec_kw={"width_ratios": [1.0, 1.35]}, sharey=True)
     ypos = list(range(len(rows)))[::-1]
     for y, cond in zip(ypos, rows):
@@ -98,13 +101,13 @@ def main():
     for y, cond in zip(ypos, rows):
         caught, sil, unres = disp[cond]
         left = 0
-        for val, col, hat in ((caught, "#B7D5EA", None), (sil, S.MECH["dead"], None),
-                              (unres, S.MECH["unresolved"], "..")):
+        for val, col, hat in ((caught, DISP["caught"], None), (sil, DISP["silenced"], None),
+                              (unres, DISP["unresolved"], "..")):
             axd.barh(y, val, left=left, height=0.68, color=col, hatch=hat,
                      edgecolor="white", linewidth=0.6)
             left += val
         axd.text(disp[cond][0] / 2, y, f"{caught:.0f}", ha="center", va="center",
-                 fontsize=6.2, color="#12384f")
+                 fontsize=6.2, color="#0d3b2e")
         axd.text(disp[cond][0] + sil / 2, y, f"{sil:.0f}", ha="center", va="center",
                  fontsize=6.2, color="white")
     axd.set_xlim(0, 100)
@@ -113,20 +116,24 @@ def main():
 
     labels = [f"{S.COND_LABEL[c]} / {S.model_of(c)}" for c in rows]
     axd.set_yticks(ypos, labels)
-    ax.set_xlabel("(b) mechanism behind the silences (count)")
+    ax.set_xlabel("(b) mechanism behind the silences")
     ax.set_xlim(0, max(sum(data[c].values()) for c in rows) * 1.12)
     ax.grid(axis="y", visible=False)
 
-    legend = [Patch(facecolor="#B7D5EA", label="caught by the LLM harness"),
-              Patch(facecolor=colours["dead_loop"], label="dead: loop outruns the bound"),
+    legend_a = [Patch(facecolor=DISP["caught"], label="caught"),
+                Patch(facecolor=DISP["silenced"], label="silenced"),
+                Patch(facecolor=DISP["unresolved"], hatch="..", label="unresolved")]
+    legend = [Patch(facecolor=colours["dead_loop"], label="dead: loop outruns the bound"),
               Patch(facecolor=colours["dead_assume"], hatch="//",
                     label="dead: assumptions admit no run"),
               Patch(facecolor=colours["never"], label="never written"),
               Patch(facecolor=colours["narrowed"], label="narrowed away"),
               Patch(facecolor=colours["deleted"], label="deleted to pass"),
               Patch(facecolor=colours["unresolved"], hatch="..", label="unresolved")]
-    fig.legend(handles=legend, loc="upper center", bbox_to_anchor=(0.5, 1.12), ncol=3,
-               frameon=False, handlelength=1.1, columnspacing=1.4)
+    axd.legend(handles=legend_a, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=3,
+               frameon=False, handlelength=1.0, columnspacing=1.0, fontsize=6.4)
+    ax.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2,
+              frameon=False, handlelength=1.0, columnspacing=1.0, fontsize=6.4)
     S.save(fig, "fig_mechanism_stack")
 
 if __name__ == "__main__":
