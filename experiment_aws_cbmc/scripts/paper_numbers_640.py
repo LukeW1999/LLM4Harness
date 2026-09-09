@@ -248,20 +248,53 @@ add("S6/mod", "Llama Baseline Sil/GT %", 4.5, lambda: _KL_S["A_llama3370binstruc
 
 _S2N = _load("s2n_640.json")["summary"]
 _RLX = _load("s2n_relax_640.json")
-add("S6/s2n", "s2n GT-fail set",           253, lambda: _S2N["A_claude"]["gtfail"], 0.5)
-add("S6/s2n", "s2n Claude silenced",        57, lambda: _S2N["A_claude"]["silenced"], 0.5)
-add("S6/s2n", "s2n Claude Sil/GT %",      22.5, lambda: 100 * _S2N["A_claude"]["silenced"] / _S2N["A_claude"]["gtfail"])
-add("S6/s2n", "s2n gpt-oss Sil/GT %",     16.6, lambda: 100 * _S2N["A_gptoss120b"]["silenced"] / _S2N["A_gptoss120b"]["gtfail"])
-add("S6/s2n", "s2n Claude functions",        9, lambda: _S2N["A_claude"]["funcs_with_silence"], 0.5)
-add("S6/s2n", "s2n gpt-oss functions",       5, lambda: _S2N["A_gptoss120b"]["funcs_with_silence"], 0.5)
-add("S6/s2n", "s2n max function share %", 36.0, lambda: max(_S2N[c]["max_func_share_pct"] for c in ("A_claude", "A_gptoss120b")), 0.5)
-add("S6/s2n", "s2n Claude never-written %", 96.5, lambda: _RLX["summary"]["A_claude"]["KG_pct"])
-add("S6/s2n", "s2n gpt-oss never-written %", 59.5, lambda: _RLX["summary"]["A_gptoss120b"]["KG_pct"])
 
 _GF = _load("greenfield_640.json")
 add("S6/gf", "self-built reference recall %", 94.8, lambda: _GF["recovery_pct"])
 add("S6/gf", "self-built CI lo %",            91.9, lambda: cp_ci(_GF["recovered"], _GF["held_out_silenced_total"])[0], 0.5)
 add("S6/gf", "self-built CI hi %",            96.8, lambda: cp_ci(_GF["recovered"], _GF["held_out_silenced_total"])[1], 0.5)
+
+# §6.2 s2n-tls, regenerated under the corrected prompt and the Makefile-derived
+# build. The earlier arms were generated against a build where the expert
+# harnesses themselves did not verify, so both their denominator and their
+# silenced counts are superseded.
+def _s2n(file, cond, field):
+    return _load(file)["summary"][cond][field]
+
+add("S6/s2n", "s2n GT-fail set", 273, lambda: _s2n("s2n_fix3_640.json", "A_claude_fix3", "gtfail"), 0.5)
+add("S6/s2n", "s2n Claude silenced", 63,
+    lambda: _s2n("s2n_fix3_640.json", "A_claude_fix3", "silenced"), 0.5)
+add("S6/s2n", "s2n Claude Sil/GT %", 23.1,
+    lambda: 100 * _s2n("s2n_fix3_640.json", "A_claude_fix3", "silenced")
+    / _s2n("s2n_fix3_640.json", "A_claude_fix3", "gtfail"))
+add("S6/s2n", "s2n Claude functions", 10,
+    lambda: _s2n("s2n_fix3_640.json", "A_claude_fix3", "funcs_with_silence"), 0.5)
+add("S6/s2n", "s2n Claude max function share %", 21.0,
+    lambda: _s2n("s2n_fix3_640.json", "A_claude_fix3", "max_func_share_pct"), 0.6)
+add("S6/s2n", "s2n gpt-oss silenced", 14,
+    lambda: _s2n("s2n_fix2_gptoss_640.json", "A_gptoss120b_fix2", "silenced"), 0.5)
+add("S6/s2n", "s2n gpt-oss Sil/GT %", 5.1,
+    lambda: 100 * _s2n("s2n_fix2_gptoss_640.json", "A_gptoss120b_fix2", "silenced")
+    / _s2n("s2n_fix2_gptoss_640.json", "A_gptoss120b_fix2", "gtfail"))
+add("S6/s2n", "s2n gpt-oss functions", 5,
+    lambda: _s2n("s2n_fix2_gptoss_640.json", "A_gptoss120b_fix2", "funcs_with_silence"), 0.5)
+
+def _s2n_decidable(file, cond):
+    rows = [r for r in _load(file)["rows"] if r["cond"] == cond and r["gt"] == "FAIL"]
+    return sum(1 for r in rows if r["llm"] in ("SUCCESS", "FAIL")), len(rows)
+
+add("S6/s2n", "s2n Claude decidable %", 77,
+    lambda: 100 * _s2n_decidable("s2n_fix3_640.json", "A_claude_fix3")[0]
+    / _s2n_decidable("s2n_fix3_640.json", "A_claude_fix3")[1], 0.6)
+add("S6/s2n", "s2n gpt-oss decidable %", 59,
+    lambda: 100 * _s2n_decidable("s2n_fix2_gptoss_640.json", "A_gptoss120b_fix2")[0]
+    / _s2n_decidable("s2n_fix2_gptoss_640.json", "A_gptoss120b_fix2")[1], 0.6)
+add("S6/s2n", "s2n gpt-oss undecidable GT-fail mutants", 111,
+    lambda: _s2n_decidable("s2n_fix2_gptoss_640.json", "A_gptoss120b_fix2")[1]
+    - _s2n_decidable("s2n_fix2_gptoss_640.json", "A_gptoss120b_fix2")[0], 0.5)
+
+add("S6/s2n", "s2n Claude silences from a dead scaffold", 0,
+    lambda: _load("s2n_reach_fix3_640.json")["summary"]["dead"], 0.5)
 
 # §6.3 Cross-engine corroboration (ESBMC 8.3.0 vs the pinned CBMC 6.4.0)
 _ESB = _load("esbmc_oracle_A_claude_assert.json")["results"]
@@ -367,9 +400,6 @@ add("S5.2/live", "behavioural never-written share %",     96.9, lambda: 100 * _b
 
 # s2n-tls reachability
 _S2N_R = _load("reachability_probe_s2n_640.json")
-add("S6/s2n", "s2n silences from dead scaffolds", 31, lambda: _S2N_R["summary"]["dead"], 0.5)
-add("S6/s2n", "s2n Claude live silences", 51,
-    lambda: sum(r["n"] for r in _S2N_R["rows"] if r["cond"] == "A_claude" and r["probe"] != "SUCCESS"), 0.5)
 
 add("S5.2/live", "unresolved among live", 6,
     lambda: sum(1 for c in PAPER8 for (f, m) in CANON
