@@ -1,11 +1,18 @@
-import os,shutil
-#!/usr/bin/env python3,shutil
+#!/usr/bin/env python3
 """6.4.0 silenced counts for the probe conditions I (two-phase scaffold-then-fill)
 and J (postcondition checklist), plus G multi-run repeats (r2,r3), over the 6.4.0
 GT-fail set (397). Reuses generated harnesses (no LLM). CBMC only."""
+import os,shutil
 import sys, json, subprocess, time
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed
+
+# CBMC is memory-hungry: one process can hold a gigabyte, so a fixed worker
+# count that fits one machine will OOM another. Default to cores-1 and let
+# CBMC_WORKERS override.
+def _workers():
+    import os as _os
+    return int(_os.environ.get("CBMC_WORKERS") or max(1, (_os.cpu_count() or 8) - 1))
 HERE=Path(__file__).resolve().parent; EXP=HERE.parent
 sys.path.insert(0,str(HERE))
 from cbmc_runner import FUNC_CONFIGS, COMMON_FLAGS
@@ -39,7 +46,7 @@ def main():
     print(f"conds available: {avail}",flush=True)
     tasks=[(c,f,m) for c in avail for (f,m) in GTF]
     out=[]
-    with ProcessPoolExecutor(max_workers=16) as ex:
+    with ProcessPoolExecutor(max_workers=_workers()) as ex:
         futs=[ex.submit(work,t) for t in tasks]; n=0
         for fu in as_completed(futs):
             out.append(fu.result()); n+=1

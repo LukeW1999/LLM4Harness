@@ -1,0 +1,200 @@
+You are an expert in CBMC formal verification of C programs.
+
+Your task is to write a CBMC proof harness for the following C function from the s2n-tls library.
+
+## Natural Language Specification (from header)
+
+The header below contains:
+- Data structure definitions
+- A Doxygen comment with natural language description of the function's behavior
+- Validity predicate documentation
+
+Use the Doxygen description to infer `__CPROVER_assume` preconditions and `assert` postconditions.
+
+{HEADER_CONTENT}
+
+## Function Implementation
+
+{IMPLEMENTATION_CONTENT}
+
+## Available Proof Helper API (from cbmc_proof/make_common_datastructures.h)
+
+```c
+/* Non-deterministic scalars (cbmc_proof/nondet.h) */
+bool nondet_bool();
+uint8_t nondet_uint8_t();
+uint16_t nondet_uint16_t();
+uint32_t nondet_uint32_t();
+uint64_t nondet_uint64_t();
+size_t nondet_size_t();
+int nondet_int();
+void *nondet_voidp();
+
+/* Allocate-and-populate helpers: return a non-deterministic, structurally
+   valid object, or NULL. Always check for NULL before use. */
+struct s2n_blob    *cbmc_allocate_s2n_blob(void);
+struct s2n_stuffer *cbmc_allocate_s2n_stuffer(void);
+struct s2n_array   *cbmc_allocate_s2n_array(void);
+
+/* Populate an already-allocated object with non-deterministic contents */
+void cbmc_populate_s2n_blob(struct s2n_blob *blob);
+void cbmc_populate_s2n_stuffer(struct s2n_stuffer *stuffer);
+void cbmc_populate_s2n_stuffer_reservation(struct s2n_stuffer_reservation *reservation);
+
+/* Strings and memory */
+const char *ensure_c_str_is_allocated(size_t max_size);
+void assert_bytes_match(const uint8_t *a, const uint8_t *b, size_t len);
+void assert_all_bytes_are(const uint8_t *a, uint8_t c, size_t len);
+void assert_all_zeroes(const uint8_t *a, size_t len);
+
+/* s2n memory must be initialised before any s2n_alloc call */
+void nondet_s2n_mem_init(void);
+```
+
+s2n functions return `int` (with `S2N_SUCCESS` / `S2N_FAILURE`) or `s2n_result`
+(test with `s2n_result_is_ok` / `s2n_result_is_error`). Check which one the
+function under test uses before asserting on its return value.
+
+Validity predicates live beside the structures, for example
+`s2n_blob_is_valid`, `s2n_stuffer_is_valid`, `s2n_stuffer_is_freed`. Use them in
+`__CPROVER_assume` for preconditions and in `assert` for postconditions.
+
+## Standard Harness Pattern
+
+```c
+void s2n_XXX_harness() {
+    /* 1. Build a non-deterministic, structurally valid input */
+    struct s2n_stuffer stuffer;
+    cbmc_populate_s2n_stuffer(&stuffer);
+    __CPROVER_assume(s2n_stuffer_is_valid(&stuffer));
+
+    /* 2. Save old state BEFORE calling, for immutability and delta checks */
+    struct s2n_stuffer old_stuffer = stuffer;
+    struct store_byte_from_buffer old_byte;
+    save_byte_from_blob(&stuffer.blob, &old_byte);
+
+    /* 3. Call the function under test */
+    int result = s2n_XXX(&stuffer, ...);
+
+    /* 4. Assert postconditions on BOTH paths */
+    if (result == S2N_SUCCESS) {
+        assert(/* what the success path must have changed */);
+    } else {
+        assert(/* the object is unchanged on failure */);
+    }
+
+    /* 5. Assert the fields that must not change either way */
+    assert(stuffer.blob.size == old_stuffer.blob.size);
+    assert(stuffer.alloced == old_stuffer.alloced);
+    /* ... one assert per unchanged field ... */
+
+    /* 6. The validity invariant must still hold */
+    assert(s2n_stuffer_is_valid(&stuffer));
+}
+```
+
+## CBMC Macro Semantics
+
+```c
+S2N_SUCCESS = 0
+S2N_FAILURE = -1
+```
+
+Functions returning `s2n_result` are tested with `s2n_result_is_ok(r)` and
+`s2n_result_is_error(r)`, never by comparing to an integer.
+
+## CRITICAL: Read the function signature carefully before writing
+
+**Return value vs output pointer** — s2n functions use both styles:
+- `int s2n_stuffer_skip_read(struct s2n_stuffer *stuffer, uint32_t n)` → status in the **return value**
+- `int s2n_stuffer_read_uint8(struct s2n_stuffer *stuffer, uint8_t *u)` → data via an **output pointer**
+- `void *s2n_stuffer_raw_read(struct s2n_stuffer *stuffer, uint32_t data_len)` → returns a **pointer**, which may be NULL
+
+Call the function exactly as its signature requires.
+
+**Stuffer fields** — a `struct s2n_stuffer` carries `blob` (the storage), `read_cursor`,
+`write_cursor`, `high_water_mark`, `alloced`, `growable` and `tainted`. A harness that
+checks only `write_cursor` leaves the rest unconstrained, so assert every field the
+function is specified to preserve, not just the one it changes.
+
+## Your Task
+
+Write a complete harness. Translate the Doxygen description into assumes and asserts.
+
+**CRITICAL — Four categories of postconditions you must cover:**
+
+### 1. Changed fields (from Doxygen)
+Assert what the function explicitly guarantees changes:
+```c
+assert(stuffer.read_cursor == old_stuffer.read_cursor + n);  // "advances by n"
+assert(s2n_result_is_ok(result));                            // "returns success"
+```
+
+### 2. Unchanged fields (implied — Doxygen rarely lists these)
+For EVERY field not mentioned as changing, add an explicit assert:
+```c
+assert(stuffer.blob.size == old_stuffer.blob.size);  // size not mentioned → unchanged
+assert(stuffer.growable == old_stuffer.growable);    // growable not mentioned → unchanged
+assert(stuffer.blob.data == old_stuffer.blob.data);  // pointer not mentioned → unchanged
+```
+
+### 3. Both return paths
+Always cover success AND failure:
+```c
+if (result == S2N_SUCCESS) { assert(/* success postcondition */); }
+else                       { assert(/* failure: struct unchanged */); }
+```
+
+### 4. Validity invariants
+After the call, assert all structures remain valid:
+```c
+assert(s2n_stuffer_is_valid(&stuffer));
+assert(s2n_blob_is_valid(&stuffer.blob));
+```
+
+## CRITICAL: assert() calls are mandatory
+
+A harness with no `assert()` calls is **invalid**.
+
+Before writing, answer from the Doxygen and implementation:
+1. What fields change on **success**?
+2. What fields are **unchanged** (implicit invariant)?
+3. What happens on **failure**?
+4. What **validity invariants** must hold after the call?
+
+Every answer must appear as an `assert()`.
+
+## CRITICAL: Allowed Includes Only
+
+Only use the following `#include` directives. Do NOT include any file not listed here:
+
+```c
+#include <s2n.h>
+#include "stuffer/s2n_stuffer.h"          /* or the header declaring the function */
+#include "utils/s2n_blob.h"
+#include "utils/s2n_mem.h"
+#include "utils/s2n_safety.h"
+#include <cbmc_proof/cbmc_utils.h>        /* assert_bytes_match, assert_all_bytes_are */
+#include <cbmc_proof/make_common_datastructures.h>  /* cbmc_allocate_*, cbmc_populate_* */
+#include <cbmc_proof/nondet.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
+```
+
+**FORBIDDEN includes** (do not use — these files do not exist in the test environment):
+- Any `proof_helpers/` header — those belong to aws-c-common, not s2n-tls
+- `cbmc_proof/proof_allocators.h` — does NOT exist
+
+**Do NOT declare or define stubs.** `s2n_calculate_stacktrace`, `mlock`, `munlock`,
+`madvise`, `sysconf` and `posix_memalign` are already linked into the proof. Writing
+your own copy gives it a different signature from the real one and the harness will
+fail to convert. Declare nothing you did not write yourself.
+
+**Memory rule:** call `nondet_s2n_mem_init()` before any function that allocates.
+
+## Output Format
+
+Output ONLY the harness .c file. Start with #include directives.

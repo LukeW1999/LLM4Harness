@@ -1,0 +1,16 @@
+[
+ {
+  "func": "aws_byte_buf_clean_up",
+  "orig_after": "SUCCESS",
+  "per_mutant": {
+   "mutant_0002": "SUCCESS",
+   "mutant_0006": "SUCCESS",
+   "mutant_0008": "SUCCESS",
+   "mutant_0011": "SUCCESS"
+  },
+  "n_silenced": 4,
+  "n_caught": 0,
+  "valid": true,
+  "caught": []
+ }
+]

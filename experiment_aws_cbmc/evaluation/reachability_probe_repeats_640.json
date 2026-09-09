@@ -1,0 +1,878 @@
+{
+ "summary": {
+  "cbmc": "6.4.0",
+  "groups": 123,
+  "silenced_total": 635,
+  "vacuous_groups": 22,
+  "vacuous_silenced": 332,
+  "by_verdict": {
+   "SUCCESS": 22,
+   "FAIL": 100,
+   "NOCALLSITE": 1
+  },
+  "elapsed_s": 138
+ },
+ "rows": [
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_nospec_mask",
+   "n": 35,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "G_gptoss120b_r2",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "G_gptoss120b_r3",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_gptoss120b_r2",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r3",
+   "func": "aws_byte_buf_cat",
+   "n": 33,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_claude_r4",
+   "func": "aws_byte_buf_cat",
+   "n": 27,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_array_list_swap",
+   "n": 25,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_claude_r5",
+   "func": "aws_byte_buf_advance",
+   "n": 25,
+   "probe": "SUCCESS",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "n": 21,
+   "probe": "SUCCESS",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_byte_buf_init",
+   "n": 17,
+   "probe": "SUCCESS",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r3",
+   "func": "aws_string_eq_byte_buf",
+   "n": 16,
+   "probe": "NOCALLSITE",
+   "harness": "iter_9_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r2",
+   "func": "aws_byte_buf_advance",
+   "n": 16,
+   "probe": "SUCCESS",
+   "harness": "iter_8_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_byte_buf_clean_up",
+   "n": 16,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r2",
+   "func": "aws_byte_buf_advance",
+   "n": 15,
+   "probe": "SUCCESS",
+   "harness": "iter_8_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_byte_buf_cat",
+   "n": 14,
+   "probe": "FAIL",
+   "harness": "iter_15_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_byte_buf_advance",
+   "n": 11,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r2",
+   "func": "aws_byte_buf_from_c_str",
+   "n": 8,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "G_gptoss120b_r3",
+   "func": "aws_byte_buf_from_c_str",
+   "n": 8,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_string_eq_byte_cursor",
+   "n": 8,
+   "probe": "FAIL",
+   "harness": "iter_6_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r3",
+   "func": "aws_string_destroy",
+   "n": 7,
+   "probe": "SUCCESS",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r3",
+   "func": "aws_string_eq_byte_buf",
+   "n": 7,
+   "probe": "FAIL",
+   "harness": "iter_4_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_string_destroy",
+   "n": 7,
+   "probe": "SUCCESS",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "H_claude_r3",
+   "func": "aws_string_eq_byte_cursor",
+   "n": 5,
+   "probe": "FAIL",
+   "harness": "iter_15_harness.c"
+  },
+  {
+   "cond": "H_claude_r5",
+   "func": "aws_string_eq_byte_cursor",
+   "n": 5,
+   "probe": "FAIL",
+   "harness": "iter_15_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r2",
+   "func": "aws_byte_buf_clean_up",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r2",
+   "func": "aws_byte_buf_clean_up",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_4_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_byte_cursor_eq",
+   "n": 4,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_claude_r2",
+   "func": "aws_byte_buf_cat",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_claude_r3",
+   "func": "aws_byte_buf_cat",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_claude_r3",
+   "func": "aws_string_destroy",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_4_harness.c"
+  },
+  {
+   "cond": "A_claude_r5",
+   "func": "aws_byte_buf_cat",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_claude_r5",
+   "func": "aws_string_destroy",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_5_harness.c"
+  },
+  {
+   "cond": "H_claude_r4",
+   "func": "aws_byte_buf_cat",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_claude_r5",
+   "func": "aws_byte_buf_cat",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_claude_r3",
+   "func": "aws_byte_buf_cat",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_claude_r3",
+   "func": "aws_string_destroy",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_7_harness.c"
+  },
+  {
+   "cond": "M_claude_r4",
+   "func": "aws_byte_buf_cat",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_claude_r5",
+   "func": "aws_byte_buf_cat",
+   "n": 4,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r3",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "H_gptoss120b_r2",
+   "func": "aws_byte_buf_from_c_str",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r2",
+   "func": "aws_nospec_mask",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r2",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_7_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r3",
+   "func": "aws_nospec_mask",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "A_claude_r2",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_claude_r3",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_claude_r4",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_claude_r5",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "H_claude_r3",
+   "func": "aws_byte_buf_cat",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_claude_r3",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "H_claude_r4",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "H_claude_r4",
+   "func": "aws_string_destroy",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_4_harness.c"
+  },
+  {
+   "cond": "H_claude_r5",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "H_claude_r5",
+   "func": "aws_string_eq",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "M_claude_r3",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "M_claude_r4",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "M_claude_r5",
+   "func": "aws_byte_buf_reset",
+   "n": 3,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r2",
+   "func": "aws_byte_buf_cat",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r2",
+   "func": "aws_byte_buf_init_copy",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r3",
+   "func": "aws_ring_buffer_clean_up",
+   "n": 2,
+   "probe": "SUCCESS",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r3",
+   "func": "aws_string_destroy_secure",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_6_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r3",
+   "func": "aws_byte_buf_cat",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r3",
+   "func": "aws_byte_buf_clean_up",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_6_harness.c"
+  },
+  {
+   "cond": "G_gptoss120b_r2",
+   "func": "aws_byte_buf_init_copy",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "G_gptoss120b_r2",
+   "func": "aws_ptr_eq",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_gptoss120b_r3",
+   "func": "aws_ring_buffer_clean_up",
+   "n": 2,
+   "probe": "SUCCESS",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r2",
+   "func": "aws_ring_buffer_clean_up",
+   "n": 2,
+   "probe": "SUCCESS",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r2",
+   "func": "aws_string_destroy_secure",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_5_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r2",
+   "func": "aws_byte_buf_cat",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r2",
+   "func": "aws_ptr_eq",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_string_destroy_secure",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_5_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_byte_buf_from_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 2,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_claude_r2",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_claude_r3",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_claude_r3",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_6_harness.c"
+  },
+  {
+   "cond": "A_claude_r4",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "A_claude_r4",
+   "func": "aws_string_destroy_secure",
+   "n": 2,
+   "probe": "SUCCESS",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_claude_r5",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_claude_r5",
+   "func": "aws_byte_buf_from_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "H_claude_r3",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "H_claude_r4",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "H_claude_r4",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_5_harness.c"
+  },
+  {
+   "cond": "H_claude_r5",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "H_claude_r5",
+   "func": "aws_byte_buf_from_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "M_claude_r3",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "M_claude_r4",
+   "func": "aws_byte_buf_from_empty_array",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "M_claude_r4",
+   "func": "aws_string_destroy_secure",
+   "n": 2,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r2",
+   "func": "aws_string_destroy",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_8_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r2",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r2",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r3",
+   "func": "aws_byte_buf_advance",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "A_gptoss120b_r3",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "G_gptoss120b_r2",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "G_gptoss120b_r2",
+   "func": "aws_byte_cursor_eq_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "G_gptoss120b_r2",
+   "func": "aws_string_new_from_c_str",
+   "n": 1,
+   "probe": "SUCCESS",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "G_gptoss120b_r3",
+   "func": "aws_byte_buf_init_copy",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "G_gptoss120b_r3",
+   "func": "aws_byte_cursor_eq_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_gptoss120b_r2",
+   "func": "aws_byte_buf_init_copy",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_gptoss120b_r2",
+   "func": "aws_byte_buf_eq_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_gptoss120b_r2",
+   "func": "aws_byte_cursor_eq_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_gptoss120b_r2",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_gptoss120b_r3",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_5_harness.c"
+  },
+  {
+   "cond": "H_gptoss120b_r3",
+   "func": "aws_byte_buf_from_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_gptoss120b_r3",
+   "func": "aws_byte_buf_init_copy",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r2",
+   "func": "aws_byte_buf_init_copy",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r2",
+   "func": "aws_string_destroy",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_7_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r2",
+   "func": "aws_byte_cursor_eq_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r3",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "M_gptoss120b_r3",
+   "func": "aws_byte_cursor_eq_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_byte_buf_init_copy",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_claude_r3",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "A_claude_r4",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "A_claude_r4",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 1,
+   "probe": "SUCCESS",
+   "harness": "iter_4_harness.c"
+  },
+  {
+   "cond": "A_claude_r5",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "A_claude_r5",
+   "func": "aws_string_eq_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_2_harness.c"
+  },
+  {
+   "cond": "A_claude_r5",
+   "func": "aws_byte_buf_advance",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_7_harness.c"
+  },
+  {
+   "cond": "A_claude_r5",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "H_claude_r3",
+   "func": "aws_string_destroy",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "H_claude_r4",
+   "func": "aws_byte_cursor_eq_c_str",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_claude_r3",
+   "func": "aws_byte_buf_init_copy",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  },
+  {
+   "cond": "M_claude_r5",
+   "func": "aws_byte_buf_secure_zero",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_3_harness.c"
+  },
+  {
+   "cond": "M_claude_r5",
+   "func": "aws_byte_buf_init_copy",
+   "n": 1,
+   "probe": "FAIL",
+   "harness": "iter_1_harness.c"
+  }
+ ]
+}

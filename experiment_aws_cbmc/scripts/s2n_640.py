@@ -1,6 +1,13 @@
-import sys,subprocess,glob,json,time,os,shutil
 from pathlib import Path
+import sys,subprocess,glob,json,time,os,shutil
 from concurrent.futures import ProcessPoolExecutor,as_completed
+
+# CBMC is memory-hungry: one process can hold a gigabyte, so a fixed worker
+# count that fits one machine will OOM another. Default to cores-1 and let
+# CBMC_WORKERS override.
+def _workers():
+    import os as _os
+    return int(_os.environ.get("CBMC_WORKERS") or max(1, (_os.cpu_count() or 8) - 1))
 sys.path.insert(0,"scripts"); import cbmc_runner as C
 EXP=Path("/home/weiqi/research/projects/LLM4Harness/experiment_aws_cbmc")
 # CBMC 6.4.0 (the version aws-c-common's CI proofs run). Point CBMC640 at your
@@ -23,7 +30,8 @@ def final_llm(cond,func):
     hs=sorted(glob.glob(str(EXP/f"results/feedback_loop_{cond}/{func}/iter_*_harness.c")),key=lambda p:int(p.split('iter_')[1].split('_')[0]))
     return hs[-1] if hs else None
 FUNCS=sorted(p.name for p in (EXP/"mutants_s2n").iterdir() if p.is_dir())
-CONDS=["A_claude","A_gptoss120b"]
+# The GT harness is re-run per condition, so cost is linear in this list.
+CONDS=(os.environ.get("S2N_CONDS") or "A_claude,A_gptoss120b").split(",")
 def task_list():
     T=[]
     for func in FUNCS:
@@ -43,7 +51,7 @@ def main():
     t0=time.time(); T=task_list()
     print(f"tasks: {len(T)} ({len(FUNCS)} funcs x {len(CONDS)} conds x mutants)",flush=True)
     out=[]
-    with ProcessPoolExecutor(max_workers=16) as ex:
+    with ProcessPoolExecutor(max_workers=_workers()) as ex:
         futs=[ex.submit(work,t) for t in T]; n=0
         for f in as_completed(futs):
             out.append(f.result()); n+=1
@@ -60,6 +68,6 @@ def main():
     res["paper_5.95"]={"gtfail":253,"claude_sil":57,"gptoss_sil":42}
     res["elapsed_s"]=round(time.time()-t0)
     json.dump({"summary":res,"rows":[{"cond":c,"func":f,"mutant":m,"gt":g,"llm":l} for c,f,m,g,l in out]},
-              open(EXP/"evaluation/s2n_640.json","w"),indent=1)
+              open(EXP/"evaluation"/(os.environ.get("S2N_OUT") or "s2n_640.json"),"w"),indent=1)
     print("\n=== s2n @ 6.4.0 ==="); print(json.dumps(res,indent=1))
 if __name__=="__main__": main()

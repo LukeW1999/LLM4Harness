@@ -1,6 +1,13 @@
-import sys,json,subprocess,time,os,shutil
 from pathlib import Path
+import sys,json,subprocess,time,os,shutil
 from concurrent.futures import ProcessPoolExecutor,as_completed
+
+# CBMC is memory-hungry: one process can hold a gigabyte, so a fixed worker
+# count that fits one machine will OOM another. Default to cores-1 and let
+# CBMC_WORKERS override.
+def _workers():
+    import os as _os
+    return int(_os.environ.get("CBMC_WORKERS") or max(1, (_os.cpu_count() or 8) - 1))
 HERE=Path(__file__).resolve().parent; EXP=HERE.parent; sys.path.insert(0,str(HERE))
 from cbmc_runner import FUNC_CONFIGS,COMMON_FLAGS
 import run_mutation_oracle_cbmc as rmo
@@ -22,7 +29,7 @@ def verify(func):
 cdir=EXP/f"results/feedback_loop_{COND}"
 funcs=[f for f in FUNC_CONFIGS if (cdir/f).is_dir() and rmo.get_final_harness(cdir/f)]
 t0=time.time()
-with ProcessPoolExecutor(max_workers=16) as ex:
+with ProcessPoolExecutor(max_workers=_workers()) as ex:
     res=list(ex.map(verify,funcs))
 N=sum(1 for r in res if r is not None); succ=res.count("SUCCESS")
 out={"cond":"K_gptoss120b","N":N,"pass":succ,"pass_pct_640":round(100*succ/N,1),"paper_pass_pct":81.9,"elapsed_s":round(time.time()-t0)}

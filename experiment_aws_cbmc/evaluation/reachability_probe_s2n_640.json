@@ -1,0 +1,98 @@
+{
+ "summary": {
+  "corpus": "s2n-tls",
+  "silenced": 99,
+  "dead": 31,
+  "pct": 31.3,
+  "by_verdict": {
+   "FAIL": 9,
+   "SUCCESS": 5
+  }
+ },
+ "rows": [
+  {
+   "cond": "A_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "n": 16,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "s2n_stuffer_skip_read",
+   "n": 15,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "n": 14,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "s2n_stuffer_read_uint32",
+   "n": 14,
+   "probe": "SUCCESS"
+  },
+  {
+   "cond": "A_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "n": 12,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "s2n_stuffer_alloc",
+   "n": 10,
+   "probe": "SUCCESS"
+  },
+  {
+   "cond": "A_claude",
+   "func": "s2n_stuffer_alloc",
+   "n": 5,
+   "probe": "SUCCESS"
+  },
+  {
+   "cond": "A_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "n": 4,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "s2n_stuffer_copy",
+   "n": 2,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_claude",
+   "func": "s2n_stuffer_free",
+   "n": 2,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "n": 2,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "n": 1,
+   "probe": "SUCCESS"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "s2n_stuffer_read_uint8",
+   "n": 1,
+   "probe": "SUCCESS"
+  },
+  {
+   "cond": "A_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "n": 1,
+   "probe": "FAIL"
+  }
+ ]
+}

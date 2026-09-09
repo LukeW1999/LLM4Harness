@@ -1,0 +1,60 @@
+{
+ "summary": {
+  "gptoss_wrong": 104,
+  "gptoss_funcs": 125,
+  "gptoss_pct": 83.2,
+  "claude_wrong": 2,
+  "claude_funcs": 75,
+  "claude_pct": 2.7
+ },
+ "per_condition": {
+  "A_gptoss120b": {
+   "funcs": 25,
+   "aws_include_at_end": 10,
+   "s2n_include_at_end": 0,
+   "mean_iterations": 10.3
+  },
+  "G_gptoss120b": {
+   "funcs": 25,
+   "aws_include_at_end": 25,
+   "s2n_include_at_end": 0,
+   "mean_iterations": 1.0
+  },
+  "H_gptoss120b": {
+   "funcs": 25,
+   "aws_include_at_end": 23,
+   "s2n_include_at_end": 0,
+   "mean_iterations": 15.0
+  },
+  "M_gptoss120b": {
+   "funcs": 25,
+   "aws_include_at_end": 22,
+   "s2n_include_at_end": 0,
+   "mean_iterations": 15.0
+  },
+  "Oracle_gptoss120b": {
+   "funcs": 25,
+   "aws_include_at_end": 24,
+   "s2n_include_at_end": 0,
+   "mean_iterations": 14.4
+  },
+  "A_claude": {
+   "funcs": 25,
+   "aws_include_at_end": 0,
+   "s2n_include_at_end": 0,
+   "mean_iterations": 3.5
+  },
+  "H_claude": {
+   "funcs": 25,
+   "aws_include_at_end": 0,
+   "s2n_include_at_end": 0,
+   "mean_iterations": 14.5
+  },
+  "M_claude": {
+   "funcs": 25,
+   "aws_include_at_end": 2,
+   "s2n_include_at_end": 0,
+   "mean_iterations": 14.5
+  }
+ }
+}

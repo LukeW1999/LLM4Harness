@@ -1,5 +1,5 @@
-import sys,json,subprocess,tempfile,re,collections,os,shutil
 from pathlib import Path
+import sys,json,subprocess,tempfile,re,collections,os,shutil
 HERE=Path(__file__).resolve().parent; EXP=HERE.parent; sys.path.insert(0,str(HERE))
 from cbmc_runner import FUNC_CONFIGS,COMMON_FLAGS
 import run_mutation_oracle_cbmc as rmo

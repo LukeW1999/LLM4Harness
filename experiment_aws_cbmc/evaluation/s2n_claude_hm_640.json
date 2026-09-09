@@ -1,0 +1,9124 @@
+{
+ "summary": {
+  "H_claude": {
+   "gtfail": 253,
+   "silenced": 3,
+   "funcs_with_silence": 1,
+   "max_func_share_pct": 100.0
+  },
+  "M_claude": {
+   "gtfail": 253,
+   "silenced": 16,
+   "funcs_with_silence": 1,
+   "max_func_share_pct": 100.0
+  },
+  "paper_5.95": {
+   "gtfail": 253,
+   "claude_sil": 57,
+   "gptoss_sil": 42
+  },
+  "elapsed_s": 700
+ },
+ "rows": [
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0020.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0032.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0030.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0035.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0050.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0039.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0049.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0038.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0051.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0061.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0062.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0052.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0063.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0064.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0065.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0067.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0066.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0079.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0070.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0087.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0020.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0032.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0030.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0035.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0038.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0039.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0050.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0049.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0051.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0052.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0061.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0062.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0063.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0064.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0065.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0066.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0067.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0070.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0079.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_alloc",
+   "mutant": "mutant_0087.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0004.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0047.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0048.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0051.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0049.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0050.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0052.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0053.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0057.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0054.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0061.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0059.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0065.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0069.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0070.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0071.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0078.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0077.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0074.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0079.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0080.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0004.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0086.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0097.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0047.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0048.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0049.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0050.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0052.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0051.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0053.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0057.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0054.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0059.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0061.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0065.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0069.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0070.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0071.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0077.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0074.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0078.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0079.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0003.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0086.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0018.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0080.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0022.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_copy",
+   "mutant": "mutant_0097.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0031.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0032.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0038.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0039.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0051.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0053.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0066.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0065.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0041.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0070.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0071.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0072.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0073.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0074.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0078.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0075.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0076.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0080.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0082.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0081.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0003.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0091.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0018.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0022.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0031.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0032.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0038.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0039.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0051.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0053.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0065.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0066.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0041.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0070.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0071.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0072.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0073.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0074.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0075.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0078.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0076.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0080.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0082.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0081.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_erase_and_read",
+   "mutant": "mutant_0091.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0019.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0024.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0025.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0027.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0026.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0036.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0046.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0050.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0048.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0052.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0055.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0056.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0064.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0019.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0024.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0025.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0027.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0026.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0036.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0046.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0048.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0050.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0052.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0055.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0056.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_free",
+   "mutant": "mutant_0064.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0018.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0019.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0029.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0027.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0030.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0031.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0032.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0044.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0036.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0057.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0018.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0053.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0019.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0027.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0029.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0030.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0031.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0032.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0036.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0007.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0010.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0044.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0025.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0057.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_growable_alloc",
+   "mutant": "mutant_0053.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0032.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0040.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0048.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0049.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0050.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0051.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0056.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0053.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0059.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0058.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0057.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0060.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0064.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0065.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0066.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0068.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0071.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0067.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0072.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0073.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0076.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0075.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0080.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0079.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0083.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0081.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0082.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0088.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0087.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0085.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0091.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0089.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0094.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0090.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0103.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0007.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0010.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0040.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0025.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0032.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0048.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0049.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0050.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0053.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0051.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0057.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0056.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0058.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0060.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0059.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0064.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0066.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0065.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0067.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0068.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0072.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0071.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0073.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0075.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0076.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0079.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0080.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0082.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0081.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0083.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0085.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0087.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0088.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0089.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0090.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0091.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0094.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_init",
+   "mutant": "mutant_0103.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0011.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0013.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0015.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0014.c",
+   "gt": "SUCCESS",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0016.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0017.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0018.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0019.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0022.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0029.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0030.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0031.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0032.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0035.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0042.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0011.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0013.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0014.c",
+   "gt": "SUCCESS",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0015.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0016.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0017.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0018.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0019.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0022.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0029.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0030.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0031.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0032.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0003.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0035.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_is_consumed",
+   "mutant": "mutant_0042.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0022.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0032.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0031.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0035.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0036.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0037.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0046.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0041.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0047.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0048.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0049.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0053.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0058.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0003.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0022.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0032.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0031.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0035.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0036.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0037.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0041.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0046.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0047.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0049.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0048.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0053.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_read",
+   "mutant": "mutant_0058.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0003.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0022.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0032.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0035.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0036.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0037.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0041.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0046.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0047.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0058.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0048.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0053.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0049.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0003.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0022.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0032.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0035.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0036.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0037.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0041.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0046.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0047.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0048.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0049.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0058.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_raw_write",
+   "mutant": "mutant_0053.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0003.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0004.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0018.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0026.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0025.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0027.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0035.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0036.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0042.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0003.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0043.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0004.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0018.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0026.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0025.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0027.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0035.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0036.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0042.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read",
+   "mutant": "mutant_0043.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0000.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0001.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0018.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0022.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0006.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0042.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0050.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0059.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0060.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0061.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0069.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0070.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0073.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0074.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0078.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0080.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0081.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0095.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0094.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0096.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0082.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0105.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0113.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0118.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0122.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0142.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0143.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0146.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0148.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0149.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0156.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0158.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0161.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0162.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0166.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0167.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0169.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0170.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0182.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0183.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0184.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0185.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0186.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0187.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0188.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0192.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0193.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0194.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0203.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0210.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0214.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0230.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0242.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0243.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0244.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0252.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0253.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0254.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0255.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0256.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0258.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0259.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0262.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0263.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0264.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0271.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0272.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0281.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0289.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0301.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0302.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0305.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0320.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0325.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0326.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0333.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0336.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0337.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0338.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0339.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0340.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0343.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0344.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0346.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0349.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0350.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0351.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0352.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0356.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0357.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0370.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0369.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0372.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0373.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0387.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0399.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0408.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0409.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0410.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0417.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0418.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0419.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0431.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0434.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0436.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0446.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0456.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0457.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0458.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0462.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0463.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0465.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0464.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0467.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0466.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0469.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0470.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0471.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0475.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0476.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0486.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0477.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0490.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0491.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0492.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0503.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0505.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0493.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0506.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0517.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0518.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0519.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0523.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0522.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0524.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0525.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0526.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0528.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0529.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0527.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0532.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0533.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0534.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0018.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0001.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0000.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0006.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0022.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0042.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0060.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0061.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0050.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0059.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0069.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0070.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0078.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0074.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0080.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0073.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0081.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0082.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0095.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0096.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0094.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0105.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0113.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0118.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0122.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0142.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0143.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0148.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0146.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0156.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0149.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0158.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0161.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0162.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0166.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0167.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0169.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0170.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0182.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0183.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0184.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0186.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0185.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0187.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0188.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0192.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0193.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0203.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0194.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0210.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0214.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0230.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0242.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0243.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0244.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0252.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0253.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0254.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0255.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0256.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0258.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0259.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0262.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0263.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0264.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0271.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0272.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0281.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0289.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0301.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0302.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0305.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0320.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0325.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0326.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0333.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0336.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0337.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0338.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0339.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0340.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0343.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0344.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0346.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0349.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0351.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0350.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0352.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0356.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0357.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0372.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0370.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0369.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0373.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0387.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0399.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0408.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0409.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0410.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0417.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0418.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0419.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0431.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0434.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0436.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0446.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0456.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0457.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0458.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0462.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0463.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0464.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0465.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0466.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0467.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0469.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0470.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0471.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0475.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0476.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0477.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0486.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0490.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0491.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0492.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0503.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0493.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0505.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0506.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0517.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0518.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0519.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0523.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0522.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0524.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0525.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0526.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0527.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0528.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0529.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0532.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0533.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_bytes",
+   "mutant": "mutant_0534.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0013.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0014.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0009.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0002.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0015.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0055.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0039.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0056.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0063.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0066.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0077.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0082.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0083.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0084.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0085.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0086.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0087.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0088.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0089.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0090.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0091.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0094.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0098.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0100.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0101.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0102.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0103.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0104.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0107.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0013.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0014.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0002.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0009.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0015.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0039.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0056.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0055.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0063.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0066.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0077.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0083.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0084.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0082.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0085.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0086.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0087.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0088.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0090.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0091.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0089.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0094.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0098.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0100.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0103.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0101.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0102.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0104.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint16",
+   "mutant": "mutant_0107.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0009.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0010.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0004.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0002.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0011.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0012.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0014.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0015.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0017.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0016.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0018.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0019.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0035.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0033.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0022.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0039.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0040.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0042.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0041.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0043.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0044.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0045.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0046.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0047.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0048.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0049.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0050.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0053.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0059.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0060.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0061.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0062.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0063.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0064.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0067.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0116.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0076.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0100.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0094.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0117.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0124.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0127.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0144.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0146.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0147.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0148.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0150.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0151.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0153.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0154.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0156.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0157.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0159.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0161.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0002.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0004.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0009.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0010.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0011.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0012.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0014.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0015.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0016.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0017.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0018.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0019.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0022.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0033.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0035.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0039.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0040.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0041.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0042.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0043.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0044.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0045.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0046.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0047.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0048.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0049.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0050.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0053.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0059.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0060.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0061.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0062.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0063.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0064.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0067.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0076.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0116.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0094.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0100.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0117.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0124.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0127.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0146.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0147.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0144.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0148.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0150.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0151.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0154.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0153.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0156.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0157.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0159.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint32",
+   "mutant": "mutant_0161.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0004.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0005.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0002.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0006.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0030.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0044.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0042.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0053.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0058.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0059.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0004.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0002.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0005.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0006.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0030.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0044.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0042.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0058.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0053.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_read_uint8",
+   "mutant": "mutant_0059.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0019.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0020.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0021.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0022.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0027.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0036.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0020.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0019.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0021.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0022.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0027.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0036.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_reread",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0019.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0020.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0021.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0022.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0027.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0029.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0030.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0031.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0035.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0043.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0052.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0055.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0019.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0020.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0021.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0022.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0027.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0029.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0030.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0031.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0035.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0043.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0052.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_rewrite",
+   "mutant": "mutant_0055.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0026.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0027.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0030.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0029.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0031.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0039.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0037.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0051.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0050.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0052.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0053.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0055.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0054.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0059.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0067.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0068.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0026.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0027.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0029.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0030.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0031.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0037.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0039.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0050.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0051.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0052.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0053.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0054.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0055.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0059.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0067.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_read",
+   "mutant": "mutant_0068.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0000.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0001.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0003.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0011.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0019.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0022.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0038.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0043.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0042.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0052.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0051.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0053.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0054.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0056.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0055.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0060.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0069.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0077.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0085.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0087.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0079.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0109.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0115.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0116.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0118.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0119.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0117.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0127.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0132.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0135.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0151.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0157.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0165.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0169.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0167.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0172.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0176.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0177.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0175.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0187.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0186.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0188.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0189.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0193.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0198.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0199.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0200.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0201.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0203.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0204.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0202.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0207.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0000.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0001.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0011.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0003.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0019.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0038.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0022.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0042.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0043.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0052.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0051.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0053.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0054.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0055.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0060.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0069.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0056.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0077.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0079.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0085.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0087.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0109.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0115.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0117.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0116.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0118.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0119.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0127.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0132.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0151.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0135.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0157.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0165.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0167.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0169.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0172.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0175.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0176.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0177.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0187.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0186.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0188.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0189.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0193.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0198.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0200.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0199.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0201.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0202.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0203.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0000.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0001.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0008.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0011.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0204.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_skip_write",
+   "mutant": "mutant_0207.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0013.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0015.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0014.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0016.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0020.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0021.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0022.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0024.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0028.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0029.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0030.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0031.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0041.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0043.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0044.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0046.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0047.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0048.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0049.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0053.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0054.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0055.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0059.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0062.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0063.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0064.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0000.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0001.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0008.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0011.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0013.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0014.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0015.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0016.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0020.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0021.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0022.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0024.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0028.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0029.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0030.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0031.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0041.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0043.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0044.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0046.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0047.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0048.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0049.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0053.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0054.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0055.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0059.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0062.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0063.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe",
+   "mutant": "mutant_0064.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0026.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0030.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0040.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0042.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0043.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0044.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0047.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0048.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0051.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0046.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0052.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0053.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0060.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0061.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0062.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0067.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0074.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0076.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0085.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0094.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0026.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0028.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0030.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0042.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0043.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0040.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0044.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0047.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0048.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0051.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0046.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0052.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0053.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0060.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0061.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0067.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0062.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0076.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0074.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0085.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0094.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0003.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0075.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0004.c",
+   "gt": "SUCCESS",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0018.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0030.c",
+   "gt": "SUCCESS",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0039.c",
+   "gt": "SUCCESS",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0041.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0050.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_wipe_n",
+   "mutant": "mutant_0075.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0055.c",
+   "gt": "FAIL",
+   "llm": "FAIL"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0048.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0003.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0049.c",
+   "gt": "FAIL",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0018.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0004.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0056.c",
+   "gt": "SUCCESS",
+   "llm": "SUCCESS"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0030.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0039.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0041.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0049.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0050.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0055.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0048.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0013.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write",
+   "mutant": "mutant_0056.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0000.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0017.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0001.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0037.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0044.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0042.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0046.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0043.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0047.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0055.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0048.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0050.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0049.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0051.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0057.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0058.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0066.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0070.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0067.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0071.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0000.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0001.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0013.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0017.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0037.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0042.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0044.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0046.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0043.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0047.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0048.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0049.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0055.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0050.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0057.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0051.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0058.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0066.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0067.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0070.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_bytes",
+   "mutant": "mutant_0071.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0002.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0025.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0037.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0041.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0038.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0025.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0002.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0037.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0041.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint16",
+   "mutant": "mutant_0038.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0025.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0002.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0037.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0041.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0038.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0025.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0002.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0037.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0040.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0041.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint32",
+   "mutant": "mutant_0038.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0002.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0025.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0036.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0045.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0044.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0050.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0048.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "H_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0051.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0024.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0002.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0025.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0034.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0036.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0033.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0045.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0044.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0050.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0051.c",
+   "gt": "FAIL",
+   "llm": "UNKNOWN"
+  },
+  {
+   "cond": "M_claude",
+   "func": "s2n_stuffer_write_uint8",
+   "mutant": "mutant_0048.c",
+   "gt": "SUCCESS",
+   "llm": "UNKNOWN"
+  }
+ ]
+}

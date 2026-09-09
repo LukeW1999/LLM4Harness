@@ -16,7 +16,7 @@
 #   or run `gh auth login` first, or pre-clone the repo yourself.
 set -euo pipefail
 
-CBMC_VER="5.95.1"
+CBMC_VER="6.4.0"
 REPO_HTTPS="github.com/LukeW1999/LLM4Harness.git"
 REPO_ROOT="$HOME/LLM4Harness"
 EXP_DIR="$REPO_ROOT/experiment_aws_cbmc"
@@ -29,9 +29,21 @@ sudo apt-get update -y
 sudo apt-get install -y build-essential git curl jq python3 python3-pip
 
 echo "==================== 2/6  CBMC ${CBMC_VER} ===================="
-# DO NOT `apt install cbmc` — that pulls 6.x, whose default-on unwinding/pointer
-# checks make the LLM harnesses FAIL the fidelity gate on the unmutated function
-# and collapse the differential (byte_buf_cat: 33 silenced -> 0). Verified 2026-08.
+# Pin 6.4.0. Do NOT `apt install cbmc`: it pulls whatever is current, and CBMC
+# changed a default between 6.4.0 and 6.8.0 that decides these results.
+#
+#   cbmc 6.4.0, no unwinding flag        -> unwinding assertions OFF
+#   cbmc 6.8.0, no unwinding flag        -> unwinding assertions ON
+#
+# aws-c-common's Makefile.common leaves CBMC_FLAG_UNWINDING_ASSERTIONS empty, so
+# the production proofs inherit whichever default their CBMC has. With the check
+# ON, an LLM harness whose loop outruns its bound is reported unverified instead
+# of passing, and the silences behind such harnesses disappear (byte_buf_cat:
+# 33 -> 0). That is the check working, not the differential collapsing: those
+# harnesses never execute their postconditions (see scripts/reachability_probe.py
+# and the dead-scaffold mechanism in the paper). Every script here passes the
+# unwinding setting explicitly, so the version only decides what you get when
+# you run CBMC by hand.
 if cbmc --version 2>/dev/null | grep -q '5\.95\.1'; then
   echo "cbmc ${CBMC_VER} already present"
 else
@@ -46,7 +58,7 @@ else
 fi
 # HARD GATE: refuse to continue on the wrong version — a silent 6.x would void every result.
 cbmc --version
-cbmc --version | grep -q '5\.95\.1' || { echo "FATAL: cbmc is not ${CBMC_VER}; the study will NOT reproduce. Abort."; exit 1; }
+cbmc --version | grep -q '6\.4\.0' || { echo "FATAL: cbmc is not ${CBMC_VER}; the study will NOT reproduce. Abort."; exit 1; }
 
 echo "==================== 3/6  clone repos ===================="
 if [ ! -d "$REPO_ROOT/.git" ]; then
@@ -62,8 +74,8 @@ fi
 git -C "$AWS_COMMON_DIR" fetch --all -q || true
 git -C "$AWS_COMMON_DIR" checkout "$AWS_COMMON_COMMIT"
 echo "aws-c-common at $(git -C "$AWS_COMMON_DIR" rev-parse --short HEAD)"
-# Optional cross-corpus (§6.1) only — uncomment if you re-run the s2n set:
-# [ ! -d "$HOME/s2n-tls/.git" ] && git clone https://github.com/aws/s2n-tls.git "$HOME/s2n-tls"
+# Cross-corpus (§6.1): needed for any s2n run.
+[ ! -d "$HOME/s2n-tls/.git" ] && git clone --depth 1 https://github.com/aws/s2n-tls.git "$HOME/s2n-tls"
 
 echo "==================== 4/6  python deps ===================="
 cd "$EXP_DIR"
@@ -78,7 +90,7 @@ if [ ! -f "$EXP_DIR/.env" ]; then
 fi
 
 echo "==================== 6/6  self-check (recompute every paper number) ===================="
-python3 scripts/paper_numbers.py | tail -6 || true
+python3 scripts/paper_numbers_640.py | tail -3 || true
 
 echo
 echo "==================== READY ===================="

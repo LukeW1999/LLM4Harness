@@ -22,8 +22,14 @@ SRCDIR = _server_path if _path_exists(_server_path) else Path("/home/weiqi/Verif
 PROOFDIR = SRCDIR / "verification/cbmc"
 
 # s2n-tls source and proof directories
-S2N_SRCDIR  = Path("/root/s2n-tls")
-S2N_PROOFDIR = Path("/root/s2n-tls/tests/cbmc")
+# s2n-tls sits at /root on the compute box and under the corpora directory in a
+# local checkout. Resolve once here so every consumer (feedback_loop, the oracle,
+# the probes) sees paths that exist, instead of each remapping for itself.
+import os as _os
+_S2N_ROOT = (Path("/root/s2n-tls") if _os.path.isdir("/root/s2n-tls")
+             else Path(__file__).resolve().parent.parent.parent / "study_derivability/corpora/s2n-tls")
+S2N_SRCDIR  = _S2N_ROOT
+S2N_PROOFDIR = _S2N_ROOT / "tests/cbmc"
 
 # Common CBMC flags
 COMMON_FLAGS = [
@@ -2036,3 +2042,56 @@ if __name__ == "__main__":
     print(f"  Checks: {r.num_failed}/{r.num_checks} failed")
     if r.error_summary:
         print(f"  Errors: {r.error_summary}")
+
+
+# s2n proof configuration is read from the proof's own Makefile rather than
+# transcribed. Hand-kept lists drifted: the stubs and the --remove-function-body
+# directives were missing, so harnesses that build under the project's own CI
+# failed conversion here, and the model was blamed for stubs it had to invent.
+# Makefile.common sets these for every proof; cbmc_utils.c will not convert without
+# CBMC_OBJECT_BITS, which is why the expert harnesses failed here and not in CI.
+S2N_COMMON_DEFINES = ["--object-bits", "8", "-DCBMC_OBJECT_BITS=8",
+                      "-DCBMC_MAX_OBJECT_SIZE=(SIZE_MAX>>(8+1))"]
+
+def _s2n_from_makefile(func):
+    """(sources, remove_bodies, defines) from tests/cbmc/proofs/<func>/Makefile."""
+    mk = S2N_PROOFDIR / "proofs" / func / "Makefile"
+    if not mk.exists():
+        return None
+    subs = {"$(PROOF_SOURCE)": S2N_PROOFDIR / "sources",
+            "$(PROOF_STUB)": S2N_PROOFDIR / "stubs",
+            "$(SRCDIR)": S2N_SRCDIR}
+    srcs, remove, defines = [], [], []
+    for line in mk.read_text(errors="replace").splitlines():
+        line = line.strip()
+        if line.startswith("#") or "+=" not in line:
+            continue
+        var, val = (x.strip() for x in line.split("+=", 1))
+        if not val:
+            continue
+        if var in ("PROOF_SOURCES", "PROJECT_SOURCES"):
+            if "$(HARNESS_FILE)" in val:
+                continue                      # the harness itself is passed separately
+            for k, v in subs.items():
+                val = val.replace(k, str(v))
+            if _os.path.exists(val):
+                srcs.append(Path(val))
+        elif var == "REMOVE_FUNCTION_BODY":
+            # goto-instrument applies these in the project's own build; a single
+            # `cbmc` invocation rejects the flag, so we record but do not pass them
+            remove.append(val)
+        elif var == "DEFINES":
+            defines.append(val)
+    return srcs, remove, defines
+
+for _name, _cfg in FUNC_CONFIGS.items():
+    if not _name.startswith("s2n_"):
+        continue
+    _mk = _s2n_from_makefile(_name)
+    if not _mk:
+        continue
+    _srcs, _remove, _defines = _mk
+    if _srcs:
+        _cfg["sources"] = _srcs
+    _cfg["flags"] = list(_cfg["flags"]) + S2N_COMMON_DEFINES + _defines
+    _cfg["removed_bodies"] = _remove

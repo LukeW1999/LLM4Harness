@@ -4,11 +4,18 @@ measure how many silenced bugs become caught. Re-evaluated with the canonical CB
 import sys, os, json, difflib, argparse, tempfile
 from pathlib import Path
 from collections import defaultdict
-sys.path.insert(0, "/root/experiment_aws_cbmc/scripts")
+EXP=Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(EXP/"scripts"))
 import run_mutation_oracle_cbmc as O
 from feedback_loop import extract_c_code, SYSTEM_PROMPT
-EVAL=Path("/root/experiment_aws_cbmc/evaluation"); RES=Path("/root/experiment_aws_cbmc/results"); MUT=Path("/root/experiment_aws_cbmc/mutants")
+EVAL=EXP/"evaluation"; RES=EXP/"results"; MUT=EXP/"mutants"
 CALL=None  # set in main
+# Free-form strengthening lets the model invent an assertion, so a miss is
+# ambiguous between "the setup cannot reach the state" and "it guessed wrong".
+# GT-guided mode hands it the expert's assertions and forbids touching the
+# assume envelope, which makes a miss mean the state is unreachable.
+GT_GUIDED=False
+GT_PROOFS=Path("/home/weiqi/Verification/aws-c-common/verification/cbmc/proofs")
 
 def get_call(model):
     if model=="openrouter":
@@ -35,7 +42,29 @@ def repair_func(cond, func, muts, timeout=120):
     for m in muts:
         mc=MUT/func/f"{m}.c"
         if mc.exists(): diffs.append(f"### Missed bug ({m}) -- diff introduced into the function:\n```diff\n{minimal_diff(src,mc)}\n```")
-    prompt=f"""You wrote this CBMC harness for `{func}`. Mutation testing injected the bugs below into the function, and your harness FAILED to detect them (CBMC still reported VERIFICATION SUCCESSFUL). Add or strengthen assert() statements so the harness would catch each bug. KEEP all existing __CPROVER_assume() preconditions unchanged -- do not narrow the input space. Return ONLY the complete updated harness C code.
+    if GT_GUIDED:
+        gt_src = (GT_PROOFS / func / f"{func}_harness.c")
+        gt_txt = gt_src.read_text(errors="replace") if gt_src.exists() else ""
+        prompt = f"""You wrote this CBMC harness for `{func}`. It missed the bugs below. A reference harness written by a human expert catches them. Copy the expert's postconditions into your harness.
+
+Rules, in order of importance:
+1. Do NOT touch any `__CPROVER_assume()` in your harness. The input space must not change.
+2. Do NOT change how your harness builds its inputs or calls the function.
+3. Add the expert's `assert()` statements, renaming variables only where your harness names them differently. Do not weaken or reinterpret them.
+
+## Expert reference harness
+```c
+{gt_txt}
+```
+
+{chr(10).join(diffs)}
+
+Your current harness:
+```c
+{harness}
+```"""
+    else:
+        prompt=f"""You wrote this CBMC harness for `{func}`. Mutation testing injected the bugs below into the function, and your harness FAILED to detect them (CBMC still reported VERIFICATION SUCCESSFUL). Add or strengthen assert() statements so the harness would catch each bug. KEEP all existing __CPROVER_assume() preconditions unchanged -- do not narrow the input space. Return ONLY the complete updated harness C code.
 
 {chr(10).join(diffs)}
 
@@ -60,7 +89,10 @@ if __name__=="__main__":
     ap=argparse.ArgumentParser()
     ap.add_argument("--cond",required=True); ap.add_argument("--func",default=None)
     ap.add_argument("--timeout",type=int,default=120); ap.add_argument("--model",default="claude")
+    ap.add_argument("--gt-guided",action="store_true",
+                    help="hand the model the expert assertions instead of letting it invent them")
     a=ap.parse_args()
+    GT_GUIDED=a.gt_guided
     CALL=get_call(a.model)
     sil=[r for r in json.load(open(EVAL/f"mutation_oracle_cbmc_feedback_loop_{a.cond}.json"))["results"] if r.get("silenced")]
     byf=defaultdict(list)
@@ -78,4 +110,9 @@ if __name__=="__main__":
         tot_s=sum(r.get('n_silenced',0) for r in results); tot_c=sum(r.get('n_caught',0) for r in results)
         valid=[r for r in results if r.get('valid')]
         print(f"\n===== B2 SUMMARY {a.cond} ({a.model}): {tot_c}/{tot_s} silenced bugs now CAUGHT; {len(valid)}/{len(results)} funcs valid on original =====")
-        json.dump(results, open(EVAL/f"b2_repair_{a.cond}.json","w"), indent=1)
+        # merge, so driving this one function at a time accumulates instead of
+        # replacing the condition's file with the last function tested
+        out = EVAL/f"b2_repair{'_gt' if a.gt_guided else ''}_{a.cond}.json"
+        prev = json.load(open(out)) if out.exists() else []
+        keep = [r for r in prev if r["func"] not in {x["func"] for x in results}]
+        json.dump(keep + results, open(out, "w"), indent=1)

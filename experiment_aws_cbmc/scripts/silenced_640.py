@@ -1,7 +1,7 @@
-import os,shutil
-#!/usr/bin/env python3,shutil
+#!/usr/bin/env python3
 """Recompute silenced set on CBMC 6.4.0 for all 8 conditions, over the 6.4.0 GT-fail
 set (397). Reuses the already-generated H_LLM harnesses (NO LLM/API). CBMC only."""
+import os,shutil
 import sys, json, subprocess, time
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed
@@ -13,7 +13,12 @@ import run_mutation_oracle_cbmc as rmo
 # 6.4.0 binary; falls back to whatever `cbmc` is on PATH.
 CBMC=os.environ.get("CBMC640") or shutil.which("cbmc") or "cbmc"
 MATCH=["--no-standard-checks","--no-unwinding-assertions"]; MUT=EXP/"mutants"
-CONDS=["A_gptoss120b","H_gptoss120b","M_gptoss120b","G_gptoss120b","Oracle_gptoss120b","A_claude","H_claude","M_claude"]
+# --conds lets the same sweep run over the repeat generations (…_r2, _r3, …),
+# whose harnesses are already on disk, so a condition can be reported as a
+# distribution instead of a single draw.
+CONDS=(sys.argv[sys.argv.index("--conds")+1].split(",") if "--conds" in sys.argv else
+       ["A_gptoss120b","H_gptoss120b","M_gptoss120b","G_gptoss120b","Oracle_gptoss120b","A_claude","H_claude","M_claude"])
+OUT=(sys.argv[sys.argv.index("--out")+1] if "--out" in sys.argv else "evaluation/silenced_640.json")
 OLD={"A_gptoss120b":41,"H_gptoss120b":37,"M_gptoss120b":30,"G_gptoss120b":1,"Oracle_gptoss120b":158,"A_claude":16,"H_claude":16,"M_claude":11}
 GTF=[(v["func"],v["mutant"]) for v in json.load(open(EXP/"evaluation/gtfail_640.json"))["verdicts"] if v["gt640"]=="FAIL"]
 def llm(cond,func,mutant):
@@ -37,7 +42,10 @@ def main():
     t0=time.time(); tasks=[(c,f,m) for c in CONDS for (f,m) in GTF]
     print(f"total tasks: {len(tasks)} ({len(CONDS)} conds x {len(GTF)} GT-fail mutants)",flush=True)
     out=[]
-    with ProcessPoolExecutor(max_workers=16) as ex:
+    # cores-1 by default: SUCCESS/FAIL are load-independent but TIMEOUT is not,
+    # and an oversubscribed box turns decidable mutants into non-detections.
+    workers=int(sys.argv[sys.argv.index("--workers")+1]) if "--workers" in sys.argv else max(1,(os.cpu_count() or 8)-1)
+    with ProcessPoolExecutor(max_workers=workers) as ex:
         futs=[ex.submit(work,t) for t in tasks]; n=0
         for fu in as_completed(futs):
             out.append(fu.result()); n+=1
@@ -47,13 +55,14 @@ def main():
     for c in CONDS:
         vs=[v for (cc,_,_,v) in out if cc==c]
         sil=sum(1 for v in vs if v=="SUCCESS"); cat=sum(1 for v in vs if v=="FAIL")
-        rows[c]={"silenced_640":sil,"silenced_595":OLD[c],"catch_640":cat,
+        rows[c]={"silenced_640":sil,"silenced_595":OLD.get(c),"catch_640":cat,
                  "SilGT_640_pct":round(100*sil/N,1),"CatchGT_640_pct":round(100*cat/N,1)}
     res={"cbmc":"6.4.0","gtfail_denom_640":N,"gtfail_denom_595":370,"elapsed_s":round(time.time()-t0),"per_condition":rows}
     json.dump({"summary":res,"verdicts":[{"cond":c,"func":f,"mutant":m,"llm640":v} for (c,f,m,v) in out]},
-              open(EXP/"evaluation/silenced_640.json","w"),indent=1)
+              open(EXP/OUT,"w"),indent=1)
     print("\n=== SILENCED @ 6.4.0 (denom 397) vs 5.95.1 (denom 370) ===")
     print(f"{'cond':20} {'sil640':>7} {'sil595':>7} {'Sil/GT640%':>11} {'Catch640%':>10}")
     for c in CONDS:
-        r=rows[c]; print(f"{c:20} {r['silenced_640']:>7} {r['silenced_595']:>7} {r['SilGT_640_pct']:>11} {r['CatchGT_640_pct']:>10}")
+        r=rows[c]; old=r['silenced_595'] if r['silenced_595'] is not None else '-'
+        print(f"{c:20} {r['silenced_640']:>7} {str(old):>7} {r['SilGT_640_pct']:>11} {r['CatchGT_640_pct']:>10}")
 if __name__=="__main__": main()
