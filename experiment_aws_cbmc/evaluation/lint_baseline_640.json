@@ -1,0 +1,19 @@
+{
+ "no-retval": {
+  "('sil', 'flag')": 23,
+  "('sil', 'pass')": 21,
+  "('clean', 'pass')": 114,
+  "('clean', 'flag')": 98
+ },
+ "fewer": {
+  "('sil', 'pass')": 42,
+  "('sil', 'flag')": 2,
+  "('clean', 'pass')": 202,
+  "('clean', 'flag')": 10
+ },
+ "none-after": {
+  "('sil', 'pass')": 44,
+  "('clean', 'pass')": 200,
+  "('clean', 'flag')": 12
+ }
+}

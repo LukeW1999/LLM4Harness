@@ -19,7 +19,8 @@ import run_mutation_oracle_cbmc as rmo
 # CBMC 6.4.0 (the version aws-c-common's CI proofs run). Point CBMC640 at your
 # 6.4.0 binary; falls back to whatever `cbmc` is on PATH.
 CBMC=os.environ.get("CBMC640") or shutil.which("cbmc") or "cbmc"
-MATCH=["--no-standard-checks","--no-unwinding-assertions"]
+MATCH = (["--no-standard-checks"]
+         + ([] if __import__("os").environ.get("UNWIND_ASSERTS") else ["--no-unwinding-assertions"]))
 MUT=EXP/"mutants"
 STORE=json.load(open(EXP/"evaluation/mutation_oracle_cbmc_feedback_loop_A_gptoss120b.json"))["results"]
 def gt(func,mutant):
@@ -58,6 +59,6 @@ def main():
          "transitions_595_to_640":{f"{a}->{b}":c for (a,b),c in sorted(trans.items())},
          "elapsed_s":round(time.time()-t0)}
     json.dump({"summary":res,"verdicts":[{"func":f,"mutant":m,"gt640":g,"gt595":rg} for f,m,g,rg in out]},
-              open(EXP/"evaluation/gtfail_640.json","w"),indent=1)
+              open(EXP/(__import__("os").environ.get("GT_OUT") or "evaluation/gtfail_640.json"),"w"),indent=1)
     print("\n=== GT-FAIL @ 6.4.0 vs 5.95.1 ==="); [print(f"  {k}: {v}") for k,v in res.items()]
 if __name__=="__main__": main()

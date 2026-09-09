@@ -587,13 +587,15 @@ def _layers_model(model):
                 c["untested"] += 1
             elif r.get("orig_after") not in ("SUCCESS", "UNKNOWN"):
                 c["illegal setup"] += 1
-            elif r["per_mutant"].get(m) == "FAIL":
-                c["missing assert"] += 1
-            else:
+            elif r["per_mutant"].get(m) != "FAIL":
                 c["unreachable bug"] += 1
+            elif (key, f) in _LOOSENED:
+                c["envelope changed"] += 1
+            else:
+                c["missing assert"] += 1
     return c
 
-add("S5.2/layer", "Claude silences that are a missing assertion", 34,
+add("S5.2/layer", "Claude silences that are a missing assertion", 31,
     lambda: _layers_model("claude")["missing assert"], 0.5)
 add("S5.2/layer", "gpt-oss silences that are a missing assertion", 14,
     lambda: _layers_model("gptoss")["missing assert"], 0.5)

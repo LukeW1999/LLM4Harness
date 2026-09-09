@@ -12,7 +12,15 @@ import run_mutation_oracle_cbmc as rmo
 # CBMC 6.4.0 (the version aws-c-common's CI proofs run). Point CBMC640 at your
 # 6.4.0 binary; falls back to whatever `cbmc` is on PATH.
 CBMC=os.environ.get("CBMC640") or shutil.which("cbmc") or "cbmc"
-MATCH=["--no-standard-checks","--no-unwinding-assertions"]; MUT=EXP/"mutants"
+# Unwinding assertions are off for the primary configuration, matching what
+# aws-c-common's Makefile leaves unset. CBMC turned them on by default in 6.8,
+# and a harness whose loop outruns the bound is then rejected rather than
+# accepted, so the whole silence set moves. UNWIND_ASSERTS=1 runs the strict
+# configuration and the paper reports both.
+import os as _os
+MATCH = ["--no-standard-checks"] + ([] if _os.environ.get("UNWIND_ASSERTS")
+                                    else ["--no-unwinding-assertions"])
+MUT = EXP / "mutants"
 # --conds lets the same sweep run over the repeat generations (…_r2, _r3, …),
 # whose harnesses are already on disk, so a condition can be reported as a
 # distribution instead of a single draw.
