@@ -1,0 +1,80 @@
+{
+ "summary": {
+  "silenced": 308,
+  "silenced_gated": 307
+ },
+ "per_condition": {
+  "Oracle_gptoss120b": {
+   "catch": 166,
+   "catch_gated": 139,
+   "silenced": 158,
+   "silenced_gated": 158,
+   "adj_pct": 48.8,
+   "adj_pct_gated": 53.2,
+   "unmeasured": 0
+  },
+  "A_gptoss120b": {
+   "catch": 150,
+   "catch_gated": 97,
+   "silenced": 39,
+   "silenced_gated": 39,
+   "adj_pct": 20.6,
+   "adj_pct_gated": 28.7,
+   "unmeasured": 0
+  },
+  "H_gptoss120b": {
+   "catch": 176,
+   "catch_gated": 151,
+   "silenced": 37,
+   "silenced_gated": 37,
+   "adj_pct": 17.4,
+   "adj_pct_gated": 19.7,
+   "unmeasured": 0
+  },
+  "M_gptoss120b": {
+   "catch": 267,
+   "catch_gated": 265,
+   "silenced": 30,
+   "silenced_gated": 30,
+   "adj_pct": 10.1,
+   "adj_pct_gated": 10.2,
+   "unmeasured": 0
+  },
+  "G_gptoss120b": {
+   "catch": 168,
+   "catch_gated": 73,
+   "silenced": 1,
+   "silenced_gated": 0,
+   "adj_pct": 0.6,
+   "adj_pct_gated": 0.0,
+   "unmeasured": 0
+  },
+  "A_claude": {
+   "catch": 381,
+   "catch_gated": 381,
+   "silenced": 16,
+   "silenced_gated": 16,
+   "adj_pct": 4.0,
+   "adj_pct_gated": 4.0,
+   "unmeasured": 0
+  },
+  "H_claude": {
+   "catch": 372,
+   "catch_gated": 345,
+   "silenced": 16,
+   "silenced_gated": 16,
+   "adj_pct": 4.1,
+   "adj_pct_gated": 4.4,
+   "unmeasured": 0
+  },
+  "M_claude": {
+   "catch": 384,
+   "catch_gated": 384,
+   "silenced": 11,
+   "silenced_gated": 11,
+   "adj_pct": 2.8,
+   "adj_pct_gated": 2.8,
+   "unmeasured": 0
+  }
+ }
+}

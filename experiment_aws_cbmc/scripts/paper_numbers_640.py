@@ -454,6 +454,37 @@ add("S5.2/str", "Claude tested", 34, lambda: _strengthen("claude")[1], 0.5)
 add("S5.2/str", "gpt-oss confirmed", 11, lambda: _strengthen("gptoss")[0], 0.5)
 add("S5.2/str", "gpt-oss tested", 28, lambda: _strengthen("gptoss")[1], 0.5)
 
+# §3.1 the fidelity gate the certificate is defined on, enforced rather than
+# assumed. It barely moves the silences, since a harness that fails on correct
+# code rarely verifies a mutant, but it removes the cheap catches such a harness
+# contributes to the denominator every rate is measured against.
+_GATE = {}
+for _f in ("passrate_640.json", "passrate_repeats_640.json"):
+    if (Path(_BASE) / "evaluation" / _f).exists():
+        for _r in _load(_f)["verdicts"]:
+            _GATE[(_r["cond"], _r["func"])] = _r["v"]
+
+def _gated(cond=None):
+    """(silences, silences passing the gate, catches, catches passing)."""
+    s = gs = c = gc = 0
+    for k in ([cond] if cond else PAPER8):
+        key = COND[k]
+        v = LLM[key]
+        for (f, m) in CANON:
+            ok = _GATE.get((key, f)) == "SUCCESS"
+            if v.get((f, m)) == "SUCCESS":
+                s += 1; gs += ok
+            elif v.get((f, m)) in ("FAIL", "SAT"):
+                c += 1; gc += ok
+    return s, gs, c, gc
+
+add("S3.1/gate", "certified silences passing the fidelity gate", 307, lambda: _gated()[1], 0.5)
+add("S3.1/gate", "catches passing the fidelity gate", 1835, lambda: _gated()[3], 0.5)
+add("S5.1/gate", "Baseline adjudicated silence % gated", 28.7,
+    lambda: 100 * _gated("Baseline")[1] / (_gated("Baseline")[1] + _gated("Baseline")[3]))
+add("S5.1/gate", "Oracle adjudicated silence % gated", 53.2,
+    lambda: 100 * _gated("Oracle")[1] / (_gated("Oracle")[1] + _gated("Oracle")[3]))
+
 # §5.2 the four-layer decomposition, every layer decided by CBMC: the harness
 # never runs; its setup admits states the specification forbids, so the expert's
 # own postconditions fail on the unmutated function; its setup is sound but never
