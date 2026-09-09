@@ -446,6 +446,28 @@ def _layers():
                 c["unreachable bug"] += 1
     return c
 
+# §5.2 repetition, counted at the unit the labels are assigned at. Silences cluster
+# inside a function, so a mutant-weighted rate is dominated by whichever functions
+# happen to carry many mutants; the group rate is what the threats section commits to.
+def _pooled_groups(family):
+    """Each probe row is one (run, function) group, so counting rows counts groups."""
+    tot, dead = 0, 0
+    for f in ("reachability_probe_640.json", "reachability_probe_repeats_640.json"):
+        for r in _load(f)["rows"]:
+            fam = re.sub(r"_r\d+$", "", r["cond"])
+            if fam not in [COND[c] for c in PAPER8]:
+                continue
+            if ("claude" in fam) != (family == "claude"):
+                continue
+            tot += 1
+            dead += r["probe"] == "SUCCESS"
+    return dead, tot
+
+add("S5.2/pool", "gpt-oss groups that never ran", 30, lambda: _pooled_groups("gptoss")[0], 0.5)
+add("S5.2/pool", "gpt-oss groups pooled",         96, lambda: _pooled_groups("gptoss")[1], 0.5)
+add("S5.2/pool", "Claude groups that never ran",   3, lambda: _pooled_groups("claude")[0], 0.5)
+add("S5.2/pool", "Claude groups pooled",          71, lambda: _pooled_groups("claude")[1], 0.5)
+
 add("S5.2/layer", "silences from a harness that never ran", 202,
     lambda: _layers()["never ran"], 0.5)
 add("S5.2/layer", "silences whose setup admits illegal states", 31,
