@@ -24,16 +24,25 @@ ORDER = ["Oracle_gptoss120b", "K_gptoss120b", "A_gptoss120b", "H_gptoss120b",
 # panel (a) classifies every GT-fail mutant, so its "silenced" spans both the dead
 # and the live ones; it needs colours that cannot be read as mechanism swatches.
 DISP = {"caught": "#A8DDB5", "silenced": "#762A83", "unresolved": "#DDDDDD"}
-KEYS = ["dead_loop", "dead_assume", "never", "narrowed", "deleted", "unresolved"]
+# Four layers, in the order a harness fails them. Every one is decided by CBMC:
+# the probe for the first, and the GT-guided strengthening run for the rest.
+KEYS = ["dead_loop", "dead_assume", "illegal", "unreachable", "missing", "untested"]
 
 def counts():
+    import glob, json
     canon = S.gt_fail_set()
     llm = S.llm_verdicts()
-    dead = S.dead_groups()
-    labels = S.load("adjudicated_mechanism.json")["labels"]
+    full = {(r["cond"], r["func"]): r
+            for r in S.load("reachability_full_640.json")["rows"]}
+    dead = {k for k, r in full.items() if r.get("head") != "FAIL"}
+    dead |= {k for k in S.dead_groups() if k not in full}
     cause = {(r["cond"], r["func"]): r["cause"]
              for r in S.load("vacuity_cause_640.json")["rows"]}
-    lab2key = {"NW": "never", "Nar": "narrowed", "Del": "deleted", "Unres": "unresolved"}
+    runs = {}
+    for path in glob.glob(str(S.EXP / "evaluation/b2_repair_gt_*.json")):
+        cond = path.rsplit("b2_repair_gt_", 1)[1][:-5]
+        for r in json.load(open(path)):
+            runs[(cond, r["func"])] = r
 
     out = {}
     for cond in ORDER:
@@ -45,8 +54,16 @@ def counts():
             if (cond, f) in dead:
                 why = cause.get((cond, f), "unwind-truncation")
                 c["dead_loop" if why == "unwind-truncation" else "dead_assume"] += 1
+                continue
+            r = runs.get((cond, f))
+            if r is None:
+                c["untested"] += 1
+            elif r.get("orig_after") not in ("SUCCESS", "UNKNOWN"):
+                c["illegal"] += 1
+            elif r["n_caught"]:
+                c["missing"] += 1
             else:
-                c[lab2key.get(labels.get(cond, {}).get(f, "Unres"), "unresolved")] += 1
+                c["unreachable"] += 1
         out[cond] = c
     return out
 
@@ -77,11 +94,11 @@ def main():
     rows = list(ORDER)   # the pooled totals are quoted in the prose, not drawn
 
     colours = {"dead_loop": S.MECH["dead"], "dead_assume": "#8A8A8A",
-               "never": S.MECH["never"], "narrowed": S.MECH["narrowed"],
-               "deleted": S.MECH["deleted"], "unresolved": S.MECH["unresolved"]}
-    hatch = {"dead_assume": "//", "unresolved": ".."}
+               "illegal": S.MECH["narrowed"], "unreachable": S.MECH["deleted"],
+               "missing": S.MECH["never"], "untested": S.MECH["unresolved"]}
+    hatch = {"dead_assume": "//", "untested": ".."}
 
-    fig, (axd, ax) = plt.subplots(1, 2, figsize=(S.TEXTWIDTH, 1.55),
+    fig, (axd, ax) = plt.subplots(1, 2, figsize=(S.TEXTWIDTH, 1.68),
                                   gridspec_kw={"width_ratios": [1.0, 1.35]}, sharey=True)
     ypos = list(range(len(rows)))[::-1]
     for y, cond in zip(ypos, rows):
@@ -123,17 +140,16 @@ def main():
     legend_a = [Patch(facecolor=DISP["caught"], label="caught"),
                 Patch(facecolor=DISP["silenced"], label="silenced"),
                 Patch(facecolor=DISP["unresolved"], hatch="..", label="unresolved")]
-    legend = [Patch(facecolor=colours["dead_loop"], label="dead: loop outruns the bound"),
+    legend = [Patch(facecolor=colours["dead_loop"], label="never ran: loop $>$ bound"),
               Patch(facecolor=colours["dead_assume"], hatch="//",
-                    label="dead: assumptions admit no run"),
-              Patch(facecolor=colours["never"], label="never written"),
-              Patch(facecolor=colours["narrowed"], label="narrowed away"),
-              Patch(facecolor=colours["deleted"], label="deleted to pass"),
-              Patch(facecolor=colours["unresolved"], hatch="..", label="unresolved")]
-    axd.legend(handles=legend_a, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=3,
-               frameon=False, handlelength=1.0, columnspacing=1.0, fontsize=6.4)
-    ax.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2,
-              frameon=False, handlelength=1.0, columnspacing=1.0, fontsize=6.4)
+                    label="never ran: no feasible run"),
+              Patch(facecolor=colours["illegal"], label="setup admits illegal states"),
+              Patch(facecolor=colours["unreachable"], label="setup misses the fault"),
+              Patch(facecolor=colours["missing"], label="assertion absent")]
+    axd.legend(handles=legend_a, loc="lower left", bbox_to_anchor=(-0.02, 1.0), ncol=3,
+               frameon=False, handlelength=1.0, columnspacing=0.8, fontsize=6.0)
+    ax.legend(handles=legend, loc="lower left", bbox_to_anchor=(-0.02, 1.0), ncol=2,
+              frameon=False, handlelength=1.0, columnspacing=0.8, fontsize=6.0)
     S.save(fig, "fig_mechanism_stack")
 
 if __name__ == "__main__":

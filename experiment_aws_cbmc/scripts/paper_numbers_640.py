@@ -394,6 +394,8 @@ def _strengthen(model=None):
     import glob as _g
     tested = caught = 0
     for f in _g.glob(str(Path(_BASE) / "evaluation/b2_repair_*.json")):
+        if "b2_repair_gt_" in f:      # the GT-guided runs are a separate series
+            continue
         cond = Path(f).stem.replace("b2_repair_", "")
         if model and (("claude" in cond) != (model == "claude")):
             continue
@@ -409,6 +411,88 @@ add("S5.2/str", "Claude confirmed", 27, lambda: _strengthen("claude")[0], 0.5)
 add("S5.2/str", "Claude tested", 34, lambda: _strengthen("claude")[1], 0.5)
 add("S5.2/str", "gpt-oss confirmed", 11, lambda: _strengthen("gptoss")[0], 0.5)
 add("S5.2/str", "gpt-oss tested", 28, lambda: _strengthen("gptoss")[1], 0.5)
+
+# §5.2 the four-layer decomposition, every layer decided by CBMC: the harness
+# never runs; its setup admits states the specification forbids, so the expert's
+# own postconditions fail on the unmutated function; its setup is sound but never
+# reaches the fault; or the assertion was simply absent.
+def _layers():
+    import glob as _g, json as _j
+    full = {(r["cond"], r["func"]): r
+            for r in _load("reachability_full_640.json")["rows"]}
+    dead = {k for k, r in full.items() if r.get("head") != "FAIL"}
+    dead |= {k for k in _REACH if _REACH[k] == "SUCCESS" and k not in full}
+    runs = {}
+    for f in _g.glob(str(Path(_BASE) / "evaluation/b2_repair_gt_*.json")):
+        cond = Path(f).stem.replace("b2_repair_gt_", "")
+        for r in _j.load(open(f)):
+            runs[(cond, r["func"])] = r
+    c = Counter()
+    for cond in PAPER8:
+        key = COND[cond]
+        for (f, m) in CANON:
+            if LLM[key].get((f, m)) != "SUCCESS":
+                continue
+            if (key, f) in dead:
+                c["never ran"] += 1; continue
+            r = runs.get((key, f))
+            if r is None or "per_mutant" not in r:
+                c["untested"] += 1
+            elif r.get("orig_after") not in ("SUCCESS", "UNKNOWN"):
+                c["illegal setup"] += 1
+            elif r["n_caught"]:
+                c["missing assert"] += 1
+            else:
+                c["unreachable bug"] += 1
+    return c
+
+add("S5.2/layer", "silences from a harness that never ran", 202,
+    lambda: _layers()["never ran"], 0.5)
+add("S5.2/layer", "silences whose setup admits illegal states", 31,
+    lambda: _layers()["illegal setup"], 0.5)
+add("S5.2/layer", "silences whose setup never reaches the fault", 18,
+    lambda: _layers()["unreachable bug"], 0.5)
+add("S5.2/layer", "silences that are a missing assertion", 57,
+    lambda: _layers()["missing assert"], 0.5)
+add("S5.2/layer", "live silences still untested", 0,
+    lambda: _layers()["untested"], 0.5)
+
+def _layers_model(model):
+    import glob as _g, json as _j
+    full = {(r["cond"], r["func"]): r for r in _load("reachability_full_640.json")["rows"]}
+    dead = {k for k, r in full.items() if r.get("head") != "FAIL"}
+    runs = {}
+    for f in _g.glob(str(Path(_BASE) / "evaluation/b2_repair_gt_*.json")):
+        cond = Path(f).stem.replace("b2_repair_gt_", "")
+        for r in _j.load(open(f)):
+            runs[(cond, r["func"])] = r
+    c = Counter()
+    for cond in PAPER8:
+        key = COND[cond]
+        if ("claude" in key) != (model == "claude"):
+            continue
+        for (f, m) in CANON:
+            if LLM[key].get((f, m)) != "SUCCESS":
+                continue
+            if (key, f) in dead:
+                c["never ran"] += 1; continue
+            r = runs.get((key, f))
+            if r is None:
+                c["untested"] += 1
+            elif r.get("orig_after") not in ("SUCCESS", "UNKNOWN"):
+                c["illegal setup"] += 1
+            elif r["n_caught"]:
+                c["missing assert"] += 1
+            else:
+                c["unreachable bug"] += 1
+    return c
+
+add("S5.2/layer", "Claude silences that are a missing assertion", 34,
+    lambda: _layers_model("claude")["missing assert"], 0.5)
+add("S5.2/layer", "gpt-oss silences that are a missing assertion", 23,
+    lambda: _layers_model("gptoss")["missing assert"], 0.5)
+add("S5.2/layer", "gpt-oss silences from a harness that never ran", 202,
+    lambda: _layers_model("gptoss")["never ran"], 0.5)
 
 add("S5.2/live", "never-written among live",             93, lambda: _LIVE["_totals"]["live_mech"]["NW"], 0.5)
 add("S5.2/live", "never-written share of live %",        87, lambda: 100 * _LIVE["_totals"]["live_mech"]["NW"] / _LIVE["_totals"]["live"], 0.6)

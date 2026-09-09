@@ -1,0 +1,137 @@
+[
+ {
+  "func": "aws_byte_buf_advance",
+  "orig_after": "SUCCESS",
+  "per_mutant": {
+   "mutant_0029": "SUCCESS",
+   "mutant_0030": "SUCCESS",
+   "mutant_0031": "FAIL",
+   "mutant_0035": "FAIL",
+   "mutant_0032": "FAIL",
+   "mutant_0036": "FAIL",
+   "mutant_0038": "FAIL",
+   "mutant_0048": "FAIL",
+   "mutant_0050": "SUCCESS",
+   "mutant_0060": "SUCCESS",
+   "mutant_0069": "SUCCESS",
+   "mutant_0076": "SUCCESS",
+   "mutant_0084": "SUCCESS",
+   "mutant_0097": "SUCCESS",
+   "mutant_0106": "SUCCESS"
+  },
+  "n_silenced": 15,
+  "n_caught": 6,
+  "valid": true,
+  "caught": [
+   "mutant_0031",
+   "mutant_0035",
+   "mutant_0032",
+   "mutant_0036",
+   "mutant_0038",
+   "mutant_0048"
+  ]
+ },
+ {
+  "func": "aws_byte_buf_cat",
+  "orig_after": "SUCCESS",
+  "per_mutant": {
+   "mutant_0011": "FAIL",
+   "mutant_0013": "FAIL",
+   "mutant_0061": "FAIL",
+   "mutant_0087": "FAIL"
+  },
+  "n_silenced": 4,
+  "n_caught": 4,
+  "valid": true,
+  "caught": [
+   "mutant_0011",
+   "mutant_0013",
+   "mutant_0061",
+   "mutant_0087"
+  ]
+ },
+ {
+  "func": "aws_byte_buf_eq_c_str",
+  "orig_after": "SUCCESS",
+  "per_mutant": {
+   "mutant_0028": "FAIL"
+  },
+  "n_silenced": 1,
+  "n_caught": 1,
+  "valid": true,
+  "caught": [
+   "mutant_0028"
+  ]
+ },
+ {
+  "func": "aws_byte_buf_from_c_str",
+  "orig_after": "FAIL",
+  "per_mutant": {
+   "mutant_0022": "FAIL",
+   "mutant_0027": "FAIL",
+   "mutant_0031": "FAIL"
+  },
+  "n_silenced": 3,
+  "n_caught": 3,
+  "valid": false,
+  "caught": [
+   "mutant_0022",
+   "mutant_0027",
+   "mutant_0031"
+  ]
+ },
+ {
+  "func": "aws_byte_buf_init_copy",
+  "orig_after": "SUCCESS",
+  "per_mutant": {
+   "mutant_0006": "FAIL"
+  },
+  "n_silenced": 1,
+  "n_caught": 1,
+  "valid": true,
+  "caught": [
+   "mutant_0006"
+  ]
+ },
+ {
+  "func": "aws_nospec_mask",
+  "orig_after": "SUCCESS",
+  "per_mutant": {
+   "mutant_0005": "SUCCESS",
+   "mutant_0071": "SUCCESS",
+   "mutant_0100": "SUCCESS"
+  },
+  "n_silenced": 3,
+  "n_caught": 0,
+  "valid": true,
+  "caught": []
+ },
+ {
+  "func": "aws_ptr_eq",
+  "orig_after": "FAIL",
+  "per_mutant": {
+   "mutant_0005": "FAIL",
+   "mutant_0006": "FAIL"
+  },
+  "n_silenced": 2,
+  "n_caught": 2,
+  "valid": false,
+  "caught": [
+   "mutant_0005",
+   "mutant_0006"
+  ]
+ },
+ {
+  "func": "aws_string_destroy",
+  "orig_after": "FAIL",
+  "per_mutant": {
+   "mutant_0020": "FAIL"
+  },
+  "n_silenced": 1,
+  "n_caught": 1,
+  "valid": false,
+  "caught": [
+   "mutant_0020"
+  ]
+ }
+]
