@@ -1,0 +1,266 @@
+{
+ "summary": {
+  "groups": 32,
+  "envelope_kept": 30,
+  "net_loosened_groups": 2,
+  "net_loosened_silences": 3
+ },
+ "rows": [
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_cat",
+   "silences": 3,
+   "assumes_dropped": 5,
+   "assumes_added": 6,
+   "net_loosened": false
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_from_array",
+   "silences": 2,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_from_empty_array",
+   "silences": 2,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_reset",
+   "silences": 3,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_byte_buf_secure_zero",
+   "silences": 4,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "A_claude",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "silences": 2,
+   "assumes_dropped": 4,
+   "assumes_added": 1,
+   "net_loosened": true
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "silences": 4,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_ptr_eq",
+   "silences": 2,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_byte_buf_cat",
+   "silences": 9,
+   "assumes_dropped": 6,
+   "assumes_added": 6,
+   "net_loosened": false
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_byte_buf_eq_c_str",
+   "silences": 1,
+   "assumes_dropped": 1,
+   "assumes_added": 1,
+   "net_loosened": false
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_byte_buf_from_empty_array",
+   "silences": 2,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_byte_buf_reset",
+   "silences": 3,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_string_destroy",
+   "silences": 1,
+   "assumes_dropped": 3,
+   "assumes_added": 1,
+   "net_loosened": true
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "silences": 4,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_byte_buf_cat",
+   "silences": 4,
+   "assumes_dropped": 5,
+   "assumes_added": 6,
+   "net_loosened": false
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_byte_buf_from_empty_array",
+   "silences": 2,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_byte_buf_reset",
+   "silences": 3,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_string_eq_byte_buf",
+   "silences": 1,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_string_eq_byte_cursor",
+   "silences": 1,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "silences": 15,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "silences": 4,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_eq_c_str",
+   "silences": 1,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_from_c_str",
+   "silences": 3,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_init_copy",
+   "silences": 1,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_nospec_mask",
+   "silences": 3,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_ptr_eq",
+   "silences": 2,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_string_destroy",
+   "silences": 1,
+   "assumes_dropped": 0,
+   "assumes_added": 1,
+   "net_loosened": false
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "silences": 11,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_from_array",
+   "silences": 2,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "silences": 3,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_secure_zero",
+   "silences": 5,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_ptr_eq",
+   "silences": 2,
+   "assumes_dropped": 0,
+   "assumes_added": 0,
+   "net_loosened": false
+  }
+ ]
+}

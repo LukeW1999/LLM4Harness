@@ -204,8 +204,8 @@ add("S5.2/beh", "never-written %",                  99.2, lambda: _BKG["pct_neve
 add("S5.2/beh", "genuine catch-then-remove",           2, lambda: _BKG["ever_caught"], 0.5)
 
 # §RQ2: active deletion union bound (2 behavioural + 2 adjudicated of 308)
-add("S5.2/del", "deletion union on live %", 3.7, lambda: 100 * 4 / 107)
-add("S5.2/del", "deletion CI lo on live %",  1.0, lambda: cp_ci(4, 107)[0])
+add("S5.2/del", "deletion union on live %", 3.8, lambda: 100 * 4 / (308 - dead_silenced()))
+add("S5.2/del", "deletion CI lo on live %",  1.0, lambda: cp_ci(4, 308 - dead_silenced())[0])
 
 # §RQ2: the aws_byte_buf_cat cluster and the leave-one-function-out check
 def _sil_in(cond, func):
@@ -359,18 +359,30 @@ _CAUSE = _load("vacuity_cause_640.json")["summary"]
 PAPER8 = ["Oracle", "Baseline", "Neutral", "Bounded", "Single",
           "Baseline/Claude", "Neutral/Claude", "Bounded/Claude"]
 
+# One source of truth for "did the harness run". The full-region probe supersedes
+# the head-only one wherever it has a verdict, so both must not be consulted
+# independently or the dead count differs by group between sections.
+_FULL_PROBE = {(r["cond"], r["func"]): r
+               for r in _load("reachability_full_640.json")["rows"]}
+
+def _never_ran(cond, func):
+    r = _FULL_PROBE.get((cond, func))
+    if r is not None:
+        return r.get("head") != "FAIL"
+    return _REACH.get((cond, func)) == "SUCCESS"
+
 def dead_silenced(cond=None):
     conds = [cond] if cond else PAPER8
     out = 0
     for c in conds:
         v = LLM[COND[c]]
         for (f, m) in CANON:
-            if v.get((f, m)) == "SUCCESS" and _REACH.get((COND[c], f)) == "SUCCESS":
+            if v.get((f, m)) == "SUCCESS" and _never_ran(COND[c], f):
                 out += 1
     return out
 
-add("S5.2/dead", "silences from dead scaffolds",        201, lambda: dead_silenced(), 0.5)
-add("S5.2/dead", "live silences",                       107, lambda: 308 - dead_silenced(), 0.5)
+add("S5.2/dead", "silences from dead scaffolds",        202, lambda: dead_silenced(), 0.5)
+add("S5.2/dead", "live silences",                       106, lambda: 308 - dead_silenced(), 0.5)
 add("S5.2/dead", "Oracle dead",                         135, lambda: dead_silenced("Oracle"), 0.5)
 add("S5.2/dead", "Baseline dead",                        33, lambda: dead_silenced("Baseline"), 0.5)
 add("S5.2/dead", "Neutral dead",                         33, lambda: dead_silenced("Neutral"), 0.5)
@@ -446,6 +458,11 @@ add("S5.2/str", "gpt-oss tested", 28, lambda: _strengthen("gptoss")[1], 0.5)
 # never runs; its setup admits states the specification forbids, so the expert's
 # own postconditions fail on the unmutated function; its setup is sound but never
 # reaches the fault; or the assertion was simply absent.
+# A rewrite that dropped assumes could reach the fault by widening the input
+# space rather than by adding the assertion, so its catches are not evidence.
+_LOOSENED = {(r["cond"], r["func"])
+             for r in _load("envelope_check_640.json")["rows"] if r["net_loosened"]}
+
 def _layers():
     import glob as _g, json as _j
     full = {(r["cond"], r["func"]): r
@@ -470,10 +487,12 @@ def _layers():
                 c["untested"] += 1
             elif r.get("orig_after") not in ("SUCCESS", "UNKNOWN"):
                 c["illegal setup"] += 1
-            elif r["n_caught"]:
-                c["missing assert"] += 1
-            else:
+            elif r["per_mutant"].get(m) != "FAIL":
                 c["unreachable bug"] += 1
+            elif (key, f) in _LOOSENED:
+                c["envelope changed"] += 1
+            else:
+                c["missing assert"] += 1
     return c
 
 # §5.2 repetition, counted at the unit the labels are assigned at. Silences cluster
@@ -502,10 +521,14 @@ add("S5.2/layer", "silences from a harness that never ran", 202,
     lambda: _layers()["never ran"], 0.5)
 add("S5.2/layer", "silences whose setup admits illegal states", 31,
     lambda: _layers()["illegal setup"], 0.5)
-add("S5.2/layer", "silences whose setup never reaches the fault", 18,
+add("S5.2/layer", "silences whose setup never reaches the fault", 27,
     lambda: _layers()["unreachable bug"], 0.5)
-add("S5.2/layer", "silences that are a missing assertion", 57,
+add("S5.2/layer", "silences that are a missing assertion", 45,
     lambda: _layers()["missing assert"], 0.5)
+add("S5.2/layer", "silences whose strengthening changed the envelope", 3,
+    lambda: _layers()["envelope changed"], 0.5)
+add("S5.2/layer", "strengthened harnesses that kept the envelope", 30,
+    lambda: _load("envelope_check_640.json")["summary"]["envelope_kept"], 0.5)
 add("S5.2/layer", "live silences still untested", 0,
     lambda: _layers()["untested"], 0.5)
 
@@ -533,7 +556,7 @@ def _layers_model(model):
                 c["untested"] += 1
             elif r.get("orig_after") not in ("SUCCESS", "UNKNOWN"):
                 c["illegal setup"] += 1
-            elif r["n_caught"]:
+            elif r["per_mutant"].get(m) == "FAIL":
                 c["missing assert"] += 1
             else:
                 c["unreachable bug"] += 1
@@ -541,7 +564,7 @@ def _layers_model(model):
 
 add("S5.2/layer", "Claude silences that are a missing assertion", 34,
     lambda: _layers_model("claude")["missing assert"], 0.5)
-add("S5.2/layer", "gpt-oss silences that are a missing assertion", 23,
+add("S5.2/layer", "gpt-oss silences that are a missing assertion", 14,
     lambda: _layers_model("gptoss")["missing assert"], 0.5)
 add("S5.2/layer", "gpt-oss silences from a harness that never ran", 202,
     lambda: _layers_model("gptoss")["never ran"], 0.5)
@@ -550,7 +573,7 @@ add("S5.2/live", "never-written among live",             93, lambda: _LIVE["_tot
 add("S5.2/live", "never-written share of live %",        87, lambda: 100 * _LIVE["_totals"]["live_mech"]["NW"] / _LIVE["_totals"]["live"], 0.6)
 add("S5.2/live", "active deletion among live",            2, lambda: _LIVE["_totals"]["live_mech"]["Del"], 0.5)
 add("S5.2/live", "narrowed-away among live",              6, lambda: _LIVE["_totals"]["live_mech"]["Nar"], 0.5)
-add("S5.2/live", "deletion CI hi on live %",            9.3, lambda: cp_ci(4, 107)[1], 0.2)
+add("S5.2/live", "deletion CI hi on live %",            9.4, lambda: cp_ci(4, 308 - dead_silenced())[1], 0.2)
 
 # §5.1/§5.2 run-to-run: every condition regenerated 2-5 times (silenced_repeats_640.json)
 _REP = _load("silenced_repeats_640.json")["summary"]["per_condition"]
@@ -683,7 +706,7 @@ add("S5.2/tax", "frame conditions",                32, lambda: _taxonomy()[1]["F
 add("S5.2/tax", "pointer/structure relations",     27, lambda: _taxonomy()[1]["STRUCT_PTR"], 0.5)
 
 add("F3/spec", "SpecFirst silenced",        59, lambda: n_sil("SpecFirst"), 0.5)
-add("F3/spec", "SpecFirst dead",            40, lambda: dead_silenced("SpecFirst"), 0.5)
+add("F3/spec", "SpecFirst dead",            45, lambda: dead_silenced("SpecFirst"), 0.5)
 add("F3/spec", "SpecFirst never-written %", 73.7, lambda: mech("SpecFirst", "NW"), 0.6)
 
 # §5.2 the measurement-validity result: what each attribution rule counts

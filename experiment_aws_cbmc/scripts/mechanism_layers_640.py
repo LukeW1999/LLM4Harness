@@ -38,7 +38,17 @@ EXP = HERE.parent
 PAPER8 = ["Oracle_gptoss120b", "A_gptoss120b", "H_gptoss120b", "M_gptoss120b",
           "G_gptoss120b", "A_claude", "H_claude", "M_claude"]
 LAYERS = ["never ran", "illegal setup", "unreachable bug", "missing assert",
-          "untested"]
+          "envelope changed", "untested"]
+LOOSENED = set()
+
+def loosened():
+    """Groups whose strengthening rewrite dropped assumes on net. A catch there
+    may be the looser envelope reaching the fault rather than the assertion
+    finding it, so the silence is not evidence for the missing-assertion layer."""
+    p = EXP / "evaluation/envelope_check_640.json"
+    if not p.exists():
+        return set()
+    return {(r["cond"], r["func"]) for r in json.load(open(p))["rows"] if r["net_loosened"]}
 
 def gt_runs():
     out = {}
@@ -48,7 +58,11 @@ def gt_runs():
             out[(cond, r["func"])] = r
     return out
 
-def classify(cond, func, dead, runs):
+def classify(cond, func, mutant, dead, runs):
+    """Layers 3 and 4 are decided per mutant, not per function. A strengthened
+    harness that catches one of a function's twenty silences tells us nothing
+    about the other nineteen, and reading `n_caught` as a boolean would label
+    all twenty a missing assertion."""
     if (cond, func) in dead:
         return "never ran"
     r = runs.get((cond, func))
@@ -56,7 +70,10 @@ def classify(cond, func, dead, runs):
         return "untested"
     if r.get("orig_after") not in ("SUCCESS", "UNKNOWN"):
         return "illegal setup"
-    return "missing assert" if r["n_caught"] else "unreachable bug"
+    hit = r["per_mutant"].get(mutant) == "FAIL"
+    if hit and (cond, func) in LOOSENED:
+        return "envelope changed"
+    return "missing assert" if hit else "unreachable bug"
 
 def main():
     canon = S.gt_fail_set()
@@ -68,13 +85,15 @@ def main():
     dead = {k for k, r in full.items() if r.get("head") != "FAIL"}
     dead |= {k for k in head_dead if k not in full}
     runs = gt_runs()
+    global LOOSENED
+    LOOSENED = loosened()
 
     rows = []
     for cond in PAPER8:
         v = llm.get(cond, {})
         for (f, m) in canon:
             if v.get((f, m)) == "SUCCESS":
-                rows.append((cond, f, m, classify(cond, f, dead, runs)))
+                rows.append((cond, f, m, classify(cond, f, m, dead, runs)))
 
     def table(title, sel):
         if not sel:

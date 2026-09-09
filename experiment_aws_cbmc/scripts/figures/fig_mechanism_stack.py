@@ -19,8 +19,12 @@ import style as S  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.patches import Patch  # noqa: E402
 
-ORDER = ["Oracle_gptoss120b", "K_gptoss120b", "A_gptoss120b", "H_gptoss120b",
-         "M_gptoss120b", "G_gptoss120b", "A_claude", "H_claude", "M_claude"]
+# The eight oracle conditions the layer analysis covers. SpecFirst is excluded
+# here as it is everywhere else: it has no GT-guided strengthening run, so its
+# live silences would draw as an unlabelled residual and contradict the claim
+# that every silence lands in exactly one layer.
+ORDER = ["Oracle_gptoss120b", "A_gptoss120b", "H_gptoss120b", "M_gptoss120b",
+         "G_gptoss120b", "A_claude", "H_claude", "M_claude"]
 # panel (a) classifies every GT-fail mutant, so its "silenced" spans both the dead
 # and the live ones; it needs colours that cannot be read as mechanism swatches.
 DISP = {"caught": "#A8DDB5", "silenced": "#762A83", "unresolved": "#DDDDDD"}
