@@ -67,15 +67,26 @@ def inject(src, func):
     return "".join(lines[:at] + [PROBE] + lines[at:]), True
 
 def run(func, text):
+    """The two corpora carry their build differently: aws splits proof and project
+    sources and shares one flag set, while s2n reads everything from its proof
+    Makefile into `sources` and `flags`."""
     cfg = FUNC_CONFIGS.get(func)
     if not cfg:
         return "NOCFG"
     tf = tempfile.NamedTemporaryFile("w", suffix="_harness.c", delete=False, dir="/tmp")
     tf.write(text); tf.close()
-    cmd = ([CBMC] + list(COMMON_FLAGS) + list(cfg.get("defines", [])) + list(cfg["unwind"])
-           + list(cfg.get("unwindset") or []) + MATCH
-           + ["--function", f"{func}_harness"] + [str(p) for p in cfg["proof_sources"]]
-           + [tf.name] + [str(p) for p in cfg["project_sources"]])
+    if "sources" in cfg:
+        root = str(getattr(sys.modules["cbmc_runner"], "S2N_SRCDIR")).rsplit("/", 1)[0]
+        rm = lambda x: str(x).replace("/root/s2n-tls", root)
+        cmd = ([CBMC] + [rm(f) for f in cfg["flags"]] + list(cfg["unwind"])
+               + list(cfg.get("unwindset") or []) + MATCH
+               + ["--function", cfg["harness_entry"], tf.name]
+               + [rm(x) for x in cfg["sources"]])
+    else:
+        cmd = ([CBMC] + list(COMMON_FLAGS) + list(cfg.get("defines", [])) + list(cfg["unwind"])
+               + list(cfg.get("unwindset") or []) + MATCH
+               + ["--function", f"{func}_harness"] + [str(p) for p in cfg["proof_sources"]]
+               + [tf.name] + [str(p) for p in cfg["project_sources"]])
     try:
         o = subprocess.run(cmd, capture_output=True, text=True, timeout=300).stdout
     except subprocess.TimeoutExpired:

@@ -1,0 +1,69 @@
+{
+ "summary": {
+  "silences": 63,
+  "dead": 0,
+  "groups": 10
+ },
+ "rows": [
+  {
+   "cond": "A_claude_fix3",
+   "func": "s2n_stuffer_read_uint32",
+   "n": 13,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_claude_fix3",
+   "func": "s2n_stuffer_read_uint16",
+   "n": 11,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_claude_fix3",
+   "func": "s2n_stuffer_erase_and_read",
+   "n": 9,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_claude_fix3",
+   "func": "s2n_stuffer_rewrite",
+   "n": 9,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_claude_fix3",
+   "func": "s2n_stuffer_alloc",
+   "n": 6,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_claude_fix3",
+   "func": "s2n_stuffer_free",
+   "n": 4,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_claude_fix3",
+   "func": "s2n_stuffer_growable_alloc",
+   "n": 4,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_claude_fix3",
+   "func": "s2n_stuffer_wipe_n",
+   "n": 3,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_claude_fix3",
+   "func": "s2n_stuffer_read_bytes",
+   "n": 2,
+   "probe": "FAIL"
+  },
+  {
+   "cond": "A_claude_fix3",
+   "func": "s2n_stuffer_write_bytes",
+   "n": 2,
+   "probe": "FAIL"
+  }
+ ]
+}
