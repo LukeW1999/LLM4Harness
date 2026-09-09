@@ -485,6 +485,22 @@ add("S5.1/gate", "Baseline adjudicated silence % gated", 28.7,
 add("S5.1/gate", "Oracle adjudicated silence % gated", 53.2,
     lambda: 100 * _gated("Oracle")[1] / (_gated("Oracle")[1] + _gated("Oracle")[3]))
 
+# §5.2 what a cheap static check would have caught. Precision against the base
+# rate is the question: a lint that flags half the corpus buys nothing.
+def _lint(name, cell):
+    t = _load("lint_baseline_640.json")[name]
+    return t.get(str(cell), 0)
+
+add("S5.2/lint", "groups the return-value lint flags", 121,
+    lambda: _lint("no-retval", ("sil", "flag")) + _lint("no-retval", ("clean", "flag")), 0.5)
+add("S5.2/lint", "of those, actually silencing", 23,
+    lambda: _lint("no-retval", ("sil", "flag")), 0.5)
+add("S5.2/lint", "return-value lint precision %", 19.0,
+    lambda: 100 * _lint("no-retval", ("sil", "flag"))
+    / (_lint("no-retval", ("sil", "flag")) + _lint("no-retval", ("clean", "flag"))))
+add("S5.2/lint", "silencing base rate %", 17.2,
+    lambda: 100 * 44 / 256, 0.2)
+
 # §5.2 the four-layer decomposition, every layer decided by CBMC: the harness
 # never runs; its setup admits states the specification forbids, so the expert's
 # own postconditions fail on the unmutated function; its setup is sound but never
