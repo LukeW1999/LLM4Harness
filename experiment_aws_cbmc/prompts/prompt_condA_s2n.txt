@@ -188,6 +188,11 @@ Only use the following `#include` directives. Do NOT include any file not listed
 - Any `proof_helpers/` header — those belong to aws-c-common, not s2n-tls
 - `cbmc_proof/proof_allocators.h` — does NOT exist
 
+**Do NOT declare or define stubs.** `s2n_calculate_stacktrace`, `mlock`, `munlock`,
+`madvise`, `sysconf` and `posix_memalign` are already linked into the proof. Writing
+your own copy gives it a different signature from the real one and the harness will
+fail to convert. Declare nothing you did not write yourself.
+
 **Memory rule:** call `nondet_s2n_mem_init()` before any function that allocates.
 
 ## Output Format

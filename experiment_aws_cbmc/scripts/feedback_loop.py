@@ -603,7 +603,10 @@ S2N_REPAIR_RULES = """- Include the header that declares the function, e.g. `#in
   does not exist here, so the harness will not preprocess
 - Build inputs with `cbmc_populate_s2n_*` / `cbmc_allocate_s2n_*`, and call
   `nondet_s2n_mem_init()` before anything that allocates
-- Status is `S2N_SUCCESS` / `S2N_FAILURE`, or `s2n_result_is_ok` for `s2n_result`"""
+- Status is `S2N_SUCCESS` / `S2N_FAILURE`, or `s2n_result_is_ok` for `s2n_result`
+- NEVER declare or define `s2n_calculate_stacktrace`, `mlock`, `munlock`, `madvise`,
+  `sysconf` or `posix_memalign`: the proof already links stubs for them, and your own
+  copy will have a different signature and break conversion"""
 
 
 def _repair_rules(func_name: str) -> str:
