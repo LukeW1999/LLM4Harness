@@ -501,6 +501,19 @@ add("S5.2/lint", "return-value lint precision %", 19.0,
 add("S5.2/lint", "silencing base rate %", 17.2,
     lambda: 100 * 44 / 256, 0.2)
 
+# Table 1 puts every per-condition figure in the paper, so every cell needs an
+# entry here or the table is exactly the kind of unaudited surface the registry
+# exists to prevent.
+_PR = _load("passrate_640.json")["per_condition"]
+for _c, _v in [("Single", 31.3), ("Baseline", 44.6), ("Neutral", 60.2), ("Bounded", 71.1),
+               ("Oracle", 79.5)]:
+    add("T1/pass", f"{_c}/gpt-oss pass %", _v,
+        (lambda k: lambda: _PR[COND[k]]["pass_pct_640"])(_c), 0.2)
+for _c, _v in [("Baseline", 92.9), ("Neutral", 90.4), ("Bounded", 91.6)]:
+    add("T1/pass", f"{_c}/Claude pass %", _v,
+        (lambda k: lambda: _PR[k + "_claude" if False else {"Baseline": "A_claude",
+         "Neutral": "H_claude", "Bounded": "M_claude"}[k]]["pass_pct_640"])(_c), 0.2)
+
 # §5.2 the same experiment under CBMC's current default. Unwinding assertions on
 # rejects a harness whose loop outruns the proof's bound instead of accepting it,
 # so the silence set is a different measurement, not a re-scoring: the expert
