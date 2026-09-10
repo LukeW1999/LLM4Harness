@@ -514,6 +514,24 @@ for _c, _v in [("Baseline", 92.9), ("Neutral", 90.4), ("Bounded", 91.6)]:
         (lambda k: lambda: _PR[k + "_claude" if False else {"Baseline": "A_claude",
          "Neutral": "H_claude", "Bounded": "M_claude"}[k]]["pass_pct_640"])(_c), 0.2)
 
+# RQ1 re-established under the default configuration. Pass rate barely moves,
+# so the dissociation is not an artefact of the permissive run: the absolute
+# rates fall but the Oracle-to-Baseline ratio widens.
+_PR_D = _load("passrate_strict_640.json")["per_condition"]
+
+def _strict_silgt(cond):
+    key = COND[cond]
+    return 100 * sum(1 for k in _STRICT_GT if _STRICT[key].get(k) == "SUCCESS") / len(_STRICT_GT)
+
+add("T1/def", "Baseline/gpt-oss pass % (default)", 44.6,
+    lambda: _PR_D["A_gptoss120b"]["pass_pct_640"], 0.2)
+add("T1/def", "Oracle/gpt-oss pass % (default)", 81.9,
+    lambda: _PR_D["Oracle_gptoss120b"]["pass_pct_640"], 0.2)
+add("T1/def", "Baseline Sil/GT % (default)", 1.4, lambda: _strict_silgt("Baseline"), 0.1)
+add("T1/def", "Oracle Sil/GT % (default)", 6.5, lambda: _strict_silgt("Oracle"), 0.1)
+add("T1/def", "Oracle-to-Baseline silence ratio (default)", 4.5,
+    lambda: _strict_silgt("Oracle") / _strict_silgt("Baseline"), 0.2)
+
 # §5.2 the same experiment under CBMC's current default. Unwinding assertions on
 # rejects a harness whose loop outruns the proof's bound instead of accepting it,
 # so the silence set is a different measurement, not a re-scoring: the expert

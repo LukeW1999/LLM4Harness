@@ -132,7 +132,7 @@ def main():
         axd.text(disp[cond][0] + sil / 2, y, f"{sil:.0f}", ha="center", va="center",
                  fontsize=6.2, color="white")
     axd.set_xlim(0, 100)
-    axd.set_xlabel("(a) the 397 GT-fail mutants (%)")
+    axd.set_xlabel("(a) the 397 GT-fail mutants, unwinding check off (%)")
     axd.grid(axis="y", visible=False)
 
     labels = [f"{S.COND_LABEL[c]} / {S.model_of(c)}" for c in rows]

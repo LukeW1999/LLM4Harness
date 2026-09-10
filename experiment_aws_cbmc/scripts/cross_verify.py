@@ -164,6 +164,26 @@ CONDITION_FEEDBACK_DIR = {
 }
 
 
+
+# Assertion helpers AWS's proofs use. A property raised inside one of these
+# belongs to whoever called it, and the caller here is the harness.
+_HELPER_ASSERTS = ("assert_bytes_match", "assert_byte_from_buffer_matches",
+                   "assert_array_list_equivalence", "assert_byte_buf_equivalence",
+                   "assert_byte_cursor_equivalence", "assert_all_bytes_are",
+                   "assert_all_zeroes")
+
+def _from_harness_helper(prop, harness_path):
+    """Does the harness call a helper that could raise this property?"""
+    if not harness_path or not Path(harness_path).exists():
+        return False
+    src = Path(harness_path).read_text(errors="replace")
+    called = [h for h in _HELPER_ASSERTS if h + "(" in src]
+    if not called:
+        return False
+    where = (prop.get("file") or "").lower()
+    return any(k in where for k in ("utils.c", "make_common_data_structures.c",
+                                    "proof_helpers", "cbmc_utils.c"))
+
 def get_properties(func_name: str, harness_path: Path, timeout: int = 60) -> tuple[list[dict], list[dict]]:
     """
     Run CBMC --show-properties --xml-ui to enumerate all verification properties.
@@ -225,8 +245,14 @@ def get_properties(func_name: str, harness_path: Path, timeout: int = 60) -> tup
                 "line": loc_el.get("line", "") if loc_el is not None else "",
             }
             all_props.append(p)
-            # Harness-originated: file contains "harness" in its path
-            if "harness" in file_attr.lower():
+            # Harness-originated. The file test alone is not enough: AWS's proof
+            # helpers assert through macros (assert_bytes_match and friends) that
+            # the harness author writes but that expand inside the helper's own
+            # .c file, so CBMC attributes them there and they were silently
+            # dropped from the harness count. They are the harness's assertions,
+            # so a property also counts when the harness calls the helper that
+            # raises it.
+            if "harness" in file_attr.lower() or _from_harness_helper(p, harness_path):
                 harness_props.append(p)
     except ET.ParseError:
         pass

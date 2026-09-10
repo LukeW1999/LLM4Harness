@@ -39,17 +39,25 @@ def jaccard(a, b):
     return len(a & b) / len(a | b)
 
 
+# AWS's proof helpers assert through macros named assert_bytes_match,
+# assert_byte_buf_equivalence and the like. Matching the literal substring
+# "assert(" misses every one of them, which is 139 of the corpus's 718 expert
+# assertion lines and exactly the content checks that matter most.
+_ASSERT_CALL = re.compile(r'(?:^|[^\w])(?:__CPROVER_)?assert[a-z_]*\s*\(')
+
 def extract_asserts(path):
     if not path or not path.exists():
         return []
-    text = path.read_text(errors='replace')
     asserts = []
-    for line in text.splitlines():
+    for line in path.read_text(errors='replace').splitlines():
         s = line.strip()
-        if 'assert(' in s or '__CPROVER_assert(' in s:
-            if re.search(r'assert\s*\(\s*(false|0)\s*[,)]', s):
-                continue
-            asserts.append(s)
+        if s.startswith('//') or s.startswith('*'):
+            continue
+        if not _ASSERT_CALL.search(s):
+            continue
+        if re.search(r'assert\s*\(\s*(false|0)\s*[,)]', s):
+            continue          # reachability probes, not specification
+        asserts.append(s)
     return asserts
 
 

@@ -1,0 +1,194 @@
+[
+ {
+  "item": 1,
+  "cond": "A_claude",
+  "func": "aws_byte_buf_reset",
+  "silences": 3
+ },
+ {
+  "item": 2,
+  "cond": "H_claude",
+  "func": "aws_byte_buf_cat",
+  "silences": 9
+ },
+ {
+  "item": 3,
+  "cond": "A_gptoss120b",
+  "func": "aws_ptr_eq",
+  "silences": 2
+ },
+ {
+  "item": 4,
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_byte_buf_from_array",
+  "silences": 2
+ },
+ {
+  "item": 5,
+  "cond": "M_gptoss120b",
+  "func": "aws_nospec_mask",
+  "silences": 3
+ },
+ {
+  "item": 6,
+  "cond": "M_gptoss120b",
+  "func": "aws_string_destroy",
+  "silences": 1
+ },
+ {
+  "item": 7,
+  "cond": "M_claude",
+  "func": "aws_byte_buf_reset",
+  "silences": 3
+ },
+ {
+  "item": 8,
+  "cond": "M_gptoss120b",
+  "func": "aws_byte_buf_eq_c_str",
+  "silences": 1
+ },
+ {
+  "item": 9,
+  "cond": "A_claude",
+  "func": "aws_byte_buf_from_array",
+  "silences": 2
+ },
+ {
+  "item": 10,
+  "cond": "M_gptoss120b",
+  "func": "aws_byte_buf_advance",
+  "silences": 15
+ },
+ {
+  "item": 11,
+  "cond": "A_claude",
+  "func": "aws_byte_buf_cat",
+  "silences": 3
+ },
+ {
+  "item": 12,
+  "cond": "M_claude",
+  "func": "aws_string_eq_byte_buf",
+  "silences": 1
+ },
+ {
+  "item": 13,
+  "cond": "M_gptoss120b",
+  "func": "aws_byte_buf_init_copy",
+  "silences": 1
+ },
+ {
+  "item": 14,
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_byte_buf_from_empty_array",
+  "silences": 3
+ },
+ {
+  "item": 15,
+  "cond": "H_claude",
+  "func": "aws_byte_buf_eq_c_str",
+  "silences": 1
+ },
+ {
+  "item": 16,
+  "cond": "H_claude",
+  "func": "aws_byte_buf_from_empty_array",
+  "silences": 2
+ },
+ {
+  "item": 17,
+  "cond": "M_gptoss120b",
+  "func": "aws_ptr_eq",
+  "silences": 2
+ },
+ {
+  "item": 18,
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_ptr_eq",
+  "silences": 2
+ },
+ {
+  "item": 19,
+  "cond": "A_claude",
+  "func": "aws_byte_buf_from_empty_array",
+  "silences": 2
+ },
+ {
+  "item": 20,
+  "cond": "M_claude",
+  "func": "aws_byte_buf_cat",
+  "silences": 4
+ },
+ {
+  "item": 21,
+  "cond": "M_claude",
+  "func": "aws_byte_buf_from_empty_array",
+  "silences": 2
+ },
+ {
+  "item": 22,
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_byte_buf_secure_zero",
+  "silences": 5
+ },
+ {
+  "item": 23,
+  "cond": "M_claude",
+  "func": "aws_string_eq_byte_cursor",
+  "silences": 1
+ },
+ {
+  "item": 24,
+  "cond": "A_claude",
+  "func": "aws_byte_buf_secure_zero",
+  "silences": 4
+ },
+ {
+  "item": 25,
+  "cond": "H_claude",
+  "func": "aws_string_destroy",
+  "silences": 1
+ },
+ {
+  "item": 26,
+  "cond": "H_claude",
+  "func": "aws_byte_buf_reset",
+  "silences": 3
+ },
+ {
+  "item": 27,
+  "cond": "M_gptoss120b",
+  "func": "aws_byte_buf_from_c_str",
+  "silences": 3
+ },
+ {
+  "item": 28,
+  "cond": "A_claude",
+  "func": "aws_ring_buffer_buf_belongs_to_pool",
+  "silences": 2
+ },
+ {
+  "item": 29,
+  "cond": "A_gptoss120b",
+  "func": "aws_byte_buf_clean_up",
+  "silences": 4
+ },
+ {
+  "item": 30,
+  "cond": "Oracle_gptoss120b",
+  "func": "aws_byte_buf_advance",
+  "silences": 11
+ },
+ {
+  "item": 31,
+  "cond": "M_gptoss120b",
+  "func": "aws_byte_buf_cat",
+  "silences": 4
+ },
+ {
+  "item": 32,
+  "cond": "H_gptoss120b",
+  "func": "aws_byte_buf_clean_up",
+  "silences": 4
+ }
+]

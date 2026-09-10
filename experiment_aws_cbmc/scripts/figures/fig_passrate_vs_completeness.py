@@ -17,8 +17,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import style as S  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 
+# The five gpt-oss oracle conditions. SpecFirst is not one of them: it has no
+# repeat run and no layer decomposition, so plotting it here while Table 1 and
+# the mechanism figure omit it invited exactly the inconsistency a reader finds.
 CONDS = ["G_gptoss120b", "A_gptoss120b", "H_gptoss120b", "M_gptoss120b",
-         "K_gptoss120b", "Oracle_gptoss120b"]
+         "Oracle_gptoss120b"]
 
 def pass_rates():
     """condition family -> every run's pass rate, the tabled run first."""
