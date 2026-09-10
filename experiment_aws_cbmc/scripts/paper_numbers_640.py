@@ -501,6 +501,34 @@ add("S5.2/lint", "return-value lint precision %", 19.0,
 add("S5.2/lint", "silencing base rate %", 17.2,
     lambda: 100 * 44 / 256, 0.2)
 
+# §5.2 the same experiment under CBMC's current default. Unwinding assertions on
+# rejects a harness whose loop outruns the proof's bound instead of accepting it,
+# so the silence set is a different measurement, not a re-scoring: the expert
+# harnesses catch more too, and the denominator moves with them.
+_STRICT_GT = {(v["func"], v["mutant"])
+              for v in _load("gtfail_strict_640.json")["verdicts"] if v["gt640"] == "FAIL"}
+_STRICT = defaultdict(dict)
+for _r in _load("silenced_strict_640.json")["verdicts"]:
+    _STRICT[_r["cond"]][(_r["func"], _r["mutant"])] = _r["llm640"]
+
+def _strict_sil(model=None):
+    n = 0
+    for c in PAPER8:
+        key = COND[c]
+        if model and ("claude" in key) != (model == "claude"):
+            continue
+        n += sum(1 for k in _STRICT_GT if _STRICT[key].get(k) == "SUCCESS")
+    return n
+
+add("S5.2/strict", "GT-fail set with unwinding assertions on", 415, lambda: len(_STRICT_GT), 0.5)
+add("S5.2/strict", "silences surviving the strict configuration", 106, lambda: _strict_sil(), 0.5)
+add("S5.2/strict", "gpt-oss silences surviving", 69, lambda: _strict_sil("gptoss"), 0.5)
+add("S5.2/strict", "Claude silences surviving", 37, lambda: _strict_sil("claude"), 0.5)
+add("S5.2/strict", "gpt-oss share surviving %", 26,
+    lambda: 100 * _strict_sil("gptoss") / sum(n_sil(c) for c in PAPER8 if "claude" not in COND[c]), 0.6)
+add("S5.2/strict", "Claude share surviving %", 86,
+    lambda: 100 * _strict_sil("claude") / sum(n_sil(c) for c in PAPER8 if "claude" in COND[c]), 0.6)
+
 # §5.2 the four-layer decomposition, every layer decided by CBMC: the harness
 # never runs; its setup admits states the specification forbids, so the expert's
 # own postconditions fail on the unmutated function; its setup is sound but never

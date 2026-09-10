@@ -18,7 +18,11 @@ CBMC=os.environ.get("CBMC640") or shutil.which("cbmc") or "cbmc"
 # accepted, so the whole silence set moves. UNWIND_ASSERTS=1 runs the strict
 # configuration and the paper reports both.
 import os as _os
-MATCH = ["--no-standard-checks"] + ([] if _os.environ.get("UNWIND_ASSERTS")
+# 6.4.0 leaves unwinding assertions OFF by default, so the strict configuration
+# has to ask for them: dropping the negation is not the same as enabling them.
+# CBMC turned them on by default in 6.8, which is why both are worth measuring.
+MATCH = ["--no-standard-checks"] + (["--unwinding-assertions"]
+                                    if __import__("os").environ.get("UNWIND_ASSERTS")
                                     else ["--no-unwinding-assertions"])
 MUT = EXP / "mutants"
 # --conds lets the same sweep run over the repeat generations (…_r2, _r3, …),
@@ -28,7 +32,11 @@ CONDS=(sys.argv[sys.argv.index("--conds")+1].split(",") if "--conds" in sys.argv
        ["A_gptoss120b","H_gptoss120b","M_gptoss120b","G_gptoss120b","Oracle_gptoss120b","A_claude","H_claude","M_claude"])
 OUT=(sys.argv[sys.argv.index("--out")+1] if "--out" in sys.argv else "evaluation/silenced_640.json")
 OLD={"A_gptoss120b":41,"H_gptoss120b":37,"M_gptoss120b":30,"G_gptoss120b":1,"Oracle_gptoss120b":158,"A_claude":16,"H_claude":16,"M_claude":11}
-GTF=[(v["func"],v["mutant"]) for v in json.load(open(EXP/"evaluation/gtfail_640.json"))["verdicts"] if v["gt640"]=="FAIL"]
+# The GT-fail set is itself configuration-dependent: with unwinding assertions on
+# the expert harnesses catch 415 mutants rather than 397, so the strict run must
+# be scored against its own denominator.
+_GTF_FILE = _os.environ.get("GT_IN") or "evaluation/gtfail_640.json"
+GTF=[(v["func"],v["mutant"]) for v in json.load(open(EXP/_GTF_FILE))["verdicts"] if v["gt640"]=="FAIL"]
 def llm(cond,func,mutant):
     cfg=FUNC_CONFIGS.get(func)
     if not cfg: return "NOCFG"

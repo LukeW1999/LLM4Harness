@@ -19,8 +19,12 @@ import run_mutation_oracle_cbmc as rmo
 # CBMC 6.4.0 (the version aws-c-common's CI proofs run). Point CBMC640 at your
 # 6.4.0 binary; falls back to whatever `cbmc` is on PATH.
 CBMC=os.environ.get("CBMC640") or shutil.which("cbmc") or "cbmc"
-MATCH = (["--no-standard-checks"]
-         + ([] if __import__("os").environ.get("UNWIND_ASSERTS") else ["--no-unwinding-assertions"]))
+# 6.4.0 leaves unwinding assertions OFF by default, so the strict configuration
+# has to ask for them: dropping the negation is not the same as enabling them.
+# CBMC turned them on by default in 6.8, which is why both are worth measuring.
+MATCH = ["--no-standard-checks"] + (["--unwinding-assertions"]
+                                    if __import__("os").environ.get("UNWIND_ASSERTS")
+                                    else ["--no-unwinding-assertions"])
 MUT=EXP/"mutants"
 STORE=json.load(open(EXP/"evaluation/mutation_oracle_cbmc_feedback_loop_A_gptoss120b.json"))["results"]
 def gt(func,mutant):
@@ -53,7 +57,7 @@ def main():
     trans=collections.Counter((r_gt,g640) for _,_,g640,r_gt in out)
     set595={(f,m) for f,m,g,rg in out if rg=="FAIL"}
     set640={(f,m) for f,m,g,rg in out if g=="FAIL"}
-    res={"cbmc":"6.4.0","config":"checks off (--no-standard-checks --no-unwinding-assertions)",
+    res={"cbmc":"6.4.0","config":" ".join(MATCH),
          "gtfail_595":fail595,"gtfail_640":fail640,
          "both_fail":len(set595&set640),"only595":len(set595-set640),"only640":len(set640-set595),
          "transitions_595_to_640":{f"{a}->{b}":c for (a,b),c in sorted(trans.items())},
