@@ -514,18 +514,22 @@ for _c, _v in [("Baseline", 92.9), ("Neutral", 90.4), ("Bounded", 91.6)]:
         (lambda k: lambda: _PR[k + "_claude" if False else {"Baseline": "A_claude",
          "Neutral": "H_claude", "Bounded": "M_claude"}[k]]["pass_pct_640"])(_c), 0.2)
 
-# RQ1 re-established under the default configuration. Pass rate barely moves,
-# so the dissociation is not an artefact of the permissive run: the absolute
-# rates fall but the Oracle-to-Baseline ratio widens.
-_PR_D = _load("passrate_strict_640.json")["per_condition"]
+# RQ1 re-established under the default configuration. passrate_strict_640.json
+# was produced before we knew that dropping --no-unwinding-assertions does not
+# enable the check on a --no-standard-checks build, so it re-measured the
+# permissive run; passrate_default_640.json passes --unwinding-assertions and
+# is the real default. Pass rate falls everywhere under it, and the condition
+# handed the expert preconditions falls furthest, because its harnesses are the
+# ones that never ran.
+_PR_D = _load("passrate_default_640.json")["per_condition"]
 
 def _strict_silgt(cond):
     key = COND[cond]
     return 100 * sum(1 for k in _STRICT_GT if _STRICT[key].get(k) == "SUCCESS") / len(_STRICT_GT)
 
-add("T1/def", "Baseline/gpt-oss pass % (default)", 44.6,
+add("T1/def", "Baseline/gpt-oss pass % (default)", 28.9,
     lambda: _PR_D["A_gptoss120b"]["pass_pct_640"], 0.2)
-add("T1/def", "Oracle/gpt-oss pass % (default)", 81.9,
+add("T1/def", "GivenPre/gpt-oss pass % (default)", 16.9,
     lambda: _PR_D["Oracle_gptoss120b"]["pass_pct_640"], 0.2)
 add("T1/def", "Baseline Sil/GT % (default)", 1.4, lambda: _strict_silgt("Baseline"), 0.1)
 add("T1/def", "Oracle Sil/GT % (default)", 6.5, lambda: _strict_silgt("Oracle"), 0.1)
@@ -535,11 +539,34 @@ add("T1/def", "Oracle-to-Baseline silence ratio (default)", 4.5,
 # SpecFirst was run for RQ1 only, so it is scored from its own two files rather
 # than the eight-condition sweeps: a natural-language contract lifts pass rate
 # without lifting silencing, which is what makes the GivenPre effect specific.
-_PR_K = _load("passrate_K_default_640.json")["per_condition"]["K_gptoss120b"]
+_PR_K = _PR_D["K_gptoss120b"]
 _SIL_K = _load("silenced_K_default_640.json")["summary"]["per_condition"]["K_gptoss120b"]
-add("T1/def", "SpecFirst pass % (default)", 74.7, lambda: _PR_K["pass_pct_640"], 0.2)
+add("T1/def", "SpecFirst pass % (default)", 25.3, lambda: _PR_K["pass_pct_640"], 0.2)
 add("T1/def", "SpecFirst silenced (default)", 10, lambda: _SIL_K["silenced_640"], 0.5)
 add("T1/def", "SpecFirst Sil/GT % (default)", 2.4, lambda: _SIL_K["SilGT_640_pct"], 0.1)
+
+# Every default-configuration pass rate, so Table 1's column cannot drift again.
+for _c, _k, _v in [("Single", "G_gptoss120b", 27.7), ("Baseline", "A_gptoss120b", 28.9),
+                   ("Neutral", "H_gptoss120b", 45.8), ("Bounded", "M_gptoss120b", 53.0),
+                   ("SpecFirst", "K_gptoss120b", 25.3), ("GivenPre", "Oracle_gptoss120b", 16.9),
+                   ("Baseline/Claude", "A_claude", 85.7), ("Neutral/Claude", "H_claude", 80.7),
+                   ("Bounded/Claude", "M_claude", 84.3)]:
+    add("T1/def", f"{_c} pass % (default)", _v,
+        (lambda k: lambda: _PR_D[k]["pass_pct_640"])(_k), 0.2)
+
+# Threats: does the unwinding check hit LLM and expert harnesses alike? It does
+# not, and the asymmetry is measured rather than estimated.
+_PR_OFF_V = {(v["cond"], v["func"]): v["v"] for v in _load("passrate_640.json")["verdicts"]}
+_PR_ON_V = {(v["cond"], v["func"]): v["v"] for v in _load("passrate_default_640.json")["verdicts"]}
+_LLM_OK = [k for k in _PR_OFF_V if k in _PR_ON_V and _PR_OFF_V[k] == "SUCCESS"]
+_EXPERT = _load("expert_passrate_640.json")
+add("S8/unwind", "LLM groups verifying with the check off", 467, lambda: len(_LLM_OK), 0.5)
+add("S8/unwind", "of those, stop verifying with it on", 117,
+    lambda: sum(1 for k in _LLM_OK if _PR_ON_V[k] != "SUCCESS"), 0.5)
+add("S8/unwind", "expert harnesses verifying with the check off", 84,
+    lambda: _EXPERT["verify_off"], 0.5)
+add("S8/unwind", "of those, stop verifying with it on", 2,
+    lambda: _EXPERT["stop_when_on"], 0.5)
 
 # §4 why a mutant goes unresolved. The two sides of the oracle run the same
 # flags, defines, bounds and sources with the mutant at the same index, so the

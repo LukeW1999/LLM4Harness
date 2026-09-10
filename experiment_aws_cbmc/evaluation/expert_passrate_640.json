@@ -1,0 +1,417 @@
+{
+ "cbmc": "6.4.0",
+ "functions": 101,
+ "verify_off": 84,
+ "stop_when_on": 2,
+ "lost": [
+  "aws_byte_buf_advance",
+  "aws_linked_list_push_front"
+ ],
+ "elapsed_s": 49,
+ "per_function": {
+  "aws_is_power_of_two": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_round_up_to_power_of_two": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_add_size_checked": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_add_size_saturating": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_mul_size_saturating": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_mul_size_checked": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_linked_list_push_back": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_byte_buf_init": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_byte_buf_append": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_byte_buf_clean_up": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_buf_reset": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_buf_write_u8": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_buf_from_array": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_buf_from_empty_array": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_array_list_back": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_buf_eq": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_cursor_advance": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_byte_buf_secure_zero": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_array_list_length": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_array_list_capacity": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_array_list_clear": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_array_list_front": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_linked_list_push_front": {
+   "on": "FAIL",
+   "off": "SUCCESS"
+  },
+  "aws_linked_list_pop_back": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_array_list_pop_back": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_linked_list_pop_front": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_array_list_push_back": {
+   "on": "UNKNOWN",
+   "off": "UNKNOWN"
+  },
+  "aws_linked_list_init": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_linked_list_node_reset": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_array_list_get_at": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_array_eq": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_array_eq_c_str": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_buf_advance": {
+   "on": "FAIL",
+   "off": "SUCCESS"
+  },
+  "aws_byte_buf_clean_up_secure": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_byte_buf_append_and_update": {
+   "off": "FAIL",
+   "on": "FAIL"
+  },
+  "aws_byte_buf_eq_c_str": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_byte_buf_from_c_str": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_byte_buf_init_copy": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_buf_init_copy_from_cursor": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_byte_buf_write": {
+   "off": "FAIL",
+   "on": "FAIL"
+  },
+  "aws_byte_buf_write_be16": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_buf_write_be32": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_byte_buf_cat": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_byte_buf_write_be64": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_buf_write_from_whole_buffer": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_buf_write_from_whole_cursor": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_cursor_advance_nospec": {
+   "on": "FAIL",
+   "off": "FAIL"
+  },
+  "aws_byte_cursor_eq": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_cursor_eq_byte_buf": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_cursor_eq_c_str": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_cursor_from_buf": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_byte_cursor_from_array": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_byte_cursor_from_c_str": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_cursor_read": {
+   "on": "FAIL",
+   "off": "FAIL"
+  },
+  "aws_byte_cursor_read_and_fill_buffer": {
+   "on": "FAIL",
+   "off": "FAIL"
+  },
+  "aws_byte_cursor_read_be16": {
+   "on": "FAIL",
+   "off": "FAIL"
+  },
+  "aws_byte_cursor_read_be32": {
+   "off": "FAIL",
+   "on": "FAIL"
+  },
+  "aws_byte_cursor_read_u8": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_nospec_mask": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_cursor_read_be64": {
+   "on": "FAIL",
+   "off": "FAIL"
+  },
+  "aws_byte_cursor_from_string": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_string_bytes": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_byte_buf_write_from_whole_string": {
+   "off": "FAIL",
+   "on": "FAIL"
+  },
+  "aws_string_destroy": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_string_destroy_secure": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_string_eq_byte_buf": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_string_eq_c_str": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_string_eq_byte_cursor": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_string_eq": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_array_list_clean_up": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_string_new_from_array": {
+   "on": "FAIL",
+   "off": "FAIL"
+  },
+  "aws_string_new_from_c_str": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_array_list_init_dynamic": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_array_list_get_at_ptr": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_array_list_erase": {
+   "on": "UNKNOWN",
+   "off": "UNKNOWN"
+  },
+  "aws_array_list_init_static": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_string_new_from_string": {
+   "on": "FAIL",
+   "off": "FAIL"
+  },
+  "aws_array_list_push_front": {
+   "on": "UNKNOWN",
+   "off": "UNKNOWN"
+  },
+  "aws_array_list_pop_front_n": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_array_list_set_at": {
+   "on": "UNKNOWN",
+   "off": "UNKNOWN"
+  },
+  "aws_linked_list_back": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_array_list_pop_front": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_linked_list_begin": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_linked_list_end": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_array_list_swap_contents": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_linked_list_front": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_linked_list_insert_after": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_linked_list_insert_before": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_linked_list_next": {
+   "off": "SUCCESS",
+   "on": "SUCCESS"
+  },
+  "aws_linked_list_prev": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_linked_list_rbegin": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_linked_list_remove": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_array_list_swap": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_linked_list_rend": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_linked_list_swap_contents": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_ptr_eq": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_ring_buffer_init": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_ring_buffer_acquire": {
+   "on": "UNKNOWN",
+   "off": "UNKNOWN"
+  },
+  "aws_ring_buffer_clean_up": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_ring_buffer_buf_belongs_to_pool": {
+   "on": "SUCCESS",
+   "off": "SUCCESS"
+  },
+  "aws_ring_buffer_release": {
+   "on": "UNKNOWN",
+   "off": "UNKNOWN"
+  }
+ }
+}

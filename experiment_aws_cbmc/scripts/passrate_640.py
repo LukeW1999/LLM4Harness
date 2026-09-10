@@ -19,10 +19,12 @@ import run_mutation_oracle_cbmc as rmo
 # CBMC 6.4.0 (the version aws-c-common's CI proofs run). Point CBMC640 at your
 # 6.4.0 binary; falls back to whatever `cbmc` is on PATH.
 CBMC=os.environ.get("CBMC640") or shutil.which("cbmc") or "cbmc"
-# 6.4.0 has unwinding assertions on by default, as aws-c-common's own proofs do.
-# UNWIND_OFF runs the permissive variant the Makefile documents how to select.
+# 6.4.0 leaves unwinding assertions OFF once --no-standard-checks is given, so
+# the default configuration has to ask for them: dropping the negation is not
+# the same as enabling them. UNWIND_OFF runs the permissive variant instead.
 MATCH = ["--no-standard-checks"] + (["--no-unwinding-assertions"]
-                                    if os.environ.get("UNWIND_OFF") else [])
+                                    if os.environ.get("UNWIND_OFF")
+                                    else ["--unwinding-assertions"])
 CONDS=(sys.argv[sys.argv.index("--conds")+1].split(",") if "--conds" in sys.argv else ["A_gptoss120b","H_gptoss120b","M_gptoss120b","G_gptoss120b","Oracle_gptoss120b","A_claude","H_claude","M_claude"])
 def verify(cond,func):
     cfg=FUNC_CONFIGS.get(func)
