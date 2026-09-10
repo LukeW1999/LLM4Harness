@@ -1,0 +1,429 @@
+{
+ "cbmc": "6.4.0",
+ "per_condition": {
+  "K_gptoss120b": {
+   "N": 83,
+   "pass_640": 62,
+   "pass_pct_640": 74.7,
+   "paper_primary_pct": null
+  }
+ },
+ "elapsed_s": 123,
+ "verdicts": [
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_is_power_of_two",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_round_up_to_power_of_two",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_add_size_saturating",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_add_size_checked",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_push_back",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_clear",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_from_array",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_cursor_advance",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_length",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_reset",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_front",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_init",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_append",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_push_front",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_node_reset",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_pop_front",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_pop_back",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_push_back",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_get_at",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_back",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_capacity",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_eq",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_clean_up_secure",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_advance",
+   "v": "FAIL"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_eq_c_str",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_eq_c_str",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_init_copy",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_from_c_str",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_cursor_from_buf",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_pop_back",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_cursor_eq",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_string_bytes",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_cursor_from_string",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_cursor_eq_c_str",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_string_destroy_secure",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_string_eq_byte_cursor",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_string_eq_byte_buf",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_cursor_from_array",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_cursor_from_c_str",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_nospec_mask",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_string_eq_c_str",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_secure_zero",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_string_destroy",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_clean_up",
+   "v": "FAIL"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_init_dynamic",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_init_static",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_get_at_ptr",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_erase",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_string_new_from_c_str",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_pop_front",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_begin",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_back",
+   "v": "FAIL"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_set_at",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_end",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_swap",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_insert_before",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_front",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_push_front",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_swap_contents",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_next",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_prev",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_insert_after",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_rend",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_rbegin",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_remove",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_ring_buffer_init",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_ring_buffer_clean_up",
+   "v": "UNKNOWN"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_ptr_eq",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_linked_list_swap_contents",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_string_eq",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_ring_buffer_acquire",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_eq",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_array_list_pop_front_n",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_ring_buffer_release",
+   "v": "FAIL"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_mul_size_saturating",
+   "v": "SUCCESS"
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_mul_size_checked",
+   "v": "SUCCESS"
+  }
+ ]
+}

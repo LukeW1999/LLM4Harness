@@ -532,6 +532,15 @@ add("T1/def", "Oracle Sil/GT % (default)", 6.5, lambda: _strict_silgt("Oracle"),
 add("T1/def", "Oracle-to-Baseline silence ratio (default)", 4.5,
     lambda: _strict_silgt("Oracle") / _strict_silgt("Baseline"), 0.2)
 
+# SpecFirst was run for RQ1 only, so it is scored from its own two files rather
+# than the eight-condition sweeps: a natural-language contract lifts pass rate
+# without lifting silencing, which is what makes the GivenPre effect specific.
+_PR_K = _load("passrate_K_default_640.json")["per_condition"]["K_gptoss120b"]
+_SIL_K = _load("silenced_K_default_640.json")["summary"]["per_condition"]["K_gptoss120b"]
+add("T1/def", "SpecFirst pass % (default)", 74.7, lambda: _PR_K["pass_pct_640"], 0.2)
+add("T1/def", "SpecFirst silenced (default)", 10, lambda: _SIL_K["silenced_640"], 0.5)
+add("T1/def", "SpecFirst Sil/GT % (default)", 2.4, lambda: _SIL_K["SilGT_640_pct"], 0.1)
+
 # §4 why a mutant goes unresolved. The two sides of the oracle run the same
 # flags, defines, bounds and sources with the mutant at the same index, so the
 # harness is the only thing that differs and the cause has to be in it.
