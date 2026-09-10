@@ -52,7 +52,7 @@ def prose_line_numbers(raw):
 def sections(body):
     out, cur, buf = [], "(front matter)", []
     for line in body.splitlines():
-        m = re.match(r"\\section\*?\{([^}]*)\}", line)
+        m = re.match(r"\\(?:sub)?section\*?\{([^}]*)\}", line)
         if m:
             out.append((cur, "\n".join(buf))); cur, buf = m.group(1), []
         else:
@@ -92,11 +92,20 @@ def main():
     report("banned words", hits)
 
     # 2. a question answered by its own next words
-    text = strip_tex(body)
+    # A section may lead with one bold question and its answer; anything else
+    # that answers its own question is the tic the rules ban.
+    lead = re.compile(r"\\noindent\\textbf\{[^}]*\?[^}]*\}")
+    prose = lead.sub(" ", body)
+    text = strip_tex(prose)
     qa = []
     for m in re.finditer(r"([A-Z][^.?!]{10,120}\?)\s+(\S[^.?!]{0,80})", text):
         qa.append(f"{m.group(1).strip()[:80]} -> {m.group(2).strip()[:50]}")
-    report("self-answering questions", qa, "(decide per case: some are RQ headings)")
+    leads = lead.findall(body)
+    for name, chunk in sections(body):
+        n_lead = len(lead.findall(chunk))
+        if n_lead > 1:
+            qa.append(f"{name[:30]}: {n_lead} bold question leads, rule allows one")
+    report("self-answering questions", qa, f"({len(leads)} bold RQ leads exempted)")
 
     # 3. punctuation the rules cut
     prose_lines = prose_line_numbers(raw)
