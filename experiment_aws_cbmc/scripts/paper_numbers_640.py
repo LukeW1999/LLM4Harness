@@ -532,6 +532,16 @@ add("T1/def", "Oracle Sil/GT % (default)", 6.5, lambda: _strict_silgt("Oracle"),
 add("T1/def", "Oracle-to-Baseline silence ratio (default)", 4.5,
     lambda: _strict_silgt("Oracle") / _strict_silgt("Baseline"), 0.2)
 
+# §4 why a mutant goes unresolved. The two sides of the oracle run the same
+# flags, defines, bounds and sources with the mutant at the same index, so the
+# harness is the only thing that differs and the cause has to be in it.
+_UNRES = _load("unresolved_cause_640.json")["summary"]
+
+add("S4/unres", "unresolved pairs classified", 804, lambda: _UNRES["total"], 0.5)
+add("S4/unres", "unresolved with an identified harness fault %", 82.6,
+    lambda: 100 * sum(v for k, v in _UNRES["by_cause"].items() if k != "other")
+    / _UNRES["total"], 0.2)
+
 # §5.2 whether the model was ever told. The generation loop calls CBMC through
 # `run_cbmc`, which passes no --no- flags and so runs at 6.4.0's defaults,
 # unwinding assertions included. A never-ran harness that FAILS there is one the

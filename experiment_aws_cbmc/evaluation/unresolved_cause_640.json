@@ -1,0 +1,421 @@
+{
+ "summary": {
+  "total": 804,
+  "by_cause": {
+   "type error": 457,
+   "missing header": 120,
+   "object limit": 88,
+   "other": 139
+  }
+ },
+ "rows": [
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_string_destroy_secure",
+   "mutants": 5,
+   "cause": "type error"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_string_eq_byte_buf",
+   "mutants": 23,
+   "cause": "type error"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_string_eq_c_str",
+   "mutants": 7,
+   "cause": "type error"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_string_eq_byte_cursor",
+   "mutants": 20,
+   "cause": "type error"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_string_destroy",
+   "mutants": 7,
+   "cause": "type error"
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_string_eq",
+   "mutants": 11,
+   "cause": "type error"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_string_destroy_secure",
+   "mutants": 5,
+   "cause": "type error"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_ring_buffer_init",
+   "mutants": 27,
+   "cause": "missing header"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutants": 21,
+   "cause": "type error"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutants": 8,
+   "cause": "missing header"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_string_eq_byte_buf",
+   "mutants": 23,
+   "cause": "type error"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutants": 18,
+   "cause": "type error"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_string_eq_c_str",
+   "mutants": 7,
+   "cause": "type error"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_clean_up_secure",
+   "mutants": 1,
+   "cause": "missing header"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutants": 25,
+   "cause": "object limit"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_cursor_eq",
+   "mutants": 4,
+   "cause": "other"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_from_array",
+   "mutants": 14,
+   "cause": "type error"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_string_eq_byte_cursor",
+   "mutants": 20,
+   "cause": "type error"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_string_destroy",
+   "mutants": 7,
+   "cause": "missing header"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_string_eq",
+   "mutants": 11,
+   "cause": "type error"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutants": 8,
+   "cause": "missing header"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutants": 4,
+   "cause": "missing header"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutants": 2,
+   "cause": "type error"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_ring_buffer_clean_up",
+   "mutants": 2,
+   "cause": "type error"
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_string_new_from_c_str",
+   "mutants": 1,
+   "cause": "missing header"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_string_destroy_secure",
+   "mutants": 5,
+   "cause": "type error"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_ring_buffer_init",
+   "mutants": 27,
+   "cause": "other"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_string_eq_byte_buf",
+   "mutants": 23,
+   "cause": "type error"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutants": 18,
+   "cause": "type error"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_string_eq_c_str",
+   "mutants": 7,
+   "cause": "type error"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_clean_up_secure",
+   "mutants": 1,
+   "cause": "type error"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutants": 25,
+   "cause": "type error"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_from_array",
+   "mutants": 14,
+   "cause": "type error"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_string_eq_byte_cursor",
+   "mutants": 20,
+   "cause": "missing header"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_string_destroy",
+   "mutants": 7,
+   "cause": "type error"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_init_copy",
+   "mutants": 14,
+   "cause": "type error"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_string_eq",
+   "mutants": 11,
+   "cause": "type error"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_reset",
+   "mutants": 8,
+   "cause": "type error"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutants": 2,
+   "cause": "type error"
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_ring_buffer_clean_up",
+   "mutants": 2,
+   "cause": "type error"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_string_destroy_secure",
+   "mutants": 5,
+   "cause": "type error"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_string_eq_byte_buf",
+   "mutants": 23,
+   "cause": "type error"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutants": 18,
+   "cause": "other"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_string_eq_c_str",
+   "mutants": 7,
+   "cause": "type error"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutants": 23,
+   "cause": "object limit"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_from_array",
+   "mutants": 14,
+   "cause": "other"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_byte_buf_reset",
+   "mutants": 8,
+   "cause": "type error"
+  },
+  {
+   "cond": "M_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutants": 2,
+   "cause": "type error"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_string_destroy_secure",
+   "mutants": 5,
+   "cause": "type error"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_ring_buffer_init",
+   "mutants": 27,
+   "cause": "type error"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_byte_buf_eq",
+   "mutants": 4,
+   "cause": "other"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_string_eq_byte_buf",
+   "mutants": 23,
+   "cause": "type error"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutants": 18,
+   "cause": "other"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_string_eq_c_str",
+   "mutants": 7,
+   "cause": "type error"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "mutants": 17,
+   "cause": "missing header"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "mutants": 15,
+   "cause": "object limit"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_array_list_swap",
+   "mutants": 25,
+   "cause": "object limit"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "mutants": 16,
+   "cause": "other"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_byte_buf_from_array",
+   "mutants": 14,
+   "cause": "other"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_string_eq_byte_cursor",
+   "mutants": 20,
+   "cause": "missing header"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_string_destroy",
+   "mutants": 7,
+   "cause": "missing header"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_byte_buf_secure_zero",
+   "mutants": 9,
+   "cause": "other"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_string_eq",
+   "mutants": 11,
+   "cause": "type error"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_byte_buf_reset",
+   "mutants": 8,
+   "cause": "other"
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutants": 2,
+   "cause": "type error"
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_string_eq_c_str",
+   "mutants": 7,
+   "cause": "other"
+  },
+  {
+   "cond": "H_claude",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutants": 2,
+   "cause": "type error"
+  },
+  {
+   "cond": "M_claude",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutants": 2,
+   "cause": "type error"
+  }
+ ]
+}
