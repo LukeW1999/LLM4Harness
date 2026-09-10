@@ -82,7 +82,7 @@ def dead_groups():
 # Paper-facing names for the conditions.
 COND_LABEL = {
     "G_gptoss120b": "Single", "A_gptoss120b": "Baseline", "H_gptoss120b": "Neutral",
-    "M_gptoss120b": "Bounded", "K_gptoss120b": "SpecFirst", "Oracle_gptoss120b": "Oracle",
+    "M_gptoss120b": "Bounded", "K_gptoss120b": "SpecFirst", "Oracle_gptoss120b": "GivenPre",
     "A_claude": "Baseline", "H_claude": "Neutral", "M_claude": "Bounded",
     "A_llama3370binstruct": "Baseline", "G_llama3370binstruct": "Single",
     "H_llama3370binstruct": "Neutral",
