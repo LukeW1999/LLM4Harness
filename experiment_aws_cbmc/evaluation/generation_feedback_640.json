@@ -1,0 +1,254 @@
+{
+ "summary": {
+  "groups": 41,
+  "told_during_generation": 30
+ },
+ "rows": [
+  {
+   "cond": "A_claude_r4",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "generation_verdict": "SUCCESS",
+   "unwinding_assertion_reported": false
+  },
+  {
+   "cond": "A_claude_r4",
+   "func": "aws_string_destroy_secure",
+   "generation_verdict": "SUCCESS",
+   "unwinding_assertion_reported": false
+  },
+  {
+   "cond": "A_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "A_gptoss120b_r2",
+   "func": "aws_byte_buf_advance",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "A_gptoss120b_r3",
+   "func": "aws_ring_buffer_clean_up",
+   "generation_verdict": "SUCCESS",
+   "unwinding_assertion_reported": false
+  },
+  {
+   "cond": "A_gptoss120b_r3",
+   "func": "aws_string_destroy",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "A_llama3370binstruct",
+   "func": "aws_ring_buffer_clean_up",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": false
+  },
+  {
+   "cond": "G_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "generation_verdict": "UNKNOWN",
+   "unwinding_assertion_reported": false
+  },
+  {
+   "cond": "G_gptoss120b_r2",
+   "func": "aws_byte_buf_cat",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "G_gptoss120b_r2",
+   "func": "aws_string_new_from_c_str",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "G_gptoss120b_r3",
+   "func": "aws_byte_buf_cat",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "G_llama3370binstruct",
+   "func": "aws_byte_buf_cat",
+   "generation_verdict": "UNKNOWN",
+   "unwinding_assertion_reported": false
+  },
+  {
+   "cond": "H_claude_r5",
+   "func": "aws_byte_buf_advance",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "H_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "H_gptoss120b_r2",
+   "func": "aws_byte_buf_cat",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "H_gptoss120b_r3",
+   "func": "aws_ring_buffer_clean_up",
+   "generation_verdict": "SUCCESS",
+   "unwinding_assertion_reported": false
+  },
+  {
+   "cond": "H_llama3370binstruct",
+   "func": "aws_string_eq_byte_cursor",
+   "generation_verdict": "COMPILE_ERROR",
+   "unwinding_assertion_reported": false
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_buf_eq_c_str",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "generation_verdict": "SUCCESS",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "K_gptoss120b",
+   "func": "aws_string_destroy",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "M_gptoss120b_r2",
+   "func": "aws_byte_buf_advance",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "M_gptoss120b_r2",
+   "func": "aws_ring_buffer_clean_up",
+   "generation_verdict": "SUCCESS",
+   "unwinding_assertion_reported": false
+  },
+  {
+   "cond": "M_gptoss120b_r3",
+   "func": "aws_byte_buf_cat",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_array_list_swap",
+   "generation_verdict": "SUCCESS",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_cat",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_clean_up_secure",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_buf_init",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_byte_cursor_from_array",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_nospec_mask",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "generation_verdict": "SUCCESS",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b",
+   "func": "aws_string_new_from_c_str",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_array_list_swap",
+   "generation_verdict": "SUCCESS",
+   "unwinding_assertion_reported": false
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_byte_buf_clean_up",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_byte_buf_init",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_byte_cursor_eq",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_nospec_mask",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": false
+  },
+  {
+   "cond": "Oracle_gptoss120b_r2",
+   "func": "aws_string_destroy",
+   "generation_verdict": "FAIL",
+   "unwinding_assertion_reported": true
+  }
+ ]
+}

@@ -532,6 +532,17 @@ add("T1/def", "Oracle Sil/GT % (default)", 6.5, lambda: _strict_silgt("Oracle"),
 add("T1/def", "Oracle-to-Baseline silence ratio (default)", 4.5,
     lambda: _strict_silgt("Oracle") / _strict_silgt("Baseline"), 0.2)
 
+# §5.2 whether the model was ever told. The generation loop calls CBMC through
+# `run_cbmc`, which passes no --no- flags and so runs at 6.4.0's defaults,
+# unwinding assertions included. A never-ran harness that FAILS there is one the
+# model saw fail, on every iteration, and did not repair.
+_GENFB = _load("generation_feedback_640.json")
+
+add("S5.2/told", "never-ran groups re-run as the generation loop ran them", 41,
+    lambda: _GENFB["summary"]["groups"], 0.5)
+add("S5.2/told", "of those, reported failing an unwinding assertion", 30,
+    lambda: _GENFB["summary"]["told_during_generation"], 0.5)
+
 # §5.2 the same experiment under CBMC's current default. Unwinding assertions on
 # rejects a harness whose loop outruns the proof's bound instead of accepting it,
 # so the silence set is a different measurement, not a re-scoring: the expert
