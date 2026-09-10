@@ -78,7 +78,11 @@ Your current harness:
         return {"func":func,"error":str(e)}
     tf=tempfile.NamedTemporaryFile("w",suffix="_harness.c",delete=False,dir="/tmp"); tf.write(improved); tf.close()
     rp=Path(tf.name)
-    (RES/ds/func/"repaired_b2_harness.c").write_text(improved)
+    # The two modes must not share a filename: the GT-guided run overwrote the
+    # free-form harnesses, leaving b2_repair_*.json pointing at artefacts that no
+    # longer existed in the form they were scored in.
+    name = "repaired_b2_gt_harness.c" if GT_GUIDED else "repaired_b2_harness.c"
+    (RES/ds/func/name).write_text(improved)
     r_orig=O.run_cbmc_on_mutant(func, src, rp, timeout, idx)
     per={m:(O.run_cbmc_on_mutant(func, MUT/func/f"{m}.c", rp, timeout, idx) if (MUT/func/f"{m}.c").exists() else "NO_MUT") for m in muts}
     caught=[m for m,v in per.items() if v=="FAIL"]
