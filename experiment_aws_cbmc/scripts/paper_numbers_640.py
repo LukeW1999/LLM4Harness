@@ -568,6 +568,113 @@ add("S8/unwind", "expert harnesses verifying with the check off", 84,
 add("S8/unwind", "of those, stop verifying with it on", 2,
     lambda: _EXPERT["stop_when_on"], 0.5)
 
+# Numbers the paper prints that nothing above was watching. audit_paper_coverage.py
+# found them by walking paper.tex; each is registered here so it cannot drift.
+_LINT_NR = _load("lint_baseline_640.json")["no-retval"]
+add("S5.2/lint", "groups the lint runs over", 256, lambda: sum(_LINT_NR.values()), 0.5)
+add("S5.2/lint", "of those, silencing", 44,
+    lambda: _LINT_NR["('sil', 'flag')"] + _LINT_NR["('sil', 'pass')"], 0.5)
+add("S5.2/lint", "groups the best check flags", 121,
+    lambda: _LINT_NR["('sil', 'flag')"] + _LINT_NR["('clean', 'flag')"], 0.5)
+add("S5.2/lint", "of those, clean", 98, lambda: _LINT_NR["('clean', 'flag')"], 0.5)
+
+add("S5.2/layer", "silences the four layers place", 305,
+    lambda: sum(_layers()[k] for k in ("never ran", "illegal setup",
+                                       "unreachable bug", "missing assert")), 0.5)
+add("S5.2/dead", "dead silences with no sub-cause row", 1,
+    lambda: dead_silenced() - dead_by("unwind-truncation")
+            - dead_by("contradictory-assumes"), 0.5)
+
+add("T1/rq1", "Bounded-to-Baseline silence ratio (default)", 5.2,
+    lambda: _strict_silgt("Bounded") / _strict_silgt("Baseline"), 0.2)
+add("T1/rq1", "Bounded Sil/GT % (default)", 7.5, lambda: _strict_silgt("Bounded"), 0.1)
+
+# The corpus split the paper states: 83 functions, 25 whose mutation target sits
+# in an inline file, 58 left, of which 40 have a runnable expert-and-LLM pair.
+# Only the 40 is measured; the rest is arithmetic, checked so it cannot drift
+# again the way "58 mutant-bearing" did.
+add("design", "functions with a runnable pair", 40,
+    lambda: len({v["func"] for v in _GT["verdicts"]}), 0.5)
+_RUNNABLE = lambda: len({v["func"] for v in _GT["verdicts"]})
+add("design", "in scope after the inline exclusion", 58, lambda: 25 + 18 + _RUNNABLE() - 25, 0.5)
+add("design", "in scope without a runnable pair", 18, lambda: 58 - _RUNNABLE(), 0.5)
+add("design", "corpus split adds up", 83, lambda: 25 + 18 + _RUNNABLE(), 0.5)
+
+# Table 1 cell by cell. It is billed as every per-condition number the paper
+# rests on, so every cell is registered, not a sample of them.
+_T1 = {"Single":    (27.7,  1, 31.3,   1,   1,  0,  0,  0),
+       "Baseline":  (28.9,  6, 44.6,  39,  33,  0,  4,  2),
+       "Neutral":   (45.8,  4, 60.2,  37,  33,  0,  4,  0),
+       "Bounded":   (53.0, 31, 71.1,  30,   0,  6, 12, 12),
+       "GivenPre":  (16.9, 27, 79.5, 158, 135, 23,  0,  0),
+       "Baseline/Claude": (85.7, 14, 92.9, 16, 0, 0, 4, 10),
+       "Neutral/Claude":  (80.7, 14, 90.4, 16, 0, 2, 0, 13),
+       "Bounded/Claude":  (84.3,  9, 91.6, 11, 0, 0, 3,  8)}
+# The last numbers audit_paper_coverage.py found unwatched.
+_S2N_ORACLE = _load("mutation_oracle_s2n_A_claude.json")
+_S2N_MUTANTS = _S2N_ORACLE["summary"]["total"]
+_S2N_FUNCS = len({r["func"] for r in _S2N_ORACLE["results"]})
+_CLOZE_RAW = [r for f in ("cloze_A_claude_claude.json", "cloze_A_gptoss120b_claude.json",
+                          "cloze_A_gptoss120b_openrouter.json") for r in _load(f)]
+_CLOZE_BLANKS = len({(r["func"], r["assert"]) for r in _CLOZE_RAW
+                     if r["func"] != "aws_nospec_mask"})
+add("S5.3/sev", "memory-safety share, lowest condition %", 12,
+    lambda: min(100 * _sev_mem(c) / n_sil(c)
+                for c in ("Baseline", "Baseline/Claude", "Oracle") if n_sil(c)), 1.5)
+add("S5.3/sev", "memory-safety share, highest condition %", 42,
+    lambda: max(100 * _sev_mem(c) / n_sil(c)
+                for c in ("Baseline", "Baseline/Claude", "Oracle") if n_sil(c)), 1.5)
+add("S6/s2n", "s2n compiled mutants", 650, lambda: _S2N_MUTANTS, 0.5)
+add("S6/s2n", "s2n functions", 25, lambda: _S2N_FUNCS, 0.5)
+add("S6/s2n", "s2n Claude Sil/GT % before the build fixes", 22.5,
+    lambda: 100 * _S2N["A_claude"]["silenced"] / _S2N["A_claude"]["gtfail"], 0.2)
+add("S5.2/clz", "cloze unique blanks", 17, lambda: _CLOZE_BLANKS, 0.5)
+def _clz(f):
+    live = [x for x in _load(f) if x["func"] != "aws_nospec_mask"]
+    full = [x for x in live if x["cbmc"]["orig"] == "SUCCESS"
+            and x["cbmc"]["n_mut"] and x["cbmc"]["catches"] >= x["cbmc"]["n_mut"]]
+    return len(full), len(live)
+add("S5.2/clz", "fills catching every silenced mutant", 26,
+    lambda: sum(_clz(f)[0] for f in ("cloze_A_claude_claude.json",
+                                     "cloze_A_gptoss120b_claude.json",
+                                     "cloze_A_gptoss120b_openrouter.json")), 0.5)
+add("S5.2/clz", "Claude filling its own gaps", 15,
+    lambda: _clz("cloze_A_claude_claude.json")[0], 0.5)
+add("S5.2/clz", "Claude's own gaps attempted", 16,
+    lambda: _clz("cloze_A_claude_claude.json")[1], 0.5)
+add("S5.2/clz", "gpt-oss filling its own gaps", 6,
+    lambda: _clz("cloze_A_gptoss120b_openrouter.json")[0], 0.5)
+
+# Every prompt condition generated a harness for the whole corpus, which is what
+# Table 1's caption now states in place of an N column two of whose six values
+# could not be reproduced.
+def _generated(cond):
+    import run_mutation_oracle_cbmc as _rmo
+    gt = {p.name for p in _rmo.GT_PROOFS_DIR.iterdir()
+          if p.is_dir() and (p / f"{p.name}_harness.c").exists()}
+    d = Path(_BASE) / f"results/feedback_loop_{cond}"
+    return sum(1 for f in d.iterdir()
+               if f.is_dir() and f.name in gt and _rmo.get_final_harness(f))
+for _gc in ("G_gptoss120b", "H_gptoss120b", "A_gptoss120b",
+            "K_gptoss120b", "M_gptoss120b", "Oracle_gptoss120b"):
+    add("design", f"{_gc} harnesses generated over the corpus", 83,
+        (lambda c: lambda: _generated(c))(_gc), 0.5)
+
+_LAYER_COL = ["never ran", "illegal setup", "unreachable bug", "missing assert"]
+for _t1c, _t1row in _T1.items():
+    _t1key = COND[_t1c if _t1c != "GivenPre" else "Oracle"]
+    add("T1/cell", f"{_t1c} pass % (default)", _t1row[0],
+        (lambda k: lambda: _PR_D[k]["pass_pct_640"])(_t1key), 0.2)
+    add("T1/cell", f"{_t1c} Sil (default)", _t1row[1],
+        (lambda k: lambda: sum(1 for m in _STRICT_GT if _STRICT[k].get(m) == "SUCCESS"))(_t1key), 0.5)
+    add("T1/cell", f"{_t1c} pass % (off)", _t1row[2],
+        (lambda k: lambda: _PASS[k]["pass_pct_640"])(_t1key), 0.2)
+    add("T1/cell", f"{_t1c} Sil (off)", _t1row[3],
+        (lambda c: lambda: n_sil(c))(_t1c if _t1c != "GivenPre" else "Oracle"), 0.5)
+    for _t1i, _t1layer in enumerate(_LAYER_COL):
+        add("T1/cell", f"{_t1c} {_t1layer}", _t1row[4 + _t1i],
+            (lambda c, l: lambda: _layers(c)[l])(_t1c if _t1c != "GivenPre" else "Oracle", _t1layer), 0.5)
+
 # §4 why a mutant goes unresolved. The two sides of the oracle run the same
 # flags, defines, bounds and sources with the mutant at the same index, so the
 # harness is the only thing that differs and the cause has to be in it.
@@ -626,7 +733,7 @@ add("S5.2/strict", "Claude share surviving %", 86,
 _LOOSENED = {(r["cond"], r["func"])
              for r in _load("envelope_check_640.json")["rows"] if r["net_loosened"]}
 
-def _layers():
+def _layers(only=None):
     import glob as _g, json as _j
     full = {(r["cond"], r["func"]): r
             for r in _load("reachability_full_640.json")["rows"]}
@@ -638,7 +745,7 @@ def _layers():
         for r in _j.load(open(f)):
             runs[(cond, r["func"])] = r
     c = Counter()
-    for cond in PAPER8:
+    for cond in ([only] if only else PAPER8):
         key = COND[cond]
         for (f, m) in CANON:
             if LLM[key].get((f, m)) != "SUCCESS":
@@ -798,6 +905,30 @@ def arec(cond):
 for cond, rc in [("Single", 0.290), ("Baseline", 0.357), ("Neutral", 0.307),
                  ("Bounded", 0.384), ("SpecFirst", 0.268), ("Oracle", 0.251)]:
     add("T1/rq1", f"{cond} assertion recall", rc, (lambda c: lambda: arec(c))(cond), 0.01)
+
+# Empty-match share among the functions a condition passes: the paper quoted 54 %
+# from a run whose denominator has since changed, and nothing was watching it.
+def _empty_match(cond):
+    key = COND[cond]
+    model = "gptoss120b" if key.endswith("gptoss120b") else key.split("_", 1)[1]
+    letter = key.split("_")[0]
+    e = json.load(open(EVAL / f"cross_verify_results_cond{letter}_{model}.json"))
+    passing = [x for x in e if x["gt_harness_count"] > 0 and x["llm_verify"] == "SUCCESS"]
+    return sum(1 for x in passing if x["harness_recall"] == 0), len(passing)
+add("S5.1/empty", "GivenPre functions passing with GT asserts", 65,
+    lambda: _empty_match("Oracle")[1], 0.5)
+add("S5.1/empty", "of those, sharing no assertion with the expert", 27,
+    lambda: _empty_match("Oracle")[0], 0.5)
+add("S5.1/empty", "GivenPre empty-match %", 41.5,
+    lambda: 100 * _empty_match("Oracle")[0] / _empty_match("Oracle")[1], 0.2)
+add("S5.1/empty", "Bounded empty-match %", 18.6,
+    lambda: 100 * _empty_match("Bounded")[0] / _empty_match("Bounded")[1], 0.2)
+
+# Over-constraint by inspection, superseded by the CBMC-decided layer but still
+# quoted; recomputed against the current silence set rather than the old 39.
+add("S5.2/oc", "Baseline silences the heuristic calls over-constraint %", 9.8,
+    lambda: 100 * _load("attribution_feedback_loop_A_gptoss120b.json")["summary"]["aoc"]
+    / sum(_load("attribution_feedback_loop_A_gptoss120b.json")["summary"].values()), 0.2)
 
 # Corpus constants. These had drifted: the paper said "238 expert harnesses",
 # which traces to a line in the research log about AWS running CBMC on 238
