@@ -604,6 +604,8 @@ add("S5.1/adj", "Baseline silence per adjudicated %",     2.9,
     lambda: 100 * _adjudicated("Baseline")[1] / _adjudicated("Baseline")[0], 0.1)
 add("S5.1/adj", "Bounded silence per adjudicated %",      9.8,
     lambda: 100 * _adjudicated("Bounded")[1] / _adjudicated("Bounded")[0], 0.1)
+add("S5.1/adj", "Bounded-to-Baseline pass rise (pp, default)", 24,
+    lambda: _PR_D["M_gptoss120b"]["pass_pct_640"] - _PR_D["A_gptoss120b"]["pass_pct_640"], 0.6)
 add("S5.1/adj", "Bounded-to-Baseline ratio, adjudicated", 3.4,
     lambda: (_adjudicated("Bounded")[1] / _adjudicated("Bounded")[0])
             / (_adjudicated("Baseline")[1] / _adjudicated("Baseline")[0]), 0.15)
