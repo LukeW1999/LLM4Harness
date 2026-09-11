@@ -172,8 +172,10 @@ def oracle_vs_baseline():
     d = np.array([O[f] - B[f] for f in sh])
     rng = np.random.default_rng(42)
     boots = [rng.choice(d, len(d), replace=True).mean() for _ in range(10000)]
+    # 20 of the 32 pairs tie, so scipy drops them and n falls to 12. At that size
+    # the normal approximation overstates p (0.0009 against an exact 0.0002).
     p = wilcoxon(np.array([O[f] for f in sh]), np.array([B[f] for f in sh]),
-                 alternative="greater")[1]
+                 alternative="greater", method="exact")[1]
     return (100 * d.mean(), 100 * np.percentile(boots, 2.5), 100 * np.percentile(boots, 97.5),
             int((d > 0).sum()), int((d < 0).sum()), p)
 
@@ -182,7 +184,8 @@ add("S5.1/orc", "bootstrap CI lo (pp)",              14.7, lambda: oracle_vs_bas
 add("S5.1/orc", "bootstrap CI hi (pp)",              43.1, lambda: oracle_vs_baseline()[2], 1.5)
 add("S5.1/orc", "functions moving up",                 12, lambda: oracle_vs_baseline()[3], 0.5)
 add("S5.1/orc", "functions moving down",                0, lambda: oracle_vs_baseline()[4], 0.5)
-add("S5.1/orc", "paired Wilcoxon p",                0.001, lambda: oracle_vs_baseline()[5], 0.002)
+add("S5.1/orc", "paired Wilcoxon p (exact)",      0.0002, lambda: oracle_vs_baseline()[5], 0.0001)
+add("S5.1/orc", "paired functions", 32, lambda: len(set(per_func_silence("Oracle")) & set(per_func_silence("Baseline"))), 0.5)
 
 # §RQ1: single-pass repeats (Single silences 1/40/43, 83 of 84 never written)
 _PROBE = _load("probe_gmr_640.json")["summary"]["per_condition"]
@@ -588,6 +591,22 @@ add("S5.2/dead", "dead silences with no sub-cause row", 1,
 add("T1/rq1", "Bounded-to-Baseline silence ratio (default)", 5.2,
     lambda: _strict_silgt("Bounded") / _strict_silgt("Baseline"), 0.2)
 add("T1/rq1", "Bounded Sil/GT % (default)", 7.5, lambda: _strict_silgt("Bounded"), 0.1)
+
+# A condition that passes more has more mutants adjudicated at all, so a raw
+# count ratio carries a pool-size effect. Both ratios are reported.
+def _adjudicated(cond):
+    key = COND[cond]
+    v = [_STRICT[key].get(x) for x in _STRICT_GT]
+    return sum(1 for x in v if x in ("SUCCESS", "FAIL")), sum(1 for x in v if x == "SUCCESS")
+add("S5.1/adj", "Baseline mutants adjudicated (default)", 207, lambda: _adjudicated("Baseline")[0], 0.5)
+add("S5.1/adj", "Bounded mutants adjudicated (default)",  315, lambda: _adjudicated("Bounded")[0], 0.5)
+add("S5.1/adj", "Baseline silence per adjudicated %",     2.9,
+    lambda: 100 * _adjudicated("Baseline")[1] / _adjudicated("Baseline")[0], 0.1)
+add("S5.1/adj", "Bounded silence per adjudicated %",      9.8,
+    lambda: 100 * _adjudicated("Bounded")[1] / _adjudicated("Bounded")[0], 0.1)
+add("S5.1/adj", "Bounded-to-Baseline ratio, adjudicated", 3.4,
+    lambda: (_adjudicated("Bounded")[1] / _adjudicated("Bounded")[0])
+            / (_adjudicated("Baseline")[1] / _adjudicated("Baseline")[0]), 0.15)
 
 # The corpus split the paper states: 83 functions, 25 whose mutation target sits
 # in an inline file, 58 left, of which 40 have a runnable expert-and-LLM pair.
