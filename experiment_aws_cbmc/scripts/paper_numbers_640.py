@@ -645,6 +645,14 @@ add("S5.2/clz", "Claude's own gaps attempted", 16,
 add("S5.2/clz", "gpt-oss filling its own gaps", 6,
     lambda: _clz("cloze_A_gptoss120b_openrouter.json")[0], 0.5)
 
+# The reverse cell of the matrix: mutants the LLM harness catches and the expert
+# misses. Nothing was registered here, and the Discussion quoted a stale count.
+_REV = _load("reverse_640.json")
+add("S6.3/rev", "reverse-cell mutants (Claude Baseline)", 90,
+    lambda: _REV["summary"]["reverse_cell_raw"], 0.5)
+add("S6.3/rev", "expert functions the reverse cell exposes", 10,
+    lambda: len({r[0] for r in _REV["reverse"]}), 0.5)
+
 # Every prompt condition generated a harness for the whole corpus, which is what
 # Table 1's caption now states in place of an N column two of whose six values
 # could not be reproduced.

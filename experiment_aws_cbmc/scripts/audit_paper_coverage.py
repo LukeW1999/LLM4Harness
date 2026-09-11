@@ -42,6 +42,15 @@ SKIP_CMD = re.compile(r"""\\(?:label|ref|eqref|cite\w*|citeauthor|input|include|
     hspace|vspace|setlength|tabcolsep|itemsep|arraystretch|emergencystretch|
     uchyph|includegraphics|multicolumn|cmidrule|scriptsize|footnotesize)""", re.X)
 NUM = re.compile(r"(?<![\w.])(\d{1,3}(?:\d*)?(?:\.\d+)?)(?![\w])")
+# "nine expert functions" escaped this audit until a readthrough caught it, so
+# quantities spelled as words are checked too.
+WORD_NUM = {"two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7,
+            "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12,
+            "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50}
+COUNTED = re.compile(r"\b(" + "|".join(WORD_NUM) + r")\s+(?:of\s+the\s+\d|"
+                     r"[a-z]*\s?(?:expert|silenc\w+|mutants?|functions?|groups?|"
+                     r"harnesses|runs?|conditions?|models?|generators?|iterations?))",
+                     re.I)
 
 def paper_numbers(tex):
     body = tex.split(r"\begin{document}", 1)[-1]
@@ -58,6 +67,10 @@ def paper_numbers(tex):
         scrubbed = re.sub(r"\\ref\{[^}]*\}|\\cite\w*\{[^}]*\}|\\label\{[^}]*\}", " ", scrubbed)
         scrubbed = re.sub(r"\{[\d.]+pt\}|\d+pt|\d+em|\d+cm|p\{[\d.]+cm\}", " ", scrubbed)
         scrubbed = re.sub(r"S\\ref|\\S", " ", scrubbed)
+        for m in COUNTED.finditer(scrubbed):
+            word = m.group(1).lower()
+            ctx = re.sub(r"\s+", " ", scrubbed[max(0, m.start()-60):m.end()+50]).strip()
+            out.append((lineno, float(WORD_NUM[word]), word, ctx, raw_line))
         for m in NUM.finditer(scrubbed):
             raw = m.group(1)
             val = float(raw.replace(",", "").replace("\u2009", ""))
