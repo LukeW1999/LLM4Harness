@@ -757,6 +757,49 @@ def _strict_sil(model=None):
         n += sum(1 for k in _STRICT_GT if _STRICT[key].get(k) == "SUCCESS")
     return n
 
+# The layer profile under the default configuration, which a reviewer asked for
+# and which is not the permissive one: the verifier rejects most of the never-ran
+# harnesses, so what is left is dominated by an out-of-reach fault or an absent
+# assertion. All 106 classify.
+def _layers_default():
+    import glob as _g, json as _j
+    full = {(r["cond"], r["func"]): r
+            for r in _load("reachability_full_640.json")["rows"]}
+    dead = {k for k, r in full.items() if r.get("head") != "FAIL"}
+    dead |= {k for k in _REACH if _REACH[k] == "SUCCESS" and k not in full}
+    runs = {}
+    for f in _g.glob(str(Path(_BASE) / "evaluation/b2_repair_gt_*.json")):
+        cond = Path(f).stem.replace("b2_repair_gt_", "")
+        for r in _j.load(open(f)):
+            runs[(cond, r["func"])] = r
+    c = Counter()
+    for cond in PAPER8:
+        key = COND[cond]
+        for (f, mu) in _STRICT_GT:
+            if _STRICT[key].get((f, mu)) != "SUCCESS":
+                continue
+            if (key, f) in dead:
+                c["never ran"] += 1; continue
+            r = runs.get((key, f))
+            if r is None or "per_mutant" not in r:
+                c["unclassified"] += 1
+            elif r.get("orig_after") not in ("SUCCESS", "UNKNOWN"):
+                c["illegal setup"] += 1
+            elif r["per_mutant"].get(mu) != "FAIL":
+                c["unreachable bug"] += 1
+            elif (key, f) in _LOOSENED:
+                c["envelope changed"] += 1
+            else:
+                c["missing assert"] += 1
+    return c
+
+add("S5.2/dlayer", "default: never ran", 28, lambda: _layers_default()["never ran"], 0.5)
+add("S5.2/dlayer", "default: illegal setup", 2, lambda: _layers_default()["illegal setup"], 0.5)
+add("S5.2/dlayer", "default: unreachable fault", 40, lambda: _layers_default()["unreachable bug"], 0.5)
+add("S5.2/dlayer", "default: missing assertion", 33, lambda: _layers_default()["missing assert"], 0.5)
+add("S5.2/dlayer", "default: withheld", 3, lambda: _layers_default()["envelope changed"], 0.5)
+add("S5.2/dlayer", "default: unclassified", 0, lambda: _layers_default()["unclassified"], 0.5)
+
 add("S5.2/strict", "GT-fail set with unwinding assertions on", 415, lambda: len(_STRICT_GT), 0.5)
 add("S5.2/strict", "silences surviving the strict configuration", 106, lambda: _strict_sil(), 0.5)
 add("S5.2/strict", "gpt-oss silences surviving", 69, lambda: _strict_sil("gptoss"), 0.5)
