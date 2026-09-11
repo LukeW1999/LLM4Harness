@@ -28,9 +28,12 @@ ORDER = ["Oracle_gptoss120b", "A_gptoss120b", "H_gptoss120b", "M_gptoss120b",
 # panel (a) classifies every GT-fail mutant, so its "silenced" spans both the dead
 # and the live ones; it needs colours that cannot be read as mechanism swatches.
 DISP = {"caught": "#A8DDB5", "silenced": "#762A83", "unresolved": "#DDDDDD"}
-# Four layers, in the order a harness fails them. Every one is decided by CBMC:
-# the probe for the first, and the GT-guided strengthening run for the rest.
-KEYS = ["dead_loop", "dead_assume", "illegal", "unreachable", "missing", "untested"]
+# The four layers of Table 5, in the order a harness fails them, plus the
+# withheld category. Every one is decided by CBMC: the reachability probe for
+# the first, the GT-guided strengthening run for the rest. The never-ran bar is
+# drawn in two shades for its two causes, but the legend names one layer, so
+# figure and table always show the same four.
+KEYS = ["dead_loop", "dead_assume", "illegal", "unreachable", "missing", "withheld"]
 
 def counts():
     import glob, json
@@ -42,6 +45,8 @@ def counts():
     dead |= {k for k in S.dead_groups() if k not in full}
     cause = {(r["cond"], r["func"]): r["cause"]
              for r in S.load("vacuity_cause_640.json")["rows"]}
+    loosened = {(r["cond"], r["func"])
+                for r in S.load("envelope_check_640.json")["rows"] if r["net_loosened"]}
     runs = {}
     for path in glob.glob(str(S.EXP / "evaluation/b2_repair_gt_*.json")):
         cond = path.rsplit("b2_repair_gt_", 1)[1][:-5]
@@ -59,15 +64,21 @@ def counts():
                 why = cause.get((cond, f), "unwind-truncation")
                 c["dead_loop" if why == "unwind-truncation" else "dead_assume"] += 1
                 continue
+            # per mutant, exactly as the layer table reads it: whether the
+            # strengthened harness catches *this* mutant, not whether it caught
+            # anything. Reading it per function put three rows of this figure
+            # at odds with the table.
             r = runs.get((cond, f))
-            if r is None:
-                c["untested"] += 1
+            if r is None or "per_mutant" not in r:
+                c["withheld"] += 1
             elif r.get("orig_after") not in ("SUCCESS", "UNKNOWN"):
                 c["illegal"] += 1
-            elif r["n_caught"]:
-                c["missing"] += 1
-            else:
+            elif r["per_mutant"].get(m) != "FAIL":
                 c["unreachable"] += 1
+            elif (cond, f) in loosened:
+                c["withheld"] += 1
+            else:
+                c["missing"] += 1
         out[cond] = c
     return out
 
@@ -97,10 +108,10 @@ def main():
     disp = disposition()
     rows = list(ORDER)   # the pooled totals are quoted in the prose, not drawn
 
-    colours = {"dead_loop": S.MECH["dead"], "dead_assume": "#8A8A8A",
+    colours = {"dead_loop": S.MECH["dead"], "dead_assume": "#9E9E9E",
                "illegal": S.MECH["narrowed"], "unreachable": S.MECH["deleted"],
-               "missing": S.MECH["never"], "untested": S.MECH["unresolved"]}
-    hatch = {"dead_assume": "//", "untested": ".."}
+               "missing": S.MECH["never"], "withheld": S.MECH["unresolved"]}
+    hatch = {"dead_assume": "//", "withheld": ".."}
 
     fig, (axd, ax) = plt.subplots(1, 2, figsize=(S.TEXTWIDTH, 1.68),
                                   gridspec_kw={"width_ratios": [1.0, 1.35]}, sharey=True)
@@ -114,8 +125,8 @@ def main():
             ax.barh(y, n, left=left, height=0.68, color=colours[k],
                     hatch=hatch.get(k), edgecolor="white", linewidth=0.6)
             if n >= 8:
-                ax.text(left + n / 2, y, str(n), ha="center", va="center",
-                        fontsize=6.5, color="white" if k.startswith("dead") else "#222222")
+                ax.text(left + n / 2, y, str(n), ha="center", va="center", fontsize=6.5,
+                        color="white" if k == "dead_loop" else "#222222")
             left += n
         ax.text(left + 3, y, str(left), va="center", fontsize=6.5, color="#444444")
 
@@ -127,33 +138,33 @@ def main():
             axd.barh(y, val, left=left, height=0.68, color=col, hatch=hat,
                      edgecolor="white", linewidth=0.6)
             left += val
-        axd.text(disp[cond][0] / 2, y, f"{caught:.0f}", ha="center", va="center",
-                 fontsize=6.2, color="#0d3b2e")
-        axd.text(disp[cond][0] + sil / 2, y, f"{sil:.0f}", ha="center", va="center",
-                 fontsize=6.2, color="white")
+        if caught >= 8:
+            axd.text(caught / 2, y, f"{caught:.0f}", ha="center", va="center",
+                     fontsize=6.2, color="#0d3b2e")
+        if sil >= 8:
+            axd.text(caught + sil / 2, y, f"{sil:.0f}", ha="center", va="center",
+                     fontsize=6.2, color="white")
     axd.set_xlim(0, 100)
-    axd.set_xlabel("(a) the 397 GT-fail mutants, unwinding check off (%)")
+    axd.set_xlabel("(a) share of the 397 GT-fail mutants (%)", fontsize=7.0)
     axd.grid(axis="y", visible=False)
 
     labels = [f"{S.COND_LABEL[c]} / {S.model_of(c)}" for c in rows]
     axd.set_yticks(ypos, labels)
-    ax.set_xlabel("(b) mechanism behind the silences")
+    ax.set_xlabel("(b) silences by layer (count)", fontsize=7.0)
     ax.set_xlim(0, max(sum(data[c].values()) for c in rows) * 1.12)
     ax.grid(axis="y", visible=False)
 
     legend_a = [Patch(facecolor=DISP["caught"], label="caught"),
                 Patch(facecolor=DISP["silenced"], label="silenced"),
                 Patch(facecolor=DISP["unresolved"], hatch="..", label="unresolved")]
-    legend = [Patch(facecolor=colours["dead_loop"], label="never ran: loop $>$ bound"),
-              Patch(facecolor=colours["dead_assume"], hatch="//",
-                    label="never ran: no feasible run"),
-              Patch(facecolor=colours["illegal"], label="setup admits illegal states"),
-              Patch(facecolor=colours["unreachable"], label="setup misses the fault"),
-              Patch(facecolor=colours["missing"], label="assertion absent")]
+    legend = [Patch(facecolor=colours["dead_loop"], label="never ran"),
+              Patch(facecolor=colours["illegal"], label="illegal setup"),
+              Patch(facecolor=colours["unreachable"], label="unreachable fault"),
+              Patch(facecolor=colours["missing"], label="missing assertion")]
     axd.legend(handles=legend_a, loc="lower left", bbox_to_anchor=(-0.02, 1.0), ncol=3,
                frameon=False, handlelength=1.0, columnspacing=0.8, fontsize=6.0)
-    ax.legend(handles=legend, loc="lower left", bbox_to_anchor=(-0.02, 1.0), ncol=2,
-              frameon=False, handlelength=1.0, columnspacing=0.8, fontsize=6.0)
+    ax.legend(handles=legend, loc="lower left", bbox_to_anchor=(-0.02, 1.0), ncol=4,
+              frameon=False, handlelength=1.0, columnspacing=0.7, fontsize=6.0)
     S.save(fig, "fig_mechanism_stack")
 
 if __name__ == "__main__":
