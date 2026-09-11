@@ -599,6 +599,24 @@ def _adjudicated(cond):
     v = [_STRICT[key].get(x) for x in _STRICT_GT]
     return sum(1 for x in v if x in ("SUCCESS", "FAIL")), sum(1 for x in v if x == "SUCCESS")
 add("S5.1/adj", "Baseline mutants adjudicated (default)", 207, lambda: _adjudicated("Baseline")[0], 0.5)
+# What the hint actually bought. A paired per-function test cannot see this,
+# because it compares only functions both conditions adjudicate, and the effect
+# lives in the functions Baseline does not pass at all.
+def _newly_passed():
+    kB, kM = COND["Baseline"], COND["Bounded"]
+    pr = {v["func"]: v["v"] for v in _load("passrate_default_640.json")["verdicts"]
+          if v["cond"] == kB}
+    prM = {v["func"]: v["v"] for v in _load("passrate_default_640.json")["verdicts"]
+           if v["cond"] == kM}
+    gained = {f for f in prM if prM[f] == "SUCCESS" and pr.get(f) != "SUCCESS"}
+    newly = sum(1 for (f, mu) in _STRICT_GT
+                if _STRICT[kM].get((f, mu)) == "SUCCESS" and f in gained)
+    return len(gained), newly
+add("S5.1/newly", "functions Bounded passes that Baseline does not", 24,
+    lambda: _newly_passed()[0], 0.5)
+add("S5.1/newly", "Bounded silences in those functions", 28,
+    lambda: _newly_passed()[1], 0.5)
+
 add("S5.1/adj", "Bounded mutants adjudicated (default)",  315, lambda: _adjudicated("Bounded")[0], 0.5)
 add("S5.1/adj", "Baseline silence per adjudicated %",     2.9,
     lambda: 100 * _adjudicated("Baseline")[1] / _adjudicated("Baseline")[0], 0.1)
