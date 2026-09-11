@@ -669,6 +669,19 @@ add("S5.2/clz", "gpt-oss filling its own gaps", 6,
 # The reverse cell of the matrix: mutants the LLM harness catches and the expert
 # misses. Nothing was registered here, and the Discussion quoted a stale count.
 _REV = _load("reverse_640.json")
+# Two remedies the Discussion had asserted without a registry entry. Both were
+# wrong: the checklist figure was 67, and the two-phase prompt was said not to
+# reduce silencing when it in fact raises it more than the checklist does.
+_PCSF = _load("silenced_pc_sf_640.json")["summary"]["per_condition"]
+add("S6.4/rem", "postcondition-checklist silences", 52,
+    lambda: _PCSF["PC_gptoss120b_pc"]["silenced_640"], 0.5)
+add("S6.4/rem", "postcondition-checklist Sil/GT %", 13.1,
+    lambda: _PCSF["PC_gptoss120b_pc"]["SilGT_640_pct"], 0.1)
+add("S6.4/rem", "scaffold-first silences", 68,
+    lambda: _PCSF["SF_gptoss120b_pin"]["silenced_640"], 0.5)
+add("S6.4/rem", "scaffold-first Sil/GT %", 17.1,
+    lambda: _PCSF["SF_gptoss120b_pin"]["SilGT_640_pct"], 0.1)
+
 add("S6.3/rev", "reverse-cell mutants (Claude Baseline)", 90,
     lambda: _REV["summary"]["reverse_cell_raw"], 0.5)
 add("S6.3/rev", "expert functions the reverse cell exposes", 10,

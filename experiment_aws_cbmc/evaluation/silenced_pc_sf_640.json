@@ -1,0 +1,4790 @@
+{
+ "summary": {
+  "cbmc": "6.4.0",
+  "gtfail_denom_640": 397,
+  "gtfail_denom_595": 370,
+  "elapsed_s": 489,
+  "per_condition": {
+   "PC_gptoss120b_pc": {
+    "silenced_640": 52,
+    "silenced_595": null,
+    "catch_640": 220,
+    "SilGT_640_pct": 13.1,
+    "CatchGT_640_pct": 55.4
+   },
+   "SF_gptoss120b_pin": {
+    "silenced_640": 68,
+    "silenced_595": null,
+    "catch_640": 256,
+    "SilGT_640_pct": 17.1,
+    "CatchGT_640_pct": 64.5
+   }
+  }
+ },
+ "verdicts": [
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0031",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0019",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0085",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0020",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0103",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0002",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0100",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0036",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0041",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0023",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0006",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0090",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0014",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0035",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0040",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0087",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0097",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0086",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0106",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0049",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0098",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0107",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0099",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0108",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0109",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0038",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0035",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0032",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0031",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0029",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0048",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0050",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0060",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0030",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0036",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0068",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0070",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0073",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0071",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0069",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0072",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0076",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0079",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0078",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0080",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0084",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0081",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0094",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0020",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0021",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0097",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0106",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0026",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0024",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0028",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0010",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0027",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0030",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0031",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0032",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0011",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0013",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0029",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0043",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0009",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0061",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0049",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0044",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0022",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0057",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0048",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0060",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0055",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0052",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0059",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0053",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0062",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0066",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0002",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0063",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0008",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0006",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0073",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0032",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0036",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0068",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0037",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0072",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0087",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0038",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0039",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0040",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0043",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0046",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0047",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up_secure",
+   "mutant": "mutant_0007",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0044",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0051",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0013",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0048",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0015",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0014",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0014",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0004",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0026",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0015",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0007",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0008",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0009",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0017",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0020",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0016",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0010",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0025",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0035",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0027",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0031",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0049",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0022",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0041",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0038",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0020",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0028",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0019",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0016",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0006",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0017",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0006",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0013",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0019",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0018",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0018",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0022",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0009",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0025",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0020",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0031",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0027",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0022",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0021",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0036",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0025",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0027",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0029",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0029",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0033",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0047",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0039",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0038",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0036",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0037",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0041",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0035",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0048",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0044",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0055",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0015",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0016",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0019",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0025",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0020",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0018",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0075",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0076",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0024",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0079",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0017",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0042",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0088",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0077",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0085",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0082",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0007",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0006",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0008",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0047",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0057",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0040",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0033",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0089",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0072",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0075",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0039",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0008",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0051",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0038",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0088",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0010",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0005",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0016",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0009",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0012",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0015",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0018",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0017",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0073",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0023",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0030",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0025",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0108",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0074",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0029",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0022",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0075",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0004",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0003",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0089",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0008",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0011",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0013",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0014",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0018",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0015",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0135",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0476",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0477",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0483",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0482",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0015",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0014",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0013",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0003",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0013",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0009",
+   "llm640": "NOHARNESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0016",
+   "llm640": "NOHARNESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0042",
+   "llm640": "NOHARNESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0046",
+   "llm640": "NOHARNESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0053",
+   "llm640": "NOHARNESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0014",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0487",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0486",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0015",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0026",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0489",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0488",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0008",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0007",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0026",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0010",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0009",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0020",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0005",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0004",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0019",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0014",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0006",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0021",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0003",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0009",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0028",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0029",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0010",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0012",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0020",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0017",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0077",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0014",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0078",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0081",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0076",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0071",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0031",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0082",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0087",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0079",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0083",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0088",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0089",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0080",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0090",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0100",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0101",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0099",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0094",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0013",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0103",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_clean_up",
+   "mutant": "mutant_0010",
+   "llm640": "NOHARNESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0004",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0005",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0006",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0106",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0102",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0105",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0007",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0104",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0110",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0008",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0024",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0005",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0007",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0008",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0009",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0016",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0019",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0006",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0017",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0025",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0028",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0015",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_clean_up",
+   "mutant": "mutant_0021",
+   "llm640": "NOHARNESS"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0010",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0018",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0020",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0026",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0031",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0030",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0004",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0020",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0017",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0032",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0013",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0019",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0065",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0033",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0032",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0075",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0041",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0048",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0077",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0004",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0071",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0076",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0030",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0070",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0032",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0085",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0046",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0036",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0032",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0004",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0018",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0009",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0024",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0041",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0043",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0091",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0090",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0088",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0092",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0012",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0009",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0016",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0004",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0010",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0044",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0021",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0038",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0030",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0036",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0062",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0055",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0031",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0082",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0065",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0004",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0060",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0009",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0011",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0016",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0031",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0012",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0010",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0030",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0021",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0036",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0038",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0060",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0062",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0082",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0091",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0092",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0088",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0096",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0009",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0099",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0091",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0097",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0033",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0092",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0004",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0088",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0097",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0036",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0095",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0093",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0094",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0096",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0099",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0100",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0097",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0087",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0085",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0029",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0030",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0006",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0090",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0031",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0086",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0035",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0036",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0098",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0107",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0038",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0048",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0050",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0060",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0032",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0106",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0068",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0109",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0108",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0069",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0070",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0071",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0072",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0073",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0079",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0076",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0078",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0080",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0084",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0081",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0094",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0097",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_advance",
+   "mutant": "mutant_0106",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0021",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0020",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0024",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0026",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0028",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0010",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0027",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0030",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0011",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0013",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0031",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0032",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0029",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0043",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0009",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0044",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0022",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0049",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0048",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0057",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0061",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0055",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0060",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0052",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0059",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0053",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0062",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0066",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0073",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0063",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0002",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0006",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0008",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0072",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0087",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0011",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_cat",
+   "mutant": "mutant_0068",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0032",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0036",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0037",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0038",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0040",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0039",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0043",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "PC_gptoss120b_pc",
+   "func": "aws_string_new_from_c_str",
+   "mutant": "mutant_0035",
+   "llm640": "TIMEOUT"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0002",
+   "llm640": "TIMEOUT"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0014",
+   "llm640": "TIMEOUT"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0019",
+   "llm640": "TIMEOUT"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0023",
+   "llm640": "TIMEOUT"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0044",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0020",
+   "llm640": "TIMEOUT"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0047",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0031",
+   "llm640": "TIMEOUT"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0046",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0035",
+   "llm640": "TIMEOUT"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0041",
+   "llm640": "TIMEOUT"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0040",
+   "llm640": "TIMEOUT"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0036",
+   "llm640": "TIMEOUT"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0048",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up",
+   "mutant": "mutant_0051",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_clean_up_secure",
+   "mutant": "mutant_0007",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0013",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0007",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0008",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0015",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0014",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0009",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0010",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_eq",
+   "mutant": "mutant_0026",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0019",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0020",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0004",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0014",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_eq_c_str",
+   "mutant": "mutant_0028",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0017",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0015",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0016",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0020",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0103",
+   "llm640": "TIMEOUT"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0022",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0038",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0025",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0035",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0027",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0041",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0031",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_array",
+   "mutant": "mutant_0049",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0009",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0018",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0006",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0013",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0020",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0027",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0025",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0021",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0022",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0039",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0036",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0031",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0029",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_c_str",
+   "mutant": "mutant_0047",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0006",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0016",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0018",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0017",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0019",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0022",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0027",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0025",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0033",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0029",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0038",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0036",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0037",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0041",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0044",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0035",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0048",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0015",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_from_empty_array",
+   "mutant": "mutant_0055",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0019",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0016",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0018",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0020",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0024",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0042",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0025",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0017",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0076",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0075",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0077",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0082",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0079",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0088",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init",
+   "mutant": "mutant_0085",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0008",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0006",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0038",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0033",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0039",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0047",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0040",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0007",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0099",
+   "llm640": "TIMEOUT"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0072",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0075",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0051",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0057",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0089",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy",
+   "mutant": "mutant_0088",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0008",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0005",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0010",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_array_list_swap",
+   "mutant": "mutant_0049",
+   "llm640": "TIMEOUT"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0009",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0012",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0018",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0016",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0023",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0017",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0022",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0030",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0015",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0025",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0029",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0073",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0075",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0089",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0003",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0108",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0004",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0008",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0074",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_init_copy_from_cursor",
+   "mutant": "mutant_0135",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0015",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0018",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0476",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0014",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_reset",
+   "mutant": "mutant_0013",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0003",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0477",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0014",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0483",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0013",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0489",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0486",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0014",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0013",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0026",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq",
+   "mutant": "mutant_0015",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0026",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0008",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0488",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0487",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq_byte_buf",
+   "mutant": "mutant_0015",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0007",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0009",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0019",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0010",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0042",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0016",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0046",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0028",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_eq_c_str",
+   "mutant": "mutant_0020",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0004",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0003",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0014",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0053",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0021",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_from_c_str",
+   "mutant": "mutant_0029",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_cursor_from_array",
+   "mutant": "mutant_0009",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0006",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_byte_buf_secure_zero",
+   "mutant": "mutant_0482",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0005",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0010",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0009",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0014",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0012",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0017",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0076",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0079",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0031",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0020",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0071",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0077",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0078",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0081",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0080",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0089",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0082",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0094",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0100",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0083",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0087",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0088",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0101",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0106",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0099",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0103",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0104",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0105",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0090",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0102",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0004",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0006",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_nospec_mask",
+   "mutant": "mutant_0110",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0007",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0008",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0005",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0009",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0010",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_clean_up",
+   "mutant": "mutant_0010",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0017",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0016",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0015",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0018",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0019",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0025",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0020",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0028",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0026",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0005",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0008",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0006",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0030",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0032",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0024",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ptr_eq",
+   "mutant": "mutant_0007",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_buf_belongs_to_pool",
+   "mutant": "mutant_0013",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0031",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0065",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0033",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0048",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0070",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0075",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0077",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0071",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0085",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_init",
+   "mutant": "mutant_0076",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_ring_buffer_clean_up",
+   "mutant": "mutant_0021",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0017",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0041",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0004",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0019",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0013",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0032",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0032",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0030",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0036",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0046",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_destroy",
+   "mutant": "mutant_0020",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_destroy_secure",
+   "mutant": "mutant_0004",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0009",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0004",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0004",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0010",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0011",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0009",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0016",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0012",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0032",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0024",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0018",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0021",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0030",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0031",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0036",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0060",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0044",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0055",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0038",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0062",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0065",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0082",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0088",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0041",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0096",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0091",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0092",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0099",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0092",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_buf",
+   "mutant": "mutant_0097",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0043",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0090",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0088",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq",
+   "mutant": "mutant_0091",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0004",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0012",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0011",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0030",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0031",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0021",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0016",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0009",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0038",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0036",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0091",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_new_from_c_str",
+   "mutant": "mutant_0035",
+   "llm640": "NOHARNESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0062",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0060",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0004",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0009",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0082",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0033",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0036",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0010",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0093",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0092",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0095",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_c_str",
+   "mutant": "mutant_0094",
+   "llm640": "UNKNOWN"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0088",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0099",
+   "llm640": "SUCCESS"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0096",
+   "llm640": "FAIL"
+  },
+  {
+   "cond": "SF_gptoss120b_pin",
+   "func": "aws_string_eq_byte_cursor",
+   "mutant": "mutant_0097",
+   "llm640": "SUCCESS"
+  }
+ ]
+}
